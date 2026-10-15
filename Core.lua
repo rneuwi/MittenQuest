@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Core.lua
+    MittenQuest - Core.lua
     Addon object, saved variables, event wiring, step cursor, slash commands.
     Step rules live in Steps.lua; parsing/validation in Parser.lua.
 
@@ -12,7 +12,7 @@ local ADDON_NAME, ns = ...
 local FG = LibStub("AceAddon-3.0"):NewAddon(ADDON_NAME,
     "AceEvent-3.0", "AceConsole-3.0", "AceTimer-3.0")
 ns.FG = FG
-_G.ForeverGuide = FG -- public handle for guide files and other addons
+_G.MittenQuest = FG -- public handle for guide files and other addons
 
 FG.version = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version") or "dev"
 
@@ -60,7 +60,7 @@ local defaults = {
 }
 
 ---------------------------------------------------------------------------
--- Guide registry (guide files call ForeverGuide:RegisterGuide at load time)
+-- Guide registry (guide files call MittenQuest:RegisterGuide at load time)
 ---------------------------------------------------------------------------
 FG.guides, FG.guideOrder = {}, {}
 FG.questNames = {} -- questID -> name, harvested from guide text (fallback for uncached titles)
@@ -97,9 +97,9 @@ end
 -- Lifecycle
 ---------------------------------------------------------------------------
 function FG:OnInitialize()
-    self.db = LibStub("AceDB-3.0"):New("ForeverGuideDB", defaults, true)
-    self:RegisterChatCommand("fg", "HandleSlash")
-    self:RegisterChatCommand("foreverguide", "HandleSlash")
+    self.db = LibStub("AceDB-3.0"):New("MittenQuestDB", defaults, true)
+    self:RegisterChatCommand("mq", "HandleSlash")
+    self:RegisterChatCommand("mittenquest", "HandleSlash")
 end
 
 function FG:OnEnable()
@@ -151,7 +151,7 @@ end
 --     game, so they count as done when you arrived/landed/cast while they were
 --     current ("arrived"), OR when the next quest step after them is already done
 --     (you clearly got there). They un-complete with that quest step too.
---   * A manual skip (checkbox / /fg next) overrides any step and is reversible.
+--   * A manual skip (checkbox / /mq next) overrides any step and is reversible.
 -- The current step is simply the first step that isn't done.
 ---------------------------------------------------------------------------
 local MOVEMENT = { GOTO = true, FLY = true, HEARTH = true, SETHEARTH = true }
@@ -195,7 +195,7 @@ function FG:LoadGuide(name)
     self.db.char.activeGuide = name
     local g = self:GetGuide(name)
     if #g.warnings > 0 then
-        self:Print(("%d parse warning(s) in '%s' - /fg check"):format(#g.warnings, name))
+        self:Print(("%d parse warning(s) in '%s' - /mq check"):format(#g.warnings, name))
     end
     self:Advance(true)
     ns.QuestPins:RequestRefresh() -- route highlighting follows the active guide
@@ -383,7 +383,7 @@ function FG:RequestSkipQuest(questID)
     end
     local depNames = {}
     for _, q in ipairs(deps) do depNames[#depNames + 1] = ns.Steps:QuestName(q) end
-    StaticPopupDialogs.FOREVERGUIDE_SKIP_QUEST = {
+    StaticPopupDialogs.MITTENQUEST_SKIP_QUEST = {
         text = "Skip \"%s\"?\n\nThese later quests need it and can't be done without it:\n%s",
         -- Escape/Cancel must never skip anything, so "only this quest" is the alt button.
         button1 = "Skip all",
@@ -399,7 +399,7 @@ function FG:RequestSkipQuest(questID)
         end,
         timeout = 0, whileDead = true, hideOnEscape = true,
     }
-    StaticPopup_Show("FOREVERGUIDE_SKIP_QUEST", name, table.concat(depNames, "\n"))
+    StaticPopup_Show("MITTENQUEST_SKIP_QUEST", name, table.concat(depNames, "\n"))
 end
 
 -- Checkbox: skip / un-skip / undo arrival. Game-completed steps can't be toggled
@@ -499,16 +499,16 @@ end
 -- Slash commands
 ---------------------------------------------------------------------------
 local HELP = {
-    "|cff33ccff/fg|r show | hide | toggle",
-    "|cff33ccff/fg|r lock | unlock | reset",
-    "|cff33ccff/fg|r skip | back        - skip the current step / undo the last skip",
-    "|cff33ccff/fg|r unskip             - clear all manual skips",
-    "|cff33ccff/fg|r debug              - print step/arrow state (for bug reports)",
-    "|cff33ccff/fg|r list               - list registered guides",
-    "|cff33ccff/fg|r load <guide name>  - switch guide",
-    "|cff33ccff/fg|r arrow              - toggle the direction arrow",
-    "|cff33ccff/fg|r pins | minimap | lowlevel - toggle quest pins / minimap pins / trivial quests",
-    "|cff33ccff/fg|r check              - validate route (prereqs, flight paths, dungeons, drops)",
+    "|cff33ccff/mq|r show | hide | toggle",
+    "|cff33ccff/mq|r lock | unlock | reset",
+    "|cff33ccff/mq|r skip | back        - skip the current step / undo the last skip",
+    "|cff33ccff/mq|r unskip             - clear all manual skips",
+    "|cff33ccff/mq|r debug              - print step/arrow state (for bug reports)",
+    "|cff33ccff/mq|r list               - list registered guides",
+    "|cff33ccff/mq|r load <guide name>  - switch guide",
+    "|cff33ccff/mq|r arrow              - toggle the direction arrow",
+    "|cff33ccff/mq|r pins | minimap | lowlevel - toggle quest pins / minimap pins / trivial quests",
+    "|cff33ccff/mq|r check              - validate route (prereqs, flight paths, dungeons, drops)",
 }
 
 function FG:HandleSlash(input)
@@ -609,18 +609,18 @@ function FG:CheckRoute()
 end
 
 -- Addon compartment (the addon list button by the minimap): click to show/hide.
-function ForeverGuide_OnCompartmentClick()
+function MittenQuest_OnCompartmentClick()
     ns.Frame:SetShown(not ns.Frame:IsShown())
 end
 
-function ForeverGuide_OnCompartmentEnter(_, button)
+function MittenQuest_OnCompartmentEnter(_, button)
     GameTooltip:SetOwner(button, "ANCHOR_LEFT")
-    GameTooltip:AddLine("ForeverGuide")
+    GameTooltip:AddLine("MittenQuest")
     GameTooltip:AddLine("Click to show or hide the guide.", 1, 1, 1)
     GameTooltip:Show()
 end
 
-function ForeverGuide_OnCompartmentLeave()
+function MittenQuest_OnCompartmentLeave()
     GameTooltip:Hide()
 end
 

@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Data/Entrances.lua
+    MittenQuest - Data/Entrances.lua
     Caves / enclosed areas whose inside you can't walk to in a straight line.
 
     When the arrow's target lies inside an area's radius and the player is

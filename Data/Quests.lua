@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Data/Quests.lua  (GENERATED - do not hand-edit; see tools/generator/)
+    MittenQuest - Data/Quests.lua  (GENERATED - do not hand-edit; see tools/generator/)
 
     Horde-available quests from the QuestieDB Forever dataset (Classic base + Forever
     corrections + in-game Forever traces). QuestieDB derives from Questie (GPL-3.0);

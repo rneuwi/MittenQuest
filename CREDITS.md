@@ -1,6 +1,6 @@
 # Credits & license
 
-ForeverGuide is free software released under the **GNU General Public License v3.0**
+MittenQuest is free software released under the **GNU General Public License v3.0**
 (see `LICENSE`).
 
 ## Quest data
@@ -12,7 +12,7 @@ client), plus its drop-rate and quest-XP support tables.
 
 QuestieDB's data originates from **Questie** — https://github.com/Questie/Questie —
 which is licensed under GPL-3.0. Because this addon redistributes data derived from it,
-ForeverGuide is GPL-3.0 as well. Huge thanks to the Questie and QuestieDB maintainers
+MittenQuest is GPL-3.0 as well. Huge thanks to the Questie and QuestieDB maintainers
 and contributors.
 
 Zone names for Forever-only areas (e.g. Zephras Isle) were cross-checked against

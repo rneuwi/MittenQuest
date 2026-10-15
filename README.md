@@ -1,4 +1,4 @@
-# ForeverGuide
+# MittenQuest
 
 A free, lightweight 1–60 leveling guide addon for **WoW: Forever** — step-by-step quest
 instructions, a direction arrow, map pins for available quests, and automatic progress
@@ -6,8 +6,9 @@ tracking from what you do in game.
 
 ## Install
 
-Download the latest release zip and extract it into your WoW: Forever client's
-`Interface/AddOns` folder, so the path ends in `AddOns/ForeverGuide/ForeverGuide.toc`. Open the guide from the addon list button
+Download the latest zip from the **Releases** page (not GitHub's green "Code → Download ZIP",
+whose folder name WoW won't load) and extract it into your WoW: Forever client's
+`Interface/AddOns` folder, so the path ends in `AddOns/MittenQuest/MittenQuest.toc`. Open the guide from the addon list button
 by the minimap; everything else is in the guide window's gear menu.
 
 ## What's in it

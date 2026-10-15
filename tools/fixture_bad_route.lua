@@ -1,5 +1,5 @@
 -- Deliberately broken route used to test tools/lint.lua (not loaded in game).
-ForeverGuide:RegisterGuide("Fixture: bad route", [[
+MittenQuest:RegisterGuide("Fixture: bad route", [[
 #knownfp Orgrimmar
 [A 200 Chain Part Two | pre=100]
 [A 100 Chain Part One]

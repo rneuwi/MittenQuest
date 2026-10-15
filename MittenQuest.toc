@@ -1,13 +1,13 @@
 ## Interface: 16001, 120105
-## Title: Forever|cff33ccffGuide|r
+## Title: Mitten|cff33ccffQuest|r
 ## Notes: Free, lightweight 1-60 leveling guide with step tracking and waypoints.
 ## Author: Mitten Technology
 ## Version: @project-version@
 ## IconTexture: Interface\Icons\INV_Misc_Map_01
-## SavedVariables: ForeverGuideDB
-## AddonCompartmentFunc: ForeverGuide_OnCompartmentClick
-## AddonCompartmentFuncOnEnter: ForeverGuide_OnCompartmentEnter
-## AddonCompartmentFuncOnLeave: ForeverGuide_OnCompartmentLeave
+## SavedVariables: MittenQuestDB
+## AddonCompartmentFunc: MittenQuest_OnCompartmentClick
+## AddonCompartmentFuncOnEnter: MittenQuest_OnCompartmentEnter
+## AddonCompartmentFuncOnLeave: MittenQuest_OnCompartmentLeave
 ## OptionalDeps: TomTom, HereBeDragons
 ## X-License: GPL-3.0
 ## X-Category: Quests

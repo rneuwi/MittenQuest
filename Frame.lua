@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Frame.lua
+    MittenQuest - Frame.lua
     Draggable, resizable, semi-transparent step list.
     Uses BackdropTemplate + SetResizeBounds (SetMinResize/SetMaxResize are gone).
 ]]
@@ -28,7 +28,7 @@ local MIN_W, MIN_H, MAX_W, MAX_H = 240, 150, 700, 900
 ---------------------------------------------------------------------------
 function Frame:Create(cfg)
     if self.f then return end
-    local f = CreateFrame("Frame", "ForeverGuideFrame", UIParent, "BackdropTemplate")
+    local f = CreateFrame("Frame", "MittenQuestFrame", UIParent, "BackdropTemplate")
     self.f = f
     f:SetFrameStrata("MEDIUM")
     f:SetClampedToScreen(true)
@@ -314,7 +314,7 @@ function Frame:Update()
     local steps, p = FG:GetActiveSteps()
 
     if not steps or #steps == 0 then
-        self.titleText:SetText("ForeverGuide - no guide loaded")
+        self.titleText:SetText("MittenQuest - no guide loaded")
         for _, row in ipairs(self.rows) do row:Hide() end
         self:UpdateButtons()
         return

@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Navigation.lua
+    MittenQuest - Navigation.lua
     Decides WHERE the player should head next; Arrow.lua draws it.
 
     Target priority for the current step:
@@ -146,7 +146,7 @@ function Nav:SetMapWaypoint(p, title)
         self.tomtomUID = TomTom:AddWaypoint(p.mapID, p.x / 100, p.y / 100, {
             title = title, persistent = false, minimap = true, world = true,
             crazy = not FG.db.profile.arrow.enabled, -- avoid two arrows
-            from = "ForeverGuide",
+            from = "MittenQuest",
         })
     elseif C_Map.CanSetUserWaypointOnMap(p.mapID) then
         C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(p.mapID, p.x / 100, p.y / 100))
