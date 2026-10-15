@@ -5,3 +5,5 @@ ignore:
   - .github
   - .work
   - README.md
+  - Media/logo.svg
+  - Media/logo.png
