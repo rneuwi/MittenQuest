@@ -1,0 +1,19 @@
+# Every push / pull request: Lua syntax check on all addon files + full route check.
+name: Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lua 5.1
+        run: sudo apt-get update -q && sudo apt-get install -y -q lua5.1
+      - name: Syntax
+        run: |
+          find . -name '*.lua' -not -path './Libs/*' -not -path './.work/*' -print0 | xargs -0 -n1 luac5.1 -p
+      - name: Route
+        run: lua5.1 tools/lint.lua Guides/Horde/*.lua

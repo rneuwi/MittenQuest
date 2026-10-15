@@ -1,0 +1,5 @@
+{
+  "_readme": "Hand-made route fixes, applied on every regeneration. 'skip': quests the route must never use (bugged, removed, not worth it) with the reason. 'notes': text shown under a quest's pickup step. Keys are quest IDs as strings.",
+  "skip": {},
+  "notes": {}
+}

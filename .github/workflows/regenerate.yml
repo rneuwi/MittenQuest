@@ -1,0 +1,49 @@
+# Weekly (and on demand): rebuild the route from the latest QuestieDB Forever data.
+# If anything changed, open a pull request so the update can be reviewed before release.
+name: Regenerate route
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: |
+          pip install lupa
+          sudo apt-get update -q && sudo apt-get install -y -q lua5.1
+
+      - name: Rebuild guides and quest database
+        run: bash tools/generator/build.sh
+
+      - name: Check the whole route
+        run: lua5.1 tools/lint.lua Guides/Horde/*.lua
+
+      - name: Read data version
+        id: ver
+        run: echo "qdb=$(cat Data/QUESTIEDB_VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request if the route changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/questiedb-update
+          delete-branch: true
+          commit-message: "Route update from QuestieDB ${{ steps.ver.outputs.qdb }}"
+          title: "Route update from QuestieDB ${{ steps.ver.outputs.qdb }}"
+          body: |
+            Automatic rebuild of `Guides/Horde/` and `Data/Quests.lua` from QuestieDB `${{ steps.ver.outputs.qdb }}`.
+            The route checker passed. Review the diff, then merge and tag a release to publish.
+          labels: data-update

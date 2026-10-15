@@ -1,0 +1,7 @@
+package-as: ForeverGuide
+
+ignore:
+  - tools
+  - .github
+  - .work
+  - README.md
