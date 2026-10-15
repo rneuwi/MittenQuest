@@ -1,4 +1,4 @@
-"""Writes ForeverGuide/Data/Quests.lua (map pins / quest names / levels) from the generator's quest model."""
+"""Writes MittenQuest/Data/Quests.lua (map pins / quest names / levels) from the generator's quest model."""
 import sys, os
 SP, OUT = sys.argv[1], sys.argv[2]
 sys.argv = ['gen_route.py', SP, os.path.join(SP, 'gen', 'Horde')]
@@ -41,7 +41,7 @@ for qid in sorted(QUESTS):
     n += 1
 
 header = '''--[[
-    ForeverGuide - Data/Quests.lua  (GENERATED - do not hand-edit; see tools/generator/)
+    MittenQuest - Data/Quests.lua  (GENERATED - do not hand-edit; see tools/generator/)
 
     Horde-available quests from the QuestieDB Forever dataset (Classic base + Forever
     corrections + in-game Forever traces). QuestieDB derives from Questie (GPL-3.0);

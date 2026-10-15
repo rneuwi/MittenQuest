@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Arrow.lua
+    MittenQuest - Arrow.lua
     On-screen direction arrow. Points at Navigation's active point (path point,
     cave entrance, quest location or step target) relative to where the player
     is facing, with distance, ETA and a label for what it's pointing at.
@@ -10,7 +10,7 @@ local FG = ns.FG
 local Arrow = {}
 ns.Arrow = Arrow
 
-local ARROW_TEX = "Interface\\AddOns\\ForeverGuide\\Media\\Arrow"
+local ARROW_TEX = "Interface\\AddOns\\MittenQuest\\Media\\Arrow"
 local CHECK_TEX = "Interface\\RaidFrame\\ReadyCheck-Ready"
 local THROTTLE = 0.03
 local KIND_PREFIX = { entrance = "|cffffd100", path = "|cffb388ff", quest = "|cff4fc3f7" }
@@ -41,7 +41,7 @@ end
 
 function Arrow:Create()
     if self.f then return end
-    local f = CreateFrame("Button", "ForeverGuideArrow", UIParent)
+    local f = CreateFrame("Button", "MittenQuestArrow", UIParent)
     self.f = f
     f:SetSize(64, 90)
     f:SetFrameStrata("MEDIUM")

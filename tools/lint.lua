@@ -10,10 +10,10 @@
 
 local root = (arg[0]:match("^(.*)[/\\]tools[/\\]") or ".") .. "/"
 local ns = {}
-assert(loadfile(root .. "Parser.lua"))("ForeverGuide", ns)
+assert(loadfile(root .. "Parser.lua"))("MittenQuest", ns)
 
 local guides, byName = {}, {}
-ForeverGuide = {
+MittenQuest = {
     RegisterGuide = function(_, name, raw)
         local g = { name = name, raw = raw }
         guides[#guides + 1] = g

@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Steps.lua
+    MittenQuest - Steps.lua
     Per-step-type rules: who a step applies to, when it's satisfied, and how it reads.
     Everything here reads live game state through modern C_* APIs.
 ]]

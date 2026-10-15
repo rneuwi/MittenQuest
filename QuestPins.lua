@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - QuestPins.lua
+    MittenQuest - QuestPins.lua
     "!" pins for available quests on the world map and minimap, with a tooltip
     showing quest name, level, requirement, giver, and whether it's on the route.
 
@@ -97,7 +97,7 @@ end
 
 ---------------------------------------------------------------------------
 -- Learning: record quest givers and turn-in NPCs at the spot you talk to them.
--- Saved account-wide in ForeverGuideDB.global (WTF\Account\<name>\SavedVariables\ForeverGuide.lua),
+-- Saved account-wide in MittenQuestDB.global (WTF\Account\<name>\SavedVariables\MittenQuest.lua),
 -- which is also how real coordinates get back into Data/Quests.lua.
 ---------------------------------------------------------------------------
 local function PlayerSpot()

@@ -1,5 +1,5 @@
 --[[
-    ForeverGuide - Parser.lua
+    MittenQuest - Parser.lua
     Turns plain-text guide strings into step tables, and validates routing.
 
     ── LINE FORMAT ────────────────────────────────────────────────────────
@@ -224,7 +224,7 @@ function Parser:Parse(raw, guideName)
 end
 
 ---------------------------------------------------------------------------
--- Route validation (runs in-game via /fg check, or offline via tools/lint.lua)
+-- Route validation (runs in-game via /mq check, or offline via tools/lint.lua)
 -- Catches pathing mistakes: prereqs out of order, flying to unlearned nodes,
 -- dungeon quests not picked up before the dungeon, drops with huge kill counts.
 ---------------------------------------------------------------------------
