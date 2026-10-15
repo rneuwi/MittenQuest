@@ -45,10 +45,19 @@ function Pins:CollectEntries()
     local learned = FG.db.global.learnedQuests
     for id, e in pairs(Pins.clientQuests) do all[id] = e end
     for id, e in pairs(learned) do all[id] = e end
+    local isAlliance = (UnitFactionGroup("player") or "") == "Alliance"
     -- Curated data wins, but a placeholder location is replaced by a learned one.
     for id, e in pairs(ns.QuestDB) do
         local l = learned[id]
-        if l and e.placeholder then
+        if isAlliance and e.alliance then
+            -- Same quest, different giver on the Alliance side.
+            local merged = {}
+            for k, v in pairs(e) do merged[k] = v end
+            merged.map, merged.x, merged.y = e.alliance.map, e.alliance.x, e.alliance.y
+            merged.giver = e.alliance.giver or e.giver
+            merged.alliance = nil
+            all[id] = merged
+        elseif l and e.placeholder then
             local merged = {}
             for k, v in pairs(e) do merged[k] = v end
             merged.map, merged.x, merged.y, merged.placeholder = l.map, l.x, l.y, nil
@@ -59,9 +68,11 @@ function Pins:CollectEntries()
         end
     end
     -- Guide steps fill remaining gaps (and inherit filters from the step).
+    local myFaction = (UnitFactionGroup("player") or ""):upper()
     for _, name in ipairs(FG.guideOrder) do
         local g = FG:GetGuide(name)
-        for _, s in ipairs(g.allSteps) do
+        local gf = g.header.faction and g.header.faction:upper()
+        for _, s in ipairs((gf == nil or gf == myFaction) and g.allSteps or {}) do
             if s.type == "ACCEPT" and s.questID and s.coords and not all[s.questID] then
                 all[s.questID] = {
                     name = s.text, minLevel = s.minLevel, pre = s.pre,

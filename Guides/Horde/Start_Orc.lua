@@ -123,4 +123,5 @@ Grind mobs around your level here; more quests open at the next level.
 Grind mobs around your level here; more quests open at the next level.
 [L 13]
 Grind mobs around your level here; more quests open at the next level.
+[G 51.5,30.34 1413 Travel to Crossroads, The Barrens]
 ]==])

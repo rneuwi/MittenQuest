@@ -1,10 +1,11 @@
 """
-Horde 1-60 route generator for MittenQuest.
+1-60 route generator for MittenQuest (Horde or Alliance).
 
+Usage : gen_route.py <work dir> <output dir> [Horde|Alliance]   (or set MQ_FACTION)
 Input : QuestieDB Forever data (corrected), dumped to JSON by extract.py / support.py
-Output: MittenQuest/Guides/Horde/*.lua  and  MittenQuest/Data/Quests.lua
+Output: MittenQuest/Guides/<Faction>/*.lua
 
-Method: simulate a Horde character. At each point pick the cheapest next action on
+Method: simulate a character of that faction. At each point pick the cheapest next action on
 the current map (accept / complete objectives / turn in), weighted by distance; leave
 a zone when it has nothing worthwhile left for the current level and pick the zone
 with the most available quest XP next. Quest XP comes from QuestieDB's XP table
@@ -13,6 +14,8 @@ with the most available quest XP next. Quest XP comes from QuestieDB's XP table
 import json, math, re, sys, os, collections
 
 SP, OUTDIR = sys.argv[1], sys.argv[2]
+FACTION = os.environ.get('MQ_FACTION') or (sys.argv[3] if len(sys.argv) > 3 else 'Horde')
+assert FACTION in ('Horde', 'Alliance'), FACTION
 
 # Hand-made fixes that survive every regeneration (see corrections.json).
 _corr_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'corrections.json')
@@ -27,9 +30,13 @@ S = json.load(open(os.path.join(SP, 'out/support.json')))
 
 # ---------------------------------------------------------------- constants
 RACE_BITS = {'HUMAN': 1, 'ORC': 2, 'DWARF': 4, 'NIGHTELF': 8, 'SCOURGE': 16, 'TAUREN': 32, 'GNOME': 64, 'TROLL': 128}
-RACE_NAME = {'ORC': 'Orc', 'SCOURGE': 'Scourge', 'TAUREN': 'Tauren', 'TROLL': 'Troll'}
+# Race file names as the client reports them (UnitRace second return).
+RACE_NAME = {'ORC': 'Orc', 'SCOURGE': 'Scourge', 'TAUREN': 'Tauren', 'TROLL': 'Troll',
+             'HUMAN': 'Human', 'DWARF': 'Dwarf', 'NIGHTELF': 'NightElf', 'GNOME': 'Gnome'}
 HORDE = 2 | 16 | 32 | 128
 ALLIANCE = 1 | 4 | 8 | 64
+FMASK = HORDE if FACTION == 'Horde' else ALLIANCE
+ENEMY_FLAG = 'A' if FACTION == 'Horde' else 'H'   # NPCs friendly only to the other faction
 CLASS_BITS = {'WARRIOR': 1, 'PALADIN': 2, 'HUNTER': 4, 'ROGUE': 8, 'PRIEST': 16, 'SHAMAN': 64,
               'MAGE': 128, 'WARLOCK': 256, 'DRUID': 1024}
 XP_TO_LEVEL = [400, 900, 1400, 2100, 2800, 3600, 4500, 5400, 6500, 7600, 8800, 10100, 11400, 12900, 14400,
@@ -53,13 +60,15 @@ ZONE_NAMES = {
     1637: 'Orgrimmar', 1638: 'Thunder Bluff', 493: 'Moonglade', 16593: 'Zephras Isle', 16651: 'Desolace',
     16611: 'Ruins of Lordaeron', 11: 'Wetlands', 10: 'Duskwood', 44: 'Redridge Mountains', 40: 'Westfall',
     38: 'Loch Modan', 1: 'Dun Morogh', 12: 'Elwynn Forest', 148: 'Darkshore', 141: 'Teldrassil', 25: 'Blackrock Mountain',
+    1519: 'Stormwind City', 1537: 'Ironforge', 1657: 'Darnassus',
 }
 KALIMDOR = {14, 363, 215, 220, 17, 406, 331, 400, 405, 15, 357, 440, 16, 490, 361, 618, 1377, 1637, 1638, 493,
-            16651, 148, 141}
-EASTERN = {85, 154, 130, 267, 45, 33, 8, 3, 47, 51, 46, 28, 139, 4, 36, 1497, 16611, 11, 10, 44, 40, 38, 1, 12, 25}
+            16651, 148, 141, 1657}
+EASTERN = {85, 154, 130, 267, 45, 33, 8, 3, 47, 51, 46, 28, 139, 4, 36, 1497, 16611, 11, 10, 44, 40, 38, 1, 12, 25,
+           1519, 1537}
 
 # Flight master NPC -> taxi node town (prefix of the in-game node name)
-FP_NODES = {
+FP_NODES_HORDE = {
     2861: 'Kargath', 6026: 'Stonard', 11899: 'Brackenwall Village', 8610: 'Valormok', 3615: 'Crossroads',
     10378: 'Camp Taurajo', 16227: 'Ratchet', 2858: 'Booty Bay', 1387: "Grom'gol", 2851: 'Hammerfall',
     13177: 'Flame Crest', 4314: 'Revantusk Village', 3305: 'Thorium Point', 2226: 'The Sepulcher',
@@ -68,6 +77,43 @@ FP_NODES = {
     4312: 'Sun Rock Retreat', 7824: 'Gadgetzan', 10583: "Marshal's Refuge", 12740: 'Moonglade',
     11139: 'Everlook', 15178: 'Cenarion Hold', 4551: 'Undercity', 3310: 'Orgrimmar', 2995: 'Thunder Bluff',
 }
+FP_NODES_ALLIANCE = {
+    352: 'Stormwind', 1573: 'Ironforge', 3838: "Rut'theran Village", 523: 'Sentinel Hill', 1572: 'Thelsamar',
+    3841: 'Auberdine', 931: 'Lakeshire', 2409: 'Darkshire', 1571: 'Menethil Harbor', 2432: 'Southshore',
+    2835: 'Refuge Pointe', 4267: 'Astranaar', 4407: 'Stonetalon Peak', 6706: "Nijel's Point", 4321: 'Theramore',
+    16227: 'Ratchet', 2859: 'Booty Bay', 8018: 'Aerie Peak', 4319: 'Thalanaar', 8019: 'Feathermoon Stronghold',
+    7823: 'Gadgetzan', 2941: 'Thorium Point', 8609: 'Nethergarde Keep', 2299: "Morgan's Vigil",
+    12577: 'Talrendis Point', 12578: 'Talonbranch Glade', 10583: "Marshal's Refuge", 11138: 'Everlook',
+    10897: 'Moonglade', 12596: 'Chillwind Camp', 12617: "Light's Hope Chapel", 15177: 'Cenarion Hold',
+}
+FP_NODES = FP_NODES_HORDE if FACTION == 'Horde' else FP_NODES_ALLIANCE
+
+# Per-faction route shape.
+#   starters: (file key, race file names, display races, race mask, starting-zone areas, follow-up areas)
+#   starter_until: starter guides run to this level, then hand over to the shared route,
+#   which starts at shared_level at the shared_node flight master.
+FACTION_CFG = {
+    'Horde': {
+        'starters': [
+            ('Orc', ['Orc', 'Troll'], 'Orc/Troll', 2 | 128, {14, 363}, set()),
+            ('Tauren', ['Tauren'], 'Tauren', 32, {215, 220}, set()),
+            ('Scourge', ['Scourge'], 'Undead', 16, {85, 154, 130}, set()),
+        ],
+        'starter_until': 13, 'shared_level': 12, 'shared_node': 'Crossroads',
+        'crossing': "take the zeppelin (Orgrimmar <-> Undercity / Grom'gol)",
+    },
+    'Alliance': {
+        'starters': [
+            # 10-20 is spread over the classic Alliance zones; one follow-up zone isn't enough XP.
+            ('Human', ['Human'], 'Human', 1, {12}, {40, 44, 38, 10}),
+            ('Dwarf', ['Dwarf', 'Gnome'], 'Dwarf/Gnome', 4 | 64, {1}, {38, 40, 44, 10}),
+            ('NightElf', ['NightElf'], 'Night Elf', 8, {141}, {148, 331, 406}),
+        ],
+        'starter_until': 20, 'shared_level': 19, 'shared_node': 'Menethil Harbor',
+        'crossing': 'take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor)',
+    },
+}
+CFG = FACTION_CFG[FACTION]
 # Zones/sorts never routed: battlegrounds, raids, PvP island, profession writs, holiday sorts (<0)
 SKIP_SORTS = {3277, 3358, 2597, 2717, 3428, 3456, 2677, 3429, 2159, 1977, 16941, 16606, 1583}
 MAX_DUNGEON_QUEST_LEVEL = 58
@@ -174,7 +220,7 @@ def build_quests():
     for qid_s, q in Q.items():
         qid = int(qid_s)
         races = q.get('requiredRaces') or 0
-        if races and not (races & HORDE):
+        if races and not (races & FMASK):
             continue
         sort = q.get('zoneOrSort') or 0
         if sort <= 0 or sort in SKIP_SORTS:
@@ -201,8 +247,8 @@ def build_quests():
         for kind, src in ((1, N), (2, O)):
             for eid in idx(sb, kind) or []:
                 e = src.get(str(eid))
-                if kind == 1 and e and e.get('friendlyToFaction') == 'A':
-                    continue  # Alliance-only giver: not a Horde quest in practice
+                if kind == 1 and e and e.get('friendlyToFaction') == ENEMY_FLAG:
+                    continue  # giver only talks to the other faction
                 sp = spawns_of(e) if e else []
                 if sp:
                     x.start, x.startName = densest(sp), clean(e.get('name'))
@@ -233,7 +279,7 @@ def build_quests():
         for kind, src in ((1, N), (2, O)):
             for eid in idx(fb, kind) or []:
                 e = src.get(str(eid))
-                if kind == 1 and e and e.get('friendlyToFaction') == 'A':
+                if kind == 1 and e and e.get('friendlyToFaction') == ENEMY_FLAG:
                     continue
                 sp = spawns_of(e) if e else []
                 if sp:
@@ -356,8 +402,12 @@ def grey_gap(L):
 
 
 class Sim:
-    def __init__(self, race_mask, level=1, pos=None, done=None, learned=None, banned=None):
+    def __init__(self, race_mask, level=1, pos=None, done=None, learned=None, banned=None, prior=None):
         self.race_mask = race_mask
+        # Quests some starter guide already covered. The shared route never repeats them;
+        # anything that needs one of them is optional (other races never had it).
+        self.prior = set(prior or ())
+        self.uncertain = set()
         self.banned = set(banned or ())   # quests a previous pass had to drop
         self._dest_cache = {}
         self.dropped = set()
@@ -375,7 +425,7 @@ class Sim:
         return not q.races or (q.races & self.race_mask)
 
     def eligible(self, q, for_route=True):
-        if q.id in self.done or q.id in self.active or q.id in self.banned or not self.race_ok(q) or q.classes:
+        if self.has(q.id) or q.id in self.active or q.id in self.banned or not self.race_ok(q) or q.classes:
             return False
         if not q.start or not q.finish:
             return False
@@ -387,21 +437,24 @@ class Sim:
             return False
         if q.level < self.L - grey_gap(self.L):
             return False
-        if any(p not in self.done for p in q.preAll):
+        if any(not self.has(p) for p in q.preAll):
             return False
-        if q.preAny and not any(p in self.done for p in q.preAny):
+        if q.preAny and not any(self.has(p) for p in q.preAny):
             return False
-        if any(e in self.done or e in self.active for e in q.exclusive):
+        if any(self.has(e) or e in self.active for e in q.exclusive):
             return False
-        if q.breadcrumbFor and (q.breadcrumbFor in self.done or q.breadcrumbFor in self.active):
+        if q.breadcrumbFor and (self.has(q.breadcrumbFor) or q.breadcrumbFor in self.active):
             return False
         if q.hasObjectives and not q.target and not q.dungeon:
             return False
         return True
 
+    def has(self, qid):
+        return qid in self.done or qid in self.prior
+
     def worthwhile(self, q):
         """New pickups should still be worth the time at this level."""
-        if not (q.level >= self.L - 5 or any(p in self.done for p in q.preAll + q.preAny)):
+        if not (q.level >= self.L - 5 or any(self.has(p) for p in q.preAll + q.preAny)):
             return False
         if q.dungeon and q.level > self.L + 5:
             return False            # don't carry dungeon quests for ages
@@ -444,18 +497,20 @@ class Sim:
             self.L += 1
 
     def race_key(self, q):
-        if not q.races or (q.races & HORDE) == HORDE:
+        if not q.races or (q.races & FMASK) == FMASK:
             return ''
-        names = [RACE_NAME[r] for r, b in RACE_BITS.items() if (q.races & b) and r in RACE_NAME]
+        names = [RACE_NAME[r] for r, b in RACE_BITS.items() if (q.races & b) and (b & FMASK)]
         return '; race=' + ','.join(names)
 
     # -- actions
     def accept(self, q):
         opts = [self.at(q.start)]
-        pre = [p for p in q.preAll if p in self.done] + [p for p in q.preAny if p in self.done][:1]
+        pre = [p for p in q.preAll if self.has(p)] + [p for p in q.preAny if self.has(p)][:1]
         if pre:
             opts.append('pre=' + ','.join(map(str, pre)))
-        if q.breadcrumbFor or q.group:
+        if any(p in self.prior or p in self.uncertain for p in pre):
+            self.uncertain.add(q.id)
+        if q.breadcrumbFor or q.group or q.id in self.uncertain:
             opts.append('opt')
         extra = self.race_key(q)
         self.emit(f"[A {q.id} {q.name} | {'; '.join(opts)}{extra}]")
@@ -478,14 +533,15 @@ class Sim:
             opts.append('item=' + ','.join(f"{i}:{c}" for i, c in q.items))
             if q.drop and q.drop < 100:
                 opts.append(f'drop={q.drop}')
-        if q.group:
+        if q.group or q.id in self.uncertain:
             opts.append('opt')
         self.emit(f"[C {q.id} {q.name} | {'; '.join(opts)}{self.race_key(q)}]")
         self.active[q.id]['complete'] = True
         self.pos = q.target
 
     def turnin(self, q):
-        self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{'; opt' if q.group else ''}{self.race_key(q)}]")
+        opt = '; opt' if (q.group or q.id in self.uncertain) else ''
+        self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{self.race_key(q)}]")
         del self.active[q.id]
         self.done.add(q.id)
         gap = self.L - q.level
@@ -596,7 +652,7 @@ class Sim:
         """Quests on these maps that will open up later (level or chain gated)."""
         for m in maps:
             for q in self.map_quests.get(m, ()):
-                if q.id in self.done or q.id in self.active or not self.race_ok(q) or q.classes:
+                if self.has(q.id) or q.id in self.active or not self.race_ok(q) or q.classes:
                     continue
                 if not q.start or not q.finish:
                     continue
@@ -619,7 +675,7 @@ class Sim:
             starts = [q.start for q in self.map_quests.get(mapID, ()) if self.eligible(q)]
             hub = densest([(s[0], s[1], s[2], s[3]) for s in starts]) if starts else None
             if hub:
-                how = '' if same_cont else (' - take the zeppelin (Orgrimmar <-> Undercity / Grom\'gol)')
+                how = '' if same_cont else (' - ' + CFG['crossing'])
                 self.emit(f"[G {hub[1]},{hub[2]} {mapID} Travel to {name}{how}]")
                 self.pos = hub
         return area
@@ -740,7 +796,7 @@ def prune_unfinished(sim):
 
 # ---------------------------------------------------------------- guide writer
 def write_guide(path, name, steps, lo, hi, races=None, next_name=None, knownfp=None):
-    head = [f'#levels {lo}-{hi}', '#faction Horde']
+    head = [f'#levels {lo}-{hi}', f'#faction {FACTION}']
     if races:
         head.append('#race ' + ', '.join(races))
     if knownfp:
@@ -791,44 +847,45 @@ def split_guides(prefix, sim, segments, start_learned, min_levels=4, max_steps=3
 def main():
     os.makedirs(OUTDIR, exist_ok=True)
     out_files = []
-    starts = [
-        # (title prefix, races, race mask, start zone areas, start pos)
-        ('Horde', ['Orc', 'Troll'], 2 | 128, {14, 363}, None),
-        ('Horde', ['Tauren'], 32, {215, 220}, None),
-        ('Horde', ['Scourge'], 16, {85, 154, 130}, None),
-    ]
-    shared_learned = None
-    def run_starter(mask, start_areas, banned):
+    def run_starter(mask, areas, banned):
         sim = Sim(mask, banned=banned)
         index_maps(sim)
-        maps = {m for m, a in sim.map_area.items() if a in start_areas}
+        maps = {m for m, a in sim.map_area.items() if a in areas}
         first = min((q for m in maps for q in sim.map_quests[m] if sim.eligible(q)), key=lambda q: (q.level, q.id))
         sim.pos = first.start
-        segs = sim.run(until_level=13, allowed_maps=maps)
+        segs = sim.run(until_level=CFG['starter_until'], allowed_maps=maps)
         return sim, segs
 
-    for prefix, races, mask, start_areas, _ in starts:
+    shared_start = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
+    starter_done = set()
+    for key, races, display, mask, start_areas, follow_areas in CFG['starters']:
         banned = set(CORR_SKIP)
         for _ in range(6):
-            sim, segs = run_starter(mask, start_areas, banned)
+            sim, segs = run_starter(mask, start_areas | follow_areas, banned)
             if not sim.dropped - banned:
                 break
             banned |= sim.dropped
         prune_unfinished(sim)
         print('  pruned', sim.removed, 'steps for quests not finished in the starter')
+        starter_done |= sim.done
+        # Hand over to the shared route: one travel step to where it begins.
+        here = sim.pos
+        dest = ZONE_NAMES.get(shared_start[3], CFG['shared_node'])
+        how = '' if here and continent(here[3]) == continent(shared_start[3]) else ' - ' + CFG['crossing']
+        sim.emit(f"[G {shared_start[1]},{shared_start[2]} {shared_start[0]} Travel to {CFG['shared_node']}, {dest}{how}]")
         lo, hi = 1, max(sim.L, 2)
-        title = f"Horde 1-{hi} {ZONE_NAMES[min(start_areas)] if min(start_areas) in ZONE_NAMES else ''} ({'/'.join('Undead' if r == 'Scourge' else r for r in races)})"
+        zones = [ZONE_NAMES.get(min(start_areas), '')] + [ZONE_NAMES.get(a, '') for a in sorted(follow_areas)]
+        title = f"{FACTION} 1-{hi} {', '.join(zones)} ({display})"
         steps = [s for s, _ in sim.steps]
-        out_files.append((f'Start_{races[0]}.lua', title, steps, lo, hi, races, None, None))
-        shared_learned = (shared_learned or set(sim.learned)) & set(sim.learned)
+        out_files.append((f'Start_{key}.lua', title, steps, lo, hi, races, None, None))
         print(f'{title}: {len(steps)} steps, ends level {sim.L}, learned {sorted(sim.learned)}')
 
-    # Shared route from level 12 at the Crossroads
+    # Shared route from the faction's hand-over point
     banned = set()
     for it in range(10):
-        sim = Sim(HORDE, level=12, banned=banned)
+        sim = Sim(FMASK, level=CFG['shared_level'], banned=banned, prior=starter_done)
         index_maps(sim)
-        sim.pos = next(fm for fm in FMS if fm['node'] == 'Crossroads')['loc']
+        sim.pos = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
         segs = sim.run(until_level=60)
         new = sim.dropped - banned
         print(f'  pass {it + 1}: level {sim.L}, {len(sim.steps)} steps, dropped {len(new)} new')
@@ -838,7 +895,7 @@ def main():
     remap = prune_unfinished(sim)
     segs = [(m, remap[a], remap[b], l0, l1) for m, a, b, l0, l1 in segs]
     print('  pruned', sim.removed, 'steps for quests the route never finishes')
-    guides = split_guides('Horde', sim, segs, set())
+    guides = split_guides(FACTION, sim, segs, set())
     learned_so_far = set()
     names = [g['title'] for g in guides]
     for i, g in enumerate(guides):
@@ -850,7 +907,7 @@ def main():
             if i > 0:
                 prev = out_files[-1]
                 out_files[-1] = prev[:6] + (g['title'],) + prev[7:]
-        out_files.append((f'Horde_{i + 1:02d}.lua', g['title'], steps, g['l0'], hi, None, nxt, set(learned_so_far)))
+        out_files.append((f'{FACTION}_{i + 1:02d}.lua', g['title'], steps, g['l0'], hi, None, nxt, set(learned_so_far)))
         for s in steps:
             m = re.match(r'\[P ([^|\]]+)', s)
             if m:
@@ -868,7 +925,7 @@ def main():
     for g in guides:
         print('  ', g['title'], g['b'] - g['a'], 'steps')
     json.dump({'files': [f[0] for f in out_files], 'titles': [f[1] for f in out_files]},
-              open(os.path.join(SP, 'out', 'Horde_index.json'), 'w'))
+              open(os.path.join(SP, 'out', f'{FACTION}_index.json'), 'w'))
 
 
 if __name__ == '__main__':

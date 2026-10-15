@@ -206,4 +206,5 @@ Starts from A Letter to Yvette, which drops in this area.
 [A 460 Resting in Pieces | at=65.7,24.0,1421]
 Starts from A Talking Head, which drops in this area.
 [T 460 Resting in Pieces | at=67.9,24.9,1421]
+[G 51.5,30.34 1413 Travel to Crossroads, The Barrens - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol)]
 ]==])
