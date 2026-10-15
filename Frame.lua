@@ -17,6 +17,7 @@ local WHY_TEXT = {
     arrived = "You got there. Click to undo.",
     implied = "Done because the next quest step is already done.",
     chain   = "Done because you're already further along this quest chain.",
+    notinlog = "Skipped: this quest isn't in your quest log. Pick it up and this step comes back.",
     outleveled = "Skipped automatically: this quest is grey for your level and you never started it. Click to do it anyway.",
     skipped = "Skipped manually. Click to un-skip.",
     none    = "Completes automatically. Click only to skip it.",

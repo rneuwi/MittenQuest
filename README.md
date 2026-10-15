@@ -13,25 +13,26 @@ by the minimap; everything else is in the guide window's gear menu.
 
 ## What's in it
 
-- Horde 1–60 route: race starters (Orc/Troll, Tauren, Undead) into a shared route,
-  picked automatically for your level, race and faction.
+- Horde and Alliance 1–60 routes: race starters (Orc/Troll, Tauren, Undead; Human,
+  Dwarf/Gnome, Night Elf) into a shared route per faction, picked automatically for your
+  level, race and faction.
 - Steps complete themselves from game events and step back if you undo them in game
   (abandon a quest and the guide returns to it). Skip / skip quest / undo buttons.
 - Arrow and map waypoint for every step, with cave-entrance routing.
-- Quest pins with level, requirements and giver for 1,500+ Horde quests.
+- Quest pins with level, requirements and giver for 2,600+ quests (each faction sees its own).
 - Expected kill counts from real drop rates; flight paths learned and used along the way;
   dungeon quests batched into one run per dungeon.
 
 ## Where the route comes from
 
-`Guides/Horde/` and `Data/Quests.lua` are **generated** from
+`Guides/Horde/`, `Guides/Alliance/` and `Data/Quests.lua` are **generated** from
 [QuestieDB](https://github.com/Questie/QuestieDB)'s Forever dataset by simulating a
 character leveling 1–60 (see `tools/generator/README.md`). Don't edit generated files by
 hand — put fixes in `tools/generator/corrections.json` and rebuild:
 
 ```sh
 tools/generator/build.sh          # needs python3 + `pip install lupa`
-lua5.1 tools/lint.lua Guides/Horde/*.lua
+lua5.1 tools/lint.lua Guides/*/*.lua
 ```
 
 ## Automation

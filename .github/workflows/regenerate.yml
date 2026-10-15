@@ -30,7 +30,7 @@ jobs:
         run: bash tools/generator/build.sh
 
       - name: Check the whole route
-        run: lua5.1 tools/lint.lua Guides/Horde/*.lua
+        run: lua5.1 tools/lint.lua Guides/*/*.lua
 
       - name: Read data version
         id: ver
@@ -44,6 +44,6 @@ jobs:
           commit-message: "Route update from QuestieDB ${{ steps.ver.outputs.qdb }}"
           title: "Route update from QuestieDB ${{ steps.ver.outputs.qdb }}"
           body: |
-            Automatic rebuild of `Guides/Horde/` and `Data/Quests.lua` from QuestieDB `${{ steps.ver.outputs.qdb }}`.
+            Automatic rebuild of `Guides/` and `Data/Quests.lua` from QuestieDB `${{ steps.ver.outputs.qdb }}`.
             The route checker passed. Review the diff, then merge and tag a release to publish.
           labels: data-update

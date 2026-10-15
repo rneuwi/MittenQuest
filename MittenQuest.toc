@@ -29,10 +29,10 @@ Frame.lua
 Data\Quests.lua
 Data\Entrances.lua
 
-# Guides (generated Horde 1-60 route; starters first, then in level order)
+# Guides (generated 1-60 routes; race starters first, then the shared route in level order)
 Guides\Horde\Start_Orc.lua
-Guides\Horde\Start_Tauren.lua
 Guides\Horde\Start_Scourge.lua
+Guides\Horde\Start_Tauren.lua
 Guides\Horde\Horde_01.lua
 Guides\Horde\Horde_02.lua
 Guides\Horde\Horde_03.lua
@@ -43,3 +43,16 @@ Guides\Horde\Horde_07.lua
 Guides\Horde\Horde_08.lua
 Guides\Horde\Horde_09.lua
 Guides\Horde\Horde_10.lua
+Guides\Alliance\Start_Dwarf.lua
+Guides\Alliance\Start_Human.lua
+Guides\Alliance\Start_NightElf.lua
+Guides\Alliance\Alliance_01.lua
+Guides\Alliance\Alliance_02.lua
+Guides\Alliance\Alliance_03.lua
+Guides\Alliance\Alliance_04.lua
+Guides\Alliance\Alliance_05.lua
+Guides\Alliance\Alliance_06.lua
+Guides\Alliance\Alliance_07.lua
+Guides\Alliance\Alliance_08.lua
+Guides\Alliance\Alliance_09.lua
+Guides\Alliance\Alliance_10.lua

@@ -220,6 +220,12 @@ function FG:Evaluate(steps, p)
             elseif nextQuestDone then r = "implied" end
         elseif S:IsSatisfied(s) then
             r = "game"
+        elseif (s.type == "COMPLETE" or s.type == "TURNIN") and s.questID
+            and not C_QuestLog.GetLogIndexForQuestID(s.questID) then
+            -- You don't have this quest (picked up in an earlier guide you skipped, or
+            -- abandoned). Nothing to do here; if its pick-up step is earlier and undone,
+            -- the cursor stops there first anyway.
+            r = "notinlog"
         elseif s.questID and passed[s.questID] then
             r = "chain"      -- a later quest in its chain is already started/done
         elseif skipGrey and not p.force[i] and S:IsOutleveled(s, guide) then
@@ -472,6 +478,12 @@ function FG:TAXIMAP_OPENED()
         if node.state == Enum.FlightPathState.Current or node.state == Enum.FlightPathState.Reachable then
             ns.Steps:RecordFlightNode(node.name)
         end
+    end
+    -- Talking to the flight master the guide sent you to counts as learning that path,
+    -- even if the guide's town name doesn't exactly match the game's node name.
+    local step = self:GetCurrentStep()
+    if step and step.type == "GETFP" and step.node then
+        ns.Steps:RecordFlightNode(step.node)
     end
     self:Advance()
 end
