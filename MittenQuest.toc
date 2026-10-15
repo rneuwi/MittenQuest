@@ -1,4 +1,4 @@
-## Interface: 16001, 120105
+## Interface: 16001
 ## Title: Mitten|cff33ccffQuest|r
 ## Notes: Free, lightweight 1-60 leveling guide with step tracking and waypoints.
 ## Author: Mitten Technology
@@ -11,6 +11,7 @@
 ## OptionalDeps: TomTom, HereBeDragons
 ## X-License: GPL-3.0
 ## X-Category: Quests
+## X-Curse-Project-ID: 1745749
 
 # Libraries (Ace3 + LibStub)
 embeds.xml
