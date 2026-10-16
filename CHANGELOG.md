@@ -10,6 +10,17 @@
   many kills) to grind first. Same if you fall a level or more behind.
 - Turn this off in the gear menu under **Pace**.
 
+**Smarter routes**
+- Routes now account for time, not just distance: how many mobs you'll need to kill (using
+  real drop rates), travel, flights, boats and dungeon runs.
+- Quests that take too long for what they give (very low drop rates, long detours, single
+  rare spawns) are dropped, and the route uses better quests instead.
+- **Hearthstone steps:** the guide tells you when to make an inn your home at the hub you're
+  working from, and when to hearth back instead of running.
+- Quest targets with only one or two spawn points now carry a note, so you know to group up
+  or come back if others are waiting for them.
+- Fixed a quest that asked for 6,000 items ("Super Reaper 6000").
+
 **Better level estimates**
 - Quests new to WoW: Forever now count toward the route's level estimates (they were counted
   as giving no XP), so expected levels are more accurate.

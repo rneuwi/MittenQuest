@@ -117,7 +117,12 @@ function FG:OnEnable()
     self:RegisterEvent("TAXIMAP_OPENED")
     self:RegisterEvent("PLAYER_CONTROL_LOST")
     self:RegisterEvent("PLAYER_CONTROL_GAINED")
-    self:RegisterEvent("HEARTHSTONE_BOUND", "RequestAdvance")
+    -- Making an inn your home completes the "set hearth" step even if the guide's town
+    -- name differs from the game's inn name.
+    self:RegisterEvent("HEARTHSTONE_BOUND", function()
+        self:CompleteCurrent("SETHEARTH")
+        self:RequestAdvance()
+    end)
     self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
     -- Map pins
     self:RegisterEvent("ZONE_CHANGED_NEW_AREA", function() ns.QuestPins:OnZoneChanged() end)

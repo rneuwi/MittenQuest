@@ -60,6 +60,44 @@ def kill_xp_factor(L):
     return 2.3 if L < 6 else 2.0 if L < 20 else 2.2
 LOG_LIMIT = 20
 
+# ---- time model (seconds). Used to judge whether a quest is worth its time, to decide
+# when hearthing beats travelling, and to estimate /played. calibrate.py can check these
+# against real step timings from the pace log.
+YARDS_PER_MAP_UNIT = 35        # a zone map is roughly 3,500 yards across
+RUN_SPEED, MOUNT_SPEED, MOUNT_LEVEL = 7.0, 11.2, 40
+QUEST_NPC_SECONDS = 8          # talking to a quest giver / turning in
+OBJECT_SECONDS = 12            # clicking one quest object
+FLIGHT_SECONDS = 150           # average flight incl. landing
+ZONE_WALK_SECONDS = 420        # running to a neighbouring zone without a flight path
+CROSSING_SECONDS = 900         # boat / zeppelin incl. waiting
+DUNGEON_SECONDS = 5400         # finding a group + the run
+HEARTH_SECONDS = 10
+HEARTH_COOLDOWN = 3600
+RESPAWN_WAIT_SECONDS = 240     # expected wait on a target with only one or two spawn points
+WORTH_RATIO = 0.55             # drop quests below this share of a typical quest's XP/hour
+
+
+def seconds_per_kill(L):
+    """Fight + loot + finding the next mob, solo, at your level."""
+    return 14 + 0.2 * L
+
+
+def kill_xp(L):
+    return 45 + 5 * L          # same-level mob, Classic formula (unchanged in Forever)
+
+
+def speed(L):
+    return MOUNT_SPEED if L >= MOUNT_LEVEL else RUN_SPEED
+
+
+def parse_count(text, name, default):
+    """'Kill 10 Mottled Boars' -> 10 (number shortly before the name's last word)."""
+    if name:
+        m = re.search(r'(\d+)\s+(?:[\w\'-]+\s+){0,3}?' + re.escape(name.split(' ')[-1].rstrip('s')), text, re.I)
+        if m and 0 < int(m.group(1)) <= 60 and m.group(1) not in name:
+            return int(m.group(1))
+    return default
+
 ZONE_NAMES = {
     14: 'Durotar', 363: 'Valley of Trials', 215: 'Mulgore', 220: 'Red Cloud Mesa', 85: 'Tirisfal Glades',
     154: 'Deathknell', 130: 'Silverpine Forest', 17: 'The Barrens', 406: 'Stonetalon Mountains',
@@ -332,14 +370,21 @@ def build_quests():
         # objectives
         obj = q.get('objectives') or {}
         pts, mobs, items, elite = [], [], [], False
+        x.kills, x.objects, x.contested = 0, 0, None   # time model inputs
         for o in idx(obj, 1) or []:
             nid = o[0] if isinstance(o, list) else o
             e = N.get(str(nid))
             if e:
-                pts += spawns_of(e)
-                mobs.append(clean(e.get('name')))
+                sp = spawns_of(e)
+                pts += sp
+                name = clean(e.get('name'))
+                mobs.append(name)
                 if (e.get('rank') or 0) in (1, 2, 3):
                     elite = True
+                few = 0 < len(sp) <= 2
+                x.kills += parse_count(x.text, name, 1 if few else 8)
+                if few:
+                    x.contested = (name, len(sp))
         for kc in idx(obj, 5) or []:
             ids = kc[0] if isinstance(kc, list) and kc and isinstance(kc[0], list) else []
             for nid in ids:
@@ -355,7 +400,11 @@ def build_quests():
             oid = o[0] if isinstance(o, list) else o
             e = O.get(str(oid))
             if e:
-                pts += spawns_of(e)
+                sp = spawns_of(e)
+                pts += sp
+                x.objects += parse_count(x.text, clean(e.get('name')), 1)
+                if 0 < len(sp) <= 2 and not x.contested:
+                    x.contested = (clean(e.get('name')), len(sp))
         best_drop = None
         for o in idx(obj, 3) or []:
             iid = o[0] if isinstance(o, list) else o
@@ -365,6 +414,8 @@ def build_quests():
             iname = clean(it.get('name'))
             m = re.search(r'(\d+)\s+(?:\w+\s+){0,3}?' + re.escape(iname.split(' ')[-1]), x.text, re.I)
             count = int(m.group(1)) if m else None
+            if count is not None and str(count) in iname:
+                count = None   # the number is part of the item's name ("Super Reaper 6000 Blueprints")
             rates = S['drops'].get(str(iid)) or {}
             srcs = []
             for nid in it.get('npcDrops') or []:
@@ -385,6 +436,12 @@ def build_quests():
                 mobs.append(clean(e.get('name')))
                 if rate and (best_drop is None or rate < best_drop):
                     best_drop = rate
+                n = count or 1
+                x.kills += math.ceil(n / (rate / 100)) if rate else n * 2
+                if 0 < len(sp) <= 2 and not x.contested:
+                    x.contested = (clean(e.get('name')), len(sp))
+            elif it.get('objectDrops'):
+                x.objects += count or 1
             items.append((iid, count))
         te = q.get('triggerEnd')
         if te and isinstance(te, list) and len(te) > 1:
@@ -417,6 +474,23 @@ for nid, name in FP_NODES.items():
             FMS.append({'id': nid, 'node': name, 'loc': sp[0]})
 
 
+# Innkeepers (for hearthstone steps), named after the nearest flight path town when close.
+INNS = []
+for nid, e in N.items():
+    if (e.get('npcFlags') or 0) & 128 and e.get('subName') == 'Innkeeper' and e.get('friendlyToFaction') != ENEMY_FLAG:
+        sp = spawns_of(e)
+        if sp:
+            INNS.append({'id': int(nid), 'name': clean(e.get('name')), 'loc': sp[0], 'town': None})
+
+
+def _name_inns():
+    for inn in INNS:
+        near = [(math.hypot(fm['loc'][1] - inn['loc'][1], fm['loc'][2] - inn['loc'][2]), fm['node'])
+                for fm in FMS if fm['loc'][0] == inn['loc'][0]]
+        near = [x for x in near if x[0] <= 12]
+        inn['town'] = min(near)[1] if near else ZONE_NAMES.get(inn['loc'][3], 'the inn')
+
+
 def continent(area):
     if area in KALIMDOR:
         return 'K'
@@ -431,6 +505,58 @@ def dist(a, b):
     if a[0] != b[0]:
         return 400 if continent(a[3]) == continent(b[3]) else 900
     return math.hypot(a[1] - b[1], a[2] - b[2])
+
+
+_name_inns()
+
+# Value of finishing a chain step: XP of the quests it unlocks counts partly toward it.
+FOLLOW_XP = collections.Counter()
+for _q in QUESTS.values():
+    for _p in set(_q.preAll) | set(_q.preAny):
+        FOLLOW_XP[_p] += _q.xp
+for _q in QUESTS.values():
+    if _q.breadcrumbFor and _q.breadcrumbFor in QUESTS:
+        FOLLOW_XP[_q.id] += QUESTS[_q.breadcrumbFor].xp
+
+
+def travel_seconds(a, b, L):
+    if a is None or b is None:
+        return 0
+    if a[0] != b[0]:
+        return ZONE_WALK_SECONDS if continent(a[3]) == continent(b[3]) else CROSSING_SECONDS
+    return math.hypot(a[1] - b[1], a[2] - b[2]) * YARDS_PER_MAP_UNIT / speed(L)
+
+
+def objective_seconds(q, L):
+    return (q.kills * seconds_per_kill(L) + min(q.objects, 30) * OBJECT_SECONDS
+            + (RESPAWN_WAIT_SECONDS if q.contested else 0))
+
+
+def xp_mult(q, L):
+    gap = L - q.level
+    return 1 if gap < 6 else 0.2 if gap >= 10 else 1 - (gap - 5) * 0.2
+
+
+def quest_rate(q, L):
+    """Estimated XP per second for doing this quest: reward + kills along the way + part of
+    what it unlocks, over objective time + the detour it adds (half, since trips are shared)."""
+    detour = 0.5 * (travel_seconds(q.start, q.target or q.start, L) + travel_seconds(q.target or q.start, q.finish, L))
+    seconds = objective_seconds(q, L) + detour + 2 * QUEST_NPC_SECONDS
+    value = q.xp * xp_mult(q, L) + q.kills * kill_xp(L) + 0.5 * FOLLOW_XP.get(q.id, 0)
+    return value / max(seconds, 30)
+
+
+def _typical_rates():
+    out = {}
+    pool = [q for q in QUESTS.values() if q.start and q.finish and not q.classes and not q.elite
+            and not q.dungeon and (q.target or not q.hasObjectives)]
+    for L in range(1, 61):
+        rates = sorted(quest_rate(q, L) for q in pool if L - 2 <= q.level <= L + 3)
+        out[L] = rates[len(rates) // 2] if rates else 0
+    return out
+
+
+TYPICAL_RATE = _typical_rates()
 
 
 # ---------------------------------------------------------------- simulation
@@ -456,6 +582,11 @@ class Sim:
         self.steps = []           # (line, level) tuples
         self.carried_dungeon = collections.defaultdict(set)
         self.maps_visited = set()
+        self.t = 0.0                  # simulated /played seconds
+        self.bind = None              # inn your hearthstone is set to
+        self.hearth_ready = 0.0
+        self.slow = set()             # quests skipped as not worth the time
+        self.level_times = {}
 
     # -- rules
     def race_ok(self, q):
@@ -497,6 +628,11 @@ class Sim:
             return False            # don't carry dungeon quests for ages
         if not q.dungeon and q.level > self.L + 4:
             return False
+        # Not worth the time compared with other quests at this level: skip it so the route
+        # fills the time with better ones.
+        if not q.dungeon and q.hasObjectives and quest_rate(q, self.L) < WORTH_RATIO * TYPICAL_RATE[self.L]:
+            self.slow.add(q.id)
+            return False
         # Quests that send you to other maps (objectives or turn-in) are only taken when
         # those maps are places we'd go anyway: they have a few quests for our level.
         for m in {q.finish[0], q.target[0] if q.target else q.start[0]}:
@@ -520,6 +656,51 @@ class Sim:
         """Can be finished right here, right now (used when the log is nearly full)."""
         return not q.hasObjectives or (q.target and q.target[0] == mapID and self.can_do_objectives(q))
 
+    # -- clock and hearthstone
+    def go(self, loc):
+        if loc is not None and self.pos is not None:
+            self.t += travel_seconds(self.pos, loc, self.L)
+        self.pos = loc
+
+    def hearth_ready_now(self):
+        return self.bind is not None and self.t >= self.hearth_ready
+
+    def use_hearth(self):
+        self.emit(f"[H {self.bind['town']}]")
+        self.t += HEARTH_SECONDS
+        self.hearth_ready = self.t + HEARTH_COOLDOWN
+        self.pos = self.bind['loc']
+
+    def maybe_hearth_to(self, loc):
+        """Hearth instead of running when the next stop is at your inn's town and far away."""
+        if not self.hearth_ready_now() or loc is None or self.pos is None:
+            return
+        inn = self.bind['loc']
+        if loc[0] != inn[0] or math.hypot(loc[1] - inn[1], loc[2] - inn[2]) > 12:
+            return
+        if self.pos[0] != inn[0] or math.hypot(self.pos[1] - loc[1], self.pos[2] - loc[2]) >= 45:
+            self.use_hearth()
+
+    def consider_bind(self, mapID):
+        """Make the inn at this zone's main quest hub your home while there's real work here."""
+        if self.bind and self.bind['loc'][0] == mapID:
+            return
+        if self.zone_score(mapID) < 0.6 * XP_TO_LEVEL[min(self.L, 59) - 1]:
+            return
+        starts = [q.start for q in self.map_quests.get(mapID, ()) if self.eligible(q)]
+        hub = densest(starts) if starts else None
+        inns = [i for i in INNS if i['loc'][0] == mapID]
+        if not hub or not inns:
+            return
+        inn = min(inns, key=lambda i: math.hypot(i['loc'][1] - hub[1], i['loc'][2] - hub[2]))
+        if math.hypot(inn['loc'][1] - hub[1], inn['loc'][2] - hub[2]) > 15:
+            return
+        self.go(inn['loc'])
+        self.emit(f"[S {inn['town']} | {self.at(inn['loc'])}]")
+        self.emit(f"Talk to {inn['name']} and make this inn your home.")
+        self.t += QUEST_NPC_SECONDS
+        self.bind = inn
+
     # -- emit
     def emit(self, line):
         # Second element: the level the simulated player has when reaching this step,
@@ -535,6 +716,7 @@ class Sim:
         while self.L < 60 and self.xp >= XP_TO_LEVEL[self.L - 1]:
             self.xp -= XP_TO_LEVEL[self.L - 1]
             self.L += 1
+            self.level_times[self.L] = self.t
 
     def race_key(self, q):
         if not q.races or (q.races & FMASK) == FMASK:
@@ -544,6 +726,8 @@ class Sim:
 
     # -- actions
     def accept(self, q):
+        self.go(q.start)
+        self.t += QUEST_NPC_SECONDS
         opts = [self.at(q.start)]
         pre = [p for p in q.preAll if self.has(p)] + [p for p in q.preAny if self.has(p)][:1]
         if pre:
@@ -566,6 +750,8 @@ class Sim:
             self.carried_dungeon[q.dungeon].add(q.id)
 
     def complete(self, q):
+        self.go(q.target)
+        self.t += objective_seconds(q, self.L)
         opts = [self.at(q.target)]
         if q.mobs:
             opts.append('mob=' + ' / '.join(q.mobs))
@@ -576,10 +762,17 @@ class Sim:
         if q.group or q.id in self.uncertain:
             opts.append('opt')
         self.emit(f"[C {q.id} {q.name} | {'; '.join(opts)}{self.race_key(q)}]")
+        if q.contested:
+            name, n = q.contested
+            spots = 'one spawn point' if n == 1 else f'{n} spawn points'
+            self.emit(f"{name} has only {spots}. If others are waiting for it, group up to share it, "
+                      f"or skip this step and come back.")
         self.active[q.id]['complete'] = True
         self.pos = q.target
 
     def turnin(self, q):
+        self.go(q.finish)
+        self.t += QUEST_NPC_SECONDS
         opt = '; opt' if (q.group or q.id in self.uncertain) else ''
         self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{self.race_key(q)}]")
         del self.active[q.id]
@@ -592,9 +785,9 @@ class Sim:
     def maybe_learn_fp(self, radius=12):
         for fm in FMS:
             if fm['node'] not in self.learned and self.pos and dist(self.pos, fm['loc']) <= radius:
+                self.go(fm['loc'])
                 self.emit(f"[P {fm['node']} | {self.at(fm['loc'])}]")
                 self.learned.add(fm['node'])
-                self.pos = fm['loc']
 
     def fm_on_map(self, mapID):
         return [fm for fm in FMS if fm['loc'][0] == mapID]
@@ -626,6 +819,7 @@ class Sim:
     def run_map(self, mapID, area):
         """Quest on one map until nothing worthwhile is left."""
         self.maps_visited.add(mapID)
+        self.consider_bind(mapID)
         guard = 0
         while guard < 2000:
             guard += 1
@@ -633,15 +827,16 @@ class Sim:
             if not act:
                 break
             kind, q = act
+            self.maybe_hearth_to({'A': q.start, 'C': q.target, 'T': q.finish}[kind])
             getattr(self, {'A': 'accept', 'C': 'complete', 'T': 'turnin'}[kind])(q)
             self.maybe_learn_fp()
             self.check_dungeons(area)
         # learn this zone's flight path before leaving if we never walked past it
         for fm in self.fm_on_map(mapID):
             if fm['node'] not in self.learned:
+                self.go(fm['loc'])
                 self.emit(f"[P {fm['node']} | {self.at(fm['loc'])}]")
                 self.learned.add(fm['node'])
-                self.pos = fm['loc']
 
     def check_dungeons(self, area, force=False):
         for dname, qids in list(self.carried_dungeon.items()):
@@ -661,6 +856,7 @@ class Sim:
                 for q in qids:
                     self.active[q]['complete'] = True
                 del self.carried_dungeon[dname]
+                self.t += DUNGEON_SECONDS
                 self.add_xp(XP_TO_LEVEL[min(self.L, 59) - 1] * 0.5)  # XP from the run itself
 
     # -- zone choice
@@ -706,9 +902,14 @@ class Sim:
         dest_fms = [fm for fm in self.fm_on_map(mapID) if fm['node'] in self.learned]
         here_fms = [fm for fm in FMS if self.pos and fm['loc'][0] == self.pos[0] and fm['node'] in self.learned]
         same_cont = self.pos and continent(self.pos[3]) == continent(area)
+        if self.hearth_ready_now() and self.bind['loc'][0] == mapID and self.pos and self.pos[0] != mapID:
+            self.use_hearth()
+            return area
         if dest_fms and here_fms:
             fm = dest_fms[0]
+            self.go(here_fms[0]['loc'])
             self.emit(f"[F {fm['node']}]")
+            self.t += FLIGHT_SECONDS
             self.pos = fm['loc']
         else:
             # head for the zone's busiest quest hub
@@ -717,6 +918,7 @@ class Sim:
             if hub:
                 how = '' if same_cont else (' - ' + CFG['crossing'])
                 self.emit(f"[G {hub[1]},{hub[2]} {mapID} Travel to {name}{how}]")
+                self.t += ZONE_WALK_SECONDS if same_cont else CROSSING_SECONDS
                 self.pos = hub
         return area
 
@@ -771,7 +973,9 @@ class Sim:
                 target = min(60, self.L + 1)
                 self.emit(f"[L {target}]")
                 self.emit("Grind mobs around your level here; more quests open at the next level.")
-                self.add_xp(XP_TO_LEVEL[self.L - 1] - self.xp)
+                need = XP_TO_LEVEL[self.L - 1] - self.xp
+                self.t += need / kill_xp(self.L) * seconds_per_kill(self.L)
+                self.add_xp(need)
                 grinds += 1
                 continue
             break
@@ -929,7 +1133,9 @@ def main():
         title = f"{FACTION} 1-{hi} {', '.join(zones)} ({display})"
         steps = with_expected_levels(sim.steps)
         out_files.append((f'Start_{key}.lua', title, steps, lo, hi, races, None, None))
-        print(f'{title}: {len(steps)} steps, ends level {sim.L}, learned {sorted(sim.learned)}')
+        print(f'{title}: {len(steps)} steps, ends level {sim.L}, ~{sim.t / 3600:.1f}h played, '
+              f'hearth steps {sum(1 for l in steps if l.startswith(("[S ", "[H ")))}, '
+              f'skipped as slow {len(sim.slow - sim.done)}')
 
     # Shared route from the faction's hand-over point
     banned = set()
@@ -972,7 +1178,11 @@ def main():
         if races and first_shared:
             nxt = first_shared
         write_guide(os.path.join(OUTDIR, fname), title, steps, lo, hi, races, nxt, known)
-    print(f'shared: {len(sim.steps)} steps in {len(guides)} guides, ends level {sim.L}')
+    print(f'shared: {len(sim.steps)} steps in {len(guides)} guides, ends level {sim.L}, '
+          f'~{sim.t / 3600:.1f}h played from level {CFG["shared_level"]}; '
+          f'hours at level 30/40/50/60: ' + ' / '.join(f'{sim.level_times.get(L, 0) / 3600:.0f}' for L in (30, 40, 50, 60)) +
+          f'; grind levels {sum(1 for l, _ in sim.steps if l.startswith("[L "))}; skipped as slow {len(sim.slow - sim.done)}')
+    globals()['LAST_SHARED_SIM'] = sim
     for g in guides:
         print('  ', g['title'], g['b'] - g['a'], 'steps')
     json.dump({'files': [f[0] for f in out_files], 'titles': [f[1] for f in out_files]},

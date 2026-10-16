@@ -35,6 +35,20 @@ Every step in the generated guides carries `xl=` (the simulated level when you r
 which the addon compares with the player's real level for the pace display. Quests without an
 XP value in the data (mostly new Forever quests) get the median XP of quests within two levels.
 
+## Time model
+
+The simulator keeps a clock (`seconds_per_kill`, travel from map distance, flights, boats,
+dungeon runs, respawn waits; constants near the top of `gen_route.py`). It's used to:
+- skip quests whose XP per hour (reward + kills on the way + part of what they unlock, over
+  objective time + detour) is below `WORTH_RATIO` of a typical quest at that level, so the
+  route spends the time on better quests;
+- set the hearthstone at the inn of the hub being worked from and hearth back when that beats
+  travelling (respecting the cooldown);
+- estimate /played per level (printed when generating: currently about 95-100 hours for 1-60).
+
+`calibrate.py` also lists the slowest steps from real players' timestamps, the way to find
+crowded or badly placed steps that the data alone can't predict.
+
 ## How the route is built
 
 `gen_route.py` simulates a character: on each map it picks the nearest worthwhile action

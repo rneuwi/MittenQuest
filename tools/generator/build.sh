@@ -19,6 +19,7 @@ for F in $FACTIONS; do
   rm -f "$ADDON/Guides/$F"/*.lua
   cp "$WORK/gen/$F"/*.lua "$ADDON/Guides/$F/"
 done
+python3 "$HERE/update_toc.py" "$ADDON"
 python3 "$HERE/gen_questdb.py" "$WORK" "$WORK/gen/Quests.lua"
 cp "$WORK/gen/Quests.lua" "$ADDON/Data/Quests.lua"
 ( cd "$QDB" && git rev-parse --short HEAD ) > "$ADDON/Data/QUESTIEDB_VERSION" 2>/dev/null || true
