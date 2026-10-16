@@ -54,8 +54,41 @@ Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [T 2929 The Grand Betrayal | at=68.8,49.0,1455; xl=34.8]
 [T 98300 Word to Ironforge | at=39.1,56.2,1455; xl=34.9]
 [P Ironforge | at=55.5,47.74,1455; xl=35.0]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=35.0]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[A 1947 Journey to the Marsh | at=27.2,8.3,1455; class=MAGE; xl=35.0]
+[T 1947 Journey to the Marsh | at=46.1,57.1,1445; class=MAGE; xl=35.0]
+[A 1949 Hidden Secrets | at=46.1,57.1,1445; pre=1947; class=MAGE; xl=35.0]
+[T 1949 Hidden Secrets | at=78.3,75.7,1441; class=MAGE; xl=35.0]
+[A 1950 Get the Scoop | at=78.3,75.7,1441; pre=1949; class=MAGE; xl=35.0]
+[C 1950 Get the Scoop | at=79.6,75.6,1441; mob="Plucky" Johnson; class=MAGE; xl=35.0]
+"Plucky" Johnson has only one spawn point. If others are waiting for it, group up to share it.
+[T 1950 Get the Scoop | at=78.3,75.7,1441; class=MAGE; xl=35.0]
+[R Warlock - Ironforge | at=50.08,7.45,1455; class=WARLOCK; xl=35.0]
+Time to train: head to Alexander Calder in Ironforge for your new Warlock spells. The arrow takes you back to the route afterwards.
+[A 4783 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; pre=4782; class=WARLOCK; xl=35.0]
+[C 4783 Components for the Enchanted Gold Bloodrobe | at=51.5,75.6,1443; mob=Hatefury Trickster / Lesser Infernal; item=6989:10,6990:1; drop=6; class=WARLOCK; xl=35.0]
+[T 4783 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; class=WARLOCK; xl=35.0]
+[A 4784 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; pre=4783; class=WARLOCK; xl=35.0]
+[C 4784 Components for the Enchanted Gold Bloodrobe | at=25.8,30.6,1417; mob=Xizk Goodstitch / Burning Exile; item=6991:2; drop=1; class=WARLOCK; xl=35.0]
+Xizk Goodstitch has only one spawn point. If others are waiting for it, group up to share it.
+[T 4784 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; class=WARLOCK; xl=35.0]
+[A 4786 The Completed Robe | at=62.5,35.5,1413; pre=4784; class=WARLOCK; xl=35.0]
+[C 4786 The Completed Robe | at=62.5,35.5,1413; mob=Menara Voidrender; class=WARLOCK; xl=35.0]
+Menara Voidrender has only one spawn point. If others are waiting for it, group up to share it.
+[T 4786 The Completed Robe | at=62.5,35.5,1413; class=WARLOCK; xl=35.0]
+[A 4965 Knowledge of the Orb of Orahil | at=50.4,5.7,1455; opt; class=WARLOCK; xl=35.0]
+[T 4965 Knowledge of the Orb of Orahil | at=62.5,35.5,1413; opt; class=WARLOCK; xl=35.0]
 [R Warrior - Ironforge | at=65.9,88.41,1455; class=WARRIOR; xl=35.0]
 Time to train: head to Bilban Tosslespanner in Ironforge for your new Warrior spells. The arrow takes you back to the route afterwards.
+[A 1718 The Islander | at=70.3,90.7,1455; class=WARRIOR; xl=35.0]
+[T 1718 The Islander | at=68.6,49.2,1413; class=WARRIOR; xl=35.0]
+[A 1719 The Affray | at=68.6,49.2,1413; pre=1718; class=WARRIOR; xl=35.0]
+[C 1719 The Affray | at=68.6,48.7,1413; mob=Big Will; class=WARRIOR; xl=35.0]
+Big Will has only one spawn point. If others are waiting for it, group up to share it.
+[T 1719 The Affray | at=68.6,49.2,1413; class=WARRIOR; xl=35.0]
+[A 1791 The Windwatcher | at=68.6,49.2,1413; pre=1719; class=WARRIOR; xl=35.0]
+[T 1791 The Windwatcher | at=80.5,66.9,1416; class=WARRIOR; xl=35.0]
 [R Paladin - Ironforge | at=23.13,6.14,1455; class=PALADIN; xl=35.0]
 Time to train: head to Brandur Ironhammer in Ironforge for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Rogue - Ironforge | at=51.5,15.33,1455; class=ROGUE; xl=35.0]

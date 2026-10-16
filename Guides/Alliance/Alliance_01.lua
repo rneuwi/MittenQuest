@@ -24,8 +24,22 @@ Find a group for The Deadmines. Quests you skip there are dropped automatically.
 [T 2040 Underground Assault | at=62.6,34.1,1453; xl=20.8]
 [A 92750 Detonation at a Distance | at=61.9,30.6,1453; xl=21.0]
 [A 95161 Remember That I Love You | at=56.3,54.0,1453; xl=21.0]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=21.0]
+High Priestess Laurena is right here: pick up your new Priest spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 5645 A Lack of Fear | at=49.5,44.6,1453; class=PRIEST; race=Dwarf; xl=21.0]
+[T 5645 A Lack of Fear | at=24.7,8.2,1455; class=PRIEST; race=Dwarf; xl=21.0]
+[A 5673 Elune's Grace | at=49.5,44.6,1453; class=PRIEST; race=NightElf; xl=21.0]
+[T 5673 Elune's Grace | at=39.5,81.2,1457; class=PRIEST; race=NightElf; xl=21.0]
+[A 5676 Arcane Feedback | at=49.5,44.6,1453; class=PRIEST; race=Human; xl=21.0]
+[T 5676 Arcane Feedback | at=49.5,44.6,1453; class=PRIEST; race=Human; xl=21.0]
+[A 94819 Contingency Plan | at=49.5,44.6,1453; class=PRIEST; race=Gnome; xl=21.0]
+[T 94819 Contingency Plan | at=25.0,10.0,1455; class=PRIEST; race=Gnome; xl=21.0]
 [A 343 Speaking of Fortitude | at=55.0,54.2,1453; xl=21.0]
 [A 97234 Reading Room | at=38.8,62.4,1453; xl=21.0]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=21.0]
+Sheldras Moontree is right here: pick up your new Druid spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 97222 Gatehouse Goods | at=66.6,73.4,1453; xl=21.0]
 [P Stormwind | at=70.95,72.51,1453; xl=21.0]
 [T 97222 Gatehouse Goods | at=66.6,73.4,1453; xl=21.0]
@@ -36,6 +50,23 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Rogue - Stormwind City | at=77.43,65.31,1453; class=ROGUE; xl=21.1]
 Osborne the Night Man is right here: pick up your new Rogue spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 2300 SI:7 | at=43.9,65.9,1429; class=ROGUE; xl=21.1]
+[T 2300 SI:7 | at=78.3,71.1,1453; class=ROGUE; xl=21.1]
+[A 2360 Mathias and the Defias | at=78.3,70.7,1453; class=ROGUE; xl=21.1]
+[T 2360 Mathias and the Defias | at=68.5,70.1,1436; class=ROGUE; xl=21.1]
+[A 2359 Klaven's Tower | at=68.5,70.1,1436; pre=2360; class=ROGUE; xl=21.1]
+[C 2359 Klaven's Tower | at=69.5,74.0,1436; mob=Malformed Defias Drone; class=ROGUE; xl=21.1]
+Malformed Defias Drone has only one spawn point. If others are waiting for it, group up to share it.
+[T 2359 Klaven's Tower | at=78.3,70.7,1453; class=ROGUE; xl=21.1]
+[A 2607 The Touch of Zanzil | at=78.3,70.7,1453; pre=2359; class=ROGUE; xl=21.1]
+[T 2607 The Touch of Zanzil | at=80.1,69.9,1453; class=ROGUE; xl=21.1]
+[A 2608 The Touch of Zanzil | at=80.1,69.9,1453; pre=2607; class=ROGUE; xl=21.1]
+[C 2608 The Touch of Zanzil | at=80.1,70.1,1453; class=ROGUE; xl=21.1]
+[T 2608 The Touch of Zanzil | at=80.1,69.9,1453; class=ROGUE; xl=21.1]
+[A 2609 The Touch of Zanzil | at=80.1,69.9,1453; pre=2608; class=ROGUE; xl=21.1]
+[C 2609 The Touch of Zanzil | at=47.8,84.9,1413; mob=Bernard Gump / Edna Mullby; class=ROGUE; xl=21.1]
+Bernard Gump has only one spawn point. If others are waiting for it, group up to share it.
+[T 2609 The Touch of Zanzil | at=80.1,69.9,1453; class=ROGUE; xl=21.1]
 [A 92751 Detonation at a Distance | at=80.3,70.1,1453; xl=21.1]
 [A 98191 A Friend of the Family | at=80.2,38.4,1453; xl=21.1]
 [T 343 Speaking of Fortitude | at=77.1,30.2,1453; xl=21.1]
@@ -45,12 +76,53 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [T 97234 Reading Room | at=75.0,30.1,1453; xl=21.2]
 [T 92751 Detonation at a Distance | at=61.9,30.6,1453; xl=21.3]
 [T 98191 A Friend of the Family | at=48.4,50.2,1453; xl=21.3]
-[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=21.5]
-High Priestess Laurena is right here: pick up your new Priest spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=21.5]
 Lord Grayson Shadowbreaker is right here: pick up your new Paladin spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Mage - Stormwind City | at=49.56,85.8,1453; class=MAGE; xl=21.5]
+Time to train: head to Jennea Cannon in Stormwind City for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1919 Report to Jennea | at=43.2,66.2,1429; opt; class=MAGE; race=Human,Gnome; xl=21.5]
+[T 1919 Report to Jennea | at=49.6,85.8,1453; opt; class=MAGE; race=Human,Gnome; xl=21.5]
+[A 1920 Investigate the Blue Recluse | at=49.6,85.8,1453; class=MAGE; race=Human,Gnome; xl=21.5]
+[C 1920 Investigate the Blue Recluse | at=85.6,9.9,1458; item=7292:3,7247:3; class=MAGE; race=Human,Gnome; xl=21.5]
+[T 1920 Investigate the Blue Recluse | at=49.6,85.8,1453; class=MAGE; race=Human,Gnome; xl=21.5]
+[A 1921 Gathering Materials | at=49.6,85.8,1453; pre=1920; class=MAGE; race=Human,Gnome; xl=21.5]
+[C 1921 Gathering Materials | at=76.4,85.8,1429; item=2589:10,7249:6; class=MAGE; race=Human,Gnome; xl=21.5]
+[T 1921 Gathering Materials | at=51.8,83.5,1453; class=MAGE; race=Human,Gnome; xl=21.5]
+[A 1941 Manaweave Robe | at=51.8,83.5,1453; pre=1921; class=MAGE; race=Human,Gnome; xl=21.5]
+[T 1941 Manaweave Robe | at=51.8,83.5,1453; class=MAGE; race=Human,Gnome; xl=21.5]
+[R Warlock - Stormwind City | at=39.89,84.19,1453; class=WARLOCK; xl=21.5]
+Time to train: head to Ursula Deline in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1716 Devourer of Souls | at=39.2,85.2,1453; class=WARLOCK; xl=21.5]
+[T 1716 Devourer of Souls | at=49.3,57.1,1413; class=WARLOCK; xl=21.5]
+[A 1738 Heartswood | at=49.3,57.1,1413; pre=1716; class=WARLOCK; xl=21.5]
+[C 1738 Heartswood | at=31.6,31.6,1440; class=WARLOCK; xl=21.5]
+[T 1738 Heartswood | at=39.2,85.2,1453; class=WARLOCK; xl=21.5]
+[A 1739 The Binding | at=39.2,85.2,1453; pre=1738; class=WARLOCK; xl=21.5]
+[C 1739 The Binding | at=39.2,85.2,1453; mob=Summoned Succubus; class=WARLOCK; xl=21.5]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1739 The Binding | at=39.2,85.2,1453; class=WARLOCK; xl=21.5]
+[A 65602 What Is Love? | at=49.3,57.1,1413; pre=1716; class=WARLOCK; xl=21.5]
+[C 65602 What Is Love? | at=26.6,22.0,1440; class=WARLOCK; xl=21.5]
+[T 65602 What Is Love? | at=39.2,85.2,1453; class=WARLOCK; xl=21.5]
+[A 65603 The Binding | at=39.2,85.2,1453; pre=65602; class=WARLOCK; xl=21.5]
+[C 65603 The Binding | at=86.5,26.6,1458; mob=Summoned Incubus; class=WARLOCK; xl=21.5]
+[T 65603 The Binding | at=39.2,85.2,1453; class=WARLOCK; xl=21.5]
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=21.5]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 94494 Call of Water | at=47.1,13.8,1455; class=SHAMAN; xl=21.5]
+[T 94494 Call of Water | at=41.8,19.1,1432; class=SHAMAN; xl=21.5]
+[A 94616 Water Sapta | at=41.8,19.1,1432; class=SHAMAN; xl=21.5]
+[T 94616 Water Sapta | at=41.8,19.1,1432; class=SHAMAN; xl=21.5]
+[A 94495 Call of Water | at=41.8,19.1,1432; class=SHAMAN; xl=21.5]
+[T 94495 Call of Water | at=65.8,76.5,1437; class=SHAMAN; xl=21.5]
+[A 94500 Call of Water | at=65.8,76.5,1437; class=SHAMAN; xl=21.5]
+[C 94500 Call of Water | at=65.8,76.5,1437; class=SHAMAN; xl=21.5]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 94500 Call of Water | at=65.8,76.5,1437; class=SHAMAN; xl=21.5]
 [F Menethil Harbor | xl=21.5]
 [A 463 The Greenwarden | at=10.9,59.6,1437; opt; xl=21.5]
 [A 98282 Alchemical Hazards | at=11.9,58.8,1437; xl=21.5]
@@ -94,17 +166,5 @@ Gobbler has only 2 spawn points. If others are waiting for it, group up to share
 [A 471 Apprentice's Duties | at=8.6,55.7,1437; pre=484; xl=23.2]
 [A 295 Ormer's Revenge | at=38.2,50.9,1437; pre=294; xl=23.2]
 [A 299 Uncovering the Past | at=38.8,52.4,1437; xl=23.2]
-[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=23.2]
-Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=23.2]
-Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=23.2]
-Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=23.2]
-Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 24.4,46.1 1433 Travel to Redridge Mountains | xl=23.2]
 ]==])

@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Mulgore (Tauren)]==], [==[
 #levels 1-13
 #faction Horde
 #race Tauren
-#next Horde 12-17 The Barrens
+#next Horde 12-19 The Barrens
 
 [S Mulgore | at=45.93,64.16,1412; xl=1.0]
 Talk to Innkeeper Kauth and make this inn your home.
@@ -15,6 +15,22 @@ Talk to Innkeeper Kauth and make this inn your home.
 [C 753 A Humble Task | at=48.9,81.2,1412; xl=1.5]
 [C 747 The Hunt Begins | at=47.2,81.5,1412; mob=Plainstrider; item=4739:7,4740:7; drop=47; xl=1.5]
 [T 747 The Hunt Begins | at=44.5,77.5,1412; xl=1.5]
+[R Hunter - Mulgore | at=43.96,76.35,1412; class=HUNTER; xl=2.2]
+Lanka Farshot is right here: pick up your new Hunter spells.
+[A 3092 Etched Note | at=44.5,77.5,1412; pre=747; class=HUNTER; race=Tauren; xl=2.2]
+[T 3092 Etched Note | at=44.0,76.3,1412; class=HUNTER; race=Tauren; xl=2.2]
+[R Warrior - Mulgore | at=43.75,76.72,1412; class=WARRIOR; xl=2.2]
+Harutt Thunderhorn is right here: pick up your new Warrior spells.
+[A 3091 Simple Note | at=44.5,77.5,1412; pre=747; class=WARRIOR; race=Tauren; xl=2.2]
+[T 3091 Simple Note | at=43.8,76.7,1412; class=WARRIOR; race=Tauren; xl=2.2]
+[R Druid - Mulgore | at=44.65,76.55,1412; class=DRUID; xl=2.2]
+Gart Mistrunner is right here: pick up your new Druid spells.
+[A 3094 Verdant Note | at=44.5,77.5,1412; pre=747; class=DRUID; race=Tauren; xl=2.2]
+[T 3094 Verdant Note | at=44.6,76.5,1412; class=DRUID; race=Tauren; xl=2.2]
+[R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=2.2]
+Meela Dawnstrider is right here: pick up your new Shaman spells.
+[A 3093 Rune-Inscribed Note | at=44.5,77.5,1412; pre=747; class=SHAMAN; race=Tauren; xl=2.2]
+[T 3093 Rune-Inscribed Note | at=44.6,76.6,1412; class=SHAMAN; race=Tauren; xl=2.2]
 [A 750 The Hunt Continues | at=44.5,77.5,1412; pre=747; xl=2.2]
 [T 753 A Humble Task | at=43.9,76.7,1412; xl=2.2]
 [A 755 Rites of the Earthmother | at=43.9,76.7,1412; pre=753; xl=2.8]
@@ -23,14 +39,6 @@ Talk to Innkeeper Kauth and make this inn your home.
 [A 757 Rite of Strength | at=42.5,90.1,1412; pre=755; xl=3.3]
 [A 95805 Grace of An'she and Mu'sha | at=42.5,90.1,1412; pre=755; xl=3.3]
 [C 750 The Hunt Continues | at=45.4,88.2,1412; mob=Mountain Cougar; item=4742:10; drop=68; xl=3.3]
-[R Hunter - Mulgore | at=43.96,76.35,1412; class=HUNTER; xl=3.3]
-Lanka Farshot is right here: pick up your new Hunter spells.
-[R Warrior - Mulgore | at=43.75,76.72,1412; class=WARRIOR; xl=3.3]
-Harutt Thunderhorn is right here: pick up your new Warrior spells.
-[R Druid - Mulgore | at=44.65,76.55,1412; class=DRUID; xl=3.3]
-Gart Mistrunner is right here: pick up your new Druid spells.
-[R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=3.3]
-Meela Dawnstrider is right here: pick up your new Shaman spells.
 [T 750 The Hunt Continues | at=44.5,77.5,1412; xl=3.3]
 [A 780 The Battleboars | at=44.5,77.5,1412; pre=750; xl=3.7]
 [C 780 The Battleboars | at=52.9,81.5,1412; mob=Battleboar; item=4848:8,4849:8; drop=50; xl=3.7]
@@ -39,15 +47,22 @@ Meela Dawnstrider is right here: pick up your new Shaman spells.
 Starts from Dirt-stained Map, which drops in this area.
 [T 95805 Grace of An'she and Mu'sha | at=56.6,88.7,1412; xl=3.7]
 [T 780 The Battleboars | at=44.5,77.5,1412; xl=4.1]
-[T 757 Rite of Strength | at=43.9,76.7,1412; xl=4.6]
-[R Hunter - Mulgore | at=43.96,76.35,1412; class=HUNTER; xl=5.1]
+[R Hunter - Mulgore | at=43.96,76.35,1412; class=HUNTER; xl=4.6]
 Lanka Farshot is right here: pick up your new Hunter spells.
-[R Warrior - Mulgore | at=43.75,76.72,1412; class=WARRIOR; xl=5.1]
+[R Warrior - Mulgore | at=43.75,76.72,1412; class=WARRIOR; xl=4.6]
 Harutt Thunderhorn is right here: pick up your new Warrior spells.
-[R Druid - Mulgore | at=44.65,76.55,1412; class=DRUID; xl=5.1]
+[R Druid - Mulgore | at=44.65,76.55,1412; class=DRUID; xl=4.6]
 Gart Mistrunner is right here: pick up your new Druid spells.
-[R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=5.1]
+[R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=4.6]
 Meela Dawnstrider is right here: pick up your new Shaman spells.
+[A 1519 Call of Earth | at=44.4,76.8,1412; class=SHAMAN; xl=4.6]
+[C 1519 Call of Earth | at=61.0,78.2,1412; mob=Bristleback Shaman; item=6634:2; drop=13; class=SHAMAN; xl=4.6]
+[T 1519 Call of Earth | at=44.4,76.8,1412; class=SHAMAN; xl=4.6]
+[A 1520 Call of Earth | at=44.4,76.8,1412; pre=1519; class=SHAMAN; xl=4.6]
+[T 1520 Call of Earth | at=52.0,80.4,1412; class=SHAMAN; xl=4.6]
+[A 1521 Call of Earth | at=52.0,80.4,1412; pre=1520; class=SHAMAN; xl=4.6]
+[T 1521 Call of Earth | at=44.4,76.8,1412; class=SHAMAN; xl=4.6]
+[T 757 Rite of Strength | at=43.9,76.7,1412; xl=4.6]
 [T 781 Attack on Camp Narache | at=43.9,76.7,1412; xl=5.1]
 [A 763 Rites of the Earthmother | at=43.9,76.7,1412; pre=757; opt; xl=5.4]
 [T 1656 A Task Unfinished | at=45.9,64.2,1412; xl=5.4]
@@ -59,6 +74,14 @@ Meela Dawnstrider is right here: pick up your new Shaman spells.
 [A 99108 Sparring Match | at=48.4,63.7,1412; xl=5.7]
 [C 99108 Sparring Match | at=48.9,63.6,1412; mob=Novice Warrior; xl=5.7]
 [T 99108 Sparring Match | at=48.4,63.7,1412; xl=5.7]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=6.1]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
+[R Warrior - Mulgore | at=48.35,63.74,1412; class=WARRIOR; xl=6.1]
+Krang Stonehoof is right here: pick up your new Warrior spells.
+[R Druid - Mulgore | at=47.48,62.95,1412; class=DRUID; xl=6.1]
+Gennia Runetotem is right here: pick up your new Druid spells.
+[R Shaman - Mulgore | at=47.4,62.54,1412; class=SHAMAN; xl=6.1]
+Narm Skychaser is right here: pick up your new Shaman spells.
 [A 761 Swoop Hunting | at=47.7,62.7,1412; xl=6.1]
 [A 746 Dwarven Digging | at=46.7,63.4,1412; xl=6.1]
 [A 743 Dangers of the Windfury | at=46.5,64.9,1412; xl=6.1]
@@ -70,8 +93,6 @@ Meela Dawnstrider is right here: pick up your new Shaman spells.
 [T 99081 Grim Tidings | at=46.7,63.8,1412; xl=6.4]
 [A 99101 Our Ancient Enemy | at=46.7,63.8,1412; pre=99081; xl=6.8]
 [T 99101 Our Ancient Enemy | at=46.7,63.4,1412; xl=6.8]
-[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=7.1]
-Yaw Sharpmane is right here: pick up your new Hunter spells.
 [A 99080 Drive Them Out | at=46.7,63.4,1412; pre=99101; xl=7.1]
 [A 771 Rite of Vision | at=46.9,61.2,1412; pre=767; opt; xl=7.1]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
@@ -90,13 +111,13 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 772 Rite of Vision | at=34.3,43.3,1412; xl=7.7]
 [A 773 Rite of Wisdom | at=34.3,43.3,1412; pre=772; xl=7.9]
 [T 766 Mazzranache | at=46.2,60.8,1412; xl=7.9]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=8.2]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
 [T 761 Swoop Hunting | at=47.7,62.7,1412; xl=8.2]
 [T 748 Poison Water | at=47.5,63.6,1412; race=Tauren; xl=8.4]
 [A 754 Winterhoof Cleansing | at=47.5,63.6,1412; pre=748; race=Tauren; xl=8.6]
 [T 745 Sharing the Land | at=46.7,63.4,1412; xl=8.6]
 [T 746 Dwarven Digging | at=46.7,63.4,1412; xl=8.8]
-[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=9.0]
-Yaw Sharpmane is right here: pick up your new Hunter spells.
 [C 754 Winterhoof Cleansing | at=51.8,68.4,1412; race=Tauren; xl=9.0]
 [T 754 Winterhoof Cleansing | at=47.5,63.6,1412; race=Tauren; xl=9.0]
 [A 756 Thunderhorn Totem | at=47.5,63.6,1412; pre=754; race=Tauren; xl=9.2]
@@ -114,6 +135,22 @@ Starts from Mulgore Expansion Plans, which drops in this area.
 [C 833 A Sacred Burial | at=58.0,30.9,1412; mob=Bristleback Interloper; xl=9.9]
 [T 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.9]
 [T 764 The Venture Co. | at=54.8,64.3,1412; xl=10.0]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=10.2]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 6061 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
+[C 6061 Taming the Beast | at=39.7,68.8,1412; mob=Adult Plainstrider; class=HUNTER; race=Tauren; xl=10.2]
+[T 6061 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
+[A 6065 The Hunter's Path | at=58.5,88.3,1456; opt; class=HUNTER; race=Tauren; xl=10.2]
+[T 6065 The Hunter's Path | at=46.9,59.6,1412; opt; class=HUNTER; race=Tauren; xl=10.2]
+[A 6087 Taming the Beast | at=46.9,59.6,1412; pre=6061; class=HUNTER; race=Tauren; xl=10.2]
+[C 6087 Taming the Beast | at=50.8,50.7,1412; mob=Prairie Stalker; class=HUNTER; race=Tauren; xl=10.2]
+[T 6087 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
+[A 6088 Taming the Beast | at=46.9,59.6,1412; pre=6087; class=HUNTER; race=Tauren; xl=10.2]
+[C 6088 Taming the Beast | at=50.2,46.8,1412; mob=Swoop; class=HUNTER; race=Tauren; xl=10.2]
+[T 6088 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
+[A 6089 Training the Beast | at=46.9,59.6,1412; pre=6088; class=HUNTER; race=Tauren; xl=10.2]
+[T 6089 Training the Beast | at=57.3,89.8,1456; class=HUNTER; race=Tauren; xl=10.2]
 [T 98424 Fizsprocket's Notes | at=54.8,64.3,1412; xl=10.2]
 [T 756 Thunderhorn Totem | at=47.5,63.6,1412; race=Tauren; xl=10.4]
 [A 758 Thunderhorn Cleansing | at=47.5,63.6,1412; pre=756; race=Tauren; xl=10.5]
@@ -127,13 +164,41 @@ Starts from Mulgore Expansion Plans, which drops in this area.
 [R Druid - Mulgore | at=33.39,22.09,1412; class=DRUID; xl=10.9]
 Hana Lighthoof is right here: pick up your new Druid spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 5922 Moonglade | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=10.9]
+[T 5922 Moonglade | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=10.9]
+[A 5926 Heeding the Call | at=45.8,64.7,1456; opt; class=DRUID; race=Tauren; xl=10.9]
+[T 5926 Heeding the Call | at=76.5,27.2,1456; opt; class=DRUID; race=Tauren; xl=10.9]
+[A 5930 Great Bear Spirit | at=56.2,30.6,1450; pre=5922; class=DRUID; race=Tauren; xl=10.9]
+[C 5930 Great Bear Spirit | at=39.1,27.5,1450; mob=Great Bear Spirit; class=DRUID; race=Tauren; xl=10.9]
+Great Bear Spirit has only one spawn point. If others are waiting for it, group up to share it.
+[T 5930 Great Bear Spirit | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=10.9]
+[A 5932 Back to Thunder Bluff | at=56.2,30.6,1450; pre=5930; class=DRUID; race=Tauren; xl=10.9]
+[T 5932 Back to Thunder Bluff | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=10.9]
+[A 6002 Body and Heart | at=76.5,27.2,1456; pre=5932; class=DRUID; race=Tauren; xl=10.9]
+[C 6002 Body and Heart | at=76.5,27.2,1456; mob=Lunaclaw Spirit; class=DRUID; race=Tauren; xl=10.9]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 6002 Body and Heart | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=10.9]
 [R Shaman - Mulgore | at=33.58,22.32,1412; class=SHAMAN; xl=10.9]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1523 Call of Fire | at=25.2,20.5,1456; opt; class=SHAMAN; xl=10.9]
+[T 1523 Call of Fire | at=56.0,19.9,1413; opt; class=SHAMAN; xl=10.9]
+[A 1524 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.9]
+[T 1524 Call of Fire | at=38.5,59.0,1411; class=SHAMAN; xl=10.9]
+[A 1517 Call of Earth | at=42.4,69.2,1411; pre=1519; class=SHAMAN; xl=10.9]
+[T 1517 Call of Earth | at=44.0,76.2,1411; class=SHAMAN; xl=10.9]
+[A 1518 Call of Earth | at=44.0,76.2,1411; pre=1517; class=SHAMAN; xl=10.9]
+[T 1518 Call of Earth | at=42.4,69.2,1411; class=SHAMAN; xl=10.9]
+[A 1525 Call of Fire | at=38.5,59.0,1411; pre=1524; class=SHAMAN; xl=10.9]
+[C 1525 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=10.9]
+[T 1525 Call of Fire | at=38.5,59.0,1411; class=SHAMAN; xl=10.9]
+[A 1526 Call of Fire | at=38.5,59.0,1411; pre=1525; class=SHAMAN; xl=10.9]
+[C 1526 Call of Fire | at=38.7,58.3,1411; mob=Minor Manifestation of Fire; class=SHAMAN; xl=10.9]
+Minor Manifestation of Fire has only 2 spawn points. If others are waiting for it, group up to share it.
+[T 1526 Call of Fire | at=39.0,58.2,1411; class=SHAMAN; xl=10.9]
+[A 1527 Call of Fire | at=39.0,58.2,1411; pre=1526; class=SHAMAN; xl=10.9]
+[T 1527 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.9]
 [T 760 Wildmane Cleansing | at=47.5,63.6,1412; race=Tauren; xl=10.9]
-[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=11.2]
-Yaw Sharpmane is right here: pick up your new Hunter spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=11.2]
 Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -146,12 +211,31 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=11.2]
 Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1505 Veteran Uzzek | at=57.2,87.4,1456; opt; class=WARRIOR; xl=11.2]
+[T 1505 Veteran Uzzek | at=61.4,21.1,1413; opt; class=WARRIOR; xl=11.2]
+[A 1498 Path of Defense | at=61.4,21.1,1413; class=WARRIOR; xl=11.2]
+[C 1498 Path of Defense | at=39.1,29.3,1411; mob=Thunder Lizard; item=6486:5; drop=16; class=WARRIOR; xl=11.2]
+[T 1498 Path of Defense | at=61.4,21.1,1413; class=WARRIOR; xl=11.2]
+[A 1502 Thun'grim Firegaze | at=61.4,21.1,1413; pre=1498; class=WARRIOR; xl=11.2]
+[T 1502 Thun'grim Firegaze | at=57.2,30.3,1413; class=WARRIOR; xl=11.2]
+[A 1503 Forged Steel | at=57.2,30.3,1413; pre=1502; class=WARRIOR; xl=11.2]
+[C 1503 Forged Steel | at=55.0,26.6,1413; class=WARRIOR; xl=11.2]
+[T 1503 Forged Steel | at=57.2,30.3,1413; class=WARRIOR; xl=11.2]
 [R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=11.2]
 Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1485 Vile Familiars | at=42.6,69,1411; class=WARLOCK; xl=11.2]
+[C 1485 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; item=6487:6; drop=5; class=WARLOCK; xl=11.2]
+[T 1485 Vile Familiars | at=42.6,69,1411; class=WARLOCK; xl=11.2]
+[A 1499 Vile Familiars | at=42.6,69,1411; pre=1485; class=WARLOCK; xl=11.2]
+[T 1499 Vile Familiars | at=42.9,69.2,1411; class=WARLOCK; xl=11.2]
+[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; class=WARLOCK; xl=11.2]
+[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; class=WARLOCK; xl=11.2]
 [R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=11.2]
 Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; opt; class=MAGE; xl=11.2]
+[T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; class=MAGE; xl=11.2]
 [L 12 | xl=11.2]
 Grind mobs around your level here; more quests open at the next level.
 [L 13 | xl=12.0]
