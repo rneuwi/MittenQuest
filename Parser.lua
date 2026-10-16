@@ -245,6 +245,7 @@ function Parser:Validate(steps, header, guideName, prior)
     prior = prior or {}
     prior.turnedIn, prior.accepted, prior.knownFP = prior.turnedIn or {}, prior.accepted or {}, prior.knownFP or {}
     local accepted, turnedIn, knownFP = prior.accepted, prior.turnedIn, prior.knownFP
+    local function hearthNorm(s) return (s or ""):lower():gsub("[^%w]", "") end
     prior.open = prior.open or {} -- [questID] = "guide:line" of a pickup not yet turned in
     local acceptLine = prior.open
     for _, n in ipairs(header and header.knownFP or {}) do knownFP[norm(n)] = true end
@@ -280,6 +281,14 @@ function Parser:Validate(steps, header, guideName, prior)
         elseif s.type == "FLY" and s.node then
             if not knownFP[norm(s.node)] and not s.alt then
                 warn(s, ("flies to '%s' before learning it (add P step, #knownfp, or alt=)"):format(s.node))
+            end
+        elseif s.type == "SETHEARTH" and s.node then
+            prior.bind = s.node
+        elseif s.type == "HEARTH" then
+            if not prior.bind then
+                warn(s, "uses the hearthstone before any 'set hearth' step")
+            elseif s.node and hearthNorm(s.node) ~= hearthNorm(prior.bind) then
+                warn(s, ("hearths to '%s' but the hearthstone is set to '%s'"):format(s.node, prior.bind))
             end
         elseif s.type == "DUNGEON" then
             if not s.quests or #s.quests == 0 then

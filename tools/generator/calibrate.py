@@ -17,6 +17,7 @@ Writes calibration.json next to this script; gen_route.py picks it up automatica
 Bands with too little data keep the built-in default.
 """
 import json
+import re
 import os
 import sys
 import collections
@@ -24,6 +25,8 @@ import collections
 from lupa.lua51 import LuaRuntime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+GUIDES = os.path.join(HERE, '..', '..', 'Guides')
+MAX_GAP = 30 * 60          # longer gaps between steps are breaks/logouts, not step time
 OUT = os.path.join(HERE, 'calibration.json')
 
 # Level bands: (first level, last level). Match the default factor's breakpoints and add
@@ -62,9 +65,25 @@ def load_pace_log(path):
     return log
 
 
+def guide_lines():
+    """(guide name, line number) -> step text, using the same line numbering as Parser.lua."""
+    out = {}
+    for root, _, files in os.walk(GUIDES):
+        for f in files:
+            if not f.endswith('.lua'):
+                continue
+            src = open(os.path.join(root, f), encoding='utf-8').read()
+            m = re.search(r'RegisterGuide\(\[==\[(.*?)\]==\],\s*\[==\[\n?(.*?)\]==\]', src, re.S)
+            if m:
+                for n, line in enumerate(m.group(2).split('\n'), 1):
+                    out[(m.group(1), n)] = line.strip()
+    return out
+
+
 def main(paths):
     totals = collections.defaultdict(lambda: {'total': 0, 'quest': 0, 'rested': 0})
     deviations = collections.defaultdict(list)       # guide -> [actual - expected]
+    durations = collections.defaultdict(list)        # (guide, line) -> [seconds]
     seen = set()
     for path in paths:
         log = load_pace_log(path)
@@ -74,7 +93,14 @@ def main(paths):
             for k in ('total', 'quest', 'rested'):
                 totals[int(lvl)][k] += (b or {}).get(k, 0) or 0
         entries = log.get('entries') or []
-        for e in (entries.values() if isinstance(entries, dict) else entries):
+        entries = list(entries.values() if isinstance(entries, dict) else entries)
+        # Time per step: gap since the previous recorded step in the same guide.
+        ordered = sorted((e for e in entries if e.get('ts')), key=lambda e: e['ts'])
+        for prev, cur in zip(ordered, ordered[1:]):
+            gap = cur['ts'] - prev['ts']
+            if cur.get('g') == prev.get('g') and 0 < gap <= MAX_GAP and cur.get('line'):
+                durations[(cur['g'], cur['line'])].append(gap)
+        for e in entries:
             key = (path, e.get('g'), e.get('i'))
             if key in seen or e.get('xl') is None or e.get('lv') is None:
                 continue
@@ -107,6 +133,13 @@ def main(paths):
         devs.sort()
         print(f'  {g[:60]:60} {len(devs):4} steps  median {devs[len(devs) // 2]:+.1f}  '
               f'worst {devs[0]:+.1f}')
+    if durations:
+        texts = guide_lines()
+        slow = sorted(((sorted(v)[len(v) // 2], len(v), k) for k, v in durations.items()), reverse=True)[:15]
+        print('\nSlowest steps in real play (median minutes; long ones point to crowding, low drop rates or bad spots):')
+        for med, n, (g, line) in slow:
+            print(f'  {med / 60:5.1f} min  x{n:<3} {g[:34]:34} line {line:<4} {texts.get((g, line), "")[:70]}')
+        print('  Fix persistent ones with "skip" or "notes" in corrections.json.')
     print(f'\nWrote {OUT}. Rebuild the guides (tools/generator/build.sh) to apply it.')
 
 
