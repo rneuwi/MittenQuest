@@ -38,6 +38,10 @@ Andre Firebeard has only one spawn point. If others are waiting for it, group up
 [C 82 Noxious Lair Investigation | at=33.3,44.4,1446; mob=Centipaar Wasp; xl=45.1]
 [T 82 Noxious Lair Investigation | at=50.9,27.0,1446; xl=45.1]
 [A 10 The Scrimshank Redemption | at=50.2,27.5,1446; pre=82; xl=45.2]
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=45.2]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=45.2]
+Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
 [F Nijel's Point | xl=45.2]
 [A 1466 Reagents for Reclaimers Inc. | at=66.2,9.6,1443; pre=1459; opt; xl=45.2]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
@@ -76,6 +80,8 @@ Ferocious Rage Scar has only one spawn point. If others are waiting for it, grou
 [T 7733 Improved Quality | at=30.6,42.7,1444; xl=46.5]
 [C 7721 Fuel for the Zapping | at=45.9,63.9,1444; mob=Sea Spray; item=18958:10; drop=38; xl=46.6]
 [T 7721 Fuel for the Zapping | at=44.8,43.4,1444; xl=46.6]
+[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=46.7]
+Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 [F Gadgetzan | xl=46.7]
 [T 3042 Troll Temper | at=51.4,28.8,1446; xl=46.7]
 [T 2768 Divino-matic Rod | at=52.5,28.5,1446; xl=46.7]
@@ -99,9 +105,21 @@ Gor'marok the Ravager has only one spawn point. If others are waiting for it, gr
 [A 2606 In Good Taste | at=51.8,28.7,1446; pre=2605; xl=47.7]
 [T 5863 The Dunemaul Compound | at=52.8,27.4,1446; xl=47.7]
 [T 2606 In Good Taste | at=51.1,26.9,1446; xl=47.7]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=47.7]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=47.7]
+Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=47.7]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=47.7]
+Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
 [F Nijel's Point | xl=47.7]
 [T 7041 Vyletongue Corruption | at=68.5,8.9,1443; xl=47.7]
 [T 7028 Twisted Evils | at=62.2,39.6,1443; xl=47.8]
 [T 7067 The Pariah's Instructions | at=50.4,86.7,1443; xl=47.9]
+[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=48.0]
+Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=48.0]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 67.4,15.7 1457 Travel to Darnassus | xl=48.0]
 ]==])

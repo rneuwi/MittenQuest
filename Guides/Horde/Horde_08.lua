@@ -78,12 +78,16 @@ Starts from Gordunni Scroll, which drops in this area.
 Mokk the Savage has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [C 621 Zanzil's Secret | at=38.7,56.6,1434; mob=Zanzil Witch Doctor; xl=44.9]
 [T 348 Stranglethorn Fever | at=27.6,76.7,1434; xl=44.9]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=45.1]
+Ian Strom is right here: pick up your new Rogue spells.
 [T 621 Zanzil's Secret | at=27.1,77.2,1434; xl=45.1]
 [T 617 Akiris by the Bundle | at=26.8,76.4,1434; xl=45.1]
 [A 594 Message in a Bottle | at=36.6,77.1,1434; xl=45.2]
 Starts from Carefully Folded Note, which drops in this area.
 [T 594 Message in a Bottle | at=38.5,80.6,1434; xl=45.2]
 [T 573 Mok'thardin's Enchantment | at=32.1,29.2,1434; xl=45.2]
+[R Hunter - Grom'gol | at=31.23,28.68,1434; class=HUNTER; xl=45.3]
+Kragg is right here: pick up your new Hunter spells.
 [G 79.2,79.5 1425 Travel to The Hinterlands | xl=45.3]
 [A 7828 Stalking the Stalkers | at=79.2,79.5,1425; xl=45.3]
 [P Revantusk Village | at=81.7,81.76,1425; xl=45.3]
@@ -139,5 +143,19 @@ Vilebranch Kidnapper has only one spawn point. If others are waiting for it, gro
 [C 7842 Another Message to the Wildhammer | at=56.8,50.8,1425; mob=Razorbeak Skylord; item=4589:10; drop=36; xl=47.6]
 [T 7842 Another Message to the Wildhammer | at=79.4,79.1,1425; xl=47.6]
 [A 7843 The Final Message to the Wildhammer | at=79.4,79.1,1425; pre=7842; xl=47.7]
+[R Priest - Undercity | at=49.26,17.12,1458; class=PRIEST; xl=47.7]
+Time to train: head to Aelthalyste in Undercity for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Undercity | at=47.08,15.9,1458; class=PALADIN; xl=47.7]
+Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Undercity | at=46.93,15.23,1458; class=WARRIOR; xl=47.7]
+Time to train: head to Christoph Walker in Undercity for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=47.7]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=47.7]
+Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Undercity | at=86.21,15.93,1458; class=WARLOCK; xl=47.7]
+Time to train: head to Kaal Soulreaper in Undercity for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=47.7]
+Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 50.5,14.2 1419 Travel to Blasted Lands | xl=47.7]
 ]==])

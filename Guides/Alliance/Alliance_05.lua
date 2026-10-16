@@ -91,8 +91,20 @@ Find a group for Scarlet Monastery. Quests you skip there are dropped automatica
 [A 93035 Ravaging Ravagers | at=21.2,23.2,2652; xl=37.5]
 [T 93035 Ravaging Ravagers | at=21.2,23.2,2652; xl=37.5]
 [T 92841 Valley of Bones | at=35.8,13,2652; xl=37.6]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=37.7]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=37.7]
+Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=37.7]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=37.7]
+Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
 [G 66.3,45.5 1445 Travel to Dustwallow Marsh | xl=37.7]
 [A 1204 Mudrock Soup and Bugs | at=66.3,45.5,1445; xl=37.7]
+[R Warrior - Theramore | at=67.88,48.41,1445; class=WARRIOR; xl=37.7]
+Captain Evencane is right here: pick up your new Warrior spells.
+[R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=37.7]
+Brother Karman is right here: pick up your new Paladin spells.
 [P Theramore | at=67.48,51.3,1445; xl=37.7]
 [T 1302 James Hyal | at=67.9,48.2,1445; xl=37.7]
 [A 1282 They Call Him Smiling Jim | at=66.2,46.1,1445; xl=37.7]
@@ -142,6 +154,8 @@ Find a group for Scarlet Monastery. Quests you skip there are dropped automatica
 [T 261 Down the Scarlet Path | at=66.5,7.9,1443; xl=38.7]
 [G 27.1,77.2 1434 Travel to Stranglethorn Vale - take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor) | xl=38.8]
 [A 605 Singing Blue Shards | at=27.1,77.2,1434; xl=38.8]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=38.8]
+Ian Strom is right here: pick up your new Rogue spells.
 [P Booty Bay | at=27.53,77.79,1434; xl=38.8]
 [A 606 Scaring Shaky | at=27.8,77.1,1434; xl=38.8]
 [A 189 Bloodscalp Ears | at=27,77.1,1434; xl=38.8]
@@ -211,6 +225,9 @@ Starts from Cortello's Riddle, which drops in this area.
 [C 601 Water Elementals | at=21.0,23.3,1434; mob=Lesser Water Elemental; item=3923:6; drop=17; xl=39.9]
 [T 205 Troll Witchery | at=37.8,3.6,1434; xl=39.9]
 [T 601 Water Elementals | at=27.2,76.9,1434; xl=39.9]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=40.0]
+Ian Strom is right here: pick up your new Rogue spells.
+Dual Specialization can now be bought from your class trainer in a major city.
 [A 621 Zanzil's Secret | at=27.1,77.2,1434; xl=40.0]
 [T 600 Venture Company Mining | at=27.1,77.2,1434; xl=40.0]
 [A 2864 Tran'rek | at=26.9,77.2,1434; opt; xl=40.1]
@@ -233,5 +250,11 @@ Colonel Kurzen has only one spawn point. If others are waiting for it, group up 
 [T 340 Chapter II | at=35.7,10.5,1434; opt; xl=40.2]
 [T 341 Chapter III | at=35.7,10.5,1434; opt; xl=40.2]
 [T 209 Skullsplitter Tusks | at=27,77.1,1434; xl=40.2]
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=40.3]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=40.3]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
 [F Stormwind | xl=40.3]
 ]==])

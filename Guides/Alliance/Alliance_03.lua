@@ -83,5 +83,23 @@ Find a group for The Stockade. Quests you skip there are dropped automatically.
 [T 98310 Gleaning Our Future | at=38.8,52.4,1437; xl=31.4]
 [A 1302 James Hyal | at=10.8,60.4,1437; xl=31.5]
 [A 1132 Fiora Longears | at=10.0,58.0,1437; opt; xl=31.5]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=31.5]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=31.5]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=31.5]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=31.5]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=31.5]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=31.5]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=31.5]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=31.5]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=31.5]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Stormwind | xl=31.5]
 ]==])

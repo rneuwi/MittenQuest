@@ -72,6 +72,10 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 2583 A Boar's Vitality | at=50.2,38.4,1419; mob=Helboar / Scorpok Stinger; xl=49.0]
 [T 2581 Snickerfang Jowls | at=50.5,14.2,1419; xl=49.0]
 [T 2583 A Boar's Vitality | at=50.5,14.2,1419; xl=49.1]
+[R Hunter - Stonard | at=47.26,53.43,1435; class=HUNTER; xl=49.2]
+Time to train: head to Ogromm in Stonard for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Undercity | at=83.86,72.07,1458; class=ROGUE; xl=49.2]
+Time to train: head to Carolyn Ward in Undercity for your new Rogue spells. The arrow takes you back to the route afterwards.
 [G 80.3,81.5 1425 Travel to The Hinterlands | xl=49.2]
 [A 7816 Gammerita, Mon! | at=80.3,81.5,1425; opt; xl=49.2]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
@@ -150,5 +154,19 @@ Starts from Blood Red Key, which drops in this area.
 [A 8470 Deadwood Ritual Totem | at=62.3,9.2,1448; xl=51.2]
 Starts from Deadwood Ritual Totem, which drops in this area.
 [T 8470 Deadwood Ritual Totem | at=65.5,3.5,1448; xl=51.2]
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=51.3]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=51.3]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=51.3]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=51.3]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=51.3]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=51.3]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=51.3]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Marshal's Refuge | xl=51.3]
 ]==])

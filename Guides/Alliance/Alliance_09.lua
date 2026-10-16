@@ -41,6 +41,10 @@ Starts from Empty Firewater Flask, which drops in this area.
 [A 4810 Return to Tinkee | at=61.6,38.6,1452; pre=4809; xl=52.7]
 [L 53 | xl=52.7]
 Grind mobs around your level here; more quests open at the next level.
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=53.0]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=53.0]
+Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 [F Talonbranch Glade | xl=53.0]
 [C 8461 Deadwood of the North | at=62.3,9.2,1448; mob=Deadwood Den Watcher / Deadwood Avenger; xl=53.0]
 [T 8461 Deadwood of the North | at=64.8,8.1,1448; xl=53.0]
@@ -156,6 +160,14 @@ Cauldron Lord Razarch has only one spawn point. If others are waiting for it, gr
 [C 6023 Unfinished Business | at=57.8,36.1,1422; mob=Huntsman Radley / Cavalier Durgen; xl=55.8]
 Cavalier Durgen has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 6023 Unfinished Business | at=51.9,28.1,1422; xl=55.8]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=55.9]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=55.9]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=55.9]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=55.9]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
 [F Morgan's Vigil | xl=55.9]
 [T 4286 The Good Stuff | at=84.6,68.7,1428; xl=55.9]
 [A 4182 Dragonkin Menace | at=85.8,69.0,1428; opt; xl=56.0]
@@ -174,8 +186,16 @@ Frenzied Black Drake has only one spawn point. If others are waiting for it, gro
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 4283 FIFTY! YEP! | at=45.0,56.8,1428; mob=Blackrock Soldier; item=11467:50; drop=39; opt; xl=56.1]
 [T 4283 FIFTY! YEP! | at=84.6,68.7,1428; opt; xl=56.1]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=56.2]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=56.2]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=56.2]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Booty Bay | xl=56.2]
 [A 1036 Avast Ye, Scallywag | at=27.4,69.4,1434; opt; xl=56.2]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=56.2]
+Ian Strom is right here: pick up your new Rogue spells.
 [A 630 Message in a Bottle | at=38.5,80.6,1434; pre=594; opt; xl=56.2]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 630 Message in a Bottle | at=41.0,83.9,1434; mob=King Mukla; opt; xl=56.2]
@@ -227,8 +247,18 @@ Find a group for Scholomance. Quests you skip there are dropped automatically.
 [T 5529 Plagued Hatchlings | at=71.7,49.9,1423; xl=58.5]
 [A 5281 The Restless Souls | at=69.9,53.7,1423; xl=58.6]
 [T 5281 The Restless Souls | at=11.4,26.6,1423; xl=58.6]
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=58.6]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
 [L 59 | xl=58.6]
 Grind mobs around your level here; more quests open at the next level.
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=59.0]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=59.0]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=59.0]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=59.0]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
 [L 60 | xl=59.0]
 Grind mobs around your level here; more quests open at the next level.
 ]==])

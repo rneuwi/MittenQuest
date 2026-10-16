@@ -19,6 +19,7 @@
         H [Destination]             use hearthstone
         S <Inn location>            set hearthstone
         L <level>                   grind until level
+        R <Class - Town>            visit your class trainer (use with class=)
         D <Dungeon name>            dungeon run (pair with quests=...)
         N <text>                    note (same as an untagged line)
 
@@ -54,7 +55,7 @@ ns.Parser = Parser
 local TAGS = {
     A = "ACCEPT", C = "COMPLETE", T = "TURNIN", G = "GOTO",
     P = "GETFP", F = "FLY", H = "HEARTH", S = "SETHEARTH",
-    L = "LEVEL", D = "DUNGEON", N = "TEXT",
+    L = "LEVEL", D = "DUNGEON", N = "TEXT", R = "TRAIN",
 }
 
 local function trim(s) return (s:match("^%s*(.-)%s*$")) end

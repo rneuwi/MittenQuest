@@ -17,6 +17,18 @@ MittenQuest:RegisterGuide([==[Horde 1-14 Tirisfal Glades (Undead)]==], [==[
 [T 98389 A Light in the Darkness | at=31.1,66.4,1420; xl=2.1]
 [C 376 The Damned | at=30.7,69.3,1420; mob=Young Scavenger / Duskbat; item=3265:6,3264:6; drop=61; xl=2.8]
 [T 376 The Damned | at=30.9,66.0,1420; xl=2.8]
+[R Rogue - Tirisfal Glades | at=32.53,65.65,1420; class=ROGUE; xl=3.1]
+David Trias is right here: pick up your new Rogue spells.
+[R Priest - Tirisfal Glades | at=31.11,66.03,1420; class=PRIEST; xl=3.1]
+Dark Cleric Duesten is right here: pick up your new Priest spells.
+[R Paladin - Tirisfal Glades | at=31.1,66.41,1420; class=PALADIN; xl=3.1]
+Aramis Hammerhand is right here: pick up your new Paladin spells.
+[R Warrior - Tirisfal Glades | at=32.69,65.56,1420; class=WARRIOR; xl=3.1]
+Dannal Stern is right here: pick up your new Warrior spells.
+[R Warlock - Tirisfal Glades | at=30.91,66.34,1420; class=WARLOCK; xl=3.1]
+Maximillion is right here: pick up your new Warlock spells.
+[R Mage - Tirisfal Glades | at=30.93,66.06,1420; class=MAGE; xl=3.1]
+Isabella is right here: pick up your new Mage spells.
 [A 3902 Scavenging Deathknell | at=31.6,65.6,1420; pre=376; xl=3.1]
 [A 380 Night Web's Hollow | at=32.1,66.0,1420; pre=376; xl=3.1]
 [C 3902 Scavenging Deathknell | at=32.5,64.3,1420; item=11127:6; xl=3.1]
@@ -32,6 +44,18 @@ MittenQuest:RegisterGuide([==[Horde 1-14 Tirisfal Glades (Undead)]==], [==[
 [C 382 The Red Messenger | at=36.6,68.5,1420; mob=Meven Korgal; xl=4.8]
 Meven Korgal has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 382 The Red Messenger | at=32.1,66.0,1420; xl=4.8]
+[R Rogue - Tirisfal Glades | at=32.53,65.65,1420; class=ROGUE; xl=5.4]
+David Trias is right here: pick up your new Rogue spells.
+[R Priest - Tirisfal Glades | at=31.11,66.03,1420; class=PRIEST; xl=5.4]
+Dark Cleric Duesten is right here: pick up your new Priest spells.
+[R Paladin - Tirisfal Glades | at=31.1,66.41,1420; class=PALADIN; xl=5.4]
+Aramis Hammerhand is right here: pick up your new Paladin spells.
+[R Warrior - Tirisfal Glades | at=32.69,65.56,1420; class=WARRIOR; xl=5.4]
+Dannal Stern is right here: pick up your new Warrior spells.
+[R Warlock - Tirisfal Glades | at=30.91,66.34,1420; class=WARLOCK; xl=5.4]
+Maximillion is right here: pick up your new Warlock spells.
+[R Mage - Tirisfal Glades | at=30.93,66.06,1420; class=MAGE; xl=5.4]
+Isabella is right here: pick up your new Mage spells.
 [A 383 Vital Intelligence | at=32.1,66.0,1420; pre=382; xl=5.4]
 [A 8 A Rogue's Deal | at=38.2,56.8,1420; xl=5.4]
 [A 365 Fields of Grief | at=40.9,54.2,1420; xl=5.4]
@@ -55,6 +79,18 @@ Meven Korgal has only one spawn point. If others are waiting for it, group up to
 [T 8 A Rogue's Deal | at=61.7,52.0,1420; xl=6.9]
 [C 86784 Sticks and Bones | at=57,52.5,1420; item=279991:6; xl=7.0]
 [T 86784 Sticks and Bones | at=57.3,55.5,1420; xl=7.0]
+[R Rogue - Tirisfal Glades | at=61.75,52,1420; class=ROGUE; xl=7.2]
+Marion Call is right here: pick up your new Rogue spells.
+[R Priest - Tirisfal Glades | at=61.57,52.19,1420; class=PRIEST; xl=7.2]
+Dark Cleric Beryl is right here: pick up your new Priest spells.
+[R Paladin - Tirisfal Glades | at=60.22,52.66,1420; class=PALADIN; xl=7.2]
+Shari Stilwell is right here: pick up your new Paladin spells.
+[R Warrior - Tirisfal Glades | at=61.85,52.54,1420; class=WARRIOR; xl=7.2]
+Austil de Mon is right here: pick up your new Warrior spells.
+[R Warlock - Tirisfal Glades | at=61.59,52.4,1420; class=WARLOCK; xl=7.2]
+Rupert Boch is right here: pick up your new Warlock spells.
+[R Mage - Tirisfal Glades | at=61.97,52.47,1420; class=MAGE; xl=7.2]
+Cain Firesong is right here: pick up your new Mage spells.
 [C 404 A Putrid Task | at=52.2,56.5,1420; mob=Ravaged Corpse; item=2855:7; drop=48; xl=7.2]
 [T 404 A Putrid Task | at=58.2,51.5,1420; xl=7.2]
 [A 426 The Mills Overrun | at=58.2,51.5,1420; pre=404; xl=7.4]
@@ -85,10 +121,22 @@ Starts from A Letter to Yvette, which drops in this area.
 [C 99153 The One That Got Away | at=9.8,69.3,1420; xl=8.7]
 [T 99153 The One That Got Away | at=20.2,46.5,1420; xl=8.7]
 [T 99152 As Above, So Below | at=22.0,47.2,1420; xl=8.9]
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=9.2]
+Hilda the Breaker is right here: pick up your new Paladin spells.
 [A 590 A Rogue's Deal | at=38.2,56.8,1420; pre=8; xl=9.2]
 [C 590 A Rogue's Deal | at=38.2,56.7,1420; xl=9.2]
 [T 590 A Rogue's Deal | at=38.2,56.8,1420; xl=9.2]
 [T 426 The Mills Overrun | at=58.2,51.5,1420; xl=9.2]
+[R Rogue - Tirisfal Glades | at=61.75,52,1420; class=ROGUE; xl=9.5]
+Marion Call is right here: pick up your new Rogue spells.
+[R Priest - Tirisfal Glades | at=61.57,52.19,1420; class=PRIEST; xl=9.5]
+Dark Cleric Beryl is right here: pick up your new Priest spells.
+[R Warrior - Tirisfal Glades | at=61.85,52.54,1420; class=WARRIOR; xl=9.5]
+Austil de Mon is right here: pick up your new Warrior spells.
+[R Warlock - Tirisfal Glades | at=61.59,52.4,1420; class=WARLOCK; xl=9.5]
+Rupert Boch is right here: pick up your new Warlock spells.
+[R Mage - Tirisfal Glades | at=61.97,52.47,1420; class=MAGE; xl=9.5]
+Cain Firesong is right here: pick up your new Mage spells.
 [A 445 Delivery to Silverpine Forest | at=59.5,52.4,1420; xl=9.5]
 [T 367 A New Plague | at=59.5,52.4,1420; xl=9.5]
 [A 368 A New Plague | at=59.5,52.4,1420; pre=367; xl=9.6]
@@ -115,9 +163,27 @@ Captain Vachon has only one spawn point. If others are waiting for it, group up 
 [T 97558 Hides for the Forsaken | at=65.4,60.1,1420; xl=10.8]
 [C 368 A New Plague | at=34.3,44.2,1420; mob=Vile Fin Puddlejumper; item=2859:5; drop=58; xl=11.0]
 [T 96899 Bandarion Keep | at=22.0,44.7,1420; xl=11.0]
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=11.1]
+Hilda the Breaker is right here: pick up your new Paladin spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 96896 A Righteous Cause | at=22.0,44.7,1420; xl=11.1]
 [T 96896 A Righteous Cause | at=22.0,44.7,1420; xl=11.1]
 [T 368 A New Plague | at=59.5,52.4,1420; xl=11.3]
+[R Rogue - Tirisfal Glades | at=61.75,52,1420; class=ROGUE; xl=11.5]
+Marion Call is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Priest - Tirisfal Glades | at=61.57,52.19,1420; class=PRIEST; xl=11.5]
+Dark Cleric Beryl is right here: pick up your new Priest spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warrior - Tirisfal Glades | at=61.85,52.54,1420; class=WARRIOR; xl=11.5]
+Austil de Mon is right here: pick up your new Warrior spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Tirisfal Glades | at=61.59,52.4,1420; class=WARLOCK; xl=11.5]
+Rupert Boch is right here: pick up your new Warlock spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Mage - Tirisfal Glades | at=61.97,52.47,1420; class=MAGE; xl=11.5]
+Cain Firesong is right here: pick up your new Mage spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 369 A New Plague | at=59.5,52.4,1420; pre=368; xl=11.5]
 [C 96897 The Cult of the Damned | at=68.0,64.4,1420; mob=Dark Neophyte / Dark Enforcer; xl=11.5]
 [C 96898 Remnants of War | at=68.0,64.4,1420; mob=Dark Enforcer; item=275851:12; xl=11.5]
@@ -129,6 +195,15 @@ Captain Vachon has only one spawn point. If others are waiting for it, group up 
 [T 369 A New Plague | at=59.5,52.4,1420; xl=12.0]
 [A 492 A New Plague | at=59.5,52.4,1420; pre=369; xl=12.1]
 [T 492 A New Plague | at=61.9,51.4,1420; xl=12.1]
+[R Hunter - Stonard | at=47.26,53.43,1435; class=HUNTER; xl=12.3]
+Time to train: head to Ogromm in Stonard for your new Hunter spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=12.3]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=12.3]
+Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 43.4,40.9 1421 Travel to Silverpine Forest | xl=12.3]
 [S The Sepulcher | at=43.18,41.28,1421; xl=12.3]
 Talk to Innkeeper Bates and make this inn your home.

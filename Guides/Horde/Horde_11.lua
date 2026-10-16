@@ -128,11 +128,29 @@ Twilight Keeper Mayna has only one spawn point. If others are waiting for it, gr
 [T 8279 The Twilight Lexicon | at=67.2,69.8,1451; xl=58.7]
 [A 8287 A Terrible Purpose | at=67.2,69.8,1451; pre=8279; xl=58.8]
 [T 8287 A Terrible Purpose | at=49.2,34.2,1451; xl=58.8]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=58.9]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=58.9]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=58.9]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
 [F Light's Hope Chapel | xl=58.9]
 [T 8859 Secrets of the Colossus - Zora | at=71.9,48.4,1423; xl=58.9]
 [T 5529 Plagued Hatchlings | at=71.7,49.9,1423; xl=59.0]
 [C 6133 The Ranger Lord's Behest | at=45.3,12.7,1423; mob=Pathstrider / Ranger; xl=59.0]
 [T 6133 The Ranger Lord's Behest | at=22.2,63.5,1423; xl=59.0]
+[R Priest - Undercity | at=49.26,17.12,1458; class=PRIEST; xl=59.1]
+Time to train: head to Aelthalyste in Undercity for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Undercity | at=47.08,15.9,1458; class=PALADIN; xl=59.1]
+Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Undercity | at=46.93,15.23,1458; class=WARRIOR; xl=59.1]
+Time to train: head to Christoph Walker in Undercity for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=59.1]
+Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Undercity | at=86.21,15.93,1458; class=WARLOCK; xl=59.1]
+Time to train: head to Kaal Soulreaper in Undercity for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=59.1]
+Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
 [L 60 | xl=59.1]
 Grind mobs around your level here; more quests open at the next level.
 ]==])

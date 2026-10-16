@@ -145,5 +145,32 @@ Hezrul Bloodmark has only one spawn point. If others are waiting for it, group u
 [A 878 Tribes at War | at=44.5,59.3,1413; xl=17.4]
 [P Camp Taurajo | at=44.45,59.15,1413; xl=17.4]
 [T 3281 Stolen Silver | at=51.9,30.3,1413; xl=17.4]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=17.5]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=17.5]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=17.5]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=17.5]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=17.5]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=17.5]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=17.5]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=17.5]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=17.5]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 44.0,40.9 1421 Travel to Silverpine Forest - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=17.5]
 ]==])

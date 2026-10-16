@@ -68,5 +68,23 @@ Starts from Sharptalon's Claw, which drops in this area.
 [T 247 The Hunt Completed | at=73.8,61.5,1440; xl=26.8]
 [T 6921 Amongst the Ruins | at=11.6,34.3,1440; xl=26.9]
 [T 824 Je'neu of the Earthen Ring | at=11.6,34.3,1440; xl=27.1]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=27.2]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=27.2]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=27.2]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=27.2]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=27.2]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=27.2]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=27.2]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=27.2]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=27.2]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 47.2,61.2 1442 Travel to Stonetalon Mountains | xl=27.2]
 ]==])

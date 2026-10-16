@@ -491,6 +491,19 @@ def _name_inns():
         inn['town'] = min(near)[1] if near else ZONE_NAMES.get(inn['loc'][3], 'the inn')
 
 
+# Class trainers friendly to this faction (WoW: Forever adds e.g. Undead Paladins and
+# Dwarf Shamans, so classes come from the data, not Classic's race/class table).
+CLASS_NAMES = ['Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Shaman', 'Mage', 'Warlock', 'Druid']
+CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
+TRAINERS = collections.defaultdict(list)     # class -> [{name, loc, town}]
+for nid, e in N.items():
+    sub = e.get('subName') or ''
+    cls = sub[:-len(' Trainer')] if sub.endswith(' Trainer') else None
+    if cls in CLASS_NAMES and e.get('friendlyToFaction') != ENEMY_FLAG:
+        for loc in spawns_of(e)[:1]:
+            TRAINERS[cls].append({'name': clean(e.get('name')), 'loc': loc, 'town': None})
+
+
 def continent(area):
     if area in KALIMDOR:
         return 'K'
@@ -508,6 +521,24 @@ def dist(a, b):
 
 
 _name_inns()
+
+
+def _name_trainers():
+    for lst in TRAINERS.values():
+        for t in lst:
+            near = [(math.hypot(fm['loc'][1] - t['loc'][1], fm['loc'][2] - t['loc'][2]), fm['node'])
+                    for fm in FMS if fm['loc'][0] == t['loc'][0]]
+            near = [x for x in near if x[0] <= 12]
+            area = t['loc'][3]
+            t['town'] = (ZONE_NAMES.get(area) if area in CAPITALS else None) or (min(near)[1] if near else None) \
+                or ZONE_NAMES.get(area, 'town')
+
+
+_name_trainers()
+TRAIN_EVERY = 2          # train when passing a trainer this many levels after the last visit
+TRAIN_TRIP_AFTER = 4     # make a dedicated trip once this many levels have gone untrained
+VALLEY_CAP_LEVEL = 6     # starting-area trainers only teach up to here
+VALLEY_POINTS = []       # first quest giver of each starting area (filled in main)
 
 # Value of finishing a chain step: XP of the quests it unlocks counts partly toward it.
 FOLLOW_XP = collections.Counter()
@@ -587,6 +618,9 @@ class Sim:
         self.hearth_ready = 0.0
         self.slow = set()             # quests skipped as not worth the time
         self.level_times = {}
+        self.trained = {c: 1 for c in TRAINERS}   # class -> level when last trained
+        self.talent_note = set()
+        self.dual_note = set()
 
     # -- rules
     def race_ok(self, q):
@@ -700,6 +734,54 @@ class Sim:
         self.emit(f"Talk to {inn['name']} and make this inn your home.")
         self.t += QUEST_NPC_SECONDS
         self.bind = inn
+
+    # -- class training
+    def trainer_ok(self, t):
+        if self.L <= VALLEY_CAP_LEVEL:
+            return True
+        loc = t['loc']
+        return not any(v[0] == loc[0] and math.hypot(v[1] - loc[1], v[2] - loc[2]) <= 18 for v in VALLEY_POINTS)
+
+    def emit_training(self, cls, t, trip):
+        cf = cls.upper()
+        self.emit(f"[R {cls} - {t['town']} | {self.at(t['loc'])}; class={cf}]")
+        if trip:
+            self.emit(f"Time to train: head to {t['name']} in {t['town']} for your new {cls} spells. "
+                      f"The arrow takes you back to the route afterwards.")
+        else:
+            self.emit(f"{t['name']} is right here: pick up your new {cls} spells.")
+        if self.L >= 10 and cls not in self.talent_note:
+            self.talent_note.add(cls)
+            self.emit("You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).")
+        if self.L >= 40 and cls not in self.dual_note:
+            self.dual_note.add(cls)
+            self.emit("Dual Specialization can now be bought from your class trainer in a major city.")
+        self.trained[cls] = self.L
+
+    def train_nearby(self):
+        """Classes that are due and have a trainer within a short walk."""
+        if not self.pos:
+            return
+        for cls, lst in TRAINERS.items():
+            if self.L - self.trained[cls] < TRAIN_EVERY:
+                continue
+            near = [t for t in lst if t['loc'][0] == self.pos[0] and self.trainer_ok(t)
+                    and math.hypot(t['loc'][1] - self.pos[1], t['loc'][2] - self.pos[2]) <= 12]
+            if near:
+                self.emit_training(cls, near[0], trip=False)
+
+    def train_trips(self):
+        """Before leaving a zone: send classes that haven't trained in a while to their trainer."""
+        if not self.pos:
+            return
+        for cls, lst in TRAINERS.items():
+            if self.L - self.trained[cls] < TRAIN_TRIP_AFTER:
+                continue
+            ok = [t for t in lst if self.trainer_ok(t)]
+            if ok:
+                t = min(ok, key=lambda t: (travel_seconds(self.pos, t['loc'], self.L),
+                                           0 if t['loc'][3] in CAPITALS else 1))
+                self.emit_training(cls, t, trip=True)
 
     # -- emit
     def emit(self, line):
@@ -829,6 +911,7 @@ class Sim:
             kind, q = act
             self.maybe_hearth_to({'A': q.start, 'C': q.target, 'T': q.finish}[kind])
             getattr(self, {'A': 'accept', 'C': 'complete', 'T': 'turnin'}[kind])(q)
+            self.train_nearby()
             self.maybe_learn_fp()
             self.check_dungeons(area)
         # learn this zone's flight path before leaving if we never walked past it
@@ -897,6 +980,7 @@ class Sim:
         return False
 
     def travel_to(self, mapID):
+        self.train_trips()
         area = self.map_area[mapID]
         name = ZONE_NAMES.get(area, f'zone {area}')
         dest_fms = [fm for fm in self.fm_on_map(mapID) if fm['node'] in self.learned]
@@ -969,6 +1053,7 @@ class Sim:
                 current = nxt
                 continue
             if self.future_quests(maps):
+                self.train_trips()
                 # Nothing open yet: grind one level (counts as XP).
                 target = min(60, self.L + 1)
                 self.emit(f"[L {target}]")
@@ -1112,6 +1197,12 @@ def main():
         return sim, segs
 
     shared_start = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
+    for key, races, display, mask, start_areas, follow_areas in CFG['starters']:
+        probe = Sim(mask)
+        index_maps(probe)
+        maps = {m for m, a in probe.map_area.items() if a in start_areas}
+        first = min((q for m in maps for q in probe.map_quests[m] if probe.eligible(q)), key=lambda q: (q.level, q.id))
+        VALLEY_POINTS.append(first.start)
     starter_done = set()
     for key, races, display, mask, start_areas, follow_areas in CFG['starters']:
         banned = set(CORR_SKIP)
@@ -1141,6 +1232,7 @@ def main():
     banned = set()
     for it in range(10):
         sim = Sim(FMASK, level=CFG['shared_level'], banned=banned, prior=starter_done)
+        sim.trained = {c: CFG['shared_level'] for c in TRAINERS}   # starters end with training
         index_maps(sim)
         sim.pos = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
         segs = sim.run(until_level=60)

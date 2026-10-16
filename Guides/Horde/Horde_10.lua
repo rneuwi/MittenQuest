@@ -86,6 +86,10 @@ Grind mobs around your level here; more quests open at the next level.
 Starts from Winterfall Ritual Totem, which drops in this area.
 [L 53 | xl=52.3]
 Grind mobs around your level here; more quests open at the next level.
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=53.0]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=53.0]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
 [F Bloodvenom Post | xl=53.0]
 [C 5203 Rescue From Jaedenar | at=35.5,59.1,1448; xl=53.0]
 [C 4505 Well of Corruption | at=32.3,66.6,1448; xl=53.0]
@@ -119,6 +123,8 @@ Find a group for Blackrock Depths. Quests you skip there are dropped automatical
 Lar'korwi has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 4292 The Bait for Lar'korwi | at=71.6,76.0,1449; xl=54.7]
 [F Camp Mojache | xl=54.8]
+[R Druid - Camp Mojache | at=75.99,42.28,1444; class=DRUID; xl=54.8]
+Jannos Lighthoof is right here: pick up your new Druid spells.
 [A 3062 Dark Heart | at=76.2,43.8,1444; opt; xl=54.8]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 3062 Dark Heart | at=40.5,8.6,1444; mob=Edana Hatetalon; opt; xl=54.8]
@@ -139,5 +145,17 @@ Edana Hatetalon has only one spawn point. If others are waiting for it, group up
 [T 8281 Stepping Up Security | at=51.1,38.3,1451; xl=55.0]
 [C 8278 Noggle's Last Hope | at=39.9,81.7,1451; mob=Stonelash Flayer / Stonelash Pincer; item=20375:3,20374:3,20377:3; drop=10; xl=55.1]
 [T 8278 Noggle's Last Hope | at=51.6,38.6,1451; xl=55.1]
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=55.2]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=55.2]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=55.2]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=55.2]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=55.2]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=55.2]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 69.9,53.7 1423 Travel to Eastern Plaguelands - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=55.2]
 ]==])

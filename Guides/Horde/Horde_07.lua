@@ -7,6 +7,8 @@ MittenQuest:RegisterGuide([==[Horde 39-43 Stranglethorn Vale, Swamp of Sorrows, 
 #next Horde 43-47 Dustwallow Marsh, Desolace, Feralas
 
 [T 669 Sunken Treasure | at=27.2,77.0,1434; xl=39.3]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=39.3]
+Ian Strom is right here: pick up your new Rogue spells.
 [A 670 Sunken Treasure | at=27.2,77.0,1434; pre=669; xl=39.3]
 [A 617 Akiris by the Bundle | at=26.8,76.4,1434; xl=39.3]
 [C 587 Up to Snuff | at=29.4,81.3,1434; mob=Bloodsail Warlock; item=3910:15; drop=42; xl=39.3]
@@ -19,6 +21,8 @@ Starts from Cortello's Riddle, which drops in this area.
 [T 607 Return to MacKinley | at=27.8,77.1,1434; xl=39.4]
 [C 572 Mok'thardin's Enchantment | at=31.4,42.0,1434; mob=Jungle Stalker; item=3863:10; drop=18; xl=39.5]
 [T 572 Mok'thardin's Enchantment | at=32.1,29.2,1434; xl=39.5]
+[R Hunter - Grom'gol | at=31.23,28.68,1434; class=HUNTER; xl=39.5]
+Kragg is right here: pick up your new Hunter spells.
 [A 571 Mok'thardin's Enchantment | at=32.1,29.2,1434; pre=572; xl=39.5]
 [C 600 Venture Company Mining | at=42.1,44.5,1434; mob=Venture Co. Surveyor; item=3917:10; drop=44; xl=39.5]
 [C 571 Mok'thardin's Enchantment | at=33.0,64.8,1434; mob=Elder Mistvale Gorilla; xl=39.5]
@@ -145,5 +149,32 @@ Andre Firebeard has only one spawn point. If others are waiting for it, group up
 [T 2875 WANTED: Andre Firebeard | at=67.1,23.9,1446; xl=43.2]
 [A 2781 WANTED: Caliph Scorpidsting | at=66.8,22.3,1446; xl=43.3]
 [T 8365 Pirate Hats Ahoy! | at=66.6,22.3,1446; xl=43.3]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=43.4]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=43.4]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=43.4]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=43.4]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=43.4]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=43.4]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=43.4]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=43.4]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=43.4]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
 [F Brackenwall Village | xl=43.4]
 ]==])

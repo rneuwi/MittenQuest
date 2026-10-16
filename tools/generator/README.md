@@ -49,6 +49,15 @@ dungeon runs, respawn waits; constants near the top of `gen_route.py`). It's use
 `calibrate.py` also lists the slowest steps from real players' timestamps, the way to find
 crowded or badly placed steps that the data alone can't predict.
 
+## Class training
+
+Trainer locations come from the data (subName "<Class> Trainer", friendly to the faction),
+so Forever's new class/race combinations are covered automatically. The simulator tracks the
+last training level per class: `R` steps (with `class=`) are emitted when the route passes a
+trainer and the class is `TRAIN_EVERY` levels behind, or as a trip to the nearest trainer
+before changing zones once it's `TRAIN_TRIP_AFTER` levels behind. Starting-area trainers
+(near each starter's first quest) are only used up to level 6, since many stop teaching there.
+
 ## How the route is built
 
 `gen_route.py` simulates a character: on each map it picks the nearest worthwhile action

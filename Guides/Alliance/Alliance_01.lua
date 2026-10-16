@@ -30,12 +30,27 @@ Find a group for The Deadmines. Quests you skip there are dropped automatically.
 [P Stormwind | at=70.95,72.51,1453; xl=21.0]
 [T 97222 Gatehouse Goods | at=66.6,73.4,1453; xl=21.0]
 [T 92750 Detonation at a Distance | at=80.3,70.1,1453; xl=21.1]
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=21.1]
+Ander Germaine is right here: pick up your new Warrior spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Stormwind City | at=77.43,65.31,1453; class=ROGUE; xl=21.1]
+Osborne the Night Man is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 92751 Detonation at a Distance | at=80.3,70.1,1453; xl=21.1]
 [A 98191 A Friend of the Family | at=80.2,38.4,1453; xl=21.1]
 [T 343 Speaking of Fortitude | at=77.1,30.2,1453; xl=21.1]
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=21.2]
+Einris Brightspear is right here: pick up your new Hunter spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [T 97234 Reading Room | at=75.0,30.1,1453; xl=21.2]
 [T 92751 Detonation at a Distance | at=61.9,30.6,1453; xl=21.3]
 [T 98191 A Friend of the Family | at=48.4,50.2,1453; xl=21.3]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=21.5]
+High Priestess Laurena is right here: pick up your new Priest spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=21.5]
+Lord Grayson Shadowbreaker is right here: pick up your new Paladin spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [F Menethil Harbor | xl=21.5]
 [A 463 The Greenwarden | at=10.9,59.6,1437; opt; xl=21.5]
 [A 98282 Alchemical Hazards | at=11.9,58.8,1437; xl=21.5]
@@ -79,5 +94,17 @@ Gobbler has only 2 spawn points. If others are waiting for it, group up to share
 [A 471 Apprentice's Duties | at=8.6,55.7,1437; pre=484; xl=23.2]
 [A 295 Ormer's Revenge | at=38.2,50.9,1437; pre=294; xl=23.2]
 [A 299 Uncovering the Past | at=38.8,52.4,1437; xl=23.2]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=23.2]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=23.2]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=23.2]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=23.2]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 24.4,46.1 1433 Travel to Redridge Mountains | xl=23.2]
 ]==])
