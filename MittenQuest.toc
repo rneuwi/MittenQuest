@@ -20,6 +20,7 @@ embeds.xml
 Core.lua
 Parser.lua
 Steps.lua
+Pace.lua
 Navigation.lua
 QuestPins.lua
 Arrow.lua

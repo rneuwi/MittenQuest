@@ -34,6 +34,7 @@ local defaults = {
         skipGrey      = true,   -- auto-skip quests that are grey for your level
         autoWaypoint  = true,   -- also place a map pin (TomTom / built-in) for each step
         arrivalYards  = 10,
+        pace = { show = true },   -- "On pace / behind" and grind warnings
         arrow = {
             enabled = true, locked = false, scale = 1.0,
             point = "TOP", relPoint = "TOP", x = 0, y = -120,
@@ -112,7 +113,6 @@ function FG:OnEnable()
     -- Drops / leveling
     self:RegisterEvent("BAG_UPDATE_DELAYED", "RequestAdvance")
     self:RegisterEvent("PLAYER_LEVEL_UP", "OnQuestListChanged")
-    self:RegisterEvent("PLAYER_XP_UPDATE", "RequestRefresh")
     -- Travel / pathing
     self:RegisterEvent("TAXIMAP_OPENED")
     self:RegisterEvent("PLAYER_CONTROL_LOST")
@@ -131,6 +131,7 @@ function FG:OnEnable()
     self:SafeInit("window", function() ns.Frame:Create(self.db.profile.frame) end)
     self:SafeInit("arrow", function() ns.Arrow:Create() end)
     self:SafeInit("map pins", function() ns.QuestPins:Enable() end)
+    self:SafeInit("pace", function() ns.Pace:Enable() end)  -- also refreshes the window on XP gain
 end
 
 function FG:SafeInit(name, fn)
@@ -245,7 +246,27 @@ function FG:Advance(forceWaypoint)
         return ns.Navigation:SetFromStep(nil)
     end
 
+    local before = p.done or {}
     p.done = self:Evaluate(steps, p)
+
+    -- Pace log: record steps that just completed through play. The first evaluation of a
+    -- guide in each session only sets the baseline, so steps already done when you log
+    -- in (or when a guide loads) aren't recorded at your current level.
+    local gname = self.db.char.activeGuide
+    self.paceBaseline = self.paceBaseline or {}
+    if self.paceBaseline[gname] then
+        local newly = {}
+        for idx, why in pairs(p.done) do
+            if why and not before[idx] then newly[#newly + 1] = idx end
+        end
+        if #newly > 0 then
+            table.sort(newly)
+            ns.Pace:RecordSteps(gname, steps, newly, p.done)
+        end
+    else
+        self.paceBaseline[gname] = true
+    end
+
     local i = 1
     while steps[i] and p.done[i] do i = i + 1 end
 
@@ -455,7 +476,8 @@ function FG:QUEST_ACCEPTED(_, questID)
     ns.QuestPins:RequestRefresh()
 end
 
-function FG:QUEST_TURNED_IN(_, questID)
+function FG:QUEST_TURNED_IN(_, questID, xpReward)
+    ns.Pace:OnQuestTurnedIn(xpReward)
     self:MarkQuest(questID, "TURNIN")
     ns.QuestPins:RequestRefresh()
 end
@@ -708,4 +730,5 @@ function FG:GuideBanner()
             :format(UnitLevel("player"), h.levelMin or 1, h.levelMax)
     end
     if steps and p.index > #steps then return "Guide complete!" end
+    return ns.Pace:Banner()
 end

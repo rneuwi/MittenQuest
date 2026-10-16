@@ -44,8 +44,19 @@ XP_TO_LEVEL = [400, 900, 1400, 2100, 2800, 3600, 4500, 5400, 6500, 7600, 8800, 1
                44300, 47400, 50800, 54500, 58600, 62800, 67100, 71600, 76100, 80800, 85700, 90700, 95800,
                101000, 106300, 111800, 117500, 123200, 129100, 135100, 141200, 147500, 153900, 160400,
                167100, 173900, 180800, 187900, 195000, 202300, 209800]
+# Measured from real play by calibrate.py: {first level of band: factor}. Bands without
+# data fall back to the built-in estimate below.
+_cal_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'calibration.json')
+CALIBRATION = {int(k): v for k, v in
+               (json.load(open(_cal_path)).get('kill_xp_factor', {}) if os.path.exists(_cal_path) else {}).items()}
+CALIBRATION_BANDS = [1, 6, 10, 15, 20, 30, 40, 50]
+
+
 def kill_xp_factor(L):
     """Quest XP x this ~= total XP while questing (mob kills on the way)."""
+    band = max(lo for lo in CALIBRATION_BANDS if lo <= L)   # same bands as calibrate.py
+    if band in CALIBRATION:
+        return CALIBRATION[band]
     return 2.3 if L < 6 else 2.0 if L < 20 else 2.2
 LOG_LIMIT = 20
 
@@ -215,6 +226,28 @@ class Quest:
     pass
 
 
+def _build_xp_by_level():
+    """Median known quest XP per quest level, over a +-2 level window (smooths odd levels)."""
+    by = collections.defaultdict(list)
+    for qid_s, q in Q.items():
+        xp = (S['xp'].get(qid_s) or [None, 0])[1]
+        lvl = q.get('questLevel')
+        if xp and lvl and lvl > 0:
+            by[lvl].append(xp)
+    out = {}
+    for lvl in range(1, 61):
+        pool = [x for d in range(-2, 3) for x in by.get(lvl + d, [])]
+        out[lvl] = int(sorted(pool)[len(pool) // 2]) if pool else 0
+    return out
+
+
+XP_BY_LEVEL = _build_xp_by_level()
+
+
+def estimated_quest_xp(level):
+    return XP_BY_LEVEL.get(max(1, min(60, level)), 0)
+
+
 def build_quests():
     quests = {}
     for qid_s, q in Q.items():
@@ -292,6 +325,10 @@ def build_quests():
         x.exclusive = list(q.get('exclusiveTo') or []) if isinstance(q.get('exclusiveTo'), list) else []
         x.breadcrumbFor = q.get('breadcrumbForQuestId')
         x.xp = (S['xp'].get(qid_s) or [None, 0])[1] or 0
+        x.xpEstimated = False
+        if not x.xp:
+            # Mostly quests new to Forever, which the XP table doesn't cover yet.
+            x.xp, x.xpEstimated = estimated_quest_xp(lvl), True
         # objectives
         obj = q.get('objectives') or {}
         pts, mobs, items, elite = [], [], [], False
@@ -485,7 +522,10 @@ class Sim:
 
     # -- emit
     def emit(self, line):
-        self.steps.append((line, self.L))
+        # Second element: the level the simulated player has when reaching this step,
+        # with the fraction of the current level (12.4 = level 12, 40% of the way to 13).
+        frac = self.xp / XP_TO_LEVEL[self.L - 1] if self.L < 60 else 0
+        self.steps.append((line, round(self.L + min(frac, 0.99), 1)))
 
     def at(self, loc):
         return f"at={loc[1]},{loc[2]},{loc[0]}"
@@ -795,6 +835,17 @@ def prune_unfinished(sim):
 
 
 # ---------------------------------------------------------------- guide writer
+def with_expected_levels(pairs):
+    """Add xl=<expected level> to every tagged step (notes are left alone)."""
+    out = []
+    for line, lvl in pairs:
+        if line.startswith('[') and line.endswith(']'):
+            sep = '; ' if '|' in line else ' | '
+            line = f"{line[:-1]}{sep}xl={lvl}]"
+        out.append(line)
+    return out
+
+
 def write_guide(path, name, steps, lo, hi, races=None, next_name=None, knownfp=None):
     head = [f'#levels {lo}-{hi}', f'#faction {FACTION}']
     if races:
@@ -876,7 +927,7 @@ def main():
         lo, hi = 1, max(sim.L, 2)
         zones = [ZONE_NAMES.get(min(start_areas), '')] + [ZONE_NAMES.get(a, '') for a in sorted(follow_areas)]
         title = f"{FACTION} 1-{hi} {', '.join(zones)} ({display})"
-        steps = [s for s, _ in sim.steps]
+        steps = with_expected_levels(sim.steps)
         out_files.append((f'Start_{key}.lua', title, steps, lo, hi, races, None, None))
         print(f'{title}: {len(steps)} steps, ends level {sim.L}, learned {sorted(sim.learned)}')
 
@@ -899,7 +950,7 @@ def main():
     learned_so_far = set()
     names = [g['title'] for g in guides]
     for i, g in enumerate(guides):
-        steps = [s for s, _ in sim.steps[g['a']:g['b']]]
+        steps = with_expected_levels(sim.steps[g['a']:g['b']])
         nxt = names[i + 1] if i + 1 < len(names) else None
         hi = 60 if nxt is None else max(g['l1'], g['l0'] + 1)   # last guide carries you to 60
         if nxt is None:

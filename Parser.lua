@@ -34,6 +34,7 @@
         faction=Horde        only for this faction
         quests=id,id         (D steps) dungeon quests to carry in
         alt=text             fallback shown if a flight path isn't known
+        xl=12.4              level the route expects you to be at this step (pace display)
         via=x,y,map>x,y,map  path points the arrow walks first (ramps, cave mouths, bridges)
         cave=Name            target is inside this cave (Data/Entrances.lua); arrow goes to its mouth
         opt                  optional step (auto-skipped if prereqs are missing)
@@ -124,6 +125,8 @@ local function parseOptions(step, optText, warn)
             end
         elseif key == "cave" then
             step.cave = val
+        elseif key == "xl" then
+            step.xl = tonumber(val)
         elseif key == "alt" then
             step.alt = val
         else

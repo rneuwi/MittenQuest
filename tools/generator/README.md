@@ -15,6 +15,26 @@ lua5.1 tools/lint.lua Guides/*/*.lua   # check every race's chain 1-60
 `support.py` (zones, dungeons, drop rates, quest XP), `gen_route.py <work> <out> Horde|Alliance`
 for each faction, and `gen_questdb.py` (merged quest database for map pins).
 
+## Recalibrating from real play
+
+Players' SavedVariables files (`MittenQuest.lua`, see the main README) contain a pace log.
+
+```sh
+python3 tools/generator/calibrate.py path/to/MittenQuest.lua [more files ...]
+tools/generator/build.sh
+```
+
+`calibrate.py` measures, per level band, total XP (minus rested bonus) divided by quest XP,
+which is exactly the generator's `kill_xp_factor`, and writes `calibration.json`. It also
+prints how far players were from each guide's expected levels. `gen_route.py` uses the
+measured factor for any band with enough data and its built-in estimate elsewhere. Commit
+`calibration.json` so the weekly regeneration keeps using it. The SavedVariables file is run
+in an empty Lua environment, so it can't execute anything.
+
+Every step in the generated guides carries `xl=` (the simulated level when you reach it),
+which the addon compares with the player's real level for the pace display. Quests without an
+XP value in the data (mostly new Forever quests) get the median XP of quests within two levels.
+
 ## How the route is built
 
 `gen_route.py` simulates a character: on each map it picks the nearest worthwhile action
