@@ -23,6 +23,21 @@ by the minimap; everything else is in the guide window's gear menu.
 - Expected kill counts from real drop rates; flight paths learned and used along the way;
   dungeon quests batched into one run per dungeon.
 
+## Help tune the pace
+
+The route's expected levels come from a simulation, and real play is the best correction.
+MittenQuest keeps a pace log as you play (level and XP per step, quest XP versus other XP per
+level). It never leaves your computer unless you send it.
+
+To contribute: after a play session, exit the game and open a new issue at
+https://github.com/rneuwi/MittenQuest/issues with this file attached:
+
+`World of Warcraft/<your Forever client folder>/WTF/Account/<ACCOUNT NAME>/SavedVariables/MittenQuest.lua`
+
+Mention your class and roughly how you played (solo, grouped, dungeons). The file also holds
+quest giver locations MittenQuest recorded, which help fix map pins. You can clear the log any
+time from the gear menu.
+
 ## Where the route comes from
 
 `Guides/Horde/`, `Guides/Alliance/` and `Data/Quests.lua` are **generated** from

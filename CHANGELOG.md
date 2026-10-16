@@ -1,5 +1,25 @@
 # MittenQuest
 
+## 0.9.1 (beta)
+
+**Pace tracking**
+- The guide window now shows whether you're **on pace** with the route, or how many levels
+  **ahead** or **behind** you are.
+- **Warnings before a level wall:** if a quest coming up needs a level you won't have by the
+  time you get there, the guide tells you early and estimates how much XP (and roughly how
+  many kills) to grind first. Same if you fall a level or more behind.
+- Turn this off in the gear menu under **Pace**.
+
+**Better level estimates**
+- Quests new to WoW: Forever now count toward the route's level estimates (they were counted
+  as giving no XP), so expected levels are more accurate.
+
+**Help tune the route**
+- MittenQuest now keeps a small pace log as you play: your level when you reach each step, and
+  how much XP each level took from quests versus everything else. It stays on your computer.
+  If you'd like to help make the leveling pace more accurate, see "Help tune the pace" on the
+  project's GitHub page.
+
 ## 0.9.0 (beta)
 
 **New: Alliance 1–60 route**

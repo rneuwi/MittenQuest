@@ -302,6 +302,12 @@ function Frame:ShowSettingsMenu(owner)
         root:CreateCheckbox("Show low-level (grey) quests", toggle(prof.pins, "showLowLevel", refresh))
 
         root:CreateDivider()
+        root:CreateTitle("Pace")
+        root:CreateCheckbox("Show pace and grind warnings", toggle(prof.pace, "show", function() self:Update() end))
+        root:CreateTitle(("Pace log: %d steps recorded"):format(ns.Pace:Count()))
+        root:CreateButton("Clear pace log", function() ns.Pace:Clear() end)
+
+        root:CreateDivider()
         root:CreateButton("Check this route for problems", function() FG:CheckRoute() end)
         root:CreateButton("Clear all skips", function() FG:ClearSkips() end)
     end)
@@ -322,7 +328,9 @@ function Frame:Update()
     end
 
     local total = #steps
-    self.titleText:SetText(("%s  |cff999999%d/%d|r"):format(FG.db.char.activeGuide, math.min(p.index, total), total))
+    local paceTag = ns.Pace:Tag()
+    self.titleText:SetText(("%s  |cff999999%d/%d|r%s"):format(FG.db.char.activeGuide, math.min(p.index, total), total,
+        paceTag and ("  " .. paceTag) or ""))
 
     -- Show the previous step (faded) for context, then current + upcoming.
     local first = math.max(1, p.index - 1)
