@@ -31,6 +31,27 @@
 - Training steps complete when you open your trainer, and never hold you up if you'd rather
   keep questing.
 
+**Class quests**
+- Your class quests are now part of the route, shown only to your class (and race, where the
+  quest is race-specific), right after the training visit where they become available:
+  - Hunters: Taming the Beast at 10.
+  - Druids: Bear Form (Moonglade), Aquatic Form and Cat Form.
+  - Shamans: the Earth, Fire, Water and Air totem quests, including Forever's Dwarf Shaman
+    versions.
+  - Warlocks: Voidwalker and Succubus summoning, the level 40 Felsteed, and the robe and orb
+    chains.
+  - Warriors: the Defensive Stance and Brutal Armor/Whirlwind weapon chains.
+  - Priests: race spell quests.
+  - Paladins: Forever's new Undead Paladin quests in Tirisfal, Tome of Divinity, Tome of
+    Nobility.
+  - Rogues and Mages: their class chains.
+- Each race's copy of a quest is picked by where you are, so you aren't sent across the world
+  for another race's version.
+- Elite (group) class quests and breadcrumbs are optional and skip themselves if you don't
+  take them.
+- Quests that every class but one can do (like Durotar's "Vile Familiars", which Warlocks
+  get a separate version of) now show for the right classes instead of being left out.
+
 **Better level estimates**
 - Quests new to WoW: Forever now count toward the route's level estimates (they were counted
   as giving no XP), so expected levels are more accurate.

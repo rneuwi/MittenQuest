@@ -89,6 +89,36 @@ Time to train: head to Dink in Ironforge for your new Mage spells. The arrow tak
 Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=31.5]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[A 4738 In Search of Menara Voidrender | at=39.2,85.0,1453; opt; class=WARLOCK; xl=31.5]
+[T 4738 In Search of Menara Voidrender | at=62.5,35.5,1413; opt; class=WARLOCK; xl=31.5]
+[A 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; opt; class=WARLOCK; xl=31.5]
+Group quest (elite enemies) - optional; skipped if you don't take it.
+[C 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; mob=Twilight Acolyte / Shadowfang Darksoul; opt; class=WARLOCK; xl=31.5]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; opt; class=WARLOCK; xl=31.5]
+[A 1758 Tome of the Cabal | at=62.6,35.5,1413; class=WARLOCK; xl=31.5]
+[T 1758 Tome of the Cabal | at=74.2,9.4,1455; class=WARLOCK; xl=31.5]
+[A 1798 Seeking Strahad | at=47.6,9.3,1455; opt; class=WARLOCK; xl=31.5]
+[T 1798 Seeking Strahad | at=62.6,35.5,1413; opt; class=WARLOCK; xl=31.5]
+[A 1802 Tome of the Cabal | at=74.2,9.4,1455; pre=1758; class=WARLOCK; xl=31.5]
+[C 1802 Tome of the Cabal | at=27.8,72.8,1424; class=WARLOCK; xl=31.5]
+[T 1802 Tome of the Cabal | at=74.2,9.4,1455; class=WARLOCK; xl=31.5]
+[A 1804 Tome of the Cabal | at=74.2,9.4,1455; pre=1802; class=WARLOCK; xl=31.5]
+[C 1804 Tome of the Cabal | at=47.6,47.0,1437; mob=Dragonmaw Bonewarder; item=6930:3; drop=20; class=WARLOCK; xl=31.5]
+[T 1804 Tome of the Cabal | at=62.6,35.5,1413; class=WARLOCK; xl=31.5]
+[A 1795 The Binding | at=62.6,35.5,1413; pre=1804; class=WARLOCK; xl=31.5]
+[C 1795 The Binding | at=62.6,35.3,1413; mob=Summoned Felhunter; class=WARLOCK; xl=31.5]
+Summoned Felhunter has only one spawn point. If others are waiting for it, group up to share it.
+[T 1795 The Binding | at=62.6,35.5,1413; class=WARLOCK; xl=31.5]
+[A 1796 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; class=WARLOCK; xl=31.5]
+[C 1796 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; class=WARLOCK; xl=31.5]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1796 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; class=WARLOCK; xl=31.5]
+[A 4781 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; pre=1796; class=WARLOCK; xl=31.5]
+[C 4781 Components for the Enchanted Gold Bloodrobe | at=44.3,45.1,1434; class=WARLOCK; xl=31.5]
+[T 4781 Components for the Enchanted Gold Bloodrobe | at=28.7,76.9,1434; class=WARLOCK; xl=31.5]
+[A 4782 Components for the Enchanted Gold Bloodrobe | at=28.7,76.9,1434; pre=4781; class=WARLOCK; xl=31.5]
+[T 4782 Components for the Enchanted Gold Bloodrobe | at=62.5,35.5,1413; class=WARLOCK; xl=31.5]
 [R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=31.5]
 Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=31.5]
@@ -101,5 +131,12 @@ Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells
 Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=31.5]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+[A 94789 Call of Air | at=47.1,13.8,1455; class=SHAMAN; xl=31.5]
+[T 94789 Call of Air | at=59.8,27.6,1417; class=SHAMAN; xl=31.5]
+[A 96264 Elemental Aid | at=59.8,27.6,1417; opt; class=SHAMAN; xl=31.5]
+Group quest (elite enemies) - optional; skipped if you don't take it.
+[C 96264 Elemental Aid | at=59.8,27.6,1417; mob=Charlga Razorflank; opt; class=SHAMAN; xl=31.5]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 96264 Elemental Aid | at=59.8,27.6,1417; opt; class=SHAMAN; xl=31.5]
 [F Stormwind | xl=31.5]
 ]==])

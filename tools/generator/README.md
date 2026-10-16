@@ -58,6 +58,22 @@ trainer and the class is `TRAIN_EVERY` levels behind, or as a trip to the neares
 before changing zones once it's `TRAIN_TRIP_AFTER` levels behind. Starting-area trainers
 (near each starter's first quest) are only used up to level 6, since many stop teaching there.
 
+### Class quests
+
+Class quests (`requiredClasses` naming one to three classes) are emitted right after a
+training step as `A`/`C`/`T` steps with `class=`, so only that class sees them. A wider mask
+("everyone but Warlocks", like Durotar's Vile Familiars) is an ordinary quest on the main
+route with a `class=` list instead. Training trips come early when a class quest is ready.
+
+Forever's data often gives every race's copy of a class quest the faction-wide race mask, so
+the zone decides which copy you get: a chain may only *start* in the trainer's zone, its
+capital (Durotar/Orgrimmar, Mulgore/Thunder Bluff, Tirisfal/Undercity, Elwynn/Stormwind,
+Dun Morogh/Ironforge, Teldrassil/Darnassus), the zone the route is in, or a zone an earlier
+quest in the same block led to. Follow-ups may go elsewhere only when the previous quest ended
+there (Moonglade for Bear Form). Copies with the same name and level count once. Steps
+whose objectives have no map point (summons, items handed over by an NPC) point at the giver.
+Group (elite) quests, breadcrumbs, and quests whose chain started in an earlier guide are `opt`.
+
 ## How the route is built
 
 `gen_route.py` simulates a character: on each map it picks the nearest worthwhile action

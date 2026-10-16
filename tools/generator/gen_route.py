@@ -39,6 +39,14 @@ FMASK = HORDE if FACTION == 'Horde' else ALLIANCE
 ENEMY_FLAG = 'A' if FACTION == 'Horde' else 'H'   # NPCs friendly only to the other faction
 CLASS_BITS = {'WARRIOR': 1, 'PALADIN': 2, 'HUNTER': 4, 'ROGUE': 8, 'PRIEST': 16, 'SHAMAN': 64,
               'MAGE': 128, 'WARLOCK': 256, 'DRUID': 1024}
+ALL_CLASS_BITS = sum(CLASS_BITS.values())
+
+
+def class_specific(mask):
+    """True for real class quests (one to three classes), not 'everyone but one class'."""
+    return bool(mask) and bin(mask & ALL_CLASS_BITS).count('1') <= 3
+
+
 XP_TO_LEVEL = [400, 900, 1400, 2100, 2800, 3600, 4500, 5400, 6500, 7600, 8800, 10100, 11400, 12900, 14400,
                16000, 17700, 19400, 21300, 23200, 25200, 27300, 29400, 31700, 34000, 36400, 38900, 41400,
                44300, 47400, 50800, 54500, 58600, 62800, 67100, 71600, 76100, 80800, 85700, 90700, 95800,
@@ -294,11 +302,15 @@ def build_quests():
         if races and not (races & FMASK):
             continue
         sort = q.get('zoneOrSort') or 0
-        if sort <= 0 or sort in SKIP_SORTS:
+        # Negative sorts are categories, not zones: class quests use per-class ones (kept);
+        # the rest are holidays and events (dropped).
+        if (sort <= 0 and not class_specific(q.get('requiredClasses'))) or sort in SKIP_SORTS:
             continue
         if q.get('requiredSkill') or (q.get('specialFlags') or 0) & 1:
             continue
         lvl = q.get('questLevel')
+        if lvl == -1 and q.get('requiredLevel'):
+            lvl = q['requiredLevel']   # scales with you (the level 20 Warlock pet chains)
         if not lvl or lvl <= 0:
             continue
         if lvl - (q.get('requiredLevel') or 1) > 12:
@@ -308,13 +320,19 @@ def build_quests():
         x.minLevel = q.get('requiredLevel') or 1
         x.maxLevel = q.get('requiredMaxLevel')
         x.races = races
-        x.classes = q.get('requiredClasses') or 0
+        # Class quests name one to three classes. Wider masks are ordinary quests with a class
+        # left out (Durotar's Vile Familiars has a separate Warlock version): those stay on the
+        # main route with a class= filter.
+        cmask = q.get('requiredClasses') or 0
+        x.classes = cmask if class_specific(cmask) else 0
+        x.classList = [c for c, b in CLASS_BITS.items() if cmask & b] if cmask and not x.classes else []
         x.sort = sort
         x.dungeon = dungeon_name(sort)
         x.text = ' '.join(q.get('objectivesText') or [])
         sb, fb = q.get('startedBy') or {}, q.get('finishedBy') or {}
         # start / finish: creature, else object
         x.start = x.startName = None
+        x.startSpawns = []
         for kind, src in ((1, N), (2, O)):
             for eid in idx(sb, kind) or []:
                 e = src.get(str(eid))
@@ -323,6 +341,7 @@ def build_quests():
                 sp = spawns_of(e) if e else []
                 if sp:
                     x.start, x.startName = densest(sp), clean(e.get('name'))
+                    x.startSpawns = sp
                     break
             if x.start:
                 break
@@ -353,6 +372,10 @@ def build_quests():
                 if kind == 1 and e and e.get('friendlyToFaction') == ENEMY_FLAG:
                     continue
                 sp = spawns_of(e) if e else []
+                if sp and x.start and any(p[0] == x.start[0] for p in sp):
+                    # NPCs with spawns in several zones (spirits, race variants): use the one
+                    # in the zone the quest starts in.
+                    sp = [p for p in sp if p[0] == x.start[0]]
                 if sp:
                     x.finish, x.finishName = densest(sp), clean(e.get('name'))
                     break
@@ -360,6 +383,10 @@ def build_quests():
                 break
         x.preAll = list(q.get('preQuestGroup') or [])
         x.preAny = list(q.get('preQuestSingle') or []) if isinstance(q.get('preQuestSingle'), list) else []
+        if qid in x.preAny:
+            # A list naming the quest itself is a group of race variants (Call of Earth), not a
+            # real prerequisite.
+            x.preAny = []
         x.exclusive = list(q.get('exclusiveTo') or []) if isinstance(q.get('exclusiveTo'), list) else []
         x.breadcrumbFor = q.get('breadcrumbForQuestId')
         x.xp = (S['xp'].get(qid_s) or [None, 0])[1] or 0
@@ -372,7 +399,7 @@ def build_quests():
         pts, mobs, items, elite = [], [], [], False
         x.kills, x.objects, x.contested = 0, 0, None   # time model inputs
         for o in idx(obj, 1) or []:
-            nid = o[0] if isinstance(o, list) else o
+            nid = idx(o, 1) if isinstance(o, (list, dict)) else o
             e = N.get(str(nid))
             if e:
                 sp = spawns_of(e)
@@ -397,7 +424,7 @@ def build_quests():
             if base:
                 mobs.append(clean(base.get('name')))
         for o in idx(obj, 2) or []:
-            oid = o[0] if isinstance(o, list) else o
+            oid = idx(o, 1) if isinstance(o, (list, dict)) else o
             e = O.get(str(oid))
             if e:
                 sp = spawns_of(e)
@@ -407,7 +434,7 @@ def build_quests():
                     x.contested = (clean(e.get('name')), len(sp))
         best_drop = None
         for o in idx(obj, 3) or []:
-            iid = o[0] if isinstance(o, list) else o
+            iid = idx(o, 1) if isinstance(o, (list, dict)) else o
             it = I.get(str(iid))
             if not it:
                 continue
@@ -463,6 +490,16 @@ def build_quests():
 
 
 QUESTS = build_quests()
+# Follow-ups given by an NPC with spawns in several zones (Minor Manifestation of Earth):
+# start at the copy in the zone where the previous quest ended.
+for _q in QUESTS.values():
+    _maps = {p[0] for p in _q.startSpawns}
+    if len(_maps) > 1:
+        for _p in _q.preAll + _q.preAny:
+            _f = QUESTS[_p].finish if _p in QUESTS else None
+            if _f and _f[0] in _maps:
+                _q.start = densest([p for p in _q.startSpawns if p[0] == _f[0]])
+                break
 
 # ---------------------------------------------------------------- flight masters
 FMS = []
@@ -495,6 +532,12 @@ def _name_inns():
 # Dwarf Shamans, so classes come from the data, not Classic's race/class table).
 CLASS_NAMES = ['Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Shaman', 'Mage', 'Warlock', 'Druid']
 CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
+# A starting zone and its capital count as one place for class quests (trainers send you
+# between the two).
+_HOME = [(1411, 1454), (1412, 1456), (1420, 1458), (1429, 1453), (1426, 1455), (1438, 1457)]
+HOME_MAPS = {}
+for _z, _c in _HOME:
+    HOME_MAPS[_z] = HOME_MAPS[_c] = {_z, _c}
 TRAINERS = collections.defaultdict(list)     # class -> [{name, loc, town}]
 for nid, e in N.items():
     sub = e.get('subName') or ''
@@ -535,6 +578,21 @@ def _name_trainers():
 
 
 _name_trainers()
+# Class quests per class: done as class-only side trips at training visits (most start at or
+# near the trainer). Dungeon/raid ones and level-60 endgame quests are left out; the level-40
+# mount quests stay in.
+CLASS_QUESTS = {}
+for _q in QUESTS.values():
+    # Summoning trials (The Binding) and items handed over by NPCs have nothing to point at:
+    # the work happens at or near the quest giver.
+    if _q.classes and _q.hasObjectives and not _q.target and _q.start:
+        _q.target, _q.targetAtStart = _q.start, True
+for _cls in TRAINERS:
+    _bit = CLASS_BITS.get(_cls.upper(), 0)
+    CLASS_QUESTS[_cls] = sorted(
+        (q for q in QUESTS.values() if q.classes & _bit and not q.dungeon and q.level <= 58
+         and q.start and q.finish and (q.target or not q.hasObjectives) and q.id not in CORR_SKIP),
+        key=lambda q: (q.minLevel, q.level, q.id))
 TRAIN_EVERY = 2          # train when passing a trainer this many levels after the last visit
 TRAIN_TRIP_AFTER = 4     # make a dedicated trip once this many levels have gone untrained
 VALLEY_CAP_LEVEL = 6     # starting-area trainers only teach up to here
@@ -602,6 +660,7 @@ class Sim:
         # anything that needs one of them is optional (other races never had it).
         self.prior = set(prior or ())
         self.uncertain = set()
+        self.cprior = {}              # class -> class quests some starter already covered
         self.banned = set(banned or ())   # quests a previous pass had to drop
         self._dest_cache = {}
         self.dropped = set()
@@ -619,6 +678,8 @@ class Sim:
         self.slow = set()             # quests skipped as not worth the time
         self.level_times = {}
         self.trained = {c: 1 for c in TRAINERS}   # class -> level when last trained
+        self.cdone = collections.defaultdict(set)   # class -> class quests done (incl. starters)
+        self.cblock_maps = set()
         self.talent_note = set()
         self.dual_note = set()
 
@@ -757,17 +818,96 @@ class Sim:
             self.dual_note.add(cls)
             self.emit("Dual Specialization can now be bought from your class trainer in a major city.")
         self.trained[cls] = self.L
+        self.class_quest_block(cls, at=t['loc'])
+
+    def class_has(self, cls, qid):
+        return qid in self.cdone[cls] or self.has(qid)
+
+    def class_quests_ready(self, cls, at=None):
+        """Class quests this class can start now (level, race, chain all OK). With `at`, quests
+        that start a chain must be a short trip from there (follow-ups go wherever they lead)."""
+        out = []
+        started = {(QUESTS[i].name, QUESTS[i].level) for i in self.cdone[cls]
+                   if i in QUESTS and not QUESTS[i].preAll and not QUESTS[i].preAny}
+        for q in CLASS_QUESTS.get(cls, ()):
+            if q.id in self.cdone[cls] or q.id in self.banned or not self.race_ok(q):
+                continue
+            starter = not q.preAll and not q.preAny
+            # Several races get their own copy of a quest (Taming the Beast, Call of Water):
+            # one is enough.
+            if starter and (q.name, q.level) in started:
+                continue
+            if at and q.start[0] not in HOME_MAPS.get(at[0], {at[0]}) and \
+                    not (self.pos and q.start[0] == self.pos[0]) and q.start[0] not in self.cblock_maps:
+                # Another zone: only a follow-up that picks up where its previous quest ended.
+                # (Forever's data often lists every race's version for all races; the zone the
+                # quest starts in is what tells them apart.)
+                ends = [QUESTS[p].finish for p in q.preAll + q.preAny
+                        if p in QUESTS and QUESTS[p].finish and self.class_has(cls, p)]
+                if starter or not any(e[0] == q.start[0] for e in ends):
+                    continue
+            if q.minLevel > self.L or q.level > self.L + 3:
+                continue
+            if any(not self.class_has(cls, p) for p in q.preAll):
+                continue
+            if q.preAny and not any(self.class_has(cls, p) for p in q.preAny):
+                continue
+            if any(self.class_has(cls, e) for e in q.exclusive):
+                continue
+            out.append(q)
+        return out
+
+    def class_quest_block(self, cls, at=None):
+        """Emit every class quest (and follow-ups) available now, as class-only steps."""
+        cf = cls.upper()
+        self.cblock_maps = set()   # zones this block's quests sent you to (breadcrumbs lead on)
+        for _ in range(150):
+            ready = self.class_quests_ready(cls, at=at)
+            if not ready:
+                return
+            for q in ready[:1]:   # one at a time: each one done changes what's ready next
+                pre = [p for p in q.preAll if self.class_has(cls, p)] + \
+                      [p for p in q.preAny if self.class_has(cls, p)][:1]
+                inherited = any(p in self.prior or p in self.cprior.get(cls, ()) for p in pre)
+                tail = f"; class={cf}{self.race_key(q)}"
+                opt = '; opt' if (q.group or inherited or q.breadcrumbFor) else ''
+                prestr = ('; pre=' + ','.join(map(str, pre))) if pre else ''
+                self.emit(f"[A {q.id} {q.name} | {self.at(q.start)}{prestr}{opt}{tail}]")
+                if q.startItem:
+                    self.emit(f"Starts from {q.startItem}, which drops in this area.")
+                if q.group:
+                    self.emit("Group quest (elite enemies) - optional; skipped if you don't take it.")
+                if q.hasObjectives and q.target:
+                    opts = [self.at(q.target)]
+                    if q.mobs:
+                        opts.append('mob=' + ' / '.join(q.mobs))
+                    if q.items:
+                        opts.append('item=' + ','.join(f"{i}:{c}" for i, c in q.items))
+                        if q.drop and q.drop < 100:
+                            opts.append(f'drop={q.drop}')
+                    self.emit(f"[C {q.id} {q.name} | {'; '.join(opts)}{opt}{tail}]")
+                    if getattr(q, 'targetAtStart', False):
+                        self.emit("Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).")
+                    if q.contested:
+                        name, n = q.contested
+                        spots = 'one spawn point' if n == 1 else f'{n} spawn points'
+                        self.emit(f"{name} has only {spots}. If others are waiting for it, group up to share it.")
+                self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{tail}]")
+                self.cdone[cls].add(q.id)
+                self.cblock_maps.add(q.finish[0])
 
     def train_nearby(self):
         """Classes that are due and have a trainer within a short walk."""
         if not self.pos:
             return
         for cls, lst in TRAINERS.items():
-            if self.L - self.trained[cls] < TRAIN_EVERY:
-                continue
             near = [t for t in lst if t['loc'][0] == self.pos[0] and self.trainer_ok(t)
                     and math.hypot(t['loc'][1] - self.pos[1], t['loc'][2] - self.pos[2]) <= 12]
-            if near:
+            if not near:
+                continue
+            due = self.L - self.trained[cls] >= TRAIN_EVERY or \
+                (self.L > self.trained[cls] and self.class_quests_ready(cls, at=near[0]['loc']))
+            if due:
                 self.emit_training(cls, near[0], trip=False)
 
     def train_trips(self):
@@ -775,12 +915,14 @@ class Sim:
         if not self.pos:
             return
         for cls, lst in TRAINERS.items():
-            if self.L - self.trained[cls] < TRAIN_TRIP_AFTER:
-                continue
             ok = [t for t in lst if self.trainer_ok(t)]
-            if ok:
-                t = min(ok, key=lambda t: (travel_seconds(self.pos, t['loc'], self.L),
-                                           0 if t['loc'][3] in CAPITALS else 1))
+            if not ok:
+                continue
+            t = min(ok, key=lambda t: (travel_seconds(self.pos, t['loc'], self.L),
+                                       0 if t['loc'][3] in CAPITALS else 1))
+            due = self.L - self.trained[cls] >= TRAIN_TRIP_AFTER or \
+                (self.L > self.trained[cls] and self.class_quests_ready(cls, at=t['loc']))
+            if due:
                 self.emit_training(cls, t, trip=True)
 
     # -- emit
@@ -801,10 +943,14 @@ class Sim:
             self.level_times[self.L] = self.t
 
     def race_key(self, q):
+        """Race (and, for quests that leave a class out, class) filters for a step."""
+        out = ''
+        if getattr(q, 'classList', None):
+            out += '; class=' + ','.join(q.classList)
         if not q.races or (q.races & FMASK) == FMASK:
-            return ''
+            return out
         names = [RACE_NAME[r] for r, b in RACE_BITS.items() if (q.races & b) and (b & FMASK)]
-        return '; race=' + ','.join(names)
+        return out + '; race=' + ','.join(names)
 
     # -- actions
     def accept(self, q):
@@ -1204,6 +1350,7 @@ def main():
         first = min((q for m in maps for q in probe.map_quests[m] if probe.eligible(q)), key=lambda q: (q.level, q.id))
         VALLEY_POINTS.append(first.start)
     starter_done = set()
+    starter_cdone = collections.defaultdict(set)
     for key, races, display, mask, start_areas, follow_areas in CFG['starters']:
         banned = set(CORR_SKIP)
         for _ in range(6):
@@ -1214,6 +1361,8 @@ def main():
         prune_unfinished(sim)
         print('  pruned', sim.removed, 'steps for quests not finished in the starter')
         starter_done |= sim.done
+        for c, qs in sim.cdone.items():
+            starter_cdone[c] |= qs
         # Hand over to the shared route: one travel step to where it begins.
         here = sim.pos
         dest = ZONE_NAMES.get(shared_start[3], CFG['shared_node'])
@@ -1233,6 +1382,8 @@ def main():
     for it in range(10):
         sim = Sim(FMASK, level=CFG['shared_level'], banned=banned, prior=starter_done)
         sim.trained = {c: CFG['shared_level'] for c in TRAINERS}   # starters end with training
+        sim.cdone = collections.defaultdict(set, {c: set(v) for c, v in starter_cdone.items()})
+        sim.cprior = {c: set(v) for c, v in starter_cdone.items()}
         index_maps(sim)
         sim.pos = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
         segs = sim.run(until_level=60)

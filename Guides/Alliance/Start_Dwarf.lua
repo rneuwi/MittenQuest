@@ -14,52 +14,92 @@ MittenQuest:RegisterGuide([==[Alliance 1-20 Dun Morogh, Duskwood, Loch Modan, We
 [A 2160 Supplies to Tannok | at=33.9,72.2,1426; xl=1.5]
 [C 170 A New Threat | at=30.7,75.7,1426; mob=Rockjaw Trogg / Burly Rockjaw Trogg; xl=1.5]
 [T 170 A New Threat | at=29.7,71.2,1426; xl=1.5]
+[R Mage - Dun Morogh | at=28.71,66.37,1426; class=MAGE; xl=2.2]
+Marryk Nurribit is right here: pick up your new Mage spells.
+[A 3114 Glyphic Memorandum | at=29.9,71.2,1426; pre=179; class=MAGE; race=Gnome; xl=2.2]
+[T 3114 Glyphic Memorandum | at=28.7,66.4,1426; class=MAGE; race=Gnome; xl=2.2]
+[R Priest - Dun Morogh | at=28.6,66.39,1426; class=PRIEST; xl=2.2]
+Branstock Khalder is right here: pick up your new Priest spells.
+[A 3110 Hallowed Rune | at=29.9,71.2,1426; pre=179; class=PRIEST; race=Dwarf; xl=2.2]
+[T 3110 Hallowed Rune | at=28.6,66.4,1426; class=PRIEST; race=Dwarf; xl=2.2]
+[A 98574 Hallowed Memorandum | at=29.9,71.2,1426; pre=179; class=PRIEST; race=Gnome; xl=2.2]
+[T 98574 Hallowed Memorandum | at=28.6,66.4,1426; class=PRIEST; race=Gnome; xl=2.2]
+[R Warlock - Dun Morogh | at=28.65,66.14,1426; class=WARLOCK; xl=2.2]
+Alamar Grimm is right here: pick up your new Warlock spells.
+[A 3115 Tainted Memorandum | at=29.9,71.2,1426; pre=179; class=WARLOCK; race=Gnome; xl=2.2]
+[T 3115 Tainted Memorandum | at=28.6,66.1,1426; class=WARLOCK; race=Gnome; xl=2.2]
+[A 1599 Beginnings | at=28.6,66.1,1426; class=WARLOCK; xl=2.2]
+[C 1599 Beginnings | at=29.4,81.1,1426; mob=Frostmane Novice; item=6753:3; drop=47; class=WARLOCK; xl=2.2]
+[T 1599 Beginnings | at=28.6,66.1,1426; class=WARLOCK; xl=2.2]
+[R Warrior - Dun Morogh | at=28.83,67.24,1426; class=WARRIOR; xl=2.2]
+Thran Khorman is right here: pick up your new Warrior spells.
+[A 3106 Simple Rune | at=29.9,71.2,1426; pre=179; class=WARRIOR; race=Dwarf; xl=2.2]
+[T 3106 Simple Rune | at=28.8,67.2,1426; class=WARRIOR; race=Dwarf; xl=2.2]
+[A 3112 Simple Memorandum | at=29.9,71.2,1426; pre=179; class=WARRIOR; race=Gnome; xl=2.2]
+[T 3112 Simple Memorandum | at=28.8,67.2,1426; class=WARRIOR; race=Gnome; xl=2.2]
+[R Paladin - Dun Morogh | at=28.83,68.33,1426; class=PALADIN; xl=2.2]
+Bromos Grummner is right here: pick up your new Paladin spells.
+[A 3107 Consecrated Rune | at=29.9,71.2,1426; pre=179; class=PALADIN; race=Dwarf; xl=2.2]
+[T 3107 Consecrated Rune | at=28.8,68.3,1426; class=PALADIN; race=Dwarf; xl=2.2]
+[R Rogue - Dun Morogh | at=28.37,67.51,1426; class=ROGUE; xl=2.2]
+Solm Hargrin is right here: pick up your new Rogue spells.
+[A 3109 Encrypted Rune | at=29.9,71.2,1426; pre=179; class=ROGUE; race=Dwarf; xl=2.2]
+[T 3109 Encrypted Rune | at=28.4,67.5,1426; class=ROGUE; race=Dwarf; xl=2.2]
+[A 3113 Encrypted Memorandum | at=29.9,71.2,1426; pre=179; class=ROGUE; race=Gnome; xl=2.2]
+[T 3113 Encrypted Memorandum | at=28.4,67.5,1426; class=ROGUE; race=Gnome; xl=2.2]
+[R Hunter - Dun Morogh | at=29.18,67.45,1426; class=HUNTER; xl=2.2]
+Thorgas Grimson is right here: pick up your new Hunter spells.
+[A 3108 Etched Rune | at=29.9,71.2,1426; pre=179; class=HUNTER; race=Dwarf; xl=2.2]
+[T 3108 Etched Rune | at=29.2,67.5,1426; class=HUNTER; race=Dwarf; xl=2.2]
+[R Shaman - Dun Morogh | at=28.79,66.18,1426; class=SHAMAN; xl=2.2]
+Teo Hammerstorm is right here: pick up your new Shaman spells.
+[A 98581 Archaic Rune | at=29.9,71.2,1426; pre=179; class=SHAMAN; race=Dwarf; xl=2.2]
+[T 98581 Archaic Rune | at=28.8,66.2,1426; class=SHAMAN; race=Dwarf; xl=2.2]
 [T 233 Coldridge Valley Mail Delivery | at=22.6,71.4,1426; xl=2.2]
 [A 183 The Boar Hunter | at=22.6,71.4,1426; xl=2.7]
 [A 234 Coldridge Valley Mail Delivery | at=22.6,71.4,1426; pre=233; xl=2.7]
 [C 183 The Boar Hunter | at=21.9,71.3,1426; mob=Small Crag Boar; xl=2.7]
 [T 183 The Boar Hunter | at=22.6,71.4,1426; xl=2.7]
-[R Mage - Dun Morogh | at=28.71,66.37,1426; class=MAGE; xl=3.2]
-Marryk Nurribit is right here: pick up your new Mage spells.
-[R Priest - Dun Morogh | at=28.6,66.39,1426; class=PRIEST; xl=3.2]
-Branstock Khalder is right here: pick up your new Priest spells.
-[R Warlock - Dun Morogh | at=28.65,66.14,1426; class=WARLOCK; xl=3.2]
-Alamar Grimm is right here: pick up your new Warlock spells.
-[R Warrior - Dun Morogh | at=28.83,67.24,1426; class=WARRIOR; xl=3.2]
-Thran Khorman is right here: pick up your new Warrior spells.
-[R Paladin - Dun Morogh | at=28.83,68.33,1426; class=PALADIN; xl=3.2]
-Bromos Grummner is right here: pick up your new Paladin spells.
-[R Rogue - Dun Morogh | at=28.37,67.51,1426; class=ROGUE; xl=3.2]
-Solm Hargrin is right here: pick up your new Rogue spells.
-[R Hunter - Dun Morogh | at=29.18,67.45,1426; class=HUNTER; xl=3.2]
-Thorgas Grimson is right here: pick up your new Hunter spells.
-[R Shaman - Dun Morogh | at=28.79,66.18,1426; class=SHAMAN; xl=3.2]
-Teo Hammerstorm is right here: pick up your new Shaman spells.
 [T 234 Coldridge Valley Mail Delivery | at=25.1,75.7,1426; xl=3.2]
 [A 182 The Troll Cave | at=25.1,75.7,1426; xl=3.6]
 [C 182 The Troll Cave | at=26.8,79.9,1426; mob=Frostmane Troll Whelp; xl=3.6]
 [T 182 The Troll Cave | at=25.1,75.7,1426; xl=3.6]
+[R Mage - Dun Morogh | at=28.71,66.37,1426; class=MAGE; xl=4.2]
+Marryk Nurribit is right here: pick up your new Mage spells.
+[R Priest - Dun Morogh | at=28.6,66.39,1426; class=PRIEST; xl=4.2]
+Branstock Khalder is right here: pick up your new Priest spells.
+[R Warlock - Dun Morogh | at=28.65,66.14,1426; class=WARLOCK; xl=4.2]
+Alamar Grimm is right here: pick up your new Warlock spells.
+[R Warrior - Dun Morogh | at=28.83,67.24,1426; class=WARRIOR; xl=4.2]
+Thran Khorman is right here: pick up your new Warrior spells.
+[R Paladin - Dun Morogh | at=28.83,68.33,1426; class=PALADIN; xl=4.2]
+Bromos Grummner is right here: pick up your new Paladin spells.
+[R Rogue - Dun Morogh | at=28.37,67.51,1426; class=ROGUE; xl=4.2]
+Solm Hargrin is right here: pick up your new Rogue spells.
+[R Hunter - Dun Morogh | at=29.18,67.45,1426; class=HUNTER; xl=4.2]
+Thorgas Grimson is right here: pick up your new Hunter spells.
+[R Shaman - Dun Morogh | at=28.79,66.18,1426; class=SHAMAN; xl=4.2]
+Teo Hammerstorm is right here: pick up your new Shaman spells.
+[A 94373 Call of Earth | at=28.8,66.2,1426; class=SHAMAN; xl=4.2]
+[C 94373 Call of Earth | at=26.8,79.9,1426; mob=Frostmane Troll Whelp; item=264356:2; class=SHAMAN; xl=4.2]
+[T 94373 Call of Earth | at=28.8,66.2,1426; class=SHAMAN; xl=4.2]
+[A 94374 Call of Earth | at=28.8,66.2,1426; pre=94373; class=SHAMAN; xl=4.2]
+[T 94374 Call of Earth | at=24.8,61.9,1426; class=SHAMAN; xl=4.2]
+[A 94375 Call of Earth | at=24.8,61.9,1426; pre=94374; class=SHAMAN; xl=4.2]
+[T 94375 Call of Earth | at=28.8,66.2,1426; class=SHAMAN; xl=4.2]
 [A 3364 Scalding Mornbrew Delivery | at=25.0,76.0,1426; xl=4.2]
 [T 3364 Scalding Mornbrew Delivery | at=28.8,66.4,1426; xl=4.2]
 [A 3365 Bring Back the Mug | at=28.8,66.4,1426; pre=3364; xl=4.4]
 [T 3365 Bring Back the Mug | at=25.0,76.0,1426; xl=4.4]
 [T 2160 Supplies to Tannok | at=47.2,52.2,1426; xl=4.9]
-[R Mage - Dun Morogh | at=47.5,52.08,1426; class=MAGE; xl=5.0]
-Magis Sparkmantle is right here: pick up your new Mage spells.
 [R Priest - Dun Morogh | at=47.34,52.19,1426; class=PRIEST; xl=5.0]
 Maxan Anvol is right here: pick up your new Priest spells.
-[R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=5.0]
-Gimrizz Shadowcog is right here: pick up your new Warlock spells.
-[R Warrior - Dun Morogh | at=47.36,52.65,1426; class=WARRIOR; xl=5.0]
-Granis Swiftaxe is right here: pick up your new Warrior spells.
-[R Paladin - Dun Morogh | at=47.6,52.07,1426; class=PALADIN; xl=5.0]
-Azar Stronghammer is right here: pick up your new Paladin spells.
-[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=5.0]
-Hogral Bakkan is right here: pick up your new Rogue spells.
-[R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=5.0]
-Grif Wildheart is right here: pick up your new Hunter spells.
-[R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=5.0]
-Ingrid Dunwald is right here: pick up your new Shaman spells.
+[A 5625 Garments of the Light | at=47.3,52.2,1426; class=PRIEST; race=Dwarf,Gnome; xl=5.0]
+[C 5625 Garments of the Light | at=45.8,54.6,1426; mob=Mountaineer Dolf; class=PRIEST; race=Dwarf,Gnome; xl=5.0]
+Mountaineer Dolf has only one spawn point. If others are waiting for it, group up to share it.
+[T 5625 Garments of the Light | at=47.3,52.2,1426; class=PRIEST; race=Dwarf,Gnome; xl=5.0]
+[A 5626 In Favor of the Light | at=28.6,66.4,1426; opt; class=PRIEST; race=Dwarf,Gnome; xl=5.0]
+[T 5626 In Favor of the Light | at=47.3,52.2,1426; opt; class=PRIEST; race=Dwarf,Gnome; xl=5.0]
 [A 99158 Dawn in the Mountains | at=47.3,52.2,1426; opt; xl=5.0]
 [A 400 Tools for Steelgrill | at=46.0,51.7,1426; xl=5.0]
 [A 98321 Flintfire's Shipment | at=45.3,51.9,1426; xl=5.0]
@@ -74,28 +114,28 @@ Ingrid Dunwald is right here: pick up your new Shaman spells.
 [A 99160 Rime's Wrath | at=57.7,44.9,1426; pre=99159; xl=6.2]
 [A 99162 Treacherous Cold | at=57.7,44.9,1426; pre=99159; xl=6.2]
 [C 99160 Rime's Wrath | at=55.5,44.8,1426; mob=Minor Ice Elemental; xl=6.2]
+[R Mage - Dun Morogh | at=47.5,52.08,1426; class=MAGE; xl=6.2]
+Magis Sparkmantle is right here: pick up your new Mage spells.
+[R Warrior - Dun Morogh | at=47.36,52.65,1426; class=WARRIOR; xl=6.2]
+Granis Swiftaxe is right here: pick up your new Warrior spells.
+[R Paladin - Dun Morogh | at=47.6,52.07,1426; class=PALADIN; xl=6.2]
+Azar Stronghammer is right here: pick up your new Paladin spells.
+[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=6.2]
+Hogral Bakkan is right here: pick up your new Rogue spells.
+[R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=6.2]
+Ingrid Dunwald is right here: pick up your new Shaman spells.
 [T 99160 Rime's Wrath | at=57.7,44.9,1426; xl=6.2]
 [C 99162 Treacherous Cold | at=53.2,58.8,1426; xl=6.5]
+[R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=6.5]
+Gimrizz Shadowcog is right here: pick up your new Warlock spells.
+[R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=6.5]
+Grif Wildheart is right here: pick up your new Hunter spells.
 [C 5541 Ammo for Rumbleshot | at=44.1,57.0,1426; xl=6.5]
 [T 5541 Ammo for Rumbleshot | at=40.7,65.1,1426; xl=6.5]
 [C 98321 Flintfire's Shipment | at=41.1,47.2,1426; item=280413:8; xl=6.8]
 [T 98321 Flintfire's Shipment | at=45.3,51.9,1426; xl=6.8]
-[R Mage - Dun Morogh | at=47.5,52.08,1426; class=MAGE; xl=7.1]
-Magis Sparkmantle is right here: pick up your new Mage spells.
 [R Priest - Dun Morogh | at=47.34,52.19,1426; class=PRIEST; xl=7.1]
 Maxan Anvol is right here: pick up your new Priest spells.
-[R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=7.1]
-Gimrizz Shadowcog is right here: pick up your new Warlock spells.
-[R Warrior - Dun Morogh | at=47.36,52.65,1426; class=WARRIOR; xl=7.1]
-Granis Swiftaxe is right here: pick up your new Warrior spells.
-[R Paladin - Dun Morogh | at=47.6,52.07,1426; class=PALADIN; xl=7.1]
-Azar Stronghammer is right here: pick up your new Paladin spells.
-[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=7.1]
-Hogral Bakkan is right here: pick up your new Rogue spells.
-[R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=7.1]
-Grif Wildheart is right here: pick up your new Hunter spells.
-[R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=7.1]
-Ingrid Dunwald is right here: pick up your new Shaman spells.
 [A 287 Frostmane Hold | at=46.7,53.8,1426; xl=7.1]
 [A 412 Operation Recombobulation | at=45.9,49.4,1426; xl=7.1]
 [A 313 The Grizzled Den | at=49.6,48.6,1426; opt; xl=7.1]
@@ -118,6 +158,20 @@ Starts from Empty Powder Keg, which drops in this area.
 [T 433 The Public Servant | at=68.7,56.0,1426; xl=8.1]
 [T 95212 Never Saddle on Quality | at=63.1,49.9,1426; xl=8.3]
 [C 313 The Grizzled Den | at=42.5,55.0,1426; mob=Young Wendigo; item=2671:8; drop=64; opt; xl=8.6]
+[R Mage - Dun Morogh | at=47.5,52.08,1426; class=MAGE; xl=8.6]
+Magis Sparkmantle is right here: pick up your new Mage spells.
+[R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=8.6]
+Gimrizz Shadowcog is right here: pick up your new Warlock spells.
+[R Warrior - Dun Morogh | at=47.36,52.65,1426; class=WARRIOR; xl=8.6]
+Granis Swiftaxe is right here: pick up your new Warrior spells.
+[R Paladin - Dun Morogh | at=47.6,52.07,1426; class=PALADIN; xl=8.6]
+Azar Stronghammer is right here: pick up your new Paladin spells.
+[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=8.6]
+Hogral Bakkan is right here: pick up your new Rogue spells.
+[R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=8.6]
+Grif Wildheart is right here: pick up your new Hunter spells.
+[R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=8.6]
+Ingrid Dunwald is right here: pick up your new Shaman spells.
 [T 313 The Grizzled Den | at=49.6,48.6,1426; opt; xl=8.6]
 [A 312 Tundra MacGrann's Stolen Stash | at=34.6,51.6,1426; xl=8.7]
 [A 315 The Perfect Stout | at=30.2,45.7,1426; xl=8.7]
@@ -128,22 +182,8 @@ Gibblewilt has only 2 spawn points. If others are waiting for it, group up to sh
 [C 315 The Perfect Stout | at=41.4,44.4,1426; mob=Frostmane Seer; item=2676:6; drop=50; xl=8.7]
 [T 412 Operation Recombobulation | at=45.9,49.4,1426; xl=8.7]
 [T 310 Bitter Rivals | at=47.7,52.7,1426; xl=9.0]
-[R Mage - Dun Morogh | at=47.5,52.08,1426; class=MAGE; xl=9.0]
-Magis Sparkmantle is right here: pick up your new Mage spells.
 [R Priest - Dun Morogh | at=47.34,52.19,1426; class=PRIEST; xl=9.0]
 Maxan Anvol is right here: pick up your new Priest spells.
-[R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=9.0]
-Gimrizz Shadowcog is right here: pick up your new Warlock spells.
-[R Warrior - Dun Morogh | at=47.36,52.65,1426; class=WARRIOR; xl=9.0]
-Granis Swiftaxe is right here: pick up your new Warrior spells.
-[R Paladin - Dun Morogh | at=47.6,52.07,1426; class=PALADIN; xl=9.0]
-Azar Stronghammer is right here: pick up your new Paladin spells.
-[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=9.0]
-Hogral Bakkan is right here: pick up your new Rogue spells.
-[R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=9.0]
-Grif Wildheart is right here: pick up your new Hunter spells.
-[R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=9.0]
-Ingrid Dunwald is right here: pick up your new Shaman spells.
 [A 311 Return to Marleth | at=47.7,52.7,1426; pre=310; xl=9.0]
 [T 287 Frostmane Hold | at=46.7,53.8,1426; xl=9.0]
 [A 96408 A Visitor to Dun Morogh | at=50.4,49.1,1426; opt; xl=9.2]
@@ -157,9 +197,87 @@ Ingrid Dunwald is right here: pick up your new Shaman spells.
 [A 414 Stout to Kadrell | at=86.3,48.8,1426; pre=413; xl=10.3]
 [A 419 The Lost Pilot | at=83.9,39.2,1426; xl=10.3]
 [T 419 The Lost Pilot | at=79.7,36.2,1426; xl=10.3]
+[R Mage - Dun Morogh | at=47.5,52.08,1426; class=MAGE; xl=10.4]
+Time to train: head to Magis Sparkmantle in Dun Morogh for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1879 Speak with Bink | at=47.5,52.1,1426; opt; class=MAGE; race=Human,Gnome; xl=10.4]
+[T 1879 Speak with Bink | at=27.2,8.3,1455; opt; class=MAGE; race=Human,Gnome; xl=10.4]
+[A 1880 Mage-tastic Gizmonitor | at=27.2,8.3,1455; class=MAGE; race=Human,Gnome; xl=10.4]
+[C 1880 Mage-tastic Gizmonitor | at=27.7,36.4,1426; class=MAGE; race=Human,Gnome; xl=10.4]
+[T 1880 Mage-tastic Gizmonitor | at=27.2,8.3,1455; class=MAGE; race=Human,Gnome; xl=10.4]
+[R Priest - Dun Morogh | at=47.34,52.19,1426; class=PRIEST; xl=10.4]
+Time to train: head to Maxan Anvol in Dun Morogh for your new Priest spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 5637 Desperate Prayer | at=47.3,52.2,1426; class=PRIEST; race=Human,Dwarf; xl=10.4]
+[T 5637 Desperate Prayer | at=49.5,44.6,1453; class=PRIEST; race=Human,Dwarf; xl=10.4]
+[A 94817 Confounding Flash | at=25.0,10.0,1455; class=PRIEST; race=Gnome; xl=10.4]
+[T 94817 Confounding Flash | at=25.0,10.0,1455; class=PRIEST; race=Gnome; xl=10.4]
+[R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=10.4]
+Time to train: head to Gimrizz Shadowcog in Dun Morogh for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1715 The Slaughtered Lamb | at=47.6,9.3,1455; class=WARLOCK; xl=10.4]
+[T 1715 The Slaughtered Lamb | at=39.2,85.2,1453; class=WARLOCK; xl=10.4]
+[A 1688 Surena Caledon | at=39.2,85.2,1453; class=WARLOCK; xl=10.4]
+[C 1688 Surena Caledon | at=71.0,80.8,1429; mob=Surena Caledon; class=WARLOCK; xl=10.4]
+Surena Caledon has only one spawn point. If others are waiting for it, group up to share it.
+[T 1688 Surena Caledon | at=39.2,85.2,1453; class=WARLOCK; xl=10.4]
+[A 1689 The Binding | at=39.2,85.2,1453; pre=1688; class=WARLOCK; xl=10.4]
+[C 1689 The Binding | at=39.2,85.2,1453; mob=Summoned Voidwalker; class=WARLOCK; xl=10.4]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1689 The Binding | at=39.2,85.2,1453; class=WARLOCK; xl=10.4]
+[R Warrior - Dun Morogh | at=47.36,52.65,1426; class=WARRIOR; xl=10.4]
+Time to train: head to Granis Swiftaxe in Dun Morogh for your new Warrior spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1679 Muren Stormpike | at=47.4,52.6,1426; opt; class=WARRIOR; xl=10.4]
+[T 1679 Muren Stormpike | at=70.8,90.3,1455; opt; class=WARRIOR; xl=10.4]
+[A 1678 Vejrek | at=70.8,90.3,1455; class=WARRIOR; xl=10.4]
+[C 1678 Vejrek | at=27.8,58.0,1426; mob=Vejrek; class=WARRIOR; xl=10.4]
+Vejrek has only one spawn point. If others are waiting for it, group up to share it.
+[T 1678 Vejrek | at=70.8,90.3,1455; class=WARRIOR; xl=10.4]
+[A 1680 Tormus Deepforge | at=70.8,90.3,1455; pre=1678; opt; class=WARRIOR; xl=10.4]
+[T 1680 Tormus Deepforge | at=48.6,42.5,1455; opt; class=WARRIOR; xl=10.4]
+[A 1681 Ironband's Compound | at=48.6,42.5,1455; pre=1678; class=WARRIOR; xl=10.4]
+[C 1681 Ironband's Compound | at=78.0,62.2,1426; class=WARRIOR; xl=10.4]
+[T 1681 Ironband's Compound | at=48.6,42.5,1455; class=WARRIOR; xl=10.4]
+[A 1682 Grey Iron Weapons | at=48.6,42.5,1455; pre=1681; class=WARRIOR; xl=10.4]
+[T 1682 Grey Iron Weapons | at=48.6,42.5,1455; class=WARRIOR; xl=10.4]
 [R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=10.4]
 Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=10.4]
+Time to train: head to Hogral Bakkan in Dun Morogh for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 2218 Road to Salvation | at=47.6,52.6,1426; class=ROGUE; xl=10.4]
+[T 2218 Road to Salvation | at=52.0,14.8,1455; class=ROGUE; xl=10.4]
+[A 2238 Simple Subterfugin' | at=52.0,14.8,1455; pre=2218; class=ROGUE; xl=10.4]
+[T 2238 Simple Subterfugin' | at=25.2,44.5,1426; class=ROGUE; xl=10.4]
+[A 2239 Onin's Report | at=25.2,44.5,1426; pre=2238; class=ROGUE; xl=10.4]
+[T 2239 Onin's Report | at=52.0,14.8,1455; class=ROGUE; xl=10.4]
+[R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=10.4]
+Time to train: head to Grif Wildheart in Dun Morogh for your new Hunter spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 6064 Taming the Beast | at=45.8,53.0,1426; class=HUNTER; race=Dwarf; xl=10.4]
+[C 6064 Taming the Beast | at=38.1,51.0,1426; mob=Large Crag Boar; class=HUNTER; race=Dwarf; xl=10.4]
+[T 6064 Taming the Beast | at=45.8,53.0,1426; class=HUNTER; race=Dwarf; xl=10.4]
+[A 6074 The Hunter's Path | at=70.9,83.6,1455; opt; class=HUNTER; race=Dwarf; xl=10.4]
+[T 6074 The Hunter's Path | at=45.8,53.0,1426; opt; class=HUNTER; race=Dwarf; xl=10.4]
+[A 6084 Taming the Beast | at=45.8,53.0,1426; pre=6064; class=HUNTER; race=Dwarf; xl=10.4]
+[C 6084 Taming the Beast | at=59.1,58.6,1426; mob=Snow Leopard; class=HUNTER; race=Dwarf; xl=10.4]
+[T 6084 Taming the Beast | at=45.8,53.0,1426; class=HUNTER; race=Dwarf; xl=10.4]
+[A 6085 Taming the Beast | at=45.8,53.0,1426; pre=6084; class=HUNTER; race=Dwarf; xl=10.4]
+[C 6085 Taming the Beast | at=28.1,43.1,1426; mob=Ice Claw Bear; class=HUNTER; race=Dwarf; xl=10.4]
+[T 6085 Taming the Beast | at=45.8,53.0,1426; class=HUNTER; race=Dwarf; xl=10.4]
+[A 6086 Training the Beast | at=45.8,53.0,1426; pre=6085; class=HUNTER; race=Dwarf; xl=10.4]
+[T 6086 Training the Beast | at=70.9,85.8,1455; class=HUNTER; race=Dwarf; xl=10.4]
+[R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=10.4]
+Time to train: head to Ingrid Dunwald in Dun Morogh for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 94449 Call of Fire | at=47.1,13.8,1455; class=SHAMAN; xl=10.4]
+[T 94449 Call of Fire | at=87.9,44.8,1426; class=SHAMAN; xl=10.4]
+[A 96243 Call of Earth | at=47.1,13.8,1455; class=SHAMAN; xl=10.4]
+[T 96243 Call of Earth | at=28.8,66.2,1426; class=SHAMAN; xl=10.4]
+[A 94465 Call of Fire | at=87.9,44.8,1426; class=SHAMAN; xl=10.4]
+[T 94465 Call of Fire | at=32.2,66.0,1432; class=SHAMAN; xl=10.4]
 [G 54.0,53.0 1436 Travel to Westfall | xl=10.4]
 [S Sentinel Hill | at=52.86,53.71,1436; xl=10.4]
 Talk to Innkeeper Heather and make this inn your home.
@@ -179,10 +297,12 @@ Talk to Innkeeper Heather and make this inn your home.
 [T 12 The People's Militia | at=56.3,47.5,1436; xl=10.7]
 [T 109 Report to Gryan Stoutmantle | at=56.3,47.5,1436; xl=11.0]
 [A 13 The People's Militia | at=56.3,47.5,1436; pre=12; xl=11.1]
+[A 102 Patrolling Westfall | at=56.4,47.6,1436; xl=11.1]
 [A 153 Red Leather Bandanas | at=54.0,53.0,1436; xl=11.1]
 [A 92747 Moonbrook Espionage | at=52.5,53.0,1436; xl=11.1]
 [C 38 Westfall Stew | at=63.6,61.4,1436; mob=Salt Flats Vulture / Bluegill Raider; item=729:3,730:3,731:3,732:3; drop=40; xl=11.1]
 [T 38 Westfall Stew | at=56.4,30.5,1436; xl=11.1]
+[A 22 Goretusk Liver Pie | at=56.4,30.5,1436; xl=11.3]
 [A 9 The Killing Fields | at=56.0,31.2,1436; xl=11.3]
 [A 92909 Harvesting the Harvesters | at=51.5,32.3,1436; xl=11.3]
 [A 92910 Harvesting the Harvesters | at=37.4,49.3,1436; xl=11.3]
@@ -190,6 +310,36 @@ Starts from Precessive Autocognition Assembly, which drops in this area.
 [C 92744 Murloc Gills | at=28.4,32.9,1436; mob=Murloc Warrior; item=254548:7; xl=11.3]
 [T 92910 Harvesting the Harvesters | at=51.5,32.3,1436; xl=11.3]
 [T 92744 Murloc Gills | at=52.5,53.0,1436; xl=11.5]
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=11.7]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[A 1685 Gakin's Summons | at=44.5,66.3,1429; opt; class=WARLOCK; xl=11.7]
+[T 1685 Gakin's Summons | at=39.2,85.2,1453; opt; class=WARLOCK; xl=11.7]
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=11.7]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[A 1640 Beat Bartleby | at=76.8,52.5,1453; pre=1678; class=WARRIOR; xl=11.7]
+[C 1640 Beat Bartleby | at=76.8,52.5,1453; mob=Bartleby; class=WARRIOR; xl=11.7]
+Bartleby has only one spawn point. If others are waiting for it, group up to share it.
+[T 1640 Beat Bartleby | at=76.8,52.5,1453; class=WARRIOR; xl=11.7]
+[A 1665 Bartleby's Mug | at=76.8,52.5,1453; pre=1640; class=WARRIOR; xl=11.7]
+[T 1665 Bartleby's Mug | at=77.1,53.3,1453; class=WARRIOR; xl=11.7]
+[A 1666 Marshal Haggard | at=77.1,53.3,1453; pre=1665; class=WARRIOR; xl=11.7]
+[T 1666 Marshal Haggard | at=84.6,69.4,1429; class=WARRIOR; xl=11.7]
+[A 1667 Dead-tooth Jack | at=84.6,69.4,1429; pre=1666; class=WARRIOR; xl=11.7]
+[C 1667 Dead-tooth Jack | at=89.3,78.9,1429; class=WARRIOR; xl=11.7]
+[T 1667 Dead-tooth Jack | at=84.6,69.4,1429; class=WARRIOR; xl=11.7]
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=11.7]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=11.7]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+[A 94466 Call of Fire | at=32.2,66.0,1432; pre=94465; class=SHAMAN; xl=11.7]
+[C 94466 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=11.7]
+[T 94466 Call of Fire | at=32.2,66.0,1432; class=SHAMAN; xl=11.7]
+[A 94467 Call of Fire | at=32.2,66.0,1432; pre=94466; class=SHAMAN; xl=11.7]
+[C 94467 Call of Fire | at=38.7,58.3,1411; mob=Minor Manifestation of Fire; class=SHAMAN; xl=11.7]
+Minor Manifestation of Fire has only 2 spawn points. If others are waiting for it, group up to share it.
+[T 94467 Call of Fire | at=31.8,64.5,1432; class=SHAMAN; xl=11.7]
+[A 94468 Call of Fire | at=31.8,64.5,1432; pre=94467; class=SHAMAN; xl=11.7]
+[T 94468 Call of Fire | at=87.9,44.8,1426; class=SHAMAN; xl=11.7]
 [G 34.8,49.3 1432 Travel to Loch Modan | xl=11.7]
 [S Thelsamar | at=35.53,48.4,1432; xl=11.7]
 Talk to Innkeeper Hearthstove and make this inn your home.
@@ -214,70 +364,59 @@ Talk to Innkeeper Hearthstove and make this inn your home.
 [A 86758 Twisting the Knife | at=81.8,61.7,1432; xl=12.5]
 [R Hunter - Loch Modan | at=82.39,62.4,1432; class=HUNTER; xl=12.5]
 Dargh Trueaim is right here: pick up your new Hunter spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 257 A Hunter's Boast | at=83.5,65.5,1432; xl=12.5]
-[A 2038 Bingles' Missing Supplies | at=63.6,47.9,1432; xl=12.5]
+[H Thelsamar | xl=12.5]
 [T 298 Excavation Progress Report | at=37.2,47.4,1432; xl=12.5]
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=12.6]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 3000 Tome of Divinity | at=48.4,50.2,1453; opt; class=PALADIN; race=Dwarf; xl=12.6]
+[T 3000 Tome of Divinity | at=27.6,12.2,1455; opt; class=PALADIN; race=Dwarf; xl=12.6]
 [F Sentinel Hill | xl=12.6]
 [C 13 The People's Militia | at=43.7,69.3,1436; mob=Defias Pillager / Defias Looter; xl=12.6]
 [T 13 The People's Militia | at=56.3,47.5,1436; xl=12.6]
 [C 151 Poor Old Blanchy | at=51.8,19.2,1436; item=1528:8; xl=12.8]
 [C 92745 The State of the Mines | at=45.3,20.5,1436; mob=Kobold Digger / Riverpaw Miner; xl=12.8]
+[C 102 Patrolling Westfall | at=41.6,20.8,1436; mob=Riverpaw Shaman; item=725:8; drop=50; xl=12.8]
+Riverpaw Shaman has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [A 136 Captain Sander's Hidden Treasure | at=35.0,16.9,1436; xl=12.8]
 Starts from Captain Sander's Treasure Map, which drops in this area.
 [T 151 Poor Old Blanchy | at=59.9,19.4,1436; xl=12.8]
 [C 153 Red Leather Bandanas | at=45.5,21.7,1436; mob=Defias Smuggler; item=829:15; drop=45; xl=13.0]
-[T 92745 The State of the Mines | at=52.5,53.0,1436; xl=13.0]
-[A 92753 Destruction in Deadmines | at=52.5,53.0,1436; xl=13.2]
+[T 102 Patrolling Westfall | at=56.4,47.6,1436; xl=13.0]
+[A 14 The People's Militia | at=56.3,47.5,1436; pre=13; xl=13.2]
 [T 153 Red Leather Bandanas | at=54.0,53.0,1436; xl=13.2]
-[A 14 The People's Militia | at=56.3,47.5,1436; pre=13; xl=13.3]
-[C 9 The Killing Fields | at=38.1,50.8,1436; mob=Harvest Watcher; xl=13.3]
-[C 92909 Harvesting the Harvesters | at=38.1,50.8,1436; mob=Harvest Watcher; item=255007:14,255010:5; xl=13.3]
-[T 136 Captain Sander's Hidden Treasure | at=25.9,47.8,1436; xl=13.3]
-[A 138 Captain Sander's Hidden Treasure | at=25.9,47.8,1436; pre=136; xl=13.4]
-[T 138 Captain Sander's Hidden Treasure | at=40.5,47.8,1436; xl=13.4]
-[A 139 Captain Sander's Hidden Treasure | at=40.5,47.8,1436; pre=138; xl=13.5]
-[T 92909 Harvesting the Harvesters | at=51.5,32.3,1436; xl=13.5]
-[T 9 The Killing Fields | at=56.0,31.2,1436; xl=13.7]
-[T 139 Captain Sander's Hidden Treasure | at=40.6,17.0,1436; xl=13.9]
-[A 140 Captain Sander's Hidden Treasure | at=40.6,17.0,1436; pre=139; xl=14.0]
-[T 140 Captain Sander's Hidden Treasure | at=26.0,16.9,1436; xl=14.0]
-[A 65 The Defias Brotherhood | at=56.3,47.5,1436; xl=14.2]
-[C 92747 Moonbrook Espionage | at=42.5,68.7,1436; item=254676:8; xl=14.2]
-[T 92753 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.2]
-[A 92819 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.3]
-[T 92819 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.3]
-[T 92747 Moonbrook Espionage | at=52.5,53.0,1436; xl=14.5]
-[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=14.7]
+[A 92753 Destruction in Deadmines | at=52.5,53.0,1436; xl=13.4]
+[T 92745 The State of the Mines | at=52.5,53.0,1436; xl=13.4]
+[C 9 The Killing Fields | at=38.1,50.8,1436; mob=Harvest Watcher; xl=13.5]
+[C 92909 Harvesting the Harvesters | at=38.1,50.8,1436; mob=Harvest Watcher; item=255007:14,255010:5; xl=13.5]
+[T 136 Captain Sander's Hidden Treasure | at=25.9,47.8,1436; xl=13.5]
+[A 138 Captain Sander's Hidden Treasure | at=25.9,47.8,1436; pre=136; xl=13.6]
+[T 138 Captain Sander's Hidden Treasure | at=40.5,47.8,1436; xl=13.6]
+[A 139 Captain Sander's Hidden Treasure | at=40.5,47.8,1436; pre=138; xl=13.7]
+[T 92909 Harvesting the Harvesters | at=51.5,32.3,1436; xl=13.7]
+[T 9 The Killing Fields | at=56.0,31.2,1436; xl=13.9]
+[A 65 The Defias Brotherhood | at=56.3,47.5,1436; xl=14.0]
+[C 92747 Moonbrook Espionage | at=42.5,68.7,1436; item=254676:8; xl=14.0]
+[T 92753 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.0]
+[A 92819 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.2]
+[T 92819 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.2]
+[T 92747 Moonbrook Espionage | at=52.5,53.0,1436; xl=14.4]
+[T 139 Captain Sander's Hidden Treasure | at=40.6,17.0,1436; xl=14.5]
+[A 140 Captain Sander's Hidden Treasure | at=40.6,17.0,1436; pre=139; xl=14.6]
+[T 140 Captain Sander's Hidden Treasure | at=26.0,16.9,1436; xl=14.6]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=14.8]
 Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=14.7]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=14.8]
 Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=14.7]
-Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=14.7]
-Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=14.7]
-Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=14.7]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=14.8]
 Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
-[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=14.7]
-Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=14.7]
-Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[H Thelsamar | xl=14.7]
-[A 436 Ironband's Excavation | at=37.2,47.4,1432; opt; xl=14.7]
-[C 2038 Bingles' Missing Supplies | at=48.7,30.1,1432; xl=14.7]
-[C 307 Filthy Paws | at=34.9,24.9,1432; xl=14.7]
-[T 307 Filthy Paws | at=24.8,18.4,1432; xl=14.7]
-[T 2038 Bingles' Missing Supplies | at=63.6,47.9,1432; xl=14.9]
+[H Thelsamar | xl=14.8]
+[A 436 Ironband's Excavation | at=37.2,47.4,1432; opt; xl=14.8]
+[C 307 Filthy Paws | at=34.9,24.9,1432; xl=14.8]
+[T 307 Filthy Paws | at=24.8,18.4,1432; xl=14.8]
 [C 86758 Twisting the Knife | at=62.5,46.5,1432; mob=Daggerfang; xl=15.0]
+[A 2038 Bingles' Missing Supplies | at=63.6,47.9,1432; xl=15.0]
 [T 436 Ironband's Excavation | at=64.9,66.7,1432; xl=15.0]
 [A 297 Gathering Idols | at=64.9,66.7,1432; xl=15.1]
 [A 86613 Excavation Tools | at=69.4,67.5,1432; xl=15.1]
@@ -292,106 +431,112 @@ Dargh Trueaim is right here: pick up your new Hunter spells.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 258 A Hunter's Challenge | at=62.4,38.4,1432; mob=Elder Mountain Boar; xl=15.3]
 [C 385 Crocolisk Hunting | at=56.1,37.8,1432; mob=Loch Crocolisk; item=2924:5,2925:6; drop=22; opt; xl=15.3]
-[T 385 Crocolisk Hunting | at=81.8,61.7,1432; opt; xl=15.3]
-[T 258 A Hunter's Challenge | at=83.5,65.5,1432; xl=15.4]
-[C 237 In Defense of the King's Lands | at=34.0,85.0,1432; mob=Stonesplinter Skullthumper / Stonesplinter Seer; xl=15.5]
-[A 86585 Banner of the Fallen | at=31.8,86.5,1432; xl=15.5]
-[C 86585 Banner of the Fallen | at=32.0,86.9,1432; mob=Headsplitter; xl=15.5]
-[T 237 In Defense of the King's Lands | at=23.5,76.4,1432; xl=15.5]
-[A 263 In Defense of the King's Lands | at=23.5,74.5,1432; pre=237; xl=15.7]
-[T 86585 Banner of the Fallen | at=23.2,73.7,1432; xl=15.7]
-[C 263 In Defense of the King's Lands | at=35.9,92.1,1432; mob=Stonesplinter Shaman / Stonesplinter Bonesnapper; xl=15.8]
-[T 263 In Defense of the King's Lands | at=23.5,74.5,1432; xl=15.8]
-[A 217 In Defense of the King's Lands | at=23.2,73.7,1432; pre=263,267; xl=16.0]
-[C 217 In Defense of the King's Lands | at=34.6,90.5,1432; mob=Grawmug / Gnasher; xl=16.0]
+[C 2038 Bingles' Missing Supplies | at=48.7,30.1,1432; xl=15.3]
+[T 2038 Bingles' Missing Supplies | at=63.6,47.9,1432; xl=15.3]
+[T 385 Crocolisk Hunting | at=81.8,61.7,1432; opt; xl=15.5]
+[T 258 A Hunter's Challenge | at=83.5,65.5,1432; xl=15.5]
+[C 237 In Defense of the King's Lands | at=34.0,85.0,1432; mob=Stonesplinter Skullthumper / Stonesplinter Seer; xl=15.7]
+[A 86585 Banner of the Fallen | at=31.8,86.5,1432; xl=15.7]
+[C 86585 Banner of the Fallen | at=32.0,86.9,1432; mob=Headsplitter; xl=15.7]
+[T 237 In Defense of the King's Lands | at=23.5,76.4,1432; xl=15.7]
+[A 263 In Defense of the King's Lands | at=23.5,74.5,1432; pre=237; xl=15.8]
+[T 86585 Banner of the Fallen | at=23.2,73.7,1432; xl=15.8]
+[C 263 In Defense of the King's Lands | at=35.9,92.1,1432; mob=Stonesplinter Shaman / Stonesplinter Bonesnapper; xl=16.0]
+[T 263 In Defense of the King's Lands | at=23.5,74.5,1432; xl=16.0]
+[A 217 In Defense of the King's Lands | at=23.2,73.7,1432; pre=263,267; xl=16.1]
+[C 217 In Defense of the King's Lands | at=34.6,90.5,1432; mob=Grawmug / Gnasher; xl=16.1]
 Brawler has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 217 In Defense of the King's Lands | at=23.2,73.7,1432; xl=16.0]
-[A 86614 Silver of the Waves | at=48.0,39.9,1432; xl=16.2]
-[T 86614 Silver of the Waves | at=40.3,39.3,1432; xl=16.2]
-[A 250 A Dark Threat Looms | at=46.0,13.6,1432; xl=16.3]
-[T 250 A Dark Threat Looms | at=56.0,13.2,1432; xl=16.3]
-[A 199 A Dark Threat Looms | at=56.0,13.2,1432; pre=250; xl=16.4]
-[T 199 A Dark Threat Looms | at=46.0,13.6,1432; xl=16.4]
-[C 297 Gathering Idols | at=70.9,64.3,1432; mob=Berserk Trogg; item=2636:8; drop=91; xl=16.6]
-[C 86613 Excavation Tools | at=69.4,67.5,1432; item=278398:6; xl=16.6]
-[T 86613 Excavation Tools | at=65.9,65.6,1432; xl=16.6]
-[T 297 Gathering Idols | at=64.9,66.7,1432; xl=16.7]
-[F Sentinel Hill | xl=16.9]
-[A 102 Patrolling Westfall | at=56.4,47.6,1436; xl=16.9]
-[A 92911 Harvesting the Harvesters | at=51.5,32.3,1436; opt; xl=16.9]
-Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[A 22 Goretusk Liver Pie | at=56.4,30.5,1436; xl=16.9]
-[C 102 Patrolling Westfall | at=41.6,20.8,1436; mob=Riverpaw Shaman; item=725:8; drop=50; xl=16.9]
-Riverpaw Shaman has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 102 Patrolling Westfall | at=56.4,47.6,1436; xl=16.9]
-[C 92911 Harvesting the Harvesters | at=38.1,50.8,1436; mob=Harvest Watcher / Peacekeeper Security Suit; item=255007:8,4363:4; drop=3; opt; xl=17.0]
-[T 92911 Harvesting the Harvesters | at=51.5,32.3,1436; opt; xl=17.0]
-[C 14 The People's Militia | at=51.7,77.2,1436; mob=Defias Highwayman / Defias Pathstalker; xl=17.1]
-[A 103 Keeper of the Flame | at=30.0,86.0,1436; opt; xl=17.1]
-Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[A 104 The Coastal Menace | at=30.0,86.0,1436; xl=17.1]
-[A 152 The Coast Isn't Clear | at=30.0,86.0,1436; xl=17.1]
-[C 152 The Coast Isn't Clear | at=27.1,72.7,1436; mob=Murloc Coastrunner / Murloc Warrior; xl=17.1]
-[T 152 The Coast Isn't Clear | at=30.0,86.0,1436; xl=17.1]
-[T 14 The People's Militia | at=56.3,47.5,1436; xl=17.2]
-[C 103 Keeper of the Flame | at=63.6,61.4,1436; mob=Harvest Reaper; item=814:5; drop=48; opt; xl=17.4]
-[T 103 Keeper of the Flame | at=30.0,86.0,1436; opt; xl=17.4]
-[G 24.4,46.1 1433 Travel to Redridge Mountains | xl=17.5]
-[A 125 The Lost Tools | at=27.1,48.6,1433; xl=17.5]
-[P Lakeshire | at=25.5,59.41,1433; xl=17.5]
-[A 98407 Show of Force | at=25.6,60,1433; xl=17.5]
-[A 3741 Hilary's Necklace | at=24.2,53.6,1433; xl=17.5]
-[C 3741 Hilary's Necklace | at=20.8,54.1,1433; xl=17.5]
-[T 3741 Hilary's Necklace | at=24.1,53.6,1433; xl=17.5]
-[A 98386 Alther's Mill | at=27.1,48.6,1433; xl=17.6]
-[A 127 Selling Fish | at=22.6,47.4,1433; xl=17.6]
-[A 129 A Free Lunch | at=21.5,44.3,1433; xl=17.6]
-[T 65 The Defias Brotherhood | at=21.4,45.4,1433; xl=17.6]
-[A 132 The Defias Brotherhood | at=21.4,45.4,1433; pre=65; xl=17.8]
-[C 22 Goretusk Liver Pie | at=11.7,52.3,1433; mob=Great Goretusk; item=723:8; drop=35; xl=17.8]
-[C 98407 Show of Force | at=11.4,63.5,1433; mob=Redridge Thrasher; item=280911:5; xl=17.8]
-[T 129 A Free Lunch | at=10.2,71.5,1433; xl=17.8]
-[A 130 Visit the Herbalist | at=10.2,71.5,1433; pre=129; xl=17.8]
-[A 244 Encroaching Gnolls | at=10.2,71.5,1433; xl=17.8]
-[T 98407 Show of Force | at=25.6,60,1433; xl=17.8]
-[T 244 Encroaching Gnolls | at=25.6,60,1433; xl=18.0]
-[A 246 Assessing the Threat | at=25.6,60,1433; pre=244; xl=18.0]
-[C 125 The Lost Tools | at=36.4,54.7,1433; xl=18.0]
-[T 125 The Lost Tools | at=27.1,48.6,1433; xl=18.0]
-[A 89 The Everstill Bridge | at=27.1,48.6,1433; pre=125; xl=18.1]
-[T 130 Visit the Herbalist | at=16.8,46.3,1433; xl=18.1]
-[A 131 Delivering Daffodils | at=16.8,46.3,1433; pre=130; xl=18.1]
-[A 92 Redridge Goulash | at=17.6,43.8,1433; opt; xl=18.1]
-Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[T 131 Delivering Daffodils | at=21.5,44.3,1433; xl=18.1]
-[C 92 Redridge Goulash | at=11.7,52.3,1433; mob=Great Goretusk / Dire Condor; opt; xl=18.1]
-[T 92 Redridge Goulash | at=17.6,43.8,1433; opt; xl=18.1]
-[C 89 The Everstill Bridge | at=33.8,31.8,1433; mob=Redridge Brute; item=2856:5,1013:5; drop=22; xl=18.2]
-[T 89 The Everstill Bridge | at=27.1,48.6,1433; xl=18.2]
-[C 246 Assessing the Threat | at=26.9,82.7,1433; mob=Redridge Mongrel / Redridge Poacher; xl=18.4]
-[T 246 Assessing the Threat | at=25.6,60,1433; xl=18.4]
-[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=18.5]
-Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
-[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=18.5]
-Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
-[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=18.5]
+[T 217 In Defense of the King's Lands | at=23.2,73.7,1432; xl=16.1]
+[A 86614 Silver of the Waves | at=48.0,39.9,1432; xl=16.3]
+[T 86614 Silver of the Waves | at=40.3,39.3,1432; xl=16.3]
+[A 250 A Dark Threat Looms | at=46.0,13.6,1432; xl=16.5]
+[T 250 A Dark Threat Looms | at=56.0,13.2,1432; xl=16.5]
+[A 199 A Dark Threat Looms | at=56.0,13.2,1432; pre=250; xl=16.5]
+[T 199 A Dark Threat Looms | at=46.0,13.6,1432; xl=16.5]
+[C 297 Gathering Idols | at=70.9,64.3,1432; mob=Berserk Trogg; item=2636:8; drop=91; xl=16.7]
+[C 86613 Excavation Tools | at=69.4,67.5,1432; item=278398:6; xl=16.7]
+[T 86613 Excavation Tools | at=65.9,65.6,1432; xl=16.7]
+[T 297 Gathering Idols | at=64.9,66.7,1432; xl=16.9]
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=17.0]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
-[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=18.5]
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=17.0]
 Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
-[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=18.5]
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=17.0]
 Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
-[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=18.5]
-Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
-[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=18.5]
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=17.0]
 Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
-[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=18.5]
+[A 2298 Kingly Shakedown | at=52.0,14.8,1455; class=ROGUE; xl=17.0]
+[T 2298 Kingly Shakedown | at=78.3,71.1,1453; class=ROGUE; xl=17.0]
+[A 2281 Redridge Rendezvous | at=78.3,71.1,1453; class=ROGUE; xl=17.0]
+[T 2281 Redridge Rendezvous | at=23.0,52.0,1433; class=ROGUE; xl=17.0]
+[A 2299 To Hulfdan! | at=47.6,52.6,1426; opt; class=ROGUE; xl=17.0]
+[T 2299 To Hulfdan! | at=52.0,14.8,1455; opt; class=ROGUE; xl=17.0]
+[A 2282 Alther's Mill | at=23.0,52.0,1433; pre=2281; class=ROGUE; xl=17.0]
+[C 2282 Alther's Mill | at=47.0,44.7,1433; class=ROGUE; xl=17.0]
+[T 2282 Alther's Mill | at=23.0,52.0,1433; class=ROGUE; xl=17.0]
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=17.0]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
-[F Sentinel Hill | xl=18.5]
-[T 132 The Defias Brotherhood | at=56.3,47.5,1436; xl=18.5]
-[T 22 Goretusk Liver Pie | at=56.4,30.5,1436; xl=18.5]
-[C 104 The Coastal Menace | at=29.3,76.0,1436; mob=Old Murk-Eye; xl=18.6]
+[G 24.4,46.1 1433 Travel to Redridge Mountains | xl=17.0]
+[A 125 The Lost Tools | at=27.1,48.6,1433; xl=17.0]
+[P Lakeshire | at=25.5,59.41,1433; xl=17.0]
+[A 98407 Show of Force | at=25.6,60,1433; xl=17.0]
+[A 3741 Hilary's Necklace | at=24.2,53.6,1433; xl=17.0]
+[C 3741 Hilary's Necklace | at=20.8,54.1,1433; xl=17.0]
+[T 3741 Hilary's Necklace | at=24.1,53.6,1433; xl=17.0]
+[A 98386 Alther's Mill | at=27.1,48.6,1433; xl=17.2]
+[A 127 Selling Fish | at=22.6,47.4,1433; xl=17.2]
+[A 129 A Free Lunch | at=21.5,44.3,1433; xl=17.2]
+[T 65 The Defias Brotherhood | at=21.4,45.4,1433; xl=17.2]
+[A 132 The Defias Brotherhood | at=21.4,45.4,1433; pre=65; xl=17.3]
+[C 22 Goretusk Liver Pie | at=11.7,52.3,1433; mob=Great Goretusk; item=723:8; drop=35; xl=17.3]
+[C 98407 Show of Force | at=11.4,63.5,1433; mob=Redridge Thrasher; item=280911:5; xl=17.3]
+[T 129 A Free Lunch | at=10.2,71.5,1433; xl=17.3]
+[A 130 Visit the Herbalist | at=10.2,71.5,1433; pre=129; xl=17.4]
+[A 244 Encroaching Gnolls | at=10.2,71.5,1433; xl=17.4]
+[T 98407 Show of Force | at=25.6,60,1433; xl=17.4]
+[T 244 Encroaching Gnolls | at=25.6,60,1433; xl=17.5]
+[A 246 Assessing the Threat | at=25.6,60,1433; pre=244; xl=17.5]
+[C 125 The Lost Tools | at=36.4,54.7,1433; xl=17.5]
+[T 125 The Lost Tools | at=27.1,48.6,1433; xl=17.5]
+[A 89 The Everstill Bridge | at=27.1,48.6,1433; pre=125; xl=17.6]
+[T 130 Visit the Herbalist | at=16.8,46.3,1433; xl=17.6]
+[A 131 Delivering Daffodils | at=16.8,46.3,1433; pre=130; xl=17.7]
+[T 131 Delivering Daffodils | at=21.5,44.3,1433; xl=17.7]
+[C 246 Assessing the Threat | at=26.9,82.7,1433; mob=Redridge Mongrel / Redridge Poacher; xl=17.7]
+[T 246 Assessing the Threat | at=25.6,60,1433; xl=17.7]
+[F Sentinel Hill | xl=17.8]
+[T 132 The Defias Brotherhood | at=56.3,47.5,1436; xl=17.8]
+[T 22 Goretusk Liver Pie | at=56.4,30.5,1436; xl=17.9]
+[A 92911 Harvesting the Harvesters | at=51.5,32.3,1436; opt; xl=18.0]
+Group quest (elite enemies) - optional; the guide skips it if you don't take it.
+[C 92911 Harvesting the Harvesters | at=38.1,50.8,1436; mob=Harvest Watcher / Peacekeeper Security Suit; item=255007:8,4363:4; drop=3; opt; xl=18.0]
+[T 92911 Harvesting the Harvesters | at=51.5,32.3,1436; opt; xl=18.0]
+[C 14 The People's Militia | at=51.7,77.2,1436; mob=Defias Highwayman / Defias Pathstalker; xl=18.0]
+[A 103 Keeper of the Flame | at=30.0,86.0,1436; opt; xl=18.0]
+Group quest (elite enemies) - optional; the guide skips it if you don't take it.
+[A 104 The Coastal Menace | at=30.0,86.0,1436; xl=18.0]
+[A 152 The Coast Isn't Clear | at=30.0,86.0,1436; xl=18.0]
+[C 104 The Coastal Menace | at=29.3,76.0,1436; mob=Old Murk-Eye; xl=18.0]
 Old Murk-Eye has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 104 The Coastal Menace | at=30.0,86.0,1436; xl=18.6]
+[C 152 The Coast Isn't Clear | at=27.1,72.7,1436; mob=Murloc Coastrunner / Murloc Warrior; xl=18.0]
+[T 104 The Coastal Menace | at=30.0,86.0,1436; xl=18.0]
+[T 152 The Coast Isn't Clear | at=30.0,86.0,1436; xl=18.2]
+[T 14 The People's Militia | at=56.3,47.5,1436; xl=18.3]
+[C 103 Keeper of the Flame | at=63.6,61.4,1436; mob=Harvest Reaper; item=814:5; drop=48; opt; xl=18.5]
+[T 103 Keeper of the Flame | at=30.0,86.0,1436; opt; xl=18.5]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=18.6]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=18.6]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=18.6]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[F Lakeshire | xl=18.6]
+[A 92 Redridge Goulash | at=17.6,43.8,1433; opt; xl=18.6]
+Group quest (elite enemies) - optional; the guide skips it if you don't take it.
+[C 92 Redridge Goulash | at=11.7,52.3,1433; mob=Great Goretusk / Dire Condor; opt; xl=18.6]
+[T 92 Redridge Goulash | at=17.6,43.8,1433; opt; xl=18.6]
+[C 89 The Everstill Bridge | at=33.8,31.8,1433; mob=Redridge Brute; item=2856:5,1013:5; drop=22; xl=18.6]
+[T 89 The Everstill Bridge | at=27.1,48.6,1433; xl=18.6]
 [G 75.3,48.8 1431 Travel to Duskwood | xl=18.8]
 [A 163 Raven Hill | at=75.3,48.8,1431; opt; xl=18.8]
 [P Darkshire | at=77.49,44.29,1431; xl=18.8]
@@ -415,6 +560,12 @@ Time to train: head to Einris Brightspear in Stormwind City for your new Hunter 
 [T 98386 Alther's Mill | at=27.1,48.6,1433; xl=19.3]
 [C 127 Selling Fish | at=43.7,70.1,1433; mob=Murloc Shorestriker; item=1467:10; drop=31; xl=19.4]
 [T 127 Selling Fish | at=22.6,47.4,1433; xl=19.4]
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=19.6]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
+[A 2358 Horns of Nez'ra | at=23.0,52.3,1433; opt; class=ROGUE; xl=19.6]
+Group quest (elite enemies) - optional; skipped if you don't take it.
+[C 2358 Horns of Nez'ra | at=72.6,69.4,1433; mob=Blackrock Renegade; opt; class=ROGUE; xl=19.6]
+[T 2358 Horns of Nez'ra | at=23.0,52.3,1433; opt; class=ROGUE; xl=19.6]
 [H Thelsamar | xl=19.6]
 [A 468 Report to Mountaineer Rockgar | at=32.6,49.7,1432; opt; xl=19.6]
 [A 255 Mercenaries | at=34.6,44.5,1432; opt; xl=19.6]

@@ -39,6 +39,17 @@ Find a group for The Stockade. Quests you skip there are dropped automatically.
 [C 180 Wanted: Lieutenant Fangore | at=75.1,37.1,1433; mob=Lieutenant Fangore; xl=24.7]
 Lieutenant Fangore has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 180 Wanted: Lieutenant Fangore | at=24.9,44.5,1433; xl=24.7]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=24.9]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=24.9]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[A 1699 The Rethban Gauntlet | at=21.5,44.7,1433; class=WARRIOR; xl=24.9]
+[C 1699 The Rethban Gauntlet | at=14.1,24.7,1433; class=WARRIOR; xl=24.9]
+[T 1699 The Rethban Gauntlet | at=21.5,44.7,1433; class=WARRIOR; xl=24.9]
+[A 1702 The Shieldsmith | at=21.5,44.7,1433; pre=1699; class=WARRIOR; xl=24.9]
+[T 1702 The Shieldsmith | at=64.6,37.2,1453; class=WARRIOR; xl=24.9]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=24.9]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
 [G 75.8,47.6 1431 Travel to Duskwood | xl=24.9]
 [A 173 Worgen in the Woods | at=75.8,47.6,1431; xl=24.9]
 [P Darkshire | at=77.49,44.29,1431; xl=24.9]
@@ -109,16 +120,66 @@ Starts from An Old History Book, which drops in this area.
 [T 221 Worgen in the Woods | at=75.8,47.6,1431; xl=27.1]
 [R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=27.2]
 Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
-[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=27.2]
-Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[A 1939 High Sorcerer Andromath | at=27.2,8.3,1455; opt; class=MAGE; race=Human,Gnome; xl=27.2]
+[T 1939 High Sorcerer Andromath | at=48.7,87.6,1453; opt; class=MAGE; race=Human,Gnome; xl=27.2]
+[A 1938 Ur's Treatise on Shadow Magic | at=48.7,87.6,1453; class=MAGE; race=Human,Gnome; xl=27.2]
+[C 1938 Ur's Treatise on Shadow Magic | at=73.8,47.6,1433; class=MAGE; race=Human,Gnome; xl=27.2]
+[T 1938 Ur's Treatise on Shadow Magic | at=48.7,87.6,1453; class=MAGE; race=Human,Gnome; xl=27.2]
+[A 1940 Pristine Spider Silk | at=48.7,87.6,1453; pre=1938; class=MAGE; race=Human,Gnome; xl=27.2]
+[C 1940 Pristine Spider Silk | at=18.9,42.1,1431; mob=Carrion Recluse; item=7267:8; drop=5; class=MAGE; race=Human,Gnome; xl=27.2]
+[T 1940 Pristine Spider Silk | at=51.8,83.5,1453; class=MAGE; race=Human,Gnome; xl=27.2]
+[A 1942 Astral Knot Garment | at=51.8,83.5,1453; pre=1940; class=MAGE; race=Human,Gnome; xl=27.2]
+[T 1942 Astral Knot Garment | at=51.8,83.5,1453; class=MAGE; race=Human,Gnome; xl=27.2]
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=27.2]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
 [R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=27.2]
 Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[A 1701 Fire Hardened Mail | at=64.6,37.2,1453; pre=1702; opt; class=WARRIOR; xl=27.2]
+Group quest (elite enemies) - optional; skipped if you don't take it.
+[C 1701 Fire Hardened Mail | at=55.3,63.7,1437; mob=Leech Stalker / Fledgling Chimaera; opt; class=WARRIOR; xl=27.2]
+Chimaera Matriarch has only one spawn point. If others are waiting for it, group up to share it.
+[T 1701 Fire Hardened Mail | at=64.6,37.2,1453; opt; class=WARRIOR; xl=27.2]
+[A 1782 Furen's Armor | at=64.6,37.2,1453; pre=1701; class=WARRIOR; xl=27.2]
+[T 1782 Furen's Armor | at=64.6,37.2,1453; class=WARRIOR; xl=27.2]
+[A 1700 Grimand Elmore | at=64.6,37.2,1453; pre=1782; opt; class=WARRIOR; race=Human; xl=27.2]
+[T 1700 Grimand Elmore | at=59.7,33.8,1453; opt; class=WARRIOR; race=Human; xl=27.2]
+[A 1703 Mathiel | at=64.6,37.2,1453; pre=1782; opt; class=WARRIOR; race=NightElf; xl=27.2]
+[T 1703 Mathiel | at=59.5,45.4,1457; opt; class=WARRIOR; race=NightElf; xl=27.2]
+[A 1704 Klockmort Spannerspan | at=64.6,37.2,1453; pre=1782; opt; class=WARRIOR; race=Dwarf,Gnome; xl=27.2]
+[T 1704 Klockmort Spannerspan | at=67.9,46.1,1455; opt; class=WARRIOR; race=Dwarf,Gnome; xl=27.2]
+[A 1698 Yorus Barleybrew | at=70.3,90.7,1455; opt; class=WARRIOR; xl=27.2]
+[T 1698 Yorus Barleybrew | at=21.5,44.7,1433; opt; class=WARRIOR; xl=27.2]
+[A 1705 Burning Blood | at=59.7,33.8,1453; pre=1782; class=WARRIOR; xl=27.2]
+[C 1705 Burning Blood | at=62.3,82.2,1431; mob=Nightbane Tainted One / Gutspill; item=6844:20,6845:1; drop=6; class=WARRIOR; xl=27.2]
+Gutspill has only one spawn point. If others are waiting for it, group up to share it.
+[T 1705 Burning Blood | at=59.7,33.8,1453; class=WARRIOR; xl=27.2]
+[A 1708 Iron Coral | at=67.9,46.1,1455; pre=1782; class=WARRIOR; xl=27.2]
+[C 1708 Iron Coral | at=9.3,68.3,1437; item=6848:20; class=WARRIOR; xl=27.2]
+[T 1708 Iron Coral | at=67.9,46.1,1455; class=WARRIOR; xl=27.2]
+[A 1706 Grimand's Armor | at=59.7,33.8,1453; pre=1705; class=WARRIOR; xl=27.2]
+[T 1706 Grimand's Armor | at=59.7,33.8,1453; class=WARRIOR; xl=27.2]
+[A 1709 Klockmort's Creation | at=67.9,46.1,1455; pre=1708; class=WARRIOR; xl=27.2]
+[T 1709 Klockmort's Creation | at=67.9,46.1,1455; class=WARRIOR; xl=27.2]
+[A 1710 Sunscorched Shells | at=59.5,45.4,1457; pre=1782; class=WARRIOR; xl=27.2]
+[C 1710 Sunscorched Shells | at=11.4,36.8,1441; item=6849:20; class=WARRIOR; xl=27.2]
+[T 1710 Sunscorched Shells | at=59.5,45.4,1457; class=WARRIOR; xl=27.2]
+[A 1711 Mathiel's Armor | at=59.5,45.4,1457; pre=1710; class=WARRIOR; xl=27.2]
+[T 1711 Mathiel's Armor | at=59.5,45.4,1457; class=WARRIOR; xl=27.2]
 [R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=27.2]
 Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
-[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=27.2]
-Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[A 78090 A Second Opinion | at=48.5,49.1,1453; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[T 78090 A Second Opinion | at=39.9,84.2,1453; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[A 78091 Earning Your Salt | at=39.9,84.2,1453; opt; class=PALADIN; race=Human,Dwarf; xl=27.2]
+Group quest (elite enemies) - optional; skipped if you don't take it.
+[C 78091 Earning Your Salt | at=71.5,84.3,1433; mob=Incinerator Gar'im; opt; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[T 78091 Earning Your Salt | at=39.9,84.2,1453; opt; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[A 78092 It Must Be Destroyed | at=39.9,84.2,1453; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[C 78092 It Must Be Destroyed | at=79.4,82.3,1440; mob=Searing Infernal; item=209779:12; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[T 78092 It Must Be Destroyed | at=89.4,77.1,1440; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[A 78089 Advice From Stormwind | at=26.2,38.7,1440; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[T 78089 Advice From Stormwind | at=48.5,49.1,1453; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[A 78093 Return to Delgren | at=89.4,77,1440; class=PALADIN; race=Human,Dwarf; xl=27.2]
+[T 78093 Return to Delgren | at=26.2,38.7,1440; class=PALADIN; race=Human,Dwarf; xl=27.2]
 [R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=27.2]
 Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=27.2]
