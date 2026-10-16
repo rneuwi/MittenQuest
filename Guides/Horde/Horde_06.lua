@@ -41,6 +41,8 @@ MittenQuest:RegisterGuide([==[Horde 35-39 Dustwallow Marsh, The Barrens, Strangl
 [T 1181 Goblin Sponsorship | at=27.2,76.9,1434; xl=35.9]
 [A 1182 Goblin Sponsorship | at=27.2,76.9,1434; pre=1181; xl=36.0]
 [A 570 Mok'thardin's Enchantment | at=32.1,29.2,1434; xl=36.0]
+[R Hunter - Grom'gol | at=31.23,28.68,1434; class=HUNTER; xl=36.0]
+Kragg is right here: pick up your new Hunter spells.
 [A 568 The Defense of Grom'gol | at=32.2,28.9,1434; xl=36.0]
 [A 582 Headhunting | at=32.2,27.7,1434; pre=581; xl=36.0]
 [A 596 Bloody Bone Necklaces | at=32.3,27.7,1434; xl=36.0]
@@ -79,6 +81,8 @@ Sin'Dall has only 2 spawn points. If others are waiting for it, group up to shar
 [T 213 Hostile Takeover | at=27,77.1,1434; xl=36.8]
 [T 605 Singing Blue Shards | at=27.1,77.2,1434; xl=36.9]
 [T 575 Supply and Demand | at=28.3,77.6,1434; xl=37.0]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=37.0]
+Ian Strom is right here: pick up your new Rogue spells.
 [A 577 Some Assembly Required | at=28.3,77.6,1434; pre=575; xl=37.0]
 [A 606 Scaring Shaky | at=27.8,77.1,1434; xl=37.0]
 [A 600 Venture Company Mining | at=27.1,77.2,1434; pre=605; xl=37.0]
@@ -90,6 +94,8 @@ Sin'Dall has only 2 spawn points. If others are waiting for it, group up to shar
 [A 587 Up to Snuff | at=26.9,77.3,1434; pre=597; xl=37.2]
 [T 599 The Bloodsail Buccaneers | at=27.2,77.0,1434; xl=37.2]
 [A 572 Mok'thardin's Enchantment | at=32.1,29.2,1434; pre=570; xl=37.2]
+[R Hunter - Grom'gol | at=31.23,28.68,1434; class=HUNTER; xl=37.2]
+Kragg is right here: pick up your new Hunter spells.
 [A 584 Bloodscalp Clan Heads | at=32.2,27.7,1434; pre=582; xl=37.2]
 [C 577 Some Assembly Required | at=40.2,27.2,1434; mob=Snapjaw Crocolisk; item=4104:5; drop=31; xl=37.2]
 [T 577 Some Assembly Required | at=28.3,77.6,1434; xl=37.2]
@@ -152,5 +158,19 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 702 Guile of the Raptor | at=72.6,33.9,1417; xl=39.2]
 [A 847 Guile of the Raptor | at=72.6,33.9,1417; pre=702; xl=39.2]
 [T 847 Guile of the Raptor | at=74.7,36.3,1417; xl=39.2]
+[R Priest - Undercity | at=49.26,17.12,1458; class=PRIEST; xl=39.3]
+Time to train: head to Aelthalyste in Undercity for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Undercity | at=47.08,15.9,1458; class=PALADIN; xl=39.3]
+Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Undercity | at=46.93,15.23,1458; class=WARRIOR; xl=39.3]
+Time to train: head to Christoph Walker in Undercity for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=39.3]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=39.3]
+Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Undercity | at=86.21,15.93,1458; class=WARLOCK; xl=39.3]
+Time to train: head to Kaal Soulreaper in Undercity for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=39.3]
+Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Booty Bay | xl=39.3]
 ]==])

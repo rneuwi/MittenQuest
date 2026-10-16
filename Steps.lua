@@ -208,12 +208,12 @@ local COLOR = {
     ACCEPT = "ffffd100", COMPLETE = "ff4fc3f7", TURNIN = "ff66ff66",
     GOTO = "ffffffff", GETFP = "ffb388ff", FLY = "ffb388ff",
     HEARTH = "ff80deea", SETHEARTH = "ff80deea", LEVEL = "ffffab40",
-    DUNGEON = "ffff7043", TEXT = "ffcccccc",
+    DUNGEON = "ffff7043", TEXT = "ffcccccc", TRAIN = "ff8ce99a",
 }
 local LABEL = {
     ACCEPT = "Accept", COMPLETE = "Complete", TURNIN = "Turn in", GOTO = "Go to",
     GETFP = "Get flight path", FLY = "Fly to", HEARTH = "Hearth", SETHEARTH = "Set hearth",
-    LEVEL = nil, DUNGEON = "Dungeon", TEXT = nil,
+    LEVEL = nil, DUNGEON = "Dungeon", TEXT = nil, TRAIN = "Train",
 }
 local WARN, DIM = "|cffff5555", "|cff999999"
 

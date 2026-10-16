@@ -124,5 +124,23 @@ Find a group for Wailing Caverns. Quests you skip there are dropped automaticall
 [A 846 Revenge of Gann | at=45.9,77,1413; pre=843; xl=23.3]
 [T 97250 Wrongly Blamed, Justly Corrected | at=44.6,59.3,1413; xl=23.3]
 [T 893 Weapons of Choice | at=45.1,57.7,1413; xl=23.4]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=23.6]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=23.6]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=23.6]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=23.6]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=23.6]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=23.6]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=23.6]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=23.6]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=23.6]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 11.9,34.5 1440 Travel to Ashenvale | xl=23.6]
 ]==])

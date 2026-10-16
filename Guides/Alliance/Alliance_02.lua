@@ -107,5 +107,23 @@ Starts from An Old History Book, which drops in this area.
 [A 269 Seeking Wisdom | at=7.8,34.1,1431; pre=323; xl=27.1]
 [C 221 Worgen in the Woods | at=64.0,73.7,1431; mob=Nightbane Dark Runner; xl=27.1]
 [T 221 Worgen in the Woods | at=75.8,47.6,1431; xl=27.1]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=27.2]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=27.2]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=27.2]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=27.2]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=27.2]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=27.2]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=27.2]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=27.2]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=27.2]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Menethil Harbor | xl=27.2]
 ]==])

@@ -7,11 +7,20 @@ MittenQuest:RegisterGuide([==[Alliance 40-44 Stormwind City, Swamp of Sorrows, A
 #next Alliance 44-48 Searing Gorge, Tanaris, Desolace
 
 [A 1363 Mazen's Behest | at=51.8,74.2,1453; xl=40.3]
+[R Mage - Stormwind City | at=49.56,85.8,1453; class=MAGE; xl=40.3]
+Jennea Cannon is right here: pick up your new Mage spells.
+Dual Specialization can now be bought from your class trainer in a major city.
 [T 1363 Mazen's Behest | at=51.4,73.8,1453; xl=40.3]
 [A 1271 Feast at the Blue Recluse | at=51.8,93.6,1453; pre=1222; xl=40.3]
 [T 1271 Feast at the Blue Recluse | at=51.8,93.6,1453; xl=40.3]
 [A 212 A Meal Served Cold | at=51.8,93.6,1453; xl=40.4]
 [A 3636 Bring the Light | at=50.3,45.5,1453; xl=40.4]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=40.4]
+High Priestess Laurena is right here: pick up your new Priest spells.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=40.4]
+Lord Grayson Shadowbreaker is right here: pick up your new Paladin spells.
+Dual Specialization can now be bought from your class trainer in a major city.
 [G 25.2,54.2 1435 Travel to Swamp of Sorrows | xl=40.4]
 [A 93176 My Little Friends | at=25.2,54.2,1435; xl=40.4]
 [T 93176 My Little Friends | at=25.2,54.2,1435; xl=40.4]
@@ -74,6 +83,15 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 696 Attack on the Tower | at=18.2,68.1,1417; xl=41.8]
 [T 696 Attack on the Tower | at=46.6,47.0,1417; xl=41.8]
 [A 697 Malin's Request | at=46.6,47.0,1417; pre=696; xl=41.9]
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=41.9]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=41.9]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=41.9]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+Dual Specialization can now be bought from your class trainer in a major city.
 [F Booty Bay | xl=41.9]
 [A 2872 Stoley's Debt | at=27.8,77.1,1434; opt; xl=41.9]
 [A 348 Stranglethorn Fever | at=27.6,76.7,1434; xl=41.9]
@@ -84,6 +102,8 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 608 The Bloodsail Buccaneers | at=27.2,77.0,1434; pre=604; xl=42.0]
 [C 617 Akiris by the Bundle | at=26.2,62.4,1434; mob=Naga Explorer; item=4029:10; drop=39; xl=42.0]
 [T 617 Akiris by the Bundle | at=26.8,76.4,1434; xl=42.0]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=42.1]
+Ian Strom is right here: pick up your new Rogue spells.
 [C 621 Zanzil's Secret | at=38.7,56.6,1434; mob=Zanzil Witch Doctor; xl=42.1]
 [T 621 Zanzil's Secret | at=27.1,77.2,1434; xl=42.1]
 [C 212 A Meal Served Cold | at=28.8,38.8,1434; mob=Cold Eye Basilisk; xl=42.2]
@@ -160,8 +180,16 @@ Lord Shalzaru has only one spawn point. If others are waiting for it, group up t
 [P Thalanaar | at=89.5,45.85,1444; xl=43.2]
 [F Stormwind | xl=43.2]
 [T 697 Malin's Request | at=50.5,87.5,1453; xl=43.2]
+[R Mage - Stormwind City | at=49.56,85.8,1453; class=MAGE; xl=43.3]
+Jennea Cannon is right here: pick up your new Mage spells.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=43.3]
+Demisette Cloyce is right here: pick up your new Warlock spells.
 [T 212 A Meal Served Cold | at=51.8,93.6,1453; xl=43.3]
 [T 3636 Bring the Light | at=50.3,45.5,1453; xl=43.4]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=43.5]
+High Priestess Laurena is right here: pick up your new Priest spells.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=43.5]
+Lord Grayson Shadowbreaker is right here: pick up your new Paladin spells.
 [F Booty Bay | xl=43.5]
 [T 2767 Rescue OOX-22/FE! | at=28.4,76.3,1434; xl=43.5]
 [C 608 The Bloodsail Buccaneers | at=30.6,90.6,1434; mob=Captain Stillwater / Captain Keelhaul; xl=43.6]
@@ -177,5 +205,9 @@ Mokk the Savage has only one spawn point. If others are waiting for it, group up
 [D Uldaman | quests=1360; at=44.6,12.1,1418; xl=43.9]
 Find a group for Uldaman. Quests you skip there are dropped automatically.
 [T 1360 Reclaimed Treasures | at=74.2,9.4,1455; xl=44.4]
+[R Hunter - Ironforge | at=69.87,82.9,1455; class=HUNTER; xl=44.5]
+Time to train: head to Regnus Thundergranite in Ironforge for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=44.5]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 65.6,62.2 1427 Travel to Searing Gorge | xl=44.5]
 ]==])

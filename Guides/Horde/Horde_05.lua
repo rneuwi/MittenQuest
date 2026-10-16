@@ -42,6 +42,8 @@ MittenQuest:RegisterGuide([==[Horde 31-35 Dustwallow Marsh, Orgrimmar, Stranglet
 [T 190 Panther Mastery | at=35.5,10.6,1434; xl=32.1]
 [A 191 Panther Mastery | at=35.5,10.6,1434; pre=190; xl=32.2]
 [C 581 Hunt for Yenniku | at=33.5,17.0,1434; mob=Bloodscalp Axe Thrower; item=3901:9; drop=18; xl=32.2]
+[R Hunter - Grom'gol | at=31.23,28.68,1434; class=HUNTER; xl=32.2]
+Kragg is right here: pick up your new Hunter spells.
 [C 191 Panther Mastery | at=29.4,13.6,1434; mob=Panther; xl=32.2]
 [C 194 Raptor Mastery | at=25.7,15.8,1434; mob=Stranglethorn Raptor; xl=32.2]
 [T 191 Panther Mastery | at=35.5,10.6,1434; xl=32.2]
@@ -121,5 +123,21 @@ Find a group for Razorfen Downs. Quests you skip there are dropped automatically
 [T 1484 The Corrupter | at=52.6,54.4,1443; xl=34.9]
 [T 6143 Other Fish to Fry | at=23.3,72.9,1443; xl=34.9]
 [T 6142 Clam Bait | at=22.6,72.0,1443; xl=35.0]
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=35.1]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=35.1]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=35.1]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=35.1]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=35.1]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=35.1]
+Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=35.1]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=35.1]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Brackenwall Village | xl=35.1]
 ]==])

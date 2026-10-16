@@ -119,6 +119,7 @@ function FG:OnEnable()
     self:RegisterEvent("PLAYER_CONTROL_GAINED")
     -- Making an inn your home completes the "set hearth" step even if the guide's town
     -- name differs from the game's inn name.
+    self:RegisterEvent("TRAINER_SHOW", function() self:CompleteCurrent("TRAIN") end)
     self:RegisterEvent("HEARTHSTONE_BOUND", function()
         self:CompleteCurrent("SETHEARTH")
         self:RequestAdvance()
@@ -160,7 +161,9 @@ end
 --   * A manual skip (checkbox / /mq next) overrides any step and is reversible.
 -- The current step is simply the first step that isn't done.
 ---------------------------------------------------------------------------
-local MOVEMENT = { GOTO = true, FLY = true, HEARTH = true, SETHEARTH = true }
+-- TRAIN is optional by nature: it completes when you open your trainer, and counts as done
+-- once you move on to the next quest step.
+local MOVEMENT = { GOTO = true, FLY = true, HEARTH = true, SETHEARTH = true, TRAIN = true }
 FG.MOVEMENT = MOVEMENT
 
 function FG:GetProgress(guideName)

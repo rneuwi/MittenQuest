@@ -23,6 +23,14 @@ Talk to Innkeeper Kauth and make this inn your home.
 [A 757 Rite of Strength | at=42.5,90.1,1412; pre=755; xl=3.3]
 [A 95805 Grace of An'she and Mu'sha | at=42.5,90.1,1412; pre=755; xl=3.3]
 [C 750 The Hunt Continues | at=45.4,88.2,1412; mob=Mountain Cougar; item=4742:10; drop=68; xl=3.3]
+[R Hunter - Mulgore | at=43.96,76.35,1412; class=HUNTER; xl=3.3]
+Lanka Farshot is right here: pick up your new Hunter spells.
+[R Warrior - Mulgore | at=43.75,76.72,1412; class=WARRIOR; xl=3.3]
+Harutt Thunderhorn is right here: pick up your new Warrior spells.
+[R Druid - Mulgore | at=44.65,76.55,1412; class=DRUID; xl=3.3]
+Gart Mistrunner is right here: pick up your new Druid spells.
+[R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=3.3]
+Meela Dawnstrider is right here: pick up your new Shaman spells.
 [T 750 The Hunt Continues | at=44.5,77.5,1412; xl=3.3]
 [A 780 The Battleboars | at=44.5,77.5,1412; pre=750; xl=3.7]
 [C 780 The Battleboars | at=52.9,81.5,1412; mob=Battleboar; item=4848:8,4849:8; drop=50; xl=3.7]
@@ -32,6 +40,14 @@ Starts from Dirt-stained Map, which drops in this area.
 [T 95805 Grace of An'she and Mu'sha | at=56.6,88.7,1412; xl=3.7]
 [T 780 The Battleboars | at=44.5,77.5,1412; xl=4.1]
 [T 757 Rite of Strength | at=43.9,76.7,1412; xl=4.6]
+[R Hunter - Mulgore | at=43.96,76.35,1412; class=HUNTER; xl=5.1]
+Lanka Farshot is right here: pick up your new Hunter spells.
+[R Warrior - Mulgore | at=43.75,76.72,1412; class=WARRIOR; xl=5.1]
+Harutt Thunderhorn is right here: pick up your new Warrior spells.
+[R Druid - Mulgore | at=44.65,76.55,1412; class=DRUID; xl=5.1]
+Gart Mistrunner is right here: pick up your new Druid spells.
+[R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=5.1]
+Meela Dawnstrider is right here: pick up your new Shaman spells.
 [T 781 Attack on Camp Narache | at=43.9,76.7,1412; xl=5.1]
 [A 763 Rites of the Earthmother | at=43.9,76.7,1412; pre=757; opt; xl=5.4]
 [T 1656 A Task Unfinished | at=45.9,64.2,1412; xl=5.4]
@@ -54,6 +70,8 @@ Starts from Dirt-stained Map, which drops in this area.
 [T 99081 Grim Tidings | at=46.7,63.8,1412; xl=6.4]
 [A 99101 Our Ancient Enemy | at=46.7,63.8,1412; pre=99081; xl=6.8]
 [T 99101 Our Ancient Enemy | at=46.7,63.4,1412; xl=6.8]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=7.1]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
 [A 99080 Drive Them Out | at=46.7,63.4,1412; pre=99101; xl=7.1]
 [A 771 Rite of Vision | at=46.9,61.2,1412; pre=767; opt; xl=7.1]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
@@ -77,6 +95,8 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 754 Winterhoof Cleansing | at=47.5,63.6,1412; pre=748; race=Tauren; xl=8.6]
 [T 745 Sharing the Land | at=46.7,63.4,1412; xl=8.6]
 [T 746 Dwarven Digging | at=46.7,63.4,1412; xl=8.8]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=9.0]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
 [C 754 Winterhoof Cleansing | at=51.8,68.4,1412; race=Tauren; xl=9.0]
 [T 754 Winterhoof Cleansing | at=47.5,63.6,1412; race=Tauren; xl=9.0]
 [A 756 Thunderhorn Totem | at=47.5,63.6,1412; pre=754; race=Tauren; xl=9.2]
@@ -104,7 +124,34 @@ Starts from Mulgore Expansion Plans, which drops in this area.
 [T 759 Wildmane Totem | at=47.5,63.6,1412; race=Tauren; xl=10.7]
 [A 760 Wildmane Cleansing | at=47.5,63.6,1412; pre=759; race=Tauren; xl=10.9]
 [C 760 Wildmane Cleansing | at=42.7,25.0,1412; race=Tauren; xl=10.9]
+[R Druid - Mulgore | at=33.39,22.09,1412; class=DRUID; xl=10.9]
+Hana Lighthoof is right here: pick up your new Druid spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Mulgore | at=33.58,22.32,1412; class=SHAMAN; xl=10.9]
+Palah Thunderhoof is right here: pick up your new Shaman spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [T 760 Wildmane Cleansing | at=47.5,63.6,1412; race=Tauren; xl=10.9]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=11.2]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=11.2]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=11.2]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=11.2]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=11.2]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=11.2]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=11.2]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [L 12 | xl=11.2]
 Grind mobs around your level here; more quests open at the next level.
 [L 13 | xl=12.0]

@@ -113,12 +113,20 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 1104 Salt Flat Venom | at=78.1,77.1,1441; opt; xl=30.2]
 [G 71.1,34.2 1456 Travel to Thunder Bluff | xl=30.2]
 [A 98823 Earthen Echo | at=71.1,34.2,1456; xl=30.2]
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=30.2]
+Turak Runetotem is right here: pick up your new Druid spells.
 [T 5062 Sacred Fire | at=69.8,30.9,1456; xl=30.2]
 [T 1489 Hamuul Runetotem | at=78.6,28.6,1456; xl=30.3]
 [T 1130 Melor Sends Word | at=61.5,80.9,1456; xl=30.3]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=30.4]
+Holt Thunderhorn is right here: pick up your new Hunter spells.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=30.4]
+Torm Ragetotem is right here: pick up your new Warrior spells.
 [P Thunder Bluff | at=47,49.83,1456; xl=30.4]
 [G 32.5,20.7 1412 Travel to Mulgore | xl=30.4]
 [A 96241 Talkin' bout Toxins, Mon | at=32.5,20.7,1412; xl=30.4]
+[R Shaman - Mulgore | at=33.58,22.32,1412; class=SHAMAN; xl=30.4]
+Palah Thunderhoof is right here: pick up your new Shaman spells.
 [A 96260 Stronger than Steel | at=32.5,20.0,1412; xl=30.4]
 [A 96259 Defending the Dead | at=33.4,22.6,1412; xl=30.4]
 [T 98823 Earthen Echo | at=33.4,22.6,1412; xl=30.4]
@@ -162,5 +170,15 @@ Burning Blade Seer has only one spawn point. If others are waiting for it, group
 [C 1481 The Corrupter | at=75.3,21.3,1443; mob=Hatefury Shadowstalker; xl=31.4]
 [T 1481 The Corrupter | at=52.2,53.4,1443; xl=31.4]
 [A 1482 The Corrupter | at=52.2,53.4,1443; pre=1481; xl=31.5]
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=31.5]
+Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=31.5]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=31.5]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=31.5]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=31.5]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 29.8,48.2 1445 Travel to Dustwallow Marsh | xl=31.5]
 ]==])

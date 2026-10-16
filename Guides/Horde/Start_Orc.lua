@@ -16,6 +16,20 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Durotar (Orc/Troll)]==], [==[
 [C 789 Sting of the Scorpid | at=41.4,63.4,1411; mob=Scorpid Worker; item=4862:10; drop=60; xl=2.1]
 [C 4402 Galgar's Cactus Apple Surprise | at=43.8,62.8,1411; item=11583:10; xl=2.1]
 [T 4402 Galgar's Cactus Apple Surprise | at=42.7,67.2,1411; xl=2.1]
+[R Hunter - Durotar | at=42.84,69.33,1411; class=HUNTER; xl=3.0]
+Jen'shan is right here: pick up your new Hunter spells.
+[R Rogue - Durotar | at=41.28,68,1411; class=ROGUE; xl=3.0]
+Rwag is right here: pick up your new Rogue spells.
+[R Priest - Durotar | at=42.36,68.81,1411; class=PRIEST; xl=3.0]
+Ken'jai is right here: pick up your new Priest spells.
+[R Warrior - Durotar | at=42.89,69.44,1411; class=WARRIOR; xl=3.0]
+Frang is right here: pick up your new Warrior spells.
+[R Shaman - Durotar | at=42.39,69,1411; class=SHAMAN; xl=3.0]
+Shikrik is right here: pick up your new Shaman spells.
+[R Warlock - Durotar | at=40.65,68.52,1411; class=WARLOCK; xl=3.0]
+Nartok is right here: pick up your new Warlock spells.
+[R Mage - Durotar | at=42.51,69.04,1411; class=MAGE; xl=3.0]
+Mai'ah is right here: pick up your new Mage spells.
 [T 789 Sting of the Scorpid | at=42.1,68.3,1411; xl=3.0]
 [A 2161 A Peon's Burden | at=52.1,68.3,1411; xl=3.5]
 [A 96821 Legging It | at=56.0,73.9,1411; xl=3.5]
@@ -31,6 +45,18 @@ Starts from Aged Envelope, which drops in this area.
 [A 96822 For Honor | at=54.0,42.6,1411; xl=4.9]
 [C 96825 This Fruit Could Bite Back | at=46.8,49,1411; item=275718:8; xl=4.9]
 [T 96825 This Fruit Could Bite Back | at=51.1,42.5,1411; xl=4.9]
+[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=5.3]
+Thotar is right here: pick up your new Hunter spells.
+[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=5.3]
+Kaplak is right here: pick up your new Rogue spells.
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=5.3]
+Tai'jin is right here: pick up your new Priest spells.
+[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=5.3]
+Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=5.3]
+Swart is right here: pick up your new Shaman spells.
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=5.3]
+Dhugru Gorelust is right here: pick up your new Warlock spells.
 [A 96876 Ukor's Lost Pack | at=50.7,56.3,1411; xl=5.3]
 Starts from Ukor's Lost Pack, which drops in this area.
 [C 96822 For Honor | at=57.4,56.4,1411; xl=5.3]
@@ -38,6 +64,8 @@ Starts from Ukor's Lost Pack, which drops in this area.
 Lieutenant Benedict has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [C 791 Carry Your Weight | at=59.2,56.7,1411; mob=Kul Tiras Marine; item=4870:8; drop=35; xl=5.3]
 [T 96876 Ukor's Lost Pack | at=52.1,68.3,1411; xl=5.3]
+[R Mage - Durotar | at=56.31,75.11,1411; class=MAGE; xl=5.7]
+Un'Thuwa is right here: pick up your new Mage spells.
 [A 817 Practical Prey | at=56.0,73.9,1411; xl=5.7]
 [A 818 A Solvent Spirit | at=55.9,74.4,1411; xl=5.7]
 [A 97225 Forgotten Loa Idols | at=55.9,74.4,1411; xl=5.7]
@@ -59,6 +87,18 @@ Lieutenant Benedict has only one spawn point. If others are waiting for it, grou
 Zalazane has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 826 Zalazane | at=56.0,74.7,1411; xl=7.5]
 [T 784 Vanquish the Betrayers | at=52.0,43.5,1411; xl=7.8]
+[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=8.1]
+Thotar is right here: pick up your new Hunter spells.
+[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=8.1]
+Kaplak is right here: pick up your new Rogue spells.
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=8.1]
+Tai'jin is right here: pick up your new Priest spells.
+[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=8.1]
+Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=8.1]
+Swart is right here: pick up your new Shaman spells.
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=8.1]
+Dhugru Gorelust is right here: pick up your new Warlock spells.
 [A 825 From The Wreckage.... | at=52.0,43.5,1411; pre=784; xl=8.1]
 [A 837 Encroachment | at=52.0,43.5,1411; xl=8.1]
 [T 823 Report to Orgnil | at=52.2,43.1,1411; xl=8.1]
@@ -88,6 +128,33 @@ Starts from Dull Storm Orb, which drops in this area.
 [C 835 Securing the Lines | at=53.3,21.6,1411; mob=Dustwind Savage / Dustwind Storm Witch; xl=10.1]
 [T 835 Securing the Lines | at=46.4,22.9,1411; xl=10.1]
 [T 99051 Threat from Below | at=52.2,43.1,1411; xl=10.3]
+[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=10.5]
+Thotar is right here: pick up your new Hunter spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=10.5]
+Kaplak is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=10.5]
+Tai'jin is right here: pick up your new Priest spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=10.5]
+Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=10.5]
+Swart is right here: pick up your new Shaman spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=10.5]
+Dhugru Gorelust is right here: pick up your new Warlock spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=10.5]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=10.5]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=10.5]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [L 11 | xl=10.5]
 Grind mobs around your level here; more quests open at the next level.
 [L 12 | xl=11.0]

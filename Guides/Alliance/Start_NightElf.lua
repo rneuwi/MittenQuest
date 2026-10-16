@@ -19,6 +19,16 @@ MittenQuest:RegisterGuide([==[Alliance 1-20 Teldrassil, Darkshore, Ashenvale, St
 [A 2159 Dolanaar Delivery | at=61.2,47.6,1438; xl=2.7]
 [A 2438 The Emerald Dreamcatcher | at=55.6,57.0,1438; xl=2.7]
 [T 2159 Dolanaar Delivery | at=55.6,59.8,1438; xl=2.7]
+[R Priest - Teldrassil | at=55.56,56.75,1438; class=PRIEST; xl=3.0]
+Laurna Morninglight is right here: pick up your new Priest spells.
+[R Warrior - Teldrassil | at=56.22,59.2,1438; class=WARRIOR; xl=3.0]
+Kyra Windblade is right here: pick up your new Warrior spells.
+[R Druid - Teldrassil | at=55.95,61.56,1438; class=DRUID; xl=3.0]
+Kal is right here: pick up your new Druid spells.
+[R Rogue - Teldrassil | at=56.38,60.14,1438; class=ROGUE; xl=3.0]
+Jannok Breezesong is right here: pick up your new Rogue spells.
+[R Hunter - Teldrassil | at=56.68,59.49,1438; class=HUNTER; xl=3.0]
+Dazalar is right here: pick up your new Hunter spells.
 [C 2438 The Emerald Dreamcatcher | at=68.0,59.6,1438; xl=3.0]
 [T 2438 The Emerald Dreamcatcher | at=55.6,57.0,1438; xl=3.0]
 [A 916 Webwood Venom | at=57.8,41.6,1438; xl=3.7]
@@ -32,6 +42,16 @@ Starts from Fang of Githyiss, which drops in this area.
 [T 97236 Fang of Githyiss | at=57.8,41.6,1438; xl=4.5]
 [A 917 Webwood Egg | at=57.8,41.6,1438; pre=916; xl=4.8]
 [T 457 The Balance of Nature | at=58.7,44.3,1438; xl=4.8]
+[R Priest - Teldrassil | at=59.17,40.44,1438; class=PRIEST; xl=5.1]
+Shanda is right here: pick up your new Priest spells.
+[R Warrior - Teldrassil | at=59.64,38.44,1438; class=WARRIOR; xl=5.1]
+Alyissia is right here: pick up your new Warrior spells.
+[R Druid - Teldrassil | at=58.63,40.29,1438; class=DRUID; xl=5.1]
+Mardant Strongoak is right here: pick up your new Druid spells.
+[R Rogue - Teldrassil | at=59.64,38.66,1438; class=ROGUE; xl=5.1]
+Frahun Shadewhisper is right here: pick up your new Rogue spells.
+[R Hunter - Teldrassil | at=58.66,40.45,1438; class=HUNTER; xl=5.1]
+Ayanna Everstride is right here: pick up your new Hunter spells.
 [T 3519 A Friend in Need | at=60.9,42.0,1438; xl=5.1]
 [A 3521 Iverron's Antidote | at=60.9,42.0,1438; pre=3519; xl=5.2]
 [A 488 Zenn's Bidding | at=60.4,56.2,1438; xl=5.2]
@@ -55,6 +75,8 @@ Starts from Fang of Githyiss, which drops in this area.
 [A 489 Seek Redemption! | at=56,59.5,1438; pre=488; xl=6.9]
 [C 489 Seek Redemption! | at=56.9,63.8,1438; item=3418:3; xl=6.9]
 [T 997 Denalan's Earth | at=60.9,68.5,1438; xl=6.9]
+[R Druid - Teldrassil | at=55.95,61.56,1438; class=DRUID; xl=7.0]
+Kal is right here: pick up your new Druid spells.
 [A 918 Timberling Seeds | at=60.9,68.5,1438; opt; xl=7.0]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 919 Timberling Sprouts | at=60.9,68.5,1438; xl=7.0]
@@ -80,6 +102,8 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 490 Bounty: Gnarlpine Furbolg | at=40.5,50.7,1438; xl=8.9]
 [C 98403 Twisted Hatred | at=49.5,45.4,1438; mob=Befouled Webwood / Xethorr the Wicked; xl=9.1]
 [T 98403 Twisted Hatred | at=55.6,57.0,1438; xl=9.1]
+[R Druid - Teldrassil | at=55.95,61.56,1438; class=DRUID; xl=9.2]
+Kal is right here: pick up your new Druid spells.
 [T 99053 Escaping Ban'ethil | at=56,59.5,1438; xl=9.2]
 [A 930 The Glowing Fruit | at=42.6,76.2,1438; pre=918; xl=9.4]
 [T 930 The Glowing Fruit | at=60.9,68.5,1438; xl=9.4]
@@ -110,6 +134,9 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 929 Crown of the Earth | at=56.1,61.7,1438; pre=928; xl=10.9]
 [C 99050 The Great Tree Provides | at=57.9,66.6,1438; mob=Lasher Sproutling; item=286017:6; xl=10.9]
 [T 931 The Shimmering Frond | at=60.9,68.5,1438; xl=10.9]
+[R Druid - Teldrassil | at=55.95,61.56,1438; class=DRUID; xl=11.1]
+Kal is right here: pick up your new Druid spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 2399 The Sprouted Fronds | at=60.8,68.6,1438; pre=931; xl=11.1]
 [T 2399 The Sprouted Fronds | at=60.8,68.6,1438; xl=11.1]
 [C 929 Crown of the Earth | at=63.4,58.1,1438; xl=11.1]
@@ -127,6 +154,30 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [P Rut'theran Village | at=58.4,94.02,1438; xl=11.8]
 [T 6341 The Bounty of Teldrassil | at=58.4,94.0,1438; race=NightElf; xl=11.8]
 [A 6342 Flight to Auberdine | at=58.4,94.0,1438; pre=6341; race=NightElf; xl=11.8]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=11.8]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=11.8]
+Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=11.8]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=11.8]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=11.8]
+Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=11.8]
+Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=11.8]
+Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=11.8]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 37.0,44.1 1439 Travel to Darkshore | xl=11.8]
 [A 983 Buzzbox 827 | at=37.0,44.1,1439; xl=11.8]
 [P Auberdine | at=36.34,45.58,1439; xl=11.8]
@@ -247,6 +298,24 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 98028 Baron Marinous | at=59.3,22.7,1439; xl=17.0]
 Starts from Clouded Water Globe, which drops in this area.
 [T 98028 Baron Marinous | at=43.5,76.3,1439; xl=17.0]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=17.2]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=17.2]
+Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=17.2]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=17.2]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=17.2]
+Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=17.2]
+Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=17.2]
+Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=17.2]
+Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=17.2]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 34.7,48.8 1440 Travel to Ashenvale | xl=17.2]
 [A 1008 The Zoram Strand | at=34.7,48.8,1440; xl=17.2]
 [P Astranaar | at=34.41,47.99,1440; xl=17.2]

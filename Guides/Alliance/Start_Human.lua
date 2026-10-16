@@ -24,6 +24,20 @@ Starts from Nibbled-On Book, which drops in this area.
 [A 2158 Rest and Relaxation | at=45.6,47.7,1429; xl=2.8]
 [C 18 Brotherhood of Thieves | at=53.8,49.1,1429; mob=Defias Thug; item=752:12; drop=57; xl=2.8]
 [T 18 Brotherhood of Thieves | at=48.2,42.9,1429; xl=2.8]
+[R Mage - Elwynn Forest | at=49.66,39.4,1429; class=MAGE; xl=3.4]
+Khelden Bremen is right here: pick up your new Mage spells.
+[R Priest - Elwynn Forest | at=49.81,39.49,1429; class=PRIEST; xl=3.4]
+Priestess Anetta is right here: pick up your new Priest spells.
+[R Warlock - Elwynn Forest | at=49.87,42.65,1429; class=WARLOCK; xl=3.4]
+Drusilla La Salle is right here: pick up your new Warlock spells.
+[R Warrior - Elwynn Forest | at=50.24,42.29,1429; class=WARRIOR; xl=3.4]
+Llane Beshere is right here: pick up your new Warrior spells.
+[R Paladin - Elwynn Forest | at=50.43,42.12,1429; class=PALADIN; xl=3.4]
+Brother Sammuel is right here: pick up your new Paladin spells.
+[R Rogue - Elwynn Forest | at=50.31,39.92,1429; class=ROGUE; xl=3.4]
+Jorik Kerridan is right here: pick up your new Rogue spells.
+[R Hunter - Elwynn Forest | at=51.21,40.8,1429; class=HUNTER; xl=3.4]
+Tordrin Sternblade is right here: pick up your new Hunter spells.
 [A 3903 Milly Osworth | at=48.2,42.9,1429; pre=18; opt; xl=3.4]
 [T 3903 Milly Osworth | at=50.7,39.4,1429; xl=3.4]
 [A 3904 Milly's Harvest | at=50.7,39.4,1429; pre=18; xl=3.5]
@@ -41,6 +55,20 @@ Starts from Nibbled-On Book, which drops in this area.
 [T 3904 Milly's Harvest | at=50.7,39.4,1429; xl=4.7]
 [A 3905 Grape Manifest | at=50.7,39.4,1429; pre=3904; xl=4.9]
 [T 3905 Grape Manifest | at=49.5,41.6,1429; xl=4.9]
+[R Mage - Elwynn Forest | at=49.66,39.4,1429; class=MAGE; xl=5.2]
+Khelden Bremen is right here: pick up your new Mage spells.
+[R Priest - Elwynn Forest | at=49.81,39.49,1429; class=PRIEST; xl=5.2]
+Priestess Anetta is right here: pick up your new Priest spells.
+[R Warlock - Elwynn Forest | at=49.87,42.65,1429; class=WARLOCK; xl=5.2]
+Drusilla La Salle is right here: pick up your new Warlock spells.
+[R Warrior - Elwynn Forest | at=50.24,42.29,1429; class=WARRIOR; xl=5.2]
+Llane Beshere is right here: pick up your new Warrior spells.
+[R Paladin - Elwynn Forest | at=50.43,42.12,1429; class=PALADIN; xl=5.2]
+Brother Sammuel is right here: pick up your new Paladin spells.
+[R Rogue - Elwynn Forest | at=50.31,39.92,1429; class=ROGUE; xl=5.2]
+Jorik Kerridan is right here: pick up your new Rogue spells.
+[R Hunter - Elwynn Forest | at=51.21,40.8,1429; class=HUNTER; xl=5.2]
+Tordrin Sternblade is right here: pick up your new Hunter spells.
 [A 99127 A Net Disaster | at=47.5,62.2,1429; xl=5.2]
 [A 99143 Bottles and Baubles | at=47.6,62.3,1429; xl=5.2]
 [C 99127 A Net Disaster | at=48.8,64.7,1429; xl=5.2]
@@ -70,6 +98,20 @@ Starts from Nibbled-On Book, which drops in this area.
 [A 107 Note to William | at=34.9,83.9,1429; pre=111; xl=7.0]
 [T 85 Lost Necklace | at=43.1,85.7,1429; xl=7.0]
 [T 47 Gold Dust Exchange | at=42.1,67.3,1429; xl=7.1]
+[R Mage - Elwynn Forest | at=43.25,66.19,1429; class=MAGE; xl=7.4]
+Zaldimar Wefhellt is right here: pick up your new Mage spells.
+[R Priest - Elwynn Forest | at=43.28,65.72,1429; class=PRIEST; xl=7.4]
+Priestess Josetta is right here: pick up your new Priest spells.
+[R Warlock - Elwynn Forest | at=44.39,66.24,1429; class=WARLOCK; xl=7.4]
+Maximillian Crowe is right here: pick up your new Warlock spells.
+[R Warrior - Elwynn Forest | at=41.09,65.77,1429; class=WARRIOR; xl=7.4]
+Lyria Du Lac is right here: pick up your new Warrior spells.
+[R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=7.4]
+Brother Wilhelm is right here: pick up your new Paladin spells.
+[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=7.4]
+Keryn Sylvius is right here: pick up your new Rogue spells.
+[R Hunter - Elwynn Forest | at=42.77,66.38,1429; class=HUNTER; xl=7.4]
+Josephine Carson is right here: pick up your new Hunter spells.
 [T 99130 An Enticing Offer | at=42.1,67.3,1429; xl=7.4]
 [A 40 A Fishy Peril | at=42.1,67.3,1429; xl=7.6]
 [A 99131 Baited for Success | at=42.1,67.3,1429; pre=99130; xl=7.6]
@@ -122,6 +164,27 @@ Starts from Croaky's Head, which drops in this area.
 [C 91724 Delicate Instruments | at=74.1,51.8,1429; mob=Defias Rogue Wizard; xl=10.4]
 [T 91724 Delicate Instruments | at=65.1,69.8,1429; xl=10.4]
 [T 91746 Elmpaw's Head | at=46.2,62.2,1429; xl=10.5]
+[R Mage - Elwynn Forest | at=43.25,66.19,1429; class=MAGE; xl=10.7]
+Zaldimar Wefhellt is right here: pick up your new Mage spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Priest - Elwynn Forest | at=43.28,65.72,1429; class=PRIEST; xl=10.7]
+Priestess Josetta is right here: pick up your new Priest spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Elwynn Forest | at=44.39,66.24,1429; class=WARLOCK; xl=10.7]
+Maximillian Crowe is right here: pick up your new Warlock spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warrior - Elwynn Forest | at=41.09,65.77,1429; class=WARRIOR; xl=10.7]
+Lyria Du Lac is right here: pick up your new Warrior spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=10.7]
+Brother Wilhelm is right here: pick up your new Paladin spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=10.7]
+Keryn Sylvius is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Hunter - Elwynn Forest | at=42.77,66.38,1429; class=HUNTER; xl=10.7]
+Josephine Carson is right here: pick up your new Hunter spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [T 76 The Jasperlode Mine | at=42.1,65.9,1429; xl=10.7]
 [T 123 The Collector | at=42.1,65.9,1429; xl=10.9]
 [T 39 Deliver Thomas' Report | at=42.1,65.9,1429; xl=11.0]
@@ -135,6 +198,12 @@ Starts from Croaky's Head, which drops in this area.
 [A 46 Bounty on Murlocs | at=74.0,72.2,1429; pre=39; xl=11.5]
 [C 46 Bounty on Murlocs | at=78.3,57.5,1429; mob=Murloc Lurker; item=780:8; drop=45; xl=11.5]
 [T 46 Bounty on Murlocs | at=74.0,72.2,1429; xl=11.5]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=11.7]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=11.7]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 54.0,53.0 1436 Travel to Westfall | xl=11.7]
 [S Sentinel Hill | at=52.86,53.71,1436; xl=11.7]
 Talk to Innkeeper Heather and make this inn your home.
@@ -197,6 +266,20 @@ Starts from Captain Sander's Treasure Map, which drops in this area.
 [T 140 Captain Sander's Hidden Treasure | at=26.0,16.9,1436; xl=14.6]
 [A 92819 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.8]
 [T 92819 Destruction in Deadmines | at=38.7,83.7,1436; xl=14.8]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=14.9]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=14.9]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=14.9]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=14.9]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=14.9]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=14.9]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=14.9]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
 [G 34.8,49.3 1432 Travel to Loch Modan | xl=14.9]
 [S Thelsamar | at=35.53,48.4,1432; xl=14.9]
 Talk to Innkeeper Hearthstove and make this inn your home.
@@ -237,6 +320,8 @@ Starts from Excavation Tools, which drops in this area.
 [C 86613 Excavation Tools | at=69.4,67.5,1432; item=278398:6; xl=16.3]
 [T 86613 Excavation Tools | at=65.9,65.6,1432; xl=16.3]
 [C 297 Gathering Idols | at=70.9,64.3,1432; mob=Berserk Trogg; item=2636:8; drop=91; xl=16.4]
+[R Hunter - Loch Modan | at=82.39,62.4,1432; class=HUNTER; xl=16.4]
+Dargh Trueaim is right here: pick up your new Hunter spells.
 [T 297 Gathering Idols | at=64.9,66.7,1432; xl=16.4]
 [A 385 Crocolisk Hunting | at=81.8,61.7,1432; opt; xl=16.6]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
@@ -261,6 +346,10 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 385 Crocolisk Hunting | at=81.8,61.7,1432; opt; xl=17.2]
 [T 86758 Twisting the Knife | at=81.8,61.7,1432; xl=17.3]
 [T 258 A Hunter's Challenge | at=83.5,65.5,1432; xl=17.4]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=17.5]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=17.5]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Sentinel Hill | xl=17.5]
 [A 102 Patrolling Westfall | at=56.4,47.6,1436; xl=17.5]
 [A 92911 Harvesting the Harvesters | at=51.5,32.3,1436; opt; xl=17.5]
@@ -283,6 +372,18 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 Old Murk-Eye has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 103 Keeper of the Flame | at=30.0,86.0,1436; opt; xl=18.0]
 [T 104 The Coastal Menace | at=30.0,86.0,1436; xl=18.1]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=18.2]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=18.2]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=18.2]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=18.2]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=18.2]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=18.2]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [G 24.4,46.1 1433 Travel to Redridge Mountains | xl=18.2]
 [A 125 The Lost Tools | at=27.1,48.6,1433; xl=18.2]
 [P Lakeshire | at=25.5,59.41,1433; xl=18.2]
@@ -344,6 +445,8 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 255 Mercenaries | at=69.5,22.6,1432; mob=Mo'grosh Ogre / Mo'grosh Brute; opt; xl=19.8]
 [T 255 Mercenaries | at=34.6,44.5,1432; opt; xl=19.8]
 [T 118 The Price of Shoes | at=41.7,65.5,1429; xl=19.9]
+[R Hunter - Elwynn Forest | at=42.77,66.38,1429; class=HUNTER; xl=19.9]
+Josephine Carson is right here: pick up your new Hunter spells.
 [T 178 Theocritus' Retrieval | at=65.2,69.7,1429; xl=19.9]
 [G 9.49,59.69 1437 Travel to Menethil Harbor, Wetlands | xl=20.1]
 ]==])

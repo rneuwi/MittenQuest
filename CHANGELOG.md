@@ -21,6 +21,16 @@
   or come back if others are waiting for them.
 - Fixed a quest that asked for 6,000 items ("Super Reaper 6000").
 
+**Class training**
+- The guide now tells you when to visit your class trainer, for your class only: every couple
+  of levels while you pass a trainer early on, and a trip to the nearest trainer (usually a
+  capital) when it's been about four levels.
+- Includes WoW: Forever's new class trainers (e.g. Undead Paladins, Dwarf Shamans).
+- Notes when talent points start (level 10) and when Dual Specialization becomes available
+  from your trainer (level 40).
+- Training steps complete when you open your trainer, and never hold you up if you'd rather
+  keep questing.
+
 **Better level estimates**
 - Quests new to WoW: Forever now count toward the route's level estimates (they were counted
   as giving no XP), so expected levels are more accurate.

@@ -8,6 +8,8 @@ MittenQuest:RegisterGuide([==[Alliance 48-52 Darnassus, Searing Gorge, Blasted L
 
 [A 3763 Assisting Arch Druid Staghelm | at=67.4,15.7,1457; opt; xl=48.0]
 [T 3763 Assisting Arch Druid Staghelm | at=34.8,9.3,1457; xl=48.0]
+[R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=48.0]
+Mathrengyl Bearwalker is right here: pick up your new Druid spells.
 [T 2972 Doling Justice | at=39.1,81.6,1457; xl=48.0]
 [T 4267 Rise of the Silithid | at=41.8,85.6,1457; xl=48.1]
 [T 162 Rise of the Silithid | at=41.8,85.6,1457; xl=48.1]
@@ -49,8 +51,12 @@ MittenQuest:RegisterGuide([==[Alliance 48-52 Darnassus, Searing Gorge, Blasted L
 [C 2583 A Boar's Vitality | at=50.2,38.4,1419; mob=Helboar / Scorpok Stinger; xl=48.9]
 [T 2581 Snickerfang Jowls | at=50.5,14.2,1419; xl=48.9]
 [T 2583 A Boar's Vitality | at=50.5,14.2,1419; xl=49.0]
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=49.1]
+Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
 [F Booty Bay | xl=49.1]
 [T 2874 Deliver to MacKinley | at=27.8,77.1,1434; xl=49.1]
+[R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=49.2]
+Ian Strom is right here: pick up your new Rogue spells.
 [T 648 Rescue OOX-17/TN! | at=28.4,76.3,1434; xl=49.2]
 [A 594 Message in a Bottle | at=36.6,77.1,1434; xl=49.2]
 Starts from Carefully Folded Note, which drops in this area.
@@ -118,6 +124,14 @@ Gor'tesh has only one spawn point. If others are waiting for it, group up to sha
 [C 3825 Ogre Head On A Stick = Party | at=81,46.8,1428; xl=51.1]
 Soft Dirt Mound has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 3825 Ogre Head On A Stick = Party | at=84.6,68.7,1428; xl=51.1]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=51.2]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=51.2]
+Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=51.2]
+Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=51.2]
+Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
 [G 42.7,84.0 1422 Travel to Western Plaguelands | xl=51.2]
 [A 5092 Clear the Way | at=42.7,84.0,1422; xl=51.2]
 [P Chillwind Camp | at=42.92,85.06,1422; xl=51.2]
@@ -145,5 +159,11 @@ Grind mobs around your level here; more quests open at the next level.
 [C 4984 The Wildlife Suffers Too | at=45.7,43.9,1422; mob=Diseased Wolf; xl=52.1]
 [T 4984 The Wildlife Suffers Too | at=53.7,64.7,1422; xl=52.1]
 [A 4985 The Wildlife Suffers Too | at=53.7,64.7,1422; pre=4984; xl=52.1]
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=52.1]
+Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=52.1]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=52.1]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Talonbranch Glade | xl=52.1]
 ]==])

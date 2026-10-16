@@ -22,7 +22,15 @@ Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [D City of Dalaran | quests=92456; at=8.46,59.21,1416; xl=32.8]
 Find a group for City of Dalaran. Quests you skip there are dropped automatically.
 [T 92456 A Green Sample | at=31.5,62.6,1453; xl=33.3]
+[R Priest - Stormwind City | at=35.68,63.18,1453; class=PRIEST; xl=33.3]
+Nara Meideros is right here: pick up your new Priest spells.
+[R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=33.3]
+Sheldras Moontree is right here: pick up your new Druid spells.
 [A 92489 Power Overwhelming | at=48.7,87.6,1453; xl=33.3]
+[R Mage - Stormwind City | at=49.56,85.8,1453; class=MAGE; xl=33.3]
+Jennea Cannon is right here: pick up your new Mage spells.
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=33.3]
+Demisette Cloyce is right here: pick up your new Warlock spells.
 [D City of Dalaran | quests=92489; at=8.46,59.21,1416; xl=33.3]
 Find a group for City of Dalaran. Quests you skip there are dropped automatically.
 [T 92489 Power Overwhelming | at=48.7,87.6,1453; xl=33.8]
@@ -46,5 +54,15 @@ Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [T 2929 The Grand Betrayal | at=68.8,49.0,1455; xl=34.8]
 [T 98300 Word to Ironforge | at=39.1,56.2,1455; xl=34.9]
 [P Ironforge | at=55.5,47.74,1455; xl=35.0]
+[R Warrior - Ironforge | at=65.9,88.41,1455; class=WARRIOR; xl=35.0]
+Time to train: head to Bilban Tosslespanner in Ironforge for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Paladin - Ironforge | at=23.13,6.14,1455; class=PALADIN; xl=35.0]
+Time to train: head to Brandur Ironhammer in Ironforge for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.5,15.33,1455; class=ROGUE; xl=35.0]
+Time to train: head to Fenthwick in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
+[R Hunter - Ironforge | at=69.87,82.9,1455; class=HUNTER; xl=35.0]
+Time to train: head to Regnus Thundergranite in Ironforge for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=35.0]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 66.7,10.9 1443 Travel to Desolace - take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor) | xl=35.0]
 ]==])
