@@ -52,6 +52,10 @@
 - Quests that every class but one can do (like Durotar's "Vile Familiars", which Warlocks
   get a separate version of) now show for the right classes instead of being left out.
 
+**Fixes**
+- If an old test version (ForeverGuide) is still installed next to MittenQuest, you'd see two
+  guide windows and two arrows. MittenQuest now notices and offers to turn the old one off.
+
 **Better level estimates**
 - Quests new to WoW: Forever now count toward the route's level estimates (they were counted
   as giving no XP), so expected levels are more accurate.

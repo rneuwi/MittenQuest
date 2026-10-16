@@ -103,7 +103,33 @@ function FG:OnInitialize()
     self:RegisterChatCommand("mittenquest", "HandleSlash")
 end
 
+-- Early test builds were called ForeverGuide. With both installed you get two windows and
+-- two arrows following separate progress, so offer to turn the old one off.
+local OLD_COPIES = { "ForeverGuide" }
+
+function FG:CheckOldCopies()
+    if not (C_AddOns and C_AddOns.IsAddOnLoaded) then return end
+    local found = {}
+    for _, name in ipairs(OLD_COPIES) do
+        if C_AddOns.IsAddOnLoaded(name) then found[#found + 1] = name end
+    end
+    if #found == 0 then return end
+    StaticPopupDialogs.MITTENQUEST_OLD_COPY = {
+        text = "An old test version of this guide (" .. table.concat(found, ", ") .. ") is also running, "
+            .. "so you see two guide windows and two arrows.\n\nTurn it off and reload now?",
+        button1 = "Turn off & reload",
+        button2 = "Not now",
+        OnAccept = function()
+            for _, name in ipairs(found) do C_AddOns.DisableAddOn(name) end
+            if C_UI and C_UI.Reload then C_UI.Reload() else ReloadUI() end
+        end,
+        timeout = 0, whileDead = true, hideOnEscape = true, preferredIndex = 3,
+    }
+    StaticPopup_Show("MITTENQUEST_OLD_COPY")
+end
+
 function FG:OnEnable()
+    self:CheckOldCopies()
     -- Quest flow
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("QUEST_ACCEPTED")
