@@ -19,9 +19,14 @@ by the minimap; everything else is in the guide window's gear menu.
 - Steps complete themselves from game events and step back if you undo them in game
   (abandon a quest and the guide returns to it). Skip / skip quest / undo buttons.
 - Arrow and map waypoint for every step, with cave-entrance routing.
-- Quest pins with level, requirements and giver for 2,600+ quests (each faction sees its own).
+- Quest pins with level, requirements and giver for 3,200+ quests (each faction sees its own).
 - Expected kill counts from real drop rates; flight paths learned and used along the way;
   dungeon quests batched into one run per dungeon.
+- Routes planned on time, not just distance: slow quests (bad drop rates, long detours) are
+  swapped for better ones, with hearthstone steps and notes for contested spawns.
+- Class trainer visits and class quests (pet taming, Bear Form, totems, Warlock pets and
+  more), shown only to your class.
+- Pace display: on pace, ahead or behind the route, with warnings before a level wall.
 
 ## Help tune the pace
 
