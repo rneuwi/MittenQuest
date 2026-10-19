@@ -91,10 +91,10 @@ Big Will has only one spawn point. If others are waiting for it, group up to sha
 [T 1791 The Windwatcher | at=80.5,66.9,1416; class=WARRIOR; xl=35.0]
 [R Paladin - Ironforge | at=23.13,6.14,1455; class=PALADIN; xl=35.0]
 Time to train: head to Brandur Ironhammer in Ironforge for your new Paladin spells. The arrow takes you back to the route afterwards.
-[R Rogue - Ironforge | at=51.5,15.33,1455; class=ROGUE; xl=35.0]
-Time to train: head to Fenthwick in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Hunter - Ironforge | at=69.87,82.9,1455; class=HUNTER; xl=35.0]
 Time to train: head to Regnus Thundergranite in Ironforge for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.5,15.33,1455; class=ROGUE; xl=35.0]
+Time to train: head to Fenthwick in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=35.0]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 66.7,10.9 1443 Travel to Desolace - take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor) | xl=35.0]

@@ -125,10 +125,10 @@ Time to train: head to Ander Germaine in Stormwind City for your new Warrior spe
 Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=31.5]
 Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
-[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=31.5]
-Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=31.5]
 Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=31.5]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=31.5]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [A 94789 Call of Air | at=47.1,13.8,1455; class=SHAMAN; xl=31.5]
