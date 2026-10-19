@@ -41,16 +41,16 @@ Thran Khorman is right here: pick up your new Warrior spells.
 Bromos Grummner is right here: pick up your new Paladin spells.
 [A 3107 Consecrated Rune | at=29.9,71.2,1426; pre=179; class=PALADIN; race=Dwarf; xl=2.2]
 [T 3107 Consecrated Rune | at=28.8,68.3,1426; class=PALADIN; race=Dwarf; xl=2.2]
+[R Hunter - Dun Morogh | at=29.18,67.45,1426; class=HUNTER; xl=2.2]
+Thorgas Grimson is right here: pick up your new Hunter spells.
+[A 3108 Etched Rune | at=29.9,71.2,1426; pre=179; class=HUNTER; race=Dwarf; xl=2.2]
+[T 3108 Etched Rune | at=29.2,67.5,1426; class=HUNTER; race=Dwarf; xl=2.2]
 [R Rogue - Dun Morogh | at=28.37,67.51,1426; class=ROGUE; xl=2.2]
 Solm Hargrin is right here: pick up your new Rogue spells.
 [A 3109 Encrypted Rune | at=29.9,71.2,1426; pre=179; class=ROGUE; race=Dwarf; xl=2.2]
 [T 3109 Encrypted Rune | at=28.4,67.5,1426; class=ROGUE; race=Dwarf; xl=2.2]
 [A 3113 Encrypted Memorandum | at=29.9,71.2,1426; pre=179; class=ROGUE; race=Gnome; xl=2.2]
 [T 3113 Encrypted Memorandum | at=28.4,67.5,1426; class=ROGUE; race=Gnome; xl=2.2]
-[R Hunter - Dun Morogh | at=29.18,67.45,1426; class=HUNTER; xl=2.2]
-Thorgas Grimson is right here: pick up your new Hunter spells.
-[A 3108 Etched Rune | at=29.9,71.2,1426; pre=179; class=HUNTER; race=Dwarf; xl=2.2]
-[T 3108 Etched Rune | at=29.2,67.5,1426; class=HUNTER; race=Dwarf; xl=2.2]
 [R Shaman - Dun Morogh | at=28.79,66.18,1426; class=SHAMAN; xl=2.2]
 Teo Hammerstorm is right here: pick up your new Shaman spells.
 [A 98581 Archaic Rune | at=29.9,71.2,1426; pre=179; class=SHAMAN; race=Dwarf; xl=2.2]
@@ -74,10 +74,10 @@ Alamar Grimm is right here: pick up your new Warlock spells.
 Thran Khorman is right here: pick up your new Warrior spells.
 [R Paladin - Dun Morogh | at=28.83,68.33,1426; class=PALADIN; xl=4.2]
 Bromos Grummner is right here: pick up your new Paladin spells.
-[R Rogue - Dun Morogh | at=28.37,67.51,1426; class=ROGUE; xl=4.2]
-Solm Hargrin is right here: pick up your new Rogue spells.
 [R Hunter - Dun Morogh | at=29.18,67.45,1426; class=HUNTER; xl=4.2]
 Thorgas Grimson is right here: pick up your new Hunter spells.
+[R Rogue - Dun Morogh | at=28.37,67.51,1426; class=ROGUE; xl=4.2]
+Solm Hargrin is right here: pick up your new Rogue spells.
 [R Shaman - Dun Morogh | at=28.79,66.18,1426; class=SHAMAN; xl=4.2]
 Teo Hammerstorm is right here: pick up your new Shaman spells.
 [A 94373 Call of Earth | at=28.8,66.2,1426; class=SHAMAN; xl=4.2]
@@ -166,10 +166,10 @@ Gimrizz Shadowcog is right here: pick up your new Warlock spells.
 Granis Swiftaxe is right here: pick up your new Warrior spells.
 [R Paladin - Dun Morogh | at=47.6,52.07,1426; class=PALADIN; xl=8.6]
 Azar Stronghammer is right here: pick up your new Paladin spells.
-[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=8.6]
-Hogral Bakkan is right here: pick up your new Rogue spells.
 [R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=8.6]
 Grif Wildheart is right here: pick up your new Hunter spells.
+[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=8.6]
+Hogral Bakkan is right here: pick up your new Rogue spells.
 [R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=8.6]
 Ingrid Dunwald is right here: pick up your new Shaman spells.
 [T 313 The Grizzled Den | at=49.6,48.6,1426; opt; xl=8.6]
@@ -244,15 +244,6 @@ Vejrek has only one spawn point. If others are waiting for it, group up to share
 [R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=10.4]
 Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=10.4]
-Time to train: head to Hogral Bakkan in Dun Morogh for your new Rogue spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 2218 Road to Salvation | at=47.6,52.6,1426; class=ROGUE; xl=10.4]
-[T 2218 Road to Salvation | at=52.0,14.8,1455; class=ROGUE; xl=10.4]
-[A 2238 Simple Subterfugin' | at=52.0,14.8,1455; pre=2218; class=ROGUE; xl=10.4]
-[T 2238 Simple Subterfugin' | at=25.2,44.5,1426; class=ROGUE; xl=10.4]
-[A 2239 Onin's Report | at=25.2,44.5,1426; pre=2238; class=ROGUE; xl=10.4]
-[T 2239 Onin's Report | at=52.0,14.8,1455; class=ROGUE; xl=10.4]
 [R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=10.4]
 Time to train: head to Grif Wildheart in Dun Morogh for your new Hunter spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -269,6 +260,15 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [T 6085 Taming the Beast | at=45.8,53.0,1426; class=HUNTER; race=Dwarf; xl=10.4]
 [A 6086 Training the Beast | at=45.8,53.0,1426; pre=6085; class=HUNTER; race=Dwarf; xl=10.4]
 [T 6086 Training the Beast | at=70.9,85.8,1455; class=HUNTER; race=Dwarf; xl=10.4]
+[R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=10.4]
+Time to train: head to Hogral Bakkan in Dun Morogh for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 2218 Road to Salvation | at=47.6,52.6,1426; class=ROGUE; xl=10.4]
+[T 2218 Road to Salvation | at=52.0,14.8,1455; class=ROGUE; xl=10.4]
+[A 2238 Simple Subterfugin' | at=52.0,14.8,1455; pre=2218; class=ROGUE; xl=10.4]
+[T 2238 Simple Subterfugin' | at=25.2,44.5,1426; class=ROGUE; xl=10.4]
+[A 2239 Onin's Report | at=25.2,44.5,1426; pre=2238; class=ROGUE; xl=10.4]
+[T 2239 Onin's Report | at=52.0,14.8,1455; class=ROGUE; xl=10.4]
 [R Shaman - Dun Morogh | at=47.58,51.95,1426; class=SHAMAN; xl=10.4]
 Time to train: head to Ingrid Dunwald in Dun Morogh for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).

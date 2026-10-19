@@ -27,14 +27,14 @@ Alyissia is right here: pick up your new Warrior spells.
 Mardant Strongoak is right here: pick up your new Druid spells.
 [A 3120 Verdant Sigil | at=58.7,44.3,1438; pre=456; class=DRUID; race=NightElf; xl=2.7]
 [T 3120 Verdant Sigil | at=58.6,40.3,1438; class=DRUID; race=NightElf; xl=2.7]
-[R Rogue - Teldrassil | at=59.64,38.66,1438; class=ROGUE; xl=2.7]
-Frahun Shadewhisper is right here: pick up your new Rogue spells.
-[A 3118 Encrypted Sigil | at=58.7,44.3,1438; pre=456; class=ROGUE; race=NightElf; xl=2.7]
-[T 3118 Encrypted Sigil | at=59.6,38.7,1438; class=ROGUE; race=NightElf; xl=2.7]
 [R Hunter - Teldrassil | at=58.66,40.45,1438; class=HUNTER; xl=2.7]
 Ayanna Everstride is right here: pick up your new Hunter spells.
 [A 3117 Etched Sigil | at=58.7,44.3,1438; pre=456; class=HUNTER; race=NightElf; xl=2.7]
 [T 3117 Etched Sigil | at=58.7,40.5,1438; class=HUNTER; race=NightElf; xl=2.7]
+[R Rogue - Teldrassil | at=59.64,38.66,1438; class=ROGUE; xl=2.7]
+Frahun Shadewhisper is right here: pick up your new Rogue spells.
+[A 3118 Encrypted Sigil | at=58.7,44.3,1438; pre=456; class=ROGUE; race=NightElf; xl=2.7]
+[T 3118 Encrypted Sigil | at=59.6,38.7,1438; class=ROGUE; race=NightElf; xl=2.7]
 [A 457 The Balance of Nature | at=58.7,44.3,1438; pre=456; xl=2.7]
 [A 2159 Dolanaar Delivery | at=61.2,47.6,1438; xl=2.7]
 [A 2438 The Emerald Dreamcatcher | at=55.6,57.0,1438; xl=2.7]
@@ -50,10 +50,10 @@ Shanda is right here: pick up your new Priest spells.
 Alyissia is right here: pick up your new Warrior spells.
 [R Druid - Teldrassil | at=58.63,40.29,1438; class=DRUID; xl=4.1]
 Mardant Strongoak is right here: pick up your new Druid spells.
-[R Rogue - Teldrassil | at=59.64,38.66,1438; class=ROGUE; xl=4.1]
-Frahun Shadewhisper is right here: pick up your new Rogue spells.
 [R Hunter - Teldrassil | at=58.66,40.45,1438; class=HUNTER; xl=4.1]
 Ayanna Everstride is right here: pick up your new Hunter spells.
+[R Rogue - Teldrassil | at=59.64,38.66,1438; class=ROGUE; xl=4.1]
+Frahun Shadewhisper is right here: pick up your new Rogue spells.
 [A 3519 A Friend in Need | at=54.6,33.0,1438; pre=4495; xl=4.1]
 [C 916 Webwood Venom | at=56.9,28.2,1438; mob=Webwood Spider; item=5166:10; drop=35; xl=4.1]
 [A 97236 Fang of Githyiss | at=56.6,26.3,1438; xl=4.1]
@@ -89,10 +89,10 @@ Sentinel Shaya has only one spawn point. If others are waiting for it, group up 
 Kyra Windblade is right here: pick up your new Warrior spells.
 [R Druid - Teldrassil | at=55.95,61.56,1438; class=DRUID; xl=6.1]
 Kal is right here: pick up your new Druid spells.
-[R Rogue - Teldrassil | at=56.38,60.14,1438; class=ROGUE; xl=6.1]
-Jannok Breezesong is right here: pick up your new Rogue spells.
 [R Hunter - Teldrassil | at=56.68,59.49,1438; class=HUNTER; xl=6.1]
 Dazalar is right here: pick up your new Hunter spells.
+[R Rogue - Teldrassil | at=56.38,60.14,1438; class=ROGUE; xl=6.1]
+Jannok Breezesong is right here: pick up your new Rogue spells.
 [A 476 Gnarlpine Corruption | at=66.3,58.5,1438; pre=475; xl=6.1]
 [C 2459 Ferocitas the Dream Eater | at=68.6,52.9,1438; mob=Gnarlpine Mystic; xl=6.1]
 [T 476 Gnarlpine Corruption | at=56.0,57.3,1438; xl=6.1]
@@ -246,15 +246,6 @@ Shade of Elura has only one spawn point. If others are waiting for it, group up 
 [R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=12.3]
 Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=12.3]
-Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 2241 The Apple Falls | at=56.4,60.1,1438; class=ROGUE; xl=12.3]
-[T 2241 The Apple Falls | at=37.0,21.9,1457; class=ROGUE; xl=12.3]
-[A 2242 Destiny Calls | at=37.0,21.9,1457; pre=2241; class=ROGUE; xl=12.3]
-[C 2242 Destiny Calls | at=37.1,22.8,1438; mob=Sethir the Ancient; class=ROGUE; xl=12.3]
-Sethir the Ancient has only one spawn point. If others are waiting for it, group up to share it.
-[T 2242 Destiny Calls | at=37.0,21.9,1457; class=ROGUE; xl=12.3]
 [R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=12.3]
 Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -271,6 +262,15 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [T 6102 Taming the Beast | at=56.7,59.5,1438; class=HUNTER; race=NightElf; xl=12.3]
 [A 6103 Training the Beast | at=56.7,59.5,1438; pre=6102; class=HUNTER; race=NightElf; xl=12.3]
 [T 6103 Training the Beast | at=40.4,8.6,1457; class=HUNTER; race=NightElf; xl=12.3]
+[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=12.3]
+Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 2241 The Apple Falls | at=56.4,60.1,1438; class=ROGUE; xl=12.3]
+[T 2241 The Apple Falls | at=37.0,21.9,1457; class=ROGUE; xl=12.3]
+[A 2242 Destiny Calls | at=37.0,21.9,1457; pre=2241; class=ROGUE; xl=12.3]
+[C 2242 Destiny Calls | at=37.1,22.8,1438; mob=Sethir the Ancient; class=ROGUE; xl=12.3]
+Sethir the Ancient has only one spawn point. If others are waiting for it, group up to share it.
+[T 2242 Destiny Calls | at=37.0,21.9,1457; class=ROGUE; xl=12.3]
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=12.3]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -453,6 +453,8 @@ Shrine Of Remulos has only one spawn point. If others are waiting for it, group 
 [T 272 Trial of the Sea Lion | at=56.2,30.6,1450; class=DRUID; race=NightElf; xl=17.6]
 [A 5061 Aquatic Form | at=56.2,30.6,1450; pre=272; class=DRUID; race=NightElf; xl=17.6]
 [T 5061 Aquatic Form | at=35.4,8.4,1457; class=DRUID; race=NightElf; xl=17.6]
+[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=17.6]
+Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
 [R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=17.6]
 Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 [A 2259 Erion Shadewhisper | at=56.4,60.1,1438; opt; class=ROGUE; xl=17.6]
@@ -464,8 +466,6 @@ Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow 
 [A 2282 Alther's Mill | at=23.0,52.0,1433; pre=2281; class=ROGUE; xl=17.6]
 [C 2282 Alther's Mill | at=47.0,44.7,1433; class=ROGUE; xl=17.6]
 [T 2282 Alther's Mill | at=23.0,52.0,1433; class=ROGUE; xl=17.6]
-[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=17.6]
-Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=17.6]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 34.7,48.8 1440 Travel to Ashenvale | xl=17.6]

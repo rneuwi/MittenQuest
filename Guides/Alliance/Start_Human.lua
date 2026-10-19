@@ -40,14 +40,14 @@ Llane Beshere is right here: pick up your new Warrior spells.
 Brother Sammuel is right here: pick up your new Paladin spells.
 [A 3101 Consecrated Letter | at=48.9,41.6,1429; pre=7; class=PALADIN; race=Human; xl=2.8]
 [T 3101 Consecrated Letter | at=50.4,42.1,1429; class=PALADIN; race=Human; xl=2.8]
-[R Rogue - Elwynn Forest | at=50.31,39.92,1429; class=ROGUE; xl=2.8]
-Jorik Kerridan is right here: pick up your new Rogue spells.
-[A 3102 Encrypted Letter | at=48.9,41.6,1429; pre=7; class=ROGUE; race=Human; xl=2.8]
-[T 3102 Encrypted Letter | at=50.3,39.9,1429; class=ROGUE; race=Human; xl=2.8]
 [R Hunter - Elwynn Forest | at=51.21,40.8,1429; class=HUNTER; xl=2.8]
 Tordrin Sternblade is right here: pick up your new Hunter spells.
 [A 92479 A Scribbled Letter | at=48.9,41.6,1429; pre=7; class=HUNTER; race=Human; xl=2.8]
 [T 92479 A Scribbled Letter | at=51.2,40.8,1429; class=HUNTER; race=Human; xl=2.8]
+[R Rogue - Elwynn Forest | at=50.31,39.92,1429; class=ROGUE; xl=2.8]
+Jorik Kerridan is right here: pick up your new Rogue spells.
+[A 3102 Encrypted Letter | at=48.9,41.6,1429; pre=7; class=ROGUE; race=Human; xl=2.8]
+[T 3102 Encrypted Letter | at=50.3,39.9,1429; class=ROGUE; race=Human; xl=2.8]
 [A 15 Investigate Echo Ridge | at=48.9,41.6,1429; pre=7; xl=2.8]
 [A 18 Brotherhood of Thieves | at=48.2,42.9,1429; pre=783; xl=2.8]
 [A 2158 Rest and Relaxation | at=45.6,47.7,1429; xl=2.8]
@@ -73,10 +73,10 @@ Priestess Anetta is right here: pick up your new Priest spells.
 Llane Beshere is right here: pick up your new Warrior spells.
 [R Paladin - Elwynn Forest | at=50.43,42.12,1429; class=PALADIN; xl=4.0]
 Brother Sammuel is right here: pick up your new Paladin spells.
-[R Rogue - Elwynn Forest | at=50.31,39.92,1429; class=ROGUE; xl=4.0]
-Jorik Kerridan is right here: pick up your new Rogue spells.
 [R Hunter - Elwynn Forest | at=51.21,40.8,1429; class=HUNTER; xl=4.0]
 Tordrin Sternblade is right here: pick up your new Hunter spells.
+[R Rogue - Elwynn Forest | at=50.31,39.92,1429; class=ROGUE; xl=4.0]
+Jorik Kerridan is right here: pick up your new Rogue spells.
 [A 21 Skirmish at Echo Ridge | at=48.9,41.6,1429; pre=15; xl=4.0]
 [T 91745 Mining Consultant | at=47.2,32.2,1429; xl=4.0]
 [C 21 Skirmish at Echo Ridge | at=49,28.4,1429; mob=Kobold Laborer; xl=4.2]
@@ -115,10 +115,10 @@ Zaldimar Wefhellt is right here: pick up your new Mage spells.
 Lyria Du Lac is right here: pick up your new Warrior spells.
 [R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=6.3]
 Brother Wilhelm is right here: pick up your new Paladin spells.
-[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=6.3]
-Keryn Sylvius is right here: pick up your new Rogue spells.
 [R Hunter - Elwynn Forest | at=42.77,66.38,1429; class=HUNTER; xl=6.3]
 Josephine Carson is right here: pick up your new Hunter spells.
+[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=6.3]
+Keryn Sylvius is right here: pick up your new Rogue spells.
 [T 99128 Slimy Menace | at=47.5,62.2,1429; xl=6.3]
 [A 99129 A Man About a Murloc | at=47.5,62.2,1429; pre=99128; xl=6.6]
 [T 99129 A Man About a Murloc | at=42.1,67.3,1429; xl=6.6]
@@ -153,10 +153,10 @@ Zaldimar Wefhellt is right here: pick up your new Mage spells.
 Lyria Du Lac is right here: pick up your new Warrior spells.
 [R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=8.1]
 Brother Wilhelm is right here: pick up your new Paladin spells.
-[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=8.1]
-Keryn Sylvius is right here: pick up your new Rogue spells.
 [R Hunter - Elwynn Forest | at=42.77,66.38,1429; class=HUNTER; xl=8.1]
 Josephine Carson is right here: pick up your new Hunter spells.
+[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=8.1]
+Keryn Sylvius is right here: pick up your new Rogue spells.
 [T 107 Note to William | at=43.3,65.7,1429; xl=8.1]
 [A 112 Collecting Kelp | at=43.3,65.7,1429; pre=107; xl=8.1]
 [T 99131 Baited for Success | at=47.5,62.2,1429; xl=8.1]
@@ -250,15 +250,6 @@ Bartleby has only one spawn point. If others are waiting for it, group up to sha
 [R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=10.7]
 Brother Wilhelm is right here: pick up your new Paladin spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=10.7]
-Keryn Sylvius is right here: pick up your new Rogue spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 2205 Seek out SI: 7 | at=43.9,65.9,1429; class=ROGUE; xl=10.7]
-[T 2205 Seek out SI: 7 | at=78.3,70.7,1453; class=ROGUE; xl=10.7]
-[A 2206 Snatch and Grab | at=78.3,70.7,1453; pre=2205; class=ROGUE; xl=10.7]
-[C 2206 Snatch and Grab | at=48.1,87.0,1429; mob=Defias Dockmaster; class=ROGUE; xl=10.7]
-Defias Dockmaster has only one spawn point. If others are waiting for it, group up to share it.
-[T 2206 Snatch and Grab | at=78.3,70.7,1453; class=ROGUE; xl=10.7]
 [R Hunter - Elwynn Forest | at=42.77,66.38,1429; class=HUNTER; xl=10.7]
 Josephine Carson is right here: pick up your new Hunter spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -273,6 +264,15 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [T 94864 Taming the Beast | at=42.8,66.4,1429; class=HUNTER; xl=10.7]
 [A 94793 Training the Beast | at=42.8,66.4,1429; pre=94864; class=HUNTER; xl=10.7]
 [T 94793 Training the Beast | at=41.7,66.4,1429; class=HUNTER; xl=10.7]
+[R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=10.7]
+Keryn Sylvius is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 2205 Seek out SI: 7 | at=43.9,65.9,1429; class=ROGUE; xl=10.7]
+[T 2205 Seek out SI: 7 | at=78.3,70.7,1453; class=ROGUE; xl=10.7]
+[A 2206 Snatch and Grab | at=78.3,70.7,1453; pre=2205; class=ROGUE; xl=10.7]
+[C 2206 Snatch and Grab | at=48.1,87.0,1429; mob=Defias Dockmaster; class=ROGUE; xl=10.7]
+Defias Dockmaster has only one spawn point. If others are waiting for it, group up to share it.
+[T 2206 Snatch and Grab | at=78.3,70.7,1453; class=ROGUE; xl=10.7]
 [T 76 The Jasperlode Mine | at=42.1,65.9,1429; xl=10.7]
 [T 123 The Collector | at=42.1,65.9,1429; xl=10.9]
 [T 39 Deliver Thomas' Report | at=42.1,65.9,1429; xl=11.0]
@@ -402,6 +402,8 @@ Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new
 [T 2998 Tome of Divinity | at=50.5,47.5,1453; opt; class=PALADIN; race=Human; xl=15.4]
 [R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=15.4]
 Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=15.4]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
 [R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=15.4]
 Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [A 2218 Road to Salvation | at=47.6,52.6,1426; class=ROGUE; xl=15.4]
@@ -410,8 +412,6 @@ Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells
 [T 2238 Simple Subterfugin' | at=25.2,44.5,1426; class=ROGUE; xl=15.4]
 [A 2239 Onin's Report | at=25.2,44.5,1426; pre=2238; class=ROGUE; xl=15.4]
 [T 2239 Onin's Report | at=52.0,14.8,1455; class=ROGUE; xl=15.4]
-[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=15.4]
-Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=15.4]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 34.8,49.3 1432 Travel to Loch Modan | xl=15.4]

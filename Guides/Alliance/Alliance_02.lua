@@ -180,10 +180,10 @@ Group quest (elite enemies) - optional; skipped if you don't take it.
 [T 78089 Advice From Stormwind | at=48.5,49.1,1453; class=PALADIN; race=Human,Dwarf; xl=27.2]
 [A 78093 Return to Delgren | at=89.4,77,1440; class=PALADIN; race=Human,Dwarf; xl=27.2]
 [T 78093 Return to Delgren | at=26.2,38.7,1440; class=PALADIN; race=Human,Dwarf; xl=27.2]
-[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=27.2]
-Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=27.2]
 Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=27.2]
+Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=27.2]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Menethil Harbor | xl=27.2]
