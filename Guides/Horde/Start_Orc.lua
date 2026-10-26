@@ -4,11 +4,13 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Durotar (Orc/Troll)]==], [==[
 #levels 1-13
 #faction Horde
 #race Orc, Troll
-#next Horde 12-19 The Barrens
+#next Horde 12-16 The Barrens, Thunder Bluff, Orgrimmar
 
-[A 4641 Your Place In The World | at=43.3,68.5,1411; opt; xl=1.0]
-[A 788 Cutting Teeth | at=42.1,68.3,1411; xl=1.0]
-[T 4641 Your Place In The World | at=42.1,68.3,1411; xl=1.0]
+[A 787 The New Horde | at=34.3,39.4,1454; xl=1.0]
+[P Orgrimmar | at=45.12,63.89,1454; xl=1.0]
+[G 42.1,68.3 1411 Travel to Durotar | xl=1.0]
+[T 787 The New Horde | at=42.1,68.3,1411; xl=1.0]
+[A 788 Cutting Teeth | at=42.1,68.3,1411; xl=1.2]
 [C 788 Cutting Teeth | at=44.5,64.1,1411; mob=Mottled Boar; xl=1.2]
 [T 788 Cutting Teeth | at=42.1,68.3,1411; xl=1.2]
 [R Hunter - Durotar | at=42.84,69.33,1411; class=HUNTER; xl=2.1]
@@ -66,22 +68,20 @@ Mai'ah is right here: pick up your new Mage spells.
 [A 5441 Lazy Peons | at=44.6,68.7,1411; xl=3.5]
 [A 2161 A Peon's Burden | at=52.1,68.3,1411; xl=3.5]
 [A 96821 Legging It | at=56.0,73.9,1411; xl=3.5]
+[C 96821 Legging It | at=52.6,61.6,1411; mob=Ridgeshade Creeper / Ridgeshade Lurker; xl=3.5]
 [A 830 The Admiral's Orders | at=59.3,57.6,1411; xl=3.5]
 Starts from Aged Envelope, which drops in this area.
-[C 96821 Legging It | at=51.5,57.1,1411; mob=Ridgeshade Creeper / Ridgeshade Lurker; xl=3.5]
-[C 792 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=3.5]
-[C 5441 Lazy Peons | at=43.9,57.8,1411; mob=Lazy Peon; xl=3.5]
-[T 5441 Lazy Peons | at=44.6,68.7,1411; xl=3.5]
-[R Hunter - Durotar | at=42.84,69.33,1411; class=HUNTER; xl=4.1]
-Jen'shan is right here: pick up your new Hunter spells.
-[R Rogue - Durotar | at=41.28,68,1411; class=ROGUE; xl=4.1]
-Rwag is right here: pick up your new Rogue spells.
-[R Priest - Durotar | at=42.36,68.81,1411; class=PRIEST; xl=4.1]
-Ken'jai is right here: pick up your new Priest spells.
-[R Warrior - Durotar | at=42.89,69.44,1411; class=WARRIOR; xl=4.1]
-Frang is right here: pick up your new Warrior spells.
-[R Shaman - Durotar | at=42.39,69,1411; class=SHAMAN; xl=4.1]
-Shikrik is right here: pick up your new Shaman spells.
+[T 96821 Legging It | at=52.0,43.5,1411; xl=3.5]
+[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=4.1]
+Thotar is right here: pick up your new Hunter spells.
+[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=4.1]
+Kaplak is right here: pick up your new Rogue spells.
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=4.1]
+Tai'jin is right here: pick up your new Priest spells.
+[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=4.1]
+Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=4.1]
+Swart is right here: pick up your new Shaman spells.
 [A 1516 Call of Earth | at=42.4,69.2,1411; class=SHAMAN; xl=4.1]
 [C 1516 Call of Earth | at=44.3,54.2,1411; mob=Felstalker; class=SHAMAN; xl=4.1]
 [T 1516 Call of Earth | at=42.4,69.2,1411; class=SHAMAN; xl=4.1]
@@ -89,201 +89,226 @@ Shikrik is right here: pick up your new Shaman spells.
 [T 1517 Call of Earth | at=44.0,76.2,1411; class=SHAMAN; xl=4.1]
 [A 1518 Call of Earth | at=44.0,76.2,1411; pre=1517; class=SHAMAN; xl=4.1]
 [T 1518 Call of Earth | at=42.4,69.2,1411; class=SHAMAN; xl=4.1]
-[R Warlock - Durotar | at=40.65,68.52,1411; class=WARLOCK; xl=4.1]
-Nartok is right here: pick up your new Warlock spells.
-[R Mage - Durotar | at=42.51,69.04,1411; class=MAGE; xl=4.1]
-Mai'ah is right here: pick up your new Mage spells.
-[A 6394 Thazz'ril's Pick | at=44.6,68.7,1411; pre=5441; xl=4.1]
-[T 792 Vile Familiars | at=42.9,69.2,1411; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=4.1]
-[A 99123 Lost in the Shadows | at=46.3,78.6,1411; xl=4.6]
-[A 823 Report to Orgnil | at=56.0,74.7,1411; xl=4.6]
-[C 6394 Thazz'ril's Pick | at=43.7,53.8,1411; xl=4.6]
-[T 96821 Legging It | at=52.0,43.5,1411; xl=4.6]
-[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=5.1]
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=4.1]
+Dhugru Gorelust is right here: pick up your new Warlock spells.
+[T 830 The Admiral's Orders | at=52.0,43.5,1411; xl=4.1]
+[A 784 Vanquish the Betrayers | at=52.0,43.5,1411; xl=4.8]
+[A 96825 This Fruit Could Bite Back | at=51.1,42.5,1411; xl=4.8]
+[T 2161 A Peon's Burden | at=51.5,41.6,1411; xl=4.8]
+[A 791 Carry Your Weight | at=49.9,40.4,1411; xl=4.9]
+[A 96822 For Honor | at=54.0,42.6,1411; xl=4.9]
+[C 96825 This Fruit Could Bite Back | at=46.8,49,1411; item=275718:8; xl=4.9]
+[T 96825 This Fruit Could Bite Back | at=51.1,42.5,1411; xl=4.9]
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=5.3]
 Tai'jin is right here: pick up your new Priest spells.
-[A 5648 Garments of Spirituality | at=54.3,42.9,1411; class=PRIEST; race=Troll; xl=5.1]
-[C 5648 Garments of Spirituality | at=53.1,46.5,1411; mob=Grunt Kor'ja; class=PRIEST; race=Troll; xl=5.1]
+[A 5648 Garments of Spirituality | at=54.3,42.9,1411; class=PRIEST; race=Troll; xl=5.3]
+[C 5648 Garments of Spirituality | at=53.1,46.5,1411; mob=Grunt Kor'ja; class=PRIEST; race=Troll; xl=5.3]
 Grunt Kor'ja has only one spawn point. If others are waiting for it, group up to share it.
-[T 5648 Garments of Spirituality | at=54.3,42.9,1411; class=PRIEST; race=Troll; xl=5.1]
-[A 5649 In Favor of Spirituality | at=42.4,68.8,1411; opt; class=PRIEST; race=Troll; xl=5.1]
-[T 5649 In Favor of Spirituality | at=54.3,42.9,1411; opt; class=PRIEST; race=Troll; xl=5.1]
-[T 830 The Admiral's Orders | at=52.0,43.5,1411; xl=5.1]
-[A 784 Vanquish the Betrayers | at=52.0,43.5,1411; xl=5.6]
-[T 823 Report to Orgnil | at=52.2,43.1,1411; xl=5.6]
-[A 96825 This Fruit Could Bite Back | at=51.1,42.5,1411; xl=5.8]
-[T 2161 A Peon's Burden | at=51.5,41.6,1411; xl=5.8]
-[A 791 Carry Your Weight | at=49.9,40.4,1411; xl=5.9]
-[A 96822 For Honor | at=54.0,42.6,1411; xl=5.9]
-[C 96825 This Fruit Could Bite Back | at=46.8,49,1411; item=275718:8; xl=5.9]
-[T 96825 This Fruit Could Bite Back | at=51.1,42.5,1411; xl=5.9]
-[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=6.2]
-Thotar is right here: pick up your new Hunter spells.
-[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=6.2]
-Kaplak is right here: pick up your new Rogue spells.
-[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=6.2]
-Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
-[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=6.2]
-Swart is right here: pick up your new Shaman spells.
-[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=6.2]
-Dhugru Gorelust is right here: pick up your new Warlock spells.
-[A 815 Break a Few Eggs | at=51.1,42.5,1411; xl=6.2]
-[A 837 Encroachment | at=52.0,43.5,1411; xl=6.2]
-[A 96876 Ukor's Lost Pack | at=50.7,56.3,1411; xl=6.2]
+[T 5648 Garments of Spirituality | at=54.3,42.9,1411; class=PRIEST; race=Troll; xl=5.3]
+[A 5649 In Favor of Spirituality | at=42.4,68.8,1411; opt; class=PRIEST; race=Troll; xl=5.3]
+[T 5649 In Favor of Spirituality | at=54.3,42.9,1411; opt; class=PRIEST; race=Troll; xl=5.3]
+[A 96876 Ukor's Lost Pack | at=51.1,56.0,1411; xl=5.3]
 Starts from Ukor's Lost Pack, which drops in this area.
-[C 96822 For Honor | at=57.4,56.4,1411; xl=6.2]
-[C 784 Vanquish the Betrayers | at=58.2,56.8,1411; mob=Kul Tiras Sailor / Kul Tiras Marine; xl=6.2]
+[C 96822 For Honor | at=57.4,56.4,1411; xl=5.3]
+[C 784 Vanquish the Betrayers | at=58.2,56.8,1411; mob=Kul Tiras Sailor / Kul Tiras Marine; xl=5.3]
 Lieutenant Benedict has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[C 791 Carry Your Weight | at=59.2,56.7,1411; mob=Kul Tiras Marine; item=4870:8; drop=35; xl=6.2]
-[T 96876 Ukor's Lost Pack | at=52.1,68.3,1411; xl=6.2]
-[R Mage - Durotar | at=56.31,75.11,1411; class=MAGE; xl=6.5]
+[C 791 Carry Your Weight | at=59.2,56.7,1411; mob=Kul Tiras Marine; item=4870:8; drop=35; xl=5.3]
+[T 96876 Ukor's Lost Pack | at=52.1,68.3,1411; xl=5.3]
+[R Mage - Durotar | at=56.31,75.11,1411; class=MAGE; xl=5.7]
 Un'Thuwa is right here: pick up your new Mage spells.
-[T 6394 Thazz'ril's Pick | at=44.6,68.7,1411; xl=6.5]
-[A 817 Practical Prey | at=56.0,73.9,1411; xl=6.7]
-[A 818 A Solvent Spirit | at=55.9,74.4,1411; xl=6.7]
-[A 97225 Forgotten Loa Idols | at=55.9,74.4,1411; xl=6.7]
-[A 808 Minshina's Skull | at=56.0,74.7,1411; xl=6.7]
-[A 826 Zalazane | at=56.0,74.7,1411; xl=6.7]
-[C 99123 Lost in the Shadows | at=51.4,79.3,1411; xl=6.7]
-[C 818 A Solvent Spirit | at=55.2,81.8,1411; mob=Makrura Shellhide / Pygmy Surf Crawler; item=4887:4,4888:8; drop=52; xl=6.7]
-[T 99123 Lost in the Shadows | at=55.9,74.4,1411; xl=6.7]
-[T 818 A Solvent Spirit | at=55.9,74.4,1411; xl=7.0]
-[C 815 Break a Few Eggs | at=67.0,71.4,1411; item=4890:3; xl=7.3]
-[C 97225 Forgotten Loa Idols | at=65.5,84.7,1411; item=277135:8; xl=7.3]
-[C 826 Zalazane | at=67.1,85.0,1411; mob=Hexed Troll / Voodoo Troll; xl=7.3]
+[A 817 Practical Prey | at=56.0,73.9,1411; xl=5.7]
+[A 818 A Solvent Spirit | at=55.9,74.4,1411; xl=5.7]
+[A 97225 Forgotten Loa Idols | at=55.9,74.4,1411; xl=5.7]
+[A 808 Minshina's Skull | at=56.0,74.7,1411; xl=5.7]
+[A 823 Report to Orgnil | at=56.0,74.7,1411; xl=5.7]
+[C 818 A Solvent Spirit | at=55.2,81.8,1411; mob=Makrura Shellhide / Pygmy Surf Crawler; item=4887:4,4888:8; drop=52; xl=5.7]
+[T 818 A Solvent Spirit | at=55.9,74.4,1411; xl=5.7]
+[A 826 Zalazane | at=56.0,74.7,1411; xl=6.2]
+[A 99123 Lost in the Shadows | at=46.3,78.6,1411; xl=6.2]
+[R Hunter - Durotar | at=42.84,69.33,1411; class=HUNTER; xl=6.2]
+Jen'shan is right here: pick up your new Hunter spells.
+[R Rogue - Durotar | at=41.28,68,1411; class=ROGUE; xl=6.2]
+Rwag is right here: pick up your new Rogue spells.
+[R Warrior - Durotar | at=42.89,69.44,1411; class=WARRIOR; xl=6.2]
+Frang is right here: pick up your new Warrior spells.
+[R Shaman - Durotar | at=42.39,69,1411; class=SHAMAN; xl=6.2]
+Shikrik is right here: pick up your new Shaman spells.
+[R Warlock - Durotar | at=40.65,68.52,1411; class=WARLOCK; xl=6.2]
+Nartok is right here: pick up your new Warlock spells.
+[C 99123 Lost in the Shadows | at=51.4,79.3,1411; xl=6.2]
+[T 99123 Lost in the Shadows | at=55.9,74.4,1411; xl=6.2]
+[C 97225 Forgotten Loa Idols | at=65.5,84.7,1411; item=277135:8; xl=6.4]
+[C 808 Minshina's Skull | at=67.4,87.8,1411; xl=6.4]
+[C 817 Practical Prey | at=61.4,91.3,1411; mob=Durotar Tiger; item=4892:4; drop=42; xl=6.4]
+[T 97225 Forgotten Loa Idols | at=56.0,74.7,1411; xl=6.4]
+[T 808 Minshina's Skull | at=56.0,74.7,1411; xl=6.8]
+[T 817 Practical Prey | at=56.0,73.9,1411; xl=7.2]
+[C 826 Zalazane | at=67.1,85.0,1411; mob=Hexed Troll / Voodoo Troll; xl=7.5]
 Zalazane has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[C 808 Minshina's Skull | at=67.4,87.8,1411; xl=7.3]
-[C 817 Practical Prey | at=61.4,91.3,1411; mob=Durotar Tiger; item=4892:4; drop=42; xl=7.3]
-[T 97225 Forgotten Loa Idols | at=56.0,74.7,1411; xl=7.3]
-[T 808 Minshina's Skull | at=56.0,74.7,1411; xl=7.6]
-[T 826 Zalazane | at=56.0,74.7,1411; xl=7.9]
-[T 817 Practical Prey | at=56.0,73.9,1411; xl=8.2]
-[T 784 Vanquish the Betrayers | at=52.0,43.5,1411; xl=8.5]
-[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=8.7]
+[T 826 Zalazane | at=56.0,74.7,1411; xl=7.5]
+[C 5441 Lazy Peons | at=43.9,57.8,1411; mob=Lazy Peon; xl=7.8]
+[C 792 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=7.8]
+[T 5441 Lazy Peons | at=44.6,68.7,1411; xl=7.8]
+[A 6394 Thazz'ril's Pick | at=44.6,68.7,1411; pre=5441; xl=8.0]
+[T 792 Vile Familiars | at=42.9,69.2,1411; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=8.0]
+[C 6394 Thazz'ril's Pick | at=43.7,53.8,1411; xl=8.2]
+[T 784 Vanquish the Betrayers | at=52.0,43.5,1411; xl=8.2]
+[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=8.4]
 Thotar is right here: pick up your new Hunter spells.
-[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=8.7]
+[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=8.4]
 Kaplak is right here: pick up your new Rogue spells.
-[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=8.7]
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=8.4]
 Tai'jin is right here: pick up your new Priest spells.
-[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=8.7]
+[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=8.4]
 Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
-[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=8.7]
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=8.4]
 Swart is right here: pick up your new Shaman spells.
-[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=8.7]
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=8.4]
 Dhugru Gorelust is right here: pick up your new Warlock spells.
-[A 825 From The Wreckage.... | at=52.0,43.5,1411; pre=784; xl=8.7]
-[T 815 Break a Few Eggs | at=51.1,42.5,1411; xl=8.7]
-[T 791 Carry Your Weight | at=49.9,40.4,1411; xl=9.0]
-[A 99048 A Missing Hand | at=52.2,43.1,1411; xl=9.2]
-[T 96822 For Honor | at=54.0,42.6,1411; xl=9.2]
-[T 99048 A Missing Hand | at=58.6,45.6,1411; xl=9.3]
-[A 99049 Threat from Below | at=58.6,45.6,1411; pre=99048; xl=9.5]
-[C 99049 Threat from Below | at=58.9,44.4,1411; xl=9.5]
-[T 99049 Threat from Below | at=52.2,43.1,1411; xl=9.5]
-[A 99051 Threat from Below | at=52.2,43.1,1411; pre=99049; xl=9.7]
-[C 837 Encroachment | at=43.2,39.4,1411; mob=Razormane Quilboar / Razormane Scout; xl=9.7]
-[T 837 Encroachment | at=52.0,43.5,1411; xl=9.7]
-[A 816 Lost But Not Forgotten | at=43.1,30.2,1411; xl=9.9]
-[A 834 Winds in the Desert | at=46.4,22.9,1411; xl=9.9]
-[C 834 Winds in the Desert | at=49.9,26.9,1411; item=4918:5; xl=9.9]
-[T 834 Winds in the Desert | at=46.4,22.9,1411; xl=9.9]
-[A 835 Securing the Lines | at=46.4,22.9,1411; pre=834; xl=10.1]
-[A 97281 A Simmering Storm | at=52.0,21.4,1411; xl=10.1]
+[A 825 From The Wreckage.... | at=52.0,43.5,1411; pre=784; xl=8.4]
+[A 837 Encroachment | at=52.0,43.5,1411; xl=8.4]
+[A 831 The Admiral's Orders | at=52.0,43.5,1411; pre=830; xl=8.4]
+[T 823 Report to Orgnil | at=52.2,43.1,1411; xl=8.4]
+[T 96822 For Honor | at=54.0,42.6,1411; xl=8.5]
+[T 791 Carry Your Weight | at=49.9,40.4,1411; xl=8.7]
+[C 837 Encroachment | at=43.2,39.4,1411; mob=Razormane Quilboar / Razormane Scout; xl=8.9]
+[T 837 Encroachment | at=52.0,43.5,1411; xl=8.9]
+[A 99048 A Missing Hand | at=52.2,43.1,1411; xl=9.1]
+[T 99048 A Missing Hand | at=58.6,45.6,1411; xl=9.1]
+[A 99049 Threat from Below | at=58.6,45.6,1411; pre=99048; xl=9.3]
+[C 99049 Threat from Below | at=58.9,44.4,1411; xl=9.3]
+[T 99049 Threat from Below | at=52.2,43.1,1411; xl=9.3]
+[A 99051 Threat from Below | at=52.2,43.1,1411; pre=99049; xl=9.5]
+[A 816 Lost But Not Forgotten | at=43.1,30.2,1411; xl=9.5]
+[A 96877 Halikor's Hoof | at=41.9,25.9,1411; xl=9.5]
+Starts from Halikor's Hoof, which drops in this area.
+[A 834 Winds in the Desert | at=46.4,22.9,1411; xl=9.5]
+[C 834 Winds in the Desert | at=49.9,26.9,1411; item=4918:5; xl=9.5]
+[T 834 Winds in the Desert | at=46.4,22.9,1411; xl=9.5]
+[A 835 Securing the Lines | at=46.4,22.9,1411; pre=834; xl=9.8]
+[A 97281 A Simmering Storm | at=52.2,21.8,1411; xl=9.8]
 Starts from Dull Storm Orb, which drops in this area.
-[C 835 Securing the Lines | at=53.3,21.6,1411; mob=Dustwind Savage / Dustwind Storm Witch; xl=10.1]
-[T 835 Securing the Lines | at=46.4,22.9,1411; xl=10.1]
-[T 97281 A Simmering Storm | at=46.4,22.9,1411; xl=10.3]
+[C 835 Securing the Lines | at=53.3,21.6,1411; mob=Dustwind Savage / Dustwind Storm Witch; xl=9.8]
+[T 835 Securing the Lines | at=46.4,22.9,1411; xl=9.8]
+[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=10.0]
+Time to train: head to Thotar in Durotar for your new Hunter spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 6062 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.0]
+[C 6062 Taming the Beast | at=43.7,46.4,1411; mob=Dire Mottled Boar; class=HUNTER; race=Orc,Troll; xl=10.0]
+[T 6062 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.0]
+[A 6068 The Hunter's Path | at=68.0,17.8,1454; opt; class=HUNTER; race=Orc,Troll; xl=10.0]
+[T 6068 The Hunter's Path | at=51.9,43.5,1411; opt; class=HUNTER; race=Orc,Troll; xl=10.0]
+[A 6083 Taming the Beast | at=51.9,43.5,1411; pre=6062; class=HUNTER; race=Orc,Troll; xl=10.0]
+[C 6083 Taming the Beast | at=63.6,93.2,1411; mob=Surf Crawler; class=HUNTER; race=Orc,Troll; xl=10.0]
+[T 6083 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.0]
+[A 6082 Taming the Beast | at=51.9,43.5,1411; pre=6083; class=HUNTER; race=Orc,Troll; xl=10.0]
+[C 6082 Taming the Beast | at=40.2,39.4,1411; mob=Armored Scorpid; class=HUNTER; race=Orc,Troll; xl=10.0]
+[T 6082 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.0]
+[A 6081 Training the Beast | at=51.9,43.5,1411; pre=6082; class=HUNTER; race=Orc,Troll; xl=10.0]
+[T 6081 Training the Beast | at=66.0,18.5,1454; class=HUNTER; race=Orc,Troll; xl=10.0]
+[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=10.0]
+Time to train: head to Kaplak in Durotar for your new Rogue spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1859 Therzok | at=52.0,43.7,1411; opt; class=ROGUE; race=Orc; xl=10.0]
+[T 1859 Therzok | at=42.7,53.5,1454; opt; class=ROGUE; race=Orc; xl=10.0]
+[A 1963 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.0]
+[C 1963 The Shattered Hand | at=63.1,44.3,1413; mob=Tazan; class=ROGUE; race=Orc,Troll; xl=10.0]
+Tazan has only one spawn point. If others are waiting for it, group up to share it.
+[T 1963 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.0]
+[A 1858 The Shattered Hand | at=42.7,53.5,1454; pre=1963; class=ROGUE; race=Orc,Troll; xl=10.0]
+[C 1858 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.0]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1858 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.0]
+[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=10.0]
+Time to train: head to Tai'jin in Durotar for your new Priest spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 5652 Hex of Weakness | at=35.6,87.8,1454; class=PRIEST; race=Troll; xl=10.0]
+[T 5652 Hex of Weakness | at=35.6,87.8,1454; class=PRIEST; race=Troll; xl=10.0]
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=10.0]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=10.0]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=10.0]
+Time to train: head to Swart in Durotar for your new Shaman spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1522 Call of Fire | at=38.0,37.7,1454; opt; class=SHAMAN; xl=10.0]
+[T 1522 Call of Fire | at=56.0,19.9,1413; opt; class=SHAMAN; xl=10.0]
+[A 1524 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.0]
+[T 1524 Call of Fire | at=38.5,59.0,1411; class=SHAMAN; xl=10.0]
+[A 1525 Call of Fire | at=38.5,59.0,1411; pre=1524; class=SHAMAN; xl=10.0]
+[C 1525 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=10.0]
+[T 1525 Call of Fire | at=38.5,59.0,1411; class=SHAMAN; xl=10.0]
+[A 1526 Call of Fire | at=38.5,59.0,1411; pre=1525; class=SHAMAN; xl=10.0]
+[C 1526 Call of Fire | at=38.7,58.3,1411; mob=Minor Manifestation of Fire; class=SHAMAN; xl=10.0]
+Minor Manifestation of Fire has only 2 spawn points. If others are waiting for it, group up to share it.
+[T 1526 Call of Fire | at=39.0,58.2,1411; class=SHAMAN; xl=10.0]
+[A 1527 Call of Fire | at=39.0,58.2,1411; pre=1526; class=SHAMAN; xl=10.0]
+[T 1527 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.0]
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=10.0]
+Time to train: head to Dhugru Gorelust in Durotar for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; class=WARLOCK; xl=10.0]
+[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; class=WARLOCK; xl=10.0]
+[A 1501 Creature of the Void | at=48.2,45.3,1454; class=WARLOCK; race=Orc; xl=10.0]
+[C 1501 Creature of the Void | at=51.6,9.8,1411; class=WARLOCK; race=Orc; xl=10.0]
+[T 1501 Creature of the Void | at=48.2,45.3,1454; class=WARLOCK; race=Orc; xl=10.0]
+[A 1504 The Binding | at=48.2,45.3,1454; pre=1501; class=WARLOCK; race=Orc; xl=10.0]
+[C 1504 The Binding | at=48.2,45.3,1454; mob=Summoned Voidwalker; class=WARLOCK; race=Orc; xl=10.0]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1504 The Binding | at=48.2,45.3,1454; class=WARLOCK; race=Orc; xl=10.0]
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=10.0]
+Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; opt; class=MAGE; xl=10.0]
+[T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; class=MAGE; xl=10.0]
+[A 1884 Ju-Ju Heaps | at=56.3,75.1,1411; class=MAGE; race=Orc,Scourge,Troll; xl=10.0]
+[C 1884 Ju-Ju Heaps | at=67.8,83.4,1411; class=MAGE; race=Orc,Scourge,Troll; xl=10.0]
+[T 1884 Ju-Ju Heaps | at=56.3,75.1,1411; class=MAGE; race=Orc,Scourge,Troll; xl=10.0]
+[G 56.8,33.0 1454 Travel to Orgrimmar | xl=10.0]
+[T 96877 Halikor's Hoof | at=63.3,44.8,1454; xl=10.0]
+[T 831 The Admiral's Orders | at=32.3,35.8,1454; xl=10.2]
+[A 5726 Hidden Enemies | at=31.7,37.8,1454; xl=10.4]
+[G 51.1,42.5 1411 Travel to Durotar | xl=10.4]
+[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=10.4]
+Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[T 97281 A Simmering Storm | at=46.4,22.9,1411; xl=10.4]
 [A 97282 Stormy Potential | at=46.4,22.9,1411; pre=97281; xl=10.5]
 [C 97282 Stormy Potential | at=39.1,29.3,1411; mob=Thunder Lizard; item=277665:5; xl=10.5]
 [T 97282 Stormy Potential | at=46.4,22.9,1411; xl=10.5]
-[C 99051 Threat from Below | at=58.9,26.1,1411; mob=Spitelash Scout; item=286008:9; xl=10.7]
+[C 99051 Threat from Below | at=58.8,26.3,1411; mob=Spitelash Scout; item=286008:9; xl=10.7]
 [T 99051 Threat from Below | at=52.2,43.1,1411; xl=10.7]
-[R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=10.8]
-Thotar is right here: pick up your new Hunter spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 6062 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.8]
-[C 6062 Taming the Beast | at=43.7,46.4,1411; mob=Dire Mottled Boar; class=HUNTER; race=Orc,Troll; xl=10.8]
-[T 6062 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.8]
-[A 6068 The Hunter's Path | at=68.0,17.8,1454; opt; class=HUNTER; race=Orc,Troll; xl=10.8]
-[T 6068 The Hunter's Path | at=51.9,43.5,1411; opt; class=HUNTER; race=Orc,Troll; xl=10.8]
-[A 6083 Taming the Beast | at=51.9,43.5,1411; pre=6062; class=HUNTER; race=Orc,Troll; xl=10.8]
-[C 6083 Taming the Beast | at=63.6,93.2,1411; mob=Surf Crawler; class=HUNTER; race=Orc,Troll; xl=10.8]
-[T 6083 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.8]
-[A 6082 Taming the Beast | at=51.9,43.5,1411; pre=6083; class=HUNTER; race=Orc,Troll; xl=10.8]
-[C 6082 Taming the Beast | at=40.2,39.4,1411; mob=Armored Scorpid; class=HUNTER; race=Orc,Troll; xl=10.8]
-[T 6082 Taming the Beast | at=51.9,43.5,1411; class=HUNTER; race=Orc,Troll; xl=10.8]
-[A 6081 Training the Beast | at=51.9,43.5,1411; pre=6082; class=HUNTER; race=Orc,Troll; xl=10.8]
-[T 6081 Training the Beast | at=66.0,18.5,1454; class=HUNTER; race=Orc,Troll; xl=10.8]
-[R Rogue - Durotar | at=51.98,43.69,1411; class=ROGUE; xl=10.8]
-Kaplak is right here: pick up your new Rogue spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1859 Therzok | at=52.0,43.7,1411; opt; class=ROGUE; race=Orc; xl=10.8]
-[T 1859 Therzok | at=42.7,53.5,1454; opt; class=ROGUE; race=Orc; xl=10.8]
-[A 1963 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.8]
-[C 1963 The Shattered Hand | at=63.1,44.3,1413; mob=Tazan; class=ROGUE; race=Orc,Troll; xl=10.8]
-Tazan has only one spawn point. If others are waiting for it, group up to share it.
-[T 1963 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.8]
-[A 1858 The Shattered Hand | at=42.7,53.5,1454; pre=1963; class=ROGUE; race=Orc,Troll; xl=10.8]
-[C 1858 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.8]
-Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1858 The Shattered Hand | at=42.7,53.5,1454; class=ROGUE; race=Orc,Troll; xl=10.8]
-[R Priest - Durotar | at=54.26,42.93,1411; class=PRIEST; xl=10.8]
-Tai'jin is right here: pick up your new Priest spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 5652 Hex of Weakness | at=35.6,87.8,1454; class=PRIEST; race=Troll; xl=10.8]
-[T 5652 Hex of Weakness | at=35.6,87.8,1454; class=PRIEST; race=Troll; xl=10.8]
-[R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=10.8]
-Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=10.8]
-Swart is right here: pick up your new Shaman spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1522 Call of Fire | at=38.0,37.7,1454; opt; class=SHAMAN; xl=10.8]
-[T 1522 Call of Fire | at=56.0,19.9,1413; opt; class=SHAMAN; xl=10.8]
-[A 1524 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.8]
-[T 1524 Call of Fire | at=38.5,59.0,1411; class=SHAMAN; xl=10.8]
-[A 1525 Call of Fire | at=38.5,59.0,1411; pre=1524; class=SHAMAN; xl=10.8]
-[C 1525 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=10.8]
-[T 1525 Call of Fire | at=38.5,59.0,1411; class=SHAMAN; xl=10.8]
-[A 1526 Call of Fire | at=38.5,59.0,1411; pre=1525; class=SHAMAN; xl=10.8]
-[C 1526 Call of Fire | at=38.7,58.3,1411; mob=Minor Manifestation of Fire; class=SHAMAN; xl=10.8]
-Minor Manifestation of Fire has only 2 spawn points. If others are waiting for it, group up to share it.
-[T 1526 Call of Fire | at=39.0,58.2,1411; class=SHAMAN; xl=10.8]
-[A 1527 Call of Fire | at=39.0,58.2,1411; pre=1526; class=SHAMAN; xl=10.8]
-[T 1527 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.8]
-[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=10.8]
-Dhugru Gorelust is right here: pick up your new Warlock spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; class=WARLOCK; xl=10.8]
-[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; class=WARLOCK; xl=10.8]
-[A 1501 Creature of the Void | at=48.2,45.3,1454; class=WARLOCK; race=Orc; xl=10.8]
-[C 1501 Creature of the Void | at=51.6,9.8,1411; class=WARLOCK; race=Orc; xl=10.8]
-[T 1501 Creature of the Void | at=48.2,45.3,1454; class=WARLOCK; race=Orc; xl=10.8]
-[A 1504 The Binding | at=48.2,45.3,1454; pre=1501; class=WARLOCK; race=Orc; xl=10.8]
-[C 1504 The Binding | at=48.2,45.3,1454; mob=Summoned Voidwalker; class=WARLOCK; race=Orc; xl=10.8]
-Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1504 The Binding | at=48.2,45.3,1454; class=WARLOCK; race=Orc; xl=10.8]
-[C 825 From The Wreckage.... | at=63.3,57.3,1411; item=4863:3; xl=10.8]
-[T 825 From The Wreckage.... | at=52.0,43.5,1411; xl=10.8]
+[C 825 From The Wreckage.... | at=63.3,57.3,1411; item=4863:3; xl=10.9]
+[T 825 From The Wreckage.... | at=52.0,43.5,1411; xl=10.9]
 [C 816 Lost But Not Forgotten | at=34.3,52.7,1411; mob=Corrupted Dreadmaw Crocolisk; xl=11.0]
 Corrupted Dreadmaw Crocolisk has only 2 spawn points. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 816 Lost But Not Forgotten | at=43.1,30.2,1411; xl=11.0]
-[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=11.2]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=11.2]
-Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=11.2]
-Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; opt; class=MAGE; xl=11.2]
-[T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; class=MAGE; xl=11.2]
-[A 1884 Ju-Ju Heaps | at=56.3,75.1,1411; class=MAGE; race=Orc,Scourge,Troll; xl=11.2]
-[C 1884 Ju-Ju Heaps | at=67.8,83.4,1411; class=MAGE; race=Orc,Scourge,Troll; xl=11.2]
-[T 1884 Ju-Ju Heaps | at=56.3,75.1,1411; class=MAGE; race=Orc,Scourge,Troll; xl=11.2]
-[L 12 | xl=11.2]
-Grind mobs around your level here; more quests open at the next level.
-[L 13 | xl=12.0]
+[T 6394 Thazz'ril's Pick | at=44.6,68.7,1411; xl=11.0]
+[T 816 Lost But Not Forgotten | at=43.1,30.2,1411; xl=11.1]
+[C 5726 Hidden Enemies | at=53.1,9.4,1411; mob=Burning Blade Apprentice; xl=11.3]
+[A 832 Burning Shadows | at=52.6,8.8,1411; xl=11.3]
+Starts from Eye of Burning Shadow, which drops in this area.
+[G 56.8,33.0 1454 Travel to Orgrimmar | xl=11.3]
+[A 97275 Whuut's the Rush | at=56.8,33.0,1454; xl=11.3]
+[T 97275 Whuut's the Rush | at=55.8,32.9,1454; xl=11.3]
+[T 832 Burning Shadows | at=49.5,50.6,1454; xl=11.5]
+[A 97249 Favorite Food | at=57.2,53.3,1454; xl=11.7]
+[A 97246 Meal Appeal | at=55.7,72.2,1454; xl=11.7]
+[T 97246 Meal Appeal | at=57.2,53.3,1454; xl=11.7]
+[T 5726 Hidden Enemies | at=31.7,37.8,1454; xl=11.9]
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=12.1]
+Sian'tsu is right here: pick up your new Shaman spells.
+[A 5727 Hidden Enemies | at=31.7,37.8,1454; pre=5726; xl=12.1]
+[T 97249 Favorite Food | at=36.5,29.1,1454; xl=12.1]
+[C 5727 Hidden Enemies | at=49.5,50.6,1454; mob=Neeru Fireblade; xl=12.2]
+Neeru Fireblade has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=12.2]
+Gest is right here: pick up your new Rogue spells.
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=12.2]
+Grol'dar is right here: pick up your new Warlock spells.
+[T 5727 Hidden Enemies | at=31.7,37.8,1454; xl=12.2]
+[L 13 | xl=12.3]
 Grind mobs around your level here; more quests open at the next level.
 [G 51.5,30.34 1413 Travel to Crossroads, The Barrens | xl=13.0]
 ]==])
