@@ -51,7 +51,7 @@ Find a group for Razorfen Kraul. Quests you skip there are dropped automatically
 [A 2342 Reclaimed Treasures | at=62.3,48.6,1458; xl=39.3]
 [P Undercity | at=63.25,48.56,1458; xl=39.3]
 [A 3341 Bring the End | at=74.0,33.3,1458; xl=39.3]
-[R Paladin - Undercity | at=47.08,15.9,1458; class=PALADIN; xl=39.3]
+[R Paladin - Undercity | at=47.45,15.08,1458; class=PALADIN; xl=39.3]
 Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Warlock - Undercity | at=86.21,15.93,1458; class=WARLOCK; xl=39.3]
 Time to train: head to Kaal Soulreaper in Undercity for your new Warlock spells. The arrow takes you back to the route afterwards.
@@ -92,8 +92,8 @@ Malosh is right here: pick up your new Warrior spells.
 Haromm is right here: pick up your new Shaman spells.
 [P Stonard | at=46.07,54.83,1435; xl=39.8]
 [T 624 Cortello's Riddle | at=22.9,48.2,1435; xl=39.8]
-[A 93176 My Little Friends | at=25.2,54.2,1435; xl=39.9]
-[T 93176 My Little Friends | at=25.2,54.2,1435; xl=39.9]
+[A 93176 My Little Friends | at=25.1,54.2,1435; xl=39.9]
+[T 93176 My Little Friends | at=25.1,54.2,1435; xl=39.9]
 [T 1392 Noboru the Cudgel | at=26.0,31.4,1435; xl=40.0]
 [A 1389 Draenethyst Crystals | at=26.0,31.4,1435; xl=40.0]
 [C 698 Lack of Surplus | at=60.5,32.2,1435; mob=Sawtooth Crocolisk; item=6169:8; drop=24; xl=40.0]

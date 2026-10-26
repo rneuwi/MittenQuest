@@ -89,7 +89,8 @@ Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells.
 [A 1269 Lieutenant Paval Reethe | at=29.8,48.2,1445; xl=35.8]
 [T 1269 Lieutenant Paval Reethe | at=36.4,31.9,1445; xl=35.8]
 [A 1273 Questioning Reethe | at=41.0,36.7,1445; pre=1269; xl=35.8]
-[C 1273 Questioning Reethe | at=42.5,38.1,1445; xl=35.8]
+[C 1273 Questioning Reethe | at=42.6,38.1,1445; mob=Paval Reethe; xl=35.8]
+Paval Reethe has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 1273 Questioning Reethe | at=36.4,31.9,1445; xl=35.8]
 [A 1270 Stinky's Escape | at=46.9,17.5,1445; xl=35.9]
 [C 1270 Stinky's Escape | at=48.9,24.6,1445; xl=35.9]

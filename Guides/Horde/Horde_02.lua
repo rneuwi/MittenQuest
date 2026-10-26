@@ -136,7 +136,7 @@ Talk to Innkeeper Byula and make this inn your home.
 [A 893 Weapons of Choice | at=45.1,57.7,1413; xl=21.5]
 [C 868 Egg Hunt | at=45.1,72.2,1413; item=5058:12; xl=21.5]
 [A 79192 Stepping Stones | at=46.4,73.9,1413; xl=21.5]
-[C 97250 Wrongly Blamed, Justly Corrected | at=48.8,77.2,1413; mob=Encroaching Soldier / Outraged Pillager; xl=21.5]
+[C 97250 Wrongly Blamed, Justly Corrected | at=48.2,76.8,1413; mob=Encroaching Soldier / Outraged Pillager; xl=21.5]
 [C 843 Gann's Reclamation | at=47.6,85.3,1413; mob=Bael'dun Excavator / Bael'dun Foreman; xl=21.5]
 [T 843 Gann's Reclamation | at=45.9,77,1413; xl=21.5]
 [T 97250 Wrongly Blamed, Justly Corrected | at=44.6,59.3,1413; xl=21.7]
@@ -179,11 +179,11 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [C 6482 Freedom to Ruul | at=38.5,37.3,1440; xl=23.2]
 [T 216 Between a Rock and a Thistlefur | at=11.9,34.5,1440; xl=23.2]
 [T 6462 Troll Charm | at=11.7,34.9,1440; xl=23.3]
-[A 98252 A Void Path | at=40.4,61.5,1440; xl=23.5]
-[A 98251 Never Coming Back | at=40.4,61.5,1440; xl=23.5]
-[T 98252 A Void Path | at=38.9,57.9,1440; xl=23.5]
+[A 98252 A Void Path | at=40.5,61.4,1440; xl=23.5]
+[A 98251 Never Coming Back | at=40.5,61.4,1440; xl=23.5]
+[T 98252 A Void Path | at=38.3,58.4,1440; xl=23.5]
 [C 98251 Never Coming Back | at=43.6,63.4,1440; mob=Shadowhorn Stag / Ashenvale Bear; xl=23.6]
-[T 98251 Never Coming Back | at=40.4,61.5,1440; xl=23.6]
+[T 98251 Never Coming Back | at=40.5,61.4,1440; xl=23.6]
 [A 1918 The Befouled Element | at=46,70,1440; xl=23.7]
 Starts from Befouled Water Globe, which drops in this area.
 [A 6544 Torek's Assault | at=68.3,75.3,1440; xl=23.7]
@@ -232,17 +232,17 @@ Starts from Elegant Letter, which drops in this area.
 Ravenholdt has only one spawn point. If others are waiting for it, group up to share it.
 [T 6681 The Manor, Ravenholdt | at=84.5,80.3,1416; class=ROGUE; xl=25.7]
 [A 96779 Syndicate Sabotage | at=84.9,80.4,1416; class=ROGUE; xl=25.7]
-[C 96779 Syndicate Sabotage | at=79.3,46.2,1424; mob=Lord Tomas; class=ROGUE; xl=25.7]
+[C 96779 Syndicate Sabotage | at=79.1,45.7,1424; mob=Lord Tomas; class=ROGUE; xl=25.7]
 [T 96779 Syndicate Sabotage | at=84.9,80.4,1416; class=ROGUE; xl=25.7]
 [R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=25.7]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
 [R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=25.7]
 Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
-[A 95042 Seeking the Kor Gem | at=11.8,34.5,1440; opt; class=PALADIN; xl=25.7]
+[A 95042 Seeking the Kor Gem | at=11.9,34.4,1440; opt; class=PALADIN; xl=25.7]
 Group quest (elite enemies) - optional; skipped if you don't take it.
 [C 95042 Seeking the Kor Gem | at=13.6,12.1,1440; mob=Blackfathom Tide Priestess; opt; class=PALADIN; xl=25.7]
 Blackfathom Tide Priestess has only one spawn point. If others are waiting for it, group up to share it.
-[T 95042 Seeking the Kor Gem | at=11.8,34.5,1440; opt; class=PALADIN; xl=25.7]
+[T 95042 Seeking the Kor Gem | at=11.9,34.4,1440; opt; class=PALADIN; xl=25.7]
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=25.7]
 Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=25.7]
@@ -255,7 +255,7 @@ Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The ar
 [C 65610 Wish You Were Here | at=66.9,81.1,1440; mob=Shadethicket Stone Mover; class=WARLOCK; xl=25.7]
 [T 65610 Wish You Were Here | at=48.2,45.3,1454; class=WARLOCK; xl=25.7]
 [A 65604 The Binding | at=48.2,45.3,1454; pre=65610; class=WARLOCK; xl=25.7]
-[C 65604 The Binding | at=86.5,26.6,1458; mob=Summoned Incubus; class=WARLOCK; xl=25.7]
+[C 65604 The Binding | at=86.8,26.6,1458; mob=Summoned Incubus; class=WARLOCK; xl=25.7]
 [T 65604 The Binding | at=48.2,45.3,1454; class=WARLOCK; xl=25.7]
 [R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=25.7]
 Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
