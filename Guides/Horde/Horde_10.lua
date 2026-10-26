@@ -24,7 +24,7 @@ MittenQuest:RegisterGuide([==[Horde 54-60 Eastern Plaguelands, Burning Steppes, 
 [T 5544 Carrion Grubbage | at=5.2,35.6,1423; xl=54.9]
 [T 5543 Blood Tinged Skies | at=5.2,35.6,1423; xl=55.0]
 [A 6042 Un-Life's Little Annoyances | at=22.2,63.5,1423; xl=55.1]
-[R Paladin - Undercity | at=47.08,15.9,1458; class=PALADIN; xl=55.1]
+[R Paladin - Undercity | at=47.45,15.08,1458; class=PALADIN; xl=55.1]
 Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=55.1]
 Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
