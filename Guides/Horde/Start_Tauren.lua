@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Mulgore (Tauren)]==], [==[
 #levels 1-13
 #faction Horde
 #race Tauren
-#next Horde 12-19 The Barrens
+#next Horde 12-16 The Barrens, Thunder Bluff, Orgrimmar
 
 [S Mulgore | at=45.93,64.16,1412; xl=1.0]
 Talk to Innkeeper Kauth and make this inn your home.
@@ -121,47 +121,51 @@ Yaw Sharpmane is right here: pick up your new Hunter spells.
 [C 754 Winterhoof Cleansing | at=51.8,68.4,1412; race=Tauren; xl=9.0]
 [T 754 Winterhoof Cleansing | at=47.5,63.6,1412; race=Tauren; xl=9.0]
 [A 756 Thunderhorn Totem | at=47.5,63.6,1412; pre=754; race=Tauren; xl=9.2]
-[C 99080 Drive Them Out | at=60.6,60.9,1412; mob=Galak Centaur / Galak Outrunner; xl=9.2]
 [C 743 Dangers of the Windfury | at=61.2,72.4,1412; mob=Windfury Harpy; item=4751:8; drop=52; xl=9.2]
-[T 743 Dangers of the Windfury | at=46.5,64.9,1412; xl=9.2]
-[T 99080 Drive Them Out | at=46.7,63.4,1412; xl=9.4]
-[C 756 Thunderhorn Totem | at=50.3,46.6,1412; mob=Prairie Stalker / Flatland Cougar; item=4801:6,4802:6; drop=22; race=Tauren; xl=9.6]
-[C 764 The Venture Co. | at=59.5,46.5,1412; mob=Venture Co. Worker / Venture Co. Supervisor; xl=9.6]
-[A 98424 Fizsprocket's Notes | at=61.2,49.3,1412; xl=9.6]
+[C 99080 Drive Them Out | at=64.0,61.6,1412; mob=Galak Centaur / Galak Outrunner; xl=9.2]
+[A 98424 Fizsprocket's Notes | at=61.2,49.3,1412; xl=9.2]
 Starts from Mulgore Expansion Plans, which drops in this area.
-[C 98424 Fizsprocket's Notes | at=59.0,46.4,1412; xl=9.6]
-[A 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.6]
-[T 773 Rite of Wisdom | at=58.3,30.7,1412; xl=9.6]
-[C 833 A Sacred Burial | at=58.0,30.9,1412; mob=Bristleback Interloper; xl=9.9]
-[T 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.9]
-[T 764 The Venture Co. | at=54.8,64.3,1412; xl=10.0]
-[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=10.2]
+[C 764 The Venture Co. | at=59.5,46.5,1412; mob=Venture Co. Worker / Venture Co. Supervisor; xl=9.2]
+[C 98424 Fizsprocket's Notes | at=59.0,46.4,1412; xl=9.2]
+[C 756 Thunderhorn Totem | at=50.3,46.6,1412; mob=Prairie Stalker / Flatland Cougar; item=4801:6,4802:6; drop=22; race=Tauren; xl=9.2]
+[A 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.2]
+[T 773 Rite of Wisdom | at=58.3,30.7,1412; xl=9.2]
+[A 775 Journey into Thunder Bluff | at=58.3,30.7,1412; pre=773; xl=9.5]
+[C 833 A Sacred Burial | at=58.0,30.9,1412; mob=Bristleback Interloper; xl=9.5]
+[T 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.5]
+[T 764 The Venture Co. | at=54.8,64.3,1412; xl=9.7]
+[T 98424 Fizsprocket's Notes | at=54.8,64.3,1412; xl=9.8]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=10.0]
 Yaw Sharpmane is right here: pick up your new Hunter spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 6061 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
-[C 6061 Taming the Beast | at=39.7,68.8,1412; mob=Adult Plainstrider; class=HUNTER; race=Tauren; xl=10.2]
-[T 6061 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
-[A 6065 The Hunter's Path | at=58.5,88.3,1456; opt; class=HUNTER; race=Tauren; xl=10.2]
-[T 6065 The Hunter's Path | at=46.9,59.6,1412; opt; class=HUNTER; race=Tauren; xl=10.2]
-[A 6087 Taming the Beast | at=46.9,59.6,1412; pre=6061; class=HUNTER; race=Tauren; xl=10.2]
-[C 6087 Taming the Beast | at=50.8,50.7,1412; mob=Prairie Stalker; class=HUNTER; race=Tauren; xl=10.2]
-[T 6087 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
-[A 6088 Taming the Beast | at=46.9,59.6,1412; pre=6087; class=HUNTER; race=Tauren; xl=10.2]
-[C 6088 Taming the Beast | at=50.2,46.8,1412; mob=Swoop; class=HUNTER; race=Tauren; xl=10.2]
-[T 6088 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.2]
-[A 6089 Training the Beast | at=46.9,59.6,1412; pre=6088; class=HUNTER; race=Tauren; xl=10.2]
-[T 6089 Training the Beast | at=57.3,89.8,1456; class=HUNTER; race=Tauren; xl=10.2]
-[T 98424 Fizsprocket's Notes | at=54.8,64.3,1412; xl=10.2]
-[T 756 Thunderhorn Totem | at=47.5,63.6,1412; race=Tauren; xl=10.4]
-[A 758 Thunderhorn Cleansing | at=47.5,63.6,1412; pre=756; race=Tauren; xl=10.5]
+[A 6061 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.0]
+[C 6061 Taming the Beast | at=39.7,68.8,1412; mob=Adult Plainstrider; class=HUNTER; race=Tauren; xl=10.0]
+[T 6061 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.0]
+[A 6065 The Hunter's Path | at=58.5,88.3,1456; opt; class=HUNTER; race=Tauren; xl=10.0]
+[T 6065 The Hunter's Path | at=46.9,59.6,1412; opt; class=HUNTER; race=Tauren; xl=10.0]
+[A 6087 Taming the Beast | at=46.9,59.6,1412; pre=6061; class=HUNTER; race=Tauren; xl=10.0]
+[C 6087 Taming the Beast | at=50.8,50.7,1412; mob=Prairie Stalker; class=HUNTER; race=Tauren; xl=10.0]
+[T 6087 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.0]
+[A 6088 Taming the Beast | at=46.9,59.6,1412; pre=6087; class=HUNTER; race=Tauren; xl=10.0]
+[C 6088 Taming the Beast | at=50.2,46.8,1412; mob=Swoop; class=HUNTER; race=Tauren; xl=10.0]
+[T 6088 Taming the Beast | at=46.9,59.6,1412; class=HUNTER; race=Tauren; xl=10.0]
+[A 6089 Training the Beast | at=46.9,59.6,1412; pre=6088; class=HUNTER; race=Tauren; xl=10.0]
+[T 6089 Training the Beast | at=57.3,89.8,1456; class=HUNTER; race=Tauren; xl=10.0]
+[T 756 Thunderhorn Totem | at=47.5,63.6,1412; race=Tauren; xl=10.0]
+[A 758 Thunderhorn Cleansing | at=47.5,63.6,1412; pre=756; race=Tauren; xl=10.2]
+[T 99080 Drive Them Out | at=46.7,63.4,1412; xl=10.2]
+[A 99082 The High Chieftain | at=46.7,63.4,1412; pre=99080; xl=10.4]
+[A 861 The Hunter's Way | at=46.0,63.4,1412; xl=10.4]
+[T 743 Dangers of the Windfury | at=46.5,64.9,1412; xl=10.4]
 [C 758 Thunderhorn Cleansing | at=44.2,51.1,1412; race=Tauren; xl=10.5]
 [T 758 Thunderhorn Cleansing | at=47.5,63.6,1412; race=Tauren; xl=10.5]
 [A 759 Wildmane Totem | at=47.5,63.6,1412; pre=758; race=Tauren; xl=10.7]
 [C 759 Wildmane Totem | at=61.0,64.1,1412; mob=Prairie Wolf Alpha; race=Tauren; xl=10.7]
 [T 759 Wildmane Totem | at=47.5,63.6,1412; race=Tauren; xl=10.7]
 [A 760 Wildmane Cleansing | at=47.5,63.6,1412; pre=759; race=Tauren; xl=10.9]
+[C 861 The Hunter's Way | at=47.0,25.9,1412; mob=Flatland Prowler; item=5203:4; drop=22; xl=10.9]
 [C 760 Wildmane Cleansing | at=42.7,25.0,1412; race=Tauren; xl=10.9]
-[R Druid - Mulgore | at=33.39,22.09,1412; class=DRUID; xl=10.9]
+[R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=10.9]
 Hana Lighthoof is right here: pick up your new Druid spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 5922 Moonglade | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=10.9]
@@ -178,7 +182,7 @@ Great Bear Spirit has only one spawn point. If others are waiting for it, group 
 [C 6002 Body and Heart | at=76.5,27.2,1456; mob=Lunaclaw Spirit; class=DRUID; race=Tauren; xl=10.9]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 6002 Body and Heart | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=10.9]
-[R Shaman - Mulgore | at=33.58,22.32,1412; class=SHAMAN; xl=10.9]
+[R Shaman - Mulgore | at=33.6,22.4,1412; class=SHAMAN; xl=10.9]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1523 Call of Fire | at=25.2,20.5,1456; opt; class=SHAMAN; xl=10.9]
@@ -199,6 +203,7 @@ Minor Manifestation of Fire has only 2 spawn points. If others are waiting for i
 [A 1527 Call of Fire | at=39.0,58.2,1411; pre=1526; class=SHAMAN; xl=10.9]
 [T 1527 Call of Fire | at=56.0,19.9,1413; class=SHAMAN; xl=10.9]
 [T 760 Wildmane Cleansing | at=47.5,63.6,1412; race=Tauren; xl=10.9]
+[A 98435 Thunderhorn's Report | at=47.5,63.6,1412; pre=760; xl=11.2]
 [R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=11.2]
 Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -236,8 +241,16 @@ Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; opt; class=MAGE; xl=11.2]
 [T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; class=MAGE; xl=11.2]
-[L 12 | xl=11.2]
+[G 37.8,59.6 1456 Travel to Thunder Bluff | xl=11.2]
+[T 775 Journey into Thunder Bluff | at=60.3,51.7,1456; xl=11.2]
+[T 99082 The High Chieftain | at=60.3,51.7,1456; xl=11.3]
+[T 98435 Thunderhorn's Report | at=78.6,28.6,1456; xl=11.4]
+[T 861 The Hunter's Way | at=61.5,80.9,1456; xl=11.6]
+[P Thunder Bluff | at=47,49.83,1456; xl=11.8]
+[L 12 | xl=11.8]
 Grind mobs around your level here; more quests open at the next level.
+[R Shaman - Thunder Bluff | at=22.82,21.11,1456; class=SHAMAN; xl=12.0]
+Siln Skychaser is right here: pick up your new Shaman spells.
 [L 13 | xl=12.0]
 Grind mobs around your level here; more quests open at the next level.
 [G 51.5,30.34 1413 Travel to Crossroads, The Barrens | xl=13.0]

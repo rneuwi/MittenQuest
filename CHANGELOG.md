@@ -1,5 +1,24 @@
 # MittenQuest
 
+## Unreleased
+
+**Dungeons first**
+- Routes now go out of their way for dungeon quests: about half again as many are on each
+  route (Horde 48, Alliance 45, up from 32 and 33).
+- Alliance gets The Deadmines back, including the Defias Brotherhood chain into it. Horde now
+  picks up all of Ragefire Chasm's quests from the three capitals.
+- Each dungeon is one run for all its quests where possible (no more running Wailing Caverns
+  four times), and the guide sends you to the entrance on the right continent.
+
+**Each faction keeps to its own zones**
+- The Alliance route no longer levels in the Barrens, and neither faction takes quests in the
+  other faction's home zones. Dungeons there are still run for your own side's quests
+  (Scarlet Monastery for Alliance).
+
+**Updated quest data**
+- Rebuilt from the latest QuestieDB data for WoW: Forever. Most shared guides have new level
+  ranges and names, so if you were partway through one, it starts from the beginning.
+
 ## 0.9.1 (beta)
 
 **Pace tracking**
