@@ -151,10 +151,11 @@ FP_NODES = FP_NODES_HORDE if FACTION == 'Horde' else FP_NODES_ALLIANCE
 #   which starts at shared_level at the shared_node flight master.
 FACTION_CFG = {
     'Horde': {
+        # Follow-ups include the home capital: early dungeon quests and chain turn-ins are there.
         'starters': [
-            ('Orc', ['Orc', 'Troll'], 'Orc/Troll', 2 | 128, {14, 363}, set()),
-            ('Tauren', ['Tauren'], 'Tauren', 32, {215, 220}, set()),
-            ('Scourge', ['Scourge'], 'Undead', 16, {85, 154, 130}, set()),
+            ('Orc', ['Orc', 'Troll'], 'Orc/Troll', 2 | 128, {14, 363}, {1637}),
+            ('Tauren', ['Tauren'], 'Tauren', 32, {215, 220}, {1638}),
+            ('Scourge', ['Scourge'], 'Undead', 16, {85, 154, 130}, {1497}),
         ],
         'starter_until': 13, 'shared_level': 12, 'shared_node': 'Crossroads',
         'crossing': "take the zeppelin (Orgrimmar <-> Undercity / Grom'gol)",
@@ -162,9 +163,11 @@ FACTION_CFG = {
     'Alliance': {
         'starters': [
             # 10-20 is spread over the classic Alliance zones; one follow-up zone isn't enough XP.
-            ('Human', ['Human'], 'Human', 1, {12}, {40, 44, 38, 10}),
-            ('Dwarf', ['Dwarf', 'Gnome'], 'Dwarf/Gnome', 4 | 64, {1}, {38, 40, 44, 10}),
-            ('NightElf', ['NightElf'], 'Night Elf', 8, {141}, {148, 331, 406}),
+            # Stormwind is in every Eastern Kingdoms starter: the Defias chain into The
+            # Deadmines runs through it.
+            ('Human', ['Human'], 'Human', 1, {12}, {40, 44, 38, 10, 1519}),
+            ('Dwarf', ['Dwarf', 'Gnome'], 'Dwarf/Gnome', 4 | 64, {1}, {38, 40, 44, 10, 1537, 1519}),
+            ('NightElf', ['NightElf'], 'Night Elf', 8, {141}, {148, 331, 406, 1657}),
         ],
         'starter_until': 20, 'shared_level': 19, 'shared_node': 'Menethil Harbor',
         'crossing': 'take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor)',
@@ -174,6 +177,20 @@ CFG = FACTION_CFG[FACTION]
 # Zones/sorts never routed: battlegrounds, raids, PvP island, profession writs, holiday sorts (<0)
 SKIP_SORTS = {3277, 3358, 2597, 2717, 3428, 3456, 2677, 3429, 2159, 1977, 16941, 16606, 1583}
 MAX_DUNGEON_QUEST_LEVEL = 58
+
+# Each faction's home zones. The other faction's route never takes quests there, not even
+# from neutral givers (Ratchet's quests are the Horde's Barrens content). Dungeons whose
+# entrance is there still get run for your own side's quests (Scarlet Monastery in Tirisfal).
+TERRITORY = {
+    'Horde': {14, 363, 215, 220, 85, 154, 130, 17, 1637, 1638, 1497, 16611},
+    'Alliance': {12, 1, 141, 40, 38, 148, 44, 10, 11, 1519, 1537, 1657},
+}
+ENEMY_TERRITORY = TERRITORY['Alliance' if FACTION == 'Horde' else 'Horde']
+# Dungeon quests are a priority: pickups count this much more when choosing the next zone,
+# and they skip the "is the turn-in zone busy" and worth-the-time checks.
+DUNGEON_WEIGHT = 2.0
+FEEDER_DEPTH = 8               # chain steps leading to a dungeon quest count as dungeon work
+ERRAND_MIN = 0.15              # leave a zone to collect dungeon quests worth this share of a level
 
 
 def idx(v, i):
@@ -607,6 +624,45 @@ for _q in QUESTS.values():
     if _q.breadcrumbFor and _q.breadcrumbFor in QUESTS:
         FOLLOW_XP[_q.id] += QUESTS[_q.breadcrumbFor].xp
 
+# Quests that (through their chain) unlock a dungeon quest: the Defias Brotherhood chain
+# leads into The Deadmines, so it's worth doing even when its own steps are slow.
+_BREADCRUMBS = collections.defaultdict(set)    # quest -> breadcrumbs leading to it
+for _q in QUESTS.values():
+    if _q.breadcrumbFor:
+        _BREADCRUMBS[_q.breadcrumbFor].add(_q.id)
+DUNGEON_FEEDERS = collections.defaultdict(set)   # quest -> dungeon quests its chain leads to
+_frontier = {q.id: {q.id} for q in QUESTS.values() if q.dungeon}
+for _ in range(FEEDER_DEPTH):
+    _prev = collections.defaultdict(set)
+    for _qid, _ts in _frontier.items():
+        for _p in set(QUESTS[_qid].preAll) | set(QUESTS[_qid].preAny) | _BREADCRUMBS[_qid]:
+            if _p in QUESTS and not QUESTS[_p].dungeon and not _ts <= DUNGEON_FEEDERS[_p]:
+                _prev[_p] |= _ts
+    for _p, _ts in _prev.items():
+        DUNGEON_FEEDERS[_p] |= _ts
+    _frontier = _prev
+    if not _frontier:
+        break
+DUNGEON_FEEDERS = dict(DUNGEON_FEEDERS)
+
+
+def feeds_dungeon(q, dname):
+    return any(QUESTS[t].dungeon == dname for t in DUNGEON_FEEDERS.get(q.id, ()))
+
+
+def dungeon_work(q):
+    return bool(q.dungeon) or q.id in DUNGEON_FEEDERS
+
+
+def in_enemy_territory(q):
+    """Starts, ends or is done in the other faction's home zones (see TERRITORY)."""
+    return any(p and p[3] in ENEMY_TERRITORY for p in (q.start, q.target, q.finish))
+
+
+def dungeon_priority(q):
+    """Dungeon work the route goes out of its way for."""
+    return dungeon_work(q) and not in_enemy_territory(q)
+
 
 def travel_seconds(a, b, L):
     if a is None or b is None:
@@ -671,6 +727,7 @@ class Sim:
         self.learned = set(learned or ())
         self.steps = []           # (line, level) tuples
         self.carried_dungeon = collections.defaultdict(set)
+        self.errand = None            # map to collect dungeon quests from next
         self.maps_visited = set()
         self.t = 0.0                  # simulated /played seconds
         self.bind = None              # inn your hearthstone is set to
@@ -691,6 +748,8 @@ class Sim:
         if self.has(q.id) or q.id in self.active or q.id in self.banned or not self.race_ok(q) or q.classes:
             return False
         if not q.start or not q.finish:
+            return False
+        if in_enemy_territory(q):
             return False
         if q.elite and q.level > self.L:
             return False        # group quests only once you're at their level
@@ -724,10 +783,12 @@ class Sim:
         if not q.dungeon and q.level > self.L + 4:
             return False
         # Not worth the time compared with other quests at this level: skip it so the route
-        # fills the time with better ones.
-        if not q.dungeon and q.hasObjectives and quest_rate(q, self.L) < WORTH_RATIO * TYPICAL_RATE[self.L]:
+        # fills the time with better ones. Dungeon quests and the chains leading to them stay.
+        if not dungeon_work(q) and q.hasObjectives and quest_rate(q, self.L) < WORTH_RATIO * TYPICAL_RATE[self.L]:
             self.slow.add(q.id)
             return False
+        if q.dungeon:
+            return True    # the run takes you there anyway; turn-ins in capitals are on the way
         # Quests that send you to other maps (objectives or turn-in) are only taken when
         # those maps are places we'd go anyway: they have a few quests for our level.
         for m in {q.finish[0], q.target[0] if q.target else q.start[0]}:
@@ -741,7 +802,7 @@ class Sim:
             self._dest_cache[key] = sum(
                 1 for o in self.map_quests.get(mapID, ())
                 if o.id != exclude and self.L - 2 <= o.level <= self.L + 5 and self.race_ok(o)
-                and not o.classes and not o.elite and o.start) >= 4
+                and not o.classes and not o.elite and o.start and not in_enemy_territory(o)) >= 4
         return self._dest_cache[key]
 
     def can_do_objectives(self, q):
@@ -1044,13 +1105,69 @@ class Sim:
                 best, best_cost = (kind, q), c
         return best
 
-    def run_map(self, mapID, area):
-        """Quest on one map until nothing worthwhile is left."""
+    def dungeon_errand(self, current, allowed_maps=None):
+        """Another map with dungeon quests to pick up now, before they go grey (Ragefire
+        Chasm's are in the capitals while the route is out in the Barrens)."""
+        if len(self.active) >= LOG_LIMIT - 4:
+            return None
+        per_level = XP_TO_LEVEL[min(self.L, 59) - 1]
+        # A dungeon's quests are often spread over several towns (one per capital), so a
+        # trip is valued by the whole dungeon's bundle, not just this map's share.
+        bundles = collections.defaultdict(list)    # dungeon -> [(map, quest, dungeon quests it unlocks)]
+        for m in (allowed_maps or self.map_quests):
+            if m == current:
+                continue
+            for q in self.map_quests.get(m, ()):
+                # Chain steps toward a dungeon quest (the Defias Brotherhood chain) count too,
+                # valued by the dungeon quests they unlock.
+                if q.dungeon:
+                    gains = {q.dungeon: {q.id}}
+                else:
+                    gains = collections.defaultdict(set)
+                    for t in DUNGEON_FEEDERS.get(q.id, ()):
+                        if not self.has(t) and t not in self.active and t not in self.banned:
+                            gains[QUESTS[t].dungeon].add(t)
+                if gains and dungeon_priority(q) and self.L >= q.level - 2 and self.eligible(q) \
+                        and self.worthwhile(q):
+                    for dn, ts in gains.items():
+                        bundles[dn].append((m, q, ts))
+        # Hand-ins: finished dungeon quests, and deliveries that move a dungeon chain along
+        # (the Defias Brotherhood to Westfall).
+        for qid, st in self.active.items():
+            q = QUESTS[qid]
+            if not st['complete'] or not dungeon_priority(q) or q.finish[0] == current:
+                continue
+            if allowed_maps and q.finish[0] not in allowed_maps:
+                continue
+            if q.dungeon:
+                bundles[q.dungeon].append((q.finish[0], q, set()))
+            for t in DUNGEON_FEEDERS.get(qid, ()):
+                if not self.has(t) and t not in self.active and t not in self.banned:
+                    bundles[QUESTS[t].dungeon].append((q.finish[0], q, {t}))
+        best, best_value = None, per_level * ERRAND_MIN
+        for picks in bundles.values():
+            gained = {q.id for _, q, _ in picks} | {t for _, _, ts in picks for t in ts}
+            bundle_xp = sum(QUESTS[t].xp for t in gained) * DUNGEON_WEIGHT
+            for m in {m for m, _, _ in picks}:
+                value = bundle_xp - self.travel_cost(m)
+                if value > best_value:
+                    best, best_value = m, value
+        return best
+
+    def run_map(self, mapID, area, allowed_maps=None):
+        """Quest on one map until nothing worthwhile is left (or a dungeon errand calls)."""
         self.maps_visited.add(mapID)
         self.consider_bind(mapID)
+        self.errand = None
+        errand_level = self.L
         guard = 0
         while guard < 2000:
             guard += 1
+            if self.L != errand_level:
+                errand_level = self.L
+                self.errand = self.dungeon_errand(mapID, allowed_maps)
+                if self.errand is not None:
+                    break
             act = self.next_action(mapID)
             if not act:
                 break
@@ -1060,6 +1177,7 @@ class Sim:
             self.train_nearby()
             self.maybe_learn_fp()
             self.check_dungeons(area)
+        self.check_dungeons(area)    # runs held back for pickups on this map
         # learn this zone's flight path before leaving if we never walked past it
         for fm in self.fm_on_map(mapID):
             if fm['node'] not in self.learned:
@@ -1076,10 +1194,18 @@ class Sim:
             # One trip per dungeon: go once you can handle the hardest quest you carry,
             # but don't sit on the easiest one for more than ~5 levels.
             ready = min(max(levels) - 1, min(levels) + 5)
+            if not force and self.L >= ready and (self.dungeon_pickups_here(dname) or (
+                    self.L <= min(levels) + 2 and self.dungeon_pickups_nearby(dname))):
+                continue    # pick up the rest of this dungeon's quests first: one run for all
+            q0 = QUESTS[next(iter(qids))]
+            ent = dungeon_entrance(q0.sort)
+            if not force and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
+                    and self.L < max(levels) + 3:
+                continue    # wait until the route is on the dungeon's continent
             if force or self.L >= ready:
-                q0 = QUESTS[next(iter(qids))]
-                ent = dungeon_entrance(q0.sort)
                 at = f"; at={ent[1]},{ent[2]},{ent[0]}" if ent else ''
+                if ent:
+                    self.go(ent)
                 self.emit(f"[D {dname} | quests={','.join(map(str, sorted(qids)))}{at}]")
                 self.emit(f"Find a group for {dname}. Quests you skip there are dropped automatically.")
                 for q in qids:
@@ -1088,10 +1214,35 @@ class Sim:
                 self.t += DUNGEON_SECONDS
                 self.add_xp(XP_TO_LEVEL[min(self.L, 59) - 1] * 0.5)  # XP from the run itself
 
+    def dungeon_pickups_here(self, dname):
+        """Quests for this dungeon (or chain steps toward one) still to pick up on this map."""
+        if not self.pos or len(self.active) >= LOG_LIMIT:
+            return False
+        for q in self.map_quests.get(self.pos[0], ()):
+            if (q.dungeon == dname or feeds_dungeon(q, dname)) \
+                    and self.eligible(q) and self.worthwhile(q):
+                return True
+        return False
+
+    def dungeon_pickups_nearby(self, dname):
+        """Quests for this dungeon still to pick up elsewhere on this continent (the other
+        capitals' Ragefire Chasm quests): errands collect those before the run."""
+        if not self.pos or len(self.active) >= LOG_LIMIT - 4:
+            return False
+        here = continent(self.pos[3])
+        for m, qs in self.map_quests.items():
+            if m == self.pos[0] or continent(self.map_area[m]) != here:
+                continue
+            for q in qs:
+                if q.dungeon == dname and self.L >= q.level - 2 and self.eligible(q) and self.worthwhile(q):
+                    return True
+        return False
+
     # -- zone choice
     def zone_score(self, mapID):
         w = {'A': 1.0, 'T': 1.0, 'C': 0.5}
-        return sum(q.xp * w[k] for k, q, _ in self.candidates(mapID))
+        return sum(q.xp * w[k] * (DUNGEON_WEIGHT if k == 'A' and dungeon_priority(q) else 1)
+                   for k, q, _ in self.candidates(mapID))
 
     def tidy_log(self):
         """Drop quests carried 6+ levels without progress (recorded so the next pass never takes them)."""
@@ -1119,7 +1270,7 @@ class Sim:
             for q in self.map_quests.get(m, ()):
                 if self.has(q.id) or q.id in self.active or not self.race_ok(q) or q.classes:
                     continue
-                if not q.start or not q.finish:
+                if not q.start or not q.finish or in_enemy_territory(q):
                     continue
                 if q.minLevel > self.L or q.level > self.L + 2:
                     return True
@@ -1173,11 +1324,21 @@ class Sim:
         while self.L < until_level and grinds < 25:
             if current is not None and (not allowed_maps or current in allowed_maps) and self.next_action(current):
                 start_idx, start_level = len(self.steps), self.L
-                self.run_map(current, self.map_area[current])
+                self.run_map(current, self.map_area[current], allowed_maps)
                 segments.append((current, start_idx, len(self.steps), start_level, self.L))
                 grinds = 0
+                if self.errand is not None:
+                    self.travel_to(self.errand)
+                    current = self.errand
                 continue
             self.tidy_log()
+            # Leaving this zone: collect dungeon quests and hand in dungeon-chain deliveries
+            # nearby first, before the route heads somewhere they're a long way from.
+            errand = self.dungeon_errand(current, allowed_maps)
+            if errand is not None and self.next_action(errand):
+                self.travel_to(errand)
+                current = errand
+                continue
             maps = allowed_maps or list(self.map_quests)
             scored = []
             for m in maps:
@@ -1369,7 +1530,9 @@ def main():
         how = '' if here and continent(here[3]) == continent(shared_start[3]) else ' - ' + CFG['crossing']
         sim.emit(f"[G {shared_start[1]},{shared_start[2]} {shared_start[0]} Travel to {CFG['shared_node']}, {dest}{how}]")
         lo, hi = 1, max(sim.L, 2)
-        zones = [ZONE_NAMES.get(min(start_areas), '')] + [ZONE_NAMES.get(a, '') for a in sorted(follow_areas)]
+        # Capitals aren't named: titles are the key for players' saved progress.
+        zones = [ZONE_NAMES.get(min(start_areas), '')] + \
+            [ZONE_NAMES.get(a, '') for a in sorted(follow_areas) if a not in CAPITALS]
         title = f"{FACTION} 1-{hi} {', '.join(zones)} ({display})"
         steps = with_expected_levels(sim.steps)
         out_files.append((f'Start_{key}.lua', title, steps, lo, hi, races, None, None))
