@@ -84,6 +84,32 @@ XP minus a travel cost. Level is tracked with QuestieDB's per-quest XP (plus an 
 for kills). Quests it would have to abandon are banned and the route is re-simulated, and
 anything never handed in is pruned, so every pickup in the guide gets turned in.
 
+### Faction territory
+
+`TERRITORY` lists each faction's home zones (starting zones, their follow-up zones and
+capitals; The Barrens and Silverpine are Horde, Westfall, Darkshore and Wetlands are
+Alliance). A route never takes a quest that starts, ends or is done in the other faction's
+territory, even from a neutral giver (Ratchet's quests are the Horde's Barrens content).
+Dungeon runs there still happen for your own side's quests: Alliance does Scarlet Monastery
+in Tirisfal with quests from Ironforge and Southshore. Class quests are exempt (the Alliance
+Warlock chain really does visit the Barrens).
+
+### Dungeons first
+
+Dungeon quests, and the chain steps that lead to them (`DUNGEON_FEEDERS`: the Defias
+Brotherhood chain into The Deadmines), are a priority:
+- they skip the worth-the-time check, and dungeon quests skip the "turn-in zone has other
+  quests" check (the run takes you there anyway);
+- their pickups count `DUNGEON_WEIGHT` times when choosing the next zone;
+- **errands**: on each level-up and before leaving a zone, the route checks for dungeon
+  quests to pick up (valued as the whole dungeon's bundle, since e.g. Ragefire Chasm's are
+  spread over three capitals) and for dungeon-chain hand-ins elsewhere, and goes there when
+  that's worth more than `ERRAND_MIN` of a level after travel;
+- a run waits while more of the same dungeon's quests can still be picked up on the current
+  map (or nearby on the same continent, for up to two levels), so it's one run for all of them;
+- runs happen on the dungeon's continent (unless the quests are long overdue) and move the
+  player to the entrance.
+
 Each faction's shape (race starters and their zones, hand-over level and flight path,
 boat/zeppelin directions) is in `FACTION_CFG` in `gen_route.py`. Quests a starter already
 covered are never repeated in the shared route; follow-ups that depend on them are marked
