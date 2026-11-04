@@ -15,6 +15,25 @@
   other faction's home zones. Dungeons there are still run for your own side's quests
   (Scarlet Monastery for Alliance).
 
+**Skyborne starter (new)**
+- New Zephras Isle guides for Forever's Skyborne, Horde and Alliance: the island's quests and
+  class trainers to about level 12, then through the portal to Orgrimmar and Durotar (Horde)
+  or Stormwind and the Westfall/Redridge zones (Alliance), and on into the shared route.
+- Skyborne-only quests now have map pins.
+- Built from early data: about a third of the island's quests have no objective locations
+  yet, so the guide only shows where to pick them up and hand them in. Please report anything
+  that's off.
+
+**Group quests marked correctly**
+- About 80 solo quests were shown and routed as group quests because one elite rare shares the
+  loot table with ordinary mobs (Kobold Candles, Redridge Goulash, Raptor Horns, Chen's Empty
+  Keg and more). They're solo quests again.
+- Quests that only ask you to talk to an elite-ranked friendly NPC are no longer group quests.
+- Quests started by an item that only an elite drops (Croaky's Head, The Shattered Necklace)
+  have their map pins back, marked as group quests.
+- New elite named mobs from Forever's data (Ukorsbane, Halikor, Elmpaw, Baron Marinous and
+  others) are now treated as group content, so solo routes no longer send you to fight them.
+
 **Updated quest data**
 - Rebuilt from the latest QuestieDB data for WoW: Forever. Most shared guides have new level
   ranges and names, so if you were partway through one, it starts from the beginning.

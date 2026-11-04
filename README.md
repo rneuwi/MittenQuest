@@ -14,8 +14,8 @@ by the minimap; everything else is in the guide window's gear menu.
 ## What's in it
 
 - Horde and Alliance 1–60 routes: race starters (Orc/Troll, Tauren, Undead; Human,
-  Dwarf/Gnome, Night Elf) into a shared route per faction, picked automatically for your
-  level, race and faction.
+  Dwarf/Gnome, Night Elf; Skyborne on Zephras Isle for both factions) into a shared route per
+  faction, picked automatically for your level, race and faction.
 - Steps complete themselves from game events and step back if you undo them in game
   (abandon a quest and the guide returns to it). Skip / skip quest / undo buttons.
 - Arrow and map waypoint for every step, with cave-entrance routing.

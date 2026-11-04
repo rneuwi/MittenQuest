@@ -242,6 +242,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; opt; class=MAGE; xl=11.2]
 [T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; class=MAGE; xl=11.2]
 [G 37.8,59.6 1456 Travel to Thunder Bluff | xl=11.2]
+[A 744 Preparation for Ceremony | at=37.8,59.6,1456; xl=11.2]
 [T 775 Journey into Thunder Bluff | at=60.3,51.7,1456; xl=11.2]
 [T 99082 The High Chieftain | at=60.3,51.7,1456; xl=11.3]
 [T 98435 Thunderhorn's Report | at=78.6,28.6,1456; xl=11.4]
@@ -251,7 +252,19 @@ You have talent points from level 10 on: spend them (changing them later needs a
 Grind mobs around your level here; more quests open at the next level.
 [R Shaman - Thunder Bluff | at=22.82,21.11,1456; class=SHAMAN; xl=12.0]
 Siln Skychaser is right here: pick up your new Shaman spells.
-[L 13 | xl=12.0]
+[H Mulgore | xl=12.0]
+[A 770 The Demon Scarred Cloak | at=34.7,34.2,1412; opt; xl=12.0]
+Starts from Demon Scarred Cloak, which drops in this area.
+Group quest (elite enemies) - optional; the guide skips it if you don't take it.
+[C 744 Preparation for Ceremony | at=32.4,32.9,1412; mob=Windfury Sorceress / Windfury Matriarch; item=4752:6,4753:6; drop=40; xl=12.0]
+[R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=12.0]
+Hana Lighthoof is right here: pick up your new Druid spells.
+[T 770 The Demon Scarred Cloak | at=46.0,63.4,1412; opt; xl=12.0]
+[R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=12.1]
+Yaw Sharpmane is right here: pick up your new Hunter spells.
+[G 60.3,51.7 1456 Travel to Thunder Bluff | xl=12.1]
+[T 744 Preparation for Ceremony | at=37.8,59.6,1456; xl=12.1]
+[L 13 | xl=12.3]
 Grind mobs around your level here; more quests open at the next level.
 [G 51.5,30.34 1413 Travel to Crossroads, The Barrens | xl=13.0]
 ]==])
