@@ -126,14 +126,14 @@ function Steps:TrivialGap()
     local r = UnitQuestTrivialLevelRange and UnitQuestTrivialLevelRange("player")
     if r and (not issecretvalue or not issecretvalue(r)) and r > 0 then return r end
     -- Fallback approximating the classic grey-quest rule if the client lacks the API.
-    local level = UnitLevel("player")
+    local level = ns.PlayerLevel()
     if level < 10 then return 5 elseif level < 20 then return 6 elseif level < 30 then return 7
     elseif level < 40 then return 8 else return 9 end
 end
 
 function Steps:IsGrey(questID, guide)
     local lvl = self:QuestLevel(questID, guide)
-    return lvl ~= nil and lvl <= UnitLevel("player") - self:TrivialGap()
+    return lvl ~= nil and lvl <= ns.PlayerLevel() - self:TrivialGap()
 end
 
 -- A quest step you never started and that is now grey for your level.
@@ -207,7 +207,7 @@ function Steps:IsSatisfied(step)
         local bind = GetBindLocation()
         return bind and step.node and NormName(bind):find(NormName(step.node), 1, true) ~= nil
     elseif t == "LEVEL" then
-        return step.level and UnitLevel("player") >= step.level
+        return step.level and ns.PlayerLevel() >= step.level
     elseif t == "DUNGEON" then
         -- Done once every carried dungeon quest is turned in.
         if not step.quests or #step.quests == 0 then return false end
@@ -245,7 +245,7 @@ function Steps:Describe(step)
     local main = label and ("|c%s%s:|r %s"):format(color, label, body) or ("|c%s%s|r"):format(color, body)
 
     local sub = {}
-    local level = UnitLevel("player")
+    local level = ns.PlayerLevel()
 
     if step.type == "ACCEPT" then
         local missing = self:MissingPrereqs(step)
@@ -269,7 +269,10 @@ function Steps:Describe(step)
         sub[#sub + 1] = WARN .. "Flight path not learned" .. (step.alt and (" - " .. step.alt) or "") .. "|r"
     elseif step.type == "LEVEL" and step.level then
         local cur, max = UnitXP("player"), UnitXPMax("player")
-        if level < step.level and max and max > 0 then
+        if ns.IsSecret(cur) or ns.IsSecret(max) then
+            cur, max = nil, nil
+        end
+        if level < step.level and cur and max and max > 0 then
             sub[#sub + 1] = DIM .. ("Level %d, %d%% - %d XP to %d"):format(
                 level, math.floor(cur / max * 100), max - cur, level + 1) .. "|r"
         end

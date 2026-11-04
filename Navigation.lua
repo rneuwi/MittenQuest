@@ -30,6 +30,13 @@ local QUEST_RECHECK = 1.0 -- seconds between client quest-routing lookups
 -- and distance in yards from the player to a point, or nil if not comparable.
 function Nav:VectorTo(point)
     if not point then return nil end
+    -- HereBeDragons does math on UnitPosition; skip while the client keeps it secret (combat).
+    local ry, rx, _, rInstance = UnitPosition("player")
+    if ns.IsSecret(rx) or ns.IsSecret(ry) or ns.IsSecret(rInstance) then
+        self.positionHidden = true
+        return nil
+    end
+    self.positionHidden = false
     local px, py, pInstance = HBD:GetPlayerWorldPosition()
     if not px then return nil end
     local wx, wy, wInstance = HBD:GetWorldCoordinatesFromZone(point.x / 100, point.y / 100, point.mapID)
@@ -47,6 +54,9 @@ local function PlayerPosOn(mapID)
     local pos = C_Map.GetPlayerMapPosition(mapID, "player")
     if not pos then return nil end
     local x, y = pos:GetXY()
+    if x == nil or y == nil or ns.IsSecret(x) or ns.IsSecret(y) then
+        return nil
+    end
     return x * 100, y * 100
 end
 

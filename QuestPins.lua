@@ -182,7 +182,7 @@ end
 function Pins:Status(id, e)
     if IsTurnedIn(id) or InLog(id) or not PassesFilters(e) then return nil end
     local cfg = FG.db.profile.pins
-    local level = UnitLevel("player")
+    local level = ns.PlayerLevel()
 
     if e.level and not cfg.showLowLevel and e.level < level - cfg.lowLevelGap then
         return nil -- grey/trivial quest

@@ -19,6 +19,28 @@ FG.version = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version") or "dev"
 local HEARTH_SPELLS = { [8690] = true, [556] = true } -- Hearthstone, Astral Recall
 
 ---------------------------------------------------------------------------
+-- Secret values
+-- Midnight-era clients hand addons opaque "secret" values for some unit/position
+-- APIs while in combat. Comparing or doing math on one throws, and code that runs
+-- every frame or on every kill turns that into a flood of errors. Anything read
+-- from the game in a hot path goes through these.
+---------------------------------------------------------------------------
+function ns.IsSecret(v)
+    return issecretvalue ~= nil and v ~= nil and issecretvalue(v) == true
+end
+
+-- Player level, falling back to the last readable value while the client hides it.
+local lastLevel = 1
+function ns.PlayerLevel()
+    local level = UnitLevel("player")
+    if level == nil or ns.IsSecret(level) then
+        return lastLevel
+    end
+    lastLevel = level
+    return level
+end
+
+---------------------------------------------------------------------------
 -- Saved variables
 ---------------------------------------------------------------------------
 local defaults = {
@@ -557,9 +579,13 @@ function FG:PLAYER_CONTROL_GAINED()
 end
 
 function FG:UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellID)
-    if unit ~= "player" then return end
     -- Midnight-era APIs can return secret values; never compare those.
-    if issecretvalue and issecretvalue(spellID) then return end
+    if ns.IsSecret(unit) or ns.IsSecret(spellID) then
+        return
+    end
+    if unit ~= "player" then
+        return
+    end
     if HEARTH_SPELLS[spellID] then self:CompleteCurrent("HEARTH") end
 end
 
@@ -712,7 +738,7 @@ end
 
 -- "fits", "below" (you've outleveled it), "above" (too high) or "unknown"
 function FG:GuideLevelState(g)
-    local h, level = g.header, UnitLevel("player")
+    local h, level = g.header, ns.PlayerLevel()
     if not h.levelMax then return "unknown" end
     if level > h.levelMax then return "below" end
     if h.levelMin and level < h.levelMin then return "above" end
@@ -803,7 +829,7 @@ function FG:GuideBanner()
     end
     if self:GuideLevelState(g) == "below" then
         return ("You're level %d - this guide covers %d-%d. Grey quests are skipped; pick another guide in the gear menu.")
-            :format(UnitLevel("player"), h.levelMin or 1, h.levelMax)
+            :format(ns.PlayerLevel(), h.levelMin or 1, h.levelMax)
     end
     if steps and p.index > #steps then return "Guide complete!" end
     return ns.Pace:Banner()

@@ -33,7 +33,9 @@ end
 
 local function FormatETA(yards)
     local speed = GetUnitSpeed("player")
-    if not speed or speed <= 0 then return "" end
+    if not speed or ns.IsSecret(speed) or speed <= 0 then
+        return ""
+    end
     local s = math.floor(yards / speed + 0.5)
     if s >= 60 then return (" - %d:%02d"):format(math.floor(s / 60), s % 60) end
     return (" - %ds"):format(s)
@@ -86,12 +88,33 @@ function Arrow:Create()
     end)
     f:SetScript("OnLeave", GameTooltip_Hide)
 
+    -- Render runs ~30 times a second, so an error here would flood the error frame.
+    -- Report the first failure once (with context), stay quiet while it keeps failing,
+    -- and re-arm the report after a successful render.
     local elapsed = 0
+    local failing = false
     f:SetScript("OnUpdate", function(_, dt)
         elapsed = elapsed + dt
-        if elapsed < THROTTLE then return end
+        if elapsed < THROTTLE then
+            return
+        end
         elapsed = 0
-        self:Render()
+        local ok, err = pcall(self.Render, self)
+        if ok then
+            failing = false
+            return
+        end
+        if failing then
+            return
+        end
+        failing = true
+        local active = ns.Navigation:GetActive()
+        local step = ns.Navigation.step
+        FG:Print(("|cffff5555Arrow@Render failed:|r %s (step=%s line=%s kind=%s map=%s combat=%s)"):format(
+            tostring(err),
+            tostring(step and step.type), tostring(step and step.line),
+            tostring(active and active.kind), tostring(active and active.point and active.point.mapID),
+            tostring(InCombatLockdown())))
     end)
 
     self:ApplySettings()
@@ -113,7 +136,10 @@ function Arrow:Render()
 
     local facing = GetPlayerFacing()
     -- Never go fully invisible: show a dim arrow and say why there's no direction.
-    if not active or not angle or not facing or (issecretvalue and issecretvalue(facing)) then
+    if ns.IsSecret(angle) or ns.IsSecret(dist) then
+        angle, dist = nil, nil
+    end
+    if not active or not angle or not dist or not facing or ns.IsSecret(facing) then
         self.tex:SetTexture(ARROW_TEX)
         self.tex:SetRotation(0)
         self.tex:SetVertexColor(0.5, 0.5, 0.5)
@@ -122,6 +148,7 @@ function Arrow:Render()
         local why
         if not active then why = "No location for this step"
         elseif IsInInstance() then why = "No direction inside instances"
+        elseif ns.Navigation.positionHidden then why = "Position hidden in combat"
         elseif not angle then why = "Target is in another zone/continent"
         else why = "Facing unavailable here" end
         self.label:SetText("|cff999999" .. why .. "|r")
