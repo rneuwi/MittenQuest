@@ -29,14 +29,32 @@ I = json.load(open(os.path.join(SP, 'out/Item.json')))
 S = json.load(open(os.path.join(SP, 'out/support.json')))
 
 # ---------------------------------------------------------------- constants
-RACE_BITS = {'HUMAN': 1, 'ORC': 2, 'DWARF': 4, 'NIGHTELF': 8, 'SCOURGE': 16, 'TAUREN': 32, 'GNOME': 64, 'TROLL': 128}
+RACE_BITS = {'HUMAN': 1, 'ORC': 2, 'DWARF': 4, 'NIGHTELF': 8, 'SCOURGE': 16, 'TAUREN': 32, 'GNOME': 64, 'TROLL': 128,
+             # Forever's Skyborne: one race, a separate race ID per faction (QuestieDB 95/96).
+             'SKYBORNE_A': 1 << 32, 'SKYBORNE_H': 1 << 33}
 # Race file names as the client reports them (UnitRace second return).
 RACE_NAME = {'ORC': 'Orc', 'SCOURGE': 'Scourge', 'TAUREN': 'Tauren', 'TROLL': 'Troll',
-             'HUMAN': 'Human', 'DWARF': 'Dwarf', 'NIGHTELF': 'NightElf', 'GNOME': 'Gnome'}
-HORDE = 2 | 16 | 32 | 128
-ALLIANCE = 1 | 4 | 8 | 64
+             'HUMAN': 'Human', 'DWARF': 'Dwarf', 'NIGHTELF': 'NightElf', 'GNOME': 'Gnome',
+             # Unconfirmed client file name; the addon also offers this guide to any race
+             # without a starter (see #fallback).
+             'SKYBORNE_A': 'Skyborne', 'SKYBORNE_H': 'Skyborne'}
+# Race file names not yet confirmed in game: their starters get #fallback so the addon offers
+# them to any race of the faction without a starter. Remove once confirmed with
+# /dump UnitRace("player") on a Skyborne character.
+UNCONFIRMED_RACE_NAMES = {'Skyborne'}
+HORDE = 2 | 16 | 32 | 128 | 1 << 33
+ALLIANCE = 1 | 4 | 8 | 64 | 1 << 32
 FMASK = HORDE if FACTION == 'Horde' else ALLIANCE
 ENEMY_FLAG = 'A' if FACTION == 'Horde' else 'H'   # NPCs friendly only to the other faction
+
+
+def elite_foe(e):
+    """An elite-ranked NPC the player has to fight. Friendly NPCs that a quest only talks to
+    (Forever ranks many quest NPCs elite, like guards) don't make it a group quest."""
+    if (e.get('rank') or 0) not in (1, 2, 3):
+        return False
+    friendly = e.get('friendlyToFaction')
+    return not friendly or friendly == ENEMY_FLAG
 CLASS_BITS = {'WARRIOR': 1, 'PALADIN': 2, 'HUNTER': 4, 'ROGUE': 8, 'PRIEST': 16, 'SHAMAN': 64,
               'MAGE': 128, 'WARLOCK': 256, 'DRUID': 1024}
 ALL_CLASS_BITS = sum(CLASS_BITS.values())
@@ -156,6 +174,8 @@ FACTION_CFG = {
             ('Orc', ['Orc', 'Troll'], 'Orc/Troll', 2 | 128, {14, 363}, {1637}),
             ('Tauren', ['Tauren'], 'Tauren', 32, {215, 220}, {1638}),
             ('Scourge', ['Scourge'], 'Undead', 16, {85, 154, 130}, {1497}),
+            # Zephras Isle (Forever), then through the portal to Orgrimmar and Durotar.
+            ('Skyborne', ['Skyborne'], 'Skyborne', 1 << 33, {16593}, {14, 1637}),
         ],
         'starter_until': 13, 'shared_level': 12, 'shared_node': 'Crossroads',
         'crossing': "take the zeppelin (Orgrimmar <-> Undercity / Grom'gol)",
@@ -168,6 +188,8 @@ FACTION_CFG = {
             ('Human', ['Human'], 'Human', 1, {12}, {40, 44, 38, 10, 1519}),
             ('Dwarf', ['Dwarf', 'Gnome'], 'Dwarf/Gnome', 4 | 64, {1}, {38, 40, 44, 10, 1537, 1519}),
             ('NightElf', ['NightElf'], 'Night Elf', 8, {141}, {148, 331, 406, 1657}),
+            # Zephras Isle (Forever), then the Skyborne Portal to Stormwind and the Human zones.
+            ('Skyborne', ['Skyborne'], 'Skyborne', 1 << 32, {16593}, {12, 40, 44, 10, 1519}),
         ],
         'starter_until': 20, 'shared_level': 19, 'shared_node': 'Menethil Harbor',
         'crossing': 'take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor)',
@@ -364,20 +386,27 @@ def build_quests():
                 break
         x.itemStart = bool(idx(sb, 3))
         x.startItem = None
+        start_elite = False
         if not x.start and x.itemStart:
             for iid in idx(sb, 3) or []:
                 it = I.get(str(iid))
                 if not it:
                     continue
-                pts = []
+                pts, elite_pts = [], []
                 for nid in it.get('npcDrops') or []:
                     e = N.get(str(nid))
                     if e and (e.get('rank') or 0) == 0:
                         pts += spawns_of(e)
+                    elif e:
+                        elite_pts += spawns_of(e)
                 for oid in it.get('objectDrops') or []:
                     e = O.get(str(oid))
                     if e:
                         pts += spawns_of(e)
+                if not pts and elite_pts:
+                    # Only an elite drops the starting item (Croaky's Head): keep the quest,
+                    # as a group quest, instead of losing it and its map pin.
+                    pts, start_elite = elite_pts, True
                 if pts:
                     x.start = densest(pts)
                     x.startItem = clean(it.get('name'))
@@ -413,7 +442,7 @@ def build_quests():
             x.xp, x.xpEstimated = estimated_quest_xp(lvl), True
         # objectives
         obj = q.get('objectives') or {}
-        pts, mobs, items, elite = [], [], [], False
+        pts, mobs, items, elite = [], [], [], start_elite
         x.kills, x.objects, x.contested = 0, 0, None   # time model inputs
         for o in idx(obj, 1) or []:
             nid = idx(o, 1) if isinstance(o, (list, dict)) else o
@@ -423,7 +452,7 @@ def build_quests():
                 pts += sp
                 name = clean(e.get('name'))
                 mobs.append(name)
-                if (e.get('rank') or 0) in (1, 2, 3):
+                if elite_foe(e):
                     elite = True
                 few = 0 < len(sp) <= 2
                 x.kills += parse_count(x.text, name, 1 if few else 8)
@@ -431,12 +460,14 @@ def build_quests():
                     x.contested = (name, len(sp))
         for kc in idx(obj, 5) or []:
             ids = kc[0] if isinstance(kc, list) and kc and isinstance(kc[0], list) else []
-            for nid in ids:
-                e = N.get(str(nid))
-                if e:
-                    pts += spawns_of(e)
-                    if (e.get('rank') or 0) in (1, 2, 3):
-                        elite = True
+            # Kill credit shared by several mobs: only elite if none of them is a normal mob
+            # (Forever ranks some named mobs elite inside an otherwise normal group).
+            credit = [e for e in (N.get(str(nid)) for nid in ids) if e]
+            normal = [e for e in credit if not elite_foe(e)]
+            for e in normal or credit:
+                pts += spawns_of(e)
+            if credit and not normal:
+                elite = True
             base = N.get(str(kc[1])) if isinstance(kc, list) and len(kc) > 1 else None
             if base:
                 mobs.append(clean(base.get('name')))
@@ -467,8 +498,13 @@ def build_quests():
                 if e:
                     sp = spawns_of(e)
                     srcs.append((rates.get(str(nid), 0) or 0, len(sp), e, sp))
-                    if (e.get('rank') or 0) in (1, 2, 3):
-                        elite = True
+            # An item that normal mobs also drop is a solo quest: one elite named mob in the
+            # loot table (Nimsy for Kobold Candles, Croaky for Bounty on Murlocs) must not make
+            # it a group quest. Farm the normal sources; elite only when every source is elite.
+            normal_srcs = [s for s in srcs if not elite_foe(s[2])]
+            if srcs and not normal_srcs:
+                elite = True
+            srcs = normal_srcs or srcs
             for oid in it.get('objectDrops') or []:
                 e = O.get(str(oid))
                 if e:
@@ -570,6 +606,21 @@ def continent(area):
     if area in EASTERN:
         return 'E'
     return '?'
+
+
+# Islands off both continents and how to leave or reach them (Forever's Zephras Isle).
+ISLAND_CROSSING = {
+    16593: {'Horde': 'take the portal from Zephras Isle to Orgrimmar',
+            'Alliance': 'take the Skyborne Portal to Stormwind'},
+}
+
+
+def crossing_text(pos, area):
+    for island in (pos[3] if pos else None, area):
+        text = ISLAND_CROSSING.get(island, {}).get(FACTION)
+        if text:
+            return text
+    return CFG['crossing']
 
 
 def dist(a, b):
@@ -977,6 +1028,10 @@ class Sim:
             return
         for cls, lst in TRAINERS.items():
             ok = [t for t in lst if self.trainer_ok(t)]
+            if continent(self.pos[3]) == '?':
+                # On an island start (Zephras Isle) only its own trainers count: a class it has
+                # no trainer for isn't one that race can play, so no trip off the island.
+                ok = [t for t in ok if t['loc'][0] == self.pos[0]]
             if not ok:
                 continue
             t = min(ok, key=lambda t: (travel_seconds(self.pos, t['loc'], self.L),
@@ -1297,7 +1352,7 @@ class Sim:
             starts = [q.start for q in self.map_quests.get(mapID, ()) if self.eligible(q)]
             hub = densest([(s[0], s[1], s[2], s[3]) for s in starts]) if starts else None
             if hub:
-                how = '' if same_cont else (' - ' + CFG['crossing'])
+                how = '' if same_cont else (' - ' + crossing_text(self.pos, area))
                 self.emit(f"[G {hub[1]},{hub[2]} {mapID} Travel to {name}{how}]")
                 self.t += ZONE_WALK_SECONDS if same_cont else CROSSING_SECONDS
                 self.pos = hub
@@ -1446,6 +1501,8 @@ def write_guide(path, name, steps, lo, hi, races=None, next_name=None, knownfp=N
     head = [f'#levels {lo}-{hi}', f'#faction {FACTION}']
     if races:
         head.append('#race ' + ', '.join(races))
+        if set(races) & UNCONFIRMED_RACE_NAMES:
+            head.append('#fallback')
     if knownfp:
         head.append('#knownfp ' + ', '.join(sorted(knownfp)))
     if next_name:
@@ -1494,13 +1551,22 @@ def split_guides(prefix, sim, segments, start_learned, min_levels=4, max_steps=3
 def main():
     os.makedirs(OUTDIR, exist_ok=True)
     out_files = []
-    def run_starter(mask, areas, banned):
+    def run_starter(mask, start_areas, areas, banned):
         sim = Sim(mask, banned=banned)
         index_maps(sim)
         maps = {m for m, a in sim.map_area.items() if a in areas}
-        first = min((q for m in maps for q in sim.map_quests[m] if sim.eligible(q)), key=lambda q: (q.level, q.id))
+        # Begin in the starting zone itself: follow-up zones can have level 1 quests too
+        # (Northshire and Orgrimmar for the Skyborne, who start on Zephras Isle).
+        start_maps = {m for m, a in sim.map_area.items() if a in start_areas}
+        first = min((q for m in start_maps for q in sim.map_quests[m] if sim.eligible(q)),
+                    key=lambda q: (q.level, q.id))
         sim.pos = first.start
-        segs = sim.run(until_level=CFG['starter_until'], allowed_maps=maps)
+        segs = []
+        if continent(first.start[3]) == '?':
+            # An island start (Zephras Isle): finish the island before taking the portal, or
+            # the route hops back and forth for the follow-up zones' level 1 quests.
+            segs += sim.run(until_level=CFG['starter_until'], allowed_maps=start_maps)
+        segs += sim.run(until_level=CFG['starter_until'], allowed_maps=maps)
         return sim, segs
 
     shared_start = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
@@ -1515,7 +1581,7 @@ def main():
     for key, races, display, mask, start_areas, follow_areas in CFG['starters']:
         banned = set(CORR_SKIP)
         for _ in range(6):
-            sim, segs = run_starter(mask, start_areas | follow_areas, banned)
+            sim, segs = run_starter(mask, start_areas, start_areas | follow_areas, banned)
             if not sim.dropped - banned:
                 break
             banned |= sim.dropped
@@ -1527,7 +1593,7 @@ def main():
         # Hand over to the shared route: one travel step to where it begins.
         here = sim.pos
         dest = ZONE_NAMES.get(shared_start[3], CFG['shared_node'])
-        how = '' if here and continent(here[3]) == continent(shared_start[3]) else ' - ' + CFG['crossing']
+        how = '' if here and continent(here[3]) == continent(shared_start[3]) else ' - ' + crossing_text(here, shared_start[3])
         sim.emit(f"[G {shared_start[1]},{shared_start[2]} {shared_start[0]} Travel to {CFG['shared_node']}, {dest}{how}]")
         lo, hi = 1, max(sim.L, 2)
         # Capitals aren't named: titles are the key for players' saved progress.

@@ -10,6 +10,10 @@ FACTIONS="Horde Alliance"
 mkdir -p "$WORK/out"
 if [ ! -d "$QDB" ]; then
   git clone --depth 1 https://github.com/Questie/QuestieDB.git "$QDB"
+elif [ -z "${1:-}" ] && [ -d "$QDB/.git" ]; then
+  # Default checkout: bring it up to date, or a local rebuild silently uses stale data.
+  # An explicit path is left as given (pinned or bisecting builds).
+  git -C "$QDB" pull --ff-only --quiet || { echo "build.sh: could not update $QDB" >&2; exit 1; }
 fi
 python3 "$HERE/extract.py" "$QDB" "$WORK/out"
 python3 "$HERE/support.py" "$QDB/support/Forever" "$WORK/out/support.json"
