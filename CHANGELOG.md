@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.0.0
 
 **Dungeons first**
 - Routes now go out of their way for dungeon quests: about half again as many are on each
