@@ -1,5 +1,12 @@
 # MittenQuest
 
+## 1.0.1
+
+**Fixes**
+- Entering combat no longer floods the screen with Lua errors. The arrow dims and shows
+  "Position hidden in combat" while the game hides your position, then picks up again
+  after the fight.
+
 ## 1.0.0
 
 **Dungeons first**
