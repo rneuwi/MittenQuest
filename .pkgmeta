@@ -4,6 +4,7 @@ ignore:
   - tools
   - .github
   - .work
+  - .claude
   - README.md
   - Media/logo.svg
   - Media/logo.png

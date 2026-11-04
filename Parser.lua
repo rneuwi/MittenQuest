@@ -46,6 +46,9 @@
         #levels 1-12                      level range (guide auto-selection, outleveled detection)
         #faction Horde                    guide only offered to this faction
         #race Orc, Troll                  guide only offered to these races (race file names)
+        #fallback                         also offered to races of this faction that have no
+                                          starter guide of their own (a race whose client
+                                          file name isn't confirmed yet, like Skyborne)
 ]]
 
 local _, ns = ...

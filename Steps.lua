@@ -22,13 +22,32 @@ function Steps:Applies(step)
     end
     if step.race then
         local _, raceFile = UnitRace("player")
-        if not step.race[(raceFile or ""):upper()] then return false end
+        if not step.race[(raceFile or ""):upper()] and not Steps:FallbackRaceMatches(step.race) then
+            return false
+        end
     end
     if step.faction then
         local faction = UnitFactionGroup("player")
         if (faction or ""):upper() ~= step.faction then return false end
     end
     return true
+end
+
+-- A race with no starter guide of its own plays the faction's #fallback starter (Skyborne,
+-- whose client race file name isn't confirmed yet); race-limited steps naming that starter's
+-- races apply to it too.
+function Steps:FallbackRaceMatches(stepRaces)
+    if not FG:MissingStarterGuide(true) then return false end
+    local faction = (UnitFactionGroup("player") or ""):upper()
+    for _, name in ipairs(FG.guideOrder) do
+        local h = FG:GetGuide(name).header
+        if h.fallback ~= nil and h.raceSet and (h.faction or ""):upper() == faction then
+            for race in pairs(h.raceSet) do
+                if stepRaces[race] then return true end
+            end
+        end
+    end
+    return false
 end
 
 ---------------------------------------------------------------------------

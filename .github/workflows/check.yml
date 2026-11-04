@@ -17,3 +17,5 @@ jobs:
           find . -name '*.lua' -not -path './Libs/*' -not -path './.work/*' -print0 | xargs -0 -n1 luac5.1 -p
       - name: Route
         run: lua5.1 tools/lint.lua Guides/*/*.lua
+      - name: Guide selection
+        run: lua5.1 tools/test_selection.lua .

@@ -171,7 +171,9 @@ local function PassesFilters(e)
     end
     if e.race then
         local _, raceFile = UnitRace("player")
-        if not e.race[(raceFile or ""):upper()] then return false end
+        if not e.race[(raceFile or ""):upper()] and not ns.Steps:FallbackRaceMatches(e.race) then
+            return false
+        end
     end
     return true
 end

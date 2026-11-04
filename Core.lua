@@ -695,12 +695,17 @@ end
 ---------------------------------------------------------------------------
 -- Guide selection for the character's level / faction / race
 ---------------------------------------------------------------------------
+local function PlayerRaceIn(raceSet)
+    local _, raceFile = UnitRace("player")
+    return raceSet[(raceFile or ""):upper()] and true or false
+end
+
 function FG:GuideFitsPlayer(g)
     local h = g.header
     if h.faction and h.faction:upper() ~= (UnitFactionGroup("player") or ""):upper() then return false end
-    if h.raceSet then
-        local _, raceFile = UnitRace("player")
-        if not h.raceSet[(raceFile or ""):upper()] then return false end
+    if h.raceSet and not PlayerRaceIn(h.raceSet) then
+        -- A #fallback starter also takes races with no starter of their own.
+        return h.fallback ~= nil and self:MissingStarterGuide(true)
     end
     return true
 end
@@ -714,16 +719,35 @@ function FG:GuideLevelState(g)
     return "fits"
 end
 
+-- True when the faction has race starter guides but none names this character's race (a race
+-- added after the guides were built, like Forever's Skyborne). Unless ignoreFallback is set,
+-- a #fallback starter counts as covering the race.
+function FG:MissingStarterGuide(ignoreFallback)
+    local faction = (UnitFactionGroup("player") or ""):upper()
+    local hasStarter, hasFallback = false, false
+    for _, name in ipairs(self.guideOrder) do
+        local h = self:GetGuide(name).header
+        if h.raceSet and (h.faction or ""):upper() == faction then
+            hasStarter = true
+            if PlayerRaceIn(h.raceSet) then return false end
+            if h.fallback ~= nil then hasFallback = true end
+        end
+    end
+    return hasStarter and (ignoreFallback or not hasFallback)
+end
+
 -- Best guide: matching faction/race, level range containing yours;
--- otherwise the next guide above your level.
+-- otherwise the next guide above your level. A race without a starter guide gets nothing
+-- until it reaches the shared route, rather than a guide set on another continent.
 function FG:BestGuideForPlayer()
     local best, bestMin, highest, highestMax
+    local noStarter = self:MissingStarterGuide()
     for _, name in ipairs(self.guideOrder) do
         local g = self:GetGuide(name)
         if self:GuideFitsPlayer(g) then
             local state = self:GuideLevelState(g)
             if state == "fits" then return name end
-            if state == "above" and (not bestMin or g.header.levelMin < bestMin) then
+            if state == "above" and not noStarter and (not bestMin or g.header.levelMin < bestMin) then
                 best, bestMin = name, g.header.levelMin
             end
             if state == "below" and (not highestMax or g.header.levelMax > highestMax) then
@@ -740,7 +764,11 @@ function FG:CheckGuideFit()
     local current = self:GetActiveGuide()
     local best = self:BestGuideForPlayer()
     if not current then
-        if best then self:LoadGuide(best) elseif self.guideOrder[1] then self:LoadGuide(self.guideOrder[1]) end
+        if best then
+            self:LoadGuide(best)
+        elseif self.guideOrder[1] and not self:MissingStarterGuide() then
+            self:LoadGuide(self.guideOrder[1])
+        end
         return
     end
     if self.db.char.guidePinned or not best or best == current.name then return end
@@ -753,7 +781,21 @@ end
 -- One-line status shown at the top of the guide window (nil when all is well).
 function FG:GuideBanner()
     local g = self:GetActiveGuide()
-    if not g then return "No guide for your character yet." end
+    if not g then
+        if self:MissingStarterGuide() then
+            local first
+            for _, name in ipairs(self.guideOrder) do
+                local cand = self:GetGuide(name)
+                if self:GuideFitsPlayer(cand) and cand.header.levelMin
+                    and (not first or cand.header.levelMin < first) then
+                    first = cand.header.levelMin
+                end
+            end
+            return ("No guide for your starting zone yet. Quest pins are on the map; the guide starts at level %d.")
+                :format(first or 12)
+        end
+        return "No guide for your character yet."
+    end
     local steps, p = self:GetActiveSteps()
     local h = g.header
     if not self:GuideFitsPlayer(g) then

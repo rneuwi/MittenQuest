@@ -323,7 +323,9 @@ function Frame:Update()
     if not steps or #steps == 0 then
         self.titleText:SetText("MittenQuest - no guide loaded")
         for _, row in ipairs(self.rows) do row:Hide() end
+        self.shownRows = 0
         self:UpdateButtons()
+        self:Layout()   -- shows the banner (e.g. no starter guide for this race yet)
         return
     end
 
