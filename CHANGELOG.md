@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.1.0
 
 **Is this quest on my route?**
 - When an NPC offers quests, a small banner above the window says for each one whether it's
