@@ -55,6 +55,13 @@ local defaults = {
         fadeCompleted = true,
         skipGrey      = true,   -- auto-skip quests that are grey for your level
         autoWaypoint  = true,   -- also place a map pin (TomTom / built-in) for each step
+        nearestFirst  = true,   -- arrow follows the nearest upcoming step you can do now
+        routeNote     = true,   -- banner on quest windows: is this quest on my route?
+        auto = {                -- quest automation (hold Shift to do it by hand)
+            accept = true,      -- pick up quests on your route (never side quests)
+            turnin = true,      -- hand in completed quests (stops at a reward choice)
+            shared = true,      -- accept party-shared quests and join escorts
+        },
         arrivalYards  = 10,
         pace = { show = true },   -- "On pace / behind" and grind warnings
         arrow = {
@@ -186,6 +193,8 @@ function FG:OnEnable()
     self:SafeInit("arrow", function() ns.Arrow:Create() end)
     self:SafeInit("map pins", function() ns.QuestPins:Enable() end)
     self:SafeInit("pace", function() ns.Pace:Enable() end)  -- also refreshes the window on XP gain
+    self:SafeInit("route check", function() ns.RouteCheck:Init() end)
+    self:SafeInit("auto quest", function() ns.AutoQuest:Init() end)
 end
 
 function FG:SafeInit(name, fn)
@@ -250,6 +259,7 @@ function FG:LoadGuide(name)
         return
     end
     self.db.char.activeGuide = name
+    if ns.RouteCheck then ns.RouteCheck:Invalidate() end
     local g = self:GetGuide(name)
     if #g.warnings > 0 then
         self:Print(("%d parse warning(s) in '%s' - /mq check"):format(#g.warnings, name))

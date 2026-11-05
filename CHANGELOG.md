@@ -1,5 +1,47 @@
 # MittenQuest
 
+## Unreleased
+
+**Is this quest on my route?**
+- When an NPC offers quests, a small banner above the window says for each one whether it's
+  on your route (and at which step), in a later or earlier guide of your route, on the route
+  but skipped, or not on your route at all. Map pin tooltips say the same.
+
+**Auto pick-up and turn-in** (gear menu, each can be turned off; hold Shift to do it by hand)
+- Quests on your route are picked up automatically. Side quests never are.
+- Completed quests are handed in automatically. When there's a choice of rewards, you pick.
+- Quests a party member shares with you are accepted, and you join escort quests your
+  group starts.
+
+**The arrow goes to the nearest thing you can do**
+- In a quest hub the arrow now points at the closest step you can do right now (a pickup, a
+  ready turn-in, objectives you're standing in) instead of walking you past it to reach the
+  next one in the list. It never jumps past a flight, hearth, trip or dungeon in the guide.
+  Hover the arrow to see when it picked a nearer step. Turn it off in the gear menu
+  ("Arrow goes to the nearest step I can do").
+
+**No more suicide runs or grey mobs**
+- Routes no longer send you into areas whose mobs are well above your level just to talk to
+  someone. The Talking Head in Fenris Keep (Resting in Pieces) was the worst case: level 13
+  characters were sent through level 16 to 19 Rot Hides.
+- Routes skip quests whose mobs would be grey (no XP) by the time you get there.
+- If you're ahead of the route's pace, quests you haven't started whose mobs are grey for
+  you are now skipped automatically, like grey quests already were.
+- Steps in an area that's too dangerous for your level show a warning.
+
+**Dungeons**
+- Routes wait for a quest chain that leads to more of a dungeon's quests before sending you
+  in. Alliance gets The Defias Brotherhood back into its Deadmines run, and both factions
+  pick up more dungeon quests overall (Horde 6 more, Alliance 9 more).
+
+**Route updates**
+- Most level 12 to 60 guides were rebuilt and renamed (the Horde route is now 10 guides,
+  Alliance 9). If you're partway through one, it starts over at the top, but steps you've
+  already done in the game are checked off automatically.
+- Undead start (Tirisfal Glades): "A Light in the Darkness" now comes after you turn in
+  "The Damned", since the game only offers it once that quest is done. Quest data updated to
+  the latest Questie.
+
 ## 1.0.1
 
 **Fixes**

@@ -136,7 +136,32 @@ function Steps:IsGrey(questID, guide)
     return lvl ~= nil and lvl <= ns.PlayerLevel() - self:TrivialGap()
 end
 
--- A quest step you never started and that is now grey for your level.
+-- Highest objective mob level per quest in a guide (from the C steps' ml= keys).
+local function GuideMobLevels(guide)
+    if not guide then return {} end
+    if not guide.mobLevels then
+        guide.mobLevels = {}
+        for _, s in ipairs(guide.allSteps or guide.steps or {}) do
+            if s.type == "COMPLETE" and s.questID and s.mobLevel then
+                guide.mobLevels[s.questID] = math.max(guide.mobLevels[s.questID] or 0, s.mobLevel)
+            end
+        end
+    end
+    return guide.mobLevels
+end
+
+-- Grey for your level: no XP from the kills, so the quest isn't worth starting.
+function Steps:MobsGrey(questID, guide)
+    local ml = GuideMobLevels(guide)[questID]
+    return ml ~= nil and ml <= ns.PlayerLevel() - self:TrivialGap()
+end
+
+-- The step's area has mobs well above your level (danger= from the route generator).
+function Steps:TooDangerous(step)
+    return step.danger ~= nil and ns.PlayerLevel() < step.danger - 2
+end
+
+-- A quest step you never started and that is now grey for your level, or whose mobs are.
 -- Quests already in your log are never outleveled - you still turn them in.
 function Steps:IsOutleveled(step, guide)
     local q = step.questID
@@ -149,7 +174,7 @@ function Steps:IsOutleveled(step, guide)
         return true
     end
     if not q or InLog(q) or IsTurnedIn(q) then return false end
-    return self:IsGrey(q, guide)
+    return self:IsGrey(q, guide) or self:MobsGrey(q, guide)
 end
 
 -- Quests you've clearly moved past: a later quest that requires them is in
@@ -246,6 +271,10 @@ function Steps:Describe(step)
 
     local sub = {}
     local level = ns.PlayerLevel()
+
+    if self:TooDangerous(step) then
+        sub[#sub + 1] = WARN .. ("Level %d+ mobs around here: dangerous at level %d"):format(step.danger, level) .. "|r"
+    end
 
     if step.type == "ACCEPT" then
         local missing = self:MissingPrereqs(step)

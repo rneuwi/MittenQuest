@@ -18,12 +18,18 @@ by the minimap; everything else is in the guide window's gear menu.
   faction, picked automatically for your level, race and faction.
 - Steps complete themselves from game events and step back if you undo them in game
   (abandon a quest and the guide returns to it). Skip / skip quest / undo buttons.
-- Arrow and map waypoint for every step, with cave-entrance routing.
+- Arrow and map waypoint for every step, with cave-entrance routing. In a quest hub the arrow
+  points at the nearest step you can do right now, not just the next one in the list.
 - Quest pins with level, requirements and giver for 3,200+ quests (each faction sees its own).
+- Quest windows say whether a quest is on your route. Route quests are picked up and finished
+  quests handed in automatically (side quests are left to you; hold Shift to do it by hand),
+  and party-shared and escort quests are accepted.
 - Expected kill counts from real drop rates; flight paths learned and used along the way;
   dungeon quests batched into one run per dungeon.
 - Routes planned on time, not just distance: slow quests (bad drop rates, long detours) are
   swapped for better ones, with hearthstone steps and notes for contested spawns.
+- Routes never send you among mobs well above your level, and skip quests whose mobs would be
+  grey. If you get ahead of the route, unstarted quests with grey mobs are skipped for you.
 - Class trainer visits and class quests (pet taming, Bear Form, totems, Warlock pets and
   more), shown only to your class.
 - Pace display: on pace, ahead or behind the route, with warnings before a level wall.

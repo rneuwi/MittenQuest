@@ -46,6 +46,20 @@ HORDE = 2 | 16 | 32 | 128 | 1 << 33
 ALLIANCE = 1 | 4 | 8 | 64 | 1 << 32
 FMASK = HORDE if FACTION == 'Horde' else ALLIANCE
 ENEMY_FLAG = 'A' if FACTION == 'Horde' else 'H'   # NPCs friendly only to the other faction
+OWN_FLAG = 'H' if FACTION == 'Horde' else 'A'
+
+
+def hostile(e):
+    """An NPC that isn't friendly to this faction (mobs you fight, or that attack you)."""
+    return OWN_FLAG not in (e.get('friendlyToFaction') or '')
+
+
+def mob_level(e):
+    """Highest level of a hostile mob, or None for friendly NPCs and level-scaling critters."""
+    lo, hi = e.get('minLevel'), e.get('maxLevel') or e.get('minLevel')
+    if not lo or not hostile(e) or hi - lo > 5:
+        return None
+    return hi
 
 
 def elite_foe(e):
@@ -443,6 +457,7 @@ def build_quests():
         # objectives
         obj = q.get('objectives') or {}
         pts, mobs, items, elite = [], [], [], start_elite
+        mob_levels = []     # levels of the hostile mobs the objectives have you kill
         x.kills, x.objects, x.contested = 0, 0, None   # time model inputs
         for o in idx(obj, 1) or []:
             nid = idx(o, 1) if isinstance(o, (list, dict)) else o
@@ -452,6 +467,8 @@ def build_quests():
                 pts += sp
                 name = clean(e.get('name'))
                 mobs.append(name)
+                if mob_level(e):
+                    mob_levels.append(mob_level(e))
                 if elite_foe(e):
                     elite = True
                 few = 0 < len(sp) <= 2
@@ -466,6 +483,8 @@ def build_quests():
             normal = [e for e in credit if not elite_foe(e)]
             for e in normal or credit:
                 pts += spawns_of(e)
+                if mob_level(e):
+                    mob_levels.append(mob_level(e))
             if credit and not normal:
                 elite = True
             base = N.get(str(kc[1])) if isinstance(kc, list) and len(kc) > 1 else None
@@ -514,6 +533,8 @@ def build_quests():
                 rate, _, e, sp = srcs[0]
                 pts += sp
                 mobs.append(clean(e.get('name')))
+                if mob_level(e):
+                    mob_levels.append(mob_level(e))
                 if rate and (best_drop is None or rate < best_drop):
                     best_drop = rate
                 n = count or 1
@@ -533,6 +554,7 @@ def build_quests():
         x.objPoints = pts
         x.target = densest(pts) if pts else None
         x.mobs = list(dict.fromkeys(mobs))[:2]
+        x.mobLevel = max(mob_levels) if mob_levels else None
         x.items = [(i, c) for i, c in items if c]
         x.drop = round(best_drop) if best_drop else None
         x.elite = elite and not x.dungeon
@@ -553,6 +575,48 @@ for _q in QUESTS.values():
             if _f and _f[0] in _maps:
                 _q.start = densest([p for p in _q.startSpawns if p[0] == _f[0]])
                 break
+
+# ---------------------------------------------------------------- area danger
+# How dangerous a spot is: the level of the hostile normal mobs living around it. A talk-only
+# quest (Resting in Pieces' Talking Head inside Fenris Keep) has no objective level of its
+# own, so without this a level 13 character gets sent through level 16-19 Rot Hides. The
+# route doesn't go to a pickup, objective area or turn-in until it's within DANGER_MARGIN
+# levels of that spot's danger.
+DANGER_RADIUS = 2.5     # map units (percent of the zone map) around the spot
+DANGER_MARGIN = 2       # go there once your level is at least danger - this
+DANGER_FLOOR = 8        # starting areas mix level 1 quests with level 5 mobs by design
+_HOSTILE_SPAWNS = collections.defaultdict(list)    # map -> [(x, y, level, npc id)]
+for _nid, _e in N.items():
+    if (_e.get('rank') or 0) != 0:
+        continue    # elites and rares: rare spawns, and named elites are their own quests
+    _lvl = mob_level(_e)
+    if not _lvl:
+        continue
+    for _m, _x, _y, _a in spawns_of(_e):
+        _HOSTILE_SPAWNS[_m].append((_x, _y, _e.get('minLevel'), _nid))
+_DANGER_CACHE = {}
+
+
+def area_danger(pt):
+    """Median minimum level of the hostile normal mob types around a point (None if
+    fewer than two types live there)."""
+    if not pt:
+        return None
+    key = (pt[0], round(pt[1]), round(pt[2]))
+    if key not in _DANGER_CACHE:
+        levels = {}
+        for x, y, lvl, nid in _HOSTILE_SPAWNS.get(pt[0], ()):
+            if abs(x - pt[1]) <= DANGER_RADIUS and abs(y - pt[2]) <= DANGER_RADIUS                     and math.hypot(x - pt[1], y - pt[2]) <= DANGER_RADIUS:
+                levels[nid] = lvl
+        vals = sorted(levels.values())
+        _DANGER_CACHE[key] = vals[(len(vals) - 1) // 2] if len(vals) >= 2 else None
+    return _DANGER_CACHE[key]
+
+
+for _q in QUESTS.values():
+    _d = [area_danger(p) for p in (_q.start, _q.target, _q.finish)]
+    _d = [d for d in _d if d]
+    _q.danger = max(_d) if _d else None
 
 # ---------------------------------------------------------------- flight masters
 FMS = []
@@ -810,6 +874,8 @@ class Sim:
             return False
         if q.level < self.L - grey_gap(self.L):
             return False
+        if q.danger and q.danger >= DANGER_FLOOR and not q.dungeon and self.L < q.danger - DANGER_MARGIN:
+            return False        # the pickup, objectives or turn-in sit among mobs above your level
         if any(not self.has(p) for p in q.preAll):
             return False
         if q.preAny and not any(self.has(p) for p in q.preAny):
@@ -832,6 +898,11 @@ class Sim:
         if q.dungeon and q.level > self.L + 5:
             return False            # don't carry dungeon quests for ages
         if not q.dungeon and q.level > self.L + 4:
+            return False
+        # Mobs that are grey for you give no XP and the quest reward is all that's left: skip it
+        # (killing level 10s at 16 in the Barrens). Dungeon work stays.
+        if q.mobLevel and not dungeon_work(q) and q.mobLevel <= self.L - grey_gap(self.L):
+            self.slow.add(q.id)
             return False
         # Not worth the time compared with other quests at this level: skip it so the route
         # fills the time with better ones. Dungeon quests and the chains leading to them stay.
@@ -1069,6 +1140,12 @@ class Sim:
         return out + '; race=' + ','.join(names)
 
     # -- actions
+    def danger_key(self, *points):
+        """'; danger=N' when a spot's mobs are at or above the route's level here, so the
+        addon can warn a player who is behind the route's pace."""
+        d = max((area_danger(p) or 0) for p in points if p) if any(points) else 0
+        return f'; danger={d}' if d and d >= DANGER_FLOOR and d >= self.L + 1 else ''
+
     def accept(self, q):
         self.go(q.start)
         self.t += QUEST_NPC_SECONDS
@@ -1080,7 +1157,7 @@ class Sim:
             self.uncertain.add(q.id)
         if q.breadcrumbFor or q.group or q.id in self.uncertain:
             opts.append('opt')
-        extra = self.race_key(q)
+        extra = self.danger_key(q.start, q.target, q.finish) + self.race_key(q)
         self.emit(f"[A {q.id} {q.name} | {'; '.join(opts)}{extra}]")
         if q.id in CORR_NOTES:
             self.emit(clean(CORR_NOTES[q.id]))
@@ -1099,13 +1176,15 @@ class Sim:
         opts = [self.at(q.target)]
         if q.mobs:
             opts.append('mob=' + ' / '.join(q.mobs))
+        if q.mobLevel:
+            opts.append(f'ml={q.mobLevel}')
         if q.items:
             opts.append('item=' + ','.join(f"{i}:{c}" for i, c in q.items))
             if q.drop and q.drop < 100:
                 opts.append(f'drop={q.drop}')
         if q.group or q.id in self.uncertain:
             opts.append('opt')
-        self.emit(f"[C {q.id} {q.name} | {'; '.join(opts)}{self.race_key(q)}]")
+        self.emit(f"[C {q.id} {q.name} | {'; '.join(opts)}{self.danger_key(q.target)}{self.race_key(q)}]")
         if q.contested:
             name, n = q.contested
             spots = 'one spawn point' if n == 1 else f'{n} spawn points'
@@ -1118,7 +1197,7 @@ class Sim:
         self.go(q.finish)
         self.t += QUEST_NPC_SECONDS
         opt = '; opt' if (q.group or q.id in self.uncertain) else ''
-        self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{self.race_key(q)}]")
+        self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{self.danger_key(q.finish)}{self.race_key(q)}]")
         del self.active[q.id]
         self.done.add(q.id)
         gap = self.L - q.level
@@ -1252,6 +1331,8 @@ class Sim:
             if not force and self.L >= ready and (self.dungeon_pickups_here(dname) or (
                     self.L <= min(levels) + 2 and self.dungeon_pickups_nearby(dname))):
                 continue    # pick up the rest of this dungeon's quests first: one run for all
+            if not force and self.L <= min(levels) + 5 and self.dungeon_chain_active(dname):
+                continue    # a chain in the log unlocks another quest here (the Defias Brotherhood)
             q0 = QUESTS[next(iter(qids))]
             ent = dungeon_entrance(q0.sort)
             if not force and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
@@ -1277,6 +1358,15 @@ class Sim:
             if (q.dungeon == dname or feeds_dungeon(q, dname)) \
                     and self.eligible(q) and self.worthwhile(q):
                 return True
+        return False
+
+    def dungeon_chain_active(self, dname):
+        """A quest in the log leads (through its chain) to a quest for this dungeon that
+        isn't picked up yet: run once that chain has delivered it."""
+        for qid in self.active:
+            for t in DUNGEON_FEEDERS.get(qid, ()):
+                if QUESTS[t].dungeon == dname and not self.has(t) and t not in self.active                         and t not in self.banned:
+                    return True
         return False
 
     def dungeon_pickups_nearby(self, dname):
@@ -1548,6 +1638,117 @@ def split_guides(prefix, sim, segments, start_learned, min_levels=4, max_steps=3
     return guides
 
 
+# ---------------------------------------------------------------- dungeon rule
+# Every route puts dungeons first, and this check holds each new route to it:
+#   1. coverage: every dungeon quest the faction can do is turned in somewhere on the route
+#      (starter or shared), unless corrections.json 'dungeon_exempt' gives the reason why not;
+#   2. one trip per dungeon: a later run of a dungeon only carries quests that weren't
+#      available yet at the earlier run (level too low or prerequisites not done), so the
+#      route never runs a dungeon while one of its quests is waiting to be picked up.
+# A violation fails the build (exit 1), so the weekly workflow can't publish a route that
+# quietly lost its dungeons. Fix it in the simulator, or exempt the quest in
+# corrections.json 'dungeon_exempt' with the reason it can't be done.
+# 'dungeon_backlog' (per faction) lists the gaps the routes had when the rule was introduced:
+# they don't fail the build, but nothing may be added to it. Work it down by fixing the
+# simulator, and remove entries once the build reports them fixed.
+CORR_DUNGEON_EXEMPT = {int(q): t for q, t in CORR.get('dungeon_exempt', {}).items()}
+CORR_DUNGEON_BACKLOG = {int(q): t for q, t in CORR.get('dungeon_backlog', {}).get(FACTION, {}).items()}
+STEP_XL_RE = re.compile(r'xl=([\d.]+)')
+
+
+def dungeon_scope():
+    """Dungeon quests this faction's route is expected to do: the whole faction can take
+    them, they have a giver and a turn-in, and they're outside the other faction's zones."""
+    scope = {}
+    for q in QUESTS.values():
+        if not q.dungeon or q.classes or not q.start or not q.finish:
+            continue
+        if q.level > MAX_DUNGEON_QUEST_LEVEL or in_enemy_territory(q) or q.id in CORR_SKIP:
+            continue
+        if q.races and (q.races & FMASK) != FMASK:
+            continue    # one race's quest: the shared route can't serve it
+        scope[q.id] = q
+    return scope
+
+
+def audit_dungeons(starter_steps, shared_steps, sim=None):
+    """Check the dungeon rule (see above). Steps are the final guide lines, in route order.
+    Returns (quest id, message) pairs; empty means the route follows the rule."""
+    problems = []
+    starter_turned = set()
+    for steps in starter_steps:
+        for line in steps:
+            m = STEP_RE.match(line)
+            if m and m.group(1) == 'T':
+                starter_turned.add(int(m.group(2)))
+    turned_at = {}       # qid -> index of its turn-in in shared_steps
+    runs = []            # (index, level, dungeon, quest ids)
+    for i, line in enumerate(shared_steps):
+        m = STEP_RE.match(line)
+        if m and m.group(1) == 'T':
+            turned_at.setdefault(int(m.group(2)), i)
+        if line.startswith('[D '):
+            dm = re.match(r'\[D ([^|]+?) \|.*?quests=([\d,]+)', line)
+            xm = STEP_XL_RE.search(line)
+            if dm:
+                runs.append((i, float(xm.group(1)) if xm else 0.0, dm.group(1),
+                             [int(x) for x in dm.group(2).split(',')]))
+    turned = starter_turned | set(turned_at)
+
+    # 1. coverage
+    for qid, q in sorted(dungeon_scope().items(), key=lambda kv: (kv[1].level, kv[0])):
+        if qid in turned or qid in CORR_DUNGEON_EXEMPT:
+            continue
+        if any(e in turned for e in q.exclusive):
+            continue    # took the other quest of an either/or pair
+        why = []
+        missing_pre = [p for p in q.preAll if p not in turned]
+        if q.preAny and not any(p in turned for p in q.preAny):
+            missing_pre += q.preAny
+        if missing_pre:
+            why.append('prerequisite not on the route: ' + ','.join(map(str, missing_pre)))
+        if q.elite:
+            why.append('elite')
+        if sim is not None:
+            if qid in sim.banned:
+                why.append('dropped: carried without being finished')
+            elif qid in sim.slow:
+                why.append('skipped as not worth the time')
+            if q.danger and q.danger >= DANGER_FLOOR:
+                why.append(f'area danger {q.danger}')
+        problems.append((qid, f'{q.dungeon}: quest {qid} {q.name} (level {q.level}) is never done'
+                        + (f" ({'; '.join(why)})" if why else '')))
+
+    # 2. one trip per dungeon, with everything available picked up first
+    def available(q, idx, level):
+        if level < q.minLevel or level < q.level - 2 or q.level > level + 5:
+            return False
+        done = lambda p: p in starter_turned or turned_at.get(p, len(shared_steps)) < idx
+        if any(not done(p) for p in q.preAll):
+            return False
+        if q.preAny and not any(done(p) for p in q.preAny):
+            return False
+        return True
+
+    by_dungeon = collections.defaultdict(list)
+    for run in runs:
+        by_dungeon[run[2]].append(run)
+    for dname, rs in by_dungeon.items():
+        for k in range(1, len(rs)):
+            idx, level, _, qids = rs[k]
+            for qid in qids:
+                if qid in CORR_DUNGEON_EXEMPT or qid not in QUESTS:
+                    continue
+                q = QUESTS[qid]
+                for pidx, plevel, _, _ in rs[:k]:
+                    if available(q, pidx, plevel):
+                        problems.append((qid,
+                            f'{dname}: run {k + 1} (level {level:.1f}) carries quest {qid} {q.name}, '
+                            f'which was available at the run at level {plevel:.1f}'))
+                        break
+    return problems
+
+
 def main():
     os.makedirs(OUTDIR, exist_ok=True)
     out_files = []
@@ -1659,6 +1860,23 @@ def main():
         print('  ', g['title'], g['b'] - g['a'], 'steps')
     json.dump({'files': [f[0] for f in out_files], 'titles': [f[1] for f in out_files]},
               open(os.path.join(SP, 'out', f'{FACTION}_index.json'), 'w'))
+
+    starter_steps = [f[2] for f in out_files if f[5]]
+    shared_steps = [line for f in out_files if not f[5] for line in f[2]]
+    runs = sum(1 for line in shared_steps if line.startswith('[D '))
+    found = audit_dungeons(starter_steps, shared_steps, sim)
+    new = [msg for qid, msg in found if qid not in CORR_DUNGEON_BACKLOG]
+    fixed = sorted(set(CORR_DUNGEON_BACKLOG) - {qid for qid, _ in found})
+    print(f'dungeon rule: {len(dungeon_scope())} dungeon quests in scope, {runs} runs, '
+          f'{len(CORR_DUNGEON_EXEMPT)} exempt, backlog {len(CORR_DUNGEON_BACKLOG) - len(fixed)}, '
+          f'{len(new)} violation(s)')
+    for msg in new:
+        print('  DUNGEON', msg)
+    for qid in fixed:
+        print(f'  dungeon backlog: {qid} is fixed, remove it from corrections.json dungeon_backlog.{FACTION}')
+    if new:
+        print('dungeon rule FAILED: fix the simulator or add the quest to dungeon_exempt with the reason')
+        sys.exit(1)
 
 
 if __name__ == '__main__':

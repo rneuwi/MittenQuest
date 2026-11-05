@@ -23,6 +23,8 @@ Steps.lua
 Pace.lua
 Navigation.lua
 QuestPins.lua
+RouteCheck.lua
+AutoQuest.lua
 Arrow.lua
 Frame.lua
 
@@ -45,7 +47,6 @@ Guides\Horde\Horde_07.lua
 Guides\Horde\Horde_08.lua
 Guides\Horde\Horde_09.lua
 Guides\Horde\Horde_10.lua
-Guides\Horde\Horde_11.lua
 Guides\Alliance\Start_Dwarf.lua
 Guides\Alliance\Start_Human.lua
 Guides\Alliance\Start_NightElf.lua
@@ -58,3 +59,4 @@ Guides\Alliance\Alliance_05.lua
 Guides\Alliance\Alliance_06.lua
 Guides\Alliance\Alliance_07.lua
 Guides\Alliance\Alliance_08.lua
+Guides\Alliance\Alliance_09.lua

@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Durotar (Orc/Troll)]==], [==[
 #levels 1-13
 #faction Horde
 #race Orc, Troll
-#next Horde 12-16 The Barrens, Thunder Bluff, Orgrimmar
+#next Horde 12-16 The Barrens, Orgrimmar, Thunder Bluff
 
 [A 4641 Your Place In The World | at=43.3,68.5,1411; opt; xl=1.0]
 [A 788 Cutting Teeth | at=42.1,68.3,1411; xl=1.0]
@@ -66,7 +66,7 @@ Mai'ah is right here: pick up your new Mage spells.
 [A 5441 Lazy Peons | at=44.6,68.7,1411; xl=3.5]
 [A 2161 A Peon's Burden | at=52.1,68.3,1411; xl=3.5]
 [A 96821 Legging It | at=56.0,73.9,1411; xl=3.5]
-[C 96821 Legging It | at=52.6,61.6,1411; mob=Ridgeshade Creeper / Ridgeshade Lurker; xl=3.5]
+[C 96821 Legging It | at=52.6,61.6,1411; mob=Ridgeshade Creeper / Ridgeshade Lurker; ml=6; xl=3.5]
 [A 830 The Admiral's Orders | at=59.3,57.6,1411; xl=3.5]
 Starts from Aged Envelope, which drops in this area.
 [T 96821 Legging It | at=52.0,43.5,1411; xl=3.5]
@@ -105,7 +105,7 @@ Grunt Kor'ja has only one spawn point. If others are waiting for it, group up to
 [T 5648 Garments of Spirituality | at=54.3,42.9,1411; class=PRIEST; race=Troll; xl=5.3]
 [A 5649 In Favor of Spirituality | at=42.4,68.8,1411; opt; class=PRIEST; race=Troll; xl=5.3]
 [T 5649 In Favor of Spirituality | at=54.3,42.9,1411; opt; class=PRIEST; race=Troll; xl=5.3]
-[C 792 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=5.3]
+[C 792 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; ml=4; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=5.3]
 [C 5441 Lazy Peons | at=43.9,57.8,1411; mob=Lazy Peon; xl=5.3]
 [R Mage - Durotar | at=42.51,69.04,1411; class=MAGE; xl=5.3]
 Mai'ah is right here: pick up your new Mage spells.
@@ -127,25 +127,25 @@ Nartok is right here: pick up your new Warlock spells.
 [T 99123 Lost in the Shadows | at=55.9,74.4,1411; xl=6.0]
 [A 818 A Solvent Spirit | at=55.9,74.4,1411; xl=6.3]
 [A 97225 Forgotten Loa Idols | at=55.9,74.4,1411; xl=6.3]
-[A 808 Minshina's Skull | at=56.0,74.7,1411; xl=6.3]
+[A 808 Minshina's Skull | at=56.0,74.7,1411; danger=8; xl=6.3]
 [A 826 Zalazane | at=56.0,74.7,1411; xl=6.3]
 [A 823 Report to Orgnil | at=56.0,74.7,1411; xl=6.3]
 [A 817 Practical Prey | at=56.0,73.9,1411; xl=6.3]
-[C 818 A Solvent Spirit | at=55.2,81.8,1411; mob=Makrura Shellhide / Pygmy Surf Crawler; item=4887:4,4888:8; drop=52; xl=6.3]
+[C 818 A Solvent Spirit | at=55.2,81.8,1411; mob=Makrura Shellhide / Pygmy Surf Crawler; ml=7; item=4887:4,4888:8; drop=52; xl=6.3]
 [T 818 A Solvent Spirit | at=55.9,74.4,1411; xl=6.3]
 [C 97225 Forgotten Loa Idols | at=65.5,84.7,1411; item=277135:8; xl=6.6]
-[C 808 Minshina's Skull | at=67.4,87.8,1411; xl=6.6]
-[C 817 Practical Prey | at=61.4,91.3,1411; mob=Durotar Tiger; item=4892:4; drop=42; xl=6.6]
+[C 808 Minshina's Skull | at=67.4,87.8,1411; danger=8; xl=6.6]
+[C 817 Practical Prey | at=61.4,91.3,1411; mob=Durotar Tiger; ml=8; item=4892:4; drop=42; xl=6.6]
 [T 97225 Forgotten Loa Idols | at=56.0,74.7,1411; xl=6.6]
 [T 808 Minshina's Skull | at=56.0,74.7,1411; xl=7.0]
 [T 817 Practical Prey | at=56.0,73.9,1411; xl=7.3]
-[C 826 Zalazane | at=67.1,85.0,1411; mob=Hexed Troll / Voodoo Troll; xl=7.6]
+[C 826 Zalazane | at=67.1,85.0,1411; mob=Hexed Troll / Voodoo Troll; ml=10; xl=7.6]
 Zalazane has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 826 Zalazane | at=56.0,74.7,1411; xl=7.6]
-[C 784 Vanquish the Betrayers | at=58.2,56.8,1411; mob=Kul Tiras Sailor / Kul Tiras Marine; xl=8.0]
+[C 784 Vanquish the Betrayers | at=58.2,56.8,1411; mob=Kul Tiras Sailor / Kul Tiras Marine; ml=8; xl=8.0]
 Lieutenant Benedict has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [C 96822 For Honor | at=57.4,56.4,1411; xl=8.0]
-[C 791 Carry Your Weight | at=59.2,56.7,1411; mob=Kul Tiras Marine; item=4870:8; drop=35; xl=8.0]
+[C 791 Carry Your Weight | at=59.2,56.7,1411; mob=Kul Tiras Marine; ml=7; item=4870:8; drop=35; xl=8.0]
 [A 96876 Ukor's Lost Pack | at=51.1,56.0,1411; opt; xl=8.0]
 Starts from Ukor's Lost Pack, which drops in this area.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
@@ -169,7 +169,7 @@ Dhugru Gorelust is right here: pick up your new Warlock spells.
 [T 823 Report to Orgnil | at=52.2,43.1,1411; xl=8.2]
 [T 96822 For Honor | at=54.0,42.6,1411; xl=8.4]
 [T 791 Carry Your Weight | at=49.9,40.4,1411; xl=8.5]
-[C 837 Encroachment | at=43.2,39.4,1411; mob=Razormane Quilboar / Razormane Scout; xl=8.8]
+[C 837 Encroachment | at=43.2,39.4,1411; mob=Razormane Quilboar / Razormane Scout; ml=10; xl=8.8]
 [T 837 Encroachment | at=52.0,43.5,1411; xl=8.8]
 [C 825 From The Wreckage.... | at=63.3,57.3,1411; item=4863:3; xl=9.0]
 [T 96876 Ukor's Lost Pack | at=52.1,68.3,1411; opt; xl=9.0]
@@ -269,21 +269,21 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=10.2]
 Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[C 816 Lost But Not Forgotten | at=34.3,52.7,1411; mob=Corrupted Dreadmaw Crocolisk; xl=10.2]
+[C 816 Lost But Not Forgotten | at=34.3,52.7,1411; mob=Corrupted Dreadmaw Crocolisk; ml=12; xl=10.2]
 Corrupted Dreadmaw Crocolisk has only 2 spawn points. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 816 Lost But Not Forgotten | at=43.1,30.2,1411; xl=10.2]
 [A 835 Securing the Lines | at=46.4,22.9,1411; pre=834; xl=10.4]
 [A 97281 A Simmering Storm | at=52.0,21.4,1411; xl=10.4]
 Starts from Dull Storm Orb, which drops in this area.
-[C 835 Securing the Lines | at=53.3,21.6,1411; mob=Dustwind Savage / Dustwind Storm Witch; xl=10.4]
+[C 835 Securing the Lines | at=53.3,21.6,1411; mob=Dustwind Savage / Dustwind Storm Witch; ml=11; xl=10.4]
 [T 835 Securing the Lines | at=46.4,22.9,1411; xl=10.4]
 [T 97281 A Simmering Storm | at=46.4,22.9,1411; xl=10.7]
 [A 97282 Stormy Potential | at=46.4,22.9,1411; pre=97281; xl=10.8]
-[C 97282 Stormy Potential | at=39.1,29.3,1411; mob=Thunder Lizard; item=277665:5; xl=10.8]
+[C 97282 Stormy Potential | at=39.1,29.3,1411; mob=Thunder Lizard; ml=10; item=277665:5; xl=10.8]
 [T 97282 Stormy Potential | at=46.4,22.9,1411; xl=10.8]
-[C 99051 Threat from Below | at=58.8,26.3,1411; mob=Spitelash Scout; item=286008:9; xl=11.0]
+[C 99051 Threat from Below | at=58.8,26.3,1411; mob=Spitelash Scout; ml=10; item=286008:9; xl=11.0]
 [T 99051 Threat from Below | at=52.2,43.1,1411; xl=11.0]
-[C 5726 Hidden Enemies | at=53.1,9.4,1411; mob=Burning Blade Apprentice; xl=11.1]
+[C 5726 Hidden Enemies | at=53.1,9.4,1411; mob=Burning Blade Apprentice; ml=11; xl=11.1]
 [A 832 Burning Shadows | at=52.6,8.8,1411; xl=11.1]
 Starts from Eye of Burning Shadow, which drops in this area.
 [G 56.8,33.0 1454 Travel to Orgrimmar | xl=11.1]

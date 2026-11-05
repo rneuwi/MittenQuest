@@ -2,7 +2,8 @@
     MittenQuest - Navigation.lua
     Decides WHERE the player should head next; Arrow.lua draws it.
 
-    Target priority for the current step:
+    Which step: the current one, or a nearer upcoming step you can do right now (see
+    "Nearest step first"). Target priority for that step:
       1. Guide-authored path points   via=x,y,map>x,y,map  (walked in order)
       2. The step's own coordinates   at=... / [G ...]
       3. Quest giver from QuestDB     (accept steps)
@@ -138,6 +139,151 @@ local function ClientQuestPoint(questID)
 end
 
 ---------------------------------------------------------------------------
+-- Nearest step first
+---------------------------------------------------------------------------
+-- The guide's order is the plan, but in a quest hub several upcoming steps can be done
+-- right now (three pickups, a turn-in, objectives you're standing in). The arrow points at
+-- the nearest of those instead of walking you past one to reach the next in the list.
+-- The window ends at anything that moves you on (travel, flights, hearth, training,
+-- grinding, dungeons, notes), so the arrow never jumps ahead of a planned trip.
+local LOOKAHEAD = 8        -- undone steps after the current one that may compete with it
+local NEARBY_YARDS = 500   -- an upcoming step only competes when it's this close
+local SWITCH_MARGIN = 0.8  -- a new pick must be this much closer than the kept one (no flicker)
+local BARRIER = {
+    GOTO = true, FLY = true, HEARTH = true, SETHEARTH = true, TRAIN = true,
+    LEVEL = true, DUNGEON = true, TEXT = true,
+}
+local VERB = { ACCEPT = "Accept: ", COMPLETE = "Do: ", TURNIN = "Turn in: ", GETFP = "Flight path: " }
+
+local function InLog(q) return q and C_QuestLog.GetLogIndexForQuestID(q) ~= nil end
+
+local function ReadyToTurnIn(q)
+    if C_QuestLog.ReadyForTurnIn and C_QuestLog.ReadyForTurnIn(q) then return true end
+    return C_QuestLog.IsComplete(q) == true
+end
+
+-- Static destination for a step (coordinates, quest giver, known turn-in), or nil.
+local function StepDestination(step)
+    local final
+    if step.coords and step.coords.mapID then
+        final = { mapID = step.coords.mapID, x = step.coords.x, y = step.coords.y }
+    elseif step.type == "ACCEPT" and step.questID then
+        local q = ns.QuestPins:GetQuestEntry(step.questID)
+        if q and q.map and q.x then final = { mapID = q.map, x = q.x, y = q.y, placeholder = q.placeholder } end
+    elseif step.type == "TURNIN" and step.questID then
+        local t = FG.db.global.learnedTurnins[step.questID]
+        local q = ns.QuestDB and ns.QuestDB[step.questID]
+        if t then final = { mapID = t.map, x = t.x, y = t.y }
+        elseif q and q.turnin then final = { mapID = q.turnin[1], x = q.turnin[2], y = q.turnin[3] } end
+    end
+    if final then final.label = step.text end
+    return final
+end
+
+-- Can this upcoming step be done right now, out of guide order?
+local function DoableNow(step)
+    local t, q = step.type, step.questID
+    if ns.Steps:TooDangerous(step) then return false end
+    if t == "ACCEPT" then
+        if not q or InLog(q) then return false end
+        if ns.Steps:MissingPrereqs(step) then return false end
+        return not step.minLevel or ns.PlayerLevel() >= step.minLevel
+    elseif t == "COMPLETE" then
+        return InLog(q) and not ReadyToTurnIn(q)
+    elseif t == "TURNIN" then
+        return InLog(q) and ReadyToTurnIn(q)
+    elseif t == "GETFP" then
+        return true
+    end
+    return false
+end
+
+-- Where a step sends you right now: its static destination, else the client's quest point.
+local function StepPoint(step)
+    local p = StepDestination(step)
+    if not p and step.questID and (step.type == "COMPLETE" or step.type == "TURNIN") then
+        p = ClientQuestPoint(step.questID)
+        if p and not p.label then p.label = step.text end
+    end
+    return p
+end
+
+-- Index of `step` in the active guide (it's normally the cursor step).
+local function StepIndex(step)
+    local steps, p = FG:GetActiveSteps()
+    if not steps then return nil end
+    if p and steps[p.index] == step then return p.index end
+    for i, s in ipairs(steps) do
+        if s == step then return i end
+    end
+end
+
+-- Candidates: the current step, plus undone upcoming steps doable now, up to a barrier.
+function Nav:Candidates()
+    local cur = self.step
+    local list = { { step = cur, index = self.index } }
+    if not FG.db.profile.nearestFirst or not self.index or BARRIER[cur.type] then return list end
+    local steps, p = FG:GetActiveSteps()
+    if not steps or not p then return list end
+    local done, seen = p.done or {}, 0
+    for i = self.index + 1, #steps do
+        local s = steps[i]
+        if not done[i] then
+            if BARRIER[s.type] then break end
+            seen = seen + 1
+            if seen > LOOKAHEAD then break end
+            if DoableNow(s) then list[#list + 1] = { step = s, index = i } end
+        end
+    end
+    return list
+end
+
+-- Choose the step the arrow follows: the nearest candidate, sticky within SWITCH_MARGIN.
+function Nav:Pick()
+    local best, bestDist, keptDist
+    for _, c in ipairs(self:Candidates()) do
+        local pt = StepPoint(c.step)
+        local d = pt and self:DistanceTo(pt)
+        local isCur = c.step == self.step
+        if d and (isCur or d <= NEARBY_YARDS) then
+            if c.step == self.pickStep then keptDist = d end
+            if not bestDist or d < bestDist then best, bestDist = c.step, d end
+        end
+    end
+    if not best then return self.step end   -- nothing measurable: follow the guide order
+    if keptDist and self.pickStep and best ~= self.pickStep and bestDist > keptDist * SWITCH_MARGIN then
+        return self.pickStep
+    end
+    return best
+end
+
+-- Follow `step`: its destination, authored path points, cave and map waypoint.
+function Nav:Follow(step)
+    if self.pickStep == step then return end
+    self.pickStep = step
+    if self.tomtomUID and TomTom and TomTom.RemoveWaypoint then TomTom:RemoveWaypoint(self.tomtomUID) end
+    self.tomtomUID = nil
+    if C_Map.HasUserWaypoint() then C_Map.ClearUserWaypoint() end
+
+    local final = StepDestination(step)
+    if final and step ~= self.step then
+        final.label = (VERB[step.type] or "") .. (step.text or "")
+        final.nearby = true
+    end
+    if final and FG.db.profile.autoWaypoint then self:SetMapWaypoint(final, final.label) end
+    self.final = final
+
+    -- Guide-authored path points, walked in order.
+    self.legs = {}
+    for _, v in ipairs(step.via or {}) do
+        self.legs[#self.legs + 1] = { mapID = v.mapID, x = v.x, y = v.y, label = "Path: " .. (step.text or "") }
+    end
+    self.forcedCave = step.cave and FindCaveByName(step.cave)
+    self.questPoint = nil
+    self.lastQuestCheck = 0
+end
+
+---------------------------------------------------------------------------
 -- Step -> target
 ---------------------------------------------------------------------------
 function Nav:Clear()
@@ -147,7 +293,7 @@ function Nav:Clear()
     self.tomtomUID = nil
     if C_Map.HasUserWaypoint() then C_Map.ClearUserWaypoint() end
     if self.ticker then FG:CancelTimer(self.ticker); self.ticker = nil end
-    self.step, self.final, self.legs, self.active = nil, nil, nil, nil
+    self.step, self.index, self.pickStep, self.final, self.legs, self.active = nil, nil, nil, nil, nil, nil
 end
 
 -- Map pin for the final destination (the arrow handles the intermediate points).
@@ -168,43 +314,33 @@ function Nav:SetFromStep(step)
     self:Clear()
     if not step then return end
     self.step = step
-
-    -- Static destination for this step, if any.
-    local final
-    if step.coords and step.coords.mapID then
-        final = { mapID = step.coords.mapID, x = step.coords.x, y = step.coords.y }
-    elseif step.type == "ACCEPT" and step.questID then
-        local q = ns.QuestPins:GetQuestEntry(step.questID)
-        if q and q.map and q.x then final = { mapID = q.map, x = q.x, y = q.y, placeholder = q.placeholder } end
-    elseif step.type == "TURNIN" and step.questID then
-        local t = FG.db.global.learnedTurnins[step.questID]
-        local q = ns.QuestDB and ns.QuestDB[step.questID]
-        if t then final = { mapID = t.map, x = t.x, y = t.y }
-        elseif q and q.turnin then final = { mapID = q.turnin[1], x = q.turnin[2], y = q.turnin[3] } end
-    end
-    if final then
-        final.label = step.text
-        if FG.db.profile.autoWaypoint then self:SetMapWaypoint(final, step.text) end
-    end
-    self.final = final
-
-    -- Guide-authored path points, walked in order.
-    self.legs = {}
-    for _, v in ipairs(step.via or {}) do
-        self.legs[#self.legs + 1] = { mapID = v.mapID, x = v.x, y = v.y, label = "Path: " .. (step.text or "") }
-    end
-
-    self.forcedCave = step.cave and FindCaveByName(step.cave)
-    self.lastQuestCheck = 0
+    self.index = StepIndex(step)
+    self:Follow(step)
+    self.lastPick = 0
     self.ticker = FG:ScheduleRepeatingTimer(function() self:Update() end, TICK)
     self:Update()
 end
 
 -- Recomputes self.active = { point, kind } each tick.
 function Nav:Update()
-    local step = self.step
-    if not step then self.active = nil return end
+    local cur = self.step
+    if not cur then self.active = nil return end
     local reach = FG.db.profile.arrivalYards
+
+    -- Re-pick the nearest doable step about once a second (quest state, position).
+    local now = GetTime()
+    if now - (self.lastPick or 0) >= QUEST_RECHECK then
+        self.lastPick = now
+        local ok, picked = pcall(self.Pick, self)
+        if ok then
+            self:Follow(picked or cur)
+        else
+            FG:Print(("|cffff5555Navigation@Pick failed:|r %s (step=%s line=%s index=%s)"):format(
+                tostring(picked), tostring(cur.type), tostring(cur.line), tostring(self.index)))
+            self:Follow(cur)
+        end
+    end
+    local step = self.pickStep or cur
 
     -- 1. Authored path points: drop the ones we've reached.
     while self.legs[1] do
@@ -218,14 +354,15 @@ function Nav:Update()
 
     -- 4. Client quest routing for objectives / turn-ins without coordinates.
     if not point and step.questID and (step.type == "COMPLETE" or step.type == "TURNIN") then
-        local now = GetTime()
         if now - self.lastQuestCheck >= QUEST_RECHECK then
             self.lastQuestCheck = now
             self.questPoint = ClientQuestPoint(step.questID)
         end
         if self.questPoint then
             point, kind = self.questPoint, "quest"
-            if not self.questPoint.label then self.questPoint.label = step.text end
+            if not self.questPoint.label then
+                self.questPoint.label = (step ~= cur and VERB[step.type] or "") .. (step.text or "")
+            end
         end
     end
 
@@ -235,10 +372,10 @@ function Nav:Update()
         if cave then point, kind = resolved, "entrance" end
     end
 
-    self.active = point and { point = point, kind = kind } or nil
+    self.active = point and { point = point, kind = kind, nearby = step ~= cur, step = step } or nil
 
     -- GOTO completes on arrival at the real destination.
-    if step.type == "GOTO" and kind == "target" then
+    if cur.type == "GOTO" and step == cur and kind == "target" then
         local d = self:DistanceTo(point)
         if d and d <= reach then FG:CompleteCurrent("GOTO") end
     end

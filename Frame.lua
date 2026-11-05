@@ -18,7 +18,7 @@ local WHY_TEXT = {
     implied = "Done because the next quest step is already done.",
     chain   = "Done because you're already further along this quest chain.",
     notinlog = "Skipped: this quest isn't in your quest log. Pick it up and this step comes back.",
-    outleveled = "Skipped automatically: this quest is grey for your level and you never started it. Click to do it anyway.",
+    outleveled = "Skipped automatically: this quest (or the mobs it has you kill) is grey for your level and you never started it. Click to do it anyway.",
     skipped = "Skipped manually. Click to un-skip.",
     none    = "Completes automatically. Click only to skip it.",
 }
@@ -292,6 +292,16 @@ function Frame:ShowSettingsMenu(owner)
         root:CreateCheckbox("Map waypoint for each step", toggle(prof, "autoWaypoint", function()
             ns.Navigation:SetFromStep(FG:GetCurrentStep())
         end))
+        root:CreateCheckbox("Arrow goes to the nearest step I can do", toggle(prof, "nearestFirst", function()
+            ns.Navigation:SetFromStep(FG:GetCurrentStep())
+        end))
+
+        root:CreateDivider()
+        root:CreateTitle("Quests (hold Shift to do it by hand)")
+        root:CreateCheckbox("Say if a quest is on my route", toggle(prof, "routeNote"))
+        root:CreateCheckbox("Auto pick up quests on my route", toggle(prof.auto, "accept"))
+        root:CreateCheckbox("Auto turn in completed quests", toggle(prof.auto, "turnin"))
+        root:CreateCheckbox("Auto accept party-shared and escort quests", toggle(prof.auto, "shared"))
 
         root:CreateDivider()
         root:CreateTitle("Quest pins")

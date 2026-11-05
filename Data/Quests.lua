@@ -3186,7 +3186,7 @@ Q[98342] = { name = "The Great Cat Spirit", level = 20, minLevel = 20, map = 145
 Q[98362] = { name = "To Thunder Bluff", level = 20, minLevel = 20, map = 1450, x = 56.2, y = 30.6, giver = "Dendrite Starblaze", faction = "Horde", race = { TAUREN = true, SKYBORNE_H = true }, class = { DRUID = true }, turnin = { 1456, 76.5, 27.2 } }
 Q[98386] = { name = "Alther's Mill", level = 21, minLevel = 15, map = 1433, x = 27.1, y = 48.6, giver = "Foreman Oslow", faction = "Alliance", pre = { 89 }, turnin = { 1433, 27.1, 48.6 } }
 Q[98387] = { name = "Blackrock Blockade", level = 21, minLevel = 18, map = 1433, x = 28.4, y = 49.0, giver = "Marshal Marris", faction = "Alliance", turnin = { 1433, 28.4, 49.0 } }
-Q[98389] = { name = "A Light in the Darkness", level = 4, minLevel = 2, map = 1420, x = 31.1, y = 66.4, giver = "Aramis Hammerhand", faction = "Horde", turnin = { 1420, 31.1, 66.4 } }
+Q[98389] = { name = "A Light in the Darkness", level = 4, minLevel = 2, map = 1420, x = 31.1, y = 66.4, giver = "Aramis Hammerhand", faction = "Horde", pre = { 376 }, turnin = { 1420, 31.1, 66.4 } }
 Q[98391] = { name = "The Sisterhood of Elune", level = 10, minLevel = 5, map = 1438, x = 55.6, y = 56.8, giver = "Laurna Morninglight", faction = "Alliance", turnin = { 1457, 28.9, 45.8 } }
 Q[98392] = { name = "Darkness in the Glade", level = 12, minLevel = 6, map = 1438, x = 38.3, y = 34.4, giver = "Sentinel Arynia Cloudsbreak", faction = "Alliance", pre = { 937 }, turnin = { 1438, 38.3, 34.4 } }
 Q[98393] = { name = "The Great Cat Spirit", level = 20, minLevel = 20, map = 1457, x = 35.4, y = 8.4, giver = "Mathrengyl Bearwalker", faction = "Alliance", race = { NIGHTELF = true, SKYBORNE_A = true }, class = { DRUID = true }, turnin = { 1450, 56.2, 30.6 } }

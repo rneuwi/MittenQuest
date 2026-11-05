@@ -81,6 +81,10 @@ function Arrow:Create()
         GameTooltip:AddLine(p.label or "Next location", 1, 0.82, 0)
         GameTooltip:AddLine(("%.1f, %.1f"):format(p.x, p.y), 1, 1, 1)
         if a.kind == "entrance" then GameTooltip:AddLine("Heading to the entrance first", 0.8, 0.8, 0.8) end
+        if a.nearby then
+            local cur = ns.Navigation.step
+            GameTooltip:AddLine("Nearer than the current step" .. (cur and cur.text and (": " .. cur.text) or ""), 0.8, 0.8, 0.8, true)
+        end
         if p.routed then GameTooltip:AddLine("Route from the game's quest navigation", 0.6, 0.6, 0.6) end
         if p.placeholder then GameTooltip:AddLine("Location not verified yet", 0.6, 0.6, 0.6) end
         GameTooltip:AddLine("Drag to move. Turn off in the guide's gear menu.", 0.5, 0.5, 0.5)

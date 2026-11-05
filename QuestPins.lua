@@ -222,7 +222,10 @@ local function Pin_OnEnter(self)
     GameTooltip:AddLine(lvl, 1, 1, 1)
     if d.entry.giver then GameTooltip:AddLine("Giver: " .. d.entry.giver, 0.8, 0.8, 0.8) end
     if d.entry.dungeon then GameTooltip:AddLine("Dungeon quest: " .. d.entry.dungeon, 1, 0.44, 0.26) end
-    if d.routeStep then
+    local routeText = ns.RouteCheck and ns.RouteCheck:Describe(d.id)
+    if routeText then
+        GameTooltip:AddLine(routeText, 1, 1, 1, true)
+    elseif d.routeStep then
         GameTooltip:AddLine(("On your route (step %d)"):format(d.routeStep), 0.4, 1, 0.4)
     else
         GameTooltip:AddLine("Side quest (not in current guide)", 0.6, 0.6, 0.6)

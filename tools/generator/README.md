@@ -110,6 +110,48 @@ Brotherhood chain into The Deadmines), are a priority:
 - runs happen on the dungeon's continent (unless the quests are long overdue) and move the
   player to the entrance.
 
+#### The dungeon rule (enforced)
+
+Every generated route must put dungeons first. After building a faction, `gen_route.py`
+audits the finished guides (`audit_dungeons`) and exits with code 1 on any violation, which
+stops `build.sh` and the weekly workflow:
+1. **Coverage:** every dungeon quest the whole faction can take (giver and turn-in known,
+   level 58 or lower, outside the other faction's zones) is turned in somewhere on the
+   route, starters included. Either/or quests count once.
+2. **One trip per dungeon, quests first:** a second run of a dungeon may only carry quests
+   that weren't available at the earlier run (level too low, or prerequisites not done yet).
+
+The build prints `dungeon rule: N dungeon quests in scope, N runs, N exempt, backlog N,
+N violation(s)`. To clear a violation, fix the simulator. If a quest really can't be done
+(started by an item that drops inside the dungeon, removed in game), add it to
+`dungeon_exempt` in `corrections.json` with that reason.
+
+`dungeon_backlog` in `corrections.json` lists, per faction, the gaps the routes had when the
+rule was introduced (2026-11-05). They don't fail the build, but the list only shrinks: work it
+down by fixing the simulator, and remove an entry when the build reports it as fixed. The
+simulator is chaotic, so a fix elsewhere can swap which dungeon quests get dropped. Only
+re-baseline (add the swapped-in quests, marked with the date and cause) when the total per
+faction goes down, and say so in the commit.
+
+A dungeon run also waits while a quest in the log leads, through its chain, to another quest
+for the same dungeon that isn't picked up yet (`dungeon_chain_active`; the Defias
+Brotherhood into The Deadmines), up to five levels past the easiest quest carried.
+
+### Danger and grey mobs
+
+- **Area danger** (`area_danger`): the median level of the hostile normal mob types within
+  `DANGER_RADIUS` map units of a quest's pickup, objective area and turn-in. A quest isn't
+  taken until you're within `DANGER_MARGIN` levels of it (not counted below `DANGER_FLOOR`,
+  since starting areas mix level 1 quests with level 5 mobs). Without it, talk-only quests,
+  which have no objective level, sent level 13 characters into Fenris Keep's level 16-19 Rot
+  Hides for the Talking Head.
+- **Grey mobs:** a quest whose objective mobs are grey at your level is skipped as not
+  worth the time (dungeon work excepted).
+- Steps carry `ml=` (C steps: the highest objective mob level) and `danger=` (when the spot's
+  danger is above the route's level there). The addon uses them for players ahead of or
+  behind the route's pace: unstarted quests with grey mobs are skipped, dangerous steps get a
+  warning, and the nearest-step arrow avoids them.
+
 Each faction's shape (race starters and their zones, hand-over level and flight path,
 boat/zeppelin directions) is in `FACTION_CFG` in `gen_route.py`. Quests a starter already
 covered are never repeated in the shared route; follow-ups that depend on them are marked

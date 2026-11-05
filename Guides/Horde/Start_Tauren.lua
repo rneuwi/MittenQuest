@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Mulgore (Tauren)]==], [==[
 #levels 1-13
 #faction Horde
 #race Tauren
-#next Horde 12-16 The Barrens, Thunder Bluff, Orgrimmar
+#next Horde 12-16 The Barrens, Orgrimmar, Thunder Bluff
 
 [S Mulgore | at=45.93,64.16,1412; xl=1.0]
 Talk to Innkeeper Kauth and make this inn your home.
@@ -41,8 +41,8 @@ Meela Dawnstrider is right here: pick up your new Shaman spells.
 [C 750 The Hunt Continues | at=45.4,88.2,1412; mob=Mountain Cougar; item=4742:10; drop=68; xl=3.3]
 [T 750 The Hunt Continues | at=44.5,77.5,1412; xl=3.3]
 [A 780 The Battleboars | at=44.5,77.5,1412; pre=750; xl=3.7]
-[C 780 The Battleboars | at=52.9,81.5,1412; mob=Battleboar; item=4848:8,4849:8; drop=50; xl=3.7]
-[C 757 Rite of Strength | at=59.0,79.7,1412; mob=Bristleback Quilboar; item=4770:12; drop=68; xl=3.7]
+[C 780 The Battleboars | at=52.9,81.5,1412; mob=Battleboar; ml=4; item=4848:8,4849:8; drop=50; xl=3.7]
+[C 757 Rite of Strength | at=59.0,79.7,1412; mob=Bristleback Quilboar; ml=4; item=4770:12; drop=68; xl=3.7]
 [A 781 Attack on Camp Narache | at=59.8,82.2,1412; xl=3.7]
 Starts from Dirt-stained Map, which drops in this area.
 [T 95805 Grace of An'she and Mu'sha | at=56.6,88.7,1412; xl=3.7]
@@ -84,7 +84,7 @@ Gennia Runetotem is right here: pick up your new Druid spells.
 Narm Skychaser is right here: pick up your new Shaman spells.
 [A 761 Swoop Hunting | at=47.7,62.7,1412; xl=6.1]
 [A 746 Dwarven Digging | at=46.7,63.4,1412; xl=6.1]
-[A 743 Dangers of the Windfury | at=46.5,64.9,1412; xl=6.1]
+[A 743 Dangers of the Windfury | at=46.5,64.9,1412; danger=8; xl=6.1]
 [T 767 Rite of Vision | at=46.9,61.2,1412; xl=6.1]
 [A 766 Mazzranache | at=46.2,60.8,1412; xl=6.1]
 [A 749 The Ravaged Caravan | at=54.8,64.3,1412; xl=6.1]
@@ -93,23 +93,23 @@ Narm Skychaser is right here: pick up your new Shaman spells.
 [T 99081 Grim Tidings | at=46.7,63.8,1412; xl=6.4]
 [A 99101 Our Ancient Enemy | at=46.7,63.8,1412; pre=99081; xl=6.8]
 [T 99101 Our Ancient Enemy | at=46.7,63.4,1412; xl=6.8]
-[A 99080 Drive Them Out | at=46.7,63.4,1412; pre=99101; xl=7.1]
+[A 99080 Drive Them Out | at=46.7,63.4,1412; pre=99101; danger=8; xl=7.1]
 [A 771 Rite of Vision | at=46.9,61.2,1412; pre=767; opt; xl=7.1]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 749 The Ravaged Caravan | at=51.9,53.4,1412; xl=7.1]
 [A 751 The Ravaged Caravan | at=51.9,53.4,1412; pre=749; xl=7.3]
 [T 751 The Ravaged Caravan | at=54.8,64.3,1412; xl=7.3]
-[A 764 The Venture Co. | at=54.8,64.3,1412; pre=751; xl=7.5]
-[C 771 Rite of Vision | at=51.5,68.8,1412; mob=Razorlash; item=4808:2,4809:2; opt; xl=7.5]
+[A 764 The Venture Co. | at=54.8,64.3,1412; pre=751; danger=8; xl=7.5]
+[C 771 Rite of Vision | at=51.5,68.8,1412; mob=Razorlash; ml=48; item=4808:2,4809:2; opt; xl=7.5]
 [T 771 Rite of Vision | at=46.9,61.2,1412; opt; xl=7.5]
 [A 772 Rite of Vision | at=46.9,61.2,1412; pre=771; xl=7.7]
-[C 748 Poison Water | at=40.0,69.5,1412; mob=Prairie Wolf / Adult Plainstrider; item=4758:6,4759:4; drop=25; race=Tauren; xl=7.7]
-[C 766 Mazzranache | at=40.0,69.5,1412; mob=Prairie Wolf / Flatland Cougar; xl=7.7]
-[C 761 Swoop Hunting | at=38.7,68.6,1412; mob=Wiry Swoop; item=4769:8; drop=82; xl=7.7]
-[C 745 Sharing the Land | at=34.1,64.2,1412; mob=Palemane Tanner / Palemane Skinner; xl=7.7]
+[C 748 Poison Water | at=40.0,69.5,1412; mob=Prairie Wolf / Adult Plainstrider; ml=6; item=4758:6,4759:4; drop=25; race=Tauren; xl=7.7]
+[C 766 Mazzranache | at=40.0,69.5,1412; mob=Prairie Wolf / Flatland Cougar; ml=8; xl=7.7]
+[C 761 Swoop Hunting | at=38.7,68.6,1412; mob=Wiry Swoop; ml=7; item=4769:8; drop=82; xl=7.7]
+[C 745 Sharing the Land | at=34.1,64.2,1412; mob=Palemane Tanner / Palemane Skinner; ml=8; xl=7.7]
 [C 746 Dwarven Digging | at=33.1,54.8,1412; item=4703:5; xl=7.7]
 [T 772 Rite of Vision | at=34.3,43.3,1412; xl=7.7]
-[A 773 Rite of Wisdom | at=34.3,43.3,1412; pre=772; xl=7.9]
+[A 773 Rite of Wisdom | at=34.3,43.3,1412; pre=772; danger=9; xl=7.9]
 [T 766 Mazzranache | at=46.2,60.8,1412; xl=7.9]
 [R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=8.2]
 Yaw Sharpmane is right here: pick up your new Hunter spells.
@@ -121,17 +121,17 @@ Yaw Sharpmane is right here: pick up your new Hunter spells.
 [C 754 Winterhoof Cleansing | at=51.8,68.4,1412; race=Tauren; xl=9.0]
 [T 754 Winterhoof Cleansing | at=47.5,63.6,1412; race=Tauren; xl=9.0]
 [A 756 Thunderhorn Totem | at=47.5,63.6,1412; pre=754; race=Tauren; xl=9.2]
-[C 743 Dangers of the Windfury | at=61.2,72.4,1412; mob=Windfury Harpy; item=4751:8; drop=52; xl=9.2]
-[C 99080 Drive Them Out | at=64.0,61.6,1412; mob=Galak Centaur / Galak Outrunner; xl=9.2]
+[C 743 Dangers of the Windfury | at=61.2,72.4,1412; mob=Windfury Harpy; ml=8; item=4751:8; drop=52; xl=9.2]
+[C 99080 Drive Them Out | at=64.0,61.6,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.2]
 [A 98424 Fizsprocket's Notes | at=61.2,49.3,1412; xl=9.2]
 Starts from Mulgore Expansion Plans, which drops in this area.
-[C 764 The Venture Co. | at=59.5,46.5,1412; mob=Venture Co. Worker / Venture Co. Supervisor; xl=9.2]
+[C 764 The Venture Co. | at=59.5,46.5,1412; mob=Venture Co. Worker / Venture Co. Supervisor; ml=10; xl=9.2]
 [C 98424 Fizsprocket's Notes | at=59.0,46.4,1412; xl=9.2]
-[C 756 Thunderhorn Totem | at=50.3,46.6,1412; mob=Prairie Stalker / Flatland Cougar; item=4801:6,4802:6; drop=22; race=Tauren; xl=9.2]
+[C 756 Thunderhorn Totem | at=50.3,46.6,1412; mob=Prairie Stalker / Flatland Cougar; ml=8; item=4801:6,4802:6; drop=22; race=Tauren; xl=9.2]
 [A 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.2]
 [T 773 Rite of Wisdom | at=58.3,30.7,1412; xl=9.2]
 [A 775 Journey into Thunder Bluff | at=58.3,30.7,1412; pre=773; xl=9.5]
-[C 833 A Sacred Burial | at=58.0,30.9,1412; mob=Bristleback Interloper; xl=9.5]
+[C 833 A Sacred Burial | at=58.0,30.9,1412; mob=Bristleback Interloper; ml=10; xl=9.5]
 [T 833 A Sacred Burial | at=57.0,34.5,1412; xl=9.5]
 [T 764 The Venture Co. | at=54.8,64.3,1412; xl=9.7]
 [T 98424 Fizsprocket's Notes | at=54.8,64.3,1412; xl=9.8]
@@ -160,10 +160,10 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [C 758 Thunderhorn Cleansing | at=44.2,51.1,1412; race=Tauren; xl=10.5]
 [T 758 Thunderhorn Cleansing | at=47.5,63.6,1412; race=Tauren; xl=10.5]
 [A 759 Wildmane Totem | at=47.5,63.6,1412; pre=758; race=Tauren; xl=10.7]
-[C 759 Wildmane Totem | at=61.0,64.1,1412; mob=Prairie Wolf Alpha; race=Tauren; xl=10.7]
+[C 759 Wildmane Totem | at=61.0,64.1,1412; mob=Prairie Wolf Alpha; ml=10; race=Tauren; xl=10.7]
 [T 759 Wildmane Totem | at=47.5,63.6,1412; race=Tauren; xl=10.7]
 [A 760 Wildmane Cleansing | at=47.5,63.6,1412; pre=759; race=Tauren; xl=10.9]
-[C 861 The Hunter's Way | at=47.0,25.9,1412; mob=Flatland Prowler; item=5203:4; drop=22; xl=10.9]
+[C 861 The Hunter's Way | at=47.0,25.9,1412; mob=Flatland Prowler; ml=9; item=5203:4; drop=22; xl=10.9]
 [C 760 Wildmane Cleansing | at=42.7,25.0,1412; race=Tauren; xl=10.9]
 [R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=10.9]
 Hana Lighthoof is right here: pick up your new Druid spells.
@@ -256,7 +256,7 @@ Siln Skychaser is right here: pick up your new Shaman spells.
 [A 770 The Demon Scarred Cloak | at=34.7,34.2,1412; opt; xl=12.0]
 Starts from Demon Scarred Cloak, which drops in this area.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[C 744 Preparation for Ceremony | at=32.4,32.9,1412; mob=Windfury Sorceress / Windfury Matriarch; item=4752:6,4753:6; drop=40; xl=12.0]
+[C 744 Preparation for Ceremony | at=32.4,32.9,1412; mob=Windfury Sorceress / Windfury Matriarch; ml=11; item=4752:6,4753:6; drop=40; xl=12.0]
 [R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=12.0]
 Hana Lighthoof is right here: pick up your new Druid spells.
 [T 770 The Demon Scarred Cloak | at=46.0,63.4,1412; opt; xl=12.0]
