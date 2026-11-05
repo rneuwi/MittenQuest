@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.1.1
 
 **Guide window**
 - The step you're on ("Step 45/141") and your pace now always show in the title bar. Long
