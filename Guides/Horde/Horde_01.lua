@@ -3,7 +3,7 @@
 MittenQuest:RegisterGuide([==[Horde 12-16 The Barrens, Orgrimmar, Thunder Bluff]==], [==[
 #levels 12-16
 #faction Horde
-#next Horde 16-20 The Barrens, Undercity
+#next Horde 16-20 The Barrens, Orgrimmar, Thunder Bluff
 
 [S Crossroads | at=51.99,29.89,1413; xl=12.0]
 Talk to Innkeeper Boorand Plainswind and make this inn your home.
@@ -95,6 +95,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 Archmage Shymm is right here: pick up your new Mage spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 962 Serpentbloom | at=22.8,20.9,1456; xl=14.3]
+[A 264 Until Death Do Us Part | at=27.2,24.4,1456; xl=14.3]
 [F Orgrimmar | xl=14.3]
 [T 6384 Ride to Orgrimmar | at=54.1,68.4,1454; race=Orc,Troll; xl=14.3]
 [A 6385 Doras the Wind Rider Master | at=54.1,68.4,1454; pre=6384; race=Orc,Troll; xl=14.3]

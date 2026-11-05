@@ -2,12 +2,20 @@
 
 ## Unreleased
 
+**More dungeon quests**
+- Routes now hand in finished dungeon quests instead of carrying them for many levels. A
+  Vengeful Fate, Vorrel's Revenge, Tabetha's Task and Seed of Life used to fill the quest log
+  for 20 levels, which left no room for the next dungeon chains.
+- Quests picked up inside a dungeon whose objectives are in there too, like the Willix the
+  Importer escort in Razorfen Kraul, are now done in the same run instead of carried to 60.
+- Overall the Horde route does 19 more dungeon quests (Uldaman's necklace chain and Kargath's
+  Blackrock Depths quests among them) and the Alliance route 18 more. Horde takes about 2
+  hours longer to 60 and Alliance about 1.5 hours shorter.
+
 **Routes**
-- The Alliance route does 7 more dungeon quests, among them quests in Blackrock Depths, Dire
-  Maul, Scholomance and Zul'Farrak, and is about 2.5 hours shorter to 60.
-- The last Alliance guide is now "Alliance 54-60 Eastern Plaguelands, Western Plaguelands,
-  Searing Gorge". If you're partway through it, it starts over at the top, but steps you've
-  already done in the game are checked off automatically.
+- Every guide from level 16 (Horde) and 23 (Alliance) on was rebuilt and renamed, and Alliance
+  now has one more guide (56-60). If you're partway through one, it starts over at the top, but
+  steps you've already done in the game are checked off automatically.
 
 ## 1.1.1
 

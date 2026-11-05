@@ -139,7 +139,17 @@ at the dungeon's entrance and handled during a run of it (`inside_run`): turn-in
 pick-ups inside, repeated while that opens more (Necklace Recovery, Take 2 into Translating the
 Journal in Uldaman; the Small Scroll from Charlga Razorflank in Razorfen Kraul starting An
 Unholy Alliance). A finished quest handed in inside counts toward that dungeon's next run.
+A quest picked up inside for the same dungeon is finished in that run, like any quest the run
+does (Willix the Importer's escort in Razorfen Kraul; its objective point is a placeholder).
 The Deeprun Tram is instanced but not a group run, so the rule leaves its quests out.
+
+Finished dungeon quests whose turn-in is far away (A Vengeful Fate in Thunder Bluff, Seed of
+Life in Moonglade) used to ride in the log for 20 levels: one old quest's XP never paid for the
+trip, and errands were off while the log was nearly full, which is exactly when they're needed.
+Now hand-in errands still run with a full log (pick-up errands don't), and each finished dungeon
+quest handed in on a map adds `HANDIN_SLOT` of a level to the trip's value when the log is nearly
+full or it's been carried `HANDIN_STALE` levels. Values from 0.35 to 0.45 all did about equally
+well; 0.4 is the middle.
 
 Chain steps toward a dungeon quest that have been carried `FEEDER_ERRAND_AGE` levels get an
 errand to their objectives on another map, so they're done instead of carried until the log

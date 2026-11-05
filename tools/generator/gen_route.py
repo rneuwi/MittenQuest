@@ -229,6 +229,8 @@ FEEDER_DEPTH = 8               # chain steps leading to a dungeon quest count as
 RETRY_LATE = (0, 2, 4)         # a retried dropped chain step is taken this many levels past its own
 RETRY_SLOWER = 1.02            # a retry may cost at most 2% more /played
 FEEDER_ERRAND_AGE = 3          # carried this many levels: go do a dungeon chain step's objectives
+HANDIN_SLOT = 0.4              # handing in a finished dungeon quest frees a log slot worth this share
+HANDIN_STALE = 5               # of a level, when the log is nearly full or it's been carried this long
 ERRAND_MIN = 0.15              # leave a zone to collect dungeon quests worth this share of a level
 
 
@@ -1322,14 +1324,15 @@ class Sim:
     def dungeon_errand(self, current, allowed_maps=None):
         """Another map with dungeon quests to pick up now, before they go grey (Ragefire
         Chasm's are in the capitals while the route is out in the Barrens)."""
-        if len(self.active) >= LOG_LIMIT - 4:
-            return None
+        # With the log nearly full, only hand-ins: they free slots instead of taking them.
+        room = len(self.active) < LOG_LIMIT - 4
         per_level = XP_TO_LEVEL[min(self.L, 59) - 1]
         # A dungeon's quests are often spread over several towns (one per capital), so a
         # trip is valued by the whole dungeon's bundle, not just this map's share.
         bundles = collections.defaultdict(list)    # dungeon -> [(map, quest, dungeon quests it unlocks)]
+        handins = collections.Counter()    # map -> finished dungeon quests worth a trip to free the log
         for m in (allowed_maps or self.map_quests):
-            if m == current:
+            if m == current or not room:
                 continue
             for q in self.map_quests.get(m, ()):
                 # Chain steps toward a dungeon quest (the Defias Brotherhood chain) count too,
@@ -1351,7 +1354,7 @@ class Sim:
         # they save.)
         for qid, st in self.active.items():
             q = QUESTS[qid]
-            if st['complete'] or q.dungeon or qid not in DUNGEON_FEEDERS or not q.target:
+            if st['complete'] or q.dungeon or qid not in DUNGEON_FEEDERS or not q.target or not room:
                 continue
             if q.target[0] == current or not dungeon_priority(q) or not self.can_do_objectives(q) \
                     or self.L - st['acceptL'] < FEEDER_ERRAND_AGE:
@@ -1371,6 +1374,8 @@ class Sim:
                 continue
             if q.dungeon:
                 bundles[q.dungeon].append((q.finish[0], q, set()))
+                if not room or self.L - st['acceptL'] >= HANDIN_STALE:
+                    handins[q.finish[0]] += 1
             for t in DUNGEON_FEEDERS.get(qid, ()):
                 if not self.has(t) and t not in self.active and t not in self.banned:
                     bundles[QUESTS[t].dungeon].append((q.finish[0], q, {t}))
@@ -1379,7 +1384,7 @@ class Sim:
             gained = {q.id for _, q, _ in picks} | {t for _, _, ts in picks for t in ts}
             bundle_xp = sum(QUESTS[t].xp for t in gained) * DUNGEON_WEIGHT
             for m in {m for m, _, _ in picks}:
-                value = bundle_xp - self.travel_cost(m)
+                value = bundle_xp - self.travel_cost(m) + handins[m] * per_level * HANDIN_SLOT
                 if value > best_value:
                     best, best_value = m, value
         return best
@@ -1468,8 +1473,10 @@ class Sim:
                     continue
                 self.accept(q)
                 self.emit(q.insideStartNote)
-                if q.hasObjectives and not q.target and q.dungeon == dname:
-                    self.active[q.id]['complete'] = True    # its objectives are in here too
+                if q.hasObjectives and q.dungeon == dname:
+                    # Its objectives are in here too, like any quest a run finishes (Willix the
+                    # Importer's escort; its objective point is a placeholder inside).
+                    self.active[q.id]['complete'] = True
                 changed = True
             if not changed:
                 break
