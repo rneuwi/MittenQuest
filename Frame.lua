@@ -56,11 +56,32 @@ function Frame:Create(cfg)
     titleBg:SetAllPoints()
     titleBg:SetColorTexture(0, 0, 0, 0.6)
 
+    -- "Step 12/141" (and the pace tag) sit right-aligned before the buttons so they're always
+    -- visible; the guide name gets the rest of the bar and is cut with "..." when too long.
+    self.stepText = title:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    self.stepText:SetPoint("RIGHT", -44, 0)
+    self.stepText:SetJustifyH("RIGHT")
+    self.stepText:SetWordWrap(false)
+
     self.titleText = title:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     self.titleText:SetPoint("LEFT", PAD, 0)
-    self.titleText:SetPoint("RIGHT", -44, 0)
+    self.titleText:SetPoint("RIGHT", self.stepText, "LEFT", -6, 0)
     self.titleText:SetJustifyH("LEFT")
     self.titleText:SetWordWrap(false)
+
+    -- Full guide name on hover (the bar cuts long ones).
+    title:SetScript("OnEnter", function()
+        local name = FG.db.char.activeGuide
+        if not name then return end
+        GameTooltip:SetOwner(title, "ANCHOR_TOP")
+        GameTooltip:AddLine(name, 1, 0.82, 0, true)
+        local steps, p = FG:GetActiveSteps()
+        if steps and p then
+            GameTooltip:AddLine(("Step %d of %d"):format(math.min(p.index, #steps), #steps), 1, 1, 1)
+        end
+        GameTooltip:Show()
+    end)
+    title:SetScript("OnLeave", GameTooltip_Hide)
 
     local close = CreateFrame("Button", nil, title, "UIPanelCloseButtonNoScripts")
     close:SetSize(20, 20)
@@ -332,6 +353,7 @@ function Frame:Update()
 
     if not steps or #steps == 0 then
         self.titleText:SetText("MittenQuest - no guide loaded")
+        self.stepText:SetText("")
         for _, row in ipairs(self.rows) do row:Hide() end
         self.shownRows = 0
         self:UpdateButtons()
@@ -341,8 +363,8 @@ function Frame:Update()
 
     local total = #steps
     local paceTag = ns.Pace:Tag()
-    self.titleText:SetText(("%s  |cff999999%d/%d|r%s"):format(FG.db.char.activeGuide, math.min(p.index, total), total,
-        paceTag and ("  " .. paceTag) or ""))
+    self.titleText:SetText(FG.db.char.activeGuide)
+    self.stepText:SetText(("%sStep %d/%d"):format(paceTag and (paceTag .. "  ") or "", math.min(p.index, total), total))
 
     -- Show the previous step (faded) for context, then current + upcoming.
     local first = math.max(1, p.index - 1)

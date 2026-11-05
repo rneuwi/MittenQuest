@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Alliance 32-37 Ironforge, Duskwood, Desolace]==], 
 #levels 32-37
 #faction Alliance
 #knownfp Astranaar, Auberdine, Darkshire, Ironforge, Lakeshire, Menethil Harbor, Sentinel Hill, Stonetalon Peak, Stormwind, Thelsamar
-#next Alliance 37-41 Ironforge, Alterac Mountains, Wetlands
+#next Alliance 37-41 Stormwind City, Ironforge, Badlands
 
 [T 2922 Save Techbot's Brain! | at=69.5,50.3,1455; xl=32.2]
 [A 2929 The Grand Betrayal | at=68.8,49.0,1455; xl=32.3]
@@ -168,58 +168,45 @@ Find a group for City of Dalaran. Quests you skip there are dropped automaticall
 [A 718 Mirages | at=53.8,43.3,1418; xl=37.0]
 [C 719 A Dwarf and His Tools | at=53.3,32.7,1418; mob=Shadowforge Tunneler; ml=36; xl=37.0]
 [T 719 A Dwarf and His Tools | at=53.4,43.4,1418; xl=37.0]
-[C 718 Mirages | at=66.6,22,1418; xl=37.1]
-[T 718 Mirages | at=53.8,43.3,1418; xl=37.1]
-[A 710 Study of the Elements: Rock | at=25.9,44.9,1418; xl=37.1]
-[C 710 Study of the Elements: Rock | at=21.3,44.1,1418; mob=Lesser Rock Elemental; ml=39; item=4626:10; drop=19; xl=37.1]
-[T 710 Study of the Elements: Rock | at=25.9,44.9,1418; xl=37.1]
-[A 711 Study of the Elements: Rock | at=25.9,44.9,1418; pre=710; xl=37.2]
-[T 721 A Sign of Hope | at=37.9,10.6,1418; xl=37.2]
-[A 722 Amulet of Secrets | at=37.9,10.6,1418; pre=721; xl=37.3]
-[A 2198 The Shattered Necklace | at=47.4,10.8,1418; xl=37.3]
-Starts from Shattered Necklace, which drops in this area.
-[A 709 Solution to Doom | at=51.4,76.9,1418; xl=37.3]
-[C 711 Study of the Elements: Rock | at=39.0,77.8,1418; mob=Rock Elemental; ml=40; item=4627:3; drop=5; xl=37.3]
-[T 711 Study of the Elements: Rock | at=25.9,44.9,1418; xl=37.3]
-[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=37.4]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=37.1]
 Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
-[A 1948 Items of Power | at=46.1,57.1,1445; pre=1947; class=MAGE; xl=37.4]
-[C 1948 Items of Power | at=33.1,44.5,1417; item=1529:1; class=MAGE; xl=37.4]
-[T 1948 Items of Power | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[A 1951 Rituals of Power | at=78.3,75.7,1441; pre=1950; class=MAGE; xl=37.4]
-[C 1951 Rituals of Power | at=78.3,75.7,1441; class=MAGE; xl=37.4]
+[A 1948 Items of Power | at=46.1,57.1,1445; pre=1947; class=MAGE; xl=37.1]
+[C 1948 Items of Power | at=33.1,44.5,1417; item=1529:1; class=MAGE; xl=37.1]
+[T 1948 Items of Power | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[A 1951 Rituals of Power | at=78.3,75.7,1441; pre=1950; class=MAGE; xl=37.1]
+[C 1951 Rituals of Power | at=78.3,75.7,1441; class=MAGE; xl=37.1]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1951 Rituals of Power | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[A 1952 Mage's Wand | at=46.1,57.1,1445; pre=1948,1951; class=MAGE; xl=37.4]
-[T 1952 Mage's Wand | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[A 1953 Return to the Marsh | at=27.2,8.3,1455; opt; class=MAGE; xl=37.4]
-[T 1953 Return to the Marsh | at=46.1,57.1,1445; opt; class=MAGE; xl=37.4]
-[A 1954 The Infernal Orb | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[C 1954 The Infernal Orb | at=80.5,77.8,1443; mob=Burning Blade Summoner; class=MAGE; xl=37.4]
-[T 1954 The Infernal Orb | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[A 1955 The Exorcism | at=46.1,57.1,1445; pre=1954; opt; class=MAGE; xl=37.4]
+[T 1951 Rituals of Power | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[A 1952 Mage's Wand | at=46.1,57.1,1445; pre=1948,1951; class=MAGE; xl=37.1]
+[T 1952 Mage's Wand | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[A 1953 Return to the Marsh | at=27.2,8.3,1455; opt; class=MAGE; xl=37.1]
+[T 1953 Return to the Marsh | at=46.1,57.1,1445; opt; class=MAGE; xl=37.1]
+[A 1954 The Infernal Orb | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[C 1954 The Infernal Orb | at=80.5,77.8,1443; mob=Burning Blade Summoner; class=MAGE; xl=37.1]
+[T 1954 The Infernal Orb | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[A 1955 The Exorcism | at=46.1,57.1,1445; pre=1954; opt; class=MAGE; xl=37.1]
 Group quest (elite enemies) - optional; skipped if you don't take it.
-[C 1955 The Exorcism | at=45.8,57.0,1445; mob=Demon of the Orb; opt; class=MAGE; xl=37.4]
+[C 1955 The Exorcism | at=45.8,57.0,1445; mob=Demon of the Orb; opt; class=MAGE; xl=37.1]
 Demon of the Orb has only one spawn point. If others are waiting for it, group up to share it.
-[T 1955 The Exorcism | at=46.1,57.1,1445; opt; class=MAGE; xl=37.4]
-[A 1956 Power in Uldaman | at=46.1,57.1,1445; pre=1955; opt; class=MAGE; xl=37.4]
+[T 1955 The Exorcism | at=46.1,57.1,1445; opt; class=MAGE; xl=37.1]
+[A 1956 Power in Uldaman | at=46.1,57.1,1445; pre=1955; opt; class=MAGE; xl=37.1]
 Group quest (elite enemies) - optional; skipped if you don't take it.
-[C 1956 Power in Uldaman | at=46.1,57.1,1445; mob=Obsidian Sentinel; opt; class=MAGE; xl=37.4]
+[C 1956 Power in Uldaman | at=46.1,57.1,1445; mob=Obsidian Sentinel; opt; class=MAGE; xl=37.1]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1956 Power in Uldaman | at=46.1,57.1,1445; opt; class=MAGE; xl=37.4]
-[A 1957 Mana Surges | at=46.1,57.1,1445; pre=1956; class=MAGE; xl=37.4]
-[C 1957 Mana Surges | at=45.8,56.9,1445; mob=Mana Surge; class=MAGE; xl=37.4]
+[T 1956 Power in Uldaman | at=46.1,57.1,1445; opt; class=MAGE; xl=37.1]
+[A 1957 Mana Surges | at=46.1,57.1,1445; pre=1956; class=MAGE; xl=37.1]
+[C 1957 Mana Surges | at=45.8,56.9,1445; mob=Mana Surge; class=MAGE; xl=37.1]
 Mana Surge has only one spawn point. If others are waiting for it, group up to share it.
-[T 1957 Mana Surges | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[A 1958 Celestial Power | at=46.1,57.1,1445; pre=1957; class=MAGE; xl=37.4]
-[T 1958 Celestial Power | at=46.1,57.1,1445; class=MAGE; xl=37.4]
-[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=37.4]
+[T 1957 Mana Surges | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[A 1958 Celestial Power | at=46.1,57.1,1445; pre=1957; class=MAGE; xl=37.1]
+[T 1958 Celestial Power | at=46.1,57.1,1445; class=MAGE; xl=37.1]
+[R Priest - Stormwind City | at=49.53,44.6,1453; class=PRIEST; xl=37.1]
 Time to train: head to High Priestess Laurena in Stormwind City for your new Priest spells. The arrow takes you back to the route afterwards.
-[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=37.4]
+[R Warrior - Stormwind City | at=80.19,61.26,1453; class=WARRIOR; xl=37.1]
 Time to train: head to Ander Germaine in Stormwind City for your new Warrior spells. The arrow takes you back to the route afterwards.
-[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=37.4]
+[R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=37.1]
 Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new Paladin spells. The arrow takes you back to the route afterwards.
-[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=37.4]
+[R Rogue - Ironforge | at=51.96,14.84,1455; class=ROGUE; xl=37.1]
 Time to train: head to Hulfdan Blackbeard in Ironforge for your new Rogue spells. The arrow takes you back to the route afterwards.
-[G 74.2,9.4 1455 Travel to Ironforge | xl=37.4]
+[G 51.8,74.2 1453 Travel to Stormwind City | xl=37.1]
 ]==])

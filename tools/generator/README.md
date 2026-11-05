@@ -133,6 +133,11 @@ simulator is chaotic, so a fix elsewhere can swap which dungeon quests get dropp
 re-baseline (add the swapped-in quests, marked with the date and cause) when the total per
 faction goes down, and say so in the commit.
 
+Chain steps toward a dungeon quest that have been carried `FEEDER_ERRAND_AGE` levels get an
+errand to their objectives on another map, so they're done instead of carried until the log
+drops them. Earlier errands pulled the route around too much and lost more dungeon quests than
+they saved.
+
 A dungeon run also waits while a quest in the log leads, through its chain, to another quest
 for the same dungeon that isn't picked up yet (`dungeon_chain_active`; the Defias
 Brotherhood into The Deadmines), up to five levels past the easiest quest carried.

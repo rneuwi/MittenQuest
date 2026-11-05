@@ -1,5 +1,19 @@
 # MittenQuest
 
+## Unreleased
+
+**Guide window**
+- The step you're on ("Step 45/141") and your pace now always show in the title bar. Long
+  guide names used to push them out of sight; the name is now shortened instead, and the
+  full name shows when you hover the title.
+
+**Routes**
+- Alliance 37-60: routes now go back for the next step of a dungeon quest chain before it
+  would be dropped, which brings back more Maraudon and Dire Maul quests. The guides from
+  level 37 on were rebuilt (the last one is now split into 53-57 and 57-60); if you're
+  partway through one, it starts over at the top, but steps you've already done in the game
+  are checked off automatically.
+
 ## 1.1.0
 
 **Is this quest on my route?**

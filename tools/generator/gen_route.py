@@ -226,6 +226,7 @@ ENEMY_TERRITORY = TERRITORY['Alliance' if FACTION == 'Horde' else 'Horde']
 # and they skip the "is the turn-in zone busy" and worth-the-time checks.
 DUNGEON_WEIGHT = 2.0
 FEEDER_DEPTH = 8               # chain steps leading to a dungeon quest count as dungeon work
+FEEDER_ERRAND_AGE = 3          # carried this many levels: go do a dungeon chain step's objectives
 ERRAND_MIN = 0.15              # leave a zone to collect dungeon quests worth this share of a level
 
 
@@ -1265,6 +1266,22 @@ class Sim:
                         and self.worthwhile(q):
                     for dn, ts in gains.items():
                         bundles[dn].append((m, q, ts))
+        # Objectives of chain steps toward a dungeon quest, on another map, once they've been
+        # carried FEEDER_ERRAND_AGE levels: without the trip they're carried until dropped.
+        # (Earlier trips pull the route around too much and cost more dungeon quests than
+        # they save.)
+        for qid, st in self.active.items():
+            q = QUESTS[qid]
+            if st['complete'] or q.dungeon or qid not in DUNGEON_FEEDERS or not q.target:
+                continue
+            if q.target[0] == current or not dungeon_priority(q) or not self.can_do_objectives(q) \
+                    or self.L - st['acceptL'] < FEEDER_ERRAND_AGE:
+                continue
+            if allowed_maps and q.target[0] not in allowed_maps:
+                continue
+            for t in DUNGEON_FEEDERS[qid]:
+                if not self.has(t) and t not in self.active and t not in self.banned:
+                    bundles[QUESTS[t].dungeon].append((q.target[0], q, {t}))
         # Hand-ins: finished dungeon quests, and deliveries that move a dungeon chain along
         # (the Defias Brotherhood to Westfall).
         for qid, st in self.active.items():

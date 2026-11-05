@@ -58,14 +58,12 @@
       "4126": "Blackrock Depths: quest 4126 Hurley Blackbreath (level 55) is never done",
       "4128": "Blackrock Depths: quest 4128 Ragnar Thunderbrew (level 55) is never done",
       "4263": "Blackrock Depths: quest 4263 Incendius! (level 56) is never done (prerequisite not on the route: 4262)",
-      "7065": "Maraudon: quest 7065 Corruption of Earth and Seed (level 51) is never done",
-      "7441": "Dire Maul: quest 7441 Pusillin and the Elder Azj'Tordin (level 58) is never done (area danger 40) [added 2026-11-05: route reshuffle from the danger/grey-mob rules]",
-      "7488": "Dire Maul: quest 7488 Lethtendris's Web (level 57) is never done [added 2026-11-05: route reshuffle from the danger/grey-mob rules]",
       "7494": "Dire Maul: quest 7494 Feathermoon Stronghold (level 57) is never done",
       "92457": "City of Dalaran: quest 92457 Starving Arcane (level 33) is never done",
       "92458": "City of Dalaran: quest 92458 Heart of Disruption (level 33) is never done",
       "92753": "The Deadmines: quest 92753 Destruction in Deadmines (level 18) is never done (prerequisite not on the route: 92752)",
-      "96393": "The Hall of Thanes: quest 96393 Old Ironforge Incursion (level 16) is never done"
+      "96393": "The Hall of Thanes: quest 96393 Old Ironforge Incursion (level 16) is never done",
+      "96800": "Scarlet Monastery: quest 96800 Past Due (level 38) is never done (area danger 25) [added 2026-11-05: reshuffle from dungeon chain errands]"
     }
   }
 }
