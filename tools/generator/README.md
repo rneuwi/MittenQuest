@@ -146,6 +146,14 @@ errand to their objectives on another map, so they're done instead of carried un
 drops them. Earlier errands pulled the route around too much and lost more dungeon quests than
 they saved.
 
+A chain step toward a dungeon quest that a pass drops is banned like any other quest, which also
+bars every dungeon quest after it. Once the passes settle, each such step gets a retry: the step is
+unbanned but only taken from its own level (or `RETRY_LATE` levels later), and the passes run
+again. A retry is kept when the route then does more dungeon quests and is at most `RETRY_SLOWER`
+slower; otherwise it's thrown away. Because the simulator is chaotic, a kept retry can help through
+the reshuffle rather than by finishing that step ("Ironband Wants You!" for Alliance), so the build
+log prints each kept retry with its before and after counts.
+
 A dungeon run also waits while a quest in the log leads, through its chain, to another quest
 for the same dungeon that isn't picked up yet (`dungeon_chain_active`; the Defias
 Brotherhood into The Deadmines), up to five levels past the easiest quest carried.

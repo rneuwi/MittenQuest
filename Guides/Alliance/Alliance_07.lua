@@ -124,10 +124,10 @@ Priestess Alathea is right here: pick up your new Priest spells.
 [T 162 Rise of the Silithid | at=41.8,85.6,1457; xl=49.0]
 [R Rogue - Darnassus | at=34.52,25.93,1457; class=ROGUE; xl=49.1]
 Time to train: head to Erion Shadewhisper in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
-[G 42.9,9.6 1449 Travel to Un'Goro Crater | xl=49.1]
-[A 3882 Roll the Bones | at=43.5,7.4,1449; danger=51; xl=49.1]
-[P Marshal's Refuge | at=45.23,5.83,1449; xl=49.1]
+[G 44.2,11.6 1449 Travel to Un'Goro Crater | xl=49.1]
 [A 4503 Shizzle's Flyer | at=44.2,11.6,1449; xl=49.1]
+[P Marshal's Refuge | at=45.23,5.83,1449; xl=49.1]
+[A 3882 Roll the Bones | at=43.5,7.4,1449; danger=51; xl=49.1]
 [A 4243 Chasing A-Me 01 | at=46.4,13.4,1449; danger=51; xl=49.1]
 [T 4243 Chasing A-Me 01 | at=67.7,16.8,1449; danger=51; xl=49.1]
 [A 3884 Williden's Journal | at=67.0,15.3,1449; danger=51; xl=49.1]

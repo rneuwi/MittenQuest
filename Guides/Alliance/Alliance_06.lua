@@ -31,6 +31,7 @@ MittenQuest:RegisterGuide([==[Alliance 42-46 Loch Modan, Stranglethorn Vale, Iro
 [T 2279 The Platinum Discs | at=69.9,18.6,1455; xl=42.6]
 [T 2240 The Hidden Chamber | at=74.6,11.7,1455; xl=42.7]
 [T 1360 Reclaimed Treasures | at=74.2,9.4,1455; xl=42.8]
+[A 2861 Tabetha's Task | at=27.2,8.3,1455; opt; xl=42.9]
 [R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=42.9]
 Dink is right here: pick up your new Mage spells.
 Dual Specialization can now be bought from your class trainer in a major city.

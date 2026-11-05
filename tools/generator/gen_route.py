@@ -226,6 +226,8 @@ ENEMY_TERRITORY = TERRITORY['Alliance' if FACTION == 'Horde' else 'Horde']
 # and they skip the "is the turn-in zone busy" and worth-the-time checks.
 DUNGEON_WEIGHT = 2.0
 FEEDER_DEPTH = 8               # chain steps leading to a dungeon quest count as dungeon work
+RETRY_LATE = (0, 2, 4)         # a retried dropped chain step is taken this many levels past its own
+RETRY_SLOWER = 1.02            # a retry may cost at most 2% more /played
 FEEDER_ERRAND_AGE = 3          # carried this many levels: go do a dungeon chain step's objectives
 ERRAND_MIN = 0.15              # leave a zone to collect dungeon quests worth this share of a level
 
@@ -898,7 +900,7 @@ def grey_gap(L):
 
 
 class Sim:
-    def __init__(self, race_mask, level=1, pos=None, done=None, learned=None, banned=None, prior=None):
+    def __init__(self, race_mask, level=1, pos=None, done=None, learned=None, banned=None, prior=None, keep=None):
         self.race_mask = race_mask
         # Quests some starter guide already covered. The shared route never repeats them;
         # anything that needs one of them is optional (other races never had it).
@@ -906,6 +908,7 @@ class Sim:
         self.uncertain = set()
         self.cprior = {}              # class -> class quests some starter already covered
         self.banned = set(banned or ())   # quests a previous pass had to drop
+        self.keep = dict(keep or {})      # dropped dungeon chain step -> levels past its own to take it
         self._dest_cache = {}
         self.dropped = set()
         self.L, self.xp = level, 0
@@ -941,6 +944,8 @@ class Sim:
             return False
         if q.elite and q.level > self.L:
             return False        # group quests only once you're at their level
+        if q.id in self.keep and self.L < q.level + self.keep[q.id]:
+            return False        # dropped by an earlier pass: take it once you can finish it
         if q.dungeon and q.level > MAX_DUNGEON_QUEST_LEVEL:
             return False
         if q.minLevel > self.L or (q.maxLevel and self.L > q.maxLevel):
@@ -1935,20 +1940,49 @@ def main():
               f'skipped as slow {len(sim.slow - sim.done)}')
 
     # Shared route from the faction's hand-over point
-    banned = set()
-    for it in range(10):
-        sim = Sim(FMASK, level=CFG['shared_level'], banned=banned, prior=starter_done)
+    def shared_pass(banned, keep):
+        sim = Sim(FMASK, level=CFG['shared_level'], banned=banned, prior=starter_done, keep=keep)
         sim.trained = {c: CFG['shared_level'] for c in TRAINERS}   # starters end with training
         sim.cdone = collections.defaultdict(set, {c: set(v) for c, v in starter_cdone.items()})
         sim.cprior = {c: set(v) for c, v in starter_cdone.items()}
         index_maps(sim)
         sim.pos = next(fm for fm in FMS if fm['node'] == CFG['shared_node'])['loc']
         segs = sim.run(until_level=60)
-        new = sim.dropped - banned
-        print(f'  pass {it + 1}: level {sim.L}, {len(sim.steps)} steps, dropped {len(new)} new')
-        if not new:
-            break
-        banned |= new
+        return sim, segs
+
+    def converge(banned, keep, label):
+        banned = set(banned)
+        for it in range(10):
+            sim, segs = shared_pass(banned, keep)
+            new = sim.dropped - banned
+            if label:
+                print(f'  {label} {it + 1}: level {sim.L}, {len(sim.steps)} steps, dropped {len(new)} new')
+            if not new:
+                break
+            banned |= new
+        return sim, segs, banned
+
+    scope = dungeon_scope()
+    def dungeon_done(sim):
+        got = sim.done | starter_done
+        return sum(1 for qid, q in scope.items() if qid in got or any(e in got for e in q.exclusive))
+
+    sim, segs, banned = converge(set(), {}, 'pass')
+    # Retry dropped chain steps toward dungeon quests, one at a time, taken only once you're at
+    # their level. Dropping them early bars the dungeon quests they lead to for the rest of the
+    # passes. The simulator is chaotic, so a retry is kept only when the route then does more
+    # dungeon quests without getting much slower.
+    keep, best = {}, dungeon_done(sim)
+    for qid in sorted(q for q in banned if q in DUNGEON_FEEDERS and q not in CORR_SKIP):
+        for late in RETRY_LATE:
+            tsim, tsegs, tbanned = converge(banned - {qid}, {**keep, qid: late}, None)
+            got = dungeon_done(tsim)
+            if got > best and tsim.t <= sim.t * RETRY_SLOWER:
+                print(f'  retry {qid} {QUESTS[qid].name} from level {QUESTS[qid].level + late}: '
+                      f'dungeon quests {best} -> {got}, {sim.t / 3600:.1f}h -> {tsim.t / 3600:.1f}h')
+                sim, segs, banned, best = tsim, tsegs, tbanned, got
+                keep[qid] = late
+                break
     remap = prune_unfinished(sim)
     segs = [(m, remap[a], remap[b], l0, l1) for m, a, b, l0, l1 in segs]
     print('  pruned', sim.removed, 'steps for quests the route never finishes')

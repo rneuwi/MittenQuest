@@ -1,5 +1,14 @@
 # MittenQuest
 
+## Unreleased
+
+**Routes**
+- The Alliance route does 7 more dungeon quests, among them quests in Blackrock Depths, Dire
+  Maul, Scholomance and Zul'Farrak, and is about 2.5 hours shorter to 60.
+- The last Alliance guide is now "Alliance 54-60 Eastern Plaguelands, Western Plaguelands,
+  Searing Gorge". If you're partway through it, it starts over at the top, but steps you've
+  already done in the game are checked off automatically.
+
 ## 1.1.1
 
 **Guide window**
