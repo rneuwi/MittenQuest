@@ -7,10 +7,18 @@
   guide names used to push them out of sight; the name is now shortened instead, and the
   full name shows when you hover the title.
 
+**More dungeon quests**
+- Quests you pick up or hand in inside a dungeon are now part of the route: the guide lists
+  them right after the dungeon step, with a note saying who or what inside gives or takes
+  them. That opens chains the routes used to skip, like An Unholy Alliance (a scroll that
+  drops in Razorfen Kraul), Returning the Lost Satchel in Ragefire Chasm, The Glowing Shard
+  in Wailing Caverns, The Platinum Discs in Uldaman and The Scepter of Celebras in Maraudon.
+- Routes go back for the next step of a dungeon quest chain before it would be dropped.
+- Overall the routes now do 9 more dungeon quests for Horde and 4 more for Alliance, and the
+  Horde route is about 5 hours shorter to 60.
+
 **Routes**
-- Alliance 37-60: routes now go back for the next step of a dungeon quest chain before it
-  would be dropped, which brings back more Maraudon and Dire Maul quests. The guides from
-  level 37 on were rebuilt (the last one is now split into 53-57 and 57-60); if you're
+- Most guides from level 16 (Horde) and 23 (Alliance) on were rebuilt and renamed. If you're
   partway through one, it starts over at the top, but steps you've already done in the game
   are checked off automatically.
 

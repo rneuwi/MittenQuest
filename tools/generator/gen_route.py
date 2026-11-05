@@ -278,6 +278,46 @@ def dungeon_entrance(sort):
     return None
 
 
+def entity_dungeon(e):
+    """(dungeon name, area id) when an NPC/object lives only inside a dungeon, else None.
+    NPCs friendly only to the other faction don't count."""
+    if not e or e.get('friendlyToFaction') == ENEMY_FLAG:
+        return None
+    found = None
+    for area, _ in area_items(e.get('spawns')):
+        dn = dungeon_name(int(area))
+        if not dn:
+            return None     # also lives outdoors
+        found = found or (dn, int(area))
+    return found
+
+
+def inside_dungeon(by, items=False):
+    """Where a quest starts/ends inside a dungeon: (dungeon, area id, who) or None.
+    `by` is startedBy/finishedBy; with items=True a start item dropped in a dungeon counts
+    (An Unholy Alliance's Small Scroll from Charlga Razorflank in Razorfen Kraul)."""
+    for kind, src in ((1, N), (2, O)):
+        for eid in idx(by or {}, kind) or []:
+            e = src.get(str(eid))
+            d = entity_dungeon(e)
+            if d:
+                return d + (clean(e.get('name')),)
+    if items:
+        for iid in idx(by or {}, 3) or []:
+            it = I.get(str(iid)) or {}
+            for nid in it.get('npcDrops') or []:
+                e = N.get(str(nid))
+                d = entity_dungeon(e)
+                if d:
+                    return d + (f"{clean(it.get('name'))}, which {clean(e.get('name'))} drops",)
+            for oid in it.get('objectDrops') or []:
+                e = O.get(str(oid))
+                d = entity_dungeon(e)
+                if d:
+                    return d + (f"{clean(it.get('name'))} from {clean(e.get('name'))}",)
+    return None
+
+
 def area_items(v):
     """Area-keyed tables: dicts, or lists when the area IDs happened to be 1..n."""
     if isinstance(v, dict):
@@ -455,6 +495,21 @@ def build_quests():
         if not x.xp:
             # Mostly quests new to Forever, which the XP table doesn't cover yet.
             x.xp, x.xpEstimated = estimated_quest_xp(lvl), True
+        # Givers and turn-ins inside a dungeon have no outdoor position: the quest is picked
+        # up or handed in during a run of that dungeon (Sim.inside_run), placed at its entrance.
+        x.startInside = x.finishInside = x.insideStartNote = x.insideFinishNote = None
+        if not x.start:
+            d = inside_dungeon(sb, items=True)
+            ent = d and dungeon_entrance(d[1])
+            if ent:
+                x.start, x.startInside, x.startName = ent, d[0], d[2]
+                x.insideStartNote = f"Inside {d[0]}: picked up from {d[2]}."
+        if not x.finish:
+            d = inside_dungeon(fb)
+            ent = d and dungeon_entrance(d[1])
+            if ent:
+                x.finish, x.finishInside, x.finishName = ent, d[0], d[2]
+                x.insideFinishNote = f"Inside {d[0]}: turned in to {d[2]}."
         # objectives
         obj = q.get('objectives') or {}
         pts, mobs, items, elite = [], [], [], start_elite
@@ -618,6 +673,23 @@ for _q in QUESTS.values():
     _d = [area_danger(p) for p in (_q.start, _q.target, _q.finish)]
     _d = [d for d in _d if d]
     _q.danger = max(_d) if _d else None
+
+# Quests whose giver (or start item) is inside a dungeon, by dungeon: picked up during a run.
+INSIDE_STARTS = collections.defaultdict(list)
+for _q in sorted(QUESTS.values(), key=lambda q: (q.level, q.id)):
+    if _q.startInside:
+        INSIDE_STARTS[_q.startInside].append(_q)
+
+
+def entrance_of(dname):
+    """Entrance of a dungeon by name (quests handed in inside may not belong to its sort)."""
+    for key, v in S['dungeons'].items():
+        if idx(v, 1) == dname:
+            ent = dungeon_entrance(int(key))
+            if ent:
+                return ent
+    return None
+
 
 # ---------------------------------------------------------------- flight masters
 FMS = []
@@ -1170,6 +1242,8 @@ class Sim:
         self.pos = q.start
         if q.dungeon:
             self.carried_dungeon[q.dungeon].add(q.id)
+        if q.finishInside:
+            self.carried_dungeon[q.finishInside].add(q.id)   # handed in during that run
 
     def complete(self, q):
         self.go(q.target)
@@ -1221,7 +1295,7 @@ class Sim:
         for qid, st in self.active.items():
             q = QUESTS[qid]
             if st['complete']:
-                if q.finish[0] == mapID:
+                if q.finish[0] == mapID and not q.finishInside:
                     yield 'T', q, q.finish
             elif q.target and q.target[0] == mapID and not q.dungeon and self.can_do_objectives(q):
                 yield 'C', q, q.target
@@ -1286,7 +1360,7 @@ class Sim:
         # (the Defias Brotherhood to Westfall).
         for qid, st in self.active.items():
             q = QUESTS[qid]
-            if not st['complete'] or not dungeon_priority(q) or q.finish[0] == current:
+            if not st['complete'] or not dungeon_priority(q) or q.finish[0] == current or q.finishInside:
                 continue
             if allowed_maps and q.finish[0] not in allowed_maps:
                 continue
@@ -1338,7 +1412,11 @@ class Sim:
 
     def check_dungeons(self, area, force=False):
         for dname, qids in list(self.carried_dungeon.items()):
-            qids = {q for q in qids if q in self.active and not self.active[q]['complete']}
+            # Quests to do in there: unfinished dungeon quests, plus quests handed in inside
+            # once their objectives are done (or they have none outdoors).
+            qids = {q for q in qids if q in self.active and (
+                not self.active[q]['complete'] if QUESTS[q].finishInside != dname
+                else (self.active[q]['complete'] or not QUESTS[q].target))}
             if not qids:
                 continue
             levels = [QUESTS[q].level for q in qids]
@@ -1351,7 +1429,7 @@ class Sim:
             if not force and self.L <= min(levels) + 5 and self.dungeon_chain_active(dname):
                 continue    # a chain in the log unlocks another quest here (the Defias Brotherhood)
             q0 = QUESTS[next(iter(qids))]
-            ent = dungeon_entrance(q0.sort)
+            ent = entrance_of(dname) or dungeon_entrance(q0.sort)
             if not force and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
                     and self.L < max(levels) + 3:
                 continue    # wait until the route is on the dungeon's continent
@@ -1366,6 +1444,37 @@ class Sim:
                 del self.carried_dungeon[dname]
                 self.t += DUNGEON_SECONDS
                 self.add_xp(XP_TO_LEVEL[min(self.L, 59) - 1] * 0.5)  # XP from the run itself
+                self.inside_run(dname)
+
+    def inside_run(self, dname):
+        """During a run: hand in quests whose turn-in is inside and pick up quests whose giver
+        (or start item) is inside, repeating while that opens more (Necklace Recovery, Take 2
+        -> Translating the Journal in Uldaman). Steps sit at the entrance with a note."""
+        for _ in range(10):
+            changed = False
+            for qid in [q for q, st in self.active.items()
+                        if st['complete'] and QUESTS[q].finishInside == dname]:
+                q = QUESTS[qid]
+                self.turnin(q)
+                self.emit(q.insideFinishNote)
+                changed = True
+            for q in INSIDE_STARTS.get(dname, ()):
+                if len(self.active) >= LOG_LIMIT or not self.eligible(q) or q.level > self.L + 5:
+                    continue
+                self.accept(q)
+                self.emit(q.insideStartNote)
+                if q.hasObjectives and not q.target and q.dungeon == dname:
+                    self.active[q.id]['complete'] = True    # its objectives are in here too
+                changed = True
+            if not changed:
+                break
+        # Quests finished in this run don't need another one.
+        left = {q for q in self.carried_dungeon.get(dname, ())
+                if q in self.active and not self.active[q]['complete']}
+        if left:
+            self.carried_dungeon[dname] = left
+        else:
+            self.carried_dungeon.pop(dname, None)
 
     def dungeon_pickups_here(self, dname):
         """Quests for this dungeon (or chain steps toward one) still to pick up on this map."""
@@ -1541,7 +1650,7 @@ def index_maps(sim):
     sim.map_quests = collections.defaultdict(list)
     sim.map_area = {}
     for q in QUESTS.values():
-        if q.start:
+        if q.start and not q.startInside:   # those are picked up during a run (inside_run)
             sim.map_quests[q.start[0]].append(q)
             sim.map_area.setdefault(q.start[0], q.start[3])
     # normalise area per map to the parent zone where possible
@@ -1669,6 +1778,7 @@ def split_guides(prefix, sim, segments, start_learned, min_levels=4, max_steps=3
 # they don't fail the build, but nothing may be added to it. Work it down by fixing the
 # simulator, and remove entries once the build reports them fixed.
 CORR_DUNGEON_EXEMPT = {int(q): t for q, t in CORR.get('dungeon_exempt', {}).items()}
+NOT_DUNGEON_RUNS = {'Deeprun Tram'}   # instanced, but a city transit, not a group run
 CORR_DUNGEON_BACKLOG = {int(q): t for q, t in CORR.get('dungeon_backlog', {}).get(FACTION, {}).items()}
 STEP_XL_RE = re.compile(r'xl=([\d.]+)')
 
@@ -1678,7 +1788,7 @@ def dungeon_scope():
     them, they have a giver and a turn-in, and they're outside the other faction's zones."""
     scope = {}
     for q in QUESTS.values():
-        if not q.dungeon or q.classes or not q.start or not q.finish:
+        if not q.dungeon or q.dungeon in NOT_DUNGEON_RUNS or q.classes or not q.start or not q.finish:
             continue
         if q.level > MAX_DUNGEON_QUEST_LEVEL or in_enemy_territory(q) or q.id in CORR_SKIP:
             continue

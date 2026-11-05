@@ -3,7 +3,7 @@
 MittenQuest:RegisterGuide([==[Horde 12-16 The Barrens, Orgrimmar, Thunder Bluff]==], [==[
 #levels 12-16
 #faction Horde
-#next Horde 16-20 Orgrimmar, Thunder Bluff, The Barrens
+#next Horde 16-20 The Barrens, Undercity
 
 [S Crossroads | at=51.99,29.89,1413; xl=12.0]
 Talk to Innkeeper Boorand Plainswind and make this inn your home.
@@ -23,6 +23,7 @@ Talk to Innkeeper Boorand Plainswind and make this inn your home.
 [T 6361 A Bundle of Hides | at=51.5,30.3,1413; race=Tauren; xl=12.0]
 [T 6365 Meats to Orgrimmar | at=51.5,30.3,1413; race=Orc,Troll; xl=12.0]
 [A 6384 Ride to Orgrimmar | at=51.5,30.3,1413; pre=6365; race=Orc,Troll; xl=12.1]
+[A 6362 Ride to Thunder Bluff | at=51.5,30.3,1413; pre=6361; race=Tauren; xl=12.1]
 [T 5041 Supplies for the Crossroads | at=51.5,30.9,1413; xl=12.1]
 [T 871 Disrupt the Attacks | at=51.5,30.9,1413; xl=12.3]
 [A 872 The Disruption Ends | at=51.5,30.9,1413; pre=871; xl=12.5]
@@ -44,6 +45,7 @@ Talk to Innkeeper Boorand Plainswind and make this inn your home.
 [C 903 Prowlers of the Barrens | at=43.0,33.1,1413; mob=Savannah Prowler; ml=15; item=5096:7; drop=53; danger=14; xl=13.1]
 [T 855 Centaur Bracers | at=45.3,28.4,1413; xl=13.1]
 [T 848 Fungal Spores | at=51.4,30.1,1413; xl=13.3]
+[A 853 Apothecary Zamah | at=51.4,30.1,1413; pre=848; xl=13.5]
 [T 903 Prowlers of the Barrens | at=52.2,31.0,1413; xl=13.5]
 [A 881 Echeyakee | at=52.2,31.0,1413; pre=903; danger=14; xl=13.7]
 [C 872 The Disruption Ends | at=58.0,24.7,1413; mob=Razormane Geomancer / Razormane Defender; ml=15; xl=13.7]
@@ -54,119 +56,115 @@ Kreenig Snarlsnout has only one spawn point. If others are waiting for it, group
 [A 97242 Yelmak's Medley | at=56.0,34.1,1454; xl=13.9]
 [C 97242 Yelmak's Medley | at=69.7,31.2,1454; xl=13.9]
 [T 97242 Yelmak's Medley | at=56.0,34.1,1454; xl=13.9]
-[A 1061 The Spirits of Stonetalon | at=38.9,38.4,1454; opt; danger=16; xl=14.0]
-[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=14.0]
-Sian'tsu is right here: pick up your new Shaman spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=14.0]
-Grol'dar is right here: pick up your new Warlock spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 5728 Hidden Enemies | at=31.7,37.8,1454; pre=5727; opt; xl=14.0]
-[A 97326 Rocks to Rests | at=36.8,29.1,1454; xl=14.0]
-[C 97326 Rocks to Rests | at=43.7,32.7,1454; item=277952:8; xl=14.0]
-[T 97326 Rocks to Rests | at=36.8,29.1,1454; xl=14.0]
-[A 5761 Slaying the Beast | at=49.5,50.6,1454; xl=14.2]
-[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=14.2]
-Gest is right here: pick up your new Rogue spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[T 6384 Ride to Orgrimmar | at=54.1,68.4,1454; race=Orc,Troll; xl=14.2]
-[P Orgrimmar | at=45.12,63.89,1454; xl=14.2]
-[A 6385 Doras the Wind Rider Master | at=54.1,68.4,1454; pre=6384; race=Orc,Troll; xl=14.2]
-[T 6385 Doras the Wind Rider Master | at=45.1,63.9,1454; race=Orc,Troll; xl=14.2]
-[A 6386 Return to the Crossroads. | at=45.1,63.9,1454; pre=6385; race=Orc,Troll; xl=14.3]
-[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=14.3]
+[P Orgrimmar | at=45.12,63.89,1454; xl=14.0]
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=14.0]
 Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 6126 Lessons Anew | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=14.3]
-[T 6126 Lessons Anew | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=14.3]
-[A 6127 The Principal Source | at=56.2,30.6,1450; pre=6126; class=DRUID; race=Tauren; xl=14.3]
-[C 6127 The Principal Source | at=48.4,18.9,1413; class=DRUID; race=Tauren; xl=14.3]
-[T 6127 The Principal Source | at=52.3,31.9,1413; class=DRUID; race=Tauren; xl=14.3]
-[A 6128 Gathering the Cure | at=52.3,31.9,1413; pre=6127; class=DRUID; race=Tauren; xl=14.3]
-[C 6128 Gathering the Cure | at=63.7,44.6,1413; mob=Lasher Sproutling / Lost Barrens Kodo; item=2449:5,15852:5; drop=29; class=DRUID; race=Tauren; xl=14.3]
-[T 6128 Gathering the Cure | at=52.3,31.9,1413; class=DRUID; race=Tauren; xl=14.3]
-[A 6129 Curing the Sick | at=52.3,31.9,1413; pre=6128; class=DRUID; race=Tauren; xl=14.3]
-[C 6129 Curing the Sick | at=54.3,21.8,1413; mob=Sickly Gazelle; class=DRUID; race=Tauren; xl=14.3]
-[T 6129 Curing the Sick | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=14.3]
-[A 6130 Power over Poison | at=56.2,30.6,1450; pre=6129; class=DRUID; race=Tauren; xl=14.3]
-[T 6130 Power over Poison | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=14.3]
-[H Crossroads | xl=14.3]
-[A 3281 Stolen Silver | at=51.9,30.3,1413; pre=869; danger=16; xl=14.3]
-[A 867 Harpy Raiders | at=51.6,30.9,1413; danger=16; xl=14.3]
-[T 6386 Return to the Crossroads. | at=52.6,29.8,1413; race=Orc,Troll; xl=14.3]
-[C 850 Kolkar Leaders | at=42.8,23.5,1413; mob=Barak Kodobane; ml=16; xl=14.4]
+[A 6126 Lessons Anew | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=14.0]
+[T 6126 Lessons Anew | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=14.0]
+[A 6127 The Principal Source | at=56.2,30.6,1450; pre=6126; class=DRUID; race=Tauren; xl=14.0]
+[C 6127 The Principal Source | at=48.4,18.9,1413; class=DRUID; race=Tauren; xl=14.0]
+[T 6127 The Principal Source | at=52.3,31.9,1413; class=DRUID; race=Tauren; xl=14.0]
+[A 6128 Gathering the Cure | at=52.3,31.9,1413; pre=6127; class=DRUID; race=Tauren; xl=14.0]
+[C 6128 Gathering the Cure | at=63.7,44.6,1413; mob=Lasher Sproutling / Lost Barrens Kodo; item=2449:5,15852:5; drop=29; class=DRUID; race=Tauren; xl=14.0]
+[T 6128 Gathering the Cure | at=52.3,31.9,1413; class=DRUID; race=Tauren; xl=14.0]
+[A 6129 Curing the Sick | at=52.3,31.9,1413; pre=6128; class=DRUID; race=Tauren; xl=14.0]
+[C 6129 Curing the Sick | at=54.3,21.8,1413; mob=Sickly Gazelle; class=DRUID; race=Tauren; xl=14.0]
+[T 6129 Curing the Sick | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=14.0]
+[A 6130 Power over Poison | at=56.2,30.6,1450; pre=6129; class=DRUID; race=Tauren; xl=14.0]
+[T 6130 Power over Poison | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=14.0]
+[G 70.1,29.5 1456 Travel to Thunder Bluff | xl=14.0]
+[A 5723 Testing an Enemy's Strength | at=70.1,29.5,1456; xl=14.0]
+[A 5722 Searching for the Lost Satchel | at=70.1,29.5,1456; xl=14.0]
+[T 6362 Ride to Thunder Bluff | at=45.8,55.8,1456; race=Tauren; xl=14.0]
+[P Thunder Bluff | at=47,49.83,1456; xl=14.1]
+[A 6363 Tal the Wind Rider Master | at=45.8,55.8,1456; pre=6362; race=Tauren; xl=14.1]
+[T 6363 Tal the Wind Rider Master | at=47,49.8,1456; race=Tauren; xl=14.1]
+[A 6364 Return to Jahan | at=47,49.8,1456; pre=6363; race=Tauren; xl=14.1]
+[T 853 Apothecary Zamah | at=22.8,20.9,1456; xl=14.1]
+[R Priest - Thunder Bluff | at=25.32,15.27,1456; class=PRIEST; xl=14.3]
+Miles Welsh is right here: pick up your new Priest spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=14.3]
+Alodan the Hopeful is right here: pick up your new Paladin spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Shaman - Thunder Bluff | at=22.82,21.11,1456; class=SHAMAN; xl=14.3]
+Siln Skychaser is right here: pick up your new Shaman spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=14.3]
+Archmage Shymm is right here: pick up your new Mage spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 962 Serpentbloom | at=22.8,20.9,1456; xl=14.3]
+[F Orgrimmar | xl=14.3]
+[T 6384 Ride to Orgrimmar | at=54.1,68.4,1454; race=Orc,Troll; xl=14.3]
+[A 6385 Doras the Wind Rider Master | at=54.1,68.4,1454; pre=6384; race=Orc,Troll; xl=14.3]
+[T 6385 Doras the Wind Rider Master | at=45.1,63.9,1454; race=Orc,Troll; xl=14.3]
+[R Rogue - Orgrimmar | at=43.9,54.63,1454; class=ROGUE; xl=14.4]
+Ormok is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 6386 Return to the Crossroads. | at=45.1,63.9,1454; pre=6385; race=Orc,Troll; xl=14.4]
+[A 5761 Slaying the Beast | at=49.5,50.6,1454; xl=14.4]
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=14.4]
+Grol'dar is right here: pick up your new Warlock spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1061 The Spirits of Stonetalon | at=38.9,38.4,1454; opt; danger=16; xl=14.4]
+[A 5728 Hidden Enemies | at=31.7,37.8,1454; pre=5727; opt; xl=14.4]
+[A 97326 Rocks to Rests | at=36.8,29.1,1454; xl=14.4]
+[C 97326 Rocks to Rests | at=43.7,32.7,1454; item=277952:8; xl=14.4]
+[T 97326 Rocks to Rests | at=36.8,29.1,1454; xl=14.4]
+[H Crossroads | xl=14.5]
+[A 3281 Stolen Silver | at=51.9,30.3,1413; pre=869; danger=16; xl=14.5]
+[A 867 Harpy Raiders | at=51.6,30.9,1413; danger=16; xl=14.5]
+[T 6386 Return to the Crossroads. | at=52.6,29.8,1413; race=Orc,Troll; xl=14.5]
+[T 6364 Return to Jahan | at=51.2,29.1,1413; race=Tauren; xl=14.7]
+[C 850 Kolkar Leaders | at=42.8,23.5,1413; mob=Barak Kodobane; ml=16; xl=14.8]
 Barak Kodobane has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 850 Kolkar Leaders | at=45.3,28.4,1413; xl=14.4]
-[A 851 Verog the Dervish | at=45.3,28.4,1413; pre=850; xl=14.6]
-[T 1061 The Spirits of Stonetalon | at=35.3,27.9,1413; danger=16; xl=14.6]
-[C 867 Harpy Raiders | at=40.9,17.2,1413; mob=Witchwing Harpy; ml=15; item=5064:8; drop=32; danger=16; xl=14.6]
-[A 95494 Bruised Pride and Lion Hides | at=43.8,12.2,1413; danger=16; xl=14.6]
-[A 95495 The Hermit Tanner | at=43.8,12.2,1413; danger=16; xl=14.6]
-[A 95507 Vrang's Game | at=43.8,12.2,1413; danger=16; xl=14.6]
-[A 95621 Trouble in the Valley | at=42.0,11.4,1413; danger=16; xl=14.6]
-[T 95495 The Hermit Tanner | at=42.0,11.4,1413; danger=16; xl=14.6]
-[A 95508 Unwelcome Guests | at=42.0,11.4,1413; danger=16; xl=14.8]
-[T 95508 Unwelcome Guests | at=42.0,11.4,1413; danger=16; xl=14.8]
-[A 858 Ignition | at=56.5,7.5,1413; danger=15; xl=15.0]
-[C 881 Echeyakee | at=55.9,17.2,1413; mob=Echeyakee; ml=16; xl=15.0]
-Echeyakee has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 881 Echeyakee | at=52.2,31.0,1413; xl=15.0]
-[T 867 Harpy Raiders | at=51.6,30.9,1413; xl=15.2]
-[A 875 Harpy Lieutenants | at=51.6,30.9,1413; pre=867; danger=17; xl=15.3]
-[C 877 The Stagnant Oasis | at=55.6,42.8,1413; xl=15.3]
-Bubbling Fissure has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[A 959 Trouble at the Docks | at=63.1,37.6,1413; danger=22; xl=15.3]
-[T 877 The Stagnant Oasis | at=52.3,31.9,1413; xl=15.3]
-[A 880 Altered Beings | at=52.3,31.9,1413; pre=877; xl=15.5]
-[C 880 Altered Beings | at=47.0,39.6,1413; mob=Oasis Snapjaw; ml=16; item=5098:8; drop=72; xl=15.5]
-[T 880 Altered Beings | at=52.3,31.9,1413; xl=15.5]
-[A 1489 Hamuul Runetotem | at=52.3,31.9,1413; pre=880; xl=15.6]
-[C 875 Harpy Lieutenants | at=38.9,14.3,1413; mob=Witchwing Slayer; ml=17; item=5065:6; drop=26; danger=17; xl=15.6]
-[T 875 Harpy Lieutenants | at=51.6,30.9,1413; xl=15.6]
-[G 60.3,51.7 1456 Travel to Thunder Bluff | xl=15.8]
-[A 5723 Testing an Enemy's Strength | at=70.1,29.5,1456; xl=15.8]
-[D Ragefire Chasm | quests=5723,5728,5761; at=52.6,49,1454; xl=15.8]
+[T 850 Kolkar Leaders | at=45.3,28.4,1413; xl=14.8]
+[A 851 Verog the Dervish | at=45.3,28.4,1413; pre=850; xl=15.0]
+[T 1061 The Spirits of Stonetalon | at=35.3,27.9,1413; danger=16; xl=15.0]
+[D Ragefire Chasm | quests=5722,5723,5728,5761; at=52.6,49,1454; xl=15.0]
 Find a group for Ragefire Chasm. Quests you skip there are dropped automatically.
-[P Thunder Bluff | at=47,49.83,1456; xl=16.3]
-[R Hunter - Thunder Bluff | at=59.13,86.87,1456; class=HUNTER; xl=16.3]
-Time to train: head to Urek Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=16.3]
-Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
-[A 2379 Zando'zan | at=43.0,53.7,1454; class=ROGUE; xl=16.3]
-[T 2379 Zando'zan | at=42.7,53.0,1454; class=ROGUE; xl=16.3]
-[A 2380 To Orgrimmar! | at=52.0,43.7,1411; class=ROGUE; xl=16.3]
-[T 2380 To Orgrimmar! | at=43.0,53.7,1454; class=ROGUE; xl=16.3]
-[A 2382 Wrenix of Ratchet | at=42.7,53.0,1454; pre=2379; class=ROGUE; xl=16.3]
-[T 2382 Wrenix of Ratchet | at=63.1,36.3,1413; class=ROGUE; xl=16.3]
-[A 2381 Plundering the Plunderers | at=63.1,36.3,1413; pre=2382; class=ROGUE; xl=16.3]
-[C 2381 Plundering the Plunderers | at=64.8,45.5,1413; mob=Polly; class=ROGUE; xl=16.3]
+[T 5722 Searching for the Lost Satchel | at=52.6,49,1454; xl=15.5]
+Inside Ragefire Chasm: turned in to Maur Grimtotem.
+[A 5724 Returning the Lost Satchel | at=52.6,49,1454; pre=5722; xl=15.6]
+Inside Ragefire Chasm: picked up from Maur Grimtotem.
+[F Thunder Bluff | xl=15.6]
+[T 5723 Testing an Enemy's Strength | at=70.1,29.5,1456; xl=15.6]
+[T 5724 Returning the Lost Satchel | at=70.1,29.5,1456; xl=15.7]
+[F Orgrimmar | xl=15.9]
+[T 5761 Slaying the Beast | at=49.5,50.6,1454; xl=15.9]
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=16.1]
+Gest is right here: pick up your new Rogue spells.
+[A 2379 Zando'zan | at=43.0,53.7,1454; class=ROGUE; xl=16.1]
+[T 2379 Zando'zan | at=42.7,53.0,1454; class=ROGUE; xl=16.1]
+[A 2380 To Orgrimmar! | at=52.0,43.7,1411; class=ROGUE; xl=16.1]
+[T 2380 To Orgrimmar! | at=43.0,53.7,1454; class=ROGUE; xl=16.1]
+[A 2382 Wrenix of Ratchet | at=42.7,53.0,1454; pre=2379; class=ROGUE; xl=16.1]
+[T 2382 Wrenix of Ratchet | at=63.1,36.3,1413; class=ROGUE; xl=16.1]
+[A 2381 Plundering the Plunderers | at=63.1,36.3,1413; pre=2382; class=ROGUE; xl=16.1]
+[C 2381 Plundering the Plunderers | at=64.8,45.5,1413; mob=Polly; class=ROGUE; xl=16.1]
 Polly has only one spawn point. If others are waiting for it, group up to share it.
-[T 2381 Plundering the Plunderers | at=63.1,36.3,1413; class=ROGUE; xl=16.3]
-[R Priest - Thunder Bluff | at=24.56,22.57,1456; class=PRIEST; xl=16.3]
-Time to train: head to Malakai Cross in Thunder Bluff for your new Priest spells. The arrow takes you back to the route afterwards.
+[T 2381 Plundering the Plunderers | at=63.1,36.3,1413; class=ROGUE; xl=16.1]
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=16.1]
+Grol'dar is right here: pick up your new Warlock spells.
+[R Hunter - Orgrimmar | at=67.24,20.2,1454; class=HUNTER; xl=16.1]
+Time to train: head to Xor'juul in Orgrimmar for your new Hunter spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=16.3]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Warrior - Orgrimmar | at=79.79,31.42,1454; class=WARRIOR; xl=16.1]
+Time to train: head to Grezz Ragefist in Orgrimmar for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warrior - Thunder Bluff | at=57.58,85.5,1456; class=WARRIOR; xl=16.3]
-Time to train: head to Ker Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Druid - Thunder Bluff | at=77.15,29.82,1456; class=DRUID; xl=16.3]
-Time to train: head to Kym Wildmane in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
-[A 27 A Lesson to Learn | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=16.3]
-[T 27 A Lesson to Learn | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=16.3]
-[A 28 Trial of the Lake | at=56.2,30.6,1450; pre=27; class=DRUID; race=Tauren; xl=16.3]
-[C 28 Trial of the Lake | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.3]
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=16.1]
+Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
+[A 27 A Lesson to Learn | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=16.1]
+[T 27 A Lesson to Learn | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=16.1]
+[A 28 Trial of the Lake | at=56.2,30.6,1450; pre=27; class=DRUID; race=Tauren; xl=16.1]
+[C 28 Trial of the Lake | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.1]
 Shrine Of Remulos has only one spawn point. If others are waiting for it, group up to share it.
-[T 28 Trial of the Lake | at=36.5,40.1,1450; class=DRUID; race=Tauren; xl=16.3]
-[A 30 Trial of the Sea Lion | at=36.5,40.1,1450; pre=28; class=DRUID; race=Tauren; xl=16.3]
-[C 30 Trial of the Sea Lion | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.3]
-[T 30 Trial of the Sea Lion | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=16.3]
-[A 31 Aquatic Form | at=56.2,30.6,1450; pre=30; class=DRUID; race=Tauren; xl=16.3]
-[T 31 Aquatic Form | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=16.3]
-[R Mage - Thunder Bluff | at=25.18,20.96,1456; class=MAGE; xl=16.3]
-Time to train: head to Thurston Xane in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[F Orgrimmar | xl=16.3]
+[T 28 Trial of the Lake | at=36.5,40.1,1450; class=DRUID; race=Tauren; xl=16.1]
+[A 30 Trial of the Sea Lion | at=36.5,40.1,1450; pre=28; class=DRUID; race=Tauren; xl=16.1]
+[C 30 Trial of the Sea Lion | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.1]
+[T 30 Trial of the Sea Lion | at=56.2,30.6,1450; class=DRUID; race=Tauren; xl=16.1]
+[A 31 Aquatic Form | at=56.2,30.6,1450; pre=30; class=DRUID; race=Tauren; xl=16.1]
+[T 31 Aquatic Form | at=76.5,27.2,1456; class=DRUID; race=Tauren; xl=16.1]
+[H Crossroads | xl=16.1]
 ]==])

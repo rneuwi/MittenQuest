@@ -130,8 +130,16 @@ N violation(s)`. To clear a violation, fix the simulator. If a quest really can'
 rule was introduced (2026-11-05). They don't fail the build, but the list only shrinks: work it
 down by fixing the simulator, and remove an entry when the build reports it as fixed. The
 simulator is chaotic, so a fix elsewhere can swap which dungeon quests get dropped. Only
-re-baseline (add the swapped-in quests, marked with the date and cause) when the total per
-faction goes down, and say so in the commit.
+re-baseline (add the swapped-in quests, marked with the date and cause) when the number of
+dungeon quests done per faction goes up (quests in scope minus gaps; the scope itself grows
+when the generator learns to place more quests), and say so in the commit.
+
+Quests whose giver, start item or turn-in is inside a dungeon (no outdoor position) are placed
+at the dungeon's entrance and handled during a run of it (`inside_run`): turn-ins inside, then
+pick-ups inside, repeated while that opens more (Necklace Recovery, Take 2 into Translating the
+Journal in Uldaman; the Small Scroll from Charlga Razorflank in Razorfen Kraul starting An
+Unholy Alliance). A finished quest handed in inside counts toward that dungeon's next run.
+The Deeprun Tram is instanced but not a group run, so the rule leaves its quests out.
 
 Chain steps toward a dungeon quest that have been carried `FEEDER_ERRAND_AGE` levels get an
 errand to their objectives on another map, so they're done instead of carried until the log
