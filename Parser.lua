@@ -35,6 +35,7 @@
         faction=Horde        only for this faction
         quests=id,id         (D steps) dungeon quests to carry in
         alt=text             fallback shown if a flight path isn't known
+        place=Ratchet        (A/T steps) town or zone the quest giver is in, shown after the name
         xl=12.4              level the route expects you to be at this step (pace display)
         ml=10                (C steps) highest level of the mobs to kill; grey mobs mean a
                              quest you haven't started is skipped as outleveled
@@ -141,6 +142,8 @@ local function parseOptions(step, optText, warn)
             step.danger = tonumber(val)
         elseif key == "alt" then
             step.alt = val
+        elseif key == "place" then
+            step.place = val
         else
             warn(("unknown key '%s'"):format(key))
         end

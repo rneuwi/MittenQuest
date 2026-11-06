@@ -114,6 +114,13 @@ DUNGEON_SECONDS = 5400         # finding a group + the run
 HEARTH_SECONDS = 10
 HEARTH_COOLDOWN = 3600
 RESPAWN_WAIT_SECONDS = 240     # expected wait on a target with only one or two spawn points
+RESPAWN_SECONDS = 300          # normal mob respawn
+FARM_RADIUS = 10               # map units: target spawns counted around the objective spot
+CROWD_RADIUS = 3               # other hostile spawns counted around it
+CROWD_FREE = 2                 # other mobs per target that cost nothing (normal mixed camps)
+CROWD_CAP = 4                  # other mobs per target counted at most, above CROWD_FREE
+CROWD_PULLS = 0.15             # extra fights per kill per other mob per target
+FARM_ROUNDS = 3                # respawn waits counted at most
 WORTH_RATIO = 0.55             # drop quests below this share of a typical quest's XP/hour
 
 
@@ -213,6 +220,18 @@ CFG = FACTION_CFG[FACTION]
 # Zones/sorts never routed: battlegrounds, raids, PvP island, profession writs, holiday sorts (<0)
 SKIP_SORTS = {3277, 3358, 2597, 2717, 3428, 3456, 2677, 3429, 2159, 1977, 16941, 16606, 1583}
 MAX_DUNGEON_QUEST_LEVEL = 58
+# Lowest level a group usually runs each dungeon at (the bottom of its usual range). QuestieDB
+# has too few spawns inside instances to work this out. A run waits until you're within a level
+# of it: Blueleaf Tubers (level 26) used to send you into Razorfen Kraul's level 30 mobs at 25.
+# Forever's own dungeons (City of Dalaran, Ruins of Lordaeron...) aren't listed and go by
+# their quests' levels.
+DUNGEON_MIN_LEVEL = {
+    'Ragefire Chasm': 13, 'Wailing Caverns': 17, 'The Deadmines': 17, 'Shadowfang Keep': 22,
+    'Blackfathom Deeps': 24, 'The Stockade': 24, 'Gnomeregan': 29, 'Razorfen Kraul': 29,
+    'Scarlet Monastery': 30, 'Razorfen Downs': 37, 'Uldaman': 41, "Zul'Farrak": 44, 'Maraudon': 46,
+    "The Temple of Atal'Hakkar": 50, 'Blackrock Depths': 52, 'Dire Maul': 55, 'Blackrock Spire': 55,
+    'Scholomance': 56, 'Stratholme': 56,
+}
 
 # Each faction's home zones. The other faction's route never takes quests there, not even
 # from neutral givers (Ratchet's quests are the Horde's Barrens content). Dungeons whose
@@ -519,6 +538,7 @@ def build_quests():
         pts, mobs, items, elite = [], [], [], start_elite
         mob_levels = []     # levels of the hostile mobs the objectives have you kill
         x.kills, x.objects, x.contested = 0, 0, None   # time model inputs
+        x.farm = []         # (npc id, kills needed) per mob type the objectives have you kill
         for o in idx(obj, 1) or []:
             nid = idx(o, 1) if isinstance(o, (list, dict)) else o
             e = N.get(str(nid))
@@ -532,7 +552,9 @@ def build_quests():
                 if elite_foe(e):
                     elite = True
                 few = 0 < len(sp) <= 2
-                x.kills += parse_count(x.text, name, 1 if few else 8)
+                n_kill = parse_count(x.text, name, 1 if few else 8)
+                x.kills += n_kill
+                x.farm.append((int(nid), n_kill))
                 if few:
                     x.contested = (name, len(sp))
         for kc in idx(obj, 5) or []:
@@ -576,7 +598,7 @@ def build_quests():
                 e = N.get(str(nid))
                 if e:
                     sp = spawns_of(e)
-                    srcs.append((rates.get(str(nid), 0) or 0, len(sp), e, sp))
+                    srcs.append((rates.get(str(nid), 0) or 0, len(sp), e, sp, int(nid)))
             # An item that normal mobs also drop is a solo quest: one elite named mob in the
             # loot table (Nimsy for Kobold Candles, Croaky for Bounty on Murlocs) must not make
             # it a group quest. Farm the normal sources; elite only when every source is elite.
@@ -590,7 +612,7 @@ def build_quests():
                     pts += spawns_of(e)
             if srcs:
                 srcs.sort(key=lambda s: (s[0], s[1]), reverse=True)
-                rate, _, e, sp = srcs[0]
+                rate, _, e, sp, src_id = srcs[0]
                 pts += sp
                 mobs.append(clean(e.get('name')))
                 if mob_level(e):
@@ -598,7 +620,9 @@ def build_quests():
                 if rate and (best_drop is None or rate < best_drop):
                     best_drop = rate
                 n = count or 1
-                x.kills += math.ceil(n / (rate / 100)) if rate else n * 2
+                n_kill = math.ceil(n / (rate / 100)) if rate else n * 2
+                x.kills += n_kill
+                x.farm.append((src_id, n_kill))
                 if 0 < len(sp) <= 2 and not x.contested:
                     x.contested = (clean(e.get('name')), len(sp))
             elif it.get('objectDrops'):
@@ -625,6 +649,38 @@ def build_quests():
 
 
 QUESTS = build_quests()
+
+
+def _grab_items_at_start():
+    """Quest items lying next to the quest giver (Blueleaf Tubers: the Crate With Holes and the
+    Snufflenose Owner's Manual sit beside Mebok Mizzyrix). The accept step says to take them,
+    since nothing else does. Only when the quest has other work too: when collecting things
+    beside the giver is the whole quest (Cactus Apple Surprise), its own step covers it."""
+    for q in QUESTS.values():
+        q.grabItems = []
+        if not q.start:
+            continue
+        obj = (Q.get(str(q.id)) or {}).get('objectives') or {}
+        src = (Q.get(str(q.id)) or {}).get('sourceItemId')
+        here, elsewhere = [], bool(idx(obj, 1) or idx(obj, 2) or idx(obj, 5))
+        for entry in idx(obj, 3) or []:
+            iid = entry[0] if isinstance(entry, list) and entry else entry
+            if not isinstance(iid, int) or iid == src:
+                continue
+            it = I.get(str(iid)) or {}
+            at_giver = any(
+                m == q.start[0] and math.hypot(x - q.start[1], y - q.start[2]) <= 2
+                for oid in it.get('objectDrops') or []
+                for m, x, y, _ in spawns_of(O.get(str(oid)) or {}))
+            if at_giver:
+                here.append(clean(it.get('name')))
+            else:
+                elsewhere = True
+        if elsewhere:
+            q.grabItems = list(dict.fromkeys(n for n in here if n))
+
+
+_grab_items_at_start()
 # Follow-ups given by an NPC with spawns in several zones (Minor Manifestation of Earth):
 # start at the copy in the zone where the previous quest ended.
 for _q in QUESTS.values():
@@ -646,6 +702,8 @@ DANGER_RADIUS = 2.5     # map units (percent of the zone map) around the spot
 DANGER_MARGIN = 2       # go there once your level is at least danger - this
 DANGER_FLOOR = 8        # starting areas mix level 1 quests with level 5 mobs by design
 _HOSTILE_SPAWNS = collections.defaultdict(list)    # map -> [(x, y, level, npc id)]
+# Capitals (by area). No open-world mobs live there.
+CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
 for _nid, _e in N.items():
     if (_e.get('rank') or 0) != 0:
         continue    # elites and rares: rare spawns, and named elites are their own quests
@@ -653,6 +711,8 @@ for _nid, _e in N.items():
     if not _lvl:
         continue
     for _m, _x, _y, _a in spawns_of(_e):
+        if _a in CAPITALS:
+            continue    # city NPCs with no faction data (vendors, trainers, mount models) aren't mobs
         _HOSTILE_SPAWNS[_m].append((_x, _y, _e.get('minLevel'), _nid))
 _DANGER_CACHE = {}
 
@@ -677,6 +737,39 @@ for _q in QUESTS.values():
     _d = [area_danger(p) for p in (_q.start, _q.target, _q.finish)]
     _d = [d for d in _d if d]
     _q.danger = max(_d) if _d else None
+
+
+def _farm_spots():
+    """How crowded each kill objective is around its target: few targets mean waiting for
+    respawns, and many other mobs there mean fighting through them (Elemental War: 5 Burning
+    Ravagers for ~15 kills among dozens of Bloodfury harpies)."""
+    for q in QUESTS.values():
+        q.farmNear, q.crowd = [], 0
+        t = q.target
+        if not t or not q.farm:
+            continue
+        ids = set()
+        for nid, need in q.farm:
+            e = N.get(str(nid)) or {}
+            near = [p for p in spawns_of(e)
+                    if p[0] == t[0] and math.hypot(p[1] - t[1], p[2] - t[2]) <= FARM_RADIUS]
+            if len(near) > 2:      # one or two spawns: the contested rule covers it
+                q.farmNear.append((len(near), need))
+            if near:
+                ids.add(nid)
+        if not ids:
+            continue
+        mine = others = 0
+        for x, y, _, nid in _HOSTILE_SPAWNS.get(t[0], ()):
+            if math.hypot(x - t[1], y - t[2]) <= CROWD_RADIUS:
+                if int(nid) in ids:
+                    mine += 1
+                else:
+                    others += 1
+        q.crowd = min(max(0, others / max(mine, 1) - CROWD_FREE), CROWD_CAP)
+
+
+_farm_spots()
 
 # Quests whose giver (or start item) is inside a dungeon, by dungeon: picked up during a run.
 INSIDE_STARTS = collections.defaultdict(list)
@@ -725,7 +818,6 @@ def _name_inns():
 # Class trainers friendly to this faction (WoW: Forever adds e.g. Undead Paladins and
 # Dwarf Shamans, so classes come from the data, not Classic's race/class table).
 CLASS_NAMES = ['Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Shaman', 'Mage', 'Warlock', 'Druid']
-CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
 # A starting zone and its capital count as one place for class quests (trainers send you
 # between the two).
 _HOME = [(1411, 1454), (1412, 1456), (1420, 1458), (1429, 1453), (1426, 1455), (1438, 1457)]
@@ -787,6 +879,35 @@ def _name_trainers():
 
 
 _name_trainers()
+
+CAPITAL_MAPS = {m for m in (area_map(a) for a in CAPITALS) if m}
+# A quest giver this close (map percent) to where you stand is in the same town.
+HUB_RADIUS = 4
+# A quest giver this close to a flight master is named after that town; further out, the zone.
+PLACE_RADIUS = 5
+
+
+def place_name(loc):
+    """Town or zone a quest giver stands in, shown next to the quest name ("Ratchet",
+    "Thunder Bluff", "The Barrens"), so a step that sends you to another town says so."""
+    if not loc:
+        return None
+    area = loc[3] if len(loc) > 3 else None
+    if area in CAPITALS:
+        return ZONE_NAMES.get(area)
+    near = [(math.hypot(fm['loc'][1] - loc[1], fm['loc'][2] - loc[2]), fm['node'])
+            for fm in FMS if fm['loc'][0] == loc[0]]
+    near = [x for x in near if x[0] <= PLACE_RADIUS]
+    if near:
+        return min(near)[1]
+    return ZONE_NAMES.get(area)
+
+
+def same_hub(a, b):
+    """Two quest givers you'd visit on one stop: the same capital, or a few steps apart."""
+    if a is None or b is None or a[0] != b[0]:
+        return False
+    return a[0] in CAPITAL_MAPS or math.hypot(a[1] - b[1], a[2] - b[2]) <= HUB_RADIUS
 # Class quests per class: done as class-only side trips at training visits (most start at or
 # near the trainer). Dungeon/raid ones and level-60 endgame quests are left out; the level-40
 # mount quests stay in.
@@ -865,8 +986,16 @@ def travel_seconds(a, b, L):
 
 
 def objective_seconds(q, L):
-    return (q.kills * seconds_per_kill(L) + min(q.objects, 30) * OBJECT_SECONDS
+    spk = seconds_per_kill(L)
+    secs = (q.kills * spk + min(q.objects, 30) * OBJECT_SECONDS
             + (RESPAWN_WAIT_SECONDS if q.contested else 0))
+    # Fewer targets than kills: kill them all, then wait out the rest of each respawn.
+    for n, need in getattr(q, 'farmNear', ()):
+        if need > n:
+            secs += min(math.ceil(need / n) - 1, FARM_ROUNDS) * max(0, RESPAWN_SECONDS - n * spk)
+    # Targets mixed in with many other mobs: some of those have to be fought too.
+    secs += q.kills * getattr(q, 'crowd', 0) * CROWD_PULLS * spk
+    return secs
 
 
 def xp_mult(q, L):
@@ -977,6 +1106,8 @@ class Sim:
             return False
         if q.dungeon and q.level > self.L + 5:
             return False            # don't carry dungeon quests for ages
+        if q.dungeon and self.L < DUNGEON_MIN_LEVEL.get(q.dungeon, 0) - 5:
+            return False            # nor long before you can run the dungeon
         if not q.dungeon and q.level > self.L + 4:
             return False
         # Mobs that are grey for you give no XP and the quest reward is all that's left: skip it
@@ -1135,7 +1266,7 @@ class Sim:
                 tail = f"; class={cf}{self.race_key(q)}"
                 opt = '; opt' if (q.group or inherited or q.breadcrumbFor) else ''
                 prestr = ('; pre=' + ','.join(map(str, pre))) if pre else ''
-                self.emit(f"[A {q.id} {q.name} | {self.at(q.start)}{prestr}{opt}{tail}]")
+                self.emit(f"[A {q.id} {q.name} | {self.at(q.start)}{prestr}{opt}{self.place_key(q.start)}{tail}]")
                 if q.startItem:
                     self.emit(f"Starts from {q.startItem}, which drops in this area.")
                 if q.group:
@@ -1155,7 +1286,7 @@ class Sim:
                         name, n = q.contested
                         spots = 'one spawn point' if n == 1 else f'{n} spawn points'
                         self.emit(f"{name} has only {spots}. If others are waiting for it, group up to share it.")
-                self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{tail}]")
+                self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{self.place_key(q.finish)}{tail}]")
                 self.cdone[cls].add(q.id)
                 self.cblock_maps.add(q.finish[0])
 
@@ -1219,6 +1350,11 @@ class Sim:
         names = [RACE_NAME[r] for r, b in RACE_BITS.items() if (q.races & b) and (b & FMASK)]
         return out + '; race=' + ','.join(names)
 
+    def place_key(self, loc):
+        """'; place=Ratchet': the town or zone of a quest giver, shown next to the name."""
+        name = place_name(loc)
+        return f'; place={name}' if name else ''
+
     # -- actions
     def danger_key(self, *points):
         """'; danger=N' when a spot's mobs are at or above the route's level here, so the
@@ -1238,9 +1374,14 @@ class Sim:
         if q.breadcrumbFor or q.group or q.id in self.uncertain:
             opts.append('opt')
         extra = self.danger_key(q.start, q.target, q.finish) + self.race_key(q)
-        self.emit(f"[A {q.id} {q.name} | {'; '.join(opts)}{extra}]")
+        self.emit(f"[A {q.id} {q.name} | {'; '.join(opts)}{self.place_key(q.start)}{extra}]")
         if q.id in CORR_NOTES:
             self.emit(clean(CORR_NOTES[q.id]))
+        if q.grabItems:
+            names = q.grabItems[0] if len(q.grabItems) == 1 else \
+                ', '.join(q.grabItems[:-1]) + ' and ' + q.grabItems[-1]
+            them = 'it' if len(q.grabItems) == 1 else 'them'
+            self.emit(f"Also pick up the {names} lying next to the quest giver: the quest needs {them}.")
         if q.startItem:
             self.emit(f"Starts from {q.startItem}, which drops in this area.")
         if q.group:
@@ -1279,7 +1420,8 @@ class Sim:
         self.go(q.finish)
         self.t += QUEST_NPC_SECONDS
         opt = '; opt' if (q.group or q.id in self.uncertain) else ''
-        self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{opt}{self.danger_key(q.finish)}{self.race_key(q)}]")
+        self.emit(f"[T {q.id} {q.name} | {self.at(q.finish)}{self.place_key(q.finish)}{opt}"
+                  f"{self.danger_key(q.finish)}{self.race_key(q)}]")
         del self.active[q.id]
         self.done.add(q.id)
         gap = self.L - q.level
@@ -1320,6 +1462,19 @@ class Sim:
             if c < best_cost:
                 best, best_cost = (kind, q), c
         return best
+
+    def sweep_hub(self, mapID):
+        """At a quest giver, hand in and pick up everything else in this town before
+        heading out (and the follow-ups those hand-ins open), so the route never leaves
+        with quests still waiting here and comes back for them later."""
+        anchor = self.pos
+        for _ in range(200):
+            here = [(dist(self.pos, loc), kind, q.id, q) for kind, q, loc in self.candidates(mapID)
+                    if kind != 'C' and same_hub(anchor, loc)]
+            if not here:
+                return
+            _, kind, _, q = min(here, key=lambda x: (x[0], x[1] != 'T', x[2]))
+            getattr(self, 'accept' if kind == 'A' else 'turnin')(q)
 
     def dungeon_errand(self, current, allowed_maps=None):
         """Another map with dungeon quests to pick up now, before they go grey (Ragefire
@@ -1409,6 +1564,8 @@ class Sim:
             kind, q = act
             self.maybe_hearth_to({'A': q.start, 'C': q.target, 'T': q.finish}[kind])
             getattr(self, {'A': 'accept', 'C': 'complete', 'T': 'turnin'}[kind])(q)
+            if kind != 'C':
+                self.sweep_hub(mapID)
             self.train_nearby()
             self.maybe_learn_fp()
             self.check_dungeons(area)
@@ -1420,7 +1577,9 @@ class Sim:
                 self.emit(f"[P {fm['node']} | {self.at(fm['loc'])}]")
                 self.learned.add(fm['node'])
 
-    def check_dungeons(self, area, force=False):
+    def check_dungeons(self, area, force=False, cross=False):
+        """Run each carried dungeon once it's ready. cross: the route would grind otherwise,
+        so don't wait to be on the dungeon's continent."""
         for dname, qids in list(self.carried_dungeon.items()):
             # Quests to do in there: unfinished dungeon quests, plus quests handed in inside
             # once their objectives are done (or they have none outdoors).
@@ -1433,6 +1592,7 @@ class Sim:
             # One trip per dungeon: go once you can handle the hardest quest you carry,
             # but don't sit on the easiest one for more than ~5 levels.
             ready = min(max(levels) - 1, min(levels) + 5)
+            ready = max(ready, DUNGEON_MIN_LEVEL.get(dname, 0) - 1)   # not below the dungeon's level
             if not force and self.L >= ready and (self.dungeon_pickups_here(dname) or (
                     self.L <= min(levels) + 2 and self.dungeon_pickups_nearby(dname))):
                 continue    # pick up the rest of this dungeon's quests first: one run for all
@@ -1440,7 +1600,7 @@ class Sim:
                 continue    # a chain in the log unlocks another quest here (the Defias Brotherhood)
             q0 = QUESTS[next(iter(qids))]
             ent = entrance_of(dname) or dungeon_entrance(q0.sort)
-            if not force and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
+            if not force and not cross and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
                     and self.L < max(levels) + 3:
                 continue    # wait until the route is on the dungeon's continent
             if force or self.L >= ready:
@@ -1643,6 +1803,14 @@ class Sim:
                 current = nxt
                 continue
             if self.future_quests(maps):
+                # A dungeon run that's ready beats grinding, even on the other continent
+                # (Alliance sat in Silithus at 56-58 carrying Blackrock Depths quests).
+                before = len(self.steps)
+                self.check_dungeons(self.map_area.get(current), cross=True)
+                if len(self.steps) != before:
+                    if self.pos and self.pos[0] in self.map_quests:
+                        current = self.pos[0]
+                    continue
                 self.train_trips()
                 # Nothing open yet: grind one level (counts as XP).
                 target = min(60, self.L + 1)

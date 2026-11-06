@@ -201,6 +201,14 @@ function Steps:ChainPassed(guide)
     return passed
 end
 
+-- True when at least one of these quests is in your log.
+function Steps:CarriesAny(questIDs)
+    for _, q in ipairs(questIDs or {}) do
+        if InLog(q) then return true end
+    end
+    return false
+end
+
 ---------------------------------------------------------------------------
 -- Satisfaction (auto-completion)
 ---------------------------------------------------------------------------
@@ -267,6 +275,9 @@ function Steps:Describe(step)
     local label = LABEL[step.type]
     local body = step.text or ""
     if step.type == "HEARTH" and body == "" then body = "Hearthstone" end
+    if step.place and (step.type == "ACCEPT" or step.type == "TURNIN") then
+        body = body .. " " .. DIM .. "(" .. step.place .. ")|r"
+    end
     local main = label and ("|c%s%s:|r %s"):format(color, label, body) or ("|c%s%s|r"):format(color, body)
 
     local sub = {}

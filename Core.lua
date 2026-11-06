@@ -293,6 +293,10 @@ function FG:Evaluate(steps, p)
             -- abandoned). Nothing to do here; if its pick-up step is earlier and undone,
             -- the cursor stops there first anyway.
             r = "notinlog"
+        elseif s.type == "DUNGEON" and s.quests and #s.quests > 0 and not S:CarriesAny(s.quests) then
+            -- None of this run's quests are in your log (skipped or never picked up): the
+            -- arrow mustn't send you into the dungeon for them.
+            r = "notinlog"
         elseif s.questID and passed[s.questID] then
             r = "chain"      -- a later quest in its chain is already started/done
         elseif skipGrey and not p.force[i] and S:IsOutleveled(s, guide) then

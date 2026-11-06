@@ -12,10 +12,34 @@
   Blackrock Depths quests among them) and the Alliance route 18 more. Horde takes about 2
   hours longer to 60 and Alliance about 1.5 hours shorter.
 
+**Guide window**
+- Accept and turn-in steps now show the town or zone in grey after the quest name, like
+  "Accept: Trouble at the Docks (Ratchet)", so you can tell when the next quest is in
+  another town.
+
 **Routes**
-- Every guide from level 16 (Horde) and 23 (Alliance) on was rebuilt and renamed, and Alliance
-  now has one more guide (56-60). If you're partway through one, it starts over at the top, but
-  steps you've already done in the game are checked off automatically.
+- In a town, the route now turns in and picks up every quest there before heading out,
+  instead of taking a few, leaving, and coming back for quests that were already there.
+- Routes no longer grind levels while carrying dungeon quests that are ready: Alliance used to
+  grind from 56 to 58 in Silithus with Blackrock Depths quests in the log.
+- Quests given out in capital cities are no longer held back as "dangerous". Vendors and
+  trainers in Orgrimmar, Thunder Bluff, Darnassus and Ironforge were being counted as hostile
+  mobs.
+- Updated to the latest Forever quest data (QuestieDB 21be340): quest level fixes, NPC
+  locations and the faction banner for the Alliance "Camping 101: Tailoring" quests.
+- Dungeons wait until you're close to their usual level. Blueleaf Tubers used to send you into
+  Razorfen Kraul at 25; the run is now at 29, and dungeon quests aren't picked up long before
+  you can run them.
+- Quests whose targets are few and mixed in with lots of other mobs are skipped as too slow,
+  like Elemental War in Stonetalon (5 Burning Ravagers for about 15 kills among dozens of
+  harpies).
+- When a quest needs items lying next to the quest giver, the accept step now says so
+  (Blueleaf Tubers: the Crate With Holes and the Snufflenose Owner's Manual).
+- The arrow no longer sends you to a dungeon when none of the run's quests are in your log.
+- Horde reaches 60 in about 101 hours (was 102) with less grinding; Alliance takes about 92
+  (was 91).
+- Every guide was rebuilt and most were renamed. If you're partway through one, it starts
+  over at the top, but steps you've already done in the game are checked off automatically.
 
 ## 1.1.1
 
