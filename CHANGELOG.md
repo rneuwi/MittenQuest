@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.2.0
 
 **More dungeon quests**
 - Routes now hand in finished dungeon quests instead of carrying them for many levels. A
