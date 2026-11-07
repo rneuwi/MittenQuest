@@ -1,5 +1,12 @@
 # MittenQuest
 
+## 1.3.1
+
+**Fixes**
+- Undo skip (and /mq back) now works when a skip finished a guide and the next guide loaded.
+  It used to say there was nothing to undo, and loading the old guide jumped straight forward
+  again. Undo now takes you back to that guide with the skipped step open again.
+
 ## 1.3.0
 
 **Fixes**
