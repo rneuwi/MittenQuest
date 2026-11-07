@@ -17,6 +17,8 @@ local WHY_TEXT = {
     arrived = "You got there. Click to undo.",
     implied = "Done because the next quest step is already done.",
     chain   = "Done because you're already further along this quest chain.",
+    exclusive = "Done: you have another version of this quest (or took the other choice), so this one can't be taken.",
+    notoffered = "Skipped: its quest giver didn't offer it when you talked to them (moved or removed in Forever), or it needs a quest that wasn't offered. Click to bring it back.",
     notinlog = "Skipped: this quest isn't in your quest log. Pick it up and this step comes back.",
     outleveled = "Skipped automatically: this quest (or the mobs it has you kill) is grey for your level and you never started it. Click to do it anyway.",
     skipped = "Skipped manually. Click to un-skip.",
@@ -137,19 +139,21 @@ function Frame:Create(cfg)
         return b
     end
 
+    -- Both act on the step the arrow points at (FG:GetTargetStep), which can be a nearer
+    -- upcoming step rather than the current one.
     self.btnSkip = MakeButton("Skip step", function()
-        local step = FG:GetCurrentStep()
+        local step = FG:GetTargetStep()
         return step and ("Skip: " .. (step.text or step.type)) or "Nothing to skip"
     end, function() FG:SkipCurrentStep() end)
 
     self.btnSkipQuest = MakeButton("Skip quest", function()
-        local step = FG:GetCurrentStep()
+        local step = FG:GetTargetStep()
         if step and step.questID then
             return "Skip every step of \"" .. ns.Steps:QuestName(step.questID) .. "\" (accept, objectives, turn-in)."
         end
-        return "The current step isn't a quest step."
+        return "The step the arrow points at isn't a quest step."
     end, function()
-        local step = FG:GetCurrentStep()
+        local step = FG:GetTargetStep()
         if step and step.questID then FG:RequestSkipQuest(step.questID) end
     end)
 
@@ -429,7 +433,7 @@ end
 
 function Frame:UpdateButtons()
     if not self.btnSkip then return end
-    local step = FG:GetCurrentStep()
+    local step = FG:GetTargetStep()
     self.btnSkip:SetEnabled(step ~= nil)
     self.btnSkipQuest:SetEnabled(step ~= nil and step.questID ~= nil)
     self.btnUndo:SetEnabled(FG:CanUndo() ~= nil)

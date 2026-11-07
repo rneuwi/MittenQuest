@@ -1,5 +1,42 @@
 # MittenQuest
 
+## Unreleased
+
+**Fixes**
+- Quests with another version from a different giver, or an either/or choice (The Ashenvale
+  Hunt, the Warrior and Warlock class choices, and about 90 more), now count as done once you
+  have the other one. Their steps used to stay open further down the guide even though the
+  game would never let you take them. Follow-ups that need them are skipped too.
+- When you talk to a quest giver and they don't offer a quest the guide says they give
+  (because Forever moved or removed it), the guide now skips it and its follow-ups, and the map
+  stops showing its "!" there. If you've seen it offered somewhere else, like inside a
+  dungeon, the "!" moves there. Click the step to bring it back if that was wrong, and
+  /mq notoffered lists what was skipped this way (please include it in bug reports).
+- Skip step and Skip quest (and /mq skip, /mq skipquest) now act on the step the arrow is
+  pointing at. When the arrow picked a nearer upcoming step, skipping used to skip the current
+  step instead and the arrow stayed on the quest you wanted gone.
+
+**Dungeons**
+- Before a dungeon run, the route now collects that dungeon's quests from other towns first, so
+  you go in once with all of them. Ragefire Chasm used to run without the two Thunder Bluff
+  quests, and Wailing Caverns without Serpentbloom.
+- After a run, quests you can hand in near the entrance are handed in right away instead of
+  being carried for levels. Unending Torment now goes straight back to Master Apothecary
+  Faranell after Ruins of Lordaeron, and the rest of the chain follows in the Undercity.
+- The later Unending Torment steps (buying reagents, using the serum on Othmar's body) are done
+  in the Undercity, not on extra Ruins of Lordaeron runs.
+- The Horde route does 6 more dungeon quests in 4 fewer runs; the Alliance route does the
+  same number in 4 fewer runs.
+
+**Routes**
+- Updated to the latest Forever quest data (QuestieDB 5fba5d8): Ruins of Lordaeron quest
+  fixes (level requirements, the Unending Torment chain, The New Plague and The Wrath of
+  Rath'mael prerequisites), Frostmane Hold exploration, and refreshed NPC and object locations.
+- Horde reaches 60 in about 98.5 hours (was 101) and Alliance in about 88 (was 92).
+- Every shared Horde and Alliance guide has a new level range and title, and the Undead
+  starter is now "Horde 1-13 Tirisfal Glades (Undead)". If you're partway through one of
+  them, that guide starts over. The Horde route is now 11 guides instead of 12.
+
 ## 1.2.0
 
 **More dungeon quests**

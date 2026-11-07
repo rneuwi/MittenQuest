@@ -82,6 +82,20 @@ function Pins:CollectEntries()
             end
         end
     end
+    -- Givers that didn't offer the quest when you talked to them (CheckRouteOffers): no pin
+    -- there. A spot where you did see it offered (another NPC, inside a dungeon) is used
+    -- instead when there is one.
+    for id, rec in pairs(FG.db.global.notOffered or {}) do
+        local e, l = all[id], learned[id]
+        if e and l and l.map and l.giver and l.giver ~= rec.npc then
+            local merged = {}
+            for k, v in pairs(e) do merged[k] = v end
+            merged.map, merged.x, merged.y, merged.giver = l.map, l.x, l.y, l.giver
+            all[id] = merged
+        else
+            all[id] = nil
+        end
+    end
     self.lastEntries = all
     return all
 end
@@ -144,20 +158,67 @@ function Pins:LearnTurnin(questID)
 end
 
 function Pins:OnGossipShow()
+    local offered = {}
     for _, q in ipairs(C_GossipInfo.GetAvailableQuests() or {}) do
         self:LearnOffer(q.questID, q.title, q.questLevel)
+        if q.questID then offered[q.questID] = true end
     end
     for _, q in ipairs(C_GossipInfo.GetActiveQuests() or {}) do
         if q.isComplete then self:LearnTurnin(q.questID) end
     end
+    self:CheckRouteOffers(offered)
 end
 
 -- Older-style quest greeting window (NPCs with several quests and no gossip).
 function Pins:OnQuestGreeting()
+    local offered = {}
     for i = 1, GetNumAvailableQuests() do
         local questID = select(5, GetAvailableQuestInfo(i))
         self:LearnOffer(questID, GetAvailableTitle(i), GetAvailableLevel and GetAvailableLevel(i))
+        if questID and questID ~= 0 then offered[questID] = true end
     end
+    self:CheckRouteOffers(offered)
+end
+
+-- You're talking to an NPC and `offered` is everything they offer you. A route quest the
+-- data says this NPC gives, that you could take now (level, prerequisites, not grey) but
+-- that isn't in the list, isn't given here in Forever: record it so the guide skips it and
+-- the map stops pinning it here. Only full lists count (gossip / quest greeting), never a
+-- single quest window.
+function Pins:CheckRouteOffers(offered)
+    local npc = NPCName()
+    local guide = FG:GetActiveGuide()
+    if not npc or not guide then return end
+    local steps, p = FG:GetActiveSteps()
+    local S, level = ns.Steps, ns.PlayerLevel()
+    local rec, found = FG.db.global.notOffered, {}
+    for i, s in ipairs(steps or {}) do
+        local q = s.questID
+        if s.type == "ACCEPT" and q and not offered[q] and not (p.done and p.done[i])
+                and not InLog(q) and not IsTurnedIn(q) and not rec[q] then
+            local e = self:GetQuestEntry(q)
+            local ok = e and e.giver == npc
+                and (not e.minLevel or level >= e.minLevel)
+                and (not s.minLevel or level >= s.minLevel)
+                and not S:MissingPrereqs(s) and not S:IsGrey(q, guide)
+            for _, pre in ipairs(ok and e.pre or {}) do
+                if not IsTurnedIn(pre) then ok = false end
+            end
+            if ok then found[#found + 1] = q end
+        end
+    end
+    if #found == 0 then return end
+    local mapID, x, y = PlayerSpot()
+    local names = {}
+    for _, q in ipairs(found) do
+        rec[q] = { npc = npc, level = level, map = mapID, x = x, y = y,
+                   guide = FG.db.char.activeGuide, t = time() }
+        names[#names + 1] = S:QuestName(q)
+    end
+    FG:Print(("%s doesn't offer %s here, so the guide skips it. Click the step to bring it back.")
+        :format(npc, table.concat(names, ", ")))
+    FG:Advance(true)
+    self:RequestRefresh()
 end
 
 ---------------------------------------------------------------------------

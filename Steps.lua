@@ -201,6 +201,54 @@ function Steps:ChainPassed(guide)
     return passed
 end
 
+-- Quests you can no longer take because you have an either/or alternative (ex= on the
+-- accept step; e.g. another giver's version of The Ashenvale Hunt), plus follow-ups whose
+-- missing prerequisite is one of those. The game never flags the guide's version done, so
+-- without this its steps stayed open for good.
+function Steps:ExclusiveTaken(guide)
+    local taken = {}
+    local steps = guide and (guide.allSteps or guide.steps) or {}
+    for _, s in ipairs(steps) do
+        if s.type == "ACCEPT" and s.questID and s.exclusive
+                and not InLog(s.questID) and not IsTurnedIn(s.questID) then
+            for _, e in ipairs(s.exclusive) do
+                if InLog(e) or IsTurnedIn(e) then taken[s.questID] = true; break end
+            end
+        end
+    end
+    return self:WithFollowUps(guide, taken)
+end
+
+-- Quests the guide sends you to pick up from a giver who, when you talked to them, didn't
+-- offer them (FG.db.global.notOffered, recorded by QuestPins), plus their follow-ups. Picking
+-- the quest up anywhere clears the record (Core QUEST_ACCEPTED).
+function Steps:NotOffered(guide, records)
+    local seeds = {}
+    for q in pairs(records or {}) do
+        if not InLog(q) and not IsTurnedIn(q) then seeds[q] = true end
+    end
+    return self:WithFollowUps(guide, seeds)
+end
+
+-- Adds every quest whose accept step needs (pre=) one of `seeds`, transitively. Quests in
+-- your log or turned in are never added: game state wins.
+function Steps:WithFollowUps(guide, seeds)
+    local steps = guide and (guide.allSteps or guide.steps) or {}
+    local changed = next(seeds) ~= nil
+    while changed do
+        changed = false
+        for _, s in ipairs(steps) do
+            local q = s.questID
+            if s.type == "ACCEPT" and q and not seeds[q] and not InLog(q) and not IsTurnedIn(q) then
+                for _, p in ipairs(s.pre or {}) do
+                    if seeds[p] then seeds[q] = true; changed = true; break end
+                end
+            end
+        end
+    end
+    return seeds
+end
+
 -- True when at least one of these quests is in your log.
 function Steps:CarriesAny(questIDs)
     for _, q in ipairs(questIDs or {}) do

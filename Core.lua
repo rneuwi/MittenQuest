@@ -86,6 +86,9 @@ local defaults = {
         -- Quest givers / turn-in NPCs recorded while playing (shared by all characters).
         learnedQuests = {},   -- [questID] = { name, level, map, x, y, giver }
         learnedTurnins = {},  -- [questID] = { map, x, y, npc }
+        -- Route quests whose giver didn't offer them when you talked to them (moved or
+        -- removed in Forever): [questID] = { npc, level, map, x, y, guide, t }
+        notOffered = {},
     },
 }
 
@@ -274,6 +277,8 @@ function FG:Evaluate(steps, p)
     local guide = self:GetActiveGuide()
     local S = ns.Steps
     local passed = S:ChainPassed(guide)
+    local taken = S:ExclusiveTaken(guide)
+    local missing = S:NotOffered(guide, self.db.global.notOffered)
     local skipGrey = self.db.profile.skipGrey
     local nextQuestDone = false
     for i = #steps, 1, -1 do
@@ -297,6 +302,10 @@ function FG:Evaluate(steps, p)
             -- None of this run's quests are in your log (skipped or never picked up): the
             -- arrow mustn't send you into the dungeon for them.
             r = "notinlog"
+        elseif s.questID and taken[s.questID] then
+            r = "exclusive"  -- you took the other version / the other choice of this quest
+        elseif s.questID and missing[s.questID] then
+            r = "notoffered" -- its giver didn't offer it when you talked to them
         elseif s.questID and passed[s.questID] then
             r = "chain"      -- a later quest in its chain is already started/done
         elseif skipGrey and not p.force[i] and S:IsOutleveled(s, guide) then
@@ -399,7 +408,7 @@ function FG:SkipSteps(indices, label)
     if #newly == 0 then return end
     table.insert(p.undo, { indices = newly, label = label })
     while #p.undo > 50 do table.remove(p.undo, 1) end
-    self:Advance()
+    self:Advance(true)   -- re-aim the arrow now, even when the cursor didn't move
 end
 
 function FG:CanUndo()
@@ -424,8 +433,27 @@ local function DropFromUndo(p, index)
     end
 end
 
-function FG:SkipCurrentStep()
+-- The step the skip buttons act on: the one the arrow is pointing at. That's usually the
+-- current step, but the arrow can pick a nearer upcoming step ("nearest step first"), and
+-- skipping the current step then left the arrow on the quest you wanted gone.
+function FG:GetTargetStep()
     local step, index = self:GetCurrentStep()
+    local nav = ns.Navigation
+    local picked = nav and nav.pickStep
+    if picked and picked ~= step then
+        local steps, p = self:GetActiveSteps()
+        for i, s in ipairs(steps or {}) do
+            if s == picked then
+                if not p.done[i] then return picked, i end
+                break
+            end
+        end
+    end
+    return step, index
+end
+
+function FG:SkipCurrentStep()
+    local step, index = self:GetTargetStep()
     if step then self:SkipSteps({ index }, "step: " .. StepLabel(step)) end
 end
 
@@ -511,6 +539,28 @@ function FG:ToggleStep(index)
     elseif why == "implied" or why == "chain" then
         self:Print("That step counts as done because you're already past it in the quest chain.")
         ns.Frame:Update()
+    elseif why == "exclusive" then
+        self:Print("That step counts as done because you have the other version of this quest (or took the other choice).")
+        ns.Frame:Update()
+    elseif why == "notoffered" then
+        -- Bring it back: forget the record for this quest (and what its follow-ups hang on).
+        -- Clear the quest's own record and any on the chain before it (A -> B -> C: clicking
+        -- C when A wasn't offered).
+        local rec = self.db.global.notOffered
+        local preOf = {}
+        for _, s in ipairs(steps) do
+            if s.type == "ACCEPT" and s.questID then preOf[s.questID] = s.pre end
+        end
+        local todo, seen = { steps[index].questID }, {}
+        while #todo > 0 do
+            local q = table.remove(todo)
+            if q and not seen[q] then
+                seen[q] = true
+                rec[q] = nil
+                for _, p in ipairs(preOf[q] or {}) do todo[#todo + 1] = p end
+            end
+        end
+        self:Advance(true)
     elseif why == "outleveled" then
         p.force[index] = true          -- do it anyway; click again to go back to skipping
         self:Advance(true)
@@ -542,6 +592,10 @@ function FG:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
 end
 
 function FG:QUEST_ACCEPTED(_, questID)
+    -- Offered after all (another giver, or the wrong call earlier): forget the record.
+    if questID and self.db.global.notOffered[questID] then
+        self.db.global.notOffered[questID] = nil
+    end
     self:MarkQuest(questID, "ACCEPT")
     ns.QuestPins:RequestRefresh()
 end
@@ -609,7 +663,8 @@ end
 local HELP = {
     "|cff33ccff/mq|r show | hide | toggle",
     "|cff33ccff/mq|r lock | unlock | reset",
-    "|cff33ccff/mq|r skip | back        - skip the current step / undo the last skip",
+    "|cff33ccff/mq|r skip | back        - skip the step the arrow points at / undo the last skip",
+    "|cff33ccff/mq|r notoffered [clear] - quests a giver didn't offer you (skipped by the guide)",
     "|cff33ccff/mq|r unskip             - clear all manual skips",
     "|cff33ccff/mq|r debug              - print step/arrow state (for bug reports)",
     "|cff33ccff/mq|r list               - list registered guides",
@@ -618,6 +673,27 @@ local HELP = {
     "|cff33ccff/mq|r pins | minimap | lowlevel - toggle quest pins / minimap pins / trivial quests",
     "|cff33ccff/mq|r check              - validate route (prereqs, flight paths, dungeons, drops)",
 }
+
+-- /mq notoffered: list the quests the guide skips because their giver didn't offer them
+-- (send these in a bug report: they become route corrections), or "clear" to forget them.
+function FG:NotOfferedCommand(arg)
+    local rec = self.db.global.notOffered
+    if arg and arg:lower() == "clear" then
+        wipe(rec)
+        self:Print("Forgot every quest recorded as not offered.")
+        return self:Advance(true)
+    end
+    local ids = {}
+    for q in pairs(rec) do ids[#ids + 1] = q end
+    table.sort(ids)
+    if #ids == 0 then return self:Print("No quests recorded as not offered.") end
+    for _, q in ipairs(ids) do
+        local r = rec[q]
+        self:Print(("%d %s - %s didn't offer it at level %s (%s %.1f, %.1f)"):format(
+            q, ns.Steps:QuestName(q), tostring(r.npc), tostring(r.level),
+            tostring(r.map), r.x or 0, r.y or 0))
+    end
+end
 
 function FG:HandleSlash(input)
     local cmd = self:GetArgs(input or "", 1)
@@ -635,12 +711,14 @@ function FG:HandleSlash(input)
     elseif cmd == "next" or cmd == "skip" then
         self:SkipCurrentStep()
     elseif cmd == "skipquest" then
-        local step = self:GetCurrentStep()
+        local step = self:GetTargetStep()
         if step and step.questID then self:RequestSkipQuest(step.questID) end
     elseif cmd == "prev" or cmd == "back" or cmd == "undo" then
         self:UndoSkip()
     elseif cmd == "unskip" then
         self:ClearSkips()
+    elseif cmd == "notoffered" then
+        self:NotOfferedCommand(select(2, self:GetArgs(input or "", 2)))
     elseif cmd == "debug" then
         self:PrintDebug()
     elseif cmd == "list" then

@@ -26,6 +26,8 @@
     KEYS (all optional, after "|", separated by ";")
         at=x,y,uiMapID       waypoint for any step
         pre=id,id            quests that must be TURNED IN first (prerequisite chain)
+        ex=id,id             (A steps) either/or quests: once you have one of these, this
+                             quest can't be taken (another version of it, or the other choice)
         item=id:count,...    items to collect (progress shown from bags)
         drop=35              drop chance % for item= (shows expected kills)
         mob=Name             what to kill/loot
@@ -102,6 +104,8 @@ local function parseOptions(step, optText, warn)
             step.coords = parseCoords(val) or warn("bad at= coords: " .. val)
         elseif key == "pre" then
             step.pre = splitList(val, tonumber)
+        elseif key == "ex" then
+            step.exclusive = splitList(val, tonumber)
         elseif key == "item" then
             step.items = {}
             for _, pair in ipairs(splitList(val)) do
