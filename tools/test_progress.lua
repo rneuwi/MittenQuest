@@ -171,6 +171,19 @@ FG:UndoSkip()
 check("chain: undo returns to Prev on that step", FG.db.char.activeGuide == "Prev"
       and FG:GetProgress().index == 2, FG.db.char.activeGuide)
 check("chain: nothing left to undo", FG:CanUndo() == nil)
+
+-- Picking a finished guide by hand opens it instead of chaining straight to its #next.
+FG:SkipCurrentStep()
+check("pick finished: precondition, on Next", FG.db.char.activeGuide == "Next")
+FG:ChooseGuide("Prev")
+check("pick finished: Prev stays loaded", FG.db.char.activeGuide == "Prev", FG.db.char.activeGuide)
+FG:Advance()
+check("pick finished: a later pass doesn't chain away", FG.db.char.activeGuide == "Prev")
+FG:RestartGuide()
+check("restart: skip cleared, back on the last step", FG.db.char.activeGuide == "Prev"
+      and FG:GetProgress().index == 2, tostring(FG:GetProgress().index))
+FG:SkipCurrentStep()
+check("restart: finishing it again chains on", FG.db.char.activeGuide == "Next", FG.db.char.activeGuide)
 inlog = {}
 
 if failures > 0 then

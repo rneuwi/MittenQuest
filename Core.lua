@@ -253,6 +253,9 @@ end
 
 function FG:ChooseGuide(name)
     self.db.char.guidePinned = true -- picked by hand: don't auto-switch away
+    -- A finished guide picked by hand stays open (to review it, un-skip steps or start it
+    -- over) instead of chaining straight on to its #next. Cleared once it has a step to do.
+    self.viewFinished = name
     self:LoadGuide(name)
 end
 
@@ -354,7 +357,10 @@ function FG:Advance(forceWaypoint)
 
     -- Chain into the next guide when this one is finished.
     local g = self:GetActiveGuide()
-    if not steps[i] and g.header.next and self.guides[g.header.next] then
+    if steps[i] and self.viewFinished == gname then
+        self.viewFinished = nil -- unfinished again: finishing it chains on as usual
+    end
+    if not steps[i] and self.viewFinished ~= gname and g.header.next and self.guides[g.header.next] then
         self:Print("Guide complete - loading " .. g.header.next)
         return self:LoadGuide(g.header.next)
     end
@@ -694,6 +700,7 @@ local HELP = {
     "|cff33ccff/mq|r skip | back        - skip the step the arrow points at / undo the last skip",
     "|cff33ccff/mq|r notoffered [clear] - quests a giver didn't offer you (skipped by the guide)",
     "|cff33ccff/mq|r unskip             - clear all manual skips",
+    "|cff33ccff/mq|r restart            - start this guide over (skips and arrivals)",
     "|cff33ccff/mq|r debug              - print step/arrow state (for bug reports)",
     "|cff33ccff/mq|r list               - list registered guides",
     "|cff33ccff/mq|r load <guide name>  - switch guide",
@@ -745,6 +752,8 @@ function FG:HandleSlash(input)
         self:UndoSkip()
     elseif cmd == "unskip" then
         self:ClearSkips()
+    elseif cmd == "restart" then
+        self:RestartGuide()
     elseif cmd == "notoffered" then
         self:NotOfferedCommand(select(2, self:GetArgs(input or "", 2)))
     elseif cmd == "debug" then
@@ -811,6 +820,20 @@ end
 function FG:ClearSkips()
     local p = self:GetProgress()
     if p then wipe(p.skip); wipe(p.undo); self:Advance(true) end
+end
+
+-- Start the active guide over: forget skips, arrivals and forced steps. Steps the game
+-- says are done (quests accepted/turned in, flight paths, level) stay done.
+function FG:RestartGuide()
+    local p = self:GetProgress()
+    if not p then
+        self:Print("No guide loaded.")
+        return
+    end
+    wipe(p.skip); wipe(p.undo); wipe(p.arrived); wipe(p.force)
+    self.viewFinished = self.db.char.activeGuide -- don't chain away if it's still all done
+    self:Print("Started " .. tostring(self.db.char.activeGuide) .. " over.")
+    self:Advance(true)
 end
 
 function FG:CheckRoute()

@@ -292,6 +292,7 @@ function Frame:ShowSettingsMenu(owner)
         end
 
         guides:CreateDivider()
+        guides:CreateButton("Start this guide over", function() FG:RestartGuide() end)
         guides:CreateCheckbox("Pick automatically for my level", function() return not FG.db.char.guidePinned end,
             function()
                 FG.db.char.guidePinned = not FG.db.char.guidePinned
