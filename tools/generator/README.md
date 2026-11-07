@@ -104,11 +104,27 @@ Brotherhood chain into The Deadmines), are a priority:
 - **errands**: on each level-up and before leaving a zone, the route checks for dungeon
   quests to pick up (valued as the whole dungeon's bundle, since e.g. Ragefire Chasm's are
   spread over three capitals) and for dungeon-chain hand-ins elsewhere, and goes there when
-  that's worth more than `ERRAND_MIN` of a level after travel;
+  that's worth more than `ERRAND_MIN` of a level after travel. A town with quests for several
+  dungeons adds up every bundle it serves (Thunder Bluff: Ragefire Chasm and Wailing Caverns);
+  valued one dungeon at a time, neither paid for the trip;
 - a run waits while more of the same dungeon's quests can still be picked up on the current
   map (or nearby on the same continent, for up to two levels), so it's one run for all of them;
+- **fetch**: when a run is ready but the dungeon's continent has another map with quests for
+  it to pick up now, the route goes there first (`dungeon_fetch`, once per dungeon, map and
+  level), then runs. The audit's one-trip rule asks for exactly this; before it, Wailing
+  Caverns ran without Serpentbloom from Thunder Bluff. The last four log slots, normally kept
+  for quick quests, also take quests for a dungeon already in the log;
 - runs happen on the dungeon's continent (unless the quests are long overdue) and move the
-  player to the entrance.
+  player to the entrance;
+- after a run, finished quests handed in on the entrance's map are handed in right away, with
+  whatever that opens in the same town (`handin_at`). Unending Torment starts inside Ruins of
+  Lordaeron and goes to Master Apothecary Faranell next to the entrance; carried back to the
+  previous zone, it went grey before its follow-ups were taken.
+
+A quest filed under a dungeon whose objectives are all inside a capital is done in the city,
+not on a run (Unending Torment's later steps are Undercity vendors and Othmar's body). Single
+spawn NPCs and objects inside a capital aren't treated as contested either: they're scripted
+(Sylvanas, Othmar's body), not farmed, so the time model adds no respawn wait.
 
 #### The dungeon rule (enforced)
 

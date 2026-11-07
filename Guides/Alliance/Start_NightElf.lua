@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Alliance 1-20 Teldrassil, Darkshore, Ashenvale, St
 #levels 1-20
 #faction Alliance
 #race NightElf
-#next Alliance 19-23 Wetlands, Westfall, Darkshore
+#next Alliance 19-23 Westfall, Darkshore, Stonetalon Mountains
 
 [A 458 The Woodland Protector | at=59.9,42.5,1438; place=Teldrassil; xl=1.0]
 [A 456 The Balance of Nature | at=58.7,44.3,1438; place=Teldrassil; xl=1.0]
@@ -152,7 +152,7 @@ Kal is right here: pick up your new Druid spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 5921 Moonglade | at=35.4,8.4,1457; place=Darnassus; class=DRUID; race=NightElf; xl=10.6]
 [T 5921 Moonglade | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=NightElf; xl=10.6]
-[A 5923 Heeding the Call | at=34.8,7.4,1457; opt; place=Darnassus; class=DRUID; race=NightElf; xl=10.6]
+[A 5923 Heeding the Call | at=34.8,7.4,1457; ex=5924,5925; opt; place=Darnassus; class=DRUID; race=NightElf; xl=10.6]
 [T 5923 Heeding the Call | at=35.4,8.4,1457; opt; place=Darnassus; class=DRUID; race=NightElf; xl=10.6]
 [A 5929 Great Bear Spirit | at=56.2,30.6,1450; pre=5921; place=Moonglade; class=DRUID; race=NightElf; xl=10.6]
 [C 5929 Great Bear Spirit | at=39.1,27.5,1450; mob=Great Bear Spirit; class=DRUID; race=NightElf; xl=10.6]
@@ -169,7 +169,7 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [T 931 The Shimmering Frond | at=60.9,68.5,1438; place=Teldrassil; xl=10.7]
 [A 2399 The Sprouted Fronds | at=60.8,68.6,1438; pre=931; place=Teldrassil; xl=10.9]
 [T 2399 The Sprouted Fronds | at=60.8,68.6,1438; place=Teldrassil; xl=10.9]
-[C 99050 The Great Tree Provides | at=57.0,69.0,1438; mob=Lasher Sproutling; item=286017:6; xl=10.9]
+[C 99050 The Great Tree Provides | at=57.1,69.0,1438; mob=Lasher Sproutling; item=286017:6; xl=10.9]
 [T 99050 The Great Tree Provides | at=55.3,56.8,1438; place=Teldrassil; xl=10.9]
 [A 99073 Easing Suffering | at=55.3,56.8,1438; pre=99050; place=Teldrassil; xl=11.1]
 [C 929 Crown of the Earth | at=63.4,58.1,1438; xl=11.1]
@@ -193,12 +193,12 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=11.9]
 Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 5629 Returning Home | at=55.6,56.8,1438; place=Teldrassil; class=PRIEST; race=NightElf; xl=11.9]
+[A 5629 Returning Home | at=55.6,56.8,1438; ex=5627,5628,5630,5631,5632,5633; place=Teldrassil; class=PRIEST; race=NightElf; xl=11.9]
 [T 5629 Returning Home | at=39.5,81.2,1457; place=Darnassus; class=PRIEST; race=NightElf; xl=11.9]
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=11.9]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1598 The Stolen Tome | at=49.9,42.6,1429; place=Elwynn Forest; class=WARLOCK; xl=11.9]
+[A 1598 The Stolen Tome | at=49.9,42.6,1429; ex=1599; place=Elwynn Forest; class=WARLOCK; xl=11.9]
 [C 1598 The Stolen Tome | at=56.7,44.0,1429; class=WARLOCK; xl=11.9]
 [T 1598 The Stolen Tome | at=49.9,42.6,1429; place=Elwynn Forest; class=WARLOCK; xl=11.9]
 [A 1685 Gakin's Summons | at=44.5,66.3,1429; opt; place=Elwynn Forest; class=WARLOCK; xl=11.9]
@@ -214,7 +214,7 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=11.9]
 Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1683 Vorlus Vilehoof | at=57.3,34.6,1457; place=Darnassus; class=WARRIOR; xl=11.9]
+[A 1683 Vorlus Vilehoof | at=57.3,34.6,1457; ex=1639,1678; place=Darnassus; class=WARRIOR; xl=11.9]
 [C 1683 Vorlus Vilehoof | at=47.2,63.6,1438; mob=Vorlus Vilehoof; class=WARRIOR; xl=11.9]
 Vorlus Vilehoof has only one spawn point. If others are waiting for it, group up to share it.
 [T 1683 Vorlus Vilehoof | at=57.3,34.6,1457; place=Darnassus; class=WARRIOR; xl=11.9]
@@ -235,7 +235,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 6063 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
 [C 6063 Taming the Beast | at=60.8,57.1,1438; mob=Webwood Lurker; class=HUNTER; race=NightElf; xl=11.9]
 [T 6063 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
-[A 6071 The Hunter's Path | at=40.4,8.6,1457; opt; place=Darnassus; class=HUNTER; race=NightElf; xl=11.9]
+[A 6071 The Hunter's Path | at=40.4,8.6,1457; ex=6072,6073,6721,6722; opt; place=Darnassus; class=HUNTER; race=NightElf; xl=11.9]
 [T 6071 The Hunter's Path | at=56.7,59.5,1438; opt; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
 [A 6101 Taming the Beast | at=56.7,59.5,1438; pre=6063; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
 [C 6101 Taming the Beast | at=40.8,57.0,1438; mob=Nightsaber Stalker; class=HUNTER; race=NightElf; xl=11.9]
@@ -266,8 +266,6 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [T 94375 Call of Earth | at=28.8,66.2,1426; place=Dun Morogh; class=SHAMAN; xl=11.9]
 [A 94449 Call of Fire | at=47.1,13.8,1455; place=Ironforge; class=SHAMAN; xl=11.9]
 [T 94449 Call of Fire | at=87.9,44.8,1426; place=Dun Morogh; class=SHAMAN; xl=11.9]
-[A 96243 Call of Earth | at=47.1,13.8,1455; place=Ironforge; class=SHAMAN; xl=11.9]
-[T 96243 Call of Earth | at=28.8,66.2,1426; place=Dun Morogh; class=SHAMAN; xl=11.9]
 [A 94465 Call of Fire | at=87.9,44.8,1426; place=Dun Morogh; class=SHAMAN; xl=11.9]
 [T 94465 Call of Fire | at=32.2,66.0,1432; place=Loch Modan; class=SHAMAN; xl=11.9]
 [A 94466 Call of Fire | at=32.2,66.0,1432; pre=94465; place=Loch Modan; class=SHAMAN; xl=11.9]
@@ -317,7 +315,7 @@ Talk to Innkeeper Shaussiy and make this inn your home.
 [A 982 Deep Ocean, Vast Sea | at=38.1,41.2,1439; place=Auberdine; xl=13.3]
 [T 4723 Beached Sea Creature | at=36.6,45.6,1439; place=Auberdine; xl=13.3]
 [C 958 Tools of the Highborne | at=42.0,58.4,1439; mob=Cursed Highborne; ml=11; item=5360:7; drop=41; xl=13.4]
-[C 98025 WANTED: Jai'vhanel | at=44.2,58.6,1439; mob=Jai'vhanel; ml=12; xl=13.4]
+[C 98025 WANTED: Jai'vhanel | at=44.0,58.2,1439; mob=Jai'vhanel; ml=12; xl=13.4]
 [A 4722 Beached Sea Turtle | at=37.1,62.2,1439; pre=4681; place=Darkshore; xl=13.4]
 [C 1002 Buzzbox 323 | at=41,67.4,1439; mob=Moonstalker; ml=15; item=5413:6; drop=28; xl=13.4]
 [A 4728 Beached Sea Creature | at=36.0,70.9,1439; pre=4681; place=Darkshore; danger=14; xl=13.4]
@@ -383,7 +381,7 @@ Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spe
 [C 6122 The Principal Source | at=54.9,33.3,1439; class=DRUID; race=NightElf,Skyborne; xl=15.8]
 [T 6122 The Principal Source | at=37.7,40.7,1439; place=Darkshore; class=DRUID; race=NightElf,Skyborne; xl=15.8]
 [A 6123 Gathering the Cure | at=37.7,40.7,1439; pre=6122; place=Darkshore; class=DRUID; race=NightElf; xl=15.8]
-[C 6123 Gathering the Cure | at=57.0,69.0,1438; mob=Lasher Sproutling; item=2449:5,15851:12; class=DRUID; race=NightElf; xl=15.8]
+[C 6123 Gathering the Cure | at=57.1,69.0,1438; mob=Lasher Sproutling; item=2449:5,15851:12; class=DRUID; race=NightElf; xl=15.8]
 [T 6123 Gathering the Cure | at=37.7,40.7,1439; place=Darkshore; class=DRUID; race=NightElf; xl=15.8]
 [A 6124 Curing the Sick | at=37.7,40.7,1439; pre=6123; place=Darkshore; class=DRUID; race=NightElf; xl=15.8]
 [C 6124 Curing the Sick | at=46,41.4,1439; mob=Sickly Deer; class=DRUID; race=NightElf; xl=15.8]
@@ -400,7 +398,7 @@ Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spel
 [T 6343 Return to Nessa | at=56.3,92.4,1438; place=Rut'theran Village; race=NightElf; xl=15.8]
 [A 98403 Twisted Hatred | at=55.6,57.0,1438; pre=932; opt; place=Teldrassil; xl=15.9]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[C 98403 Twisted Hatred | at=49.6,45.2,1438; mob=Befouled Webwood / Xethorr the Wicked; ml=12; opt; xl=15.9]
+[C 98403 Twisted Hatred | at=49.7,44.5,1438; mob=Befouled Webwood / Xethorr the Wicked; ml=12; opt; xl=15.9]
 [T 98403 Twisted Hatred | at=55.6,57.0,1438; place=Teldrassil; opt; xl=15.9]
 [A 927 The Moss-twined Heart | at=42.8,28.4,1438; opt; place=Teldrassil; xl=15.9]
 Starts from Moss-twined Heart, which drops in this area.
@@ -489,7 +487,7 @@ Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow 
 [F Auberdine | xl=18.0]
 [C 98013 Swelling Forces | at=58.9,20.9,1439; mob=Stormscale Myrmidon / Stormscale Sorceress; ml=21; danger=19; xl=18.0]
 [C 951 Mathystra Relics | at=60.3,21.7,1439; item=5273:6; danger=19; xl=18.0]
-[C 87760 Holy Diver | at=49.0,12.9,1439; mob=Stormscale Beastmistress; ml=20; xl=18.0]
+[C 87760 Holy Diver | at=49.2,13.0,1439; mob=Stormscale Beastmistress; ml=20; xl=18.0]
 [T 87760 Holy Diver | at=36.6,45.6,1439; place=Auberdine; xl=18.0]
 [T 951 Mathystra Relics | at=43.5,76.3,1439; place=Darkshore; xl=18.1]
 [T 98013 Swelling Forces | at=43.8,76.5,1439; place=Darkshore; xl=18.3]
@@ -500,7 +498,7 @@ Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow 
 [A 993 A Lost Master | at=39.4,43.5,1439; pre=986; place=Auberdine; xl=18.6]
 [T 731 The Absent Minded Prospector | at=37.4,41.8,1439; place=Auberdine; xl=18.6]
 [T 993 A Lost Master | at=45.0,85.3,1439; place=Darkshore; xl=18.8]
-[A 994 Escape Through Force | at=45.0,85.3,1439; pre=993; place=Darkshore; xl=18.9]
+[A 994 Escape Through Force | at=45.0,85.3,1439; pre=993; ex=995; place=Darkshore; xl=18.9]
 [F Astranaar | xl=18.9]
 [A 991 Raene's Cleansing | at=36.6,49.6,1440; place=Astranaar; danger=19; xl=18.9]
 [T 5321 The Sleeper Has Awakened | at=27.3,35.6,1440; place=Ashenvale; xl=18.9]
@@ -526,22 +524,22 @@ Time to train: head to Brother Karman in Theramore for your new Paladin spells. 
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=19.7]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [H Auberdine | xl=19.7]
-[A 4740 WANTED: Murkdeep! | at=37.2,44.2,1439; place=Auberdine; xl=19.7]
 [A 2139 Tharnariun's Hope | at=38.8,43.4,1439; pre=2138; place=Auberdine; xl=19.7]
 [C 2139 Tharnariun's Hope | at=51.5,38.3,1439; mob=Den Mother; ml=19; xl=19.7]
 Den Mother has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 2139 Tharnariun's Hope | at=38.8,43.4,1439; place=Auberdine; xl=19.7]
-[C 4740 WANTED: Murkdeep! | at=36.4,76.5,1439; mob=Murkdeep; ml=19; xl=19.8]
-Murkdeep has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 4740 WANTED: Murkdeep! | at=37.7,43.4,1439; place=Auberdine; xl=19.8]
-[A 2098 Gyromast's Retrieval | at=56.7,13.5,1439; place=Darkshore; xl=19.9]
-[C 2098 Gyromast's Retrieval | at=39.1,91.3,1439; mob=Giant Foreststrider / Greymist Tidehunter; ml=20; xl=19.9]
-[T 2098 Gyromast's Retrieval | at=56.7,13.5,1439; place=Darkshore; xl=19.9]
-[A 2078 Gyromast's Revenge | at=56.7,13.5,1439; pre=2098; place=Darkshore; xl=20.1]
-[C 2078 Gyromast's Revenge | at=55.8,18.3,1439; mob=The Threshwackonator 4100; xl=20.1]
+[A 2098 Gyromast's Retrieval | at=56.7,13.5,1439; place=Darkshore; xl=19.8]
+[C 2098 Gyromast's Retrieval | at=39.1,91.3,1439; mob=Giant Foreststrider / Greymist Tidehunter; ml=20; xl=19.8]
+[T 2098 Gyromast's Retrieval | at=56.7,13.5,1439; place=Darkshore; xl=19.8]
+[A 2078 Gyromast's Revenge | at=56.7,13.5,1439; pre=2098; place=Darkshore; xl=19.9]
+[C 2078 Gyromast's Revenge | at=55.8,18.3,1439; mob=The Threshwackonator 4100; xl=19.9]
 The Threshwackonator 4100 has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 2078 Gyromast's Revenge | at=56.7,13.5,1439; place=Darkshore; xl=20.1]
-[C 994 Escape Through Force | at=41.9,81.8,1439; xl=20.2]
-[T 994 Escape Through Force | at=39.4,43.5,1439; place=Auberdine; xl=20.2]
+[T 2078 Gyromast's Revenge | at=56.7,13.5,1439; place=Darkshore; xl=19.9]
+[A 4740 WANTED: Murkdeep! | at=37.2,44.2,1439; place=Auberdine; xl=20.0]
+[C 4740 WANTED: Murkdeep! | at=36.4,76.5,1439; mob=Murkdeep; ml=19; xl=20.0]
+Murkdeep has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[C 994 Escape Through Force | at=41.9,81.8,1439; xl=20.0]
+[T 994 Escape Through Force | at=39.4,43.5,1439; place=Auberdine; xl=20.0]
+[T 4740 WANTED: Murkdeep! | at=37.7,43.4,1439; place=Auberdine; xl=20.2]
 [G 9.49,59.69 1437 Travel to Menethil Harbor, Wetlands - take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor) | xl=20.4]
 ]==])

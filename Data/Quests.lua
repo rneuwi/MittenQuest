@@ -2171,9 +2171,9 @@ Q[5640] = { name = "Desperate Prayer", level = 10, minLevel = 10, map = 1457, x 
 Q[5641] = { name = "A Lack of Fear", level = 20, minLevel = 20, map = 1455, x = 24.7, y = 8.2, giver = "High Priest Rohan", faction = "Alliance", race = { DWARF = true }, class = { PRIEST = true }, turnin = { 1455, 24.7, 8.2 } }
 Q[5642] = { name = "Shadowguard", level = 20, minLevel = 20, map = 1456, x = 25.3, y = 15.3, giver = "Miles Welsh", faction = "Horde", race = { TROLL = true }, class = { PRIEST = true }, turnin = { 1454, 35.6, 87.8 } }
 Q[5643] = { name = "Shadowguard", level = 20, minLevel = 20, map = 1458, x = 49.3, y = 17.1, giver = "Aelthalyste", faction = "Horde", race = { TROLL = true }, class = { PRIEST = true }, turnin = { 1454, 35.6, 87.8 } }
-Q[5644] = { name = "Devouring Plague", level = 20, minLevel = 20, map = 1456, x = 25.3, y = 15.3, giver = "Miles Welsh", faction = "Horde", race = { SCOURGE = true }, class = { PRIEST = true }, turnin = { 1458, 49.3, 17.1 } }
+Q[5644] = { name = "Dark Sacrifice", level = 20, minLevel = 20, map = 1456, x = 25.3, y = 15.3, giver = "Miles Welsh", faction = "Horde", race = { SCOURGE = true }, class = { PRIEST = true }, turnin = { 1458, 49.3, 17.1 } }
 Q[5645] = { name = "A Lack of Fear", level = 20, minLevel = 20, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { DWARF = true }, class = { PRIEST = true }, turnin = { 1455, 24.7, 8.2 } }
-Q[5646] = { name = "Devouring Plague", level = 20, minLevel = 20, map = 1454, x = 35.6, y = 87.8, giver = "Ur'kyo", faction = "Horde", race = { SCOURGE = true }, class = { PRIEST = true }, turnin = { 1458, 49.3, 17.1 } }
+Q[5646] = { name = "Dark Sacrifice", level = 20, minLevel = 20, map = 1454, x = 35.6, y = 87.8, giver = "Ur'kyo", faction = "Horde", race = { SCOURGE = true }, class = { PRIEST = true }, turnin = { 1458, 49.3, 17.1 } }
 Q[5647] = { name = "A Lack of Fear", level = 20, minLevel = 20, map = 1457, x = 39.5, y = 81.2, giver = "Priestess Alathea", faction = "Alliance", race = { DWARF = true }, class = { PRIEST = true }, turnin = { 1455, 24.7, 8.2 } }
 Q[5648] = { name = "Garments of Spirituality", level = 4, minLevel = 5, map = 1411, x = 54.3, y = 42.9, giver = "Tai'jin", faction = "Horde", race = { TROLL = true }, class = { PRIEST = true }, turnin = { 1411, 54.3, 42.9 } }
 Q[5649] = { name = "In Favor of Spirituality", level = 4, minLevel = 5, map = 1411, x = 42.4, y = 68.8, giver = "Ken'jai", faction = "Horde", race = { TROLL = true }, class = { PRIEST = true }, turnin = { 1411, 54.3, 42.9 } }
@@ -2196,7 +2196,7 @@ Q[5675] = { name = "Elune's Grace", level = 20, minLevel = 20, map = 1455, x = 2
 Q[5676] = { name = "Arcane Feedback", level = 20, minLevel = 20, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
 Q[5677] = { name = "Arcane Feedback", level = 20, minLevel = 20, map = 1455, x = 24.7, y = 8.2, giver = "High Priest Rohan", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
 Q[5678] = { name = "Arcane Feedback", level = 20, minLevel = 20, map = 1457, x = 39.5, y = 81.2, giver = "Priestess Alathea", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
-Q[5679] = { name = "Devouring Plague", level = 20, minLevel = 20, map = 1458, x = 49.3, y = 17.1, giver = "Aelthalyste", faction = "Horde", race = { SCOURGE = true }, class = { PRIEST = true }, turnin = { 1458, 49.3, 17.1 } }
+Q[5679] = { name = "Dark Sacrifice", level = 20, minLevel = 20, map = 1458, x = 49.3, y = 17.1, giver = "Aelthalyste", faction = "Horde", race = { SCOURGE = true }, class = { PRIEST = true }, turnin = { 1458, 49.3, 17.1 } }
 Q[5680] = { name = "Shadowguard", level = 20, minLevel = 20, map = 1454, x = 35.6, y = 87.8, giver = "Ur'kyo", faction = "Horde", race = { TROLL = true }, class = { PRIEST = true }, turnin = { 1454, 35.6, 87.8 } }
 Q[5713] = { name = "One Shot.  One Kill.", level = 15, minLevel = 10, map = 1439, x = 45.9, y = 90.3, giver = "Sentinel Aynasha", faction = "Alliance", turnin = { 1440, 26.6, 36.7 } }
 Q[5721] = { name = "The Battle of Darrowshire", level = 60, minLevel = 55, map = 1422, x = 39.5, y = 66.8, giver = "Chromie", pre = { 5941 }, turnin = { 1423, 31.1, 78.0 } }
@@ -2825,6 +2825,7 @@ Q[65610] = { name = "Wish You Were Here", level = 27, minLevel = 20, map = 1454,
 Q[76156] = { name = "Stalk With The Earthmother", level = 10, minLevel = 4, map = 1456, x = 39.4, y = 65.8, giver = "Boarton Shadetotem", faction = "Horde", turnin = { 1456, 39.4, 65.8 } }
 Q[76160] = { name = "Stalk With The Earthmother", level = 11, minLevel = 4, map = 1456, x = 39.4, y = 65.8, giver = "Boarton Shadetotem", faction = "Horde", pre = { 76156 }, turnin = { 1456, 39.4, 65.8 } }
 Q[76240] = { name = "Stalk With The Earthmother", level = 11, minLevel = 4, map = 1456, x = 39.4, y = 65.8, giver = "Boarton Shadetotem", faction = "Horde", pre = { 76160 }, turnin = { 1456, 39.4, 65.8 } }
+Q[78088] = { name = "A Strange Artifact", level = 30, minLevel = 22, map = 1439, x = 56.2, y = 26.4, giver = "Strange Orb", faction = "Alliance", class = { PALADIN = true }, turnin = { 1440, 26.2, 38.7 } }
 Q[78089] = { name = "Advice From Stormwind", level = 30, minLevel = 22, map = 1440, x = 26.2, y = 38.7, giver = "Delgren the Purifier", faction = "Alliance", race = { HUMAN = true, DWARF = true }, class = { PALADIN = true }, turnin = { 1453, 48.5, 49.1 } }
 Q[78090] = { name = "A Second Opinion", level = 30, minLevel = 22, map = 1453, x = 48.5, y = 49.1, giver = "Katherine the Pure", faction = "Alliance", race = { HUMAN = true, DWARF = true }, class = { PALADIN = true }, turnin = { 1453, 39.9, 84.2 } }
 Q[78091] = { name = "Earning Your Salt", level = 30, minLevel = 22, map = 1453, x = 39.9, y = 84.2, giver = "Ursula Deline", faction = "Alliance", race = { HUMAN = true, DWARF = true }, class = { PALADIN = true }, turnin = { 1453, 39.9, 84.2 } }
@@ -2846,7 +2847,7 @@ Q[86574] = { name = "Stonetalon Supply Run", level = 24, minLevel = 20, map = 14
 Q[86576] = { name = "Bloodfury Trinkets", level = 26, minLevel = 18, map = 1442, x = 47.2, y = 61.2, giver = "Maggran Earthbinder", faction = "Horde", turnin = { 1442, 47.2, 64.0 } }
 Q[86585] = { name = "Banner of the Fallen", level = 17, minLevel = 10, map = 1432, x = 31.8, y = 86.3, giver = "Mountaineer Ylva", faction = "Alliance", turnin = { 1432, 23.2, 73.7 } }
 Q[86613] = { name = "Excavation Tools", level = 18, minLevel = 13, map = 1432, x = 69.4, y = 67.5, giver = "Drop: Excavation Tools", faction = "Alliance", turnin = { 1432, 65.9, 65.6 } }
-Q[86614] = { name = "Silver of the Waves", level = 20, minLevel = 13, map = 1432, x = 48.0, y = 39.7, giver = "Discarded Fishing Toolbox", faction = "Alliance", turnin = { 1432, 40.3, 39.3 } }
+Q[86614] = { name = "Silver of the Waves", level = 20, minLevel = 13, map = 1432, x = 45.7, y = 43.3, giver = "Discarded Fishing Toolbox", faction = "Alliance", turnin = { 1432, 40.3, 39.3 } }
 Q[86667] = { name = "Snowbound", level = 10, minLevel = 10, map = 1432, x = 36.5, y = 48.3, giver = "Grenhild Darktalon", faction = "Alliance", turnin = { 1432, 41.8, 19.1 } }
 Q[86757] = { name = "Slowing the Orc Advance", level = 30, minLevel = 27, map = 1440, x = 49.5, y = 67.1, giver = "Shandrina", faction = "Alliance", turnin = { 1440, 49.5, 67.1 } }
 Q[86758] = { name = "Twisting the Knife", level = 16, minLevel = 12, map = 1432, x = 81.8, y = 61.7, giver = "Marek Ironheart", faction = "Alliance", turnin = { 1432, 81.8, 61.7 } }
@@ -2872,11 +2873,11 @@ Q[91725] = { name = "Stolen Enchanting Supplies", level = 10, minLevel = 7, map 
 Q[91732] = { name = "Good Steel", level = 7, minLevel = 7, map = 1429, x = 82.5, y = 63.8, giver = "Hagar Lowe", faction = "Alliance", turnin = { 1429, 82.5, 63.8 } }
 Q[91733] = { name = "Downstream", level = 10, minLevel = 7, map = 1429, x = 76.5, y = 71.9, giver = "Ormin Pelford", faction = "Alliance", turnin = { 1429, 76.5, 71.9 } }
 Q[91738] = { name = "An Apple Treat", level = 10, minLevel = 7, map = 1429, x = 24.1, y = 73.2, giver = "Sergeant De Vries", faction = "Alliance", turnin = { 1429, 24.1, 73.2 } }
-Q[91740] = { name = "Croaky's Head", level = 11, minLevel = 7, map = 1429, x = 76.5, y = 85.1, giver = "Drop: Croaky's Head", faction = "Alliance", group = true, turnin = { 1429, 84.8, 79.3 } }
+Q[91740] = { name = "Croaky's Head", level = 11, minLevel = 7, map = 1429, x = 76.3, y = 82.9, giver = "Drop: Croaky's Head", faction = "Alliance", group = true, turnin = { 1429, 84.8, 79.3 } }
 Q[91741] = { name = "Nibbled-On Book", level = 2, minLevel = 1, map = 1429, x = 48.4, y = 33.6, giver = "Drop: Nibbled-On Book", faction = "Alliance", turnin = { 1429, 49.6, 40.4 } }
 Q[91743] = { name = "Rascally Rodents", level = 2, minLevel = 1, map = 1429, x = 49.6, y = 40.4, giver = "Brother Paxton", faction = "Alliance", pre = { 92124 }, turnin = { 1429, 49.6, 40.4 } }
 Q[91745] = { name = "Mining Consultant", level = 3, minLevel = 1, map = 1429, x = 49.6, y = 40.4, giver = "Brother Paxton", faction = "Alliance", pre = { 91743 }, turnin = { 1429, 47.2, 32.2 } }
-Q[91746] = { name = "Elmpaw's Head", level = 12, minLevel = 7, map = 1429, x = 74.3, y = 40.6, giver = "Drop: Elmpaw's Head", faction = "Alliance", group = true, turnin = { 1429, 46.2, 62.2 } }
+Q[91746] = { name = "Elmpaw's Head", level = 12, minLevel = 7, map = 1429, x = 74.4, y = 40.3, giver = "Drop: Elmpaw's Head", faction = "Alliance", group = true, turnin = { 1429, 46.2, 62.2 } }
 Q[91752] = { name = "The Big Picture", level = 3, minLevel = 1, map = 1429, x = 47.2, y = 32.2, giver = "Kelsey Fargo", faction = "Alliance", pre = { 91745 }, group = true, turnin = { 1429, 48.9, 41.6 } }
 Q[91758] = { name = "Follow That Kobold!", level = 4, minLevel = 1, map = 1429, x = 48.9, y = 41.6, giver = "Marshal McBride", faction = "Alliance", pre = { 91752 }, turnin = { 1429, 51.2, 40.8 } }
 Q[91772] = { name = "Shhh! We're Hunting Kobolds", level = 4, minLevel = 1, map = 1429, x = 51.2, y = 40.8, giver = "Tordrin Sternblade", faction = "Alliance", pre = { 91758 }, turnin = { 1429, 42.1, 65.9 } }
@@ -2892,7 +2893,7 @@ Q[91921] = { name = "Return to Quinn (Again)", level = 11, minLevel = 10, map = 
 Q[92124] = { name = "Book Inventory", level = 2, minLevel = 1, map = 1429, x = 49.6, y = 40.4, giver = "Brother Paxton", faction = "Alliance", pre = { 91741 }, turnin = { 1429, 49.5, 40.7 } }
 Q[92401] = { name = "A Frightened Request", level = 22, minLevel = 15, map = 1421, x = 44.5, y = 43.0, giver = "Tabitha Heartweaver", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1421, 44.5, 43.0 } }
 Q[92421] = { name = "Light's Justice", level = 22, minLevel = 15, map = 1458, x = 58.1, y = 89.5, giver = "Morbin Lightbane", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 58.1, 89.5 } }
-Q[92422] = { name = "The Wrath of Rath'mael", level = 22, minLevel = 15, map = 1420, x = 65.2, y = 60.2, giver = "Deathguard Kristof", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1420, 65.2, 60.2 } }
+Q[92422] = { name = "The Wrath of Rath'mael", level = 22, minLevel = 15, map = 1420, x = 65.2, y = 60.2, giver = "Deathguard Kristof", faction = "Horde", pre = { 99156 }, dungeon = "Ruins of Lordaeron", turnin = { 1420, 65.2, 60.2 } }
 Q[92432] = { name = "An Alarming Request", level = 33, minLevel = 30, map = 1424, x = 48.3, y = 60.0, giver = "Emissary Jacques", faction = "Alliance", turnin = { 1416, 14.3, 59.6 } }
 Q[92434] = { name = "Blood in the Streets", level = 34, minLevel = 30, map = 1424, x = 61.6, y = 20.9, giver = "Magus Wordeen Voidglare", faction = "Horde", turnin = { 1416, 14.3, 59.6 } }
 Q[92456] = { name = "A Green Sample", level = 33, minLevel = 24, map = 1453, x = 31.5, y = 62.6, giver = "Shylamiir", faction = "Alliance", dungeon = "City of Dalaran", turnin = { 1453, 31.5, 62.6 } }
@@ -2983,13 +2984,13 @@ Q[92871] = { name = "In Service of Zephras", level = 11, minLevel = 6, map = 252
 Q[92880] = { name = "Return to Valanaar", level = 11, minLevel = 6, map = 2521, x = 69.7, y = 67.1, giver = "Yorana Windyreed", pre = { 92642, 92645 }, turnin = { 2521, 66.1, 76.7 } }
 Q[92881] = { name = "The High Elder's Request", level = 11, minLevel = 6, map = 2521, x = 66.1, y = 76.7, giver = "Valennia Stormfist", pre = { 92880 }, turnin = { 2521, 66.2, 76.5 } }
 Q[92909] = { name = "Harvesting the Harvesters", level = 15, minLevel = 8, map = 1436, x = 51.5, y = 32.3, giver = "Ozwin Ironsprocket", faction = "Alliance", turnin = { 1436, 51.5, 32.3 } }
-Q[92947] = { name = "Making Our Move", level = 12, minLevel = 7, map = 2521, x = 61.2, y = 70.9, giver = "Valennia Stormfist", pre = { 93065 }, turnin = { 2521, 63.8, 50.5 } }
+Q[92947] = { name = "Making Our Move", level = 12, minLevel = 7, map = 2521, x = 61.1, y = 70.9, giver = "Valennia Stormfist", pre = { 93065 }, turnin = { 2521, 63.8, 50.5 } }
 Q[93034] = { name = "Valley of Bones", level = 38, minLevel = 30, map = 1443, x = 36.2, y = 79.2, giver = "Uthek the Wise", turnin = { 2652, 21.2, 23.2 } }
 Q[93035] = { name = "Ravaging Ravagers", level = 38, minLevel = 30, map = 2652, x = 21.2, y = 23.2, giver = "Nerlokh", turnin = { 2652, 21.2, 23.2 } }
 Q[93036] = { name = "Infiltrating the Cult", level = 8, minLevel = 5, map = 2521, x = 45.7, y = 45.5, giver = "Constable Aonda", pre = { 92517 }, turnin = { 2521, 44.9, 45.5 } }
 Q[93037] = { name = "Outing Outcasts", level = 40, minLevel = 30, map = 2652, x = 21.2, y = 23.2, giver = "Nerlokh", turnin = { 2652, 21.2, 23.2 } }
 Q[93041] = { name = "Facing the Truth", level = 38, minLevel = 30, map = 2652, x = 21.2, y = 23.2, giver = "Nerlokh", turnin = { 1443, 36.2, 79.2 } }
-Q[93065] = { name = "Prepare for Battle", level = 12, minLevel = 7, map = 2521, x = 66.1, y = 76.7, giver = "Valennia Stormfist", pre = { 92640 }, turnin = { 2521, 61.2, 70.9 } }
+Q[93065] = { name = "Prepare for Battle", level = 12, minLevel = 7, map = 2521, x = 66.1, y = 76.7, giver = "Valennia Stormfist", pre = { 92640 }, turnin = { 2521, 61.1, 70.9 } }
 Q[93089] = { name = "What Comes Next", level = 13, minLevel = 7, map = 2521, x = 66.2, y = 76.5, giver = "Talaanis Shadowsong", faction = "Alliance", pre = { 94369 }, turnin = { 2521, 66.6, 79.9 } }
 Q[93090] = { name = "What Comes Next", level = 13, minLevel = 7, map = 2521, x = 66.2, y = 76.5, giver = "Talaanis Shadowsong", faction = "Horde", pre = { 93836 }, turnin = { 2521, 59.1, 79.8 } }
 Q[93128] = { name = "Khan Jehn", level = 42, minLevel = 30, map = 2652, x = 21.2, y = 23.2, giver = "Nerlokh", turnin = { 1443, 36.2, 79.2 } }
@@ -3019,8 +3020,8 @@ Q[93746] = { name = "A Firm Response", level = 9, minLevel = 4, map = 2521, x = 
 Q[93791] = { name = "Speak with Belann", level = 10, minLevel = 10, map = 2521, x = 65.9, y = 80.6, giver = "Anathamaas Aetherwind", faction = "Alliance", class = { MAGE = true }, turnin = { 2521, 62.9, 77.4 } }
 Q[93835] = { name = "Confront Lorthuna", level = 12, minLevel = 7, map = 2521, x = 65.2, y = 50.4, giver = "Valennia Stormfist", faction = "Alliance", pre = { 93958 }, turnin = { 2521, 66.6, 79.9 } }
 Q[93836] = { name = "The Fate of Zephras", level = 12, minLevel = 7, map = 2521, x = 59.1, y = 79.8, giver = "Ayessa Dawnsinger", faction = "Horde", pre = { 92646 }, turnin = { 2521, 66.2, 76.5 } }
-Q[93926] = { name = "The Western Watch", level = 8, minLevel = 5, map = 2521, x = 45.7, y = 45.5, giver = "Constable Aonda", pre = { 92528 }, turnin = { 2521, 42.4, 62.0 } }
-Q[93927] = { name = "A Last Request", level = 8, minLevel = 5, map = 2521, x = 42.4, y = 62.0, giver = "Peacekeeper Vaaniel", pre = { 93926 }, turnin = { 2521, 45.7, 45.5 } }
+Q[93926] = { name = "The Western Watch", level = 8, minLevel = 5, map = 2521, x = 45.7, y = 45.5, giver = "Constable Aonda", pre = { 92528 }, turnin = { 2521, 42.3, 62.0 } }
+Q[93927] = { name = "A Last Request", level = 8, minLevel = 5, map = 2521, x = 42.3, y = 62.0, giver = "Peacekeeper Vaaniel", pre = { 93926 }, turnin = { 2521, 45.7, 45.5 } }
 Q[93928] = { name = "Of Mice and Milk", level = 15, minLevel = 15, map = 1436, x = 32.5, y = 71.8, giver = "Mouse", faction = "Alliance", turnin = { 1434, 35.7, 10.8 } }
 Q[93948] = { name = "Deliver the Signet", level = 9, minLevel = 6, map = 2521, x = 45.7, y = 45.5, giver = "Constable Aonda", pre = { 92550, 93927 }, turnin = { 2521, 66.2, 76.5 } }
 Q[93949] = { name = "Bugged", level = 8, minLevel = 6, map = 2521, x = 66.1, y = 76.7, giver = "Valennia Stormfist", pre = { 93948 }, turnin = { 2521, 66.1, 76.7 } }
@@ -3074,14 +3075,18 @@ Q[94616] = { name = "Water Sapta", level = 20, minLevel = 20, map = 1432, x = 41
 Q[94638] = { name = "Strength and Mercy", level = 10, minLevel = 10, map = 2521, x = 69.8, y = 61.7, giver = "Urs'endris", pre = { 94006 }, race = { SKYBORNE_A = true, SKYBORNE_H = true }, class = { DRUID = true }, turnin = { 2521, 69.8, 61.7 } }
 Q[94773] = { name = "Divine Grace", level = 10, minLevel = 10, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
 Q[94774] = { name = "Divine Grace", level = 10, minLevel = 10, map = 1429, x = 43.3, y = 65.7, giver = "Priestess Josetta", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
+Q[94775] = { name = "Divine Grace", level = 10, minLevel = 10, map = 1438, x = 55.6, y = 56.8, giver = "Laurna Morninglight", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
+Q[94776] = { name = "Divine Grace", level = 10, minLevel = 10, map = 1426, x = 47.3, y = 52.2, giver = "Maxan Anvol", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
+Q[94777] = { name = "Divine Grace", level = 10, minLevel = 10, map = 1453, x = 35.7, y = 63.2, giver = "Nara Meideros", faction = "Alliance", race = { HUMAN = true }, class = { PRIEST = true }, turnin = { 1453, 49.5, 44.6 } }
 Q[94789] = { name = "Call of Air", level = 30, minLevel = 30, map = 1455, x = 47.1, y = 13.8, giver = "Eldrun Stormbreaker", faction = "Alliance", class = { SHAMAN = true }, turnin = { 1417, 59.8, 27.6 } }
 Q[94792] = { name = "Taming the Beast", level = 10, minLevel = 10, map = 1429, x = 41.1, y = 66.2, giver = "Josephine Carson", faction = "Alliance", class = { HUNTER = true }, turnin = { 1429, 41.1, 66.2 } }
 Q[94793] = { name = "Training the Beast", level = 10, minLevel = 10, map = 1429, x = 41.1, y = 66.2, giver = "Josephine Carson", faction = "Alliance", pre = { 94864 }, class = { HUNTER = true }, turnin = { 1429, 41.8, 66.4 } }
-Q[94817] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1455, x = 24.6, y = 10, giver = "High Priestess Mims", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1455, 24.6, 10 } }
-Q[94819] = { name = "Contingency Plan", level = 20, minLevel = 20, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1455, 24.6, 10 } }
+Q[94817] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1426, x = 55.0, y = 22.4, giver = "High Priestess Mims", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1426, 55.0, 22.4 } }
+Q[94819] = { name = "Contingency Plan", level = 20, minLevel = 20, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1426, 55.0, 22.4 } }
 Q[94820] = { name = "Contingency Plan", level = 20, minLevel = 20, map = 1457, x = 39.5, y = 81.2, giver = "Priestess Alathea", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true } }
-Q[94821] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true } }
-Q[94824] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1426, x = 47.3, y = 52.2, giver = "Maxan Anvol", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1455, 24.6, 10 } }
+Q[94821] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1453, x = 49.5, y = 44.6, giver = "High Priestess Laurena", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1426, 55.0, 22.4 } }
+Q[94822] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1429, x = 43.3, y = 65.7, giver = "Priestess Josetta", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1426, 55.0, 22.4 } }
+Q[94824] = { name = "Confounding Flash", level = 10, minLevel = 10, map = 1426, x = 47.3, y = 52.2, giver = "Maxan Anvol", faction = "Alliance", race = { GNOME = true }, class = { PRIEST = true }, turnin = { 1426, 55.0, 22.4 } }
 Q[94863] = { name = "Taming the Beast", level = 10, minLevel = 10, map = 1429, x = 41.1, y = 66.2, giver = "Josephine Carson", faction = "Alliance", pre = { 94792 }, class = { HUNTER = true }, turnin = { 1429, 41.1, 66.2 } }
 Q[94864] = { name = "Taming the Beast", level = 10, minLevel = 10, map = 1429, x = 41.1, y = 66.2, giver = "Josephine Carson", faction = "Alliance", pre = { 94863 }, class = { HUNTER = true }, turnin = { 1429, 41.1, 66.2 } }
 Q[94896] = { name = "Aid For The Refugees", level = 11, minLevel = 8, map = 2521, x = 66.0, y = 74.4, giver = "Ealaane Nimbuswalker", turnin = { 2521, 66.0, 74.4 } }
@@ -3097,21 +3102,24 @@ Q[94979] = { name = "Taming the Beast", level = 10, minLevel = 10, map = 2521, x
 Q[95034] = { name = "The Debt", level = 24, minLevel = 18, map = 1421, x = 43.4, y = 41.0, giver = "Lumina Windsinger", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, turnin = { 1421, 43.4, 41.0 } }
 Q[95036] = { name = "A Moon-Kissed Blade", level = 25, minLevel = 20, map = 1421, x = 43.4, y = 41.0, giver = "Lumina Windsinger", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, group = true, turnin = { 1421, 43.4, 41.1 } }
 Q[95041] = { name = "Data Hoarders", level = 10, minLevel = 7, map = 1455, x = 67.7, y = 44.2, giver = "Jemma Quikswitch", faction = "Alliance", turnin = { 1455, 67.7, 44.2 } }
-Q[95042] = { name = "Seeking the Kor Gem", level = 25, minLevel = 20, map = 1440, x = 11.9, y = 34.4, giver = "Ulric Frostveil", faction = "Horde", class = { PALADIN = true }, group = true, turnin = { 1440, 11.9, 34.4 } }
+Q[95042] = { name = "Seeking the Kor Gem", level = 25, minLevel = 20, map = 1440, x = 11.8, y = 34.5, giver = "Ulric Frostveil", faction = "Horde", class = { PALADIN = true }, group = true, turnin = { 1440, 11.8, 34.5 } }
 Q[95065] = { name = "Fishin' Time", level = 12, minLevel = 7, map = 1453, x = 26.1, y = 47.1, giver = "Gilbert Gray", faction = "Alliance", turnin = { 1453, 26.1, 47.1 } }
 Q[95111] = { name = "An Underrated Talent", level = 25, minLevel = 20, map = 1421, x = 43.4, y = 41.1, giver = "Trevan Rol", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, turnin = { 1424, 60.4, 26.2 } }
 Q[95125] = { name = "Ott's Masterwork", level = 25, minLevel = 20, map = 1424, x = 60.4, y = 26.2, giver = "Ott", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, turnin = { 1424, 60.4, 26.2 } }
 Q[95126] = { name = "The Moonsilver Blade", level = 25, minLevel = 20, map = 1424, x = 60.4, y = 26.2, giver = "Ott", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, turnin = { 1421, 43.4, 41.1 } }
-Q[95140] = { name = "Old Fire-Eye", level = 26, minLevel = 20, map = 1421, x = 43.4, y = 41.0, giver = "Lumina Windsinger", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, turnin = { 1421, 43.4, 41.0 } }
+Q[95140] = { name = "Old Fire-Eye", level = 26, minLevel = 20, map = 1421, x = 43.4, y = 41.0, giver = "Lumina Windsinger", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, group = true, turnin = { 1421, 43.4, 41.0 } }
 Q[95161] = { name = "Remember That I Love You", level = 22, minLevel = 15, map = 1453, x = 56.3, y = 54.0, giver = "Orphan Matron Nightingale", faction = "Alliance", pre = { 92415 }, turnin = { 1431, 73.0, 44.4 } }
+Q[95189] = { name = "Crest of Lordaeron", level = 22, minLevel = 15, map = 1458, x = 72.41, y = 11.37, giver = "Crest of Lordaeron from Crest of Lordaeron", faction = "Alliance", dungeon = "Ruins of Lordaeron" }
+Q[95195] = { name = "Bloodied Insignia", level = 22, minLevel = 15, map = 1458, x = 72.41, y = 11.37, giver = "Bloodied Insignia, which Skeleton drops", faction = "Alliance", dungeon = "Ruins of Lordaeron", turnin = { 1453, 69.2, 82.7 } }
+Q[95204] = { name = "Crest of Lordaeron", level = 22, minLevel = 15, map = 1458, x = 72.41, y = 11.37, giver = "Crest of Lordaeron from Crest of Lordaeron", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 73.1, 32.9 } }
 Q[95212] = { name = "Never Saddle on Quality", level = 10, minLevel = 7, map = 1426, x = 63.1, y = 49.9, giver = "Rudra Amberstill", faction = "Alliance", turnin = { 1426, 63.1, 49.9 } }
 Q[95213] = { name = "Stolen Blasting Powder", level = 10, minLevel = 7, map = 1426, x = 72.4, y = 52.9, giver = "Drop: Empty Powder Keg", faction = "Alliance", turnin = { 1426, 69.2, 54.8 } }
 Q[95214] = { name = "Stolen Blasting Powder", level = 10, minLevel = 7, map = 1426, x = 69.2, y = 54.8, giver = "Quarrymaster Thesten", faction = "Alliance", pre = { 95213 }, turnin = { 1426, 69.2, 54.8 } }
-Q[95216] = { name = "The New Plague", level = 22, minLevel = 16, map = 1458, x = 46.3, y = 71.9, giver = "Theodore Griffs", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 46.3, 71.9 } }
+Q[95216] = { name = "The New Plague", level = 22, minLevel = 15, map = 1458, x = 46.3, y = 71.9, giver = "Theodore Griffs", faction = "Horde", pre = { 451 }, dungeon = "Ruins of Lordaeron", turnin = { 1458, 46.3, 71.9 } }
 Q[95314] = { name = "That Shadowvale Green Elixir", level = 10, minLevel = 7, map = 1420, x = 59.4, y = 52.2, giver = "Carolai Anise", faction = "Horde", turnin = { 1420, 59.4, 52.2 } }
-Q[95328] = { name = "Whispering Horror Residue", level = 13, minLevel = 7, map = 1420, x = 9.4, y = 61.8, giver = "Drop: Whispering Horror Residue", faction = "Horde", group = true, turnin = { 1458, 49.1, 14.6 } }
-Q[95349] = { name = "The Earthen Ring", level = 13, minLevel = 7, map = 2521, x = 59.1, y = 79.8, giver = "Ayessa Dawnsinger", faction = "Horde", pre = { 93090 }, turnin = { 1412, 33.4, 22.6 } }
-Q[95350] = { name = "Welcome to Azeroth", level = 13, minLevel = 7, map = 1412, x = 33.4, y = 22.6, giver = "Alaana Stormwalker", faction = "Horde", race = { SKYBORNE_H = true }, turnin = { 1454, 31.7, 37.8 } }
+Q[95328] = { name = "Whispering Horror Residue", level = 13, minLevel = 7, map = 1420, x = 9.4, y = 61.9, giver = "Drop: Whispering Horror Residue", faction = "Horde", group = true, turnin = { 1458, 49.1, 14.6 } }
+Q[95349] = { name = "The Earthen Ring", level = 13, minLevel = 7, map = 2521, x = 59.1, y = 79.8, giver = "Ayessa Dawnsinger", faction = "Horde", pre = { 93090 }, turnin = { 1412, 33.4, 22.5 } }
+Q[95350] = { name = "Welcome to Azeroth", level = 13, minLevel = 7, map = 1412, x = 33.4, y = 22.5, giver = "Alaana Stormwalker", faction = "Horde", race = { SKYBORNE_H = true }, turnin = { 1454, 31.7, 37.8 } }
 Q[95494] = { name = "Bruised Pride and Lion Hides", level = 18, minLevel = 14, map = 1413, x = 43.8, y = 12.2, giver = "Vrang Wildgore", faction = "Horde", turnin = { 1413, 43.8, 12.2 } }
 Q[95495] = { name = "The Hermit Tanner", level = 18, minLevel = 14, map = 1413, x = 43.8, y = 12.2, giver = "Vrang Wildgore", faction = "Horde", turnin = { 1413, 42.0, 11.4 } }
 Q[95507] = { name = "Vrang's Game", level = 18, minLevel = 14, map = 1413, x = 43.8, y = 12.2, giver = "Vrang Wildgore", faction = "Horde", turnin = { 1413, 43.8, 12.2 } }
@@ -3129,18 +3137,18 @@ Q[95805] = { name = "Grace of An'she and Mu'sha", level = 4, minLevel = 1, map =
 Q[95883] = { name = "The Tortured Soul", level = 23, minLevel = 20, map = 1421, x = 58.1, y = 69.8, giver = "Offering Stone", faction = "Horde", turnin = { 1421, 58.1, 69.8 } }
 Q[95884] = { name = "The Offering Stone", level = 23, minLevel = 20, map = 1421, x = 58.7, y = 71.3, giver = "Drop: Note Scrap", faction = "Horde", turnin = { 1421, 58.1, 69.8 } }
 Q[95885] = { name = "The Offering of Blood", level = 23, minLevel = 20, map = 1421, x = 58.1, y = 69.8, giver = "Offering Stone", faction = "Horde", turnin = { 1421, 58.1, 69.8 } }
-Q[95981] = { name = "Watching the Roads", level = 20, minLevel = 10, map = 1421, x = 44.0, y = 40.9, giver = "Shadow Priest Allister", faction = "Horde", turnin = { 1421, 44.0, 40.9 } }
+Q[95981] = { name = "Watching the Roads", level = 20, minLevel = 10, map = 1421, x = 44.0, y = 40.9, giver = "Shadow Priest Allister", faction = "Horde", pre = { 482 }, turnin = { 1421, 44.0, 40.9 } }
 Q[95999] = { name = "WANTED: Incinerator Gar'im", level = 25, minLevel = 16, map = 1433, x = 24.3, y = 46.2, giver = "Wanted: Incinerator Gar'im", faction = "Alliance", group = true, turnin = { 1433, 24.9, 44.5 } }
 Q[96016] = { name = "The Tempest's Weapons", level = 40, minLevel = 30, map = 1417, x = 59.8, y = 27.6, giver = "Veyric Thunderhame", faction = "Alliance", class = { SHAMAN = true }, turnin = { 1416, 80.5, 66.9 } }
 Q[96130] = { name = "Chakuyak", level = 5, minLevel = 4, map = 1412, x = 46.9, y = 59.6, giver = "Yaw Sharpmane", faction = "Horde", turnin = { 1412, 46.9, 59.6 } }
 Q[96135] = { name = "Heed My Call", level = 40, minLevel = 30, map = 1417, x = 59.8, y = 27.6, giver = "Veyric Thunderhame", faction = "Alliance", class = { SHAMAN = true }, group = true, turnin = { 1417, 59.8, 27.6 } }
-Q[96137] = { name = "Ira's Dagger", level = 24, minLevel = 18, map = 1416, x = 80.5, y = 66.9, giver = "Bath'rah the Windwatcher", faction = "Alliance", turnin = { 1431, 72.6, 47.6 } }
-Q[96138] = { name = "Merrick's Bow", level = 28, minLevel = 18, map = 1431, x = 61.9, y = 64.2, giver = "Drop: Merrick's Bow", faction = "Alliance", turnin = { 1431, 72.6, 47.6 } }
-Q[96139] = { name = "The Valor Family", level = 22, minLevel = 18, map = 1431, x = 72.6, y = 47.6, giver = "Sirra Von'Indi", faction = "Alliance", turnin = { 1431, 72.6, 47.6 } }
+Q[96137] = { name = "Ira's Dagger", level = 25, minLevel = 18, map = 1416, x = 80.5, y = 66.9, giver = "Bath'rah the Windwatcher", faction = "Alliance", turnin = { 1431, 72.6, 47.6 } }
+Q[96138] = { name = "Merrick's Bow", level = 30, minLevel = 18, map = 1431, x = 43.3, y = 67.2, giver = "Drop: Merrick's Bow", faction = "Alliance", turnin = { 1431, 72.6, 47.6 } }
+Q[96139] = { name = "The Valor Family", level = 23, minLevel = 18, map = 1431, x = 72.6, y = 47.6, giver = "Sirra Von'Indi", faction = "Alliance", turnin = { 1431, 72.6, 47.6 } }
 Q[96204] = { name = "The Windshaper's Wrath", level = 22, minLevel = 18, map = 1421, x = 65.5, y = 23.3, giver = "Lumina Windsinger", faction = "Horde", race = { SCOURGE = true }, class = { PALADIN = true }, turnin = { 1421, 43.4, 41.0 } }
 Q[96222] = { name = "Khan Hratha", level = 42, minLevel = 30, map = 1443, x = 43.3, y = 77.8, giver = "Umarak", faction = "Horde", group = true }
 Q[96241] = { name = "Talkin' bout Toxins, Mon", level = 30, minLevel = 23, map = 1412, x = 32.5, y = 20.7, giver = "Mazu'kon", faction = "Horde", turnin = { 1412, 32.5, 20.7 } }
-Q[96243] = { name = "Call of Earth", level = 10, minLevel = 10, map = 1455, x = 47.1, y = 13.8, giver = "Eldrun Stormbreaker", faction = "Alliance", class = { SHAMAN = true }, turnin = { 1426, 28.8, 66.2 } }
+Q[96243] = { name = "Call of Earth", level = 4, minLevel = 10, map = 1455, x = 47.1, y = 13.8, giver = "Eldrun Stormbreaker", faction = "Alliance", class = { SHAMAN = true }, turnin = { 1426, 28.8, 66.2 } }
 Q[96259] = { name = "Defending the Dead", level = 30, minLevel = 23, map = 1412, x = 33.4, y = 22.6, giver = "Muln Earthfury", faction = "Horde", turnin = { 1412, 33.4, 22.6 } }
 Q[96260] = { name = "Stronger than Steel", level = 30, minLevel = 23, map = 1412, x = 32.5, y = 20.0, giver = "Yorn Grimtotem", faction = "Horde", turnin = { 1412, 32.5, 20.0 } }
 Q[96261] = { name = "The Broodmother", level = 31, minLevel = 23, map = 1412, x = 33.4, y = 22.6, giver = "Muln Earthfury", faction = "Horde", group = true, turnin = { 1412, 33.4, 22.6 } }
@@ -3150,7 +3158,7 @@ Q[96390] = { name = "Nip 'Em in the Bud", level = 13, minLevel = 9, map = 1426, 
 Q[96391] = { name = "Underground Map", level = 15, minLevel = 9, map = 1426, x = 77.4, y = 61.3, giver = "Drop: Dark Iron Map", faction = "Alliance", turnin = { 1426, 64.9, 58.5 } }
 Q[96392] = { name = "Farsen's Watch", level = 13, minLevel = 9, map = 1426, x = 64.9, y = 58.5, giver = "Earthseer Farsen", faction = "Alliance", turnin = { 1426, 64.9, 58.5 } }
 Q[96393] = { name = "Old Ironforge Incursion", level = 16, minLevel = 9, map = 1426, x = 64.9, y = 58.5, giver = "Earthseer Farsen", faction = "Alliance", pre = { 96391 }, dungeon = "The Hall of Thanes", turnin = { 1455, 39.1, 56.2 } }
-Q[96394] = { name = "The Restless Dead", level = 15, minLevel = 10, map = 1455, x = 33.2, y = 47.9, giver = "Afadra Dunwall", faction = "Alliance", dungeon = "The Hall of Thanes", turnin = { 1455, 33.2, 47.9 } }
+Q[96394] = { name = "The Restless Dead", level = 15, minLevel = 10, map = 1455, x = 33.2, y = 48, giver = "Afadra Dunwall", faction = "Alliance", dungeon = "The Hall of Thanes", turnin = { 1455, 33.2, 48 } }
 Q[96403] = { name = "Important Heirlooms", level = 15, minLevel = 10, map = 1455, x = 32.2, y = 44.5, giver = "Thom Filch", faction = "Alliance", dungeon = "The Hall of Thanes", turnin = { 1455, 32.2, 44.5 } }
 Q[96408] = { name = "A Visitor to Dun Morogh", level = 13, minLevel = 9, map = 1426, x = 50.4, y = 49.1, giver = "Beldin Steelgrill", faction = "Alliance", turnin = { 1426, 64.9, 58.5 } }
 Q[96779] = { name = "Syndicate Sabotage", level = 24, minLevel = 24, map = 1416, x = 84.9, y = 80.4, giver = "Myrokos Silentform", class = { ROGUE = true }, turnin = { 1416, 84.9, 80.4 } }
@@ -3160,8 +3168,8 @@ Q[96800] = { name = "Past Due", level = 38, minLevel = 30, map = 1416, x = 9.8, 
 Q[96821] = { name = "Legging It", level = 6, minLevel = 1, map = 1411, x = 56.0, y = 73.9, giver = "Vel'rin Fang", faction = "Horde", turnin = { 1411, 52.0, 43.5 } }
 Q[96822] = { name = "For Honor", level = 7, minLevel = 3, map = 1411, x = 54.0, y = 42.6, giver = "Turroc", faction = "Horde", turnin = { 1411, 54.0, 42.6 } }
 Q[96825] = { name = "This Fruit Could Bite Back", level = 6, minLevel = 3, map = 1411, x = 51.1, y = 42.5, giver = "Cook Torka", faction = "Horde", turnin = { 1411, 51.1, 42.5 } }
-Q[96876] = { name = "Ukor's Lost Pack", level = 8, minLevel = 5, map = 1411, x = 52.0, y = 56.4, giver = "Drop: Ukor's Lost Pack", faction = "Horde", group = true, turnin = { 1411, 52.1, 68.3 } }
-Q[96877] = { name = "Halikor's Hoof", level = 12, minLevel = 6, map = 1411, x = 41.9, y = 25.9, giver = "Drop: Halikor's Hoof", faction = "Horde", group = true, turnin = { 1454, 63.3, 44.8 } }
+Q[96876] = { name = "Ukor's Lost Pack", level = 8, minLevel = 5, map = 1411, x = 51.8, y = 55.8, giver = "Drop: Ukor's Lost Pack", faction = "Horde", group = true, turnin = { 1411, 52.1, 68.3 } }
+Q[96877] = { name = "Halikor's Hoof", level = 12, minLevel = 6, map = 1411, x = 41.2, y = 26.9, giver = "Drop: Halikor's Hoof", faction = "Horde", group = true, turnin = { 1454, 63.3, 44.8 } }
 Q[96895] = { name = "The Argent Emissary", level = 12, minLevel = 10, map = 1420, x = 61.5, y = 53.5, giver = "Deathguard Terrence", faction = "Horde", turnin = { 1420, 65.9, 61.1 } }
 Q[96896] = { name = "A Righteous Cause", level = 12, minLevel = 10, map = 1420, x = 22.0, y = 44.7, giver = "Leonid Barthalomew the Revered", faction = "Horde", pre = { 96899 }, turnin = { 1420, 22.0, 44.7 } }
 Q[96897] = { name = "The Cult of the Damned", level = 12, minLevel = 10, map = 1420, x = 65.9, y = 61.1, giver = "Hadric Harlson", faction = "Horde", pre = { 96895 }, turnin = { 1420, 65.9, 61.1 } }
@@ -3186,7 +3194,7 @@ Q[97245] = { name = "Call of Fire", level = 10, minLevel = 10, map = 2521, x = 5
 Q[97246] = { name = "Meal Appeal", level = 15, minLevel = 5, map = 1454, x = 55.7, y = 72.2, giver = "Thatog", faction = "Horde", turnin = { 1454, 57.2, 53.3 } }
 Q[97249] = { name = "Favorite Food", level = 15, minLevel = 5, map = 1454, x = 57.2, y = 53.3, giver = "Borstan", faction = "Horde", turnin = { 1454, 36.5, 29.1 } }
 Q[97250] = { name = "Wrongly Blamed, Justly Corrected", level = 23, minLevel = 18, map = 1413, x = 44.6, y = 59.3, giver = "Grunt Logmar", faction = "Horde", group = true, turnin = { 1413, 44.6, 59.3 } }
-Q[97253] = { name = "Parts and Pieces", level = 14, minLevel = 9, map = 1413, x = 63.1, y = 36.3, giver = "Wrenix the Wretched", faction = "Horde", turnin = { 1413, 63.1, 36.3 } }
+Q[97253] = { name = "Parts and Pieces", level = 15, minLevel = 9, map = 1413, x = 63.1, y = 36.3, giver = "Wrenix the Wretched", faction = "Horde", turnin = { 1413, 63.1, 36.3 } }
 Q[97257] = { name = "Call of Fire", level = 10, minLevel = 10, map = 2521, x = 51.2, y = 86.2, giver = "Olariaan Swiftburn", faction = "Horde", pre = { 97245 }, race = { SKYBORNE_H = true }, class = { SHAMAN = true }, turnin = { 2521, 58.3, 78.5 } }
 Q[97263] = { name = "Your Package Has Arrived", level = 2, minLevel = 1, map = 1455, x = 72.3, y = 48.6, giver = "Misplaced Packages", faction = "Alliance", turnin = { 1455, 47.1, 13.8 } }
 Q[97265] = { name = "Hate the Hatefury", level = 33, minLevel = 28, map = 1443, x = 25.4, y = 67.2, giver = "Aka'rai", faction = "Horde" }
@@ -3196,10 +3204,11 @@ Q[97279] = { name = "Wayward Weapons", level = 2, minLevel = 1, map = 1411, x = 
 Q[97281] = { name = "A Simmering Storm", level = 11, minLevel = 7, map = 1411, x = 52.0, y = 21.4, giver = "Drop: Dull Storm Orb", faction = "Horde", turnin = { 1411, 46.4, 22.9 } }
 Q[97282] = { name = "Stormy Potential", level = 10, minLevel = 7, map = 1411, x = 46.4, y = 22.9, giver = "Rezlak", faction = "Horde", pre = { 97281 }, turnin = { 1411, 46.4, 22.9 } }
 Q[97287] = { name = "Shrewd Negotiations", level = 33, minLevel = 24, map = 1424, x = 61.6, y = 20.9, giver = "Magus Wordeen Voidglare", faction = "Horde", turnin = { 1416, 14.2, 60.0 } }
-Q[97289] = { name = "Unending Torment", level = 21, minLevel = 16, map = 1458, x = 48.8, y = 69.3, giver = "Master Apothecary Faranell", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 45.9, 61.7 } }
-Q[97290] = { name = "Unending Torment", level = 21, minLevel = 16, map = 1458, x = 45.9, y = 61.7, giver = "Unfinished Abomination", faction = "Horde", turnin = { 1458, 48.8, 69.3 } }
-Q[97291] = { name = "Unending Torment", level = 21, minLevel = 16, map = 1458, x = 48.8, y = 69.3, giver = "Master Apothecary Faranell", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 48.8, 69.3 } }
-Q[97292] = { name = "Unending Torment", level = 21, minLevel = 16, map = 1458, x = 48.8, y = 69.3, giver = "Master Apothecary Faranell", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 48.8, 69.3 } }
+Q[97288] = { name = "Unending Torment", level = 21, minLevel = 15, map = 1458, x = 72.41, y = 11.37, giver = "Abominable Head, which The Baron drops", faction = "Horde", dungeon = "Ruins of Lordaeron", turnin = { 1458, 48.8, 69.3 } }
+Q[97289] = { name = "Unending Torment", level = 21, minLevel = 15, map = 1458, x = 48.8, y = 69.3, giver = "Master Apothecary Faranell", faction = "Horde", pre = { 97288 }, dungeon = "Ruins of Lordaeron", turnin = { 1458, 45.9, 61.7 } }
+Q[97290] = { name = "Unending Torment", level = 21, minLevel = 15, map = 1458, x = 45.9, y = 61.7, giver = "Unfinished Abomination", faction = "Horde", pre = { 97289 }, turnin = { 1458, 48.8, 69.3 } }
+Q[97291] = { name = "Unending Torment", level = 21, minLevel = 15, map = 1458, x = 48.8, y = 69.3, giver = "Master Apothecary Faranell", faction = "Horde", pre = { 97290 }, turnin = { 1458, 48.8, 69.3 } }
+Q[97292] = { name = "Unending Torment", level = 21, minLevel = 15, map = 1458, x = 48.8, y = 69.3, giver = "Master Apothecary Faranell", faction = "Horde", pre = { 97291 }, turnin = { 1458, 48.8, 69.3 } }
 Q[97326] = { name = "Rocks to Rests", level = 15, minLevel = 5, map = 1454, x = 36.8, y = 29.1, giver = "Thra", faction = "Horde", turnin = { 1454, 36.8, 29.1 } }
 Q[97328] = { name = "Anything of Value", level = 35, minLevel = 30, map = 1434, x = 31.6, y = 12.9, giver = "Thoroughly Scavenged Supplies", faction = "Horde" }
 Q[97485] = { name = "Traditions of the Bluff", level = 10, minLevel = 3, map = 1456, x = 38, y = 55.9, giver = "Eylah Sunhorn", faction = "Horde", turnin = { 1456, 38, 55.9 } }
@@ -3216,7 +3225,7 @@ Q[98013] = { name = "Swelling Forces", level = 20, minLevel = 12, map = 1439, x 
 Q[98021] = { name = "Journey to Sentinel Hill", level = 13, minLevel = 7, map = 1453, x = 80.2, y = 38.4, giver = "Highlord Bolvar Fordragon", faction = "Alliance", pre = { 94947 }, race = { SKYBORNE_A = true }, turnin = { 1436, 56.3, 47.5 } }
 Q[98024] = { name = "Journey to the Crossroads", level = 13, minLevel = 7, map = 1454, x = 31.7, y = 37.8, giver = "Thrall", faction = "Horde", pre = { 95350 }, race = { SKYBORNE_H = true }, turnin = { 1413, 51.5, 30.9 } }
 Q[98025] = { name = "WANTED: Jai'vhanel", level = 13, minLevel = 10, map = 1439, x = 37.2, y = 44.2, giver = "WANTED: Murkdeep!", faction = "Alliance", turnin = { 1439, 37.7, 43.4 } }
-Q[98027] = { name = "Gleaming Crescent Necklace", level = 29, minLevel = 25, map = 1440, x = 63.0, y = 71.5, giver = "Gleaming Crescent Pendant", faction = "Alliance", turnin = { 1440, 36.6, 50.0 } }
+Q[98027] = { name = "Gleaming Crescent Necklace", level = 26, minLevel = 25, map = 1440, x = 63.0, y = 71.5, giver = "Gleaming Crescent Pendant", faction = "Alliance", turnin = { 1440, 36.6, 50.0 } }
 Q[98028] = { name = "Baron Marinous", level = 21, minLevel = 17, map = 1439, x = 59.1, y = 22.8, giver = "Drop: Clouded Water Globe", faction = "Alliance", group = true, turnin = { 1439, 43.5, 76.3 } }
 Q[98042] = { name = "It's All Fun and Games Until...", level = 17, minLevel = 12, map = 1439, x = 38.5, y = 86.0, giver = "Twilight Tome", faction = "Alliance", turnin = { 1439, 37.4, 40.1 } }
 Q[98046] = { name = "Crown of the Earth", level = 11, minLevel = 1, map = 1457, x = 34.8, y = 9.3, giver = "Arch Druid Fandral Staghelm", faction = "Alliance", pre = { 935 }, turnin = { 1457, 40.4, 88.7 } }
@@ -3242,8 +3251,8 @@ Q[98230] = { name = "This Land Was Their Land", level = 29, minLevel = 22, map =
 Q[98240] = { name = "Crimson Crate Delivery", level = 29, minLevel = 19, map = 1437, x = 8.6, y = 55.7, giver = "James Halloran", faction = "Alliance", turnin = { 1437, 49.4, 42.1 } }
 Q[98245] = { name = "Razormaw Needling", level = 29, minLevel = 21, map = 1437, x = 49.4, y = 42.1, giver = "Howin Kindfeather", faction = "Alliance", turnin = { 1437, 49.4, 42.1 } }
 Q[98246] = { name = "Trying Times", level = 29, minLevel = 21, map = 1437, x = 49.4, y = 42.1, giver = "Howin Kindfeather", faction = "Alliance", turnin = { 1437, 49.4, 42.1 } }
-Q[98251] = { name = "Never Coming Back", level = 22, minLevel = 18, map = 1440, x = 40.5, y = 61.4, giver = "Va'xug Firefure", faction = "Horde", turnin = { 1440, 40.5, 61.4 } }
-Q[98252] = { name = "A Void Path", level = 22, minLevel = 18, map = 1440, x = 40.5, y = 61.4, giver = "Va'xug Firefure", faction = "Horde", turnin = { 1440, 38.3, 58.4 } }
+Q[98251] = { name = "Never Coming Back", level = 23, minLevel = 18, map = 1440, x = 40.5, y = 61.4, giver = "Va'xug Firefure", faction = "Horde", turnin = { 1440, 40.5, 61.4 } }
+Q[98252] = { name = "A Void Path", level = 23, minLevel = 18, map = 1440, x = 40.5, y = 61.4, giver = "Va'xug Firefure", faction = "Horde", turnin = { 1440, 38.3, 58.4 } }
 Q[98282] = { name = "Alchemical Hazards", level = 22, minLevel = 20, map = 1437, x = 11.9, y = 58.8, giver = "Caitlin Grassman", faction = "Alliance", turnin = { 1437, 11.9, 58.8 } }
 Q[98283] = { name = "Carnage", level = 30, minLevel = 22, map = 1437, x = 56.4, y = 40.4, giver = "Rethiel the Greenwarden", faction = "Alliance", group = true, turnin = { 1437, 56.4, 40.4 } }
 Q[98291] = { name = "Death to the Dragonmaw", level = 30, minLevel = 22, map = 1437, x = 49.4, y = 42.1, giver = "Howin Kindfeather", faction = "Alliance", group = true, turnin = { 1437, 49.4, 42.1 } }
@@ -3280,7 +3289,7 @@ Q[98418] = { name = "Shared Fury", level = 30, minLevel = 23, map = 1440, x = 86
 Q[98423] = { name = "The Treaty of Understanding", level = 16, minLevel = 9, map = 1455, x = 27.63, y = 47.83, giver = "Treaty of Understanding from Treaty of Understanding", faction = "Alliance", turnin = { 1455, 39.1, 56.2 } }
 Q[98424] = { name = "Fizsprocket's Notes", level = 10, minLevel = 5, map = 1412, x = 61.2, y = 49.3, giver = "Drop: Mulgore Expansion Plans", faction = "Horde", turnin = { 1412, 54.8, 64.3 } }
 Q[98427] = { name = "Ceasing Operations", level = 12, minLevel = 5, map = 1412, x = 54.8, y = 64.3, giver = "Morin Cloudstalker", faction = "Horde", pre = { 98424 }, group = true, turnin = { 1412, 54.8, 64.3 } }
-Q[98430] = { name = "The Longwalkers", level = 8, minLevel = 1, map = 1412, x = 33.1, y = 65.9, giver = "Perith Stormhoof", faction = "Horde", turnin = { 1456, 60.3, 51.7 } }
+Q[98430] = { name = "The Longwalkers", level = 8, minLevel = 1, map = 1412, x = 33.1, y = 66.0, giver = "Perith Stormhoof", faction = "Horde", turnin = { 1456, 60.3, 51.7 } }
 Q[98435] = { name = "Thunderhorn's Report", level = 10, minLevel = 4, map = 1412, x = 47.5, y = 63.6, giver = "Mull Thunderhorn", faction = "Horde", pre = { 760 }, turnin = { 1456, 78.6, 28.6 } }
 Q[98459] = { name = "A Lack of Virtue", level = 21, minLevel = 18, map = 1424, x = 51.2, y = 66.5, giver = "Tom \"Half-fish\" Wilson", faction = "Alliance", turnin = { 1437, 8.7, 58.1 } }
 Q[98461] = { name = "Unrequited Love", level = 21, minLevel = 18, map = 1439, x = 37.4, y = 41.8, giver = "Archaeologist Hollee", faction = "Alliance", turnin = { 1437, 11.5, 52.2 } }

@@ -48,7 +48,6 @@ Guides\Horde\Horde_08.lua
 Guides\Horde\Horde_09.lua
 Guides\Horde\Horde_10.lua
 Guides\Horde\Horde_11.lua
-Guides\Horde\Horde_12.lua
 Guides\Alliance\Start_Dwarf.lua
 Guides\Alliance\Start_Human.lua
 Guides\Alliance\Start_NightElf.lua

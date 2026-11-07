@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Mulgore (Tauren)]==], [==[
 #levels 1-13
 #faction Horde
 #race Tauren
-#next Horde 12-16 The Barrens, Orgrimmar, Thunder Bluff
+#next Horde 12-16 The Barrens, Orgrimmar, Undercity
 
 [S Mulgore | at=45.93,64.16,1412; xl=1.0]
 Talk to Innkeeper Kauth and make this inn your home.
@@ -58,7 +58,7 @@ Harutt Thunderhorn is right here: pick up your new Warrior spells.
 Gart Mistrunner is right here: pick up your new Druid spells.
 [R Shaman - Mulgore | at=44.58,76.56,1412; class=SHAMAN; xl=5.4]
 Meela Dawnstrider is right here: pick up your new Shaman spells.
-[A 1519 Call of Earth | at=44.4,76.8,1412; place=Mulgore; class=SHAMAN; xl=5.4]
+[A 1519 Call of Earth | at=44.4,76.8,1412; ex=1516,92466; place=Mulgore; class=SHAMAN; xl=5.4]
 [C 1519 Call of Earth | at=61.0,78.2,1412; mob=Bristleback Shaman; item=6634:2; drop=13; class=SHAMAN; xl=5.4]
 [T 1519 Call of Earth | at=44.4,76.8,1412; place=Mulgore; class=SHAMAN; xl=5.4]
 [A 1520 Call of Earth | at=44.4,76.8,1412; pre=1519; place=Mulgore; class=SHAMAN; xl=5.4]
@@ -126,19 +126,19 @@ Yaw Sharpmane is right here: pick up your new Hunter spells.
 [T 751 The Ravaged Caravan | at=54.8,64.3,1412; place=Mulgore; xl=9.4]
 [T 98424 Fizsprocket's Notes | at=54.8,64.3,1412; place=Mulgore; xl=9.6]
 [A 764 The Venture Co. | at=54.8,64.3,1412; pre=751; place=Mulgore; xl=9.8]
-[C 99080 Drive Them Out | at=62.9,60.8,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.8]
+[C 99080 Drive Them Out | at=61.6,61.4,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.8]
 [C 743 Dangers of the Windfury | at=61.2,72.4,1412; mob=Windfury Harpy; ml=8; item=4751:8; drop=52; xl=9.8]
 [T 743 Dangers of the Windfury | at=46.5,64.9,1412; place=Mulgore; xl=9.8]
 [T 99080 Drive Them Out | at=46.7,63.4,1412; place=Mulgore; xl=10.0]
 [A 99082 The High Chieftain | at=46.7,63.4,1412; pre=99080; place=Mulgore; xl=10.2]
-[A 861 The Hunter's Way | at=46.0,63.4,1412; place=Mulgore; xl=10.2]
+[A 861 The Hunter's Way | at=46.0,63.4,1412; ex=844; place=Mulgore; xl=10.2]
 [R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=10.2]
 Yaw Sharpmane is right here: pick up your new Hunter spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 6061 Taming the Beast | at=46.9,59.6,1412; place=Mulgore; class=HUNTER; race=Tauren; xl=10.2]
 [C 6061 Taming the Beast | at=39.7,68.8,1412; mob=Adult Plainstrider; class=HUNTER; race=Tauren; xl=10.2]
 [T 6061 Taming the Beast | at=46.9,59.6,1412; place=Mulgore; class=HUNTER; race=Tauren; xl=10.2]
-[A 6065 The Hunter's Path | at=58.5,88.3,1456; opt; place=Thunder Bluff; class=HUNTER; race=Tauren; xl=10.2]
+[A 6065 The Hunter's Path | at=58.5,88.3,1456; ex=6066,6067; opt; place=Thunder Bluff; class=HUNTER; race=Tauren; xl=10.2]
 [T 6065 The Hunter's Path | at=46.9,59.6,1412; opt; place=Mulgore; class=HUNTER; race=Tauren; xl=10.2]
 [A 6087 Taming the Beast | at=46.9,59.6,1412; pre=6061; place=Mulgore; class=HUNTER; race=Tauren; xl=10.2]
 [C 6087 Taming the Beast | at=50.8,50.7,1412; mob=Prairie Stalker; class=HUNTER; race=Tauren; xl=10.2]
@@ -159,12 +159,12 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 775 Journey into Thunder Bluff | at=58.3,30.7,1412; pre=773; place=Mulgore; xl=10.8]
 [C 861 The Hunter's Way | at=47.0,25.9,1412; mob=Flatland Prowler; ml=9; item=5203:4; drop=22; xl=10.8]
 [C 760 Wildmane Cleansing | at=42.7,25.0,1412; race=Tauren; xl=10.8]
-[R Druid - Mulgore | at=33.42,22.14,1412; class=DRUID; xl=10.8]
+[R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=10.8]
 Hana Lighthoof is right here: pick up your new Druid spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 5922 Moonglade | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.8]
 [T 5922 Moonglade | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=Tauren; xl=10.8]
-[A 5926 Heeding the Call | at=45.8,64.7,1456; opt; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.8]
+[A 5926 Heeding the Call | at=45.8,64.7,1456; ex=5927,5928; opt; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.8]
 [T 5926 Heeding the Call | at=76.5,27.2,1456; opt; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.8]
 [A 5930 Great Bear Spirit | at=56.2,30.6,1450; pre=5922; place=Moonglade; class=DRUID; race=Tauren; xl=10.8]
 [C 5930 Great Bear Spirit | at=39.1,27.5,1450; mob=Great Bear Spirit; class=DRUID; race=Tauren; xl=10.8]
@@ -179,7 +179,7 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [R Shaman - Mulgore | at=33.59,22.4,1412; class=SHAMAN; xl=10.8]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1523 Call of Fire | at=25.2,20.5,1456; opt; place=Thunder Bluff; class=SHAMAN; xl=10.8]
+[A 1523 Call of Fire | at=25.2,20.5,1456; ex=1522,2983,2984; opt; place=Thunder Bluff; class=SHAMAN; xl=10.8]
 [T 1523 Call of Fire | at=56.0,19.9,1413; opt; place=The Barrens; class=SHAMAN; xl=10.8]
 [A 1524 Call of Fire | at=56.0,19.9,1413; place=The Barrens; class=SHAMAN; xl=10.8]
 [T 1524 Call of Fire | at=38.5,59.0,1411; place=Durotar; class=SHAMAN; xl=10.8]
@@ -205,15 +205,15 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=11.2]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Paladin - Thunder Bluff | at=22.62,19.91,1456; class=PALADIN; xl=11.2]
+[R Paladin - Thunder Bluff | at=22.13,16.91,1456; class=PALADIN; xl=11.2]
 Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=11.2]
 Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1505 Veteran Uzzek | at=57.2,87.4,1456; opt; place=Thunder Bluff; class=WARRIOR; xl=11.2]
+[A 1505 Veteran Uzzek | at=57.2,87.4,1456; ex=1819; opt; place=Thunder Bluff; class=WARRIOR; xl=11.2]
 [T 1505 Veteran Uzzek | at=61.4,21.1,1413; opt; place=The Barrens; class=WARRIOR; xl=11.2]
-[A 1498 Path of Defense | at=61.4,21.1,1413; place=The Barrens; class=WARRIOR; xl=11.2]
+[A 1498 Path of Defense | at=61.4,21.1,1413; ex=1819; place=The Barrens; class=WARRIOR; xl=11.2]
 [C 1498 Path of Defense | at=39.1,29.3,1411; mob=Thunder Lizard; item=6486:5; drop=16; class=WARRIOR; xl=11.2]
 [T 1498 Path of Defense | at=61.4,21.1,1413; place=The Barrens; class=WARRIOR; xl=11.2]
 [A 1502 Thun'grim Firegaze | at=61.4,21.1,1413; pre=1498; place=The Barrens; class=WARRIOR; xl=11.2]
@@ -224,7 +224,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=11.2]
 Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1485 Vile Familiars | at=42.6,69,1411; place=Durotar; class=WARLOCK; xl=11.2]
+[A 1485 Vile Familiars | at=42.6,69,1411; ex=1470; place=Durotar; class=WARLOCK; xl=11.2]
 [C 1485 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; item=6487:6; drop=5; class=WARLOCK; xl=11.2]
 [T 1485 Vile Familiars | at=42.6,69,1411; place=Durotar; class=WARLOCK; xl=11.2]
 [A 1499 Vile Familiars | at=42.6,69,1411; pre=1485; place=Durotar; class=WARLOCK; xl=11.2]
@@ -234,7 +234,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=11.2]
 Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; opt; place=Thunder Bluff; class=MAGE; xl=11.2]
+[A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; ex=1882; opt; place=Thunder Bluff; class=MAGE; xl=11.2]
 [T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; place=Durotar; class=MAGE; xl=11.2]
 [G 37.8,59.6 1456 Travel to Thunder Bluff | xl=11.2]
 [S Thunder Bluff | at=45.81,64.71,1456; xl=11.2]
@@ -254,7 +254,7 @@ Siln Skychaser is right here: pick up your new Shaman spells.
 Starts from Demon Scarred Cloak, which drops in this area.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 744 Preparation for Ceremony | at=32.4,32.9,1412; mob=Windfury Sorceress / Windfury Matriarch; ml=11; item=4752:6,4753:6; drop=40; xl=12.0]
-[R Druid - Mulgore | at=33.42,22.14,1412; class=DRUID; xl=12.0]
+[R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=12.0]
 Hana Lighthoof is right here: pick up your new Druid spells.
 [T 770 The Demon Scarred Cloak | at=46.0,63.4,1412; place=Mulgore; opt; xl=12.0]
 [R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=12.1]

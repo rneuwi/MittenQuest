@@ -704,6 +704,16 @@ DANGER_FLOOR = 8        # starting areas mix level 1 quests with level 5 mobs by
 _HOSTILE_SPAWNS = collections.defaultdict(list)    # map -> [(x, y, level, npc id)]
 # Capitals (by area). No open-world mobs live there.
 CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
+# Objectives that are all inside a capital:
+# - a quest filed under a dungeon is done in the city, not on a run (Unending Torment's later
+#   steps: reagents from Undercity vendors, Othmar's body in the Undercity, filed under Ruins
+#   of Lordaeron). Without this each one got its own run.
+# - a single-spawn NPC or object there is scripted (Sylvanas, Othmar's body, an incense burner),
+#   not a farmed target: no respawn wait in the time model.
+for _q in QUESTS.values():
+    if _q.objPoints and all(p[3] in CAPITALS for p in _q.objPoints):
+        _q.dungeon = None
+        _q.contested = None
 for _nid, _e in N.items():
     if (_e.get('rank') or 0) != 0:
         continue    # elites and rares: rare spawns, and named elites are their own quests
@@ -1050,6 +1060,7 @@ class Sim:
         self.steps = []           # (line, level) tuples
         self.carried_dungeon = collections.defaultdict(set)
         self.errand = None            # map to collect dungeon quests from next
+        self.fetched = set()          # (dungeon, map, level) fetch trips already made
         self.maps_visited = set()
         self.t = 0.0                  # simulated /played seconds
         self.bind = None              # inn your hearthstone is set to
@@ -1266,6 +1277,8 @@ class Sim:
                 tail = f"; class={cf}{self.race_key(q)}"
                 opt = '; opt' if (q.group or inherited or q.breadcrumbFor) else ''
                 prestr = ('; pre=' + ','.join(map(str, pre))) if pre else ''
+                if q.exclusive:
+                    prestr += '; ex=' + ','.join(map(str, sorted(q.exclusive)))
                 self.emit(f"[A {q.id} {q.name} | {self.at(q.start)}{prestr}{opt}{self.place_key(q.start)}{tail}]")
                 if q.startItem:
                     self.emit(f"Starts from {q.startItem}, which drops in this area.")
@@ -1369,6 +1382,10 @@ class Sim:
         pre = [p for p in q.preAll if self.has(p)] + [p for p in q.preAny if self.has(p)][:1]
         if pre:
             opts.append('pre=' + ','.join(map(str, pre)))
+        if q.exclusive:
+            # Either/or quests: the addon treats this one as done once you have another
+            # (the game never flags the guide's version).
+            opts.append('ex=' + ','.join(map(str, sorted(q.exclusive))))
         if any(p in self.prior or p in self.uncertain for p in pre):
             self.uncertain.add(q.id)
         if q.breadcrumbFor or q.group or q.id in self.uncertain:
@@ -1451,7 +1468,10 @@ class Sim:
         n = len(self.active)
         if n < LOG_LIMIT:
             for q in self.map_quests.get(mapID, ()):
-                if self.eligible(q) and self.worthwhile(q) and (n < LOG_LIMIT - 4 or self.quick(q, mapID)):
+                # The last slots are for quick quests, and for quests of a dungeon already in
+                # the log (they ride along on the same run).
+                if self.eligible(q) and self.worthwhile(q) and (n < LOG_LIMIT - 4 or self.quick(q, mapID)
+                                                                or q.dungeon in self.carried_dungeon):
                     yield 'A', q, q.start
 
     def next_action(self, mapID):
@@ -1534,14 +1554,19 @@ class Sim:
             for t in DUNGEON_FEEDERS.get(qid, ()):
                 if not self.has(t) and t not in self.active and t not in self.banned:
                     bundles[QUESTS[t].dungeon].append((q.finish[0], q, {t}))
-        best, best_value = None, per_level * ERRAND_MIN
+        # A town with quests for several dungeons (Thunder Bluff: Ragefire Chasm and Wailing
+        # Caverns) is one trip for all of them, so its value adds up every bundle it serves.
+        map_xp = collections.Counter()
         for picks in bundles.values():
             gained = {q.id for _, q, _ in picks} | {t for _, _, ts in picks for t in ts}
             bundle_xp = sum(QUESTS[t].xp for t in gained) * DUNGEON_WEIGHT
             for m in {m for m, _, _ in picks}:
-                value = bundle_xp - self.travel_cost(m) + handins[m] * per_level * HANDIN_SLOT
-                if value > best_value:
-                    best, best_value = m, value
+                map_xp[m] += bundle_xp
+        best, best_value = None, per_level * ERRAND_MIN
+        for m in sorted(map_xp):
+            value = map_xp[m] - self.travel_cost(m) + handins[m] * per_level * HANDIN_SLOT
+            if value > best_value:
+                best, best_value = m, value
         return best
 
     def run_map(self, mapID, area, allowed_maps=None):
@@ -1569,7 +1594,10 @@ class Sim:
             self.train_nearby()
             self.maybe_learn_fp()
             self.check_dungeons(area)
-        self.check_dungeons(area)    # runs held back for pickups on this map
+            if self.errand is not None:
+                break
+        if self.errand is None:
+            self.check_dungeons(area)    # runs held back for pickups on this map
         # learn this zone's flight path before leaving if we never walked past it
         for fm in self.fm_on_map(mapID):
             if fm['node'] not in self.learned:
@@ -1603,6 +1631,11 @@ class Sim:
             if not force and not cross and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
                     and self.L < max(levels) + 3:
                 continue    # wait until the route is on the dungeon's continent
+            if not force and self.L >= ready:
+                fetch = self.dungeon_fetch(dname, ent)
+                if fetch is not None:
+                    self.errand = fetch    # one run for all: collect the rest first
+                    continue
             if force or self.L >= ready:
                 at = f"; at={ent[1]},{ent[2]},{ent[0]}" if ent else ''
                 if ent:
@@ -1615,6 +1648,21 @@ class Sim:
                 self.t += DUNGEON_SECONDS
                 self.add_xp(XP_TO_LEVEL[min(self.L, 59) - 1] * 0.5)  # XP from the run itself
                 self.inside_run(dname)
+                if ent:
+                    self.handin_at(ent[0])
+
+    def handin_at(self, mapID):
+        """Right after a run: hand in what's finished on the entrance's map, and take what that
+        opens in the same town, before the route goes back to where it was (Unending Torment
+        starts inside Ruins of Lordaeron and goes to Master Apothecary Faranell in the
+        Undercity, next to the entrance; carried for levels, its follow-ups went grey)."""
+        for _ in range(50):
+            ready = [(dist(self.pos, loc), q.id, q) for kind, q, loc in self.candidates(mapID) if kind == 'T']
+            if not ready:
+                return
+            q = min(ready)[2]
+            self.turnin(q)
+            self.sweep_hub(mapID)
 
     def inside_run(self, dname):
         """During a run: hand in quests whose turn-in is inside and pick up quests whose giver
@@ -1647,6 +1695,26 @@ class Sim:
             self.carried_dungeon[dname] = left
         else:
             self.carried_dungeon.pop(dname, None)
+
+    def dungeon_fetch(self, dname, ent):
+        """A map on the dungeon's continent with quests for it to pick up now: the run waits
+        for a trip there, so it's one run for all of them (Serpentbloom in Thunder Bluff for
+        Wailing Caverns). Each map is fetched from once per dungeon and level."""
+        if not self.pos or len(self.active) >= LOG_LIMIT or not ent:
+            return None
+        here = continent(ent[3])
+        best, best_xp = None, 0
+        for m, qs in self.map_quests.items():
+            if m == self.pos[0] or continent(self.map_area[m]) != here \
+                    or (dname, m, self.L) in self.fetched:
+                continue
+            xp = sum(q.xp for q in qs if q.dungeon == dname and self.L >= q.level - 2
+                     and self.eligible(q) and self.worthwhile(q))
+            if xp > best_xp:
+                best, best_xp = m, xp
+        if best is not None:
+            self.fetched.add((dname, best, self.L))
+        return best
 
     def dungeon_pickups_here(self, dname):
         """Quests for this dungeon (or chain steps toward one) still to pick up on this map."""
@@ -1806,7 +1874,12 @@ class Sim:
                 # A dungeon run that's ready beats grinding, even on the other continent
                 # (Alliance sat in Silithus at 56-58 carrying Blackrock Depths quests).
                 before = len(self.steps)
+                self.errand = None
                 self.check_dungeons(self.map_area.get(current), cross=True)
+                if self.errand is not None and self.next_action(self.errand):
+                    self.travel_to(self.errand)
+                    current = self.errand
+                    continue
                 if len(self.steps) != before:
                     if self.pos and self.pos[0] in self.map_quests:
                         current = self.pos[0]
