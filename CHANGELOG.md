@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.3.0
 
 **Fixes**
 - Quests with another version from a different giver, or an either/or choice (The Ashenvale
