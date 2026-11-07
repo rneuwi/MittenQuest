@@ -1,5 +1,16 @@
 # MittenQuest
 
+## 1.3.2
+
+**Fixes**
+- Picking a finished guide from the Guide menu (or /mq load) now opens it. It used to jump
+  straight to the next guide, so it looked like nothing happened. Uncheck a step to go back
+  into it; finishing it again moves on to the next guide as usual.
+
+**New**
+- "Start this guide over" in the Guide menu (or /mq restart) clears your skips and arrivals
+  in the open guide. Quests you've really accepted or turned in stay checked.
+
 ## 1.3.1
 
 **Fixes**
