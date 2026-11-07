@@ -43,7 +43,8 @@ local raw = table.concat({
 local steps, header, warnings = ns.Parser:Parse(raw, "Test")
 local guide = { steps = steps, allSteps = steps, header = header, warnings = warnings }
 local prog = { index = 1, arrived = {}, skip = {}, done = {}, undo = {}, force = {} }
-FG.db = { profile = { skipGrey = false }, global = { notOffered = {} } }
+local realFG = { GetActiveGuide = FG.GetActiveGuide, GetActiveSteps = FG.GetActiveSteps, GetProgress = FG.GetProgress }
+FG.db ={ profile = { skipGrey = false }, global = { notOffered = {} } }
 FG.GetActiveGuide = function() return guide end
 FG.GetActiveSteps = function() return steps, prog end
 FG.GetProgress = function() return prog end
@@ -144,6 +145,33 @@ check("clicking the follow-up clears the chain's record", FG.db.global.notOffere
 FG.db.global.notOffered[10] = { npc = "Old Giver" }
 FG:QUEST_ACCEPTED(nil, 10)
 check("accepting it anywhere clears the record", FG.db.global.notOffered[10] == nil)
+
+-- Undo across a guide chain: skipping the last step of "Prev" finishes it and auto-loads
+-- "Next"; undo from "Next" (empty history) must reopen "Prev" with that step back.
+for k, fn in pairs(realFG) do FG[k] = fn end
+function FG:Print() end
+ns.RouteCheck = nil
+ns.QuestPins = { RequestRefresh = function() end }
+FG.db.global.notOffered = {}
+FG.db.char = { activeGuide = "Prev", progress = {} }
+FG.paceBaseline = {}
+FG.guides = {
+    Prev = { name = "Prev", raw = "#next Next\n\n[A 20 First | at=50,50,1]\n[A 21 Last | at=50,50,1]" },
+    Next = { name = "Next", raw = "[A 30 Later | at=50,50,1]" },
+}
+inlog = { [20] = true }
+FG:Advance(true)
+check("chain: starts on Prev's last step", FG.db.char.activeGuide == "Prev" and FG:GetProgress().index == 2)
+FG:SkipCurrentStep()
+check("chain: skipping the last step loads Next", FG.db.char.activeGuide == "Next")
+local u = FG:CanUndo()
+check("chain: undo offered from Next", u ~= nil and u.label:find("back to Prev", 1, true) ~= nil,
+      u and u.label or "nil")
+FG:UndoSkip()
+check("chain: undo returns to Prev on that step", FG.db.char.activeGuide == "Prev"
+      and FG:GetProgress().index == 2, FG.db.char.activeGuide)
+check("chain: nothing left to undo", FG:CanUndo() == nil)
+inlog = {}
 
 if failures > 0 then
     print(failures .. " failure(s)")

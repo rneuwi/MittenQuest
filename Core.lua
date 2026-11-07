@@ -411,16 +411,44 @@ function FG:SkipSteps(indices, label)
     self:Advance(true)   -- re-aim the arrow now, even when the cursor didn't move
 end
 
-function FG:CanUndo()
+-- Where the next undo comes from. Normally the active guide's own history. When that's
+-- empty, the guide that chains into this one: a skip that finished it auto-loaded this
+-- guide, and its history stayed behind. Returns progress, guide name (nil = active guide).
+function FG:UndoSource()
     local _, p = self:GetActiveSteps()
-    return p and p.undo[#p.undo]
+    if not p then return nil end
+    if p.undo[#p.undo] then return p, nil end
+    local active = self.db.char.activeGuide
+    -- Only guides with saved undo history; GetGuide parses lazily, so don't touch the rest.
+    for name, prev in pairs(self.db.char.progress) do
+        if name ~= active and self.guides[name] and prev.undo and prev.undo[#prev.undo] then
+            local header = self:GetGuide(name).header
+            if header and header.next == active then return prev, name end
+        end
+    end
+    return nil
+end
+
+function FG:CanUndo()
+    local p, guideName = self:UndoSource()
+    local last = p and p.undo[#p.undo]
+    if not last then return nil end
+    if guideName then
+        return { indices = last.indices, label = ("%s (back to %s)"):format(last.label, guideName) }
+    end
+    return last
 end
 
 function FG:UndoSkip()
-    local _, p = self:GetActiveSteps()
+    local p, guideName = self:UndoSource()
     local action = p and table.remove(p.undo)
     if not action then return end
     for _, i in ipairs(action.indices) do p.skip[i] = nil end
+    if guideName then
+        -- The un-skipped step makes that guide unfinished again, so it stays loaded.
+        self:Print("Undo - back to " .. guideName)
+        return self:LoadGuide(guideName)
+    end
     self:Advance(true)
 end
 
