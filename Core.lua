@@ -73,8 +73,7 @@ local defaults = {
             worldMap = true,
             minimap = true,
             showUnavailable = true, -- greyed pins for quests blocked by level/prereq
-            showLowLevel = false,   -- hide trivial (grey) quests
-            lowLevelGap = 8,        -- levels below player before a quest counts as trivial
+            showLowLevel = false,   -- hide trivial (grey) quests (Steps:TrivialGap decides)
             paths = true,           -- dotted walking routes of givers that patrol
         },
     },

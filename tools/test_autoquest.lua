@@ -8,7 +8,7 @@ local root = arg[1] or "."
 
 -- Game state the stubs read
 local W = { npcIsPlayer = false, shift = false, questID = 0, title = "", completable = false,
-            choices = 0, gossipActive = {}, gossipAvail = {} }
+            choices = 0, gossipActive = {}, gossipAvail = {}, grey = {} }
 local calls = {}
 local function call(name) return function(...) calls[#calls + 1] = { name, ... } end end
 local function called(name)
@@ -53,7 +53,8 @@ local guides = {
 }
 local progress = { done = {} }
 local printed = {}
-local ns = { Steps = { QuestName = function(_, id) return "Quest " .. id end } }
+local ns = { Steps = { QuestName = function(_, id) return "Quest " .. id end,
+                       IsGrey = function(_, id) return W.grey[id] == true end } }
 ns.FG = {
     guides = guides, guideOrder = { "Start", "Shared", "Other race" },
     db = { char = { activeGuide = "Shared" },
@@ -102,6 +103,15 @@ check("side quest is not auto-accepted", called("AcceptQuest") == nil)
 W.questID = 21
 fire("QUEST_DETAIL")
 check("grey (auto-skipped) route quest is not auto-accepted", called("AcceptQuest") == nil)
+W.questID, W.grey[10] = 10, true
+fire("QUEST_DETAIL")
+check("grey quest from another guide is not auto-accepted", called("AcceptQuest") == nil)
+check("...and says why", (printed[#printed] or ""):find("grey") ~= nil, printed[#printed])
+W.grey[20] = true
+W.questID = 20
+fire("QUEST_DETAIL")
+check("route step the guide hasn't reached yet, now grey: not auto-accepted", called("AcceptQuest") == nil)
+W.grey = {}
 W.questID, W.npcIsPlayer = 99, true
 fire("QUEST_DETAIL")
 check("party-shared side quest is accepted", called("AcceptQuest") ~= nil)
@@ -132,6 +142,9 @@ c = called("SelectAvailableQuest")
 check("gossip: route quest opened, side quest skipped", c ~= nil and c[2] == 20)
 fire("GOSSIP_SHOW")
 check("gossip: no reopen loop within 2 seconds", called("SelectAvailableQuest") == nil)
+W.now, W.gossipAvail = 200, { { questID = 20, isTrivial = true } }
+fire("GOSSIP_SHOW")
+check("gossip: route quest the client marks trivial is skipped", called("SelectAvailableQuest") == nil)
 
 -- Shift pauses everything (checked in the event frame wrapper)
 W.shift, W.questID = true, 20

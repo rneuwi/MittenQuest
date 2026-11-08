@@ -1,5 +1,19 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Stranglethorn Vale is back in the routes from the low 30s (Horde about 60 to 100 quest
+  steps there, Alliance about 90 to 125). Three of Forever's new Booty Bay townsfolk have no
+  faction data, so the route generator took them for level 40-50 mobs and kept you out of
+  Booty Bay until level 41. Townsfolk who sell, train or give quests no longer count as mobs.
+- Grey quests are never picked up automatically, even when they're on your route. Before, a
+  route quest from another guide, or one the guide hadn't reached yet, was taken even if it
+  had gone grey. Taking it by hand still works; the chat says why it was left.
+- Grey quests are off the map. Pins used a fixed 8 levels below you; they now use the game's
+  own grey range, the same one the guide uses to skip outleveled steps. "Show low-level (grey)
+  quests" in the gear menu brings them back. Grey quests already in your log keep their "?".
+
 ## 1.5.0
 
 **New**

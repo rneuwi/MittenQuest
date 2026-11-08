@@ -36,10 +36,14 @@ local function Say(msg)
 end
 
 -- On the route and not skipped/grey: RouteCheck says so in its second return value, but
--- skipped quests are on the route too, so check the step state here.
-local function WantedOnRoute(questID)
+-- skipped quests are on the route too, so check the step state here. A grey quest is left to
+-- you even when the route has it: a step is only marked outleveled once the guide reaches it,
+-- and quests from other guides have no step state here at all. isTrivial is the client's own
+-- flag from a gossip or greeting list, when there is one.
+local function WantedOnRoute(questID, isTrivial)
     local info = ns.RouteCheck:Index()[questID]
     if not info then return false end
+    if isTrivial or ns.Steps:IsGrey(questID) then return false end
     if info.where ~= "here" then return true end
     local p = FG:GetProgress()
     local why = p and p.done and p.done[info.index]
@@ -68,6 +72,8 @@ function Auto:QUEST_DETAIL()
     if Opt("accept") and WantedOnRoute(id) then
         AcceptQuest()
         Say(("Accepted %s (on your route)"):format(title))
+    elseif Opt("accept") and ns.RouteCheck:Index()[id] and ns.Steps:IsGrey(id) then
+        Say(("Left %s for you: it's grey for your level"):format(title))
     end
 end
 
@@ -109,7 +115,7 @@ function Auto:GOSSIP_SHOW()
     end
     if Opt("accept") then
         for _, q in ipairs(C_GossipInfo.GetAvailableQuests() or {}) do
-            if q.questID and Fresh(q.questID) and WantedOnRoute(q.questID) then
+            if q.questID and Fresh(q.questID) and WantedOnRoute(q.questID, q.isTrivial) then
                 Mark(q.questID)
                 return C_GossipInfo.SelectAvailableQuest(q.questID)
             end
@@ -131,8 +137,8 @@ function Auto:QUEST_GREETING()
     end
     if Opt("accept") then
         for i = 1, GetNumAvailableQuests() do
-            local id = select(5, GetAvailableQuestInfo(i))
-            if id and id ~= 0 and Fresh(id) and WantedOnRoute(id) then
+            local isTrivial, _, _, _, id = GetAvailableQuestInfo(i)
+            if id and id ~= 0 and Fresh(id) and WantedOnRoute(id, isTrivial) then
                 Mark(id)
                 return SelectAvailableQuest(i)
             end

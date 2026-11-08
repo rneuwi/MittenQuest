@@ -739,6 +739,16 @@ def pickup_lead(L):
 
 
 _HOSTILE_SPAWNS = collections.defaultdict(list)    # map -> [(x, y, level, npc id)]
+
+
+def townsfolk(e):
+    """Forever adds many NPCs without faction data, so they read as hostile. One that sells,
+    trains or gives quests is a townsperson, not a mob. Booty Bay's "Flipfin" (50) and Jenna
+    (42) made it a level 42 spot, holding back most of Stranglethorn until then."""
+    return (not e.get('friendlyToFaction') and not e.get('factionID')
+            and bool(e.get('npcFlags') or e.get('questStarts') or e.get('questEnds')))
+
+
 # Capitals (by area). No open-world mobs live there.
 CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
 # Objectives that are all inside a capital:
@@ -754,6 +764,8 @@ for _q in QUESTS.values():
 for _nid, _e in N.items():
     if (_e.get('rank') or 0) != 0:
         continue    # elites and rares: rare spawns, and named elites are their own quests
+    if townsfolk(_e):
+        continue
     _lvl = mob_level(_e)
     if not _lvl:
         continue

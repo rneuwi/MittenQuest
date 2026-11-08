@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Alliance 1-20 Teldrassil, Darkshore, Ashenvale, St
 #levels 1-20
 #faction Alliance
 #race NightElf
-#next Alliance 19-23 Westfall, Stormwind City, Darkshore
+#next Alliance 19-23 Wetlands, Westfall, Stormwind City
 
 [A 458 The Woodland Protector | at=59.9,42.5,1438; place=Teldrassil; xl=1.0]
 [A 456 The Balance of Nature | at=58.7,44.3,1438; place=Teldrassil; xl=1.0]

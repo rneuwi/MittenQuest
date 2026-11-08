@@ -274,8 +274,14 @@ function Pins:Status(id, e)
     local cfg = FG.db.profile.pins
     local level = ns.PlayerLevel()
 
-    if e.level and not cfg.showLowLevel and e.level < level - cfg.lowLevelGap then
-        return nil -- grey/trivial quest
+    -- Grey (trivial) for your level, by the client's own range: no pin, route quest or not.
+    -- Entries from guide steps or the client's quest lines carry no level: ask the client.
+    local qlevel = e.level
+    if not qlevel and C_QuestLog.GetQuestDifficultyLevel then
+        qlevel = C_QuestLog.GetQuestDifficultyLevel(id)
+    end
+    if qlevel and qlevel > 0 and not cfg.showLowLevel and qlevel <= level - ns.Steps:TrivialGap() then
+        return nil
     end
     for _, p in ipairs(e.pre or {}) do
         if not IsTurnedIn(p) then return nil end

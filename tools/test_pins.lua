@@ -20,6 +20,7 @@ function UnitClass() return "Warrior", "WARRIOR" end
 function UnitRace() return "Orc", "ORC" end
 function UnitFactionGroup() return "Horde" end
 function UnitLevel() return 20 end
+function UnitQuestTrivialLevelRange() return 7 end   -- grey at 13 and below for level 20
 
 -- Widgets: just enough to record what the pins set on themselves.
 local function Widget()
@@ -71,7 +72,7 @@ local FG = ns.FG
 ns.PlayerLevel = function() return 20 end
 FG.db = { global = { notOffered = {}, learnedQuests = {}, learnedTurnins = {} }, char = {} }
 FG.db.profile = { pins = { enabled = true, worldMap = true, minimap = true, showUnavailable = true,
-                           showLowLevel = false, lowLevelGap = 8, paths = true } }
+                           showLowLevel = false, paths = true } }
 FG.guideOrder = {}
 FG.GetActiveGuide = function() return nil end
 
@@ -180,6 +181,25 @@ turned[11] = true
 Pins:Refresh()
 pins = Split(world)
 check("only a level-locked quest left: grey !", pins[12] and pins[12].icon.grey and pins[12].icon.texture:find("Available"))
+
+-- Grey quests: no pin by the client's trivial range, unless low-level quests are switched on.
+ns.QuestDB = {
+    [20] = { name = "Grey", level = 13, map = 1, x = 30, y = 30, giver = "Old" },
+    [21] = { name = "Green", level = 14, map = 1, x = 60, y = 60, giver = "Young" },
+    [22] = { name = "Grey in log", level = 10, map = 1, x = 80, y = 80, giver = "Old",
+             turnin = { 1, 80, 20 } },
+}
+inlog[22] = true
+Pins:Refresh()
+pins = Split(world)
+check("grey quest: no pin", pins[20] == nil)
+check("one level above grey: pinned", pins[21] ~= nil)
+check("grey quest in your log: turn-in still pinned", pins[22] ~= nil)
+ns.FG.db.profile.pins.showLowLevel = true
+Pins:Refresh()
+pins = Split(world)
+check("low-level quests on: grey quest pinned", pins[20] ~= nil)
+ns.FG.db.profile.pins.showLowLevel = false
 
 if failed > 0 then
     print(failed .. " pin check(s) failed")
