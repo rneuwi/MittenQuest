@@ -384,6 +384,16 @@ def clean(s):
     return (s or '').replace(']', ')').replace('[', '(').replace('|', '/').replace(';', ',').strip()
 
 
+RANK_TAG = {1: 'elite', 2: 'rare elite', 3: 'boss', 4: 'rare'}
+
+
+def mob_label(npc):
+    """NPC name with its rank, for the map pin's "drops from" note: "Sharptalon (rare)"."""
+    tag = RANK_TAG.get(npc.get('rank') or 0)
+    name = clean(npc.get('name'))
+    return f'{name} ({tag})' if tag and name else name
+
+
 # ---------------------------------------------------------------- quest model
 class Quest:
     pass
@@ -450,6 +460,9 @@ def build_quests():
         # start / finish: creature, else object
         x.start = x.startName = None
         x.startSpawns = []
+        x.startNpc = None
+        x.startKind = None      # npc | object | drop (item from mobs) | loot (item from an object)
+        x.startFrom = []        # for drop/loot: the mobs or objects that give the starting item
         for kind, src in ((1, N), (2, O)):
             for eid in idx(sb, kind) or []:
                 e = src.get(str(eid))
@@ -459,6 +472,10 @@ def build_quests():
                 if sp:
                     x.start, x.startName = densest(sp), clean(e.get('name'))
                     x.startSpawns = sp
+                    # How the quest starts, for the map pin's tooltip: an NPC, or an object
+                    # you click (wanted poster, book, loose dirt).
+                    x.startKind = 'npc' if kind == 1 else 'object'
+                    x.startNpc = eid if kind == 1 else None   # for its patrol path (gen_questdb)
                     break
             if x.start:
                 break
@@ -471,23 +488,31 @@ def build_quests():
                 if not it:
                     continue
                 pts, elite_pts = [], []
+                mobs, elite_mobs, objs = [], [], []
                 for nid in it.get('npcDrops') or []:
                     e = N.get(str(nid))
+                    sp = spawns_of(e) if e else []
                     if e and (e.get('rank') or 0) == 0:
-                        pts += spawns_of(e)
+                        pts += sp
+                        mobs += [mob_label(e)] if sp else []
                     elif e:
-                        elite_pts += spawns_of(e)
+                        elite_pts += sp
+                        elite_mobs += [mob_label(e)] if sp else []
                 for oid in it.get('objectDrops') or []:
                     e = O.get(str(oid))
-                    if e:
-                        pts += spawns_of(e)
+                    sp = spawns_of(e) if e else []
+                    if sp:
+                        pts += sp
+                        objs.append(clean(e.get('name')))
                 if not pts and elite_pts:
                     # Only an elite drops the starting item (Croaky's Head): keep the quest,
                     # as a group quest, instead of losing it and its map pin.
-                    pts, start_elite = elite_pts, True
+                    pts, start_elite, mobs = elite_pts, True, elite_mobs
                 if pts:
                     x.start = densest(pts)
                     x.startItem = clean(it.get('name'))
+                    x.startKind = 'drop' if mobs else 'loot'
+                    x.startFrom = list(dict.fromkeys(n for n in (mobs or objs) if n))
                     break
         x.finish = x.finishName = None
         for kind, src in ((1, N), (2, O)):
@@ -526,6 +551,7 @@ def build_quests():
             ent = d and dungeon_entrance(d[1])
             if ent:
                 x.start, x.startInside, x.startName = ent, d[0], d[2]
+                x.startKind = 'inside'
                 x.insideStartNote = f"Inside {d[0]}: picked up from {d[2]}."
         if not x.finish:
             d = inside_dungeon(fb)

@@ -36,6 +36,61 @@ def giver_of(q):
     return q.startName or (('Drop: ' + q.startItem) if q.startItem else None)
 
 
+MAX_FROM = 3   # mobs/objects named in a pin's "drops from" note; the rest become "+N more"
+
+
+def start_fields(q):
+    """How the quest starts, for the pin tooltip: start = "object" | "drop" | "loot" |
+    "inside" (NPC givers, the usual case, are left out), plus the starting item and what
+    gives it."""
+    kind = getattr(q, 'startKind', None)
+    if not kind or kind == 'npc':
+        return []
+    f = [f'start = "{kind}"']
+    if q.startItem:
+        f.append(f'item = {luastr(q.startItem)}')
+    src = list(getattr(q, 'startFrom', None) or [])
+    if src:
+        names = src[:MAX_FROM] + ([f'+{len(src) - MAX_FROM} more'] if len(src) > MAX_FROM else [])
+        f.append('from = { ' + ', '.join(map(luastr, names)) + ' }')
+    return f
+
+
+N, area_map, area_items = H['N'], H['area_map'], H['area_items']
+PATH_STEP = 0.4      # map units: drop waypoints closer than this to the last one kept
+PATH_MIN_SPAN = 1.5  # a "path" smaller than this is an NPC standing still
+paths = {}           # npc id -> (map, [[x, y, x, y, ...], ...]) or None
+
+
+def patrol_path(q):
+    """NPC id of the giver when it walks a route (QuestieDB waypoints) on the map its pin is
+    on, else None. The route itself goes into `paths`, written once per NPC."""
+    npc = getattr(q, 'startNpc', None)
+    e = N.get(str(npc)) if npc else None
+    if not e or not e.get('waypoints') or not q.start:
+        return None
+    if npc in paths:
+        return npc if paths[npc] else None
+    out = []
+    for area, routes in area_items(e['waypoints']):
+        if area_map(area) != q.start[0] or not isinstance(routes, list):
+            continue
+        for route in routes:
+            pts = [(p[0], p[1]) for p in (route or [])
+                   if isinstance(p, list) and len(p) >= 2 and p[0] is not None]
+            kept = []
+            for x, y in pts:
+                if not kept or abs(x - kept[-1][0]) + abs(y - kept[-1][1]) >= PATH_STEP:
+                    kept.append((x, y))
+            if pts and kept[-1] != pts[-1]:
+                kept.append(pts[-1])
+            xs, ys = [p[0] for p in kept], [p[1] for p in kept]
+            if len(kept) >= 2 and max(max(xs) - min(xs), max(ys) - min(ys)) >= PATH_MIN_SPAN:
+                out.append([round(v, 1) for p in kept for v in p])
+    paths[npc] = (q.start[0], out) if out else None
+    return npc if out else None
+
+
 def same_place(a, b):
     return a[0] == b[0] and abs(a[1] - b[1]) < 2 and abs(a[2] - b[2]) < 2
 
@@ -51,6 +106,9 @@ for qid in sorted(set(HQ) | set(AQ)):
          f'map = {q.start[0]}', f'x = {q.start[1]}', f'y = {q.start[2]}']
     if giver_of(q):
         f.append(f'giver = {luastr(giver_of(q))}')
+    f += start_fields(q)
+    if patrol_path(q):
+        f.append(f'path = {q.startNpc}')
 
     if h and a:
         mask = HORDE | ALLIANCE
@@ -60,6 +118,12 @@ for qid in sorted(set(HQ) | set(AQ)):
             alt = f'alliance = {{ map = {a.start[0]}, x = {a.start[1]}, y = {a.start[2]}'
             if giver_of(a):
                 alt += f', giver = {luastr(giver_of(a))}'
+            if start_fields(a) != start_fields(h):
+                # Started differently on the Alliance side (NPC vs dropped item): its own
+                # note, or start = false for a plain NPC giver.
+                alt += ', ' + ', '.join(start_fields(a) or ['start = false'])
+            if patrol_path(a) != patrol_path(h):
+                alt += f', path = {patrol_path(a) or "false"}'
             f.append(alt + ' }')
             counts['split'] += 1
     else:
@@ -92,13 +156,23 @@ header = '''--[[
     corrections + in-game Forever traces). QuestieDB derives from Questie (GPL-3.0);
     see CREDITS.md. Fields: name, level, minLevel, map/x/y (giver), giver, faction (only
     set for one-faction quests), alliance (Alliance-side giver when it differs), pre (must
-    be turned in first), race/class (file-name sets), dungeon, group (elite), turnin {map,x,y}.
+    be turned in first), race/class (file-name sets), dungeon, group (elite), turnin {map,x,y},
+    start (how a non-NPC quest starts: object | drop | loot | inside), item (the starting
+    item), from (mobs or objects that give that item), path (the giver walks a route: its
+    ns.QuestPaths key).
+    ns.QuestPaths[npc] = { map = uiMapID, { x1, y1, x2, y2, ... }, ... } (one list per route).
 ]]
 
 local _, ns = ...
 ns.QuestDB = ns.QuestDB or {}
 local Q = ns.QuestDB
+ns.QuestPaths = ns.QuestPaths or {}
+local P = ns.QuestPaths
 
 '''
-open(OUT, 'w', encoding='utf-8').write(header + '\n'.join(lines) + '\n')
-print(len(lines), 'quests written', counts, os.path.getsize(OUT), 'bytes')
+path_lines = [f'P[{npc}] = {{ map = {v[0]}, '
+              + ', '.join('{ ' + ', '.join(f'{c:.1f}' for c in route) + ' }' for route in v[1]) + ' }'
+              for npc, v in sorted(paths.items()) if v]
+open(OUT, 'w', encoding='utf-8').write(header + '\n'.join(lines + [''] + path_lines) + '\n')
+print(len(lines), 'quests written', counts, len(path_lines), 'giver paths',
+      os.path.getsize(OUT), 'bytes')

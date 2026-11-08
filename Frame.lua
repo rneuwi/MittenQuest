@@ -336,6 +336,7 @@ function Frame:ShowSettingsMenu(owner)
         root:CreateCheckbox("Show on minimap", toggle(prof.pins, "minimap", refresh))
         root:CreateCheckbox("Show locked quests (greyed)", toggle(prof.pins, "showUnavailable", refresh))
         root:CreateCheckbox("Show low-level (grey) quests", toggle(prof.pins, "showLowLevel", refresh))
+        root:CreateCheckbox("Show routes of quest givers who walk around", toggle(prof.pins, "paths", refresh))
 
         root:CreateDivider()
         root:CreateTitle("Pace")

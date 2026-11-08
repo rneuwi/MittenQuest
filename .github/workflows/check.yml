@@ -21,3 +21,5 @@ jobs:
         run: lua5.1 tools/test_selection.lua .
       - name: Step state and skip target
         run: lua5.1 tools/test_progress.lua .
+      - name: Map pins
+        run: lua5.1 tools/test_pins.lua .

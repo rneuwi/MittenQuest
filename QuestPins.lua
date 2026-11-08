@@ -1,7 +1,8 @@
 --[[
     MittenQuest - QuestPins.lua
     "!" pins for available quests on the world map and minimap, with a tooltip
-    showing quest name, level, requirement, giver, and whether it's on the route.
+    showing quest name, level, requirement, giver (or how it starts: an object, a dropped
+    or looted item, inside a dungeon), and whether it's on the route.
 
     Sources, merged by questID:
       1. ns.QuestDB (Data/Quests.lua)
@@ -18,9 +19,22 @@ local HBD = LibStub("HereBeDragons-2.0")
 local Pins = {}
 ns.QuestPins = Pins
 ns.QuestDB = ns.QuestDB or {} -- filled by Data/Quests.lua
+ns.QuestPaths = ns.QuestPaths or {} -- givers' walking routes, also from Data/Quests.lua
 
 local ICON = "Interface\\GossipFrame\\AvailableQuestIcon"
 local PIN_SIZE_WORLD, PIN_SIZE_MINI = 18, 14
+-- Small badge on the "!" for quests that don't start at an NPC.
+local BADGE = {
+    drop = "Interface\\Icons\\INV_Misc_Bag_10",   -- item dropped by mobs
+    loot = "Interface\\Icons\\INV_Box_01",        -- item found in a chest/crate/bottle
+    object = "Interface\\Icons\\INV_Misc_Note_01", -- object you click (poster, book)
+}
+local BADGE_SCALE = 0.6
+-- Walking routes of quest givers that patrol, drawn as dots.
+local DOT = "Interface\\CHARACTERFRAME\\TempPortraitAlphaMask" -- white circle
+local DOT_SIZE_WORLD, DOT_SIZE_MINI = 5, 3
+local DOT_SPACING = 0.6 -- map units (percent of the zone) between dots
+local MAX_DOTS = 150    -- per route; longer routes (couriers) space their dots out
 
 local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted
 local function InLog(q) return C_QuestLog.GetLogIndexForQuestID(q) ~= nil end
@@ -55,6 +69,11 @@ function Pins:CollectEntries()
             for k, v in pairs(e) do merged[k] = v end
             merged.map, merged.x, merged.y = e.alliance.map, e.alliance.x, e.alliance.y
             merged.giver = e.alliance.giver or e.giver
+            if e.alliance.start ~= nil then
+                -- Started differently on this side (NPC vs dropped item).
+                merged.start, merged.item, merged.from = e.alliance.start, e.alliance.item, e.alliance.from
+            end
+            if e.alliance.path ~= nil then merged.path = e.alliance.path end
             merged.alliance = nil
             all[id] = merged
         elseif l and e.placeholder then
@@ -274,6 +293,29 @@ local function DifficultyColor(level)
     return 1, 0.82, 0
 end
 
+-- How the quest starts, for quests not given by an NPC (Data/Quests.lua start/item/from).
+local FROM_SEP = ", "
+local function AddStartLines(e)
+    local from = e.from and table.concat(e.from, FROM_SEP)
+    if e.start == "object" then
+        GameTooltip:AddLine("Starts from an object: " .. (e.giver or "?"), 1, 0.82, 0)
+        GameTooltip:AddLine("Click it (no NPC, may not show a ! in game)", 0.6, 0.6, 0.6, true)
+    elseif e.start == "drop" then
+        GameTooltip:AddLine("Starts from a dropped item: " .. (e.item or "?"), 1, 0.82, 0)
+        if from then GameTooltip:AddLine("Drops from: " .. from, 0.8, 0.8, 0.8, true) end
+        GameTooltip:AddLine("Pin marks where they are; right-click the item to start", 0.6, 0.6, 0.6, true)
+    elseif e.start == "loot" then
+        GameTooltip:AddLine("Starts from an item: " .. (e.item or "?"), 1, 0.82, 0)
+        if from then GameTooltip:AddLine("Found in: " .. from, 0.8, 0.8, 0.8, true) end
+        GameTooltip:AddLine("Lying on the ground or hidden; right-click the item to start", 0.6, 0.6, 0.6, true)
+    elseif e.start == "inside" then
+        GameTooltip:AddLine("Starts inside the dungeon: " .. (e.giver or "?"), 1, 0.82, 0, true)
+        GameTooltip:AddLine("Pin marks the entrance", 0.6, 0.6, 0.6)
+    elseif e.giver then
+        GameTooltip:AddLine("Giver: " .. e.giver, 0.8, 0.8, 0.8)
+    end
+end
+
 local function Pin_OnEnter(self)
     local d = self.data
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
@@ -281,7 +323,7 @@ local function Pin_OnEnter(self)
     local lvl = d.entry.level and ("Level " .. d.entry.level) or "Level ?"
     if d.entry.minLevel then lvl = lvl .. ("  (requires %d)"):format(d.entry.minLevel) end
     GameTooltip:AddLine(lvl, 1, 1, 1)
-    if d.entry.giver then GameTooltip:AddLine("Giver: " .. d.entry.giver, 0.8, 0.8, 0.8) end
+    AddStartLines(d.entry)
     if d.entry.dungeon then GameTooltip:AddLine("Dungeon quest: " .. d.entry.dungeon, 1, 0.44, 0.26) end
     local routeText = ns.RouteCheck and ns.RouteCheck:Describe(d.id)
     if routeText then
@@ -293,6 +335,9 @@ local function Pin_OnEnter(self)
     end
     if d.reason then GameTooltip:AddLine(d.reason, 1, 0.33, 0.33, true) end
     if d.entry.placeholder then GameTooltip:AddLine("Location not verified yet", 0.6, 0.6, 0.6) end
+    if Pins:PathFor(d.entry) then
+        GameTooltip:AddLine("Walks around: the dotted line shows their route", 0.6, 0.8, 1, true)
+    end
     GameTooltip:Show()
 end
 
@@ -302,6 +347,18 @@ local function CreatePin(size, withLabel)
     pin.icon = pin:CreateTexture(nil, "ARTWORK")
     pin.icon:SetAllPoints()
     pin.icon:SetTexture(ICON)
+    pin.badge = pin:CreateTexture(nil, "OVERLAY")
+    pin.badge:SetSize(size * BADGE_SCALE, size * BADGE_SCALE)
+    pin.badge:SetPoint("BOTTOMLEFT", pin, "BOTTOM", 1, 0)
+    pin.badge:SetTexCoord(0.08, 0.92, 0.08, 0.92) -- trim the icon border
+    pin.badge:Hide()
+    -- Keep the "!" above route dots, which share its world map frame level.
+    pin:SetScript("OnShow", function(self)
+        local parent = self:GetParent()
+        if parent and parent ~= UIParent then
+            self:SetFrameLevel(parent:GetFrameLevel() + 5)
+        end
+    end)
     if withLabel then
         pin.label = pin:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
         pin.label:SetPoint("TOP", pin, "BOTTOM", 0, 2)
@@ -321,6 +378,11 @@ local function StylePin(pin, data)
     local scale = data.routeStep and 1 or 0.8
     pin:SetScale(scale)
     if not locked and not data.routeStep then pin.icon:SetVertexColor(0.85, 0.85, 1) else pin.icon:SetVertexColor(1, 1, 1) end
+    local badge = BADGE[data.entry.start or ""]
+    pin.badge:SetTexture(badge)
+    pin.badge:SetDesaturated(locked)
+    pin.badge:SetAlpha(locked and 0.6 or 1)
+    pin.badge:SetShown(badge ~= nil)
     if pin.label then
         pin.label:SetText(data.entry.level and tostring(data.entry.level) or "")
         pin.label:SetTextColor(DifficultyColor(data.entry.level))
@@ -328,10 +390,64 @@ local function StylePin(pin, data)
 end
 
 Pins.worldPool, Pins.miniPool = {}, {}
+Pins.worldDots, Pins.miniDots = {}, {}
 
 local function Acquire(pool, i, size, withLabel)
     pool[i] = pool[i] or CreatePin(size, withLabel)
     return pool[i]
+end
+
+local function AcquireDot(pool, i, size)
+    local dot = pool[i]
+    if not dot then
+        dot = CreateFrame("Frame", nil, UIParent) -- no mouse: hovering goes to the pins
+        dot.tex = dot:CreateTexture(nil, "ARTWORK")
+        dot.tex:SetAllPoints()
+        dot.tex:SetTexture(DOT)
+        pool[i] = dot
+    end
+    dot:SetSize(size, size)
+    return dot
+end
+
+-- The walking route of an entry's giver ({ map = uiMapID, {x1, y1, x2, y2, ...}, ... }),
+-- or nil when the giver stands still, the route is on another map, or routes are off.
+function Pins:PathFor(e)
+    local path = e and e.path and ns.QuestPaths[e.path]
+    if path and path.map == e.map and FG.db.profile.pins.paths then
+        return path
+    end
+    return nil
+end
+
+local function SegmentLength(line, i)
+    return math.sqrt((line[i + 2] - line[i]) ^ 2 + (line[i + 3] - line[i + 1]) ^ 2)
+end
+
+-- Calls fn(x, y) (0-1 map coordinates) every DOT_SPACING along each route of the path,
+-- or further apart when that would take more than MAX_DOTS dots.
+local function EachDot(path, fn)
+    local total = 0
+    for _, line in ipairs(path) do
+        for i = 1, #line - 3, 2 do
+            total = total + SegmentLength(line, i)
+        end
+    end
+    local spacing = math.max(DOT_SPACING, total / MAX_DOTS)
+    for _, line in ipairs(path) do
+        local carry = 0 -- distance into the next segment where the next dot goes
+        for i = 1, #line - 3, 2 do
+            local x1, y1, x2, y2 = line[i], line[i + 1], line[i + 2], line[i + 3]
+            local len = SegmentLength(line, i)
+            local d = carry
+            while d < len do
+                local t = d / len
+                fn((x1 + (x2 - x1) * t) / 100, (y1 + (y2 - y1) * t) / 100)
+                d = d + spacing
+            end
+            carry = d - len
+        end
+    end
 end
 
 ---------------------------------------------------------------------------
@@ -342,6 +458,8 @@ function Pins:Refresh()
     HBDPins:RemoveAllMinimapIcons(self)
     for _, p in ipairs(self.worldPool) do p:Hide() end
     for _, p in ipairs(self.miniPool) do p:Hide() end
+    for _, p in ipairs(self.worldDots) do p:Hide() end
+    for _, p in ipairs(self.miniDots) do p:Hide() end
 
     local cfg = FG.db.profile.pins
     if not cfg.enabled then return end
@@ -349,6 +467,9 @@ function Pins:Refresh()
     local route = self:RouteQuests()
     local playerMap = C_Map.GetBestMapForUnit("player")
     local nWorld, nMini = 0, 0
+    -- Giver npc id -> true when one of their quests is available (gold route), false when
+    -- all of them are locked (grey). Each route is drawn once.
+    local worldPaths, miniPaths = {}, {}
 
     -- Only build pins for the zone you're in and the zone open on the world map:
     -- the database has ~1,500 quests and pins for all of them would be wasted frames.
@@ -365,15 +486,49 @@ function Pins:Refresh()
                     StylePin(pin, data)
                     -- showFlag 0: only on the zone map itself (no continent clutter)
                     HBDPins:AddWorldMapIconMap(self, pin, e.map, e.x / 100, e.y / 100, 0)
+                    if self:PathFor(e) then
+                        worldPaths[e.path] = worldPaths[e.path] or status == "available"
+                    end
                 end
                 if cfg.minimap and e.map == playerMap and status == "available" then
                     nMini = nMini + 1
                     local pin = Acquire(self.miniPool, nMini, PIN_SIZE_MINI, false)
                     StylePin(pin, data)
                     HBDPins:AddMinimapIconMap(self, pin, e.map, e.x / 100, e.y / 100, false, false)
+                    if self:PathFor(e) then
+                        miniPaths[e.path] = true
+                    end
                 end
             end
         end
+    end
+    self:DrawPaths(worldPaths, miniPaths)
+end
+
+-- Dotted walking routes of the givers whose pins are showing.
+function Pins:DrawPaths(worldPaths, miniPaths)
+    local nWorld, nMini = 0, 0
+    for npc, available in pairs(worldPaths) do
+        local path = ns.QuestPaths[npc]
+        local r, g, b = 1, 0.82, 0
+        if not available then
+            r, g, b = 0.6, 0.6, 0.6
+        end
+        EachDot(path, function(x, y)
+            nWorld = nWorld + 1
+            local dot = AcquireDot(self.worldDots, nWorld, DOT_SIZE_WORLD)
+            dot.tex:SetVertexColor(r, g, b, 0.8)
+            HBDPins:AddWorldMapIconMap(self, dot, path.map, x, y, 0)
+        end)
+    end
+    for npc in pairs(miniPaths) do
+        local path = ns.QuestPaths[npc]
+        EachDot(path, function(x, y)
+            nMini = nMini + 1
+            local dot = AcquireDot(self.miniDots, nMini, DOT_SIZE_MINI)
+            dot.tex:SetVertexColor(1, 0.82, 0, 0.8)
+            HBDPins:AddMinimapIconMap(self, dot, path.map, x, y, false, false)
+        end)
     end
 end
 

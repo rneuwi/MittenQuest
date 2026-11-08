@@ -1,5 +1,16 @@
 # MittenQuest
 
+## Unreleased
+
+**New**
+- Map pin tooltips say how a quest starts when it isn't an NPC: an object you click (wanted
+  posters, books, loose dirt), an item that drops (and which mobs drop it), an item found in
+  an object on the ground (chests, buried bottles), or a giver inside a dungeon.
+- Those pins also get a small badge on the "!": a bag for drops, a crate for items found in
+  objects, and a note for objects you click.
+- Quest givers who walk around (guards, couriers, patrolling officers) show their route as a
+  dotted line on the world map and minimap. Turn it off in the menu under Quest pins.
+
 ## 1.3.2
 
 **Fixes**
