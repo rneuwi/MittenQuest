@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.5.0
 
 **New**
 - Quests in your log get a "?" pin where you turn them in: gold on the map and minimap once
