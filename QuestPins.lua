@@ -1,8 +1,10 @@
 --[[
     MittenQuest - QuestPins.lua
-    "!" pins for available quests on the world map and minimap, with a tooltip
-    showing quest name, level, requirement, giver (or how it starts: an object, a dropped
-    or looted item, inside a dungeon), and whether it's on the route.
+    "!" pins for available quests and "?" pins for turning in quests in your log, on the
+    world map and minimap, with a tooltip showing quest name, level, requirement, giver (or
+    how it starts: an object, a dropped or looted item, inside a dungeon), and whether it's
+    on the route. Quests at the same spot share one pin that lists them all; follow-ups
+    waiting on an earlier quest in their chain aren't pinned until that one is turned in.
 
     Sources, merged by questID:
       1. ns.QuestDB (Data/Quests.lua)
@@ -22,6 +24,10 @@ ns.QuestDB = ns.QuestDB or {} -- filled by Data/Quests.lua
 ns.QuestPaths = ns.QuestPaths or {} -- givers' walking routes, also from Data/Quests.lua
 
 local ICON = "Interface\\GossipFrame\\AvailableQuestIcon"
+local ICON_TURNIN = "Interface\\GossipFrame\\ActiveQuestIcon"
+-- Quests closer than this (map units, percent of the zone) share one pin: the same giver,
+-- or a turn-in NPC standing next to them.
+local GROUP_RADIUS = 0.6
 local PIN_SIZE_WORLD, PIN_SIZE_MINI = 18, 14
 -- Small badge on the "!" for quests that don't start at an NPC.
 local BADGE = {
@@ -258,7 +264,11 @@ local function PassesFilters(e)
     return true
 end
 
--- Returns status: "available" | "locked" | nil (don't show), plus reason text
+-- Returns status: "available" | "locked" | nil (don't show), plus reason text.
+-- A quest still waiting on an earlier quest in its chain isn't pinned at all: it usually
+-- stands at the same giver as the quest before it, so a hub where you'd picked up
+-- everything still showed a stack of grey "!" for every later part. It appears once the
+-- quest before it is turned in. "Locked" is only for quests you're too low for.
 function Pins:Status(id, e)
     if IsTurnedIn(id) or InLog(id) or not PassesFilters(e) then return nil end
     local cfg = FG.db.profile.pins
@@ -267,19 +277,23 @@ function Pins:Status(id, e)
     if e.level and not cfg.showLowLevel and e.level < level - cfg.lowLevelGap then
         return nil -- grey/trivial quest
     end
-
-    local reasons = {}
     for _, p in ipairs(e.pre or {}) do
-        if not IsTurnedIn(p) then reasons[#reasons + 1] = "Needs: " .. ns.Steps:QuestName(p) end
+        if not IsTurnedIn(p) then return nil end
     end
     if e.minLevel and level < e.minLevel then
-        reasons[#reasons + 1] = ("Requires level %d"):format(e.minLevel)
-    end
-    if #reasons > 0 then
         if not cfg.showUnavailable then return nil end
-        return "locked", table.concat(reasons, "\n")
+        return "locked", ("Requires level %d"):format(e.minLevel)
     end
     return "available"
+end
+
+-- Where a quest in your log is turned in: { map, x, y, npc } or nil.
+function Pins:TurninSpot(id, e)
+    local t = e and e.turnin
+    if t then return { map = t[1], x = t[2], y = t[3] } end
+    local l = FG.db.global.learnedTurnins[id]
+    if l and l.map then return { map = l.map, x = l.x, y = l.y, npc = l.npc } end
+    return nil
 end
 
 ---------------------------------------------------------------------------
@@ -316,27 +330,89 @@ local function AddStartLines(e)
     end
 end
 
-local function Pin_OnEnter(self)
-    local d = self.data
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:AddLine(d.entry.name or ("Quest " .. d.id), DifficultyColor(d.entry.level))
-    local lvl = d.entry.level and ("Level " .. d.entry.level) or "Level ?"
-    if d.entry.minLevel then lvl = lvl .. ("  (requires %d)"):format(d.entry.minLevel) end
+-- What a pin stands for, in the order the game ranks quest icons: a gold "?" (ready to
+-- turn in) beats a gold "!" (available), then a grey "?" (in your log, not done yet) and a
+-- grey "!" (too low for it).
+local KIND_RANK = { complete = 1, available = 2, progress = 3, locked = 4 }
+local KIND_TITLE = {
+    complete = { "Ready to turn in", 1, 0.82, 0 },
+    available = { "Available", 1, 0.82, 0 },
+    progress = { "In your log", 0.75, 0.75, 0.75 },
+    locked = { "Too low for now", 0.6, 0.6, 0.6 },
+}
+local TURNIN_KIND = { complete = true, progress = true }
+
+local function SingleTooltip(item)
+    local e = item.entry
+    GameTooltip:AddLine(e.name or ("Quest " .. item.id), DifficultyColor(e.level))
+    local lvl = e.level and ("Level " .. e.level) or "Level ?"
+    if e.minLevel and not TURNIN_KIND[item.kind] then lvl = lvl .. ("  (requires %d)"):format(e.minLevel) end
     GameTooltip:AddLine(lvl, 1, 1, 1)
-    AddStartLines(d.entry)
-    if d.entry.dungeon then GameTooltip:AddLine("Dungeon quest: " .. d.entry.dungeon, 1, 0.44, 0.26) end
-    local routeText = ns.RouteCheck and ns.RouteCheck:Describe(d.id)
+    if item.kind == "complete" then
+        GameTooltip:AddLine("Ready to turn in" .. (item.npc and (" to " .. item.npc) or ""), 1, 0.82, 0)
+        return
+    elseif item.kind == "progress" then
+        GameTooltip:AddLine("In your log: turn it in here" .. (item.npc and (" to " .. item.npc) or "")
+            .. " once it's done", 0.75, 0.75, 0.75, true)
+        return
+    end
+    AddStartLines(e)
+    if e.dungeon then GameTooltip:AddLine("Dungeon quest: " .. e.dungeon, 1, 0.44, 0.26) end
+    local routeText = ns.RouteCheck and ns.RouteCheck:Describe(item.id)
     if routeText then
         GameTooltip:AddLine(routeText, 1, 1, 1, true)
-    elseif d.routeStep then
-        GameTooltip:AddLine(("On your route (step %d)"):format(d.routeStep), 0.4, 1, 0.4)
+    elseif item.routeStep then
+        GameTooltip:AddLine(("On your route (step %d)"):format(item.routeStep), 0.4, 1, 0.4)
     else
         GameTooltip:AddLine("Side quest (not in current guide)", 0.6, 0.6, 0.6)
     end
-    if d.reason then GameTooltip:AddLine(d.reason, 1, 0.33, 0.33, true) end
-    if d.entry.placeholder then GameTooltip:AddLine("Location not verified yet", 0.6, 0.6, 0.6) end
-    if Pins:PathFor(d.entry) then
+    if item.reason then GameTooltip:AddLine(item.reason, 1, 0.33, 0.33, true) end
+    if e.placeholder then GameTooltip:AddLine("Location not verified yet", 0.6, 0.6, 0.6) end
+    if Pins:PathFor(e) then
         GameTooltip:AddLine("Walks around: the dotted line shows their route", 0.6, 0.8, 1, true)
+    end
+end
+
+-- Several quests at one spot: one line each, under a heading per kind.
+local function GroupTooltip(items)
+    local giver
+    for _, item in ipairs(items) do
+        local name
+        if TURNIN_KIND[item.kind] then
+            name = item.npc
+        else
+            name = item.entry.giver
+        end
+        if giver == nil then giver = name or false
+        elseif giver ~= name then giver = false end
+    end
+    GameTooltip:AddLine(giver or (#items .. " quests here"), 1, 1, 1)
+    local lastKind
+    for _, item in ipairs(items) do
+        if item.kind ~= lastKind then
+            local t = KIND_TITLE[item.kind]
+            GameTooltip:AddLine(t[1], t[2], t[3], t[4])
+            lastKind = item.kind
+        end
+        local e = item.entry
+        local text = "  " .. (e.name or ("Quest " .. item.id)) .. (e.level and (" (" .. e.level .. ")") or "")
+        if item.kind == "available" or item.kind == "locked" then
+            if item.routeStep then
+                text = text .. " |cff66ff66on route|r"
+            end
+            if item.reason then text = text .. " |cffff5555" .. item.reason .. "|r" end
+        end
+        GameTooltip:AddLine(text, DifficultyColor(e.level))
+    end
+end
+
+local function Pin_OnEnter(self)
+    local items = self.data.items
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    if #items == 1 then
+        SingleTooltip(items[1])
+    else
+        GroupTooltip(items)
     end
     GameTooltip:Show()
 end
@@ -369,23 +445,32 @@ local function CreatePin(size, withLabel)
     return pin
 end
 
+-- data.items is sorted by KIND_RANK, so items[1] decides the icon.
 local function StylePin(pin, data)
     pin.data = data
-    local locked = data.status == "locked"
-    pin.icon:SetDesaturated(locked)
-    pin.icon:SetAlpha(locked and 0.6 or 1)
-    -- Route quests full size; side quests slightly smaller and dimmer.
-    local scale = data.routeStep and 1 or 0.8
-    pin:SetScale(scale)
-    if not locked and not data.routeStep then pin.icon:SetVertexColor(0.85, 0.85, 1) else pin.icon:SetVertexColor(1, 1, 1) end
-    local badge = BADGE[data.entry.start or ""]
+    local top = data.items[1]
+    local grey = top.kind == "locked" or top.kind == "progress"
+    local onRoute = false
+    for _, item in ipairs(data.items) do
+        if item.routeStep or TURNIN_KIND[item.kind] then onRoute = true end
+    end
+    pin.icon:SetTexture(TURNIN_KIND[top.kind] and ICON_TURNIN or ICON)
+    pin.icon:SetDesaturated(grey)
+    pin.icon:SetAlpha(grey and 0.6 or 1)
+    -- Route quests and turn-ins full size; side quests slightly smaller and tinted.
+    pin:SetScale(onRoute and 1 or 0.8)
+    if not grey and not onRoute then pin.icon:SetVertexColor(0.85, 0.85, 1) else pin.icon:SetVertexColor(1, 1, 1) end
+    local badge = not TURNIN_KIND[top.kind] and BADGE[top.entry.start or ""] or nil
     pin.badge:SetTexture(badge)
-    pin.badge:SetDesaturated(locked)
-    pin.badge:SetAlpha(locked and 0.6 or 1)
+    pin.badge:SetDesaturated(grey)
+    pin.badge:SetAlpha(grey and 0.6 or 1)
     pin.badge:SetShown(badge ~= nil)
     if pin.label then
-        pin.label:SetText(data.entry.level and tostring(data.entry.level) or "")
-        pin.label:SetTextColor(DifficultyColor(data.entry.level))
+        local level = top.entry.level
+        local text = level and tostring(level) or ""
+        if #data.items > 1 then text = text .. " +" .. (#data.items - 1) end
+        pin.label:SetText(text)
+        pin.label:SetTextColor(DifficultyColor(level))
     end
 end
 
@@ -471,38 +556,96 @@ function Pins:Refresh()
     -- all of them are locked (grey). Each route is drawn once.
     local worldPaths, miniPaths = {}, {}
 
-    -- Only build pins for the zone you're in and the zone open on the world map:
-    -- the database has ~1,500 quests and pins for all of them would be wasted frames.
-    local viewMap = self.viewMap
-    for id, e in pairs(self:CollectEntries()) do
-        if e.map and e.x and e.y and (e.map == playerMap or e.map == viewMap) then
-            local status, reason = self:Status(id, e)
-            if status then
-                local data = { id = id, entry = e, status = status, reason = reason, routeStep = route[id] }
-
-                if cfg.worldMap then
-                    nWorld = nWorld + 1
-                    local pin = Acquire(self.worldPool, nWorld, PIN_SIZE_WORLD, true)
-                    StylePin(pin, data)
-                    -- showFlag 0: only on the zone map itself (no continent clutter)
-                    HBDPins:AddWorldMapIconMap(self, pin, e.map, e.x / 100, e.y / 100, 0)
-                    if self:PathFor(e) then
-                        worldPaths[e.path] = worldPaths[e.path] or status == "available"
-                    end
+    for _, group in ipairs(self:BuildGroups(route, playerMap, self.viewMap)) do
+        if cfg.worldMap then
+            nWorld = nWorld + 1
+            local pin = Acquire(self.worldPool, nWorld, PIN_SIZE_WORLD, true)
+            StylePin(pin, group)
+            -- showFlag 0: only on the zone map itself (no continent clutter)
+            HBDPins:AddWorldMapIconMap(self, pin, group.map, group.x / 100, group.y / 100, 0)
+            for _, item in ipairs(group.items) do
+                if not TURNIN_KIND[item.kind] and self:PathFor(item.entry) then
+                    local path = item.entry.path
+                    worldPaths[path] = worldPaths[path] or item.kind == "available"
                 end
-                if cfg.minimap and e.map == playerMap and status == "available" then
-                    nMini = nMini + 1
-                    local pin = Acquire(self.miniPool, nMini, PIN_SIZE_MINI, false)
-                    StylePin(pin, data)
-                    HBDPins:AddMinimapIconMap(self, pin, e.map, e.x / 100, e.y / 100, false, false)
-                    if self:PathFor(e) then
-                        miniPaths[e.path] = true
+            end
+        end
+        -- The minimap only shows what you can act on now: gold "?" and gold "!".
+        if cfg.minimap and group.map == playerMap then
+            local live = {}
+            for _, item in ipairs(group.items) do
+                if item.kind == "complete" or item.kind == "available" then live[#live + 1] = item end
+            end
+            if #live > 0 then
+                nMini = nMini + 1
+                local pin = Acquire(self.miniPool, nMini, PIN_SIZE_MINI, false)
+                StylePin(pin, { items = live, map = group.map, x = group.x, y = group.y })
+                HBDPins:AddMinimapIconMap(self, pin, group.map, group.x / 100, group.y / 100, false, false)
+                for _, item in ipairs(live) do
+                    if item.kind == "available" and self:PathFor(item.entry) then
+                        miniPaths[item.entry.path] = true
                     end
                 end
             end
         end
     end
     self:DrawPaths(worldPaths, miniPaths)
+end
+
+-- Everything to pin on the maps you can see, merged into one group per spot:
+-- { map, x, y, items = { { kind, id, entry, reason, routeStep, npc }, ... } }, items sorted
+-- gold "?" first, then gold "!", grey "?", grey "!".
+-- Only the zone you're in and the zone open on the world map are built: the database has
+-- ~1,500 quests and pins for all of them would be wasted frames.
+function Pins:BuildGroups(route, playerMap, viewMap)
+    local items = {}
+    local function Add(map, x, y, item)
+        if map and x and y and (map == playerMap or map == viewMap) then
+            item.map, item.x, item.y = map, x, y
+            items[#items + 1] = item
+        end
+    end
+    for id, e in pairs(self:CollectEntries()) do
+        if InLog(id) then
+            local spot = self:TurninSpot(id, e)
+            if spot then
+                Add(spot.map, spot.x, spot.y, {
+                    kind = C_QuestLog.IsComplete(id) and "complete" or "progress",
+                    id = id, entry = e, npc = spot.npc,
+                })
+            end
+        else
+            local status, reason = self:Status(id, e)
+            if status then
+                Add(e.map, e.x, e.y, { kind = status, id = id, entry = e, reason = reason, routeStep = route[id] })
+            end
+        end
+    end
+    -- Gold before grey, route before side quests, then by level, so the first item in a
+    -- group decides its icon and grouping is the same every refresh.
+    table.sort(items, function(a, b)
+        if a.kind ~= b.kind then return KIND_RANK[a.kind] < KIND_RANK[b.kind] end
+        if (a.routeStep ~= nil) ~= (b.routeStep ~= nil) then return a.routeStep ~= nil end
+        local la, lb = a.entry.level or 0, b.entry.level or 0
+        if la ~= lb then return la < lb end
+        return a.id < b.id
+    end)
+    local groups = {}
+    for _, item in ipairs(items) do
+        local home
+        for _, g in ipairs(groups) do
+            if g.map == item.map and (g.x - item.x) ^ 2 + (g.y - item.y) ^ 2 <= GROUP_RADIUS ^ 2 then
+                home = g
+                break
+            end
+        end
+        if not home then
+            home = { map = item.map, x = item.x, y = item.y, items = {} }
+            groups[#groups + 1] = home
+        end
+        home.items[#home.items + 1] = item
+    end
+    return groups
 end
 
 -- Dotted walking routes of the givers whose pins are showing.

@@ -1,5 +1,20 @@
 # MittenQuest
 
+## Unreleased
+
+**New**
+- Quests in your log get a "?" pin where you turn them in: gold on the map and minimap once
+  it's ready, grey on the world map while you're still working on it.
+- Quests at the same spot share one pin instead of stacking. The label shows how many more
+  there are ("24 +2") and the tooltip lists them all: ready to turn in, available, in your
+  log, and too low for now.
+
+**Changes**
+- Follow-up quests that need an earlier quest in their chain no longer get a grey "!". They
+  stood on the same giver as the quest before them, so a hub like Tarren Mill still showed a
+  pile of "!" after you'd picked up everything there. They show up once the quest before is
+  turned in. Quests you're only too low for still show greyed.
+
 ## 1.4.1
 
 **Fixes**

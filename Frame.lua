@@ -334,7 +334,7 @@ function Frame:ShowSettingsMenu(owner)
         local refresh = function() ns.QuestPins:Refresh() end
         root:CreateCheckbox("Show \"!\" on world map", toggle(prof.pins, "enabled", refresh))
         root:CreateCheckbox("Show on minimap", toggle(prof.pins, "minimap", refresh))
-        root:CreateCheckbox("Show locked quests (greyed)", toggle(prof.pins, "showUnavailable", refresh))
+        root:CreateCheckbox("Show quests I'm too low for (greyed)", toggle(prof.pins, "showUnavailable", refresh))
         root:CreateCheckbox("Show low-level (grey) quests", toggle(prof.pins, "showLowLevel", refresh))
         root:CreateCheckbox("Show routes of quest givers who walk around", toggle(prof.pins, "paths", refresh))
 
