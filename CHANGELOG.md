@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.4.0
 
 **New**
 - Map pin tooltips say how a quest starts when it isn't an NPC: an object you click (wanted
