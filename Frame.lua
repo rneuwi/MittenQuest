@@ -21,6 +21,7 @@ local WHY_TEXT = {
     notoffered = "Skipped: its quest giver didn't offer it when you talked to them (moved or removed in Forever), or it needs a quest that wasn't offered. Click to bring it back.",
     notinlog = "Skipped: this quest isn't in your quest log. Pick it up and this step comes back.",
     outleveled = "Skipped automatically: this quest (or the mobs it has you kill) is grey for your level and you never started it. Click to do it anyway.",
+    underleveled = "Held for now: this dungeon run is planned for a higher level than you are (you're behind the route's pace). It comes back once you catch up. Click the dungeon step to do the run now anyway.",
     skipped = "Skipped manually. Click to un-skip.",
     none    = "Completes automatically. Click only to skip it.",
 }

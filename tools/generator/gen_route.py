@@ -1698,7 +1698,9 @@ class Sim:
                 at = f"; at={ent[1]},{ent[2]},{ent[0]}" if ent else ''
                 if ent:
                     self.go(ent)
-                self.emit(f"[D {dname} | quests={','.join(map(str, sorted(qids)))}{at}]")
+                # lvl= is the level the run is planned for: the addon holds the run back
+                # (with its inside steps) when you're well below it, instead of sending you in.
+                self.emit(f"[D {dname} | quests={','.join(map(str, sorted(qids)))}; lvl={ready}{at}]")
                 self.emit(f"Find a group for {dname}. Quests you skip there are dropped automatically.")
                 for q in qids:
                     self.active[q]['complete'] = True
@@ -2296,8 +2298,21 @@ def main():
     learned_so_far = set()
     names = [g['title'] for g in guides]
     for i, g in enumerate(guides):
-        steps = with_expected_levels(sim.steps[g['a']:g['b']])
+        seg = sim.steps[g['a']:g['b']]
         nxt = names[i + 1] if i + 1 < len(names) else None
+        if nxt is not None:
+            # A guide chains on when its last step is done, whatever your level. Players
+            # slower than the route's pace would land in the next guide levels short (a level
+            # 31 sent to Razorfen Downs), so end each guide on a level check: one level of
+            # slack below where the next guide starts. It's done at once when you're on pace.
+            start = guides[i + 1]['l0']
+            need = start - 1
+            if need > g['l0']:
+                lvl = seg[-1][1] if seg else g['l1']
+                seg = seg + [(f"[L {need}]", lvl),
+                             (f"The next guide starts around level {start}. Below {need}? "
+                              f"Grind here or finish leftover quests first.", lvl)]
+        steps = with_expected_levels(seg)
         hi = 60 if nxt is None else max(g['l1'], g['l0'] + 1)   # last guide carries you to 60
         if nxt is None:
             g['title'] = re.sub(r' \d+-\d+ ', f" {g['l0']}-60 ", g['title'], count=1)

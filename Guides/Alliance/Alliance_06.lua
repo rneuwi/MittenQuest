@@ -44,7 +44,7 @@ Dual Specialization can now be bought from your class trainer in a major city.
 [A 193 Panther Mastery | at=35.5,10.6,1434; pre=192; opt; place=Stranglethorn Vale; xl=41.0]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 195 Raptor Mastery | at=35.7,10.8,1434; place=Stranglethorn Vale; xl=41.0]
-[D Uldaman | quests=709,722,1360,2398,2418; at=44.6,12.1,1418; xl=41.1]
+[D Uldaman | quests=709,722,1360,2398,2418; lvl=41; at=44.6,12.1,1418; xl=41.1]
 Find a group for Uldaman. Quests you skip there are dropped automatically.
 [T 2398 The Lost Dwarves | at=44.6,12.1,1418; place=Badlands; xl=41.6]
 Inside Uldaman: turned in to Baelog.
@@ -118,7 +118,7 @@ Colonel Kurzen has only one spawn point. If others are waiting for it, group up 
 [T 2864 Tran'rek | at=51.6,26.8,1446; place=Gadgetzan; xl=42.9]
 [A 2865 Scarab Shells | at=51.6,26.8,1446; place=Gadgetzan; xl=42.9]
 [P Gadgetzan | at=51.01,29.34,1446; xl=42.9]
-[D Razorfen Downs | quests=3636; at=49,93.9,1413; xl=42.9]
+[D Razorfen Downs | quests=3636; lvl=41; at=49,93.9,1413; xl=42.9]
 Find a group for Razorfen Downs. Quests you skip there are dropped automatically.
 [C 1690 Wastewander Justice | at=63.8,31.4,1446; mob=Wastewander Bandit / Wastewander Thief; ml=42; xl=43.4]
 [A 2873 Stoley's Shipment | at=67.1,24.0,1446; place=Tanaris; danger=44; xl=43.4]
@@ -184,4 +184,6 @@ Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spe
 [R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=44.3]
 Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
 [F Gadgetzan | xl=44.3]
+[L 43 | xl=44.3]
+The next guide starts around level 44. Below 43? Grind here or finish leftover quests first.
 ]==])

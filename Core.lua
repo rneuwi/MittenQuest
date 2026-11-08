@@ -283,6 +283,7 @@ function FG:Evaluate(steps, p)
     local taken = S:ExclusiveTaken(guide)
     local missing = S:NotOffered(guide, self.db.global.notOffered)
     local skipGrey = self.db.profile.skipGrey
+    local held = S:HeldRuns(steps, p.force)
     local nextQuestDone = false
     for i = #steps, 1, -1 do
         local s = steps[i]
@@ -305,6 +306,10 @@ function FG:Evaluate(steps, p)
             -- None of this run's quests are in your log (skipped or never picked up): the
             -- arrow mustn't send you into the dungeon for them.
             r = "notinlog"
+        elseif held[i] then
+            -- A dungeon run (or a step of it) planned for well above your level: you're
+            -- behind the route's pace. It comes back once you've caught up.
+            r = "underleveled"
         elseif s.questID and taken[s.questID] then
             r = "exclusive"  -- you took the other version / the other choice of this quest
         elseif s.questID and missing[s.questID] then
@@ -348,6 +353,19 @@ function FG:Advance(forceWaypoint)
         end
     else
         self.paceBaseline[gname] = true
+    end
+
+    -- Say when a dungeon run is held back for your level, and when it comes back.
+    for idx, s in ipairs(steps) do
+        if s.type == "DUNGEON" and s.minLevel then
+            local now, was = p.done[idx] == "underleveled", before[idx] == "underleveled"
+            if now and not was then
+                self:Print(("Holding %s for now: it's planned for level %d and you're %d. The guide comes back to it once you catch up (click it to go anyway).")
+                    :format(s.text or "the dungeon", s.minLevel, ns.PlayerLevel()))
+            elseif was and not now and not p.done[idx] then
+                self:Print(("%s is back on: you're level %d now."):format(s.text or "The dungeon", ns.PlayerLevel()))
+            end
+        end
     end
 
     local i = 1
@@ -621,7 +639,7 @@ function FG:ToggleStep(index)
             end
         end
         self:Advance(true)
-    elseif why == "outleveled" then
+    elseif why == "outleveled" or (why == "underleveled" and steps[index].type == "DUNGEON") then
         p.force[index] = true          -- do it anyway; click again to go back to skipping
         self:Advance(true)
     elseif p.force[index] then

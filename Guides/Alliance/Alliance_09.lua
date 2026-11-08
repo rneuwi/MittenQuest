@@ -172,7 +172,7 @@ Grind mobs around your level here; more quests open at the next level.
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
 [L 57 | xl=56.0]
 Grind mobs around your level here; more quests open at the next level.
-[D Blackrock Depths | quests=3802,4024,4123,4126,4136,4286; at=34.8,85.3,1427; xl=57.0]
+[D Blackrock Depths | quests=3802,4024,4123,4126,4136,4286; lvl=57; at=34.8,85.3,1427; xl=57.0]
 Find a group for Blackrock Depths. Quests you skip there are dropped automatically.
 [T 3802 Dark Iron Legacy | at=34.8,85.3,1427; place=Searing Gorge; xl=57.5]
 Inside Blackrock Depths: turned in to Monument of Franclorn Forgewright.
@@ -199,4 +199,6 @@ Sentry Brazier has only one spawn point. If others are waiting for it, group up 
 [A 3481 Trinkets... | at=38.9,39.0,1427; pre=3463; place=Searing Gorge; xl=57.8]
 [T 3481 Trinkets... | at=38.9,39.0,1427; place=Searing Gorge; xl=57.8]
 [F Morgan's Vigil | xl=57.8]
+[L 56 | xl=57.8]
+The next guide starts around level 57. Below 56? Grind here or finish leftover quests first.
 ]==])

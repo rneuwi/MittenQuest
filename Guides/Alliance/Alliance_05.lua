@@ -248,7 +248,7 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 96800 Past Due | at=9.8,63.4,1416; place=Alterac Mountains; xl=39.9]
 [R Mage - Alterac Mountains | at=17.72,69.55,1416; class=MAGE; xl=39.9]
 Jessa Weaver is right here: pick up your new Mage spells.
-[D Scarlet Monastery | quests=1050,96800; at=82.6,33.8,1420; xl=39.9]
+[D Scarlet Monastery | quests=1050,96800; lvl=37; at=82.6,33.8,1420; xl=39.9]
 Find a group for Scarlet Monastery. Quests you skip there are dropped automatically.
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=40.4]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
@@ -280,4 +280,6 @@ Dual Specialization can now be bought from your class trainer in a major city.
 Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
 Dual Specialization can now be bought from your class trainer in a major city.
 [G 53.8,43.3 1418 Travel to Badlands | xl=40.4]
+[L 39 | xl=40.4]
+The next guide starts around level 40. Below 39? Grind here or finish leftover quests first.
 ]==])

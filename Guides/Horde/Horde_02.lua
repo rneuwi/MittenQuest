@@ -210,4 +210,6 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=20.7]
 Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Thunder Bluff | xl=20.7]
+[L 19 | xl=20.7]
+The next guide starts around level 20. Below 19? Grind here or finish leftover quests first.
 ]==])

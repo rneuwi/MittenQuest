@@ -161,6 +161,41 @@ function Steps:TooDangerous(step)
     return step.danger ~= nil and ns.PlayerLevel() < step.danger - 2
 end
 
+-- A dungeon run planned for level lvl= (the generator's "ready" level) is held back while
+-- you're more than this many levels below it: you fell behind the route's pace.
+local DUNGEON_SLACK = 1
+
+function Steps:Underleveled(step)
+    return step.type == "DUNGEON" and step.minLevel ~= nil
+        and ns.PlayerLevel() < step.minLevel - DUNGEON_SLACK
+end
+
+-- Steps held back with an underleveled dungeon run: the run itself, the steps done inside it
+-- (their notes start "Inside <dungeon>:") and the objectives/turn-ins of the quests it
+-- carries, which can't be done without the run. force: [index] = true for runs the player
+-- chose to do anyway. Returns [index] = true.
+function Steps:HeldRuns(steps, force)
+    local held = {}
+    for i, s in ipairs(steps) do
+        if s.type == "DUNGEON" and not (force and force[i]) and self:Underleveled(s) then
+            held[i] = true
+            local runQuests = {}
+            for _, q in ipairs(s.quests or {}) do runQuests[q] = true end
+            local inside = "Inside " .. (s.text or "") .. ":"
+            for j = i + 1, #steps do
+                local t = steps[j]
+                local note = t.notes and t.notes[1]
+                if note and note:sub(1, #inside) == inside then
+                    held[j] = true
+                elseif t.questID and runQuests[t.questID] and (t.type == "COMPLETE" or t.type == "TURNIN") then
+                    held[j] = true
+                end
+            end
+        end
+    end
+    return held
+end
+
 -- A quest step you never started and that is now grey for your level, or whose mobs are.
 -- Quests already in your log are never outleveled - you still turn them in.
 function Steps:IsOutleveled(step, guide)
@@ -370,6 +405,9 @@ function Steps:Describe(step)
                 level, math.floor(cur / max * 100), max - cur, level + 1) .. "|r"
         end
     elseif step.type == "DUNGEON" and step.quests then
+        if step.minLevel and level < step.minLevel then
+            sub[#sub + 1] = WARN .. ("Planned for level %d (you are %d)"):format(step.minLevel, level) .. "|r"
+        end
         local carried, lines = 0, {}
         for _, dq in ipairs(step.quests) do
             local name = self:QuestName(dq)

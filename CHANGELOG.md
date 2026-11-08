@@ -13,6 +13,13 @@
 - Grey quests are off the map. Pins used a fixed 8 levels below you; they now use the game's
   own grey range, the same one the guide uses to skip outleveled steps. "Show low-level (grey)
   quests" in the gear menu brings them back. Grey quests already in your log keep their "?".
+- Dungeon runs wait for your level. Each run now carries the level it's planned for, and when
+  you're more than a level below it (behind the route's pace) the guide holds the run, its
+  inside steps and its turn-ins, says so in chat, and comes back to it once you catch up. Before,
+  you could be sent to Razorfen Downs in your low 30s. Click the dungeon step to go anyway.
+- Each guide ends on a level check one level below where the next one starts, so falling
+  behind the route's pace means a "Grind to level N" step instead of skipping ahead into the
+  next guide. When you're on pace it's done instantly.
 
 ## 1.5.0
 

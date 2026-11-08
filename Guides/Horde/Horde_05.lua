@@ -185,7 +185,7 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [A 1362 The Kolkar of Desolace | at=45.3,28.4,1413; opt; place=The Barrens; xl=31.7]
 [A 1221 Blueleaf Tubers | at=62.4,37.6,1413; place=Ratchet; xl=31.7]
 Also pick up the Crate With Holes and Snufflenose Owner's Manual lying next to the quest giver: the quest needs them.
-[D Razorfen Kraul | quests=1102,1109,1221; at=42.9,90.2,1413; xl=31.7]
+[D Razorfen Kraul | quests=1102,1109,1221; lvl=31; at=42.9,90.2,1413; xl=31.7]
 Find a group for Razorfen Kraul. Quests you skip there are dropped automatically.
 [A 1144 Willix the Importer | at=42.9,90.2,1413; place=The Barrens; xl=32.2]
 Inside Razorfen Kraul: picked up from Willix the Importer.
@@ -196,4 +196,6 @@ Inside Razorfen Kraul: turned in to Willix the Importer.
 [T 1221 Blueleaf Tubers | at=62.4,37.6,1413; place=Ratchet; xl=32.3]
 [A 6626 A Host of Evil | at=49.0,94.9,1413; place=The Barrens; xl=32.4]
 [G 56.3,59.7 1443 Travel to Desolace | xl=32.4]
+[L 31 | xl=32.4]
+The next guide starts around level 32. Below 31? Grind here or finish leftover quests first.
 ]==])

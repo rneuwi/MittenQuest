@@ -261,4 +261,6 @@ Time to train: head to Garen Largo in Undercity for your new Paladin spells. The
 [R Warlock - Undercity | at=86.21,15.93,1458; class=WARLOCK; xl=56.2]
 Time to train: head to Kaal Soulreaper in Undercity for your new Warlock spells. The arrow takes you back to the route afterwards.
 [G 61.1,38.4 1452 Travel to Winterspring - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=56.2]
+[L 55 | xl=56.2]
+The next guide starts around level 56. Below 55? Grind here or finish leftover quests first.
 ]==])

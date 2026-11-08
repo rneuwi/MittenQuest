@@ -133,7 +133,7 @@ Kalaran Windblade has only one spawn point. If others are waiting for it, group 
 [F Thalanaar | xl=47.6]
 [C 7733 Improved Quality | at=53,32,1444; mob=Ferocious Rage Scar; ml=48; item=18947:10; drop=63; xl=47.6]
 Ferocious Rage Scar has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[D Maraudon | quests=7028,7041,7044,7065,7067,7070; at=29.1,62.5,1443; xl=47.6]
+[D Maraudon | quests=7028,7041,7044,7065,7067,7070; lvl=47; at=29.1,62.5,1443; xl=47.6]
 Find a group for Maraudon. Quests you skip there are dropped automatically.
 [T 7044 Legends of Maraudon | at=29.1,62.5,1443; place=Desolace; xl=48.1]
 Inside Maraudon: turned in to Celebras the Redeemed.
@@ -152,4 +152,6 @@ Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock s
 [R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=48.6]
 Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
 [F Theramore | xl=48.6]
+[L 47 | xl=48.6]
+The next guide starts around level 48. Below 47? Grind here or finish leftover quests first.
 ]==])

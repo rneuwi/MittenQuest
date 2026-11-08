@@ -45,9 +45,9 @@ Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow ta
 [A 1113 Hearts of Zeal | at=48.8,69.3,1458; pre=1109; place=Undercity; xl=33.2]
 [T 6522 An Unholy Alliance | at=56.2,92.2,1458; place=Undercity; xl=33.2]
 [A 6521 An Unholy Alliance | at=56.2,92.2,1458; pre=6522; place=Undercity; xl=33.3]
-[D Excavation Site: Wetlands | quests=95697; at=47.79,56.16,1437; xl=33.3]
+[D Excavation Site: Wetlands | quests=95697; lvl=30; at=47.79,56.16,1437; xl=33.3]
 Find a group for Excavation Site: Wetlands. Quests you skip there are dropped automatically.
-[D Scarlet Monastery | quests=1113; at=82.6,33.8,1420; xl=33.8]
+[D Scarlet Monastery | quests=1113; lvl=32; at=82.6,33.8,1420; xl=33.8]
 Find a group for Scarlet Monastery. Quests you skip there are dropped automatically.
 [A 1051 Vorrel's Revenge | at=82.6,33.8,1420; place=Tirisfal Glades; xl=34.3]
 Inside Scarlet Monastery: picked up from Vorrel Sengutz.
@@ -68,9 +68,9 @@ Xizk Goodstitch has only one spawn point. If others are waiting for it, group up
 Time to train: head to Cain Firesong in Tirisfal Glades for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 14.3,59.6 1416 Travel to Alterac Mountains | xl=34.3]
 [A 96984 Heart of Disruption | at=14.3,59.6,1416; place=Alterac Mountains; xl=34.3]
-[D City of Dalaran | quests=96984,96986,96988; at=8.46,59.21,1416; xl=34.3]
+[D City of Dalaran | quests=96984,96986,96988; lvl=32; at=8.46,59.21,1416; xl=34.3]
 Find a group for City of Dalaran. Quests you skip there are dropped automatically.
-[D Gnomeregan | quests=2841; at=24.3,39.8,1426; xl=34.8]
+[D Gnomeregan | quests=2841; lvl=34; at=24.3,39.8,1426; xl=34.8]
 Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [R Hunter - Stonard | at=47.26,53.43,1435; class=HUNTER; xl=35.3]
 Time to train: head to Ogromm in Stonard for your new Hunter spells. The arrow takes you back to the route afterwards.
@@ -123,4 +123,6 @@ Ian Strom is right here: pick up your new Rogue spells.
 [T 185 Tiger Mastery | at=35.6,10.6,1434; place=Stranglethorn Vale; xl=36.0]
 [A 186 Tiger Mastery | at=35.6,10.6,1434; pre=185; place=Stranglethorn Vale; xl=36.0]
 [F Orgrimmar | xl=36.0]
+[L 35 | xl=36.0]
+The next guide starts around level 36. Below 35? Grind here or finish leftover quests first.
 ]==])

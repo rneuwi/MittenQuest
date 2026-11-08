@@ -63,7 +63,7 @@ Bellygrub has only one spawn point. If others are waiting for it, group up to sh
 [T 266 Inquire at the Inn | at=73.8,44.5,1431; place=Darkshire; xl=24.9]
 [A 453 Finding the Shadowy Figure | at=73.8,44.5,1431; pre=266; place=Darkshire; xl=24.9]
 [T 453 Finding the Shadowy Figure | at=18.4,56.4,1431; place=Duskwood; xl=24.9]
-[D The Stockade | quests=377,386,387,388; at=52.41,70.01,1453; xl=25.0]
+[D The Stockade | quests=377,386,387,388; lvl=25; at=52.41,70.01,1453; xl=25.0]
 Find a group for The Stockade. Quests you skip there are dropped automatically.
 [T 387 Quell The Uprising | at=51.5,69.4,1453; place=Stormwind City; xl=25.5]
 [A 2923 Tinkmaster Overspark | at=51.0,48.4,1453; opt; place=Stormwind City; xl=25.7]
@@ -182,7 +182,7 @@ Gobbler has only 2 spawn points. If others are waiting for it, group up to share
 [T 98223 Old Habits | at=9.9,57.5,1437; place=Menethil Harbor; xl=28.0]
 [A 465 Nek'rosh's Gambit | at=9.9,57.5,1437; pre=464; place=Menethil Harbor; xl=28.1]
 [T 470 Digging Through the Ooze | at=11.8,58.0,1437; place=Menethil Harbor; xl=28.1]
-[D Blackfathom Deeps | quests=1198,1199,1275; at=14.5,14.2,1440; xl=28.2]
+[D Blackfathom Deeps | quests=1198,1199,1275; lvl=24; at=14.5,14.2,1440; xl=28.2]
 Find a group for Blackfathom Deeps. Quests you skip there are dropped automatically.
 [T 1198 In Search of Thaelrid | at=14.5,14.2,1440; place=Ashenvale; xl=28.7]
 Inside Blackfathom Deeps: turned in to Argent Guard Thaelrid.
@@ -216,4 +216,6 @@ Time to train: head to Alenndaar Lapidaar in Ashenvale for your new Hunter spell
 [R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=28.9]
 Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 [G 59.5,45.4 1457 Travel to Darnassus | xl=28.9]
+[L 27 | xl=28.9]
+The next guide starts around level 28. Below 27? Grind here or finish leftover quests first.
 ]==])

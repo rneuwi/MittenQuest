@@ -51,7 +51,7 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 303 The Dark Iron War | at=61.5,26.2,1437; mob=Dark Iron Dwarf / Dark Iron Tunneler; ml=31; opt; xl=33.3]
 [T 303 The Dark Iron War | at=49.7,18.2,1437; place=Wetlands; opt; xl=33.3]
 [A 378 The Fury Runs Deep | at=49.7,18.2,1437; pre=303; place=Wetlands; xl=33.4]
-[D The Stockade | quests=378; at=52.41,70.01,1453; xl=33.4]
+[D The Stockade | quests=378; lvl=26; at=52.41,70.01,1453; xl=33.4]
 Find a group for The Stockade. Quests you skip there are dropped automatically.
 [T 98310 Gleaning Our Future | at=38.8,52.4,1437; place=Wetlands; opt; xl=33.9]
 [T 378 The Fury Runs Deep | at=49.7,18.2,1437; place=Wetlands; xl=33.9]
@@ -61,7 +61,7 @@ Time to train: head to High Priestess Laurena in Stormwind City for your new Pri
 [T 98300 Word to Ironforge | at=39.1,56.2,1455; place=Ironforge; xl=34.0]
 [A 1050 Mythology of the Titans | at=75.0,12.5,1455; place=Ironforge; xl=34.1]
 [T 98313 For Further Study | at=77.5,11.8,1455; place=Ironforge; xl=34.1]
-[D Gnomeregan | quests=2929; at=24.3,39.8,1426; xl=34.2]
+[D Gnomeregan | quests=2929; lvl=34; at=24.3,39.8,1426; xl=34.2]
 Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [R Warlock - Dun Morogh | at=47.33,53.69,1426; class=WARLOCK; xl=34.7]
 Time to train: head to Gimrizz Shadowcog in Dun Morogh for your new Warlock spells. The arrow takes you back to the route afterwards.
@@ -112,7 +112,7 @@ Jessa Weaver is right here: pick up your new Mage spells.
 Alfina Nightgaze is right here: pick up your new Druid spells.
 [A 94912 Child of Nature | at=18.8,78.5,1416; place=Alterac Mountains; class=DRUID; race=Skyborne; xl=34.9]
 [T 94912 Child of Nature | at=35.8,67.4,1453; place=Stormwind City; class=DRUID; race=Skyborne; xl=34.9]
-[D City of Dalaran | quests=92456,92457,92458,92489; at=8.46,59.21,1416; xl=34.9]
+[D City of Dalaran | quests=92456,92457,92458,92489; lvl=32; at=8.46,59.21,1416; xl=34.9]
 Find a group for City of Dalaran. Quests you skip there are dropped automatically.
 [T 92457 Starving Arcane | at=14.3,59.6,1416; place=Alterac Mountains; xl=35.4]
 [T 92458 Heart of Disruption | at=14.3,59.6,1416; place=Alterac Mountains; xl=35.5]
@@ -176,4 +176,6 @@ Time to train: head to Lord Grayson Shadowbreaker in Stormwind City for your new
 [R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=36.0]
 Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
 [F Thelsamar | xl=36.0]
+[L 35 | xl=36.0]
+The next guide starts around level 36. Below 35? Grind here or finish leftover quests first.
 ]==])

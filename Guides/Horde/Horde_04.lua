@@ -58,7 +58,7 @@ Blackfathom Tide Priestess has only one spawn point. If others are waiting for i
 [T 95042 Seeking the Kor Gem | at=11.8,34.5,1440; opt; place=Zoram'gar Outpost; class=PALADIN; xl=25.3]
 [G 65.2,60.2 1420 Travel to Tirisfal Glades - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=25.3]
 [A 92422 The Wrath of Rath'mael | at=65.2,60.2,1420; pre=99156; opt; place=Tirisfal Glades; xl=25.3]
-[D Ruins of Lordaeron | quests=92421,92422,95216; at=72.41,11.37,1458; xl=25.3]
+[D Ruins of Lordaeron | quests=92421,92422,95216; lvl=21; at=72.41,11.37,1458; xl=25.3]
 Find a group for Ruins of Lordaeron. Quests you skip there are dropped automatically.
 [A 97288 Unending Torment | at=72.41,11.37,1458; place=Undercity; xl=25.8]
 Inside Ruins of Lordaeron: picked up from Abominable Head, which The Baron drops.
@@ -73,7 +73,7 @@ Inside Ruins of Lordaeron: picked up from Crest of Lordaeron from Crest of Lorda
 [T 97290 Unending Torment | at=48.8,69.3,1458; place=Undercity; xl=26.2]
 [A 97291 Unending Torment | at=48.8,69.3,1458; pre=97290; place=Undercity; xl=26.3]
 [T 92421 Light's Justice | at=58.1,89.5,1458; place=Undercity; xl=26.3]
-[D Shadowfang Keep | quests=1013,1014,1098; at=44.8,67.8,1421; xl=26.3]
+[D Shadowfang Keep | quests=1013,1014,1098; lvl=26; at=44.8,67.8,1421; xl=26.3]
 Find a group for Shadowfang Keep. Quests you skip there are dropped automatically.
 [T 1098 Deathstalkers in Shadowfang | at=44.8,67.8,1421; place=Silverpine Forest; xl=26.8]
 Inside Shadowfang Keep: turned in to Deathstalker Vincent.
@@ -156,7 +156,7 @@ Starts from Assassination Note, which drops in this area.
 [T 5064 Grimtotem Spying | at=45.7,50.7,1441; place=Freewind Post; xl=27.8]
 [T 1149 Test of Faith | at=54.0,41.5,1441; place=Thousand Needles; xl=28.0]
 [A 1150 Test of Endurance | at=54.0,41.5,1441; pre=1149; place=Thousand Needles; danger=29; xl=28.0]
-[D Blackfathom Deeps | quests=6921; at=14.5,14.2,1440; xl=28.0]
+[D Blackfathom Deeps | quests=6921; lvl=26; at=14.5,14.2,1440; xl=28.0]
 Find a group for Blackfathom Deeps. Quests you skip there are dropped automatically.
 [A 6561 Blackfathom Villainy | at=14.5,14.2,1440; place=Ashenvale; xl=28.5]
 Inside Blackfathom Deeps: picked up from Argent Guard Thaelrid.
@@ -172,4 +172,6 @@ Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spell
 [R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=28.9]
 Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
 [F Undercity | xl=28.9]
+[L 27 | xl=28.9]
+The next guide starts around level 28. Below 27? Grind here or finish leftover quests first.
 ]==])

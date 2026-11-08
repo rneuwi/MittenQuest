@@ -427,7 +427,7 @@ Starts from Captain Sander's Treasure Map, which drops in this area.
 [C 92744 Murloc Gills | at=28.4,32.9,1436; mob=Murloc Warrior; ml=16; item=254548:7; danger=15; xl=14.9]
 [T 92744 Murloc Gills | at=52.5,53.0,1436; place=Sentinel Hill; xl=14.9]
 [A 92745 The State of the Mines | at=52.5,53.0,1436; pre=92742,92744; place=Sentinel Hill; xl=15.0]
-[D The Hall of Thanes | quests=96393,96394,96403; at=27.63,47.83,1455; xl=15.0]
+[D The Hall of Thanes | quests=96393,96394,96403; lvl=15; at=27.63,47.83,1455; xl=15.0]
 Find a group for The Hall of Thanes. Quests you skip there are dropped automatically.
 [A 98423 The Treaty of Understanding | at=27.63,47.83,1455; place=Ironforge; xl=15.5]
 Inside The Hall of Thanes: picked up from Treaty of Understanding from Treaty of Understanding.

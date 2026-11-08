@@ -48,7 +48,7 @@ Granis Swiftaxe is right here: pick up your new Warrior spells.
 [A 2922 Save Techbot's Brain! | at=69.5,50.3,1455; place=Ironforge; xl=29.4]
 [T 2925 Klockmort's Essentials | at=67.9,46.1,1455; place=Ironforge; xl=29.4]
 [A 2924 Essential Artificials | at=67.9,46.1,1455; place=Ironforge; xl=29.4]
-[D Gnomeregan | quests=2922,2924,2926,2928,2930; at=24.3,39.8,1426; xl=29.4]
+[D Gnomeregan | quests=2922,2924,2926,2928,2930; lvl=29; at=24.3,39.8,1426; xl=29.4]
 Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [A 2904 A Fine Mess | at=24.3,39.8,1426; place=Dun Morogh; xl=29.9]
 Inside Gnomeregan: picked up from Kernobee.
@@ -68,7 +68,7 @@ Inside Gnomeregan: picked up from The Sparklematic 5200.
 Inside Gnomeregan: turned in to The Sparklematic 5200.
 [T 2926 Gnogaine | at=45.9,49.4,1426; place=Dun Morogh; xl=30.3]
 [A 2962 The Only Cure is More Green Glow | at=45.9,49.4,1426; pre=2926; place=Dun Morogh; xl=30.4]
-[D Excavation Site: Wetlands | quests=95646,98815,98824; at=47.79,56.16,1437; xl=30.4]
+[D Excavation Site: Wetlands | quests=95646,98815,98824; lvl=30; at=47.79,56.16,1437; xl=30.4]
 Find a group for Excavation Site: Wetlands. Quests you skip there are dropped automatically.
 [T 465 Nek'rosh's Gambit | at=47.5,47.0,1437; place=Wetlands; xl=30.9]
 [T 275 Blisters on The Land | at=56.4,40.4,1437; place=Wetlands; xl=31.0]
@@ -141,7 +141,7 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [T 1241 The Missing Diplomat | at=76.3,85.1,1453; place=Stormwind City; xl=31.4]
 [A 1242 The Missing Diplomat | at=76.3,85.1,1453; pre=1241; place=Stormwind City; xl=31.5]
 [T 1242 The Missing Diplomat | at=66.0,74.1,1453; place=Stormwind City; xl=31.5]
-[D Gnomeregan | quests=2962; at=24.3,39.8,1426; xl=31.5]
+[D Gnomeregan | quests=2962; lvl=29; at=24.3,39.8,1426; xl=31.5]
 Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [T 2962 The Only Cure is More Green Glow | at=45.9,49.4,1426; place=Dun Morogh; xl=32.0]
 [R Hunter - Dun Morogh | at=45.81,53.04,1426; class=HUNTER; xl=32.1]
@@ -149,4 +149,6 @@ Time to train: head to Grif Wildheart in Dun Morogh for your new Hunter spells. 
 [R Rogue - Dun Morogh | at=47.56,52.61,1426; class=ROGUE; xl=32.1]
 Time to train: head to Hogral Bakkan in Dun Morogh for your new Rogue spells. The arrow takes you back to the route afterwards.
 [G 68.8,49.0 1455 Travel to Ironforge | xl=32.1]
+[L 31 | xl=32.1]
+The next guide starts around level 32. Below 31? Grind here or finish leftover quests first.
 ]==])

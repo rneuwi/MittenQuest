@@ -43,9 +43,9 @@ Gan'zulah has only one spawn point. If others are waiting for it, group up to sh
 [T 584 Bloodscalp Clan Heads | at=32.2,27.6,1434; place=Grom'gol; xl=40.9]
 [C 193 Panther Mastery | at=49,23.4,1434; mob=Bhag'thera; ml=40; opt; xl=41.0]
 [T 193 Panther Mastery | at=35.5,10.6,1434; place=Stranglethorn Vale; opt; xl=41.0]
-[D Scarlet Monastery | quests=1048,1049; at=82.6,33.8,1420; xl=41.0]
+[D Scarlet Monastery | quests=1048,1049; lvl=41; at=82.6,33.8,1420; xl=41.0]
 Find a group for Scarlet Monastery. Quests you skip there are dropped automatically.
-[D Uldaman | quests=709,2342,2418; at=44.6,12.1,1418; xl=41.5]
+[D Uldaman | quests=709,2342,2418; lvl=41; at=44.6,12.1,1418; xl=41.5]
 Find a group for Uldaman. Quests you skip there are dropped automatically.
 [A 2278 The Platinum Discs | at=44.6,12.1,1418; place=Badlands; xl=42.0]
 Inside Uldaman: picked up from The Discs of Norgannon.
@@ -69,7 +69,7 @@ Dual Specialization can now be bought from your class trainer in a major city.
 [F Thunder Bluff | xl=42.2]
 [T 1049 Compendium of the Fallen | at=34.4,46.9,1456; place=Thunder Bluff; race=Orc,Tauren,Troll; xl=42.2]
 [T 2280 The Platinum Discs | at=34.4,46.9,1456; place=Thunder Bluff; xl=42.3]
-[D Razorfen Downs | quests=3341; at=49,93.9,1413; xl=42.4]
+[D Razorfen Downs | quests=3341; lvl=41; at=49,93.9,1413; xl=42.4]
 Find a group for Razorfen Downs. Quests you skip there are dropped automatically.
 [F Brackenwall Village | xl=42.9]
 [A 1166 Overlord Mok'Morokk's Concern | at=36.3,31.4,1445; place=Brackenwall Village; xl=42.9]
@@ -129,4 +129,6 @@ Kartosh is right here: pick up your new Warlock spells.
 [R Rogue - Undercity | at=83.86,72.07,1458; class=ROGUE; xl=44.0]
 Time to train: head to Carolyn Ward in Undercity for your new Rogue spells. The arrow takes you back to the route afterwards.
 [F Gadgetzan | xl=44.0]
+[L 43 | xl=44.0]
+The next guide starts around level 44. Below 43? Grind here or finish leftover quests first.
 ]==])

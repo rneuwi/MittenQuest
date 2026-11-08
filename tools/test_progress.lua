@@ -186,6 +186,39 @@ FG:SkipCurrentStep()
 check("restart: finishing it again chains on", FG.db.char.activeGuide == "Next", FG.db.char.activeGuide)
 inlog = {}
 
+-- Dungeon run planned for level 36 while you're behind the route's pace: the run, the steps
+-- inside it and its quests' turn-ins are held, then come back once you catch up.
+local dsteps = ns.Parser:Parse(table.concat({
+    "[A 40 Host | at=50,50,1]",
+    "[D Razorfen Downs | quests=40; lvl=36; at=49,93,1]",
+    "Find a group for Razorfen Downs.",
+    "[A 41 Scourge | at=49,93,1]",
+    "Inside Razorfen Downs: picked up from Belnistrasz.",
+    "[T 41 Scourge | at=49,93,1]",
+    "Inside Razorfen Downs: turned in to Belnistrasz.",
+    "[T 40 Host | at=49,93,1]",
+    "[A 42 Outside | at=60,60,1]",
+}, "\n"), "Dungeon")
+local dprog = { index = 1, arrived = {}, skip = {}, done = {}, undo = {}, force = {} }
+FG.db.profile = { skipGrey = false }
+FG.GetActiveGuide = function() return { steps = dsteps, allSteps = dsteps, header = {} } end
+inlog = { [40] = true }
+level = 31
+r = FG:Evaluate(dsteps, dprog)
+check("underleveled run held", r[2] == "underleveled", tostring(r[2]))
+check("steps inside the held run held", r[3] == "underleveled" and r[4] ~= nil,
+      tostring(r[3]) .. "/" .. tostring(r[4]))
+check("held run's quest turn-in held", r[5] == "underleveled", tostring(r[5]))
+check("steps after the run untouched", r[6] == nil, tostring(r[6]))
+dprog.force[2] = true
+r = FG:Evaluate(dsteps, dprog)
+check("clicked to go anyway: run not held", r[2] == nil and r[3] == nil, tostring(r[2]))
+dprog.force[2] = nil
+level = 35
+r = FG:Evaluate(dsteps, dprog)
+check("one level below lvl=: run is back", r[2] == nil and r[5] == nil, tostring(r[2]))
+inlog = {}
+
 if failures > 0 then
     print(failures .. " failure(s)")
     os.exit(1)

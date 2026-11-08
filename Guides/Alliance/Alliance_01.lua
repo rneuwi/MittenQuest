@@ -170,7 +170,7 @@ High Priestess Laurena is right here: pick up your new Priest spells.
 [R Paladin - Stormwind City | at=48.43,50.22,1453; class=PALADIN; xl=22.2]
 Lord Grayson Shadowbreaker is right here: pick up your new Paladin spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[D The Deadmines | quests=166,167,168,214,2040; at=42.5,71.7,1436; xl=22.2]
+[D The Deadmines | quests=166,167,168,214,2040; lvl=21; at=42.5,71.7,1436; xl=22.2]
 Find a group for The Deadmines. Quests you skip there are dropped automatically.
 [A 373 The Unsent Letter | at=42.5,71.7,1436; place=Westfall; xl=22.7]
 Inside The Deadmines: picked up from An Unsent Letter, which Edwin VanCleef drops.
@@ -206,4 +206,6 @@ Malformed Defias Drone has only one spawn point. If others are waiting for it, g
 Bernard Gump has only one spawn point. If others are waiting for it, group up to share it.
 [T 2609 The Touch of Zanzil | at=80.1,69.9,1453; place=Stormwind City; class=ROGUE; xl=23.4]
 [F Lakeshire | xl=23.4]
+[L 22 | xl=23.4]
+The next guide starts around level 23. Below 22? Grind here or finish leftover quests first.
 ]==])

@@ -86,11 +86,11 @@ Jannos Lighthoof is right here: pick up your new Druid spells.
 X'yera is right here: pick up your new Priest spells.
 [R Mage - Orgrimmar | at=39.16,86.27,1454; class=MAGE; xl=45.4]
 Uthel'nay is right here: pick up your new Mage spells.
-[D Uldaman | quests=2283; at=44.6,12.1,1418; xl=45.4]
+[D Uldaman | quests=2283; lvl=40; at=44.6,12.1,1418; xl=45.4]
 Find a group for Uldaman. Quests you skip there are dropped automatically.
 [T 2283 Necklace Recovery | at=59.5,36.6,1454; place=Orgrimmar; xl=45.9]
 [A 2284 Necklace Recovery, Take 2 | at=59.5,36.6,1454; pre=2283; place=Orgrimmar; xl=45.9]
-[D Uldaman | quests=2284; at=44.6,12.1,1418; xl=45.9]
+[D Uldaman | quests=2284; lvl=40; at=44.6,12.1,1418; xl=45.9]
 Find a group for Uldaman. Quests you skip there are dropped automatically.
 [T 2284 Necklace Recovery, Take 2 | at=44.6,12.1,1418; place=Badlands; xl=46.4]
 Inside Uldaman: turned in to Remains of a Paladin.
@@ -103,14 +103,14 @@ Inside Uldaman: picked up from Remains of a Paladin.
 [A 649 Ripple Recovery | at=59.5,36.6,1454; place=Orgrimmar; xl=46.4]
 [T 649 Ripple Recovery | at=59.6,36.9,1454; place=Orgrimmar; xl=46.4]
 [A 650 Ripple Recovery | at=59.6,36.9,1454; pre=649; place=Orgrimmar; xl=46.5]
-[D Zul'Farrak | quests=2768,2846,2865,3042; at=38.7,20.1,1446; xl=46.5]
+[D Zul'Farrak | quests=2768,2846,2865,3042; lvl=46; at=38.7,20.1,1446; xl=46.5]
 Find a group for Zul'Farrak. Quests you skip there are dropped automatically.
 [T 2865 Scarab Shells | at=51.6,26.8,1446; place=Gadgetzan; xl=47.0]
 [A 5863 The Dunemaul Compound | at=52.8,27.4,1446; place=Gadgetzan; xl=47.0]
 [T 2768 Divino-matic Rod | at=52.5,28.5,1446; place=Gadgetzan; xl=47.0]
 [A 2605 The Thirsty Goblin | at=51.8,28.7,1446; place=Gadgetzan; danger=48; xl=47.1]
 [T 3042 Troll Temper | at=51.4,28.8,1446; place=Gadgetzan; xl=47.1]
-[D Maraudon | quests=7028,7029,7044,7067,7068; at=29.1,62.5,1443; xl=47.2]
+[D Maraudon | quests=7028,7029,7044,7067,7068; lvl=47; at=29.1,62.5,1443; xl=47.2]
 Find a group for Maraudon. Quests you skip there are dropped automatically.
 [T 7044 Legends of Maraudon | at=29.1,62.5,1443; place=Desolace; xl=47.7]
 Inside Maraudon: turned in to Celebras the Redeemed.
@@ -123,7 +123,7 @@ Inside Maraudon: turned in to Celebras the Redeemed.
 [T 7029 Vyletongue Corruption | at=23.2,70.3,1443; place=Shadowprey Village; xl=47.9]
 [T 7067 The Pariah's Instructions | at=50.4,86.7,1443; place=Desolace; xl=47.9]
 [T 7028 Twisted Evils | at=62.2,39.6,1443; place=Desolace; xl=48.0]
-[D Uldaman | quests=2339; at=44.6,12.1,1418; xl=48.1]
+[D Uldaman | quests=2339; lvl=43; at=44.6,12.1,1418; xl=48.1]
 Find a group for Uldaman. Quests you skip there are dropped automatically.
 [T 2339 Find the Gems and Power Source | at=2.4,46.1,1418; place=Kargath; xl=48.6]
 [A 2340 Deliver the Gems | at=2.4,46.1,1418; pre=2339; place=Kargath; xl=48.7]
@@ -141,4 +141,6 @@ Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow t
 [R Warlock - Undercity | at=86.21,15.93,1458; class=WARLOCK; xl=48.7]
 Time to train: head to Kaal Soulreaper in Undercity for your new Warlock spells. The arrow takes you back to the route afterwards.
 [F Brackenwall Village | xl=48.7]
+[L 47 | xl=48.7]
+The next guide starts around level 48. Below 47? Grind here or finish leftover quests first.
 ]==])

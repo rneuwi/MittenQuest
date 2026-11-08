@@ -231,7 +231,7 @@ Gor'marok the Ravager has only one spawn point. If others are waiting for it, gr
 [A 32 Rise of the Silithid | at=50.2,27.5,1446; pre=113; place=Gadgetzan; xl=51.0]
 [F Freewind Post | xl=51.0]
 [A 2770 Gahz'rilla | at=78.1,77.1,1441; place=Thousand Needles; xl=51.0]
-[D Zul'Farrak | quests=2770; at=38.7,20.1,1446; xl=51.0]
+[D Zul'Farrak | quests=2770; lvl=49; at=38.7,20.1,1446; xl=51.0]
 Find a group for Zul'Farrak. Quests you skip there are dropped automatically.
 [T 2770 Gahz'rilla | at=78.1,77.1,1441; place=Thousand Needles; xl=51.4]
 [R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=51.5]
@@ -302,4 +302,6 @@ Group quest (elite enemies) - optional; skipped if you don't take it.
 [C 7603 Kroshius' Infernal Core | at=45.7,34.8,1448; mob=Kroshius; opt; class=WARLOCK; xl=52.0]
 Kroshius has only one spawn point. If others are waiting for it, group up to share it.
 [T 7603 Kroshius' Infernal Core | at=41.4,44.9,1448; opt; place=Felwood; class=WARLOCK; xl=52.0]
+[L 51 | xl=52.0]
+The next guide starts around level 52. Below 51? Grind here or finish leftover quests first.
 ]==])

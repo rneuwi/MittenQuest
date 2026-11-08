@@ -187,7 +187,7 @@ Group quest (elite enemies) - optional; skipped if you don't take it.
 [C 8425 Voodoo Feathers | at=34.3,66.1,1435; mob=Gasher / Mijan; opt; class=WARRIOR; xl=50.5]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 8425 Voodoo Feathers | at=34.3,66.1,1435; opt; place=Swamp of Sorrows; class=WARRIOR; xl=50.5]
-[D Zul'Farrak | quests=2768,2770,2846,2865,2991,3042,3527; at=38.7,20.1,1446; xl=50.5]
+[D Zul'Farrak | quests=2768,2770,2846,2865,2991,3042,3527; lvl=49; at=38.7,20.1,1446; xl=50.5]
 Find a group for Zul'Farrak. Quests you skip there are dropped automatically.
 [T 2865 Scarab Shells | at=51.6,26.8,1446; place=Gadgetzan; xl=51.0]
 [T 2768 Divino-matic Rod | at=52.5,28.5,1446; place=Gadgetzan; xl=51.0]
@@ -270,4 +270,6 @@ Group quest (elite enemies) - optional; skipped if you don't take it.
 Kroshius has only one spawn point. If others are waiting for it, group up to share it.
 [T 7603 Kroshius' Infernal Core | at=41.4,44.9,1448; opt; place=Felwood; class=WARLOCK; xl=52.0]
 [G 51.2,82.1 1448 Travel to Felwood - take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor) | xl=52.0]
+[L 51 | xl=52.0]
+The next guide starts around level 52. Below 51? Grind here or finish leftover quests first.
 ]==])

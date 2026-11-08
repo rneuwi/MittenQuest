@@ -9,7 +9,7 @@ MittenQuest:RegisterGuide([==[Horde 36-40 Orgrimmar, Thunder Bluff, Desolace]==]
 [T 95697 Changing Tastes | at=57.2,53.3,1454; place=Orgrimmar; xl=36.0]
 [T 2841 Rig Wars | at=76.0,25.4,1454; place=Orgrimmar; xl=36.1]
 [T 1436 Alliance Relations | at=22.6,52.6,1454; place=Orgrimmar; xl=36.2]
-[D Razorfen Downs | quests=6521,6626; at=49,93.9,1413; xl=36.3]
+[D Razorfen Downs | quests=6521,6626; lvl=36; at=49,93.9,1413; xl=36.3]
 Find a group for Razorfen Downs. Quests you skip there are dropped automatically.
 [A 3523 Scourge of the Downs | at=49,93.9,1413; place=The Barrens; xl=36.8]
 Inside Razorfen Downs: picked up from Belnistrasz.
@@ -284,4 +284,6 @@ Dual Specialization can now be bought from your class trainer in a major city.
 [A 4490 Summon Felsteed | at=62.6,35.5,1413; pre=3631; place=Ratchet; class=WARLOCK; xl=40.3]
 [T 4490 Summon Felsteed | at=62.6,35.5,1413; place=Ratchet; class=WARLOCK; xl=40.3]
 [F Shadowprey Village | xl=40.3]
+[L 39 | xl=40.3]
+The next guide starts around level 40. Below 39? Grind here or finish leftover quests first.
 ]==])

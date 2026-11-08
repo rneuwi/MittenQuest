@@ -16,7 +16,7 @@ MittenQuest:RegisterGuide([==[Horde 20-24 Thunder Bluff, The Barrens, Silverpine
 [H Crossroads | xl=20.8]
 [T 852 Hezrul Bloodmark | at=45.3,28.4,1413; place=The Barrens; xl=20.8]
 [T 95494 Bruised Pride and Lion Hides | at=43.8,12.2,1413; place=The Barrens; xl=20.9]
-[D Wailing Caverns | quests=914,959,962,1486,1487,1491; at=46,36.5,1413; xl=21.0]
+[D Wailing Caverns | quests=914,959,962,1486,1487,1491; lvl=21; at=46,36.5,1413; xl=21.0]
 Find a group for Wailing Caverns. Quests you skip there are dropped automatically.
 [A 6981 The Glowing Shard | at=46,36.5,1413; place=The Barrens; xl=21.5]
 Inside Wailing Caverns: picked up from Glowing Shard, which Mutanus the Devourer drops.
@@ -161,4 +161,6 @@ Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spell
 [R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=24.1]
 Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 11.9,34.5 1440 Travel to Ashenvale - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=24.1]
+[L 23 | xl=24.1]
+The next guide starts around level 24. Below 23? Grind here or finish leftover quests first.
 ]==])

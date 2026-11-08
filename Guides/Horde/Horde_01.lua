@@ -160,7 +160,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 6365 Meats to Orgrimmar | at=52.6,29.8,1413; place=Crossroads; danger=16; race=Orc,Troll; xl=15.6]
 [T 6365 Meats to Orgrimmar | at=51.5,30.3,1413; place=Crossroads; danger=16; race=Orc,Troll; xl=15.6]
 [A 6384 Ride to Orgrimmar | at=51.5,30.3,1413; pre=6365; place=Crossroads; danger=16; race=Orc,Troll; xl=15.6]
-[D Ragefire Chasm | quests=5722,5723,5725,5728,5761; at=52.6,49,1454; xl=15.6]
+[D Ragefire Chasm | quests=5722,5723,5725,5728,5761; lvl=15; at=52.6,49,1454; xl=15.6]
 Find a group for Ragefire Chasm. Quests you skip there are dropped automatically.
 [T 5722 Searching for the Lost Satchel | at=52.6,49,1454; place=Orgrimmar; xl=16.1]
 Inside Ragefire Chasm: turned in to Maur Grimtotem.
@@ -220,4 +220,6 @@ You have talent points from level 10 on: spend them (changing them later needs a
 Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [F Thunder Bluff | xl=16.8]
+[L 15 | xl=16.8]
+The next guide starts around level 16. Below 15? Grind here or finish leftover quests first.
 ]==])

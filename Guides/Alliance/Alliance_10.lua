@@ -33,7 +33,7 @@ Gimrizz Shadowcog is right here: pick up your new Warlock spells.
 [A 5529 Plagued Hatchlings | at=71.7,49.9,1423; place=Light's Hope Chapel; xl=58.1]
 [T 6030 Duke Nicholas Zverenhoff | at=71.6,50.1,1423; place=Light's Hope Chapel; xl=58.1]
 [P Light's Hope Chapel | at=71.81,49.6,1423; xl=58.1]
-[D Scholomance | quests=5529; at=69.7,73.2,1422; xl=58.1]
+[D Scholomance | quests=5529; lvl=57; at=69.7,73.2,1422; xl=58.1]
 Find a group for Scholomance. Quests you skip there are dropped automatically.
 [T 6028 The Everlook Report | at=43.0,83.5,1422; place=Chillwind Camp; xl=58.6]
 [A 5097 All Along the Watchtowers | at=42.7,84.0,1422; pre=5092; place=Chillwind Camp; xl=58.6]

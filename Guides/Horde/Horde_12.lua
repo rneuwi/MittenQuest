@@ -55,7 +55,7 @@ Rakaiah has only one spawn point. If others are waiting for it, group up to shar
 [T 8471 Winterfall Ritual Totem | at=65.5,3.5,1448; place=Felwood; xl=56.9]
 [F Light's Hope Chapel | xl=57.0]
 [T 6030 Duke Nicholas Zverenhoff | at=71.6,50.1,1423; place=Light's Hope Chapel; xl=57.0]
-[D Scholomance | quests=5529; at=69.7,73.2,1422; xl=57.0]
+[D Scholomance | quests=5529; lvl=57; at=69.7,73.2,1422; xl=57.0]
 Find a group for Scholomance. Quests you skip there are dropped automatically.
 [T 5529 Plagued Hatchlings | at=71.7,49.9,1423; place=Light's Hope Chapel; xl=57.5]
 [T 5961 The Champion of the Banshee Queen | at=22.2,63.5,1423; place=Eastern Plaguelands; xl=57.6]
@@ -76,7 +76,7 @@ Time to train: head to Aelthalyste in Undercity for your new Priest spells. The 
 [A 8280 Securing the Supply Lines | at=51.1,38.3,1451; place=Cenarion Hold; xl=57.8]
 [A 8277 Deadly Desert Venom | at=51.6,38.6,1451; place=Cenarion Hold; xl=57.8]
 [P Cenarion Hold | at=48.68,36.67,1451; xl=57.8]
-[D Dire Maul | quests=7441,7489; at=60.3,30.2,1444; xl=57.8]
+[D Dire Maul | quests=7441,7489; lvl=57; at=60.3,30.2,1444; xl=57.8]
 Find a group for Dire Maul. Quests you skip there are dropped automatically.
 [T 7441 Pusillin and the Elder Azj'Tordin | at=76.9,37.4,1444; place=Feralas; xl=58.3]
 [T 7489 Lethtendris's Web | at=76.2,43.8,1444; place=Camp Mojache; xl=58.4]
@@ -111,7 +111,7 @@ Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spel
 Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Light's Hope Chapel | xl=59.0]
 [T 8859 Secrets of the Colossus - Zora | at=71.9,48.4,1423; place=Light's Hope Chapel; xl=59.0]
-[D Blackrock Depths | quests=3802,4024,4081,4123,4134,4136; at=34.8,85.3,1427; xl=59.1]
+[D Blackrock Depths | quests=3802,4024,4081,4123,4134,4136; lvl=57; at=34.8,85.3,1427; xl=59.1]
 Find a group for Blackrock Depths. Quests you skip there are dropped automatically.
 [T 3802 Dark Iron Legacy | at=34.8,85.3,1427; place=Searing Gorge; xl=59.6]
 Inside Blackrock Depths: turned in to Monument of Franclorn Forgewright.
