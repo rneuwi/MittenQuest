@@ -23,3 +23,5 @@ jobs:
         run: lua5.1 tools/test_progress.lua .
       - name: Map pins
         run: lua5.1 tools/test_pins.lua .
+      - name: Pace
+        run: lua5.1 tools/test_pace.lua .

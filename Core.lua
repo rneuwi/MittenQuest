@@ -337,7 +337,8 @@ function FG:Advance(forceWaypoint)
     -- in (or when a guide loads) aren't recorded at your current level.
     local gname = self.db.char.activeGuide
     self.paceBaseline = self.paceBaseline or {}
-    if self.paceBaseline[gname] then
+    local tracking = self.paceBaseline[gname]
+    if tracking then
         local newly = {}
         for idx, why in pairs(p.done) do
             if why and not before[idx] then newly[#newly + 1] = idx end
@@ -354,6 +355,7 @@ function FG:Advance(forceWaypoint)
     while steps[i] and p.done[i] do i = i + 1 end
 
     local changed = (p.index ~= i)
+    if tracking then self:ReportJump(steps, before, p.index, i) end
     p.index = i
 
     -- Chain into the next guide when this one is finished.
@@ -370,6 +372,30 @@ function FG:Advance(forceWaypoint)
     if changed or forceWaypoint then
         ns.Navigation:SetFromStep(steps[i])
     end
+end
+
+-- The cursor stops at the first step not done, so a block further on that was already done
+-- (on an older route that ran in a different order, or quests you picked up elsewhere) is
+-- passed in one leap once you finish the step before it. Say so, or it looks like the guide
+-- lost your place.
+local JUMP_NOTICE = 3   -- at least this many already-done steps passed at once
+
+function FG:ReportJump(steps, before, from, to)
+    if not from or to <= from + 1 then return end
+    local count, places, seen = 0, {}, {}
+    for idx = from + 1, to - 1 do
+        if before[idx] then
+            count = count + 1
+            local place = steps[idx] and steps[idx].place
+            if place and not seen[place] and #places < 3 then
+                seen[place] = true
+                places[#places + 1] = place
+            end
+        end
+    end
+    if count < JUMP_NOTICE then return end
+    local where = #places > 0 and (" (" .. table.concat(places, ", ") .. ")") or ""
+    self:Print(("Moved ahead past %d steps you already did earlier or don't need%s."):format(count, where))
 end
 
 -- Several events fire in bursts (bags, quest log); coalesce into one pass.

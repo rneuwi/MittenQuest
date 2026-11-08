@@ -1,5 +1,19 @@
 # MittenQuest
 
+## Unreleased
+
+**Fixes**
+- Pace ("1.4 behind") no longer jumps when you finish steps out of order. It used the level
+  the route expects at your current step, so after a route update moved a zone you'd already
+  done (Horde Desolace now comes after Mulgore and Thousand Needles), finishing the step
+  before it leapt the cursor, and the expected level, past the whole block. Now each step
+  counts for the XP the route expects from it, and your expected level is what the steps
+  you've actually done add up to, in any order. Skipped steps and turn-ins for quests you
+  never had don't count.
+- When the guide moves past 3 or more steps you'd already done earlier, it says so in chat
+  ("Moved ahead past 14 steps you already did earlier or don't need (Desolace)") instead of
+  silently jumping.
+
 ## 1.4.0
 
 **New**

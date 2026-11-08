@@ -2,7 +2,9 @@
     MittenQuest - Pace.lua
 
     1. Pace display: every generated step carries xl= (the level the route expects you to
-       be at when you reach it). Comparing that with your real level gives "On pace",
+       be at when you reach it), so each step is worth the XP between its xl and the one
+       before. Your expected level is the guide's start plus the XP of the steps you've
+       done (in any order); comparing that with your real level gives "On pace",
        "1.4 levels behind" or "0.8 levels ahead".
     2. Warn before the wall: when an upcoming pick-up needs a level you don't have yet (or
        you've fallen a level behind), say so early and estimate how much to grind.
@@ -92,21 +94,88 @@ function Pace:KillsFor(xp)
     return math.max(1, math.ceil(xp / KillXP(level)))
 end
 
+-- Fractional level reached by gaining `xp` from fractional level `start`.
+function Pace:LevelAfter(start, xp)
+    local L, pos = math.floor(start), start
+    while xp > 0 and L < MAX_LEVEL do
+        local need = XP_TO_LEVEL[L]
+        if not need then break end
+        local room = (L + 1 - pos) * need
+        if xp < room then return pos + xp / need end
+        xp = xp - room
+        L = L + 1
+        pos = L
+    end
+    return pos
+end
+
 ---------------------------------------------------------------------------
 -- Expected level and pace
+--
+-- The route's xl= values say what level you should be at each step if you follow it in
+-- order. Reading the xl of the current step breaks as soon as you don't: routes get
+-- regenerated in a new order, so a block you did earlier (on an older route) is already
+-- done and the cursor leaps past it, and the "expected" level leaps with it although you
+-- gained nothing. So instead each step is worth the XP the route expects it to give
+-- (the rise in xl from the step before), and the expected level is the guide's starting
+-- level plus the XP of the steps you've actually done, in whatever order.
 ---------------------------------------------------------------------------
--- The current step's expected level; steps without one (notes, hand-written guides)
--- borrow from the nearest step that has one.
+local deltaCache = setmetatable({}, { __mode = "k" })
+
+-- Per-step XP the route expects ([index] = xp) and the guide's starting level.
+function Pace:Deltas(steps)
+    local cached = deltaCache[steps]
+    if cached then return cached.deltas, cached.base end
+    local deltas, base, prev = {}, nil, nil
+    for i, s in ipairs(steps) do
+        if s.xl then
+            if not base then base = s.xl end
+            deltas[i] = (prev and s.xl > prev) and self:XPBetween(prev, s.xl) or 0
+            prev = s.xl
+        end
+    end
+    deltaCache[steps] = { deltas = deltas, base = base }
+    return deltas, base
+end
+
+-- Done reasons that mean you did the step yourself (not skipped, never had the quest,
+-- outleveled, took the other version...).
+local CREDIT = { game = true, arrived = true, implied = true }
+
+-- True when a done step actually earned its XP.
+function Pace:Credited(step, why)
+    if not step or not why or not CREDIT[why] then return false end
+    local q = step.questID
+    if q and (step.type == "COMPLETE" or step.type == "TURNIN") then
+        -- Optional objectives/turn-ins count as done when the quest isn't in your log;
+        -- only a real turn-in (or finished objectives) earned anything.
+        if C_QuestLog.IsQuestFlaggedCompleted(q) then return true end
+        return step.type == "COMPLETE" and C_QuestLog.GetLogIndexForQuestID(q) ~= nil
+    end
+    return true
+end
+
+-- Expected level for what you've done in the active guide (nil without xl= data).
 function Pace:Expected()
     local steps, p = FG:GetActiveSteps()
     if not steps or not p then return nil end
-    local i = math.min(p.index, #steps)
-    for d = 0, #steps do
-        local a, b = steps[i - d], steps[i + d]
-        if a and a.xl then return a.xl end
-        if b and b.xl then return b.xl end
-        if not a and not b then break end
+    local deltas, base = self:Deltas(steps)
+    if not base then return nil end
+    local xp = 0
+    for i, d in pairs(deltas) do
+        if d > 0 and self:Credited(steps[i], p.done[i]) then xp = xp + d end
     end
+    return self:LevelAfter(base, xp)
+end
+
+-- XP the route expects from the steps still to do in [from, to].
+function Pace:XPAhead(steps, p, from, to)
+    local deltas = self:Deltas(steps)
+    local xp = 0
+    for i = from, to do
+        if deltas[i] and not p.done[i] then xp = xp + deltas[i] end
+    end
+    return xp
 end
 
 -- Returns expected, actual, diff (actual - expected) or nil when there's nothing to compare.
@@ -128,15 +197,14 @@ function Pace:Tag()
 end
 
 -- First upcoming pick-up you'll still be too low for when you get there.
--- Your level at that step is projected as: your level now + the levels the route expects
--- you to gain between here and there (from the steps' xl values).
+-- Your level at that step is projected as: your level now + the XP the route expects from
+-- the steps still to do between here and there (steps already done give nothing more).
 -- Returns step, required level, steps away, XP short.
 function Pace:NextWall()
     local steps, p = FG:GetActiveSteps()
     if not steps or not p then return nil end
     local level, actual = UnitLevel("player"), self:PlayerLevel()
     if secret(level) or not actual then return nil end
-    local xlNow = self:Expected()
     for i = p.index, math.min(#steps, p.index + LOOKAHEAD_STEPS) do
         local s = steps[i]
         if s and not p.done[i] and s.type == "ACCEPT" and s.questID then
@@ -144,8 +212,7 @@ function Pace:NextWall()
             local q = ns.QuestDB and ns.QuestDB[s.questID]
             if not need and q then need = q.minLevel end
             if need and need > level then
-                local gain = (xlNow and s.xl) and math.max(0, s.xl - xlNow) or 0
-                local projected = actual + gain
+                local projected = self:LevelAfter(actual, self:XPAhead(steps, p, p.index, i - 1))
                 if projected < need then
                     local short = (i == p.index) and self:XPTo(need) or self:XPBetween(projected, need)
                     return s, need, i - p.index, short
