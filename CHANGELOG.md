@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.4.1
 
 **Fixes**
 - Pace ("1.4 behind") no longer jumps when you finish steps out of order. It used the level
