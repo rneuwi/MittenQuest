@@ -23,8 +23,8 @@ import sys
 HORDE = 2 | 16 | 32 | 128 | 1 << 33
 ALLIANCE = 1 | 4 | 8 | 64 | 1 << 32
 # Forever's new outdoor zones (QuestieDB zone ids). Mount Hyjal keeps the classic id 616.
-WATCH_ZONES = [16591, 16593, 16651, 16606, 616]   # Riverglades, Zephras Isle, Shen'dralas,
-                                                    # Darkspear Islands, Mount Hyjal
+# Darkspear Islands (16606) is left out: it's the battleground, skipped by gen_route.py's SKIP_SORTS.
+WATCH_ZONES = [16591, 16593, 16651, 616]   # Riverglades, Zephras Isle, Shen'dralas, Mount Hyjal
 
 
 def load(work, name):
