@@ -725,8 +725,19 @@ for _q in QUESTS.values():
 # route doesn't go to a pickup, objective area or turn-in until it's within DANGER_MARGIN
 # levels of that spot's danger.
 DANGER_RADIUS = 2.5     # map units (percent of the zone map) around the spot
-DANGER_MARGIN = 2       # go there once your level is at least danger - this
+DANGER_MARGIN = 1       # go there once your level is at least danger - this
 DANGER_FLOOR = 8        # starting areas mix level 1 quests with level 5 mobs by design
+OBJECTIVE_MARGIN = 1    # solo quest objectives at most this many levels above you
+DUNGEON_OBJECTIVE_MARGIN = 2
+
+
+def pickup_lead(L):
+    """How many levels above you a (non-dungeon) quest may be when picked up. With
+    objectives at most OBJECTIVE_MARGIN above you, a wider lead fills the log with quests
+    that can't be done yet, and from the 40s the route grinds instead of travelling."""
+    return 4 if L < 30 else 3 if L < 40 else 2
+
+
 _HOSTILE_SPAWNS = collections.defaultdict(list)    # map -> [(x, y, level, npc id)]
 # Capitals (by area). No open-world mobs live there.
 CAPITALS = {1637, 1638, 1497, 1519, 1537, 1657}
@@ -1145,7 +1156,7 @@ class Sim:
             return False            # don't carry dungeon quests for ages
         if q.dungeon and self.L < DUNGEON_MIN_LEVEL.get(q.dungeon, 0) - 5:
             return False            # nor long before you can run the dungeon
-        if not q.dungeon and q.level > self.L + 4:
+        if not q.dungeon and q.level > self.L + pickup_lead(self.L):
             return False
         # Mobs that are grey for you give no XP and the quest reward is all that's left: skip it
         # (killing level 10s at 16 in the Barrens). Dungeon work stays.
@@ -1176,7 +1187,16 @@ class Sim:
         return self._dest_cache[key]
 
     def can_do_objectives(self, q):
-        return q.level <= self.L + (3 if self.L < 10 else 2)
+        """Solo objectives at most OBJECTIVE_MARGIN levels above you (players found 2 too
+        many: Desolace at 31 among level 33-35 mobs). Dungeon quests are group content, done
+        on the run, so they keep the wider margin."""
+        if self.L < 10:
+            margin = 3
+        elif q.dungeon:
+            margin = DUNGEON_OBJECTIVE_MARGIN
+        else:
+            margin = OBJECTIVE_MARGIN
+        return q.level <= self.L + margin
 
     def quick(self, q, mapID):
         """Can be finished right here, right now (used when the log is nearly full)."""

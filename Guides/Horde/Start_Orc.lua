@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Durotar (Orc/Troll)]==], [==[
 #levels 1-13
 #faction Horde
 #race Orc, Troll
-#next Horde 12-16 The Barrens, Orgrimmar, Undercity
+#next Horde 12-16 The Barrens, Undercity, Silverpine Forest
 
 [A 4641 Your Place In The World | at=43.3,68.5,1411; opt; place=Durotar; xl=1.0]
 [T 4641 Your Place In The World | at=42.1,68.3,1411; place=Durotar; xl=1.0]
@@ -127,21 +127,21 @@ Nartok is right here: pick up your new Warlock spells.
 [T 99123 Lost in the Shadows | at=55.9,74.4,1411; place=Durotar; xl=6.0]
 [A 818 A Solvent Spirit | at=55.9,74.4,1411; place=Durotar; xl=6.3]
 [A 97225 Forgotten Loa Idols | at=55.9,74.4,1411; place=Durotar; xl=6.3]
-[A 808 Minshina's Skull | at=56.0,74.7,1411; place=Durotar; danger=8; xl=6.3]
 [A 823 Report to Orgnil | at=56.0,74.7,1411; place=Durotar; xl=6.3]
 [A 826 Zalazane | at=56.0,74.7,1411; place=Durotar; xl=6.3]
 [A 817 Practical Prey | at=56.0,73.9,1411; place=Durotar; xl=6.3]
 [C 818 A Solvent Spirit | at=55.2,81.8,1411; mob=Makrura Shellhide / Pygmy Surf Crawler; ml=7; item=4887:4,4888:8; drop=52; xl=6.3]
 [T 818 A Solvent Spirit | at=55.9,74.4,1411; place=Durotar; xl=6.3]
 [C 97225 Forgotten Loa Idols | at=65.5,84.7,1411; item=277135:8; xl=6.6]
-[C 808 Minshina's Skull | at=67.4,87.8,1411; danger=8; xl=6.6]
 [C 817 Practical Prey | at=61.4,91.3,1411; mob=Durotar Tiger; ml=8; item=4892:4; drop=42; xl=6.6]
 [T 97225 Forgotten Loa Idols | at=56.0,74.7,1411; place=Durotar; xl=6.6]
-[T 808 Minshina's Skull | at=56.0,74.7,1411; place=Durotar; xl=7.0]
-[T 817 Practical Prey | at=56.0,73.9,1411; place=Durotar; xl=7.3]
-[C 826 Zalazane | at=67.1,85.0,1411; mob=Hexed Troll / Voodoo Troll; ml=10; xl=7.6]
+[T 817 Practical Prey | at=56.0,73.9,1411; place=Durotar; xl=7.0]
+[A 808 Minshina's Skull | at=56.0,74.7,1411; place=Durotar; danger=8; xl=7.3]
+[C 826 Zalazane | at=67.1,85.0,1411; mob=Hexed Troll / Voodoo Troll; ml=10; xl=7.3]
 Zalazane has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 826 Zalazane | at=56.0,74.7,1411; place=Durotar; xl=7.6]
+[C 808 Minshina's Skull | at=67.4,87.8,1411; danger=8; xl=7.3]
+[T 826 Zalazane | at=56.0,74.7,1411; place=Durotar; xl=7.3]
+[T 808 Minshina's Skull | at=56.0,74.7,1411; place=Durotar; xl=7.7]
 [C 784 Vanquish the Betrayers | at=58.2,56.8,1411; mob=Kul Tiras Sailor / Kul Tiras Marine; ml=8; xl=8.0]
 Lieutenant Benedict has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [C 96822 For Honor | at=57.4,56.4,1411; xl=8.0]
@@ -281,11 +281,11 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [T 825 From The Wreckage.... | at=52.0,43.5,1411; place=Durotar; xl=10.6]
 [C 97282 Stormy Potential | at=39.1,29.3,1411; mob=Thunder Lizard; ml=10; item=277665:5; xl=10.7]
 [T 97282 Stormy Potential | at=46.4,22.9,1411; place=Durotar; xl=10.7]
-[C 5726 Hidden Enemies | at=53.1,9.4,1411; mob=Burning Blade Apprentice; ml=11; xl=10.9]
 [A 832 Burning Shadows | at=52.6,8.8,1411; place=Durotar; xl=10.9]
 Starts from Eye of Burning Shadow, which drops in this area.
 [C 815 Break a Few Eggs | at=67.0,71.4,1411; item=4890:3; xl=10.9]
 [T 815 Break a Few Eggs | at=51.1,42.5,1411; place=Durotar; xl=10.9]
+[C 5726 Hidden Enemies | at=53.1,9.4,1411; mob=Burning Blade Apprentice; ml=11; xl=11.1]
 [G 56.8,33.0 1454 Travel to Orgrimmar | xl=11.1]
 [A 97275 Whuut's the Rush | at=56.8,33.0,1454; place=Orgrimmar; xl=11.1]
 [T 97275 Whuut's the Rush | at=55.8,32.9,1454; place=Orgrimmar; xl=11.1]

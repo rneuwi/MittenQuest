@@ -11,6 +11,14 @@
 - Quest givers who walk around (guards, couriers, patrolling officers) show their route as a
   dotted line on the world map and minimap. Turn it off in the menu under Quest pins.
 
+**Changes**
+- The routes no longer send you into content above your level. Quest objectives are at
+  most 1 level above you (was 2), you don't go where the mobs start more than 1 level above
+  you (was 2), and from level 30 you pick up fewer quests you can't do yet, so the route
+  travels to the next quests instead of grinding. Horde Desolace now starts around 34-37
+  instead of 31. Both factions also do more of their dungeon quests. The guides are re-split,
+  so your current guide may change name; it picks up where you are.
+
 ## 1.3.2
 
 **Fixes**
