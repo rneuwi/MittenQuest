@@ -83,4 +83,31 @@ check("nearby step in a dangerous area is avoided", "Far quest")
 steps[2].danger = 11
 Nav:SetFromStep(steps[1])
 check("mild danger still counts as doable", "Accept: Near quest")
+
+-- Travel hints ("Travel to" steps): the known flight point nearest the destination.
+-- Test world: 10 yd per map unit (GetWorldCoordinatesFromZone above), player at 50,50.
+UnitFactionGroup = function() return "Horde" end
+ns.FG.db.char = { knownFP = {} }
+ns.FG.GetActiveGuide = function() return { header = { knownFP = { "Crossroads" } } } end
+ns.FlightPoints = { Horde = {
+    { "Crossroads", 1, 50, 52 },       -- next to the player
+    { "Freewind Post", 1, 10, 90 },    -- next to the destination, known once the taxi map shows it
+    { "Far Outpost", 1, 95, 5 },
+} }
+local dest = { mapID = 1, x = 30, y = 99 } -- ~220 yd from Freewind Post, ~530 from the player
+local function hint(name, want)
+    local got = Nav:TravelHint(dest)
+    local ok = (got or ""):find(want, 1, true) ~= nil
+    print(("%-4s %-45s -> %s"):format(ok and "ok" or "FAIL", name, tostring(got)))
+    if not ok then os.exit(1) end
+end
+hint("unknown flight point by the destination: learn it", "Learn the Freewind Post flight path there")
+ns.Steps:RecordFlightNode("Freewind Post, Thousand Needles")
+hint("known flight point by the destination: fly there", "Fly to Freewind Post, then head")
+dest = { mapID = 1, x = 10, y = 90 }
+hint("landing right at the destination", "Fly to Freewind Post; it's right there")
+dest = { mapID = 1, x = 52, y = 52 }
+local got = Nav:TravelHint(dest)
+print(("%-4s %-45s -> %s"):format(got == nil and "ok" or "FAIL", "destination close by: no hint", tostring(got)))
+if got ~= nil then os.exit(1) end
 print("all navigation checks passed")

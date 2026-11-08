@@ -14,6 +14,12 @@ local ARROW_TEX = "Interface\\AddOns\\MittenQuest\\Media\\Arrow"
 local CHECK_TEX = "Interface\\RaidFrame\\ReadyCheck-Ready"
 local THROTTLE = 0.03
 local KIND_PREFIX = { entrance = "|cffffd100", path = "|cffb388ff", quest = "|cff4fc3f7" }
+-- The game gives no height for you or the target, so the arrow can't point up or down. When
+-- you've stood on the spot this long and the step still isn't done, the target is most
+-- likely on another floor, a ledge or tower above, or in a cave or cellar below.
+local HEIGHT_HINT_SECONDS = 6
+local HEIGHT_HINT_INDOORS = "Not here? Try the floor above or below"
+local HEIGHT_HINT_OUTDOORS = "Not here? It may be above or below you: upstairs, a tower or ledge, or a cave underneath"
 
 local function Lerp(a, b, t) return a + (b - a) * t end
 
@@ -160,7 +166,8 @@ function Arrow:Render()
     end
     self.tex:SetAlpha(1)
 
-    if dist <= FG.db.profile.arrivalYards then
+    local arrived = dist <= FG.db.profile.arrivalYards
+    if arrived then
         self.tex:SetTexture(CHECK_TEX)
         self.tex:SetRotation(0)
         self.tex:SetVertexColor(1, 1, 1)
@@ -175,7 +182,27 @@ function Arrow:Render()
     self.dist:SetText(FormatDistance(dist) .. FormatETA(dist))
     local label = active.point.label or ""
     local prefix = KIND_PREFIX[active.kind]
-    self.label:SetText(prefix and (prefix .. label .. "|r") or label)
+    label = prefix and (prefix .. label .. "|r") or label
+    if self:HeightHint(active, arrived) then
+        label = label .. "\n|cffffd100" .. (IsIndoors() and HEIGHT_HINT_INDOORS or HEIGHT_HINT_OUTDOORS) .. "|r"
+    end
+    self.label:SetText(label)
+end
+
+-- True once you've been at the target (not a path point or cave entrance) for
+-- HEIGHT_HINT_SECONDS without the step finishing.
+function Arrow:HeightHint(active, arrived)
+    if not arrived or active.kind == "entrance" or active.kind == "path" then
+        self.arrivedAt, self.arrivedPoint = nil, nil
+        return false
+    end
+    -- By position, not table: client quest points are rebuilt every few seconds.
+    local p = active.point
+    local key = ("%s:%.1f:%.1f"):format(tostring(p.mapID), p.x or 0, p.y or 0)
+    if self.arrivedPoint ~= key then
+        self.arrivedAt, self.arrivedPoint = GetTime(), key
+    end
+    return GetTime() - self.arrivedAt >= HEIGHT_HINT_SECONDS
 end
 
 function Arrow:SetEnabled(on)

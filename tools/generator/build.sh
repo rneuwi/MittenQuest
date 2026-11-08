@@ -26,5 +26,6 @@ done
 python3 "$HERE/update_toc.py" "$ADDON"
 python3 "$HERE/gen_questdb.py" "$WORK" "$WORK/gen/Quests.lua"
 cp "$WORK/gen/Quests.lua" "$ADDON/Data/Quests.lua"
+cp "$WORK/gen/FlightPoints.lua" "$ADDON/Data/FlightPoints.lua"
 ( cd "$QDB" && git rev-parse --short HEAD ) > "$ADDON/Data/QUESTIEDB_VERSION" 2>/dev/null || true
 echo "Rebuilt from QuestieDB $(cat "$ADDON/Data/QUESTIEDB_VERSION" 2>/dev/null)"

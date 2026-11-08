@@ -30,6 +30,7 @@ Frame.lua
 
 # Quest database (map pins)
 Data\Quests.lua
+Data\FlightPoints.lua
 Data\Entrances.lua
 
 # Guides (generated 1-60 routes; race starters first, then the shared route in level order)

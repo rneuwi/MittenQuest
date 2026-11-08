@@ -353,6 +353,11 @@ function Steps:Describe(step)
         sub[#sub + 1] = DIM .. line .. "|r"
     elseif step.type == "COMPLETE" and step.mob then
         sub[#sub + 1] = DIM .. step.mob .. "|r"
+    elseif step.type == "GOTO" and step.coords and (step.text or ""):find("^Travel to") then
+        local hint = ns.Navigation and ns.Navigation:TravelHint(step.coords)
+        if hint then
+            sub[#sub + 1] = DIM .. hint .. "|r"
+        end
     elseif step.type == "FLY" and not self:IsFlightKnown(step.node) then
         sub[#sub + 1] = WARN .. "Flight path not learned" .. (step.alt and (" - " .. step.alt) or "") .. "|r"
     elseif step.type == "LEVEL" and step.level then

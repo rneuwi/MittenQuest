@@ -50,6 +50,63 @@ function Nav:DistanceTo(point)
     return dist
 end
 
+---------------------------------------------------------------------------
+-- Travel hints: which flight point to take for "Travel to <zone>" steps
+---------------------------------------------------------------------------
+local COMPASS = { "north", "northwest", "west", "southwest", "south", "southeast", "east", "northeast" }
+local FLY_SAVES_YARDS = 300  -- only suggest flying when it cuts the run by at least this much
+local RIGHT_THERE_YARDS = 150
+local LEARN_NEAR_YARDS = 1000 -- an unknown flight point this close to the destination is worth learning
+
+local function Compass(angle)
+    local i = math.floor((angle + math.pi / 8) / (math.pi / 4)) % 8
+    return COMPASS[i + 1]
+end
+
+-- "Fly to Freewind Post, then head south ~600 yd" for a destination point
+-- ({ mapID, x, y } in 0-100 coords), or nil when flying doesn't help or the data is missing.
+-- Known flight points: what the taxi maps showed this character, else the guide's #knownfp.
+function Nav:TravelHint(dest)
+    local fps = ns.FlightPoints and ns.FlightPoints[UnitFactionGroup("player") or ""]
+    if not (dest and dest.mapID and fps) then
+        return nil
+    end
+    local wx, wy, wInstance = HBD:GetWorldCoordinatesFromZone(dest.x / 100, dest.y / 100, dest.mapID)
+    if not wx then
+        return nil
+    end
+    local known, unknown -- nearest { name, dist, angle } of each
+    for _, fp in ipairs(fps) do
+        local name, mapID, x, y = fp[1], fp[2], fp[3], fp[4]
+        local fx, fy, fInstance = HBD:GetWorldCoordinatesFromZone(x / 100, y / 100, mapID)
+        if fx and fInstance == wInstance then
+            local angle, dist = HBD:GetWorldVector(wInstance, fx, fy, wx, wy)
+            if dist then
+                local isKnown = ns.Steps:IsFlightKnown(name)
+                local best = isKnown and known or unknown
+                if not best or dist < best.dist then
+                    best = { name = name, dist = dist, angle = angle }
+                    if isKnown then known = best else unknown = best end
+                end
+            end
+        end
+    end
+    local parts = {}
+    local playerDist = self:DistanceTo(dest) -- nil on another continent or while hidden
+    if known and (not playerDist or known.dist + FLY_SAVES_YARDS < playerDist) then
+        if known.dist <= RIGHT_THERE_YARDS then
+            parts[#parts + 1] = ("Fly to %s; it's right there"):format(known.name)
+        else
+            parts[#parts + 1] = ("Fly to %s, then head %s ~%d yd"):format(
+                known.name, Compass(known.angle), math.floor(known.dist / 50 + 0.5) * 50)
+        end
+    end
+    if unknown and unknown.dist <= LEARN_NEAR_YARDS and (not known or unknown.dist * 2 < known.dist) then
+        parts[#parts + 1] = ("Learn the %s flight path there"):format(unknown.name)
+    end
+    return #parts > 0 and table.concat(parts, ". ") or nil
+end
+
 -- Player position on a specific map in 0-100 coords (nil if not on that map's continent).
 local function PlayerPosOn(mapID)
     local pos = C_Map.GetPlayerMapPosition(mapID, "player")

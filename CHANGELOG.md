@@ -10,6 +10,12 @@
   objects, and a note for objects you click.
 - Quest givers who walk around (guards, couriers, patrolling officers) show their route as a
   dotted line on the world map and minimap. Turn it off in the menu under Quest pins.
+- "Travel to" steps say which flight point to take: the one you know that lands closest to
+  where you're going, with the direction and distance from there ("Fly to Freewind Post,
+  then head south ~600 yd"), and suggest learning a flight path right by the destination.
+- The arrow can't see height (the game doesn't report it), so when you've stood on the spot
+  for a few seconds and the step isn't done, it now suggests looking above or below you
+  (upstairs, a tower or ledge, or a cave underneath).
 
 **Changes**
 - The routes no longer send you into content above your level. Quest objectives are at
