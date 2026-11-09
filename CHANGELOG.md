@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.0
 
 **Changes**
 - Stranglethorn Vale is back in the routes from the low 30s (Horde about 60 to 100 quest
