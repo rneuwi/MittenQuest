@@ -59,6 +59,12 @@ Grind mobs around your level here; more quests open at the next level.
 [A 8308 Brann Bronzebeard's Lost Letter | at=36.7,63.2,1451; place=Silithus; xl=58.0]
 Starts from Brann Bronzebeard's Lost Letter, which drops in this area.
 [T 8308 Brann Bronzebeard's Lost Letter | at=41.3,88.5,1451; place=Silithus; xl=58.0]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=58.1]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=58.1]
+Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=58.1]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=58.1]
 Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
 [F Light's Hope Chapel | xl=58.1]
@@ -83,16 +89,8 @@ Inside Blackrock Depths: turned in to Mistress Nagmara.
 [T 4081 KILL ON SIGHT: Dark Iron Dwarves | at=5.8,47.5,1418; place=Kargath; xl=58.3]
 [L 59 | xl=58.3]
 Grind mobs around your level here; more quests open at the next level.
-[R Hunter - Stonard | at=47.26,53.43,1435; class=HUNTER; xl=59.0]
-Time to train: head to Ogromm in Stonard for your new Hunter spells. The arrow takes you back to the route afterwards.
-[R Rogue - Undercity | at=83.86,72.07,1458; class=ROGUE; xl=59.0]
-Time to train: head to Carolyn Ward in Undercity for your new Rogue spells. The arrow takes you back to the route afterwards.
-[R Priest - Undercity | at=49.26,17.12,1458; class=PRIEST; xl=59.0]
-Time to train: head to Aelthalyste in Undercity for your new Priest spells. The arrow takes you back to the route afterwards.
-[R Warrior - Undercity | at=46.93,15.23,1458; class=WARRIOR; xl=59.0]
-Time to train: head to Christoph Walker in Undercity for your new Warrior spells. The arrow takes you back to the route afterwards.
-[R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=59.0]
-Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Paladin - Undercity | at=45.97,19.79,1458; class=PALADIN; xl=59.0]
+Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=59.0]
 Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Cenarion Hold | xl=59.0]

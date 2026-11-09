@@ -182,8 +182,6 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Priest - Elwynn Forest | at=43.28,65.72,1429; class=PRIEST; xl=10.2]
 Priestess Josetta is right here: pick up your new Priest spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 5635 Desperate Prayer | at=43.3,65.7,1429; ex=5634,5636,5637,5638,5639,5640; place=Elwynn Forest; class=PRIEST; race=Human,Dwarf; xl=10.2]
-[T 5635 Desperate Prayer | at=49.5,44.6,1453; place=Stormwind City; class=PRIEST; race=Human,Dwarf; xl=10.2]
 [A 94773 Divine Grace | at=49.5,44.6,1453; ex=94774,94775,94776,94777,94778,94779; place=Stormwind City; class=PRIEST; race=Human; xl=10.2]
 [T 94773 Divine Grace | at=49.5,44.6,1453; place=Stormwind City; class=PRIEST; race=Human; xl=10.2]
 [R Warlock - Elwynn Forest | at=44.39,66.24,1429; class=WARLOCK; xl=10.2]
