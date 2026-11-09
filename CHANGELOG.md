@@ -20,6 +20,18 @@
 - Each guide ends on a level check one level below where the next one starts, so falling
   behind the route's pace means a "Grind to level N" step instead of skipping ahead into the
   next guide. When you're on pace it's done instantly.
+- Dungeons are bonus XP. The routes used to count every scheduled run toward your level (half
+  a level of kills per run, about 12 levels from 12 to 60, plus their quest rewards), so a
+  player who ran almost all of them still fell about two levels behind the route by the mid
+  30s. The route's levels now come from solo questing alone: quests sit at your level when you
+  skip a run, and running dungeons puts you ahead. Where solo questing runs dry (mostly 40 to
+  60) the route says to grind; those steps tick off on their own when dungeons got you there.
+  Both factions' routes were rebuilt and take in more open-world zones (Horde adds Thousand
+  Needles, Stonetalon, Badlands and Stranglethorn earlier). The route now also finishes more
+  dungeon quests: 8 more for Horde, 3 more for Alliance.
+- Pace carries over between guides. Each guide's pace used to start at the route's level for
+  that guide, so anything you didn't do in the guide before counted against you again at
+  every guide change. The next guide now starts from where you finished the last one.
 
 ## 1.5.0
 

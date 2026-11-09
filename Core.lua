@@ -81,6 +81,7 @@ local defaults = {
         activeGuide = nil,
         progress = {},  -- [guideName] = { index = n, done = { [stepIndex] = true } }
         knownFP = {},   -- [normalized taxi node name] = true (learned from taxi map)
+        paceStart = {}, -- [guideName] = expected level carried in from the guide before (Pace:CarryInto)
     },
     global = {
         -- Quest givers / turn-in NPCs recorded while playing (shared by all characters).
@@ -382,6 +383,7 @@ function FG:Advance(forceWaypoint)
     end
     if not steps[i] and self.viewFinished ~= gname and g.header.next and self.guides[g.header.next] then
         self:Print("Guide complete - loading " .. g.header.next)
+        ns.Pace:CarryInto(g.header.next)
         return self:LoadGuide(g.header.next)
     end
 

@@ -35,6 +35,15 @@ Every step in the generated guides carries `xl=` (the simulated level when you r
 which the addon compares with the player's real level for the pace display. Quests without an
 XP value in the data (mostly new Forever quests) get the median XP of quests within two levels.
 
+## Dungeons are bonus XP
+
+The simulated level (and so every `xl=`) comes from solo questing only: dungeon quest rewards
+and the runs themselves don't raise it (`DUNGEON_XP_COUNTS = False` in `gen_route.py`). Players
+who skip a run aren't left behind the quests that follow, and players who run them get ahead.
+Where solo questing runs out, the route grinds (`[L n]` steps, which complete on their own once
+you're that level). Before 2026-11-08 every run counted half a level plus its quest rewards,
+about 12 levels over 12-60, and players who ran nearly all of them still fell two levels behind.
+
 ## Time model
 
 The simulator keeps a clock (`seconds_per_kill`, travel from map distance, flights, boats,
@@ -44,7 +53,8 @@ dungeon runs, respawn waits; constants near the top of `gen_route.py`). It's use
   route spends the time on better quests;
 - set the hearthstone at the inn of the hub being worked from and hearth back when that beats
   travelling (respecting the cooldown);
-- estimate /played per level (printed when generating: currently about 95-100 hours for 1-60).
+- estimate /played per level (printed when generating: currently about 140 hours for Horde
+  12-60, since dungeons don't count; see below).
 
 `calibrate.py` also lists the slowest steps from real players' timestamps, the way to find
 crowded or badly placed steps that the data alone can't predict.

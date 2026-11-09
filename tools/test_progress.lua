@@ -100,7 +100,7 @@ _G.wipe = function(t) for k in pairs(t) do t[k] = nil end return t end
 ns.PlayerLevel = function() return level end
 ns.Frame = { Update = function() end }
 ns.Navigation.SetFromStep = function() end
-ns.Pace = { RecordSteps = function() end }
+ns.Pace = { RecordSteps = function() end, CarryInto = function() end }
 FG.db.global = { notOffered = {}, learnedQuests = {}, learnedTurnins = {} }
 FG.db.char = { activeGuide = "Test" }
 FG.guideOrder = {}

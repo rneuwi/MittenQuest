@@ -87,6 +87,29 @@ level, cur, max = 32, 54500 / 2, 54500
 wall, need = Pace:NextWall()
 check("wall: from 32.5 you're short", wall == steps[5] and need == 34, wall and ("needs " .. need) or "nil")
 
+-- Carry-over: finishing this guide with Mulgore skipped (expected 33.x, route end 34.0)
+-- starts the next guide that far below its own start, instead of at the route's 34.0.
+local nextSteps = {
+    { type = "ACCEPT", questID = 10, xl = 34.0 },
+    { type = "TURNIN", questID = 10, xl = 35.0 },
+}
+ns.FG.db.char = { activeGuide = "A" }
+ns.FG.GetGuide = function(_, name) return name == "B" and { steps = nextSteps } or nil end
+ns.FG.Print = function() end
+turned = { [2] = true }
+prog.done = { [1] = "skipped", [2] = "notinlog", [3] = "game", [4] = "game" }
+local finishedAt = Pace:Expected()
+Pace:CarryInto("B")
+check("carry: saved below the next guide's start", near(ns.FG.db.char.paceStart.B, 34.0 - (34.0 - finishedAt)),
+    tostring(ns.FG.db.char.paceStart.B))
+steps, prog = nextSteps, { index = 1, done = {} }
+ns.FG.db.char.activeGuide = "B"
+check("carry: next guide starts where you left off", near(Pace:Expected(), finishedAt), tostring(Pace:Expected()))
+ns.FG.db.char.activeGuide = "C"
+check("carry: other guides keep the route's start", near(Pace:Expected(), 34.0), tostring(Pace:Expected()))
+ns.FG.db.char.paceStart.C = 36.0
+check("carry: never above the route's start", near(Pace:Expected(), 34.0), tostring(Pace:Expected()))
+
 if failures > 0 then
     print(("%d failure(s)"):format(failures))
     os.exit(1)

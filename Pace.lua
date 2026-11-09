@@ -155,12 +155,50 @@ function Pace:Credited(step, why)
     return true
 end
 
+-- Where the pace of a guide starts. The route sets each guide's start (its first xl)
+-- assuming you did every step before it, so what you didn't do in the guide before (a run
+-- you passed on, quests not offered, other-class steps) would count against you all over
+-- again at every guide change. When a finished guide chains on, CarryInto saves how far
+-- short of its end you were, and the next guide starts that far below its own start.
+function Pace:StartLevel(base)
+    local char = FG.db and FG.db.char
+    local name = char and char.activeGuide
+    local carried = name and char.paceStart and char.paceStart[name]
+    if type(carried) == "number" and carried < base then return carried end
+    return base
+end
+
+-- Called with the finished guide still active, right before its #next guide loads.
+function Pace:CarryInto(nextName)
+    local char = FG.db and FG.db.char
+    if not char or not nextName then return end
+    local steps = FG:GetActiveSteps()
+    local expected = self:Expected()
+    local nextGuide = FG.GetGuide and FG:GetGuide(nextName)
+    if not steps or not expected or not nextGuide then
+        FG:Print(("Pace: no level carried into %s (no route levels in the finished guide)."):format(nextName))
+        return
+    end
+    local lastXL
+    for i = #steps, 1, -1 do
+        if steps[i].xl then lastXL = steps[i].xl break end
+    end
+    local _, nextBase = self:Deltas(nextGuide.steps)
+    if not lastXL or not nextBase then
+        FG:Print(("Pace: no level carried into %s (missing xl= in one of the guides)."):format(nextName))
+        return
+    end
+    char.paceStart = char.paceStart or {}
+    char.paceStart[nextName] = nextBase - math.max(0, lastXL - expected)
+end
+
 -- Expected level for what you've done in the active guide (nil without xl= data).
 function Pace:Expected()
     local steps, p = FG:GetActiveSteps()
     if not steps or not p then return nil end
     local deltas, base = self:Deltas(steps)
     if not base then return nil end
+    base = self:StartLevel(base)
     local xp = 0
     for i, d in pairs(deltas) do
         if d > 0 and self:Credited(steps[i], p.done[i]) then xp = xp + d end

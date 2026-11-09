@@ -3,7 +3,7 @@
 MittenQuest:RegisterGuide([==[Horde 12-16 The Barrens, Undercity, Silverpine Forest]==], [==[
 #levels 12-16
 #faction Horde
-#next Horde 16-20 Thunder Bluff, Undercity, The Barrens
+#next Horde 16-20 Thunder Bluff, The Barrens, Undercity
 
 [S Crossroads | at=51.99,29.89,1413; xl=12.0]
 Talk to Innkeeper Boorand Plainswind and make this inn your home.
@@ -121,10 +121,10 @@ Grimson the Pale has only one spawn point. If others are waiting for it, group u
 [T 438 The Decrepit Ferry | at=58.4,34.9,1421; place=Silverpine Forest; danger=15; xl=14.7]
 [A 439 Rot Hide Clues | at=58.4,34.9,1421; pre=438; place=Silverpine Forest; danger=15; xl=14.9]
 [T 439 Rot Hide Clues | at=43.4,40.9,1421; place=The Sepulcher; xl=14.9]
+[A 440 The Engraved Ring | at=43.4,40.9,1421; pre=439; place=The Sepulcher; xl=14.9]
 [C 450 A Recipe For Death | at=43.0,73.2,1421; opt; xl=14.9]
 [T 450 A Recipe For Death | at=42.8,40.9,1421; place=The Sepulcher; opt; xl=14.9]
 [A 451 A Recipe For Death | at=42.8,40.9,1421; pre=450; opt; place=The Sepulcher; danger=16; xl=15.1]
-[A 443 Rot Hide Ichor | at=43.4,40.9,1421; pre=439; place=The Sepulcher; danger=16; xl=15.1]
 [A 99 Arugal's Folly | at=44.2,39.8,1421; pre=424; opt; place=The Sepulcher; xl=15.1]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 479 Ambermill Investigations | at=60.2,65.2,1421; mob=Dalaran Mage; item=3354:8; drop=39; opt; xl=15.1]
@@ -138,6 +138,7 @@ Moonrage Armorer has only one spawn point. If others are waiting for it, group u
 [T 479 Ambermill Investigations | at=44.0,40.9,1421; place=The Sepulcher; opt; xl=15.2]
 [T 99 Arugal's Folly | at=44.2,39.8,1421; place=The Sepulcher; opt; xl=15.4]
 [T 98298 Arugal's Folly | at=44.2,39.8,1421; place=The Sepulcher; xl=15.4]
+[A 443 Rot Hide Ichor | at=43.4,40.9,1421; pre=439; place=The Sepulcher; danger=16; xl=15.6]
 [R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=15.6]
 Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -157,69 +158,71 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 867 Harpy Raiders | at=51.6,30.9,1413; place=Crossroads; danger=16; xl=15.6]
 [A 903 Prowlers of the Barrens | at=52.2,31.0,1413; pre=845; place=Crossroads; xl=15.6]
 [A 877 The Stagnant Oasis | at=52.3,31.9,1413; pre=870; place=Crossroads; xl=15.6]
-[A 6365 Meats to Orgrimmar | at=52.6,29.8,1413; place=Crossroads; danger=16; race=Orc,Troll; xl=15.6]
-[T 6365 Meats to Orgrimmar | at=51.5,30.3,1413; place=Crossroads; danger=16; race=Orc,Troll; xl=15.6]
-[A 6384 Ride to Orgrimmar | at=51.5,30.3,1413; pre=6365; place=Crossroads; danger=16; race=Orc,Troll; xl=15.6]
 [D Ragefire Chasm | quests=5722,5723,5725,5728,5761; lvl=15; at=52.6,49,1454; xl=15.6]
 Find a group for Ragefire Chasm. Quests you skip there are dropped automatically.
-[T 5722 Searching for the Lost Satchel | at=52.6,49,1454; place=Orgrimmar; xl=16.1]
+[T 5722 Searching for the Lost Satchel | at=52.6,49,1454; place=Orgrimmar; xl=15.6]
 Inside Ragefire Chasm: turned in to Maur Grimtotem.
-[A 5724 Returning the Lost Satchel | at=52.6,49,1454; pre=5722; place=Orgrimmar; xl=16.2]
+[A 5724 Returning the Lost Satchel | at=52.6,49,1454; pre=5722; place=Orgrimmar; xl=15.6]
 Inside Ragefire Chasm: picked up from Maur Grimtotem.
-[T 5761 Slaying the Beast | at=49.5,50.6,1454; place=Orgrimmar; xl=16.2]
-[T 96877 Halikor's Hoof | at=63.3,44.8,1454; place=Orgrimmar; opt; xl=16.4]
-[A 1061 The Spirits of Stonetalon | at=38.9,38.4,1454; opt; place=Orgrimmar; xl=16.4]
-[T 5728 Hidden Enemies | at=31.7,37.8,1454; place=Orgrimmar; opt; xl=16.4]
-[A 5729 Hidden Enemies | at=31.7,37.8,1454; pre=5728; opt; place=Orgrimmar; xl=16.5]
-[T 5729 Hidden Enemies | at=49.5,50.6,1454; place=Orgrimmar; opt; xl=16.5]
-[A 5730 Hidden Enemies | at=49.5,50.6,1454; pre=5729; opt; place=Orgrimmar; xl=16.6]
-[T 6384 Ride to Orgrimmar | at=54.1,68.4,1454; place=Orgrimmar; race=Orc,Troll; xl=16.6]
-[A 6385 Doras the Wind Rider Master | at=54.1,68.4,1454; pre=6384; place=Orgrimmar; race=Orc,Troll; xl=16.6]
-[T 6385 Doras the Wind Rider Master | at=45.1,63.9,1454; place=Orgrimmar; race=Orc,Troll; xl=16.6]
-[A 6386 Return to the Crossroads. | at=45.1,63.9,1454; pre=6385; place=Orgrimmar; race=Orc,Troll; xl=16.6]
-[T 5730 Hidden Enemies | at=31.7,37.8,1454; place=Orgrimmar; opt; xl=16.6]
-[R Hunter - Orgrimmar | at=66.05,18.53,1454; class=HUNTER; xl=16.8]
-Time to train: head to Ormak Grimshot in Orgrimmar for your new Hunter spells. The arrow takes you back to the route afterwards.
+[T 5761 Slaying the Beast | at=49.5,50.6,1454; place=Orgrimmar; xl=15.6]
+[T 96877 Halikor's Hoof | at=63.3,44.8,1454; place=Orgrimmar; opt; xl=15.6]
+[A 1061 The Spirits of Stonetalon | at=38.9,38.4,1454; opt; place=Orgrimmar; danger=16; xl=15.6]
+[T 5728 Hidden Enemies | at=31.7,37.8,1454; place=Orgrimmar; opt; xl=15.6]
+[A 5729 Hidden Enemies | at=31.7,37.8,1454; pre=5728; opt; place=Orgrimmar; xl=15.6]
+[T 5729 Hidden Enemies | at=49.5,50.6,1454; place=Orgrimmar; opt; xl=15.6]
+[A 5730 Hidden Enemies | at=49.5,50.6,1454; pre=5729; opt; place=Orgrimmar; xl=15.6]
+[T 5730 Hidden Enemies | at=31.7,37.8,1454; place=Orgrimmar; opt; xl=15.6]
+[T 840 Conscript of the Horde | at=62.3,19.4,1413; place=The Barrens; xl=15.8]
+[A 842 Crossroads Conscription | at=62.3,19.4,1413; pre=840; place=The Barrens; xl=15.9]
+[C 872 The Disruption Ends | at=58.0,24.7,1413; mob=Razormane Geomancer / Razormane Defender; ml=15; xl=15.9]
+Kreenig Snarlsnout has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[C 5041 Supplies for the Crossroads | at=58.5,25.9,1413; xl=15.9]
+[T 842 Crossroads Conscription | at=52.2,31.0,1413; place=Crossroads; xl=15.9]
+[T 872 The Disruption Ends | at=51.5,30.9,1413; place=Crossroads; xl=16.0]
+[T 5041 Supplies for the Crossroads | at=51.5,30.9,1413; place=Crossroads; xl=16.2]
+[A 95774 Her Name Is Olgra | at=52.0,31.6,1413; place=Crossroads; xl=16.3]
+[R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=16.3]
+Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=16.8]
+[R Rogue - Orgrimmar | at=42.69,51.48,1454; class=ROGUE; xl=16.3]
 Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 2379 Zando'zan | at=43.0,53.7,1454; place=Orgrimmar; class=ROGUE; xl=16.8]
-[T 2379 Zando'zan | at=42.7,53.0,1454; place=Orgrimmar; class=ROGUE; xl=16.8]
-[A 2380 To Orgrimmar! | at=52.0,43.7,1411; ex=2378; place=Durotar; class=ROGUE; xl=16.8]
-[T 2380 To Orgrimmar! | at=43.0,53.7,1454; place=Orgrimmar; class=ROGUE; xl=16.8]
-[A 2382 Wrenix of Ratchet | at=42.7,53.0,1454; pre=2379; place=Orgrimmar; class=ROGUE; xl=16.8]
-[T 2382 Wrenix of Ratchet | at=63.1,36.3,1413; place=Ratchet; class=ROGUE; xl=16.8]
-[A 2381 Plundering the Plunderers | at=63.1,36.3,1413; pre=2382; place=Ratchet; class=ROGUE; xl=16.8]
-[C 2381 Plundering the Plunderers | at=64.8,45.5,1413; mob=Polly; class=ROGUE; xl=16.8]
+[A 2379 Zando'zan | at=43.0,53.7,1454; place=Orgrimmar; class=ROGUE; xl=16.3]
+[T 2379 Zando'zan | at=42.7,53.0,1454; place=Orgrimmar; class=ROGUE; xl=16.3]
+[A 2380 To Orgrimmar! | at=52.0,43.7,1411; ex=2378; place=Durotar; class=ROGUE; xl=16.3]
+[T 2380 To Orgrimmar! | at=43.0,53.7,1454; place=Orgrimmar; class=ROGUE; xl=16.3]
+[A 2382 Wrenix of Ratchet | at=42.7,53.0,1454; pre=2379; place=Orgrimmar; class=ROGUE; xl=16.3]
+[T 2382 Wrenix of Ratchet | at=63.1,36.3,1413; place=Ratchet; class=ROGUE; xl=16.3]
+[A 2381 Plundering the Plunderers | at=63.1,36.3,1413; pre=2382; place=Ratchet; class=ROGUE; xl=16.3]
+[C 2381 Plundering the Plunderers | at=64.8,45.5,1413; mob=Polly; class=ROGUE; xl=16.3]
 Polly has only one spawn point. If others are waiting for it, group up to share it.
-[T 2381 Plundering the Plunderers | at=63.1,36.3,1413; place=Ratchet; class=ROGUE; xl=16.8]
-[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=16.8]
+[T 2381 Plundering the Plunderers | at=63.1,36.3,1413; place=Ratchet; class=ROGUE; xl=16.3]
+[R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=16.3]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warrior - Orgrimmar | at=79.79,31.42,1454; class=WARRIOR; xl=16.8]
-Time to train: head to Grezz Ragefist in Orgrimmar for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=16.3]
+Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=16.8]
+[R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=16.3]
 Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
-[A 27 A Lesson to Learn | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=16.8]
-[T 27 A Lesson to Learn | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=Tauren; xl=16.8]
-[A 28 Trial of the Lake | at=56.2,30.6,1450; pre=27; place=Moonglade; class=DRUID; race=Tauren; xl=16.8]
-[C 28 Trial of the Lake | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.8]
+[A 27 A Lesson to Learn | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=16.3]
+[T 27 A Lesson to Learn | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=Tauren; xl=16.3]
+[A 28 Trial of the Lake | at=56.2,30.6,1450; pre=27; place=Moonglade; class=DRUID; race=Tauren; xl=16.3]
+[C 28 Trial of the Lake | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.3]
 Shrine Of Remulos has only one spawn point. If others are waiting for it, group up to share it.
-[T 28 Trial of the Lake | at=36.5,40.1,1450; place=Moonglade; class=DRUID; race=Tauren; xl=16.8]
-[A 30 Trial of the Sea Lion | at=36.5,40.1,1450; pre=28; place=Moonglade; class=DRUID; race=Tauren; xl=16.8]
-[C 30 Trial of the Sea Lion | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.8]
-[T 30 Trial of the Sea Lion | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=Tauren; xl=16.8]
-[A 31 Aquatic Form | at=56.2,30.6,1450; pre=30; place=Moonglade; class=DRUID; race=Tauren; xl=16.8]
-[T 31 Aquatic Form | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=16.8]
-[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=16.8]
+[T 28 Trial of the Lake | at=36.5,40.1,1450; place=Moonglade; class=DRUID; race=Tauren; xl=16.3]
+[A 30 Trial of the Sea Lion | at=36.5,40.1,1450; pre=28; place=Moonglade; class=DRUID; race=Tauren; xl=16.3]
+[C 30 Trial of the Sea Lion | at=36,41.4,1450; class=DRUID; race=Tauren; xl=16.3]
+[T 30 Trial of the Sea Lion | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=Tauren; xl=16.3]
+[A 31 Aquatic Form | at=56.2,30.6,1450; pre=30; place=Moonglade; class=DRUID; race=Tauren; xl=16.3]
+[T 31 Aquatic Form | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=16.3]
+[R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=16.3]
 Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=16.8]
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=16.3]
 Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[F Thunder Bluff | xl=16.8]
-[L 15 | xl=16.8]
+[F Thunder Bluff | xl=16.3]
+[L 15 | xl=16.3]
 The next guide starts around level 16. Below 15? Grind here or finish leftover quests first.
 ]==])

@@ -251,6 +251,12 @@ FEEDER_ERRAND_AGE = 3          # carried this many levels: go do a dungeon chain
 HANDIN_SLOT = 0.4              # handing in a finished dungeon quest frees a log slot worth this share
 HANDIN_STALE = 5               # of a level, when the log is nearly full or it's been carried this long
 ERRAND_MIN = 0.15              # leave a zone to collect dungeon quests worth this share of a level
+# Dungeons are bonus XP: their quests and the run itself don't raise the simulated level, so
+# the route's levels (and xl=) come from solo questing alone. Players who skip a run, or whose
+# group wipes or splits early, aren't left levels behind the quests that follow; players who
+# run them get ahead. Set True to restore the old model that assumed every run was done.
+DUNGEON_XP_COUNTS = False
+DUNGEON_RUN_XP = 0.5           # share of a level one run gives (only with DUNGEON_XP_COUNTS)
 
 
 def idx(v, i):
@@ -1499,6 +1505,9 @@ class Sim:
                   f"{self.danger_key(q.finish)}{self.race_key(q)}]")
         del self.active[q.id]
         self.done.add(q.id)
+        if q.dungeon and not DUNGEON_XP_COUNTS:
+            self.pos = q.finish
+            return
         gap = self.L - q.level
         mult = 1 if gap < 6 else 0.2 if gap >= 10 else 1 - (gap - 5) * 0.2
         self.add_xp(q.xp * kill_xp_factor(self.L) * mult * (0.5 if q.group else 1))
@@ -1527,9 +1536,12 @@ class Sim:
         if n < LOG_LIMIT:
             for q in self.map_quests.get(mapID, ()):
                 # The last slots are for quick quests, and for quests of a dungeon already in
-                # the log (they ride along on the same run).
-                if self.eligible(q) and self.worthwhile(q) and (n < LOG_LIMIT - 4 or self.quick(q, mapID)
-                                                                or q.dungeon in self.carried_dungeon):
+                # the log (they ride along on the same run), or near your level (the route
+                # rarely passes their giver twice: Shadowshard Fragments in Theramore for
+                # Maraudon). The very last slot stays free for those.
+                if self.eligible(q) and self.worthwhile(q) and (
+                        n < LOG_LIMIT - 4 or self.quick(q, mapID) or q.dungeon in self.carried_dungeon
+                        or (q.dungeon and n < LOG_LIMIT - 1 and self.L >= q.level - 2)):
                     yield 'A', q, q.start
 
     def next_action(self, mapID):
@@ -1706,7 +1718,8 @@ class Sim:
                     self.active[q]['complete'] = True
                 del self.carried_dungeon[dname]
                 self.t += DUNGEON_SECONDS
-                self.add_xp(XP_TO_LEVEL[min(self.L, 59) - 1] * 0.5)  # XP from the run itself
+                if DUNGEON_XP_COUNTS:
+                    self.add_xp(XP_TO_LEVEL[min(self.L, 59) - 1] * DUNGEON_RUN_XP)  # the run itself
                 self.inside_run(dname)
                 if ent:
                     self.handin_at(ent[0])
@@ -1768,8 +1781,8 @@ class Sim:
             if m == self.pos[0] or continent(self.map_area[m]) != here \
                     or (dname, m, self.L) in self.fetched:
                 continue
-            xp = sum(q.xp for q in qs if q.dungeon == dname and self.L >= q.level - 2
-                     and self.eligible(q) and self.worthwhile(q))
+            xp = sum(q.xp for q in qs if (q.dungeon == dname or feeds_dungeon(q, dname))
+                     and self.L >= q.level - 2 and self.eligible(q) and self.worthwhile(q))
             if xp > best_xp:
                 best, best_xp = m, xp
         if best is not None:
@@ -2141,6 +2154,8 @@ def audit_dungeons(starter_steps, shared_steps, sim=None):
             continue
         if any(e in turned for e in q.exclusive):
             continue    # took the other quest of an either/or pair
+        if q.breadcrumbFor and q.breadcrumbFor in turned:
+            continue    # a breadcrumb to a quest the route picked up directly (Yuka Screwspigot)
         why = []
         missing_pre = [p for p in q.preAll if p not in turned]
         if q.preAny and not any(p in turned for p in q.preAny):
