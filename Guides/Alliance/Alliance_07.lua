@@ -4,23 +4,23 @@ MittenQuest:RegisterGuide([==[Alliance 43-47 Desolace, Feralas, Stranglethorn Va
 #levels 43-47
 #faction Alliance
 #knownfp Astranaar, Auberdine, Booty Bay, Darkshire, Gadgetzan, Ironforge, Lakeshire, Menethil Harbor, Nijel's Point, Refuge Pointe, Sentinel Hill, Stonetalon Peak, Stormwind, Thelsamar, Theramore
-#next Alliance 47-51 Searing Gorge, Tanaris, Dustwallow Marsh
+#next Alliance 47-51 Searing Gorge, Dustwallow Marsh, Blasted Lands
 
-[A 7067 The Pariah's Instructions | at=50.4,86.7,1443; place=Desolace; xl=43.1]
-[G 30.4,46.2 1444 Travel to Feralas | xl=43.1]
-[A 4124 The Missing Courier | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=43.1]
-[A 2866 The Ruins of Solarsal | at=30.3,46.2,1444; place=Feathermoon Stronghold; xl=43.1]
-[A 2982 The High Wilderness | at=31.8,45.6,1444; place=Feathermoon Stronghold; xl=43.1]
-[T 4124 The Missing Courier | at=31.9,45.1,1444; place=Feathermoon Stronghold; xl=43.1]
-[P Feathermoon Stronghold | at=30.24,43.25,1444; xl=43.1]
-[T 2866 The Ruins of Solarsal | at=26.3,52.3,1444; place=Feralas; xl=43.1]
+[A 7067 The Pariah's Instructions | at=50.4,86.7,1443; place=Desolace; xl=43.2]
+[G 30.4,46.2 1444 Travel to Feralas | xl=43.2]
+[A 4124 The Missing Courier | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=43.2]
+[A 2866 The Ruins of Solarsal | at=30.3,46.2,1444; place=Feathermoon Stronghold; xl=43.2]
+[A 2982 The High Wilderness | at=31.8,45.6,1444; place=Feathermoon Stronghold; xl=43.2]
+[T 4124 The Missing Courier | at=31.9,45.1,1444; place=Feathermoon Stronghold; xl=43.2]
+[P Feathermoon Stronghold | at=30.24,43.25,1444; xl=43.2]
+[T 2866 The Ruins of Solarsal | at=26.3,52.3,1444; place=Feralas; xl=43.2]
 [A 2867 Return to Feathermoon Stronghold | at=26.3,52.3,1444; pre=2866; place=Feralas; xl=43.2]
 [T 2867 Return to Feathermoon Stronghold | at=30.3,46.2,1444; place=Feathermoon Stronghold; xl=43.2]
-[A 3130 Against the Hatecrest | at=30.3,46.2,1444; pre=2867; place=Feathermoon Stronghold; xl=43.2]
-[T 3130 Against the Hatecrest | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=43.2]
-[A 2869 Against the Hatecrest | at=30.4,46.2,1444; pre=3130; place=Feathermoon Stronghold; xl=43.2]
-[C 2869 Against the Hatecrest | at=28.5,53.0,1444; mob=Hatecrest Screamer; ml=42; item=9247:10; drop=38; xl=43.2]
-[T 2869 Against the Hatecrest | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=43.2]
+[A 3130 Against the Hatecrest | at=30.3,46.2,1444; pre=2867; place=Feathermoon Stronghold; xl=43.3]
+[T 3130 Against the Hatecrest | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=43.3]
+[A 2869 Against the Hatecrest | at=30.4,46.2,1444; pre=3130; place=Feathermoon Stronghold; xl=43.3]
+[C 2869 Against the Hatecrest | at=28.5,53.0,1444; mob=Hatecrest Screamer; ml=42; item=9247:10; drop=38; xl=43.3]
+[T 2869 Against the Hatecrest | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=43.3]
 [C 2982 The High Wilderness | at=60.8,56.8,1444; mob=Gordunni Warlock / Gordunni Shaman; ml=45; xl=43.3]
 [A 2766 Find OOX-22/FE! | at=73.1,56.9,1444; place=Feralas; danger=44; xl=43.3]
 Starts from OOX-22/FE Distress Beacon, which drops in this area.
@@ -37,42 +37,41 @@ Lord Shalzaru has only one spawn point. If others are waiting for it, group up t
 [T 2870 Against Lord Shalzaru | at=30.4,46.2,1444; place=Feathermoon Stronghold; xl=44.0]
 [A 2871 Delivering the Relic | at=30.4,46.2,1444; pre=2870; place=Feathermoon Stronghold; xl=44.1]
 [T 2871 Delivering the Relic | at=30.1,45.1,1444; place=Feathermoon Stronghold; xl=44.1]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=44.1]
+Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
 [R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=44.1]
 Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=44.1]
+Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
 [F Booty Bay | xl=44.1]
+[A 608 The Bloodsail Buccaneers | at=27.2,77.0,1434; pre=604; place=Booty Bay; xl=44.1]
 [A 348 Stranglethorn Fever | at=27.6,76.7,1434; place=Booty Bay; xl=44.1]
 [T 2767 Rescue OOX-22/FE! | at=28.4,76.3,1434; place=Booty Bay; xl=44.1]
 [R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=44.2]
 Ian Strom is right here: pick up your new Rogue spells.
-[C 604 The Bloodsail Buccaneers | at=28.2,82.4,1434; mob=Bloodsail Swashbuckler; ml=43; xl=44.2]
-[T 604 The Bloodsail Buccaneers | at=27.2,77.0,1434; place=Booty Bay; xl=44.2]
-[A 608 The Bloodsail Buccaneers | at=27.2,77.0,1434; pre=604; place=Booty Bay; xl=44.3]
-[C 608 The Bloodsail Buccaneers | at=30.6,90.6,1434; mob=Captain Stillwater / Captain Keelhaul; ml=48; xl=44.3]
+[C 608 The Bloodsail Buccaneers | at=30.6,90.6,1434; mob=Captain Stillwater / Captain Keelhaul; ml=48; xl=44.2]
 Fleet Master Firallon has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 608 The Bloodsail Buccaneers | at=27.2,77.0,1434; place=Booty Bay; xl=44.3]
-[C 617 Akiris by the Bundle | at=26.2,62.4,1434; mob=Naga Explorer; ml=44; item=4029:10; drop=39; xl=44.4]
-[C 348 Stranglethorn Fever | at=35.0,60.9,1434; mob=Mokk the Savage; ml=44; xl=44.4]
+[T 608 The Bloodsail Buccaneers | at=27.2,77.0,1434; place=Booty Bay; xl=44.2]
+[C 348 Stranglethorn Fever | at=35.0,60.9,1434; mob=Mokk the Savage; ml=44; xl=44.3]
 Mokk the Savage has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[C 621 Zanzil's Secret | at=38.7,56.6,1434; mob=Zanzil Witch Doctor; ml=44; xl=44.4]
-[T 348 Stranglethorn Fever | at=27.6,76.7,1434; place=Booty Bay; xl=44.4]
-[T 621 Zanzil's Secret | at=27.1,77.2,1434; place=Booty Bay; xl=44.5]
-[T 617 Akiris by the Bundle | at=26.8,76.4,1434; place=Booty Bay; xl=44.6]
-[F Ironforge | xl=44.7]
-[A 2769 The Brassbolts Brothers | at=67.9,46.1,1455; opt; place=Ironforge; xl=44.7]
-[F Gadgetzan | xl=44.7]
-[A 992 Gadgetzan Water Survey | at=50.2,27.5,1446; place=Gadgetzan; xl=44.7]
-[A 2781 WANTED: Caliph Scorpidsting | at=66.8,22.3,1446; place=Tanaris; xl=44.7]
-[C 8365 Pirate Hats Ahoy! | at=72.0,45.8,1446; mob=Southsea Pirate; ml=45; item=20519:20; drop=35; xl=44.7]
-[C 2873 Stoley's Shipment | at=72.2,46.8,1446; xl=44.7]
-[C 2875 WANTED: Andre Firebeard | at=73.4,47.1,1446; mob=Andre Firebeard; ml=45; xl=44.7]
+[C 621 Zanzil's Secret | at=38.7,56.6,1434; mob=Zanzil Witch Doctor; ml=44; xl=44.3]
+[T 348 Stranglethorn Fever | at=27.6,76.7,1434; place=Booty Bay; xl=44.3]
+[T 621 Zanzil's Secret | at=27.1,77.2,1434; place=Booty Bay; xl=44.4]
+[F Ironforge | xl=44.5]
+[A 2769 The Brassbolts Brothers | at=67.9,46.1,1455; opt; place=Ironforge; xl=44.5]
+[F Gadgetzan | xl=44.5]
+[A 992 Gadgetzan Water Survey | at=50.2,27.5,1446; place=Gadgetzan; xl=44.5]
+[C 8365 Pirate Hats Ahoy! | at=72.0,45.8,1446; mob=Southsea Pirate; ml=45; item=20519:20; drop=35; xl=44.5]
+[C 2873 Stoley's Shipment | at=72.2,46.8,1446; xl=44.5]
+[C 2875 WANTED: Andre Firebeard | at=73.4,47.1,1446; mob=Andre Firebeard; ml=45; xl=44.5]
 Andre Firebeard has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[C 8366 Southsea Shakedown | at=74.0,46.6,1446; mob=Southsea Pirate / Southsea Freebooter; ml=45; xl=44.7]
-[T 2873 Stoley's Shipment | at=67.1,24.0,1446; place=Tanaris; xl=44.7]
-[A 2874 Deliver to MacKinley | at=67.1,24.0,1446; pre=2873; place=Tanaris; xl=44.7]
-[T 2875 WANTED: Andre Firebeard | at=67.1,23.9,1446; place=Tanaris; xl=44.7]
-[T 8366 Southsea Shakedown | at=67.1,23.9,1446; place=Tanaris; xl=44.8]
-[T 8365 Pirate Hats Ahoy! | at=66.6,22.3,1446; place=Tanaris; xl=44.9]
-[L 45 | xl=45.0]
+[C 8366 Southsea Shakedown | at=74.0,46.6,1446; mob=Southsea Pirate / Southsea Freebooter; ml=45; xl=44.5]
+[T 2873 Stoley's Shipment | at=67.1,24.0,1446; place=Tanaris; xl=44.5]
+[T 2875 WANTED: Andre Firebeard | at=67.1,23.9,1446; place=Tanaris; xl=44.6]
+[T 8366 Southsea Shakedown | at=67.1,23.9,1446; place=Tanaris; xl=44.7]
+[A 2781 WANTED: Caliph Scorpidsting | at=66.8,22.3,1446; place=Tanaris; xl=44.7]
+[T 8365 Pirate Hats Ahoy! | at=66.6,22.3,1446; place=Tanaris; xl=44.7]
+[L 45 | xl=44.8]
 Grind mobs around your level here; more quests open at the next level.
 [C 2781 WANTED: Caliph Scorpidsting | at=61.8,38.2,1446; mob=Caliph Scorpidsting; ml=46; xl=45.0]
 Caliph Scorpidsting has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
@@ -83,26 +82,26 @@ Caliph Scorpidsting has only one spawn point. If others are waiting for it, grou
 Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
 [R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=45.2]
 Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=45.2]
+Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [G 78.1,77.1 1441 Travel to Thousand Needles | xl=45.2]
+[T 1137 News for Fizzle | at=78.1,77.1,1441; place=Thousand Needles; xl=45.2]
 [T 2769 The Brassbolts Brothers | at=78.1,77.1,1441; place=Thousand Needles; xl=45.2]
 [A 2770 Gahz'rilla | at=78.1,77.1,1441; place=Thousand Needles; xl=45.2]
+[A 1190 Keeping Pace | at=80.2,75.9,1441; pre=1137; place=Thousand Needles; xl=45.2]
+[T 1190 Keeping Pace | at=77.2,77.4,1441; place=Thousand Needles; xl=45.2]
+[A 1194 Rizzle's Schematics | at=77.2,77.4,1441; pre=1190; place=Thousand Needles; xl=45.2]
+[T 1194 Rizzle's Schematics | at=80.2,75.9,1441; place=Thousand Needles; xl=45.2]
 [L 46 | xl=45.2]
 Grind mobs around your level here; more quests open at the next level.
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=46.0]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
-[R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=46.0]
-Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
-[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=46.0]
-Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
-[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=46.0]
-Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
-[G 29.5,60.5 1446 Travel to Tanaris | xl=46.0]
-[A 3161 Gahz'ridian | at=52.7,45.9,1446; place=Tanaris; xl=46.0]
+[G 67.0,22.4 1446 Travel to Tanaris | xl=46.0]
+[A 3520 Screecher Spirits | at=67.0,22.4,1446; place=Tanaris; danger=47; xl=46.0]
 [A 351 Find OOX-17/TN! | at=74.0,46.6,1446; place=Tanaris; danger=47; xl=46.0]
 Starts from OOX-17/TN Distress Beacon, which drops in this area.
 [T 351 Find OOX-17/TN! | at=60.2,64.7,1446; place=Tanaris; danger=47; xl=46.0]
-[A 648 Rescue OOX-17/TN! | at=60.2,64.7,1446; pre=351; place=Tanaris; danger=47; xl=46.1]
-[A 3520 Screecher Spirits | at=67.0,22.4,1446; place=Tanaris; danger=47; xl=46.1]
+[A 3161 Gahz'ridian | at=52.7,45.9,1446; place=Tanaris; xl=46.1]
 [F Nijel's Point | xl=46.1]
 [A 7065 Corruption of Earth and Seed | at=63.8,10.7,1443; place=Nijel's Point; xl=46.1]
 [A 7044 Legends of Maraudon | at=31.9,63.8,1443; place=Desolace; xl=46.1]
@@ -114,6 +113,7 @@ Starts from OOX-17/TN Distress Beacon, which drops in this area.
 [C 2970 Doling Justice | at=68.7,39.2,1444; mob=Grimtotem Naturalist / Grimtotem Raider; ml=44; xl=46.1]
 [T 2970 Doling Justice | at=66.0,45.6,1444; place=Feralas; xl=46.1]
 [A 2972 Doling Justice | at=66.0,45.6,1444; pre=2970; place=Feralas; xl=46.2]
+[A 7721 Fuel for the Zapping | at=44.8,43.4,1444; place=Feralas; danger=47; xl=46.2]
 [C 3520 Screecher Spirits | at=46,37.7,1444; mob=Screecher Spirit; danger=47; xl=46.2]
 [A 4125 The Missing Courier | at=31.9,45.1,1444; pre=4124; place=Feathermoon Stronghold; danger=47; xl=46.2]
 [A 2821 The Mark of Quality | at=30.6,42.7,1444; place=Feathermoon Stronghold; xl=46.2]
@@ -141,6 +141,8 @@ Starts from Undelivered Parcel, which drops in this area.
 [A 4267 Rise of the Silithid | at=30.3,46.2,1444; pre=4266; place=Feathermoon Stronghold; xl=46.7]
 [G 14.8,44.6 1425 Travel to The Hinterlands - take the boat (Auberdine <-> Menethil Harbor, Theramore <-> Menethil Harbor) | xl=46.7]
 [A 2880 Troll Necklace Bounty | at=14.8,44.6,1425; place=Aerie Peak; danger=47; xl=46.7]
+[R Hunter - Aerie Peak | at=14.6,43,1425; class=HUNTER; xl=46.7]
+Torin Treehame is right here: pick up your new Hunter spells.
 [P Aerie Peak | at=11.07,46.15,1425; xl=46.7]
 [A 2988 Witherbark Cages | at=9.8,44.5,1425; place=Aerie Peak; xl=46.7]
 [C 2988 Witherbark Cages | at=23.1,58.8,1425; xl=46.7]
@@ -154,14 +156,14 @@ Grind mobs around your level here; more quests open at the next level.
 [A 2877 Skulk Rock Clean-up | at=14.8,44.6,1425; place=Aerie Peak; xl=47.0]
 [R Warrior - Aerie Peak | at=14.4,43,1425; class=WARRIOR; xl=47.0]
 Bordolf Axegrim is right here: pick up your new Warrior spells.
+[R Shaman - Aerie Peak | at=14.4,42.6,1425; class=SHAMAN; xl=47.0]
+Farseer Maret Firetend is right here: pick up your new Shaman spells.
 [A 2989 The Altar of Zul | at=9.8,44.5,1425; pre=2988; place=Aerie Peak; xl=47.0]
 [C 2989 The Altar of Zul | at=49.0,68.7,1425; xl=47.0]
 [C 2877 Skulk Rock Clean-up | at=57.8,42.7,1425; mob=Green Sludge / Jade Ooze; ml=48; xl=47.0]
 [T 2877 Skulk Rock Clean-up | at=14.8,44.6,1425; place=Aerie Peak; xl=47.0]
 [T 2989 The Altar of Zul | at=9.8,44.5,1425; place=Aerie Peak; xl=47.1]
 [A 2990 Thadius Grimshade | at=9.8,44.5,1425; pre=2989; place=Aerie Peak; xl=47.1]
-[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=47.1]
-Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
 [G 38.6,27.8 1427 Travel to Searing Gorge | xl=47.1]
 [L 46 | xl=47.1]
 The next guide starts around level 47. Below 46? Grind here or finish leftover quests first.
