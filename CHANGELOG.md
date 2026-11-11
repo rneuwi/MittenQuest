@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.1
 
 **Changes**
 - Quest data updated to QuestieDB e19dfdf (November 11). Riverglades has quest data now
