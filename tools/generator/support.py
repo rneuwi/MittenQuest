@@ -10,8 +10,15 @@ UnitFactionGroup = function() return "Horde" end
 modules.Expansions = { Current = 1, Era = 1, Tbc = 2, Wotlk = 3, Cata = 4, MoP = 5 }
 function strload(s) if type(s) == "string" then return assert(loadstring(s))() end return s end
 ''')
-for f in ['Zones/areaIdToUiMapId.lua','Zones/subZoneToParentZone.lua','Zones/dungeons.lua','DropTables/classicItemDrops.lua','QuestXP/xpDB-classic.lua']:
-    src = open(os.path.join(R, f), encoding='utf-8').read()
+# xpDB-traces.lua (QuestieDB, Nov 2026) adds measured XP for Forever's own quests on top of
+# the Classic table; older checkouts don't have it.
+OPTIONAL = {'QuestXP/xpDB-traces.lua'}
+for f in ['Zones/areaIdToUiMapId.lua','Zones/subZoneToParentZone.lua','Zones/dungeons.lua','DropTables/classicItemDrops.lua','QuestXP/xpDB-classic.lua','QuestXP/xpDB-traces.lua']:
+    path = os.path.join(R, f)
+    if f in OPTIONAL and not os.path.exists(path):
+        print('support.py: no', f, 'in this QuestieDB checkout, skipped')
+        continue
+    src = open(path, encoding='utf-8').read()
     L.execute(src)
 def conv(v):
     if L.eval('type')(v) == 'table':

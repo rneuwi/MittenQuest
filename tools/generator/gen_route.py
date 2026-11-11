@@ -32,6 +32,8 @@ S = json.load(open(os.path.join(SP, 'out/support.json')))
 RACE_BITS = {'HUMAN': 1, 'ORC': 2, 'DWARF': 4, 'NIGHTELF': 8, 'SCOURGE': 16, 'TAUREN': 32, 'GNOME': 64, 'TROLL': 128,
              # Forever's Skyborne: one race, a separate race ID per faction (QuestieDB 95/96).
              'SKYBORNE_A': 1 << 32, 'SKYBORNE_H': 1 << 33}
+SKYBORNE_BOTH = RACE_BITS['SKYBORNE_A'] | RACE_BITS['SKYBORNE_H']
+ZEPHRAS_ISLE = 16593           # the Skyborne starting zone (both factions)
 # Race file names as the client reports them (UnitRace second return).
 RACE_NAME = {'ORC': 'Orc', 'SCOURGE': 'Scourge', 'TAUREN': 'Tauren', 'TROLL': 'Troll',
              'HUMAN': 'Human', 'DWARF': 'Dwarf', 'NIGHTELF': 'NightElf', 'GNOME': 'Gnome',
@@ -45,6 +47,7 @@ UNCONFIRMED_RACE_NAMES = {'Skyborne'}
 HORDE = 2 | 16 | 32 | 128 | 1 << 33
 ALLIANCE = 1 | 4 | 8 | 64 | 1 << 32
 FMASK = HORDE if FACTION == 'Horde' else ALLIANCE
+HORDE_CLASSIC, ALLIANCE_CLASSIC = HORDE & ~SKYBORNE_BOTH, ALLIANCE & ~SKYBORNE_BOTH
 ENEMY_FLAG = 'A' if FACTION == 'Horde' else 'H'   # NPCs friendly only to the other faction
 OWN_FLAG = 'H' if FACTION == 'Horde' else 'A'
 
@@ -427,14 +430,33 @@ def estimated_quest_xp(level):
     return XP_BY_LEVEL.get(max(1, min(60, level)), 0)
 
 
+def zephras_races(races):
+    """Zephras Isle is both Skyborne factions' start (its quests give Windshapers and High
+    Order reputation), and only Skyborne quest there. QuestieDB's Nov 10 2026 Wowhead scrape
+    marks 26 shared quests Skyborne-Alliance only (Coming of Age, Falling With Style: Wowhead
+    lists one Skyborne race) and some with classic races (Welcome to Shen'dar Village, the
+    start of the Horde village chain, as Tauren only). So a Skyborne-only mark there means both
+    factions, and a mark naming any race of a faction includes that faction's Skyborne. A
+    Horde-Skyborne-only mark isn't from that slip and stays as it is."""
+    if races == RACE_BITS['SKYBORNE_A']:
+        return SKYBORNE_BOTH
+    if races & HORDE_CLASSIC:
+        races |= RACE_BITS['SKYBORNE_H']
+    if races & ALLIANCE_CLASSIC:
+        races |= RACE_BITS['SKYBORNE_A']
+    return races
+
+
 def build_quests():
     quests = {}
     for qid_s, q in Q.items():
         qid = int(qid_s)
         races = q.get('requiredRaces') or 0
+        sort = q.get('zoneOrSort') or 0
+        if sort == ZEPHRAS_ISLE and races:
+            races = zephras_races(races)
         if races and not (races & FMASK):
             continue
-        sort = q.get('zoneOrSort') or 0
         # Negative sorts are categories, not zones: class quests use per-class ones (kept);
         # the rest are holidays and events (dropped).
         if (sort <= 0 and not class_specific(q.get('requiredClasses'))) or sort in SKIP_SORTS:

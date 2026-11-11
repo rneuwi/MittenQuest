@@ -1,5 +1,23 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Quest data updated to QuestieDB e19dfdf (November 11). Riverglades has quest data now
+  (150 quests, 43 with a known giver), and the routes take in 13 of them. Mount Hyjal's 36
+  quests still have no givers in the data, so they stay off the routes.
+- Real quest XP for Forever's own quests, measured from players, replaces the estimates the
+  route used before.
+- The Skyborne starter on Zephras Isle keeps the Horde village chain (Welcome to Shen'dar
+  Village onward) and the shared island quests. The new data marked many island quests as
+  Alliance only and one as Tauren only; the route reads those as open to both Skyborne
+  factions.
+- New quests on the routes from the refreshed data, among them Duskwood's missions for
+  Alliance in the mid 20s and a set of Stranglethorn and Badlands quests for Horde in the
+  late 30s. If a giver doesn't offer one, the guide notes it and moves on.
+- Every leveling guide was rebuilt and most were renamed (the Horde Skyborne starter is now
+  1-13). Guides you're partway through pick up where you are from your quest log.
+
 ## 1.6.0
 
 **Changes**

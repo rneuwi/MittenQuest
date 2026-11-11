@@ -7,7 +7,6 @@
     "Horde": {
       "1160": "Scarlet Monastery: quest 1160 Test of Lore (level 36) is never done (prerequisite not on the route: 1159)",
       "1445": "The Temple of Atal'Hakkar: quest 1445 The Temple of Atal'Hakkar (level 50) is never done (prerequisite not on the route: 1444)",
-      "2283": "Uldaman: run 2 (level 45.4) carries quest 2283 Necklace Recovery, which was available at the run at level 41.5 [added 2026-11-08: Booty Bay's Forever townsfolk (no faction data) no longer count as level 42 mobs, so Stranglethorn opens up from the low 30s and reshuffled the route; dungeon quests done went from 88 to 85]",
       "2936": "Zul'Farrak: quest 2936 The Spider God (level 45) is never done (prerequisite not on the route: 2935)",
       "3373": "The Temple of Atal'Hakkar: quest 3373 The Essence of Eranikus (level 55) is never done [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "3446": "The Temple of Atal'Hakkar: quest 3446 Into the Depths (level 51) is never done (prerequisite not on the route: 3444; area danger 45) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
@@ -43,11 +42,7 @@
       "4264": "Blackrock Depths: quest 4264 A Crumpled Up Note (level 58) is never done (prerequisite not on the route: 4242) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4282": "Blackrock Depths: quest 4282 A Shred of Hope (level 58) is never done (prerequisite not on the route: 4264) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4322": "Blackrock Depths: quest 4322 Jail Break! (level 58) is never done (prerequisite not on the route: 4282) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
-      "7441": "Dire Maul: quest 7441 Pusillin and the Elder Azj'Tordin (level 58) is never done (area danger 40) [added 2026-11-08: Booty Bay's Forever townsfolk (no faction data) no longer count as level 42 mobs, so Stranglethorn opens up from the low 30s and reshuffled the route; dungeon quests done went from 85 to 82]",
-      "7488": "Dire Maul: quest 7488 Lethtendris's Web (level 57) is never done [added 2026-11-08: Booty Bay's Forever townsfolk (no faction data) no longer count as level 42 mobs, so Stranglethorn opens up from the low 30s and reshuffled the route; dungeon quests done went from 85 to 82]",
-      "7494": "Dire Maul: quest 7494 Feathermoon Stronghold (level 57) is never done",
-      "92753": "The Deadmines: quest 92753 Destruction in Deadmines (level 18) is never done (prerequisite not on the route: 92752)",
-      "4126": "Blackrock Depths: quest 4126 Hurley Blackbreath (level 55) is never done (swapped in 2026-11-08 when dungeons became bonus XP; dungeon quests done went up 82 -> 85)"
+      "92753": "The Deadmines: quest 92753 Destruction in Deadmines (level 18) is never done (prerequisite not on the route: 92752)"
     }
   }
 }
