@@ -1,5 +1,25 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Quest data updated to QuestieDB 3f10ca0 (November 11). It adds race requirements to a few
+  hundred Forever quests, fixes several quest chains (Barrens, Menethil, Shaman totems,
+  The Broodmother) and adds 86 quests.
+- Riverglades is now a full part of both routes in the late 30s and early 40s: about 60
+  quests per faction there, up from 13. Guide titles name it instead of showing "?", and it
+  counts as Eastern Kingdoms (southeast of the Badlands), so trips from the Badlands, Swamp
+  of Sorrows and Arathi no longer tell you to take a zeppelin. Horde trips between
+  Riverglades and Kalimdor use the boat to Tanaris.
+- Dungeon runs gather their quests better before you go: the route crosses to the other
+  continent for a dungeon's quest when that saves a second run (Necklace Recovery in
+  Orgrimmar for Uldaman), makes room in a full quest log for dungeon quests, and finishes
+  handing in dungeon quests after you reach 60.
+- Routes are a little shorter: about 132 hours of play for Horde (was 143) and 118 for
+  Alliance (was 120), with fewer levels of grinding.
+- Every leveling guide was rebuilt and most were renamed. Guides you're partway through
+  pick up where you are from your quest log.
+
 ## 1.6.1
 
 **Changes**

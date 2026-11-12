@@ -122,8 +122,18 @@ Brotherhood chain into The Deadmines), are a priority:
 - **fetch**: when a run is ready but the dungeon's continent has another map with quests for
   it to pick up now, the route goes there first (`dungeon_fetch`, once per dungeon, map and
   level), then runs. The audit's one-trip rule asks for exactly this; before it, Wailing
-  Caverns ran without Serpentbloom from Thunder Bluff. The last four log slots, normally kept
-  for quick quests, also take quests for a dungeon already in the log;
+  Caverns ran without Serpentbloom from Thunder Bluff. With nothing left on the dungeon's
+  continent, the dungeon's own quests on the other continent are fetched too (Necklace
+  Recovery in Orgrimmar for Uldaman). The last four log slots, normally kept for quick
+  quests, also take quests for a dungeon already in the log and chain steps toward one;
+- a ready run also waits while the current map has pickups for any carried dungeon, so a
+  fetch for one dungeon doesn't pull the route away before another's quests here are taken;
+- **full log**: when a dungeon's pickups (or a fetch for them, or a quest started inside a
+  run) meet a full log, `make_room` drops the unfinished quest carried longest that leads
+  to no dungeon (or, failing that, the cheapest finished one). It's banned for the rest of
+  the pass and the next ones, so the final route simply never takes it;
+- after reaching 60, finished dungeon quests are still handed in (a Blackrock Depths run
+  at 58 left Hurley Blackbreath for Kharanos);
 - runs happen on the dungeon's continent (unless the quests are long overdue) and move the
   player to the entrance;
 - after a run, finished quests handed in on the entrance's map are handed in right away, with

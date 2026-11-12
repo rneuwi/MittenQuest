@@ -160,11 +160,12 @@ ZONE_NAMES = {
     16611: 'Ruins of Lordaeron', 11: 'Wetlands', 10: 'Duskwood', 44: 'Redridge Mountains', 40: 'Westfall',
     38: 'Loch Modan', 1: 'Dun Morogh', 12: 'Elwynn Forest', 148: 'Darkshore', 141: 'Teldrassil', 25: 'Blackrock Mountain',
     1519: 'Stormwind City', 1537: 'Ironforge', 1657: 'Darnassus',
+    16591: 'Riverglades',   # Forever, 38-44: southeast of the Badlands
 }
 KALIMDOR = {14, 363, 215, 220, 17, 406, 331, 400, 405, 15, 357, 440, 16, 490, 361, 618, 1377, 1637, 1638, 493,
             16651, 148, 141, 1657}
 EASTERN = {85, 154, 130, 267, 45, 33, 8, 3, 47, 51, 46, 28, 139, 4, 36, 1497, 16611, 11, 10, 44, 40, 38, 1, 12, 25,
-           1519, 1537}
+           1519, 1537, 16591}
 
 # Flight master NPC -> taxi node town (prefix of the in-game node name)
 FP_NODES_HORDE = {
@@ -935,9 +936,20 @@ ISLAND_CROSSING = {
 }
 
 
+# Direct boats between a zone and the other continent, per faction: zone -> text. Forever's
+# Riverglades (Eastern Kingdoms) has a Horde boat to Tanaris.
+ZONE_BOATS = {
+    16591: {'Horde': 'take the boat between Tanaris and Riverglades'},
+}
+
+
 def crossing_text(pos, area):
     for island in (pos[3] if pos else None, area):
         text = ISLAND_CROSSING.get(island, {}).get(FACTION)
+        if text:
+            return text
+    for zone in (pos[3] if pos else None, area):
+        text = ZONE_BOATS.get(zone, {}).get(FACTION)
         if text:
             return text
     return CFG['crossing']
@@ -1558,11 +1570,14 @@ class Sim:
         if n < LOG_LIMIT:
             for q in self.map_quests.get(mapID, ()):
                 # The last slots are for quick quests, and for quests of a dungeon already in
-                # the log (they ride along on the same run), or near your level (the route
-                # rarely passes their giver twice: Shadowshard Fragments in Theramore for
-                # Maraudon). The very last slot stays free for those.
+                # the log (they ride along on the same run) or chain steps toward one (a run's
+                # fetch trip to Burning Steppes for A Taste of Flame found no slot and Blackrock
+                # Depths ran without it), or near your level (the route rarely passes their giver
+                # twice: Shadowshard Fragments in Theramore for Maraudon). The very last slot
+                # stays free for those.
                 if self.eligible(q) and self.worthwhile(q) and (
                         n < LOG_LIMIT - 4 or self.quick(q, mapID) or q.dungeon in self.carried_dungeon
+                        or any(feeds_dungeon(q, d) for d in self.carried_dungeon)
                         or (q.dungeon and n < LOG_LIMIT - 1 and self.L >= q.level - 2)):
                     yield 'A', q, q.start
 
@@ -1713,6 +1728,9 @@ class Sim:
             # but don't sit on the easiest one for more than ~5 levels.
             ready = min(max(levels) - 1, min(levels) + 5)
             ready = max(ready, DUNGEON_MIN_LEVEL.get(dname, 0) - 1)   # not below the dungeon's level
+            if not force and self.L >= ready and len(self.active) >= LOG_LIMIT \
+                    and self.dungeon_pickups_here(dname, full_log=True):
+                self.make_room()    # the log is full, but this dungeon's quests are right here
             if not force and self.L >= ready and (self.dungeon_pickups_here(dname) or (
                     self.L <= min(levels) + 2 and self.dungeon_pickups_nearby(dname))):
                 continue    # pick up the rest of this dungeon's quests first: one run for all
@@ -1723,6 +1741,9 @@ class Sim:
             if not force and not cross and ent and self.pos and continent(ent[3]) != continent(self.pos[3]) \
                     and self.L < max(levels) + 3:
                 continue    # wait until the route is on the dungeon's continent
+            if not force and self.L >= ready and any(
+                    self.dungeon_pickups_here(d) for d in self.carried_dungeon):
+                continue    # take what's here first (Past Due in Alterac, before Uldaman's fetch)
             if not force and self.L >= ready:
                 fetch = self.dungeon_fetch(dname, ent)
                 if fetch is not None:
@@ -1772,7 +1793,9 @@ class Sim:
                 self.emit(q.insideFinishNote)
                 changed = True
             for q in INSIDE_STARTS.get(dname, ()):
-                if len(self.active) >= LOG_LIMIT or not self.eligible(q) or q.level > self.L + 5:
+                if not self.eligible(q) or q.level > self.L + 5:
+                    continue
+                if len(self.active) >= LOG_LIMIT and not self.make_room():
                     continue
                 self.accept(q)
                 self.emit(q.insideStartNote)
@@ -1794,8 +1817,11 @@ class Sim:
     def dungeon_fetch(self, dname, ent):
         """A map on the dungeon's continent with quests for it to pick up now: the run waits
         for a trip there, so it's one run for all of them (Serpentbloom in Thunder Bluff for
-        Wailing Caverns). Each map is fetched from once per dungeon and level."""
-        if not self.pos or len(self.active) >= LOG_LIMIT or not ent:
+        Wailing Caverns). Each map is fetched from once per dungeon and level. With nothing
+        left on the dungeon's continent, the dungeon's own quests on another continent are
+        fetched too: a zeppelin trip costs less than a second run (Necklace Recovery in
+        Orgrimmar for Uldaman, left behind when the route sailed for the Eastern Kingdoms)."""
+        if not self.pos or not ent:
             return None
         here = continent(ent[3])
         best, best_xp = None, 0
@@ -1807,13 +1833,25 @@ class Sim:
                      and self.L >= q.level - 2 and self.eligible(q) and self.worthwhile(q))
             if xp > best_xp:
                 best, best_xp = m, xp
+        if best is None:
+            for m, qs in self.map_quests.items():
+                if m == self.pos[0] or continent(self.map_area[m]) == here \
+                        or (dname, m, self.L) in self.fetched:
+                    continue
+                xp = sum(q.xp for q in qs if q.dungeon == dname
+                         and self.L >= q.level - 2 and self.eligible(q) and self.worthwhile(q))
+                if xp > best_xp:
+                    best, best_xp = m, xp
+        if best is not None and len(self.active) >= LOG_LIMIT and not self.make_room():
+            return None    # a full log of dungeon quests: nothing to make room with
         if best is not None:
             self.fetched.add((dname, best, self.L))
         return best
 
-    def dungeon_pickups_here(self, dname):
-        """Quests for this dungeon (or chain steps toward one) still to pick up on this map."""
-        if not self.pos or len(self.active) >= LOG_LIMIT:
+    def dungeon_pickups_here(self, dname, full_log=False):
+        """Quests for this dungeon (or chain steps toward one) still to pick up on this map.
+        full_log: count them even when the log has no room for them yet."""
+        if not self.pos or (len(self.active) >= LOG_LIMIT and not full_log):
             return False
         for q in self.map_quests.get(self.pos[0], ()):
             if (q.dungeon == dname or feeds_dungeon(q, dname)) \
@@ -1849,6 +1887,26 @@ class Sim:
         w = {'A': 1.0, 'T': 1.0, 'C': 0.5}
         return sum(q.xp * w[k] * (DUNGEON_WEIGHT if k == 'A' and dungeon_priority(q) else 1)
                    for k, q, _ in self.candidates(mapID))
+
+    def make_room(self):
+        """With the log full at a dungeon's pickups (inside a run, or at a giver before it):
+        drop the unfinished quest carried longest that leads to no dungeon (recorded, so the
+        next pass never takes it). A full log cost Alliance The Platinum Discs in Uldaman and
+        A Taste of Flame for Blackrock Depths."""
+        plain = [(qid, st) for qid, st in self.active.items() if not QUESTS[qid].dungeon
+                 and qid not in DUNGEON_FEEDERS and not QUESTS[qid].classes]
+        cands = [(st['acceptL'], QUESTS[qid].xp, qid) for qid, st in plain if not st['complete']]
+        if not cands:
+            # Only finished ones left: the cheapest goes. Banned in the next pass, it's never
+            # taken, so no turn-in is lost (a log full of hand-ins elsewhere at Uldaman).
+            cands = [(QUESTS[qid].xp, st['acceptL'], qid) for qid, st in plain]
+        if not cands:
+            return False
+        qid = min(cands)[2]
+        del self.active[qid]
+        self.dropped.add(qid)
+        self.banned.add(qid)    # not again this pass either: retaking it refilled the log forever
+        return True
 
     def tidy_log(self):
         """Drop quests carried 6+ levels without progress (recorded so the next pass never takes them)."""
@@ -1990,7 +2048,22 @@ class Sim:
                 grinds += 1
                 continue
             break
-        # Wrap up anything finished but not handed in on maps we can reach.
+        # Wrap up anything finished but not handed in on maps we can reach: dungeon quests
+        # done on a late run (Hurley Blackbreath from Blackrock Depths at 58, the route hit 60
+        # before Kharanos) are still handed in.
+        if self.L >= until_level:
+            for _ in range(LOG_LIMIT):
+                left = [QUESTS[qid] for qid, st in self.active.items() if st['complete']
+                        and QUESTS[qid].dungeon and not QUESTS[qid].finishInside
+                        and (not allowed_maps or QUESTS[qid].finish[0] in allowed_maps)]
+                if not left:
+                    break
+                q = min(left, key=lambda x: (dist(self.pos, x.finish), x.id))
+                start_idx, start_level = len(self.steps), self.L
+                if not self.pos or q.finish[0] != self.pos[0]:
+                    self.travel_to(q.finish[0])
+                self.turnin(q)
+                segments.append((q.finish[0], start_idx, len(self.steps), start_level, self.L))
         return segments
 
 
