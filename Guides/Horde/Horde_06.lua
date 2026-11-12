@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 32-36 Thousand Needles, Undercity, Hillsbrad
 #levels 32-36
 #faction Horde
 #knownfp Camp Taurajo, Crossroads, Freewind Post, Orgrimmar, Ratchet, Shadowprey Village, Splintertree Post, Sun Rock Retreat, Tarren Mill, The Sepulcher, Thunder Bluff, Undercity, Zoram'gar Outpost
-#next Horde 36-40 Arathi Highlands, Badlands, Riverglades
+#next Horde 36-40 Badlands, Arathi Highlands, Riverglades
 
 [A 5361 Family Tree | at=45.7,50.7,1441; place=Freewind Post; xl=32.8]
 [T 1196 The Sacred Flame | at=46.1,51.7,1441; place=Freewind Post; xl=32.8]
@@ -93,6 +93,7 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [A 96783 A Way In | at=84.9,80.4,1416; place=Alterac Mountains; class=ROGUE; xl=33.6]
 [T 96783 A Way In | at=32.3,26.6,1417; place=Arathi Highlands; class=ROGUE; xl=33.6]
 [F Shadowprey Village | xl=33.6]
+[A 6143 Other Fish to Fry | at=23.3,72.9,1443; place=Shadowprey Village; xl=33.6]
 [T 5361 Family Tree | at=55.4,55.8,1443; place=Desolace; xl=33.6]
 [A 1482 The Corrupter | at=52.2,53.4,1443; pre=1481; place=Desolace; danger=34; xl=33.7]
 [A 1369 Broken Tears | at=75.0,68.2,1443; pre=1367; place=Desolace; danger=34; xl=33.7]
@@ -147,6 +148,7 @@ Xizk Goodstitch has only one spawn point. If others are waiting for it, group up
 Warug's Bodyguard has only 2 spawn points. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 1366 Centaur Bounty | at=56.2,59.6,1443; place=Desolace; xl=34.5]
 [T 1370 Stealing Supplies | at=36.2,79.2,1443; place=Desolace; xl=34.6]
+[A 6161 Claim Rackmore's Treasure! | at=36.1,30.4,1443; place=Desolace; danger=35; xl=34.7]
 [C 6142 Clam Bait | at=32.8,26.6,1443; mob=Enraged Reef Crawler; xl=34.7]
 [C 1482 The Corrupter | at=27.7,7.9,1443; mob=Slitherblade Oracle; ml=35; xl=34.7]
 [T 1482 The Corrupter | at=52.2,53.4,1443; place=Desolace; xl=34.7]
@@ -203,6 +205,7 @@ Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells.
 [A 629 The Vile Reef | at=32.3,27.7,1434; place=Grom'gol; danger=36; xl=35.5]
 [A 581 Hunt for Yenniku | at=32.2,27.7,1434; place=Grom'gol; danger=36; xl=35.5]
 [A 638 Trollbane | at=32.2,27.7,1434; opt; place=Grom'gol; danger=36; xl=35.5]
+[A 97453 Weed Whacked | at=32.8,28.4,1434; place=Grom'gol; danger=36; xl=35.5]
 [A 568 The Defense of Grom'gol | at=32.2,28.9,1434; place=Grom'gol; danger=36; xl=35.5]
 [A 95773 Enemies in the Water | at=32.2,28.9,1434; place=Grom'gol; danger=36; xl=35.5]
 [P Grom'gol | at=32.54,29.35,1434; xl=35.5]
@@ -234,34 +237,33 @@ Find a group for Gnomeregan. Quests you skip there are dropped automatically.
 [C 568 The Defense of Grom'gol | at=33.0,23.9,1434; mob=Lashtail Raptor; ml=36; xl=35.7]
 [C 195 Raptor Mastery | at=33.0,23.9,1434; mob=Lashtail Raptor; ml=36; xl=35.7]
 [T 581 Hunt for Yenniku | at=32.2,27.7,1434; place=Grom'gol; danger=36; xl=35.7]
-[A 582 Headhunting | at=32.2,27.7,1434; pre=581; place=Grom'gol; danger=36; xl=35.8]
 [T 568 The Defense of Grom'gol | at=32.2,28.9,1434; place=Grom'gol; danger=36; xl=35.8]
 [A 569 The Defense of Grom'gol | at=32.2,28.9,1434; pre=568; place=Grom'gol; danger=36; xl=35.9]
 [T 195 Raptor Mastery | at=35.7,10.8,1434; place=Stranglethorn Vale; xl=35.9]
 [T 187 Tiger Mastery | at=35.6,10.6,1434; place=Stranglethorn Vale; xl=35.9]
 [A 188 Tiger Mastery | at=35.6,10.6,1434; pre=187; place=Stranglethorn Vale; xl=36.0]
-[A 192 Panther Mastery | at=35.5,10.6,1434; pre=191; place=Stranglethorn Vale; danger=37; xl=36.0]
 [C 596 Bloody Bone Necklaces | at=33.5,17.0,1434; mob=Bloodscalp Axe Thrower; ml=34; item=3915:25; drop=22; xl=36.0]
 [R Hunter - Grom'gol | at=31.23,28.68,1434; class=HUNTER; xl=36.0]
 Kragg is right here: pick up your new Hunter spells.
 [C 188 Tiger Mastery | at=32.2,17.4,1434; mob=Sin'Dall; ml=37; xl=36.0]
 Sin'Dall has only 2 spawn points. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 188 Tiger Mastery | at=35.6,10.6,1434; place=Stranglethorn Vale; xl=36.0]
-[C 582 Headhunting | at=22.9,10.2,1434; mob=Bloodscalp Headhunter; ml=37; item=1532:20; drop=48; xl=36.1]
-[C 629 The Vile Reef | at=24.8,22.9,1434; xl=36.1]
-[C 95773 Enemies in the Water | at=23.2,26.3,1434; mob=Brinescale Skirmisher; ml=38; item=270305:10; xl=36.1]
-[T 582 Headhunting | at=32.2,27.7,1434; place=Grom'gol; xl=36.1]
-[T 596 Bloody Bone Necklaces | at=32.3,27.7,1434; place=Grom'gol; xl=36.2]
+[T 596 Bloody Bone Necklaces | at=32.3,27.7,1434; place=Grom'gol; xl=36.1]
+[A 582 Headhunting | at=32.2,27.7,1434; pre=581; place=Grom'gol; xl=36.2]
+[A 570 Mok'thardin's Enchantment | at=32.1,29.2,1434; place=Grom'gol; danger=37; xl=36.2]
+[C 569 The Defense of Grom'gol | at=37.2,30.8,1434; mob=Mosh'Ogg Brute / Mosh'Ogg Witch Doctor; ml=37; xl=36.2]
+[T 569 The Defense of Grom'gol | at=32.2,28.9,1434; place=Grom'gol; xl=36.2]
+[C 95773 Enemies in the Water | at=23.2,26.3,1434; mob=Brinescale Skirmisher; ml=38; item=270305:10; xl=36.2]
+[C 629 The Vile Reef | at=24.8,22.9,1434; xl=36.2]
 [T 629 The Vile Reef | at=32.3,27.7,1434; place=Grom'gol; xl=36.2]
 [T 95773 Enemies in the Water | at=32.2,28.9,1434; place=Grom'gol; xl=36.3]
-[A 570 Mok'thardin's Enchantment | at=32.1,29.2,1434; place=Grom'gol; danger=37; xl=36.4]
-[C 569 The Defense of Grom'gol | at=37.2,30.8,1434; mob=Mosh'Ogg Brute / Mosh'Ogg Witch Doctor; ml=37; xl=36.4]
-[T 569 The Defense of Grom'gol | at=32.2,28.9,1434; place=Grom'gol; xl=36.4]
+[C 582 Headhunting | at=22.9,10.2,1434; mob=Bloodscalp Headhunter; ml=37; item=1532:20; drop=48; xl=36.4]
+[T 582 Headhunting | at=32.2,27.7,1434; place=Grom'gol; xl=36.4]
 [T 97331 Zimmix's Great Escape | at=26.4,73.6,1434; place=Booty Bay; xl=36.5]
 [R Rogue - Booty Bay | at=26.82,77.15,1434; class=ROGUE; xl=36.6]
 Ian Strom is right here: pick up your new Rogue spells.
 [P Booty Bay | at=26.87,77.1,1434; xl=36.6]
-[F Hammerfall | xl=36.6]
+[G 42.4,52.9 1418 Travel to Badlands | xl=36.6]
 [L 35 | xl=36.6]
 The next guide starts around level 36. Below 35? Grind here or finish leftover quests first.
 ]==])

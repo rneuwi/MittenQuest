@@ -22,6 +22,8 @@ _corr_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'correctio
 CORR = json.load(open(_corr_path, encoding='utf-8')) if os.path.exists(_corr_path) else {}
 CORR_SKIP = {int(q) for q in CORR.get('skip', {})}
 CORR_NOTES = {int(q): t for q, t in CORR.get('notes', {}).items()}
+# Quests that must be turned in first, which QuestieDB doesn't record (Forever's own chains).
+CORR_PREREQS = {int(q): [int(p) for p in v['pre']] for q, v in CORR.get('prereqs', {}).items()}
 Q = json.load(open(os.path.join(SP, 'out/Quest.json')))
 N = json.load(open(os.path.join(SP, 'out/Npc.json')))
 O = json.load(open(os.path.join(SP, 'out/Object.json')))
@@ -560,6 +562,9 @@ def build_quests():
             if x.finish:
                 break
         x.preAll = list(q.get('preQuestGroup') or [])
+        for p in CORR_PREREQS.get(qid, ()):
+            if p not in x.preAll:
+                x.preAll.append(p)
         x.preAny = list(q.get('preQuestSingle') or []) if isinstance(q.get('preQuestSingle'), list) else []
         if qid in x.preAny:
             # A list naming the quest itself is a group of race variants (Call of Earth), not a

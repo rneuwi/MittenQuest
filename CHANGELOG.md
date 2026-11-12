@@ -1,5 +1,19 @@
 # MittenQuest
 
+## Unreleased
+
+**Fixes**
+- Horde in Riverglades: the route now follows the Digging for Answers chain into Bolder'ok.
+  Digging for Answers, Clubtoe's quests, Twilight No More! (Chogg'Zac's head), Spread the
+  Word and Land of Giants come first, and only then Clugfist, Jezap's Bloodmaster's Ring
+  fights, Gobam and Hamur's rock quests, in their real order. Before, the guide sent you to
+  Clugfist and Hamur before they had anything for you. Map pins wait for the chain too.
+- Twilight No More! is marked as a group quest because Chogg'Zac is listed as elite. The
+  whole Bolder'ok camp depends on it, so if you skip it, the guide offers to skip the quests
+  that need it as well.
+- The Horde guides from 36 to 60 were rebuilt and renamed. Guides you're partway through
+  pick up where you are from your quest log.
+
 ## 1.6.3
 
 **Fixes**
