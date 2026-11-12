@@ -146,6 +146,58 @@ FG.db.global.notOffered[10] = { npc = "Old Giver" }
 FG:QUEST_ACCEPTED(nil, 10)
 check("accepting it anywhere clears the record", FG.db.global.notOffered[10] == nil)
 
+-- A giver with nothing to offer opens no window: standing next to them, targeted, counts.
+FG.db.global.notOffered = {}
+Pins:CollectEntries()   -- refresh the cached entries (the game does on RequestRefresh)
+prog.done = FG:Evaluate(steps, prog)
+local clock, moving, near, target = 100, false, true, "guid-old"
+local ticks = {}
+function GetTime() return clock end
+function UnitExists(u) return u == "target" and target ~= nil end
+function UnitIsPlayer() return false end
+function UnitIsDead() return false end
+function UnitGUID(u) if u == "target" then return target end end
+local realUnitName = UnitName
+function UnitName(u) if u == "target" then return target and "Old Giver" end return realUnitName(u) end
+function CheckInteractDistance() return near end
+function UnitAffectingCombat() return false end
+function IsPlayerMoving() return moving end
+FG.ScheduleRepeatingTimer = function(_, fn) ticks[#ticks + 1] = fn; return #ticks end
+FG.CancelTimer = function(_, id) ticks[id] = nil end
+local function tick(n)
+    for _ = 1, n do
+        clock = clock + 0.5
+        for _, fn in pairs(ticks) do fn() end
+    end
+end
+FG.Print = function() end
+
+moving = true
+Pins:OnTargetChanged()
+tick(10)
+check("silent giver: nothing while you're still walking up", next(FG.db.global.notOffered) == nil)
+moving = false
+tick(8)
+check("silent giver: standing at them with no window records the route quests",
+      FG.db.global.notOffered[10] ~= nil and FG.db.global.notOffered[13] ~= nil)
+check("silent giver: watch stops afterwards", next(ticks) == nil)
+
+FG.db.global.notOffered = {}
+prog.done = FG:Evaluate(steps, prog)
+Pins:OnTargetChanged()
+tick(2)
+Pins:NoteWindow()   -- you talked to them and a window opened
+tick(10)
+check("silent giver: an opened window means the list check handles it",
+      next(FG.db.global.notOffered) == nil)
+
+target = "guid-other"
+function UnitName(u) if u == "target" then return "Stranger" end return realUnitName(u) end
+Pins:OnTargetChanged()
+check("silent giver: targets that give no route quest aren't watched", next(ticks) == nil)
+target = nil
+UnitName = realUnitName
+
 -- Undo across a guide chain: skipping the last step of "Prev" finishes it and auto-loads
 -- "Next"; undo from "Next" (empty history) must reopen "Prev" with that step back.
 for k, fn in pairs(realFG) do FG[k] = fn end

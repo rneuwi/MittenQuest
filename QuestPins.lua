@@ -210,8 +210,8 @@ end
 -- that isn't in the list, isn't given here in Forever: record it so the guide skips it and
 -- the map stops pinning it here. Only full lists count (gossip / quest greeting), never a
 -- single quest window.
-function Pins:CheckRouteOffers(offered)
-    local npc = NPCName()
+function Pins:CheckRouteOffers(offered, npcName, silent)
+    local npc = npcName or NPCName()
     local guide = FG:GetActiveGuide()
     if not npc or not guide then return end
     local steps, p = FG:GetActiveSteps()
@@ -240,10 +240,81 @@ function Pins:CheckRouteOffers(offered)
                    guide = FG.db.char.activeGuide, t = time() }
         names[#names + 1] = S:QuestName(q)
     end
-    FG:Print(("%s doesn't offer %s here, so the guide skips it. Click the step to bring it back.")
-        :format(npc, table.concat(names, ", ")))
+    if silent then
+        FG:Print(("%s has nothing for you, so the guide skips %s. It may need an earlier quest "
+            .. "from there first; click the step to bring it back.")
+            :format(npc, table.concat(names, ", ")))
+    else
+        FG:Print(("%s doesn't offer %s here, so the guide skips it. Click the step to bring it back.")
+            :format(npc, table.concat(names, ", ")))
+    end
     FG:Advance(true)
     self:RequestRefresh()
+end
+
+-- A giver with nothing to offer you opens no window at all, so CheckRouteOffers never runs
+-- and the guide waits at them for good (Forever quests whose prerequisites the data doesn't
+-- know: Clugfist and Hamur in Riverglades). Stand next to a giver the guide sends you to,
+-- with them targeted, and if no quest or gossip window opens in SILENT_SECONDS, that counts
+-- as an empty list. A wrong call fixes itself: accepting the quest clears the record.
+local SILENT_SECONDS = 3
+local SILENT_POLL = 0.5
+local SILENT_GIVE_UP = 30        -- stop watching a target after this long
+local SILENT_RANGE = 3           -- CheckInteractDistance index: about 10 yards
+
+function Pins:NoteWindow()
+    self.lastWindow = GetTime()
+end
+
+-- The target is a giver of an ACCEPT step the guide still has open.
+function Pins:IsRouteGiver(name)
+    local steps, p = FG:GetActiveSteps()
+    for i, s in ipairs(steps or {}) do
+        if s.type == "ACCEPT" and s.questID and not (p and p.done and p.done[i]) then
+            local e = self:GetQuestEntry(s.questID)
+            if e and e.giver == name then return true end
+        end
+    end
+    return false
+end
+
+function Pins:OnTargetChanged()
+    if self.silentTimer then
+        FG:CancelTimer(self.silentTimer)
+        self.silentTimer = nil
+    end
+    if not UnitExists("target") or UnitIsPlayer("target") or UnitIsDead("target") then return end
+    local name, guid = UnitName("target"), UnitGUID("target")
+    if not name or not guid or (issecretvalue and (issecretvalue(name) or issecretvalue(guid))) then
+        return
+    end
+    if not FG:GetActiveGuide() or not self:IsRouteGiver(name) then return end
+    local watch = { name = name, guid = guid, started = GetTime() }
+    self.silentTimer = FG:ScheduleRepeatingTimer(function() self:WatchSilentGiver(watch) end, SILENT_POLL)
+end
+
+function Pins:WatchSilentGiver(watch)
+    local now = GetTime()
+    local stop = UnitGUID("target") ~= watch.guid or now - watch.started > SILENT_GIVE_UP
+    if not stop then
+        local close = CheckInteractDistance("target", SILENT_RANGE)
+            and not UnitAffectingCombat("player")
+            and not (IsPlayerMoving and IsPlayerMoving())
+        if not close then
+            watch.still = nil
+        elseif not watch.still then
+            watch.still = now
+        elseif (self.lastWindow or 0) >= watch.still then
+            stop = true      -- a window opened: the list check (or auto-accept) handled it
+        elseif now - watch.still >= SILENT_SECONDS then
+            stop = true
+            self:CheckRouteOffers({}, watch.name, true)
+        end
+    end
+    if stop and self.silentTimer then
+        FG:CancelTimer(self.silentTimer)
+        self.silentTimer = nil
+    end
 end
 
 ---------------------------------------------------------------------------
@@ -730,11 +801,12 @@ function Pins:Enable()
         end)
     end
 
-    FG:RegisterEvent("GOSSIP_SHOW", function() self:OnGossipShow() end)
-    FG:RegisterEvent("QUEST_GREETING", function() self:OnQuestGreeting() end)
-    FG:RegisterEvent("QUEST_DETAIL", function() self:LearnOffer(GetQuestID(), GetTitleText()) end)
-    FG:RegisterEvent("QUEST_PROGRESS", function() self:LearnTurnin(GetQuestID()) end)
-    FG:RegisterEvent("QUEST_COMPLETE", function() self:LearnTurnin(GetQuestID()) end)
+    FG:RegisterEvent("GOSSIP_SHOW", function() self:NoteWindow(); self:OnGossipShow() end)
+    FG:RegisterEvent("QUEST_GREETING", function() self:NoteWindow(); self:OnQuestGreeting() end)
+    FG:RegisterEvent("QUEST_DETAIL", function() self:NoteWindow(); self:LearnOffer(GetQuestID(), GetTitleText()) end)
+    FG:RegisterEvent("QUEST_PROGRESS", function() self:NoteWindow(); self:LearnTurnin(GetQuestID()) end)
+    FG:RegisterEvent("QUEST_COMPLETE", function() self:NoteWindow(); self:LearnTurnin(GetQuestID()) end)
+    FG:RegisterEvent("PLAYER_TARGET_CHANGED", function() self:OnTargetChanged() end)
 
     self:OnZoneChanged()
 end

@@ -1,5 +1,15 @@
 # MittenQuest
 
+## Unreleased
+
+**Fixes**
+- The guide no longer gets stuck at a quest giver who has nothing for you. Some Forever
+  quests need an earlier quest the data doesn't know about (Clugfist and Hamur in
+  Riverglades), and those givers open no window at all, so the guide kept pointing at them.
+  Now, if you stand next to the giver with them targeted and no quest window opens within a
+  few seconds, the guide says so, skips their quests and moves on. Click a skipped step to
+  bring it back; accepting the quest later brings it back on its own.
+
 ## 1.6.2
 
 **Changes**
