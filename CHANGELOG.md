@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.3
 
 **Fixes**
 - The guide no longer gets stuck at a quest giver who has nothing for you. Some Forever
