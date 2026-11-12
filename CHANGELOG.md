@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.2
 
 **Changes**
 - Quest data updated to QuestieDB 3f10ca0 (November 11). It adds race requirements to a few
