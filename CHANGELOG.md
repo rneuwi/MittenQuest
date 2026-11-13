@@ -1,5 +1,16 @@
 # MittenQuest
 
+## 1.6.5
+
+**New**
+- The guide window has a minimize button next to the gear. It shrinks the window down to its
+  title bar so the pace and step count stay in view; click it again to bring the steps back
+  at the size you had. It stays minimized after a reload.
+
+**Changes**
+- The title bar is two lines: the guide name on top, with your pace and step count below it,
+  so long guide names have more room.
+
 ## 1.6.4
 
 **New**
