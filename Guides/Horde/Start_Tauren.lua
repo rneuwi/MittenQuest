@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Mulgore (Tauren)]==], [==[
 #levels 1-13
 #faction Horde
 #race Tauren
-#next Horde 12-16 The Barrens, Orgrimmar, Undercity
+#next Horde 12-16 The Barrens, Undercity, Orgrimmar
 
 [S Mulgore | at=45.93,64.16,1412; xl=1.0]
 Talk to Innkeeper Kauth and make this inn your home.
@@ -128,7 +128,7 @@ Starts from Mulgore Expansion Plans, which drops in this area.
 [A 764 The Venture Co. | at=54.8,64.3,1412; pre=751; place=Mulgore; xl=9.4]
 [R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=9.4]
 Yaw Sharpmane is right here: pick up your new Hunter spells.
-[C 99080 Drive Them Out | at=61.6,61.4,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.4]
+[C 99080 Drive Them Out | at=61.6,61.5,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.4]
 [C 743 Dangers of the Windfury | at=61.2,72.4,1412; mob=Windfury Harpy; ml=8; item=4751:8; drop=52; xl=9.4]
 [T 743 Dangers of the Windfury | at=46.5,64.9,1412; place=Mulgore; xl=9.4]
 [T 99080 Drive Them Out | at=46.7,63.4,1412; place=Mulgore; xl=9.6]
@@ -178,12 +178,12 @@ Great Bear Spirit has only one spawn point. If others are waiting for it, group 
 [C 6002 Body and Heart | at=76.5,27.2,1456; mob=Lunaclaw Spirit; class=DRUID; race=Tauren; xl=10.5]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 6002 Body and Heart | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.5]
-[R Shaman - Mulgore | at=32.49,22.11,1412; class=SHAMAN; xl=10.5]
+[R Shaman - Mulgore | at=31.86,22.51,1412; class=SHAMAN; xl=10.5]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1523 Call of Fire | at=25.2,20.5,1456; ex=1522,2983,2984; opt; place=Thunder Bluff; class=SHAMAN; xl=10.5]
 [T 1523 Call of Fire | at=56.0,19.9,1413; opt; place=The Barrens; class=SHAMAN; xl=10.5]
-[A 1524 Call of Fire | at=56.0,19.9,1413; place=The Barrens; class=SHAMAN; xl=10.5]
+[A 1524 Call of Fire | at=56.0,19.9,1413; ex=97243; place=The Barrens; class=SHAMAN; xl=10.5]
 [T 1524 Call of Fire | at=38.5,59.0,1411; place=Durotar; class=SHAMAN; xl=10.5]
 [A 1517 Call of Earth | at=42.4,69.2,1411; pre=1519; place=Durotar; class=SHAMAN; xl=10.5]
 [T 1517 Call of Earth | at=44.0,76.2,1411; place=Durotar; class=SHAMAN; xl=10.5]
@@ -207,7 +207,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=11.0]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Paladin - Thunder Bluff | at=25.42,14.71,1456; class=PALADIN; xl=11.0]
+[R Paladin - Thunder Bluff | at=25.43,14.68,1456; class=PALADIN; xl=11.0]
 Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=11.0]
@@ -252,7 +252,7 @@ Talk to Innkeeper Pala and make this inn your home.
 Grind mobs around your level here; more quests open at the next level.
 [R Priest - Thunder Bluff | at=25.32,15.27,1456; class=PRIEST; xl=12.0]
 Miles Welsh is right here: pick up your new Priest spells.
-[R Paladin - Thunder Bluff | at=25.42,14.71,1456; class=PALADIN; xl=12.0]
+[R Paladin - Thunder Bluff | at=25.43,14.68,1456; class=PALADIN; xl=12.0]
 Alodan the Hopeful is right here: pick up your new Paladin spells.
 [R Shaman - Thunder Bluff | at=22.82,21.11,1456; class=SHAMAN; xl=12.0]
 Siln Skychaser is right here: pick up your new Shaman spells.

@@ -23,6 +23,7 @@ Steps.lua
 Pace.lua
 Navigation.lua
 QuestPins.lua
+MapLayers.lua
 RouteCheck.lua
 AutoQuest.lua
 Arrow.lua
@@ -31,6 +32,7 @@ Frame.lua
 # Quest database (map pins)
 Data\Quests.lua
 Data\FlightPoints.lua
+Data\ZoneLevels.lua
 Data\Entrances.lua
 
 # Guides (generated 1-60 routes; race starters first, then the shared route in level order)

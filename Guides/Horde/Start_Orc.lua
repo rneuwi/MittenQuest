@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Durotar (Orc/Troll)]==], [==[
 #levels 1-13
 #faction Horde
 #race Orc, Troll
-#next Horde 12-16 The Barrens, Orgrimmar, Undercity
+#next Horde 12-16 The Barrens, Undercity, Orgrimmar
 
 [A 4641 Your Place In The World | at=43.3,68.5,1411; opt; place=Durotar; xl=1.0]
 [T 4641 Your Place In The World | at=42.1,68.3,1411; place=Durotar; xl=1.0]
@@ -189,7 +189,7 @@ Also pick up the Orcish Dagger and Broken Bone Trident lying next to the quest g
 [C 99049 Threat from Below | at=58.9,44.4,1411; xl=9.9]
 [T 99049 Threat from Below | at=52.2,43.1,1411; place=Durotar; xl=9.9]
 [A 99051 Threat from Below | at=52.2,43.1,1411; pre=99049; place=Durotar; xl=10.0]
-[C 99051 Threat from Below | at=58.4,26.2,1411; mob=Spitelash Scout; ml=10; item=286008:9; xl=10.0]
+[C 99051 Threat from Below | at=58.4,26.8,1411; mob=Spitelash Scout; ml=10; item=286008:9; xl=10.0]
 [T 99051 Threat from Below | at=52.2,43.1,1411; place=Durotar; xl=10.0]
 [R Hunter - Durotar | at=51.85,43.49,1411; class=HUNTER; xl=10.2]
 Thotar is right here: pick up your new Hunter spells.
@@ -233,7 +233,7 @@ Swart is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1522 Call of Fire | at=38.0,37.7,1454; ex=1523,2983,2984; opt; place=Orgrimmar; class=SHAMAN; xl=10.2]
 [T 1522 Call of Fire | at=56.0,19.9,1413; opt; place=The Barrens; class=SHAMAN; xl=10.2]
-[A 1524 Call of Fire | at=56.0,19.9,1413; place=The Barrens; class=SHAMAN; xl=10.2]
+[A 1524 Call of Fire | at=56.0,19.9,1413; ex=97243; place=The Barrens; class=SHAMAN; xl=10.2]
 [T 1524 Call of Fire | at=38.5,59.0,1411; place=Durotar; class=SHAMAN; xl=10.2]
 [A 1525 Call of Fire | at=38.5,59.0,1411; pre=1524; place=Durotar; class=SHAMAN; xl=10.2]
 [C 1525 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=10.2]
@@ -256,7 +256,7 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [C 1504 The Binding | at=48.2,45.3,1454; mob=Summoned Voidwalker; class=WARLOCK; race=Orc; xl=10.2]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 1504 The Binding | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.2]
-[R Paladin - Thunder Bluff | at=25.42,14.71,1456; class=PALADIN; xl=10.2]
+[R Paladin - Thunder Bluff | at=25.43,14.68,1456; class=PALADIN; xl=10.2]
 Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=10.2]
@@ -299,7 +299,7 @@ Zalazane has only one spawn point. If others are waiting for it, group up to sha
 [L 12 | xl=11.8]
 Grind mobs around your level here; more quests open at the next level.
 [G 55.3,75.5 1411 Travel to Durotar | xl=12.0]
-[A 96877 Halikor's Hoof | at=41.3,27.1,1411; opt; place=Durotar; xl=12.0]
+[A 96877 Halikor's Hoof | at=43.4,23.8,1411; opt; place=Durotar; xl=12.0]
 Starts from Halikor's Hoof, which drops in this area.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [T 96877 Halikor's Hoof | at=63.3,44.8,1454; place=Orgrimmar; opt; xl=12.0]

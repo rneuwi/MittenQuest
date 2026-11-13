@@ -1,8 +1,10 @@
 {
-  "_readme": "Hand-made route fixes, applied on every regeneration. 'skip': quests the route must never use (bugged, removed, not worth it) with the reason. 'notes': text shown under a quest's pickup step. 'dungeon_exempt': dungeon quests the dungeon rule (see gen_route.py) may leave out, with the reason they can't be done. 'dungeon_backlog': per faction, dungeon rule gaps the routes had when the rule was introduced (2026-11-05); fix them in the generator and remove the entry; re-baseline only when a fix raises the number of dungeon quests done (see the generator README). Keys are quest IDs as strings. 'prereqs': quests that must be turned in before a quest is offered, which QuestieDB doesn't record (mostly Forever's own chains), as {\"pre\": [quest IDs], \"why\": reason}.",
+  "_readme": "Hand-made route fixes, applied on every regeneration. 'skip': quests the route must never use (bugged, removed, not worth it) with the reason. 'notes': text shown under a quest's pickup step. 'dungeon_exempt': dungeon quests the dungeon rule (see gen_route.py) may leave out, with the reason they can't be done. 'dungeon_backlog': per faction, dungeon rule gaps the routes had when the rule was introduced (2026-11-05); fix them in the generator and remove the entry; re-baseline only when a fix raises the number of dungeon quests done (see the generator README). Keys are quest IDs as strings. 'prereqs': quests that must be turned in before a quest is offered, which QuestieDB doesn't record (mostly Forever's own chains), as {\"pre\": [quest IDs], \"why\": reason}. 'not_mobs': NPCs without faction or vendor data that the area danger model would count as hostile mobs but that are townsfolk, guards or props, with the reason.",
   "skip": {},
   "notes": {},
-  "dungeon_exempt": {},
+  "dungeon_exempt": {
+    "96984": "City of Dalaran: Heart of Disruption (Horde). Its chain goes through Key to the City (93680), whose Grimy Key comes from object 670427, which QuestieDB has no data for (2026-11-12), so the route can't place it. Remove once the object has spawns."
+  },
   "dungeon_backlog": {
     "Horde": {
       "1160": "Scarlet Monastery: quest 1160 Test of Lore (level 36) is never done (prerequisite not on the route: 1159)",
@@ -15,18 +17,17 @@
       "3981": "Blackrock Depths: quest 3981 Commander Gor'shak (level 52) is never done (prerequisite not on the route: 3906) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4001": "Blackrock Depths: quest 4001 What Is Going On? (level 54) is never done (prerequisite not on the route: 3982) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4002": "Blackrock Depths: quest 4002 The Eastern Kingdom (level 54) is never done (prerequisite not on the route: 4001)",
-      "4063": "Blackrock Depths: quest 4063 The Rise of the Machines (level 58) is never done (prerequisite not on the route: 4062; area danger 37) [added 2026-11-07: the QuestieDB 21be340..5fba5d8 update (NPC level and spawn traces, objects, Ruins of Lordaeron fixes) and the generator changes (fetch a dungeon's quests before its run, multi-dungeon errands, hand-ins at the entrance after a run, capital objectives done in the city) reshuffled the route; dungeon quests done went from 81 to 87]",
-      "4082": "Blackrock Depths: quest 4082 KILL ON SIGHT: High Ranking Dark Iron Officials (level 54) is never done [added 2026-11-08: Booty Bay's Forever townsfolk (no faction data) no longer count as level 42 mobs, so Stranglethorn opens up from the low 30s and reshuffled the route; dungeon quests done went from 88 to 85]",
       "4121": "Blackrock Depths: quest 4121 Precarious Predicament (level 58) is never done (area danger 56) [added 2026-11-06: picking up every quest in a town before leaving, waiting for each dungeon's level, the slow-farm time model and running ready dungeons before grinding reshuffled the route]",
-      "4122": "Blackrock Depths: quest 4122 Grark Lorkrub (level 58) is never done (prerequisite not on the route: 4082; area danger 56) [added 2026-11-08: Booty Bay's Forever townsfolk (no faction data) no longer count as level 42 mobs, so Stranglethorn opens up from the low 30s and reshuffled the route; dungeon quests done went from 88 to 85]",
       "4132": "Blackrock Depths: quest 4132 Operation: Death to Angerforge (level 58) is never done (prerequisite not on the route: 4121) [added 2026-11-06: picking up every quest in a town before leaving, waiting for each dungeon's level, the slow-farm time model and running ready dungeons before grinding reshuffled the route]",
       "7201": "Blackrock Depths: quest 7201 The Last Element (level 54) is never done (prerequisite not on the route: 3906)"
     },
     "Alliance": {
+      "17": "Uldaman: quest 17 Uldaman Reagent Run (level 42) is never done (prerequisite not on the route: 2500; area danger 15) [added 2026-11-12: the QuestieDB 3f10ca0..90ab55b update (quest relation traces) and the generator changes (pickups and turn-ins inside a dungeon judged by the run, not the entrance's territory; Southshore townsfolk no longer count as level 40 mobs) widened the scope and reshuffled the route; dungeon quests done went from 93 to 95]",
       "704": "Uldaman: quest 704 Agmond's Fate (level 38) is never done (prerequisite not on the route: 739)",
       "1053": "Scarlet Monastery: quest 1053 In the Name of the Light (level 40) is never done (prerequisite not on the route: 1052)",
-      "1101": "Razorfen Kraul: quest 1101 The Crone of the Kraul (level 34) is never done (prerequisite not on the route: 1100)",
       "1139": "Uldaman: quest 1139 The Lost Tablets of Will (level 45) is never done (prerequisite not on the route: 762)",
+      "1142": "Razorfen Kraul: quest 1142 Mortality Wanes (level 30) is never done [added 2026-11-12: the QuestieDB 3f10ca0..90ab55b update (quest relation traces) and the generator changes (pickups and turn-ins inside a dungeon judged by the run, not the entrance's territory; Southshore townsfolk no longer count as level 40 mobs) widened the scope and reshuffled the route; dungeon quests done went from 93 to 95]",
+      "1144": "Razorfen Kraul: quest 1144 Willix the Importer (level 30) is never done [added 2026-11-12: the QuestieDB 3f10ca0..90ab55b update (quest relation traces) and the generator changes (pickups and turn-ins inside a dungeon judged by the run, not the entrance's territory; Southshore townsfolk no longer count as level 40 mobs) widened the scope and reshuffled the route; dungeon quests done went from 93 to 95]",
       "1475": "The Temple of Atal'Hakkar: quest 1475 Into The Temple of Atal'Hakkar (level 50) is never done (prerequisite not on the route: 1469)",
       "2200": "Uldaman: quest 2200 Back to Uldaman (level 42) is never done (prerequisite not on the route: 2199) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "2201": "Uldaman: quest 2201 Find the Gems (level 43) is never done (prerequisite not on the route: 2200) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
@@ -177,5 +178,10 @@
       ],
       "why": "Bolder'ok chain order from the quest text (2026-11-12): Step Two follows Step One"
     }
+  },
+  "not_mobs": {
+    "274942": "Bob McNaught (level 40): a Forever townsperson wandering Southshore, no faction data. With Southshore Defender he made Southshore a level 40 spot, so Alliance never took An Alarming Request (the Dalaran chain's start).",
+    "275086": "Southshore Defender (level 55): Southshore's own guards, no faction data.",
+    "277968": "Adventurer's Tent: a prop placed in many zones; the 2026-11-12 data dropped its faction data."
   }
 }

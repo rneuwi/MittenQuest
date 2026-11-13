@@ -102,7 +102,11 @@ Alliance). A route never takes a quest that starts, ends or is done in the other
 territory, even from a neutral giver (Ratchet's quests are the Horde's Barrens content).
 Dungeon runs there still happen for your own side's quests: Alliance does Scarlet Monastery
 in Tirisfal with quests from Ironforge and Southshore. Class quests are exempt (the Alliance
-Warlock chain really does visit the Barrens).
+Warlock chain really does visit the Barrens). A pickup or turn-in inside a dungeon sits at the
+entrance, so it doesn't make a quest the other side's: the Horde's Titan Relic from
+Excavation Site: Wetlands (handed in at Thunder Bluff) is a Horde quest. An entrance inside the
+other faction's capital still counts (Ruins of Lordaeron, under the Undercity). A start item
+whose droppers have no spawn data drops inside the quest's own dungeon, when its zone is one.
 
 ### Dungeons first
 
@@ -211,7 +215,9 @@ Brotherhood into The Deadmines), up to five levels past the easiest quest carrie
   taken until you're within `DANGER_MARGIN` levels of it (not counted below `DANGER_FLOOR`,
   since starting areas mix level 1 quests with level 5 mobs). Without it, talk-only quests,
   which have no objective level, sent level 13 characters into Fenris Keep's level 16-19 Rot
-  Hides for the Talking Head.
+  Hides for the Talking Head. Forever NPCs without faction data count as mobs unless they
+  sell, train or give quests; `not_mobs` in `corrections.json` lists the other townsfolk,
+  guards and props (Southshore's Defenders made it a level 40 spot).
 - **Grey mobs:** a quest whose objective mobs are grey at your level is skipped as not
   worth the time (dungeon work excepted).
 - Steps carry `ml=` (C steps: the highest objective mob level) and `danger=` (when the spot's

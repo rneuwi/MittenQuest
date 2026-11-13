@@ -24,6 +24,7 @@ CORR_SKIP = {int(q) for q in CORR.get('skip', {})}
 CORR_NOTES = {int(q): t for q, t in CORR.get('notes', {}).items()}
 # Quests that must be turned in first, which QuestieDB doesn't record (Forever's own chains).
 CORR_PREREQS = {int(q): [int(p) for p in v['pre']] for q, v in CORR.get('prereqs', {}).items()}
+CORR_NOT_MOBS = {int(n) for n in CORR.get('not_mobs', {})}   # NPCs that aren't hostile mobs
 Q = json.load(open(os.path.join(SP, 'out/Quest.json')))
 N = json.load(open(os.path.join(SP, 'out/Npc.json')))
 O = json.load(open(os.path.join(SP, 'out/Object.json')))
@@ -163,9 +164,10 @@ ZONE_NAMES = {
     38: 'Loch Modan', 1: 'Dun Morogh', 12: 'Elwynn Forest', 148: 'Darkshore', 141: 'Teldrassil', 25: 'Blackrock Mountain',
     1519: 'Stormwind City', 1537: 'Ironforge', 1657: 'Darnassus',
     16591: 'Riverglades',   # Forever, 38-44: southeast of the Badlands
+    616: 'Mount Hyjal',     # Forever, 55-60
 }
 KALIMDOR = {14, 363, 215, 220, 17, 406, 331, 400, 405, 15, 357, 440, 16, 490, 361, 618, 1377, 1637, 1638, 493,
-            16651, 148, 141, 1657}
+            16651, 148, 141, 1657, 616}
 EASTERN = {85, 154, 130, 267, 45, 33, 8, 3, 47, 51, 46, 28, 139, 4, 36, 1497, 16611, 11, 10, 44, 40, 38, 1, 12, 25,
            1519, 1537, 16591}
 
@@ -327,10 +329,12 @@ def entity_dungeon(e):
     return found
 
 
-def inside_dungeon(by, items=False):
+def inside_dungeon(by, items=False, sort=None):
     """Where a quest starts/ends inside a dungeon: (dungeon, area id, who) or None.
     `by` is startedBy/finishedBy; with items=True a start item dropped in a dungeon counts
-    (An Unholy Alliance's Small Scroll from Charlga Razorflank in Razorfen Kraul)."""
+    (An Unholy Alliance's Small Scroll from Charlga Razorflank in Razorfen Kraul). When the
+    item's droppers have no spawn data at all and the quest's own zone (`sort`) is a dungeon,
+    the item drops there (Excavation Site: Wetlands' Titan Relic from the Relic Guardian)."""
     for kind, src in ((1, N), (2, O)):
         for eid in idx(by or {}, kind) or []:
             e = src.get(str(eid))
@@ -350,6 +354,16 @@ def inside_dungeon(by, items=False):
                 d = entity_dungeon(e)
                 if d:
                     return d + (f"{clean(it.get('name'))} from {clean(e.get('name'))}",)
+        dn = dungeon_name(sort) if sort else None
+        if dn:
+            for iid in idx(by or {}, 3) or []:
+                it = I.get(str(iid)) or {}
+                droppers = ([N.get(str(n)) for n in it.get('npcDrops') or []]
+                            + [O.get(str(o)) for o in it.get('objectDrops') or []])
+                if droppers and not any(e and e.get('spawns') for e in droppers):
+                    who = next((clean(e.get('name')) for e in droppers if e and e.get('name')), None)
+                    return (dn, int(sort), f"{clean(it.get('name'))}, which {who} drops"
+                            if who else clean(it.get('name')))
     return None
 
 
@@ -581,7 +595,7 @@ def build_quests():
         # up or handed in during a run of that dungeon (Sim.inside_run), placed at its entrance.
         x.startInside = x.finishInside = x.insideStartNote = x.insideFinishNote = None
         if not x.start:
-            d = inside_dungeon(sb, items=True)
+            d = inside_dungeon(sb, items=True, sort=sort)
             ent = d and dungeon_entrance(d[1])
             if ent:
                 x.start, x.startInside, x.startName = ent, d[0], d[2]
@@ -798,7 +812,7 @@ for _q in QUESTS.values():
 for _nid, _e in N.items():
     if (_e.get('rank') or 0) != 0:
         continue    # elites and rares: rare spawns, and named elites are their own quests
-    if townsfolk(_e):
+    if townsfolk(_e) or int(_nid) in CORR_NOT_MOBS:
         continue
     _lvl = mob_level(_e)
     if not _lvl:
@@ -1072,8 +1086,17 @@ def dungeon_work(q):
 
 
 def in_enemy_territory(q):
-    """Starts, ends or is done in the other faction's home zones (see TERRITORY)."""
-    return any(p and p[3] in ENEMY_TERRITORY for p in (q.start, q.target, q.finish))
+    """Starts, ends or is done in the other faction's home zones (see TERRITORY). A pickup or
+    turn-in inside a dungeon sits at its entrance, which says nothing about whose quest it is:
+    the run goes there anyway (the Horde's Titan Relic from Excavation Site: Wetlands, handed
+    in at Thunder Bluff; Grime-Encrusted Ring, picked up and handed in inside Gnomeregan).
+    An entrance inside the other faction's capital still counts (Ruins of Lordaeron, under the
+    Undercity)."""
+    def entrance_ok(p, inside):
+        return inside and p and p[3] not in CAPITALS
+    start = None if entrance_ok(q.start, getattr(q, 'startInside', None)) else q.start
+    finish = None if entrance_ok(q.finish, getattr(q, 'finishInside', None)) else q.finish
+    return any(p and p[3] in ENEMY_TERRITORY for p in (start, q.target, finish))
 
 
 def dungeon_priority(q):
