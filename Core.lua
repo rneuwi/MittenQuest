@@ -75,6 +75,8 @@ local defaults = {
             showUnavailable = true, -- greyed pins for quests blocked by level/prereq
             showLowLevel = false,   -- hide trivial (grey) quests (Steps:TrivialGap decides)
             paths = true,           -- dotted walking routes of givers that patrol
+            flightPoints = true,    -- your faction's flight masters on the world map
+            zoneLevels = true,      -- zone level ranges at the top of the world map
         },
     },
     char = {
@@ -196,6 +198,7 @@ function FG:OnEnable()
     self:SafeInit("window", function() ns.Frame:Create(self.db.profile.frame) end)
     self:SafeInit("arrow", function() ns.Arrow:Create() end)
     self:SafeInit("map pins", function() ns.QuestPins:Enable() end)
+    self:SafeInit("map extras", function() ns.MapLayers:Enable() end)
     self:SafeInit("pace", function() ns.Pace:Enable() end)  -- also refreshes the window on XP gain
     self:SafeInit("route check", function() ns.RouteCheck:Init() end)
     self:SafeInit("auto quest", function() ns.AutoQuest:Init() end)

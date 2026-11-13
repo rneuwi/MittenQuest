@@ -340,6 +340,12 @@ function Frame:ShowSettingsMenu(owner)
         root:CreateCheckbox("Show routes of quest givers who walk around", toggle(prof.pins, "paths", refresh))
 
         root:CreateDivider()
+        root:CreateTitle("World map")
+        local layers = function() ns.MapLayers:Refresh() end
+        root:CreateCheckbox("Show my flight points", toggle(prof.pins, "flightPoints", layers))
+        root:CreateCheckbox("Show zone level ranges", toggle(prof.pins, "zoneLevels", layers))
+
+        root:CreateDivider()
         root:CreateTitle("Pace")
         root:CreateCheckbox("Show pace and grind warnings", toggle(prof.pace, "show", function() self:Update() end))
         root:CreateTitle(("Pace log: %d steps recorded"):format(ns.Pace:Count()))

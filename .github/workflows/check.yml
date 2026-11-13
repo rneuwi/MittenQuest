@@ -23,5 +23,7 @@ jobs:
         run: lua5.1 tools/test_progress.lua .
       - name: Map pins
         run: lua5.1 tools/test_pins.lua .
+      - name: Map flight points and zone levels
+        run: lua5.1 tools/test_maplayers.lua .
       - name: Pace
         run: lua5.1 tools/test_pace.lua .

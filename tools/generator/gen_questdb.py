@@ -7,7 +7,7 @@ Builds the generator's quest model once per faction and merges them:
   - if the factions take a quest from different givers, it gets the Horde location plus an
     `alliance = { map, x, y, giver }` override (MittenQuest picks by the player's faction).
 """
-import sys, os
+import sys, os, re
 
 SP, OUT = sys.argv[1], sys.argv[2]
 route_py = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gen_route.py')
@@ -185,6 +185,7 @@ fp_lines = ['''--[[
 
     Flight masters per faction: { node name (as the guides use it), uiMapID, x, y }.
     "Travel to" steps use them to suggest the known flight point nearest the destination.
+    ns.FlightMasters lists every flight master each faction can use, for the map icons.
 ]]
 
 local _, ns = ...
@@ -195,6 +196,35 @@ for faction, g in (('Horde', H), ('Alliance', A)):
         m, x, y = fm['loc'][0], fm['loc'][1], fm['loc'][2]
         fp_lines.append(f'        {{ {luastr(fm["node"])}, {m}, {x:.1f}, {y:.1f} }},')
     fp_lines.append('    },')
+fp_lines.append('}')
+
+# Every flight master each faction can use, for the map's flight point icons. Taken from the
+# NPC data (title and faction), not FP_NODES, so Forever's new ones show up on their own
+# (Riverglades, Mount Hyjal). Neutral ones are in both lists. node is the guides' town name,
+# or false for flight masters FP_NODES doesn't know yet.
+FM_TITLE = re.compile(r'^(Gryphon Master|Wind Rider Master|Hippogryph Master|Flight Master|'
+                      r'Flight Mistress|Bat Handler)$', re.I)
+fp_lines += ['', '-- { npc name, title, node (or false), uiMapID, x, y }', 'ns.FlightMasters = {']
+for faction, g in (('Horde', H), ('Alliance', A)):
+    own = 'H' if faction == 'Horde' else 'A'
+    rows = []
+    for nid, e in g['N'].items():
+        if not FM_TITLE.match((e.get('subName') or '').strip()):
+            continue
+        if own not in (e.get('friendlyToFaction') or ''):
+            continue
+        sp = g['spawns_of'](e)
+        if not sp:
+            continue
+        m, x, y = sp[0][0], sp[0][1], sp[0][2]
+        node = g['FP_NODES'].get(int(nid))
+        rows.append((m, x, y, g['clean'](e.get('name')), e.get('subName').strip(), node))
+    fp_lines.append(f'    {faction} = {{')
+    for m, x, y, name, title, node in sorted(rows):
+        fp_lines.append(f'        {{ {luastr(name)}, {luastr(title)}, '
+                        f'{luastr(node) if node else "false"}, {m}, {x:.1f}, {y:.1f} }},')
+    fp_lines.append('    },')
+    print(len(rows), faction, 'flight masters for the map')
 fp_lines.append('}')
 open(fp_out, 'w', encoding='utf-8').write('\n'.join(fp_lines) + '\n')
 print(len(H['FMS']), 'Horde and', len(A['FMS']), 'Alliance flight points written to', fp_out)

@@ -21,6 +21,8 @@ by the minimap; everything else is in the guide window's gear menu.
 - Arrow and map waypoint for every step, with cave-entrance routing. In a quest hub the arrow
   points at the nearest step you can do right now, not just the next one in the list.
 - Quest pins with level, requirements and giver for 3,200+ quests (each faction sees its own).
+- World map extras: your faction's flight points (Forever's new zones included), and each
+  zone's level range at the top of the map (hover a zone on a continent map to see its range).
 - Quest windows say whether a quest is on your route. Route quests are picked up and finished
   quests handed in automatically (side quests are left to you; hold Shift to do it by hand),
   and party-shared and escort quests are accepted.
