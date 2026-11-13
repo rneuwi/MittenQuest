@@ -10,7 +10,9 @@ local FG = ns.FG
 local Frame = {}
 ns.Frame = Frame
 
-local PAD, ROW_GAP, TITLE_H, FOOTER_H = 8, 4, 22, 24
+-- Title bar is two lines: guide name + buttons on top, pace + step count below.
+local PAD, ROW_GAP, TITLE_H, FOOTER_H = 8, 4, 38, 24
+local LINE1_Y, LINE2_Y = -11, -28   -- vertical centres of the two title lines
 
 local WHY_TEXT = {
     game    = "Done in-game. Undo it in-game (e.g. abandon the quest) and the guide steps back.",
@@ -59,16 +61,21 @@ function Frame:Create(cfg)
     titleBg:SetAllPoints()
     titleBg:SetColorTexture(0, 0, 0, 0.6)
 
-    -- "Step 12/141" (and the pace tag) sit right-aligned before the buttons so they're always
-    -- visible; the guide name gets the rest of the bar and is cut with "..." when too long.
-    self.stepText = title:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    self.stepText:SetPoint("RIGHT", -44, 0)
+    -- Line 2: pace tag on the left, "Step 12/141" on the right.
+    self.stepText = title:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    self.stepText:SetPoint("RIGHT", title, "TOPRIGHT", -PAD, LINE2_Y)
     self.stepText:SetJustifyH("RIGHT")
     self.stepText:SetWordWrap(false)
 
+    self.paceText = title:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    self.paceText:SetPoint("LEFT", title, "TOPLEFT", PAD, LINE2_Y)
+    self.paceText:SetPoint("RIGHT", self.stepText, "LEFT", -6, 0)
+    self.paceText:SetJustifyH("LEFT")
+    self.paceText:SetWordWrap(false)
+
+    -- Line 1: the guide name gets the bar up to the buttons and is cut with "..." when too long.
     self.titleText = title:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    self.titleText:SetPoint("LEFT", PAD, 0)
-    self.titleText:SetPoint("RIGHT", self.stepText, "LEFT", -6, 0)
+    self.titleText:SetPoint("LEFT", title, "TOPLEFT", PAD, LINE1_Y)
     self.titleText:SetJustifyH("LEFT")
     self.titleText:SetWordWrap(false)
 
@@ -88,13 +95,27 @@ function Frame:Create(cfg)
 
     local close = CreateFrame("Button", nil, title, "UIPanelCloseButtonNoScripts")
     close:SetSize(20, 20)
-    close:SetPoint("RIGHT", -1, 0)
+    close:SetPoint("RIGHT", title, "TOPRIGHT", -1, LINE1_Y)
     close:SetScript("OnClick", function() self:SetShown(false) end)
+
+    -- Minimize: collapse to just the title bar (pace + step count stay visible).
+    local minimize = CreateFrame("Button", nil, title)
+    minimize:SetSize(14, 14)
+    minimize:SetPoint("RIGHT", close, "LEFT", -2, 0)
+    minimize:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight", "ADD")
+    minimize:SetScript("OnClick", function() self:SetMinimized(not FG.db.profile.frame.minimized) end)
+    minimize:SetScript("OnEnter", function(btn)
+        GameTooltip:SetOwner(btn, "ANCHOR_TOP")
+        GameTooltip:AddLine(FG.db.profile.frame.minimized and "Expand" or "Minimize")
+        GameTooltip:Show()
+    end)
+    minimize:SetScript("OnLeave", GameTooltip_Hide)
+    self.minimizeBtn = minimize
 
     -- Gear: every setting that used to need a slash command.
     local gear = CreateFrame("Button", nil, title)
     gear:SetSize(16, 16)
-    gear:SetPoint("RIGHT", close, "LEFT", -2, 0)
+    gear:SetPoint("RIGHT", minimize, "LEFT", -2, 0)
     gear:SetNormalTexture("Interface\\Buttons\\UI-OptionsButton")
     gear:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight", "ADD")
     gear:SetScript("OnClick", function(btn) self:ShowSettingsMenu(btn) end)
@@ -104,6 +125,7 @@ function Frame:Create(cfg)
         GameTooltip:Show()
     end)
     gear:SetScript("OnLeave", GameTooltip_Hide)
+    self.titleText:SetPoint("RIGHT", gear, "LEFT", -6, 0)
 
     -- Content area holding step rows.
     self.content = CreateFrame("Frame", nil, f)
@@ -367,6 +389,7 @@ function Frame:Update()
     if not steps or #steps == 0 then
         self.titleText:SetText("MittenQuest - no guide loaded")
         self.stepText:SetText("")
+        self.paceText:SetText("")
         for _, row in ipairs(self.rows) do row:Hide() end
         self.shownRows = 0
         self:UpdateButtons()
@@ -375,9 +398,9 @@ function Frame:Update()
     end
 
     local total = #steps
-    local paceTag = ns.Pace:Tag()
     self.titleText:SetText(FG.db.char.activeGuide)
-    self.stepText:SetText(("%sStep %d/%d"):format(paceTag and (paceTag .. "  ") or "", math.min(p.index, total), total))
+    self.paceText:SetText(ns.Pace:Tag() or "")
+    self.stepText:SetText(("Step %d/%d"):format(math.min(p.index, total), total))
 
     -- Show the previous step (faded) for context, then current + upcoming.
     local first = math.max(1, p.index - 1)
@@ -458,20 +481,61 @@ function Frame:ApplySettings(cfg)
     f:SetSize(cfg.width, cfg.height)
     f:SetScale(cfg.scale)
     f:SetBackdropColor(0.05, 0.05, 0.08, cfg.alpha)
-    self:ApplyLock()
+    self:ApplyMinimized()
     f:SetShown(cfg.shown)
     self:Update()
 end
 
 function Frame:ApplyLock()
-    self.grip:SetShown(not FG.db.profile.frame.locked)
+    local cfg = FG.db.profile.frame
+    self.grip:SetShown(not cfg.locked and not cfg.minimized)
+end
+
+-- Collapse to the title bar or restore the full window. The saved height is kept so
+-- expanding brings back the size you had.
+function Frame:SetMinimized(minimized)
+    if not self.f then return end
+    local f = self.f
+    -- Pin the top-left corner first so the title bar stays put while the height changes
+    -- (the default anchor is RIGHT, which would make the bar jump to the middle).
+    local left, top = f:GetLeft(), f:GetTop()
+    if left and top then
+        f:ClearAllPoints()
+        f:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", left, top)
+    end
+    FG.db.profile.frame.minimized = minimized and true or false
+    self:ApplyMinimized()
+    self:SavePosition()
+end
+
+function Frame:ApplyMinimized()
+    local cfg = FG.db.profile.frame
+    local f, minimized = self.f, cfg.minimized
+    self.content:SetShown(not minimized)
+    self.footer:SetShown(not minimized)
+    if minimized then
+        f:SetResizeBounds(MIN_W, TITLE_H, MAX_W, MAX_H)
+        f:SetHeight(TITLE_H)
+        self.minimizeBtn:SetNormalTexture("Interface\\Buttons\\UI-PlusButton-Up")
+        self.minimizeBtn:SetPushedTexture("Interface\\Buttons\\UI-PlusButton-Down")
+    else
+        f:SetResizeBounds(MIN_W, MIN_H, MAX_W, MAX_H)
+        f:SetHeight(math.max(MIN_H, cfg.height or MIN_H))
+        self.minimizeBtn:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-Up")
+        self.minimizeBtn:SetPushedTexture("Interface\\Buttons\\UI-MinusButton-Down")
+    end
+    self:ApplyLock()
 end
 
 function Frame:SavePosition()
     local cfg = FG.db.profile.frame
     local point, _, relPoint, x, y = self.f:GetPoint(1)
     cfg.point, cfg.relPoint, cfg.x, cfg.y = point, relPoint, x, y
-    cfg.width, cfg.height = self.f:GetSize()
+    cfg.width = self.f:GetWidth()
+    -- While minimized the frame is only the title bar; keep the full height for expanding.
+    if not cfg.minimized then
+        cfg.height = self.f:GetHeight()
+    end
 end
 
 function Frame:SetShown(shown)

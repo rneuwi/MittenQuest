@@ -49,7 +49,7 @@ local defaults = {
             point = "RIGHT", relPoint = "RIGHT", x = -60, y = 80,
             width = 320, height = 280,
             scale = 1.0, alpha = 0.80,
-            locked = false, shown = true,
+            locked = false, shown = true, minimized = false,
         },
         visibleSteps  = 6,
         fadeCompleted = true,
