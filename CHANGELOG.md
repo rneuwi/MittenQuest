@@ -1,6 +1,32 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.4
+
+**New**
+- The world map shows your faction's flight points, including the new ones in Riverglades and
+  Mount Hyjal. Neutral flight masters show for both factions. Hover one for its name and town.
+- The world map shows the zone's level range at the top, coloured for your level (red when
+  it's above you, yellow while it's right for you, green or grey once you've outgrown it). On a
+  continent map, hover a zone to see its range.
+- Both can be turned off in the gear menu under World map.
+
+**Changes**
+- Quest data updated to QuestieDB 90ab55b (November 12). QuestieDB now learns which quests
+  lead to which from what players actually did, so hundreds of Forever chains have their
+  real order. The guides no longer send you for a later step of a chain before you've done
+  the earlier ones (Reclaiming Ravencrest, Bring Me His Head, Bloodmaster's Ring). Doing chains in order takes longer: the full route is about 7 hours longer for
+  both factions, with a few more levels to grind.
+- Excavation Site: Wetlands: the guide now has you loot the Titan Relic inside and take it to
+  the right person (Prospector Whelgar for Alliance, Thunder Bluff for Horde) before the
+  Prehistoric Prism and Earthen Echo quests.
+- Alliance: the City of Dalaran trip now starts with An Alarming Request from Emissary
+  Jacques in Southshore, which the dungeon quests there need.
+- Horde: the route now also does Return of the Ring after Gnomeregan and more of the
+  Excavation Site's quests. Heart of Disruption (City of Dalaran) is left out for now: it
+  needs Key to the City, and the data doesn't say where its Grimy Key is.
+- Alliance's last guide now includes Mount Hyjal, and the guide title names it.
+- Every guide from level 12 (Horde) and 23 (Alliance) up was rebuilt and renamed. Guides
+  you're partway through pick up where you are from your quest log.
 
 **Fixes**
 - Horde in Riverglades: the route now follows the Digging for Answers chain into Bolder'ok.
@@ -11,8 +37,6 @@
 - Twilight No More! is marked as a group quest because Chogg'Zac is listed as elite. The
   whole Bolder'ok camp depends on it, so if you skip it, the guide offers to skip the quests
   that need it as well.
-- The Horde guides from 36 to 60 were rebuilt and renamed. Guides you're partway through
-  pick up where you are from your quest log.
 
 ## 1.6.3
 
