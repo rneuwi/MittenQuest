@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.6
 
 **Changes**
 - Quest data updated to QuestieDB 4dde6c4 (November 13). About 25 Zephras Isle quests that
