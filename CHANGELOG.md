@@ -1,5 +1,14 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Quest data updated to QuestieDB 4dde6c4 (November 13). About 25 Zephras Isle quests that
+  were marked Skyborne-only are now open to every race, so their map pins show for anyone
+  visiting the isle. The Skyborne route itself is the same.
+- Zephras Isle: The Ancient Hilt and its follow-up Eluvi'ana now have map pins, and two quest
+  givers (Alvarion Windfield, Hyusaa Quickbreeze) have corrected positions.
+
 ## 1.6.5
 
 **New**
