@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.7
 
 **Changes**
 - Quest data updated to QuestieDB 9cf27d6 (November 20). Most Riverglades and Mount Hyjal
