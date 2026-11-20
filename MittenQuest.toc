@@ -66,3 +66,4 @@ Guides\Alliance\Alliance_07.lua
 Guides\Alliance\Alliance_08.lua
 Guides\Alliance\Alliance_09.lua
 Guides\Alliance\Alliance_10.lua
+Guides\Alliance\Alliance_11.lua

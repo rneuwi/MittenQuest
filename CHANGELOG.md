@@ -1,5 +1,23 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Quest data updated to QuestieDB 9cf27d6 (November 20). Most Riverglades and Mount Hyjal
+  quests now have proper locations, so both routes use these zones far more: about 60
+  Riverglades and 30 Mount Hyjal quests per faction, up from a handful. The routes are shorter
+  as a result (Horde about 133 hours from level 12, down from 141; Alliance about 102 hours
+  from level 19, down from 124) with less grinding.
+- Every guide from level 12 (Horde) and 19 (Alliance) up was rebuilt and renamed, and
+  Alliance now has 11 of them instead of 10. Guides you're partway through pick up where you
+  are from your quest log.
+- Horde: the route now finishes the late Blackrock Depths chains at 60 (KILL ON SIGHT: High
+  Ranking Dark Iron Officials, The Rise of the Machines, Grark Lorkrub, Precarious Predicament
+  and Operation: Death to Angerforge) instead of leaving them in your log.
+- Brought to Heel is now a Hunter and Druid quest, and both classes get their own steps.
+- The Touch of Zanzil (Rogue) is no longer marked as a group quest: the Bronze Tube it needs
+  can be bought.
+
 ## 1.6.6
 
 **Changes**

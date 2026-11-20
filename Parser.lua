@@ -264,6 +264,8 @@ function Parser:Validate(steps, header, guideName, prior)
     prior = prior or {}
     prior.turnedIn, prior.accepted, prior.knownFP = prior.turnedIn or {}, prior.accepted or {}, prior.knownFP or {}
     local accepted, turnedIn, knownFP = prior.accepted, prior.turnedIn, prior.knownFP
+    prior.plainAccepted, prior.classAccepted = prior.plainAccepted or {}, prior.classAccepted or {}
+    local plainAccepted, classAccepted = prior.plainAccepted, prior.classAccepted
     local function hearthNorm(s) return (s or ""):lower():gsub("[^%w]", "") end
     prior.open = prior.open or {} -- [questID] = "guide:line" of a pickup not yet turned in
     local acceptLine = prior.open
@@ -287,7 +289,20 @@ function Parser:Validate(steps, header, guideName, prior)
                     end
                 end
             end
-            if accepted[q] then warn(s, ("quest %d accepted twice"):format(q)) end
+            -- Class-only pickups of one quest for different classes (Brought to Heel, Hunter
+            -- and Druid) never reach the same player, so only overlapping ones are duplicates.
+            local dup = accepted[q]
+            if s.class then
+                dup = plainAccepted[q]
+                for c in pairs(s.class) do
+                    if classAccepted[q] and classAccepted[q][c] then dup = true end
+                end
+                classAccepted[q] = classAccepted[q] or {}
+                for c in pairs(s.class) do classAccepted[q][c] = true end
+            else
+                plainAccepted[q] = true
+            end
+            if dup then warn(s, ("quest %d accepted twice"):format(q)) end
             accepted[q], acceptLine[q] = true, ("%s:%d"):format(guideName or "?", s.line or 0)
         elseif s.type == "COMPLETE" and q and not accepted[q] then
             warn(s, ("completes %d before accepting it"):format(q))

@@ -676,8 +676,10 @@ def build_quests():
             # An item that normal mobs also drop is a solo quest: one elite named mob in the
             # loot table (Nimsy for Kobold Candles, Croaky for Bounty on Murlocs) must not make
             # it a group quest. Farm the normal sources; elite only when every source is elite.
+            # Nor does an elite drop of an item you can buy or loot from objects (Bronze Tube
+            # for The Touch of Zanzil: sold by 23 vendors, and the Crowd Pummeler drops it).
             normal_srcs = [s for s in srcs if not elite_foe(s[2])]
-            if srcs and not normal_srcs:
+            if srcs and not normal_srcs and not it.get('vendors') and not it.get('objectDrops'):
                 elite = True
             srcs = normal_srcs or srcs
             for oid in it.get('objectDrops') or []:
@@ -1230,7 +1232,9 @@ class Sim:
 
     def worthwhile(self, q):
         """New pickups should still be worth the time at this level."""
-        if not (q.level >= self.L - 5 or any(self.has(p) for p in q.preAll + q.preAny)):
+        # Dungeon work stays until it goes grey (eligible): see dungeon_errand's last chance.
+        if not (q.level >= self.L - 5 or any(self.has(p) for p in q.preAll + q.preAny)
+                or dungeon_work(q)):
             return False
         if q.dungeon and q.level > self.L + 5:
             return False            # don't carry dungeon quests for ages
@@ -1641,10 +1645,17 @@ class Sim:
         # trip is valued by the whole dungeon's bundle, not just this map's share.
         bundles = collections.defaultdict(list)    # dungeon -> [(map, quest, dungeon quests it unlocks)]
         handins = collections.Counter()    # map -> finished dungeon quests worth a trip to free the log
+        last_chance = set()                # maps with dungeon work about to go grey
+        # A chain step with nothing to do but carry it (a journal to deliver) needs only one
+        # slot: Lonebrow's Journal, picked up from Desolace at 42 with 18 quests in the log,
+        # opens The Crone of the Kraul before it goes grey.
+        spare = len(self.active) < LOG_LIMIT - 1
         for m in (allowed_maps or self.map_quests):
-            if m == current or not room:
+            if m == current or not (room or spare):
                 continue
             for q in self.map_quests.get(m, ()):
+                if not room and (q.dungeon or q.hasObjectives):
+                    continue
                 # Chain steps toward a dungeon quest (the Defias Brotherhood chain) count too,
                 # valued by the dungeon quests they unlock.
                 if q.dungeon:
@@ -1658,6 +1669,13 @@ class Sim:
                         and self.worthwhile(q):
                     for dn, ts in gains.items():
                         bundles[dn].append((m, q, ts))
+                    # Last chance: it goes grey within two levels, and with it the dungeon
+                    # quests it leads to. Worth a trip on this continent whatever it scores
+                    # (Lonebrow's Journal, 34, in Thousand Needles while the route is in
+                    # Desolace at 42: The Crone of the Kraul is the only way it's done).
+                    if q.level < self.L + 2 - grey_gap(self.L + 2) and self.pos \
+                            and continent(self.map_area[m]) == continent(self.pos[3]):
+                        last_chance.add(m)
         # Objectives of chain steps toward a dungeon quest, on another map, once they've been
         # carried FEEDER_ERRAND_AGE levels: without the trip they're carried until dropped.
         # (Earlier trips pull the route around too much and cost more dungeon quests than
@@ -1689,6 +1707,12 @@ class Sim:
             for t in DUNGEON_FEEDERS.get(qid, ()):
                 if not self.has(t) and t not in self.active and t not in self.banned:
                     bundles[QUESTS[t].dungeon].append((q.finish[0], q, {t}))
+                    # Last chance for what it opens (Lonebrow's Journal to Thalanaar before
+                    # The Crone of the Kraul goes grey).
+                    lvl = QUESTS[t].level
+                    if self.L - grey_gap(self.L) <= lvl < self.L + 2 - grey_gap(self.L + 2) \
+                            and self.pos and continent(self.map_area.get(q.finish[0])) == continent(self.pos[3]):
+                        last_chance.add(q.finish[0])
         # A town with quests for several dungeons (Thunder Bluff: Ragefire Chasm and Wailing
         # Caverns) is one trip for all of them, so its value adds up every bundle it serves.
         map_xp = collections.Counter()
@@ -1702,6 +1726,8 @@ class Sim:
             value = map_xp[m] - self.travel_cost(m) + handins[m] * per_level * HANDIN_SLOT
             if value > best_value:
                 best, best_value = m, value
+        if best is None and last_chance:
+            best = min(sorted(last_chance), key=self.travel_cost)
         return best
 
     def run_map(self, mapID, area, allowed_maps=None):
@@ -1740,10 +1766,12 @@ class Sim:
                 self.emit(f"[P {fm['node']} | {self.at(fm['loc'])}]")
                 self.learned.add(fm['node'])
 
-    def check_dungeons(self, area, force=False, cross=False):
+    def check_dungeons(self, area, force=False, cross=False, only=None):
         """Run each carried dungeon once it's ready. cross: the route would grind otherwise,
-        so don't wait to be on the dungeon's continent."""
+        so don't wait to be on the dungeon's continent. only: run just these dungeons."""
         for dname, qids in list(self.carried_dungeon.items()):
+            if only is not None and dname not in only:
+                continue
             # Quests to do in there: unfinished dungeon quests, plus quests handed in inside
             # once their objectives are done (or they have none outdoors).
             qids = {q for q in qids if q in self.active and (
@@ -1821,7 +1849,9 @@ class Sim:
                 self.emit(q.insideFinishNote)
                 changed = True
             for q in INSIDE_STARTS.get(dname, ()):
-                if not self.eligible(q) or q.level > self.L + 5:
+                # Quests done right here on this run (The Platinum Discs, level 47, on an
+                # Uldaman run at 41) don't wait for your level: the group is already there.
+                if not self.eligible(q) or (q.level > self.L + 5 and q.dungeon != dname):
                     continue
                 if len(self.active) >= LOG_LIMIT and not self.make_room():
                     continue
@@ -1889,8 +1919,13 @@ class Sim:
 
     def dungeon_chain_active(self, dname):
         """A quest in the log leads (through its chain) to a quest for this dungeon that
-        isn't picked up yet: run once that chain has delivered it."""
-        for qid in self.active:
+        isn't picked up yet: run once that chain has delivered it. A chain step that is itself
+        an unfinished quest for this dungeon can't deliver anything before the run (KILL ON
+        SIGHT: High Ranking Dark Iron Officials leads to Grark Lorkrub, but only after its own
+        Blackrock Depths kills), so it doesn't hold the run back."""
+        for qid, st in self.active.items():
+            if QUESTS[qid].dungeon == dname and not st['complete']:
+                continue
             for t in DUNGEON_FEEDERS.get(qid, ()):
                 if QUESTS[t].dungeon == dname and not self.has(t) and t not in self.active                         and t not in self.banned:
                     return True
@@ -2080,18 +2115,47 @@ class Sim:
         # done on a late run (Hurley Blackbreath from Blackrock Depths at 58, the route hit 60
         # before Kharanos) are still handed in.
         if self.L >= until_level:
-            for _ in range(LOG_LIMIT):
-                left = [QUESTS[qid] for qid, st in self.active.items() if st['complete']
-                        and QUESTS[qid].dungeon and not QUESTS[qid].finishInside
-                        and (not allowed_maps or QUESTS[qid].finish[0] in allowed_maps)]
-                if not left:
-                    break
+            segments += self.wrap_up_dungeons(allowed_maps)
+        return segments
+
+    def wrap_up_dungeons(self, allowed_maps=None):
+        """At the end of the route: hand in finished dungeon quests and the chain steps that
+        lead to them, take the dungeon quests those open in the same town, and run the dungeons
+        still carrying unfinished quests that aren't grey yet. Blackrock Depths' late chains
+        (KILL ON SIGHT, The Rise of the Machines: level 54-58 quests opened at 58) were left in
+        the log when the route hit 60 before their second run."""
+        segments = []
+        reach = lambda m: not allowed_maps or m in allowed_maps
+        for _ in range(LOG_LIMIT * 3):
+            start_idx, start_level = len(self.steps), self.L
+            left = [QUESTS[qid] for qid, st in self.active.items() if st['complete']
+                    and (QUESTS[qid].dungeon or qid in DUNGEON_FEEDERS)
+                    and not QUESTS[qid].finishInside and reach(QUESTS[qid].finish[0])]
+            if left:
                 q = min(left, key=lambda x: (dist(self.pos, x.finish), x.id))
-                start_idx, start_level = len(self.steps), self.L
                 if not self.pos or q.finish[0] != self.pos[0]:
                     self.travel_to(q.finish[0])
                 self.turnin(q)
-                segments.append((q.finish[0], start_idx, len(self.steps), start_level, self.L))
+                # What the hand-in opens here: dungeon quests, and deliveries toward one
+                # (The Rise of the Machines: Kargath, then Lotwil's camp in the Badlands).
+                for nq in sorted(self.map_quests.get(self.pos[0], ()), key=lambda x: x.id):
+                    if len(self.active) >= LOG_LIMIT:
+                        break
+                    if not (nq.dungeon or (nq.id in DUNGEON_FEEDERS and not nq.hasObjectives)):
+                        continue
+                    if self.eligible(nq) and self.worthwhile(nq) and same_hub(nq.start, self.pos):
+                        self.accept(nq)
+                segments.append((self.pos[0], start_idx, len(self.steps), start_level, self.L))
+                continue
+            due = {QUESTS[qid].dungeon for qid, st in self.active.items()
+                   if not st['complete'] and QUESTS[qid].dungeon in self.carried_dungeon
+                   and QUESTS[qid].level >= self.L - grey_gap(self.L)}
+            if not due:
+                break
+            self.check_dungeons(None, force=True, only=due)
+            if len(self.steps) == start_idx:
+                break
+            segments.append((self.pos[0], start_idx, len(self.steps), start_level, self.L))
         return segments
 
 
@@ -2110,19 +2174,25 @@ def index_maps(sim):
 
 # ---------------------------------------------------------------- clean-up
 STEP_RE = re.compile(r'^\[([ACT]) (\d+) ')
+CLASS_TAG_RE = re.compile(r'; class=([A-Z,]+)')
 
 
 def prune_unfinished(sim):
     """Drop pickups/objectives for quests this route never hands in (and duplicate pickups),
     plus the note lines attached to them, so the guide never has you carry dead quests.
     Returns a map old step index -> new step index (for segment boundaries)."""
+    # A pickup counts as a duplicate only for the same class: a quest for two classes (Brought
+    # to Heel, Hunter and Druid) is picked up once in each class's block.
+    def accept_key(qid, line):
+        cm = CLASS_TAG_RE.search(line)
+        return qid, cm.group(1) if cm else None
     turned, last_accept = set(), {}
     for i, (line, _) in enumerate(sim.steps):
         m = STEP_RE.match(line)
         if m and m.group(1) == 'T':
             turned.add(int(m.group(2)))
         if m and m.group(1) == 'A':
-            last_accept[int(m.group(2))] = i
+            last_accept[accept_key(int(m.group(2)), line)] = i
     keep, remap, dropping = [], {}, False
     for i, (line, lvl) in enumerate(sim.steps):
         remap[i] = len(keep)
@@ -2131,7 +2201,7 @@ def prune_unfinished(sim):
             m = STEP_RE.match(line)
             if m and m.group(1) in 'AC':
                 qid = int(m.group(2))
-                if qid not in turned or (m.group(1) == 'A' and last_accept.get(qid) != i):
+                if qid not in turned or (m.group(1) == 'A' and last_accept.get(accept_key(qid, line)) != i):
                     dropping = True
                     continue
             if line.startswith('[D '):

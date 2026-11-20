@@ -94,6 +94,13 @@ XP minus a travel cost. Level is tracked with QuestieDB's per-quest XP (plus an 
 for kills). Quests it would have to abandon are banned and the route is re-simulated, and
 anything never handed in is pruned, so every pickup in the guide gets turned in.
 
+At 60 the route wraps up its dungeon work: it hands in finished dungeon quests and the chain
+steps leading to them, takes the dungeon quests those open in the same town, and runs the
+dungeons still carrying quests that aren't grey (Blackrock Depths' KILL ON SIGHT and Rise of
+the Machines chains open at 58). A dungeon chain step about to go grey is fetched whatever
+the trip costs ("last chance" in `dungeon_errand`), since otherwise the dungeon quest it leads
+to is lost for good.
+
 ### Faction territory
 
 `TERRITORY` lists each faction's home zones (starting zones, their follow-up zones and

@@ -111,9 +111,9 @@ ns.FlightMasters = {
         { "Doras", "Wind Rider Master", "Orgrimmar", 1454, 45.1, 63.9 },
         { "Tal", "Wind Rider Master", "Thunder Bluff", 1456, 47.0, 49.8 },
         { "Michael Garrett", "Bat Handler", "Undercity", 1458, 63.2, 48.6 },
-        { "Bluebell", "Flight Mistress", false, 2482, 54.1, 83.9 },
+        { "Bluebell", "Flight Mistress", false, 2482, 55.0, 82.8 },
         { "Fayran Elthas", "Flight Master", false, 2482, 68.7, 46.8 },
-        { "Grakna", "Wind Rider Master", false, 2548, 58.1, 42.6 },
+        { "Grakna", "Wind Rider Master", false, 2548, 59.6, 45.1 },
     },
     Alliance = {
         { "Bragok", "Flight Master", "Ratchet", 1413, 63.1, 37.2 },
@@ -148,8 +148,8 @@ ns.FlightMasters = {
         { "Maethrya", "Hippogryph Master", "Everlook", 1452, 62.3, 36.6 },
         { "Dungar Longdrink", "Gryphon Master", "Stormwind", 1453, 71.3, 72.2 },
         { "Gryth Thurden", "Gryphon Master", "Ironforge", 1455, 55.5, 47.7 },
-        { "Bluebell", "Flight Mistress", false, 2482, 54.1, 83.9 },
+        { "Bluebell", "Flight Mistress", false, 2482, 55.0, 82.8 },
         { "Fayran Elthas", "Flight Master", false, 2482, 68.7, 46.8 },
-        { "Gretchen Mayberry", "Gryphon Master", false, 2548, 58.5, 79.8 },
+        { "Gretchen Mayberry", "Gryphon Master", false, 2548, 60.6, 81.5 },
     },
 }

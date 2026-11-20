@@ -3,6 +3,7 @@
   "skip": {},
   "notes": {},
   "dungeon_exempt": {
+    "93604": "Razorfen Downs: Agamaggan's Blood (both factions, in scope since QuestieDB 9cf27d6 gave it a zone). Its prerequisite Passing the Blame (93601) has no zoneOrSort in QuestieDB (2026-11-20), and that one needs Rot and Regret (93404, level 49 with required level 35), which the generator leaves out as a non-leveling quest (level gap over 12). Remove once 93601 has a zone and the level-gap filter keeps 93404.",
     "96984": "City of Dalaran: Heart of Disruption (Horde). Its chain goes through Key to the City (93680), whose Grimy Key comes from object 670427, which QuestieDB has no data for (2026-11-12), so the route can't place it. Remove once the object has spawns."
   },
   "dungeon_backlog": {
@@ -17,8 +18,6 @@
       "3981": "Blackrock Depths: quest 3981 Commander Gor'shak (level 52) is never done (prerequisite not on the route: 3906) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4001": "Blackrock Depths: quest 4001 What Is Going On? (level 54) is never done (prerequisite not on the route: 3982) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4002": "Blackrock Depths: quest 4002 The Eastern Kingdom (level 54) is never done (prerequisite not on the route: 4001)",
-      "4121": "Blackrock Depths: quest 4121 Precarious Predicament (level 58) is never done (area danger 56) [added 2026-11-06: picking up every quest in a town before leaving, waiting for each dungeon's level, the slow-farm time model and running ready dungeons before grinding reshuffled the route]",
-      "4132": "Blackrock Depths: quest 4132 Operation: Death to Angerforge (level 58) is never done (prerequisite not on the route: 4121) [added 2026-11-06: picking up every quest in a town before leaving, waiting for each dungeon's level, the slow-farm time model and running ready dungeons before grinding reshuffled the route]",
       "7201": "Blackrock Depths: quest 7201 The Last Element (level 54) is never done (prerequisite not on the route: 3906)"
     },
     "Alliance": {
