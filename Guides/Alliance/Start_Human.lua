@@ -115,10 +115,8 @@ Zaldimar Wefhellt is right here: pick up your new Mage spells.
 Maximillian Crowe is right here: pick up your new Warlock spells.
 [R Warrior - Elwynn Forest | at=41.09,65.77,1429; class=WARRIOR; xl=6.5]
 Lyria Du Lac is right here: pick up your new Warrior spells.
-[R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=6.5]
-Brother Wilhelm is right here: pick up your new Paladin spells.
-[R Hunter - Elwynn Forest | at=41.15,66.23,1429; class=HUNTER; xl=6.5]
-Josephine Carson is right here: pick up your new Hunter spells.
+[R Paladin - Elwynn Forest | at=41.15,66.23,1429; class=PALADIN; xl=6.5]
+Josephine Carson is right here: pick up your new Paladin spells.
 [R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=6.5]
 Keryn Sylvius is right here: pick up your new Rogue spells.
 [T 99129 A Man About a Murloc | at=42.1,67.3,1429; place=Elwynn Forest; xl=6.5]
@@ -214,23 +212,9 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 1667 Dead-tooth Jack | at=84.6,69.4,1429; pre=1666; place=Elwynn Forest; class=WARRIOR; xl=10.1]
 [C 1667 Dead-tooth Jack | at=89.3,78.9,1429; class=WARRIOR; xl=10.1]
 [T 1667 Dead-tooth Jack | at=84.6,69.4,1429; place=Elwynn Forest; class=WARRIOR; xl=10.1]
-[R Paladin - Elwynn Forest | at=41.1,66.04,1429; class=PALADIN; xl=10.1]
-Brother Wilhelm is right here: pick up your new Paladin spells.
+[R Paladin - Elwynn Forest | at=41.15,66.23,1429; class=PALADIN; xl=10.1]
+Josephine Carson is right here: pick up your new Paladin spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Hunter - Elwynn Forest | at=41.15,66.23,1429; class=HUNTER; xl=10.1]
-Josephine Carson is right here: pick up your new Hunter spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 94792 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[C 94792 Taming the Beast | at=57.2,76.4,1429; mob=Rockhide Boar; class=HUNTER; xl=10.1]
-[T 94792 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[A 94863 Taming the Beast | at=41.1,66.2,1429; pre=94792; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[C 94863 Taming the Beast | at=69.0,62.9,1429; mob=Gray Forest Wolf; class=HUNTER; xl=10.1]
-[T 94863 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[A 94864 Taming the Beast | at=41.1,66.2,1429; pre=94863; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[C 94864 Taming the Beast | at=62.8,77.6,1429; mob=Young Forest Bear; class=HUNTER; xl=10.1]
-[T 94864 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[A 94793 Training the Beast | at=41.1,66.2,1429; pre=94864; place=Elwynn Forest; class=HUNTER; xl=10.1]
-[T 94793 Training the Beast | at=41.8,66.4,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
 [R Rogue - Elwynn Forest | at=43.87,65.94,1429; class=ROGUE; xl=10.1]
 Keryn Sylvius is right here: pick up your new Rogue spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -243,6 +227,20 @@ Defias Dockmaster has only one spawn point. If others are waiting for it, group 
 [R Druid - Stormwind City | at=35.84,67.38,1453; class=DRUID; xl=10.1]
 Time to train: head to Sheldras Moontree in Stormwind City for your new Druid spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Hunter - Stormwind City | at=67.35,36.25,1453; class=HUNTER; xl=10.1]
+Time to train: head to Einris Brightspear in Stormwind City for your new Hunter spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 94792 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[C 94792 Taming the Beast | at=57.2,76.4,1429; mob=Rockhide Boar; class=HUNTER; xl=10.1]
+[T 94792 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[A 94863 Taming the Beast | at=41.1,66.2,1429; pre=94792; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[C 94863 Taming the Beast | at=69.0,62.9,1429; mob=Gray Forest Wolf; class=HUNTER; xl=10.1]
+[T 94863 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[A 94864 Taming the Beast | at=41.1,66.2,1429; pre=94863; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[C 94864 Taming the Beast | at=62.8,77.6,1429; mob=Young Forest Bear; class=HUNTER; xl=10.1]
+[T 94864 Taming the Beast | at=41.1,66.2,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[A 94793 Training the Beast | at=41.1,66.2,1429; pre=94864; place=Elwynn Forest; class=HUNTER; xl=10.1]
+[T 94793 Training the Beast | at=41.8,66.4,1429; place=Elwynn Forest; class=HUNTER; xl=10.1]
 [R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=10.1]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -466,7 +464,7 @@ Time to train: head to Osborne the Night Man in Stormwind City for your new Rogu
 [T 86614 Silver of the Waves | at=40.3,39.3,1432; place=Loch Modan; xl=16.3]
 [C 2038 Bingles' Missing Supplies | at=48.7,30.1,1432; xl=16.5]
 [C 385 Crocolisk Hunting | at=56.1,37.8,1432; mob=Loch Crocolisk; ml=15; item=2924:5,2925:6; drop=22; xl=16.5]
-[C 86758 Twisting the Knife | at=62.3,45.4,1432; mob=Daggerfang; ml=15; xl=16.5]
+[C 86758 Twisting the Knife | at=62.7,45.1,1432; mob=Daggerfang; ml=15; xl=16.5]
 [T 2038 Bingles' Missing Supplies | at=63.6,47.9,1432; place=Loch Modan; xl=16.5]
 [T 436 Ironband's Excavation | at=64.9,66.7,1432; place=Loch Modan; xl=16.6]
 [C 257 A Hunter's Boast | at=76.3,74.8,1432; mob=Mountain Buzzard; ml=16; xl=16.7]

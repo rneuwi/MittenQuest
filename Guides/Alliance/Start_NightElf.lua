@@ -216,8 +216,8 @@ Surena Caledon has only one spawn point. If others are waiting for it, group up 
 [C 1689 The Binding | at=39.2,85.2,1453; mob=Summoned Voidwalker; class=WARLOCK; xl=12.0]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 1689 The Binding | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=12.0]
-[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=12.0]
-Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=12.0]
+Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1683 Vorlus Vilehoof | at=57.3,34.6,1457; ex=1639,1678; place=Darnassus; class=WARRIOR; xl=12.0]
 [C 1683 Vorlus Vilehoof | at=47.2,63.6,1438; mob=Vorlus Vilehoof; class=WARRIOR; xl=12.0]
@@ -305,7 +305,7 @@ Minor Manifestation of Fire has only 2 spawn points. If others are waiting for i
 [C 4681 Washed Ashore | at=31.8,46.3,1439; xl=13.3]
 [T 4681 Washed Ashore | at=36.6,45.6,1439; place=Auberdine; xl=13.3]
 [C 958 Tools of the Highborne | at=42.0,58.4,1439; mob=Cursed Highborne; ml=11; item=5360:7; drop=41; xl=13.4]
-[C 98025 WANTED: Jai'vhanel | at=45.0,58.3,1439; mob=Jai'vhanel; ml=12; xl=13.4]
+[C 98025 WANTED: Jai'vhanel | at=45.1,58.0,1439; mob=Jai'vhanel; ml=12; xl=13.4]
 [A 4722 Beached Sea Turtle | at=37.1,62.2,1439; pre=4681; place=Darkshore; xl=13.4]
 [C 1002 Buzzbox 323 | at=41,67.4,1439; mob=Moonstalker; ml=15; item=5413:6; drop=28; xl=13.4]
 [A 4728 Beached Sea Creature | at=36.0,70.9,1439; pre=4681; place=Darkshore; danger=14; xl=13.4]
@@ -354,7 +354,7 @@ Priestess Alathea is right here: pick up your new Priest spells.
 [G 55.6,57.0 1438 Travel to Teldrassil | xl=14.7]
 [A 98403 Twisted Hatred | at=55.6,57.0,1438; pre=932; opt; place=Teldrassil; xl=14.7]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[C 98403 Twisted Hatred | at=49.7,44.5,1438; mob=Befouled Webwood / Xethorr the Wicked; ml=12; opt; xl=14.7]
+[C 98403 Twisted Hatred | at=49.7,44.7,1438; mob=Befouled Webwood / Xethorr the Wicked; ml=12; opt; xl=14.7]
 [T 98403 Twisted Hatred | at=55.6,57.0,1438; place=Teldrassil; opt; xl=14.7]
 [T 6343 Return to Nessa | at=56.3,92.4,1438; place=Rut'theran Village; race=NightElf; xl=14.8]
 [A 927 The Moss-twined Heart | at=42.8,28.4,1438; opt; place=Teldrassil; xl=15.0]
@@ -367,8 +367,8 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=15.1]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
-[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=15.1]
-Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=15.1]
+Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=15.1]
 Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=15.1]
@@ -457,8 +457,8 @@ Den Mother has only one spawn point. If others are waiting for it, group up to s
 [T 2139 Tharnariun's Hope | at=38.8,43.4,1439; place=Auberdine; xl=17.6]
 [T 729 The Absent Minded Prospector | at=35.7,83.7,1439; place=Darkshore; danger=18; xl=17.7]
 [A 731 The Absent Minded Prospector | at=35.7,83.7,1439; pre=729; place=Darkshore; danger=18; xl=17.9]
-[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=17.9]
-Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=17.9]
+Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=17.9]
 Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 [A 2282 Alther's Mill | at=23.0,52.0,1433; pre=2281; place=Redridge Mountains; class=ROGUE; xl=17.9]
@@ -480,9 +480,9 @@ Alenndaar Lapidaar is right here: pick up your new Hunter spells.
 [T 1008 The Zoram Strand | at=34.7,48.8,1440; place=Astranaar; xl=18.4]
 [R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=18.5]
 Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
-[G 59.0,62.6 1442 Travel to Stonetalon Mountains | xl=18.5]
+[G 59.9,66.8 1442 Travel to Stonetalon Mountains | xl=18.5]
 [T 1070 On Guard in Stonetalon | at=59.9,66.8,1442; place=Stonetalon Mountains; xl=18.5]
-[A 1085 On Guard in Stonetalon | at=59.9,66.8,1442; pre=1070; place=Stonetalon Mountains; xl=18.6]
+[A 1085 On Guard in Stonetalon | at=59.9,66.8,1442; place=Stonetalon Mountains; xl=18.6]
 [T 1085 On Guard in Stonetalon | at=59.5,67.2,1442; place=Stonetalon Mountains; xl=18.6]
 [T 1056 Journey to Stonetalon Peak | at=37.1,8.1,1442; place=Stonetalon Peak; xl=18.6]
 [P Stonetalon Peak | at=36.44,7.18,1442; xl=18.7]
@@ -498,7 +498,7 @@ Time to train: head to Brother Karman in Theramore for your new Paladin spells. 
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Auberdine | xl=19.0]
 [A 1275 Researching the Corruption | at=38.3,43.0,1439; place=Auberdine; xl=19.0]
-[C 87760 Holy Diver | at=50.0,13.0,1439; mob=Stormscale Beastmistress; ml=20; xl=19.0]
+[C 87760 Holy Diver | at=49.4,12.9,1439; mob=Stormscale Beastmistress; ml=20; xl=19.0]
 [T 87760 Holy Diver | at=36.6,45.6,1439; place=Auberdine; xl=19.0]
 [A 944 The Master's Glaive | at=43.5,76.3,1439; pre=948; place=Darkshore; xl=19.1]
 [C 731 The Absent Minded Prospector | at=35.7,84.0,1439; xl=19.1]
@@ -560,8 +560,8 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [A 65603 The Binding | at=39.2,85.2,1453; pre=65602; place=Stormwind City; class=WARLOCK; xl=20.8]
 [C 65603 The Binding | at=84.1,22.7,1458; mob=Summoned Incubus; class=WARLOCK; xl=20.8]
 [T 65603 The Binding | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=20.8]
-[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=20.8]
-Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=20.8]
+Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=20.8]
 Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
 [A 98393 The Great Cat Spirit | at=35.4,8.4,1457; ex=98340; place=Darnassus; class=DRUID; race=NightElf,Skyborne; xl=20.8]

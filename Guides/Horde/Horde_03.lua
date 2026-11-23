@@ -78,6 +78,13 @@ Inside Wailing Caverns: picked up from Glowing Shard, which Mutanus the Devourer
 [C 896 Miner's Fortune | at=61.1,4.0,1413; mob=Venture Co. Enforcer; ml=17; xl=21.9]
 [T 863 The Escape | at=63.0,37.2,1413; place=Ratchet; danger=22; xl=21.9]
 [T 896 Miner's Fortune | at=63.4,38.5,1413; place=Ratchet; xl=22.0]
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=22.2]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[A 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; opt; place=The Barrens; class=WARLOCK; xl=22.2]
+Group quest (elite enemies) - optional; skipped if you don't take it.
+[C 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; mob=Twilight Acolyte / Shadowfang Darksoul; opt; class=WARLOCK; xl=22.2]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; opt; place=The Barrens; class=WARLOCK; xl=22.2]
 [R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=22.2]
 Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 [A 95036 A Moon-Kissed Blade | at=43.4,41.0,1421; pre=95034; opt; place=The Sepulcher; class=PALADIN; race=Scourge; xl=22.2]
@@ -93,13 +100,6 @@ Ott has only one spawn point. If others are waiting for it, group up to share it
 [T 95125 Ott's Masterwork | at=60.4,26.2,1424; place=Hillsbrad Foothills; class=PALADIN; xl=22.2]
 [A 95126 The Moonsilver Blade | at=60.4,26.2,1424; pre=95125; place=Hillsbrad Foothills; class=PALADIN; xl=22.2]
 [T 95126 The Moonsilver Blade | at=60.4,26.3,1424; place=Hillsbrad Foothills; class=PALADIN; xl=22.2]
-[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=22.2]
-Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
-[A 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; opt; place=The Barrens; class=WARLOCK; xl=22.2]
-Group quest (elite enemies) - optional; skipped if you don't take it.
-[C 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; mob=Twilight Acolyte / Shadowfang Darksoul; opt; class=WARLOCK; xl=22.2]
-Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1740 The Orb of Soran'ruk | at=49.3,57.2,1413; opt; place=The Barrens; class=WARLOCK; xl=22.2]
 [F Thunder Bluff | xl=22.2]
 [A 1195 The Sacred Flame | at=55.0,51.4,1456; place=Thunder Bluff; xl=22.2]
 [T 1063 The Elder Crone | at=69.8,30.9,1456; place=Thunder Bluff; xl=22.2]
@@ -183,15 +183,8 @@ Starts from Elegant Letter, which drops in this area.
 Ravenholdt has only one spawn point. If others are waiting for it, group up to share it.
 [T 6681 The Manor, Ravenholdt | at=84.5,80.3,1416; place=Alterac Mountains; class=ROGUE; xl=24.1]
 [A 96779 Syndicate Sabotage | at=84.9,80.4,1416; pre=6681; place=Alterac Mountains; class=ROGUE; xl=24.1]
-[C 96779 Syndicate Sabotage | at=79.5,45.6,1424; mob=Lord Tomas; class=ROGUE; xl=24.1]
+[C 96779 Syndicate Sabotage | at=79.7,45.8,1424; mob=Lord Tomas; class=ROGUE; xl=24.1]
 [T 96779 Syndicate Sabotage | at=84.9,80.4,1416; place=Alterac Mountains; class=ROGUE; xl=24.1]
-[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=24.1]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
-[A 95042 Seeking the Kor Gem | at=11.8,34.5,1440; opt; place=Zoram'gar Outpost; class=PALADIN; xl=24.1]
-Group quest (elite enemies) - optional; skipped if you don't take it.
-[C 95042 Seeking the Kor Gem | at=13.6,12.1,1440; mob=Blackfathom Tide Priestess; opt; class=PALADIN; xl=24.1]
-Blackfathom Tide Priestess has only one spawn point. If others are waiting for it, group up to share it.
-[T 95042 Seeking the Kor Gem | at=11.8,34.5,1440; opt; place=Zoram'gar Outpost; class=PALADIN; xl=24.1]
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=24.1]
 Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=24.1]

@@ -74,10 +74,10 @@ Starts from Hoof of Lakota'mani, which drops in this area.
 [A 1062 Goblin Invaders | at=35.3,27.9,1413; place=The Barrens; danger=19; xl=18.7]
 [R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=18.7]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
-[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=18.7]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=18.7]
 Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
+[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=18.7]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 [F Thunder Bluff | xl=18.7]
 [A 914 Leaders of the Fang | at=75.7,31.6,1456; pre=1490; place=Thunder Bluff; xl=18.7]
 [R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=18.7]
@@ -108,10 +108,12 @@ Fenwick Thatros has only one spawn point. If others are waiting for it, group up
 [A 1999 Tools of the Trade | at=83.5,69.1,1458; pre=1998; place=Undercity; class=ROGUE; race=Scourge; xl=19.1]
 [C 1999 Tools of the Trade | at=63.7,65.2,1421; class=ROGUE; race=Scourge; xl=19.1]
 [T 1999 Tools of the Trade | at=83.5,69.1,1458; place=Undercity; class=ROGUE; race=Scourge; xl=19.1]
-[R Paladin - Undercity | at=47.53,14.99,1458; class=PALADIN; xl=19.1]
-Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
-[A 91858 Diplomatic Incident | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=19.1]
-[T 91858 Diplomatic Incident | at=43.4,41.1,1421; place=The Sepulcher; class=PALADIN; race=Scourge; xl=19.1]
+[R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=19.1]
+Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=19.1]
+Time to train: head to Hilda the Breaker in Tirisfal Glades for your new Paladin spells. The arrow takes you back to the route afterwards.
+[A 91858 Diplomatic Incident | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; xl=19.1]
+[T 91858 Diplomatic Incident | at=43.4,41.1,1421; place=The Sepulcher; class=PALADIN; xl=19.1]
 [A 91859 A Curious Pair | at=43.4,41.1,1421; pre=91858; place=The Sepulcher; class=PALADIN; xl=19.1]
 [T 91859 A Curious Pair | at=45.8,41.9,1421; place=The Sepulcher; class=PALADIN; xl=19.1]
 [A 91860 A Grim Fate | at=45.8,41.9,1421; pre=91859; place=The Sepulcher; class=PALADIN; xl=19.1]
@@ -127,8 +129,6 @@ Charred Remains has only one spawn point. If others are waiting for it, group up
 [C 96204 The Windshaper's Wrath | at=65.5,23.3,1421; mob=Lumina Windsinger; class=PALADIN; xl=19.1]
 Lumina Windsinger has only one spawn point. If others are waiting for it, group up to share it.
 [T 96204 The Windshaper's Wrath | at=43.4,41.0,1421; place=The Sepulcher; class=PALADIN; xl=19.1]
-[R Mage - Undercity | at=85.02,14.02,1458; class=MAGE; xl=19.1]
-Time to train: head to Kaelystia Hatebringer in Undercity for your new Mage spells. The arrow takes you back to the route afterwards.
 [F Undercity | xl=19.1]
 [T 451 A Recipe For Death | at=48.8,69.3,1458; place=Undercity; opt; xl=19.1]
 [A 95216 The New Plague | at=46.3,71.9,1458; pre=451; opt; place=Undercity; xl=19.3]
@@ -163,7 +163,7 @@ Beaten Corpse has only one spawn point. If others are waiting for it, group up t
 [T 4921 Lost in Battle | at=52.0,31.6,1413; place=Crossroads; xl=20.3]
 [T 899 Consumed by Hatred | at=52.0,31.6,1413; place=Crossroads; xl=20.4]
 [A 95774 Her Name Is Olgra | at=52.0,31.6,1413; pre=4921; place=Crossroads; xl=20.6]
-[C 95774 Her Name Is Olgra | at=49.8,51.7,1413; mob=Razormane Raider; ml=19; xl=20.6]
+[C 95774 Her Name Is Olgra | at=50.1,51.3,1413; mob=Razormane Raider; ml=19; xl=20.6]
 [T 95774 Her Name Is Olgra | at=52.0,31.6,1413; place=Crossroads; xl=20.6]
 [R Hunter - Thunder Bluff | at=57.3,89.79,1456; class=HUNTER; xl=20.7]
 Time to train: head to Holt Thunderhorn in Thunder Bluff for your new Hunter spells. The arrow takes you back to the route afterwards.
@@ -202,6 +202,28 @@ Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spell
 [T 98739 Blessings of the Great Cat Spirit | at=56.2,30.6,1450; place=Moonglade; class=DRUID; race=Tauren; xl=20.7]
 [A 98362 To Thunder Bluff | at=56.2,30.6,1450; pre=98739; ex=98397; place=Moonglade; class=DRUID; race=Tauren,Skyborne; xl=20.7]
 [T 98362 To Thunder Bluff | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren,Skyborne; xl=20.7]
+[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=20.7]
+Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[A 1507 Devourer of Souls | at=48.2,45.3,1454; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[T 1507 Devourer of Souls | at=47.1,46.4,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[A 1508 Blind Cazul | at=47.1,46.4,1454; pre=1507; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[T 1508 Blind Cazul | at=37.0,59.5,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[A 1509 News of Dogran | at=37.0,59.5,1454; pre=1508; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[T 1509 News of Dogran | at=51.9,30.3,1413; place=Crossroads; class=WARLOCK; xl=20.7]
+[A 1510 News of Dogran | at=51.9,30.3,1413; pre=1509; ex=1472; place=Crossroads; class=WARLOCK; xl=20.7]
+[T 1510 News of Dogran | at=73.2,95.1,1442; place=Stonetalon Mountains; class=WARLOCK; xl=20.7]
+[A 1511 Ken'zigla's Draught | at=73.2,95.1,1442; pre=1510; ex=1472; place=Stonetalon Mountains; class=WARLOCK; xl=20.7]
+[T 1511 Ken'zigla's Draught | at=44.6,59.3,1413; place=Camp Taurajo; class=WARLOCK; xl=20.7]
+[A 1515 Dogran's Captivity | at=44.6,59.3,1413; pre=1511; ex=1472; place=Camp Taurajo; class=WARLOCK; xl=20.7]
+[T 1515 Dogran's Captivity | at=43.3,47.9,1413; place=The Barrens; class=WARLOCK; xl=20.7]
+[A 1512 Love's Gift | at=43.3,47.9,1413; pre=1515; ex=1472; place=The Barrens; class=WARLOCK; xl=20.7]
+[T 1512 Love's Gift | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[A 1513 The Binding | at=48.2,45.3,1454; pre=1512; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[C 1513 The Binding | at=48.2,45.3,1454; mob=Summoned Succubus; class=WARLOCK; xl=20.7]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1513 The Binding | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[A 65601 Love Hurts | at=47.1,46.4,1454; pre=1507; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
+[T 65601 Love Hurts | at=63.6,49.9,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
 [R Shaman - Orgrimmar | at=37.84,36.45,1454; class=SHAMAN; xl=20.7]
 Time to train: head to Sian'tsu in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
 [A 1528 Call of Water | at=38.0,37.7,1454; ex=1529,2985,2986; opt; place=Orgrimmar; class=SHAMAN; xl=20.7]
@@ -227,28 +249,6 @@ Corrupt Minor Manifestation of Water has only one spawn point. If others are wai
 [T 100 Call of Water | at=38.6,44.6,1421; place=Silverpine Forest; class=SHAMAN; xl=20.7]
 [A 96 Call of Water | at=38.6,44.6,1421; pre=100; place=Silverpine Forest; class=SHAMAN; xl=20.7]
 [T 96 Call of Water | at=65.8,43.8,1413; place=The Barrens; class=SHAMAN; xl=20.7]
-[R Warlock - Orgrimmar | at=47.98,45.93,1454; class=WARLOCK; xl=20.7]
-Time to train: head to Grol'dar in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
-[A 1507 Devourer of Souls | at=48.2,45.3,1454; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[T 1507 Devourer of Souls | at=47.1,46.4,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[A 1508 Blind Cazul | at=47.1,46.4,1454; pre=1507; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[T 1508 Blind Cazul | at=37.0,59.5,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[A 1509 News of Dogran | at=37.0,59.5,1454; pre=1508; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[T 1509 News of Dogran | at=51.9,30.3,1413; place=Crossroads; class=WARLOCK; xl=20.7]
-[A 1510 News of Dogran | at=51.9,30.3,1413; pre=1509; ex=1472; place=Crossroads; class=WARLOCK; xl=20.7]
-[T 1510 News of Dogran | at=73.2,95.1,1442; place=Stonetalon Mountains; class=WARLOCK; xl=20.7]
-[A 1511 Ken'zigla's Draught | at=73.2,95.1,1442; pre=1510; ex=1472; place=Stonetalon Mountains; class=WARLOCK; xl=20.7]
-[T 1511 Ken'zigla's Draught | at=44.6,59.3,1413; place=Camp Taurajo; class=WARLOCK; xl=20.7]
-[A 1515 Dogran's Captivity | at=44.6,59.3,1413; pre=1511; ex=1472; place=Camp Taurajo; class=WARLOCK; xl=20.7]
-[T 1515 Dogran's Captivity | at=43.3,47.9,1413; place=The Barrens; class=WARLOCK; xl=20.7]
-[A 1512 Love's Gift | at=43.3,47.9,1413; pre=1515; ex=1472; place=The Barrens; class=WARLOCK; xl=20.7]
-[T 1512 Love's Gift | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[A 1513 The Binding | at=48.2,45.3,1454; pre=1512; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[C 1513 The Binding | at=48.2,45.3,1454; mob=Summoned Succubus; class=WARLOCK; xl=20.7]
-Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1513 The Binding | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[A 65601 Love Hurts | at=47.1,46.4,1454; pre=1507; ex=1472; place=Orgrimmar; class=WARLOCK; xl=20.7]
-[T 65601 Love Hurts | at=63.6,49.9,1454; place=Orgrimmar; class=WARLOCK; xl=20.7]
 [G 13.6,12.1 1440 Travel to Ashenvale | xl=20.7]
 [L 19 | xl=20.7]
 The next guide starts around level 20. Below 19? Grind here or finish leftover quests first.

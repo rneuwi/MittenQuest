@@ -25,6 +25,9 @@ CORR_NOTES = {int(q): t for q, t in CORR.get('notes', {}).items()}
 # Quests that must be turned in first, which QuestieDB doesn't record (Forever's own chains).
 CORR_PREREQS = {int(q): [int(p) for p in v['pre']] for q, v in CORR.get('prereqs', {}).items()}
 CORR_NOT_MOBS = {int(n) for n in CORR.get('not_mobs', {})}   # NPCs that aren't hostile mobs
+# Quests done on a dungeon run that QuestieDB files under another zone (an elite killed just
+# outside the instance portal): quest -> the dungeon's sort.
+CORR_DUNGEON_SORT = {int(q): int(v['sort']) for q, v in CORR.get('dungeon_sort', {}).items()}
 Q = json.load(open(os.path.join(SP, 'out/Quest.json')))
 N = json.load(open(os.path.join(SP, 'out/Npc.json')))
 O = json.load(open(os.path.join(SP, 'out/Object.json')))
@@ -498,6 +501,7 @@ def build_quests():
         cmask = q.get('requiredClasses') or 0
         x.classes = cmask if class_specific(cmask) else 0
         x.classList = [c for c, b in CLASS_BITS.items() if cmask & b] if cmask and not x.classes else []
+        sort = CORR_DUNGEON_SORT.get(qid, sort)
         x.sort = sort
         x.dungeon = dungeon_name(sort)
         x.text = ' '.join(q.get('objectivesText') or [])

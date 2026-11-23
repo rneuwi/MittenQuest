@@ -59,7 +59,7 @@ Grind mobs around your level here; more quests open at the next level.
 [F Lakeshire | xl=20.8]
 [T 146 Messenger to Darkshire | at=24.9,44.5,1433; place=Redridge Mountains; opt; xl=20.8]
 [A 34 An Unwelcome Guest | at=16.8,46.3,1433; place=Redridge Mountains; xl=20.8]
-[C 98386 Alther's Mill | at=49.5,43.0,1433; mob=Greater Tarantula; ml=20; opt; xl=20.8]
+[C 98386 Alther's Mill | at=49.1,42.9,1433; mob=Greater Tarantula; ml=20; opt; xl=20.8]
 [C 20 Blackrock Menace | at=56.0,43.4,1433; mob=Blackrock Grunt; ml=20; item=3014:10; drop=46; xl=20.8]
 [T 20 Blackrock Menace | at=28.4,49.0,1433; place=Redridge Mountains; xl=20.8]
 [T 98386 Alther's Mill | at=27.1,48.6,1433; place=Redridge Mountains; opt; xl=20.9]

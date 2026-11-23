@@ -1,5 +1,18 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Quest data updated to QuestieDB e3c3bc4 (November 22), mostly corrected NPC positions and
+  quest chain links. The routes shifted with it: Horde is about 133 hours from level 12 (same
+  as before), Alliance about 108 hours from level 19 (up from 102).
+- Guides were rebuilt and renamed from level 40 (Horde) and 35 (Alliance) up. Horde now has
+  13 guides after the starting zones instead of 12, and Alliance has 10 instead of 11. Guides
+  you're partway through pick up where you are from your quest log.
+- Horde: the Kargath Blackrock Depths quests are now on the route. Disharmony of Flame
+  (Overmaster Pyron, at the BRD entrance) is done on the run, which opens Disharmony of Fire,
+  Commander Gor'shak, What Is Going On?, The Eastern Kingdom and The Last Element.
+
 ## 1.6.7
 
 **Changes**

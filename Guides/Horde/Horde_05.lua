@@ -51,11 +51,11 @@ Steelsnap has only one spawn point. If others are waiting for it, group up to sh
 [A 96241 Talkin' bout Toxins, Mon | at=32.5,20.7,1412; place=Mulgore; xl=29.7]
 [A 96260 Stronger than Steel | at=32.5,20.0,1412; place=Mulgore; xl=29.7]
 [A 96259 Defending the Dead | at=33.4,22.6,1412; place=Mulgore; xl=29.7]
-[R Shaman - Mulgore | at=33.6,22.4,1412; class=SHAMAN; xl=29.7]
+[R Shaman - Mulgore | at=33.61,22.4,1412; class=SHAMAN; xl=29.7]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 [C 96241 Talkin' bout Toxins, Mon | at=33.8,11.4,1412; mob=Gnawed Corpse; ml=29; item=273001:5; xl=29.7]
-[C 96259 Defending the Dead | at=34.2,11.2,1412; mob=Gloomrise Hatchling / Gloomrise Soldier; ml=29; xl=29.7]
-[C 96260 Stronger than Steel | at=33.4,10.7,1412; mob=Gloomrise Spinner; ml=28; item=273181:3; xl=29.7]
+[C 96259 Defending the Dead | at=33.9,11.4,1412; mob=Gloomrise Hatchling / Gloomrise Soldier; ml=29; xl=29.7]
+[C 96260 Stronger than Steel | at=33.6,10.3,1412; mob=Gloomrise Spinner; ml=28; item=273181:3; xl=29.7]
 [T 96260 Stronger than Steel | at=32.5,20.0,1412; place=Mulgore; xl=29.7]
 [T 96241 Talkin' bout Toxins, Mon | at=32.5,20.7,1412; place=Mulgore; xl=29.8]
 [T 96259 Defending the Dead | at=33.4,22.6,1412; place=Mulgore; xl=29.9]
@@ -63,7 +63,7 @@ Palah Thunderhoof is right here: pick up your new Shaman spells.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=30.0]
 Hana Lighthoof is right here: pick up your new Druid spells.
-[R Shaman - Mulgore | at=33.6,22.4,1412; class=SHAMAN; xl=30.0]
+[R Shaman - Mulgore | at=33.61,22.4,1412; class=SHAMAN; xl=30.0]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 [A 1532 Call of Air | at=25.2,20.5,1456; ex=1531,96136; place=Thunder Bluff; class=SHAMAN; xl=30.0]
 [T 1532 Call of Air | at=53.5,42.6,1441; place=Thousand Needles; class=SHAMAN; xl=30.0]

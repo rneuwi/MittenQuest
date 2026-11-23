@@ -36,12 +36,6 @@ Frang is right here: pick up your new Warrior spells.
 [T 2383 Simple Parchment | at=42.9,69.4,1411; place=Durotar; class=WARRIOR; race=Orc; xl=2.1]
 [A 3065 Simple Tablet | at=42.1,68.3,1411; pre=788; place=Durotar; class=WARRIOR; race=Troll; xl=2.1]
 [T 3065 Simple Tablet | at=42.9,69.4,1411; place=Durotar; class=WARRIOR; race=Troll; xl=2.1]
-[R Shaman - Durotar | at=42.39,69,1411; class=SHAMAN; xl=2.1]
-Shikrik is right here: pick up your new Shaman spells.
-[A 3084 Rune-Inscribed Tablet | at=42.1,68.3,1411; pre=788; place=Durotar; class=SHAMAN; race=Troll; xl=2.1]
-[T 3084 Rune-Inscribed Tablet | at=42.4,69,1411; place=Durotar; class=SHAMAN; race=Troll; xl=2.1]
-[A 3089 Rune-Inscribed Parchment | at=42.1,68.3,1411; pre=788; place=Durotar; class=SHAMAN; race=Orc; xl=2.1]
-[T 3089 Rune-Inscribed Parchment | at=42.4,69,1411; place=Durotar; class=SHAMAN; race=Orc; xl=2.1]
 [R Warlock - Durotar | at=40.65,68.52,1411; class=WARLOCK; xl=2.1]
 Nartok is right here: pick up your new Warlock spells.
 [A 3090 Tainted Parchment | at=42.1,68.3,1411; pre=788; place=Durotar; class=WARLOCK; race=Orc; xl=2.1]
@@ -53,6 +47,12 @@ Nartok is right here: pick up your new Warlock spells.
 [T 1485 Vile Familiars | at=42.6,69,1411; place=Durotar; class=WARLOCK; xl=2.1]
 [A 1499 Vile Familiars | at=42.6,69,1411; pre=1485; place=Durotar; class=WARLOCK; xl=2.1]
 [T 1499 Vile Familiars | at=42.9,69.2,1411; place=Durotar; class=WARLOCK; xl=2.1]
+[R Shaman - Durotar | at=42.39,69,1411; class=SHAMAN; xl=2.1]
+Shikrik is right here: pick up your new Shaman spells.
+[A 3084 Rune-Inscribed Tablet | at=42.1,68.3,1411; pre=788; place=Durotar; class=SHAMAN; race=Troll; xl=2.1]
+[T 3084 Rune-Inscribed Tablet | at=42.4,69,1411; place=Durotar; class=SHAMAN; race=Troll; xl=2.1]
+[A 3089 Rune-Inscribed Parchment | at=42.1,68.3,1411; pre=788; place=Durotar; class=SHAMAN; race=Orc; xl=2.1]
+[T 3089 Rune-Inscribed Parchment | at=42.4,69,1411; place=Durotar; class=SHAMAN; race=Orc; xl=2.1]
 [R Mage - Durotar | at=42.51,69.04,1411; class=MAGE; xl=2.1]
 Mai'ah is right here: pick up your new Mage spells.
 [A 3086 Glyphic Tablet | at=42.1,68.3,1411; pre=788; place=Durotar; class=MAGE; race=Troll; xl=2.1]
@@ -66,7 +66,7 @@ Mai'ah is right here: pick up your new Mage spells.
 [A 5441 Lazy Peons | at=44.6,68.7,1411; place=Durotar; xl=3.5]
 [A 2161 A Peon's Burden | at=52.1,68.3,1411; place=Durotar; xl=3.5]
 [A 96821 Legging It | at=56.0,73.9,1411; place=Durotar; xl=3.5]
-[C 96821 Legging It | at=53,61.5,1411; mob=Ridgeshade Creeper / Ridgeshade Lurker; ml=6; xl=3.5]
+[C 96821 Legging It | at=53.0,61.8,1411; mob=Ridgeshade Creeper / Ridgeshade Lurker; ml=6; xl=3.5]
 [A 830 The Admiral's Orders | at=59.3,57.6,1411; place=Durotar; xl=3.5]
 Starts from Aged Envelope, which drops in this area.
 [T 96821 Legging It | at=52.0,43.5,1411; place=Durotar; xl=3.5]
@@ -90,6 +90,8 @@ Grunt Kor'ja has only one spawn point. If others are waiting for it, group up to
 [T 5649 In Favor of Spirituality | at=54.3,42.9,1411; opt; place=Durotar; class=PRIEST; race=Troll; xl=5.0]
 [R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=5.0]
 Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=5.0]
+Dhugru Gorelust is right here: pick up your new Warlock spells.
 [R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=5.0]
 Swart is right here: pick up your new Shaman spells.
 [A 1516 Call of Earth | at=42.4,69.2,1411; ex=1519,92466; place=Durotar; class=SHAMAN; xl=5.0]
@@ -99,8 +101,6 @@ Swart is right here: pick up your new Shaman spells.
 [T 1517 Call of Earth | at=44.0,76.2,1411; place=Durotar; class=SHAMAN; xl=5.0]
 [A 1518 Call of Earth | at=44.0,76.2,1411; pre=1517; place=Durotar; class=SHAMAN; xl=5.0]
 [T 1518 Call of Earth | at=42.4,69.2,1411; place=Durotar; class=SHAMAN; xl=5.0]
-[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=5.0]
-Dhugru Gorelust is right here: pick up your new Warlock spells.
 [C 96825 This Fruit Could Bite Back | at=46.7,49.0,1411; item=275718:8; xl=5.0]
 [T 96825 This Fruit Could Bite Back | at=51.1,42.5,1411; place=Durotar; xl=5.0]
 [C 792 Vile Familiars | at=44.2,55.3,1411; mob=Vile Familiar; ml=4; class=WARRIOR,PALADIN,HUNTER,ROGUE,PRIEST,SHAMAN,MAGE,DRUID; xl=5.5]
@@ -155,10 +155,10 @@ Kaplak is right here: pick up your new Rogue spells.
 Tai'jin is right here: pick up your new Priest spells.
 [R Warrior - Durotar | at=54.19,42.47,1411; class=WARRIOR; xl=9.0]
 Tarshaw Jaggedscar is right here: pick up your new Warrior spells.
-[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=9.0]
-Swart is right here: pick up your new Shaman spells.
 [R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=9.0]
 Dhugru Gorelust is right here: pick up your new Warlock spells.
+[R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=9.0]
+Swart is right here: pick up your new Shaman spells.
 [T 99048 A Missing Hand | at=58.6,45.6,1411; place=Durotar; xl=9.0]
 [A 99049 Threat from Below | at=58.6,45.6,1411; pre=99048; place=Durotar; xl=9.0]
 Also pick up the Orcish Dagger and Broken Bone Trident lying next to the quest giver: the quest needs them.
@@ -171,7 +171,7 @@ Also pick up the Orcish Dagger and Broken Bone Trident lying next to the quest g
 [T 96876 Ukor's Lost Pack | at=52.1,68.3,1411; place=Durotar; opt; xl=9.3]
 [T 6394 Thazz'ril's Pick | at=44.6,68.7,1411; place=Durotar; xl=9.5]
 [T 825 From The Wreckage.... | at=52.0,43.5,1411; place=Durotar; xl=9.6]
-[C 99051 Threat from Below | at=58.4,26.2,1411; mob=Spitelash Scout; ml=10; item=286008:9; xl=9.8]
+[C 99051 Threat from Below | at=58.5,26.1,1411; mob=Spitelash Scout; ml=10; item=286008:9; xl=9.8]
 [A 97281 A Simmering Storm | at=52.0,21.4,1411; place=Durotar; xl=9.8]
 Starts from Dull Storm Orb, which drops in this area.
 [T 97281 A Simmering Storm | at=46.4,22.9,1411; place=Durotar; xl=9.8]
@@ -211,12 +211,21 @@ Time to train: head to Tai'jin in Durotar for your new Priest spells. The arrow 
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 5652 Hex of Weakness | at=35.6,87.8,1454; ex=5654,5655,5656,5657; place=Orgrimmar; class=PRIEST; race=Troll; xl=10.1]
 [T 5652 Hex of Weakness | at=35.6,87.8,1454; place=Orgrimmar; class=PRIEST; race=Troll; xl=10.1]
-[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=10.1]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Druid - Thunder Bluff | at=76.48,27.22,1456; class=DRUID; xl=10.1]
 Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=10.1]
+Time to train: head to Dhugru Gorelust in Durotar for your new Warlock spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; place=Durotar; class=WARLOCK; xl=10.1]
+[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; place=Orgrimmar; class=WARLOCK; xl=10.1]
+[A 1501 Creature of the Void | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
+[C 1501 Creature of the Void | at=51.6,9.8,1411; class=WARLOCK; race=Orc; xl=10.1]
+[T 1501 Creature of the Void | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
+[A 1504 The Binding | at=48.2,45.3,1454; pre=1501; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
+[C 1504 The Binding | at=48.2,45.3,1454; mob=Summoned Voidwalker; class=WARLOCK; race=Orc; xl=10.1]
+Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
+[T 1504 The Binding | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
 [R Shaman - Durotar | at=54.42,42.59,1411; class=SHAMAN; xl=10.1]
 Time to train: head to Swart in Durotar for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -233,18 +242,6 @@ Minor Manifestation of Fire has only 2 spawn points. If others are waiting for i
 [T 1526 Call of Fire | at=39.0,58.2,1411; place=Durotar; class=SHAMAN; xl=10.1]
 [A 1527 Call of Fire | at=39.0,58.2,1411; pre=1526; place=Durotar; class=SHAMAN; xl=10.1]
 [T 1527 Call of Fire | at=56.0,19.9,1413; place=The Barrens; class=SHAMAN; xl=10.1]
-[R Warlock - Durotar | at=54.38,41.2,1411; class=WARLOCK; xl=10.1]
-Time to train: head to Dhugru Gorelust in Durotar for your new Warlock spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; place=Durotar; class=WARLOCK; xl=10.1]
-[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; place=Orgrimmar; class=WARLOCK; xl=10.1]
-[A 1501 Creature of the Void | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
-[C 1501 Creature of the Void | at=51.6,9.8,1411; class=WARLOCK; race=Orc; xl=10.1]
-[T 1501 Creature of the Void | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
-[A 1504 The Binding | at=48.2,45.3,1454; pre=1501; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
-[C 1504 The Binding | at=48.2,45.3,1454; mob=Summoned Voidwalker; class=WARLOCK; race=Orc; xl=10.1]
-Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1504 The Binding | at=48.2,45.3,1454; place=Orgrimmar; class=WARLOCK; race=Orc; xl=10.1]
 [R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=10.1]
 Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -253,6 +250,9 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [A 1884 Ju-Ju Heaps | at=56.3,75.1,1411; ex=1882; place=Durotar; class=MAGE; race=Orc,Scourge,Troll; xl=10.1]
 [C 1884 Ju-Ju Heaps | at=67.8,83.4,1411; class=MAGE; race=Orc,Scourge,Troll; xl=10.1]
 [T 1884 Ju-Ju Heaps | at=56.3,75.1,1411; place=Durotar; class=MAGE; race=Orc,Scourge,Troll; xl=10.1]
+[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=10.1]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 56.0,34.1 1454 Travel to Orgrimmar | xl=10.1]
 [T 831 The Admiral's Orders | at=32.3,35.8,1454; place=Orgrimmar; xl=10.1]
 [A 5726 Hidden Enemies | at=31.7,37.8,1454; place=Orgrimmar; xl=10.3]

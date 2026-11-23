@@ -13,21 +13,14 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Tirisfal Glades (Undead)]==], [==[
 [T 364 The Mindless Ones | at=30.8,66.2,1420; place=Tirisfal Glades; xl=1.2]
 [A 3901 Rattling the Rattlecages | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; xl=2.1]
 [A 376 The Damned | at=30.9,66.0,1420; place=Tirisfal Glades; xl=2.1]
-[R Rogue - Tirisfal Glades | at=32.53,65.65,1420; class=ROGUE; xl=2.1]
-David Trias is right here: pick up your new Rogue spells.
+[R Rogue - Tirisfal Glades | at=32.66,65.66,1420; class=ROGUE; xl=2.1]
+Clarence Gillian is right here: pick up your new Rogue spells.
 [A 3096 Encrypted Scroll | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; class=ROGUE; race=Scourge; xl=2.1]
 [T 3096 Encrypted Scroll | at=32.5,65.7,1420; place=Tirisfal Glades; class=ROGUE; race=Scourge; xl=2.1]
 [R Priest - Tirisfal Glades | at=31.11,66.03,1420; class=PRIEST; xl=2.1]
 Dark Cleric Duesten is right here: pick up your new Priest spells.
 [A 3097 Hallowed Scroll | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; class=PRIEST; race=Scourge; xl=2.1]
 [T 3097 Hallowed Scroll | at=31.1,66.0,1420; place=Tirisfal Glades; class=PRIEST; race=Scourge; xl=2.1]
-[R Paladin - Tirisfal Glades | at=31.01,66.24,1420; class=PALADIN; xl=2.1]
-Aramis Hammerhand is right here: pick up your new Paladin spells.
-[A 98601 A Difficult Path | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
-[T 98601 A Difficult Path | at=31.0,66.2,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
-[A 90902 Rediscovering the Light | at=31.0,66.2,1420; pre=364; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
-[C 90902 Rediscovering the Light | at=31.9,64.3,1420; mob=Injured Deathguard; class=PALADIN; race=Scourge; xl=2.1]
-[T 90902 Rediscovering the Light | at=31.0,66.2,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
 [R Warrior - Tirisfal Glades | at=32.69,65.56,1420; class=WARRIOR; xl=2.1]
 Dannal Stern is right here: pick up your new Warrior spells.
 [A 3095 Simple Scroll | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; class=WARRIOR; race=Scourge; xl=2.1]
@@ -43,6 +36,13 @@ Maximillion is right here: pick up your new Warlock spells.
 Isabella is right here: pick up your new Mage spells.
 [A 3098 Glyphic Scroll | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; class=MAGE; race=Scourge; xl=2.1]
 [T 3098 Glyphic Scroll | at=30.9,66.1,1420; place=Tirisfal Glades; class=MAGE; race=Scourge; xl=2.1]
+[R Paladin - Tirisfal Glades | at=31.01,66.24,1420; class=PALADIN; xl=2.1]
+Aramis Hammerhand is right here: pick up your new Paladin spells.
+[A 98601 A Difficult Path | at=30.8,66.2,1420; pre=364; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
+[T 98601 A Difficult Path | at=31.0,66.2,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
+[A 90902 Rediscovering the Light | at=31.0,66.2,1420; pre=364; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
+[C 90902 Rediscovering the Light | at=31.9,64.3,1420; mob=Injured Deathguard; class=PALADIN; race=Scourge; xl=2.1]
+[T 90902 Rediscovering the Light | at=31.0,66.2,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=2.1]
 [C 376 The Damned | at=30.7,69.3,1420; mob=Young Scavenger / Duskbat; item=3265:6,3264:6; drop=61; xl=2.1]
 [T 376 The Damned | at=30.9,66.0,1420; place=Tirisfal Glades; xl=2.1]
 [A 98389 A Light in the Darkness | at=31.0,66.2,1420; pre=376; place=Tirisfal Glades; race=Scourge; xl=2.5]
@@ -53,10 +53,16 @@ Isabella is right here: pick up your new Mage spells.
 [T 3902 Scavenging Deathknell | at=31.6,65.6,1420; place=Tirisfal Glades; xl=3.3]
 [C 3901 Rattling the Rattlecages | at=32.9,61.6,1420; mob=Rattlecage Skeleton; xl=3.8]
 [T 3901 Rattling the Rattlecages | at=30.8,66.2,1420; place=Tirisfal Glades; xl=3.8]
-[R Rogue - Tirisfal Glades | at=32.53,65.65,1420; class=ROGUE; xl=4.1]
-David Trias is right here: pick up your new Rogue spells.
+[R Rogue - Tirisfal Glades | at=32.66,65.66,1420; class=ROGUE; xl=4.1]
+Clarence Gillian is right here: pick up your new Rogue spells.
 [R Priest - Tirisfal Glades | at=31.11,66.03,1420; class=PRIEST; xl=4.1]
 Dark Cleric Duesten is right here: pick up your new Priest spells.
+[R Warrior - Tirisfal Glades | at=32.69,65.56,1420; class=WARRIOR; xl=4.1]
+Dannal Stern is right here: pick up your new Warrior spells.
+[R Warlock - Tirisfal Glades | at=30.91,66.34,1420; class=WARLOCK; xl=4.1]
+Maximillion is right here: pick up your new Warlock spells.
+[R Mage - Tirisfal Glades | at=30.93,66.06,1420; class=MAGE; xl=4.1]
+Isabella is right here: pick up your new Mage spells.
 [R Paladin - Tirisfal Glades | at=31.01,66.24,1420; class=PALADIN; xl=4.1]
 Aramis Hammerhand is right here: pick up your new Paladin spells.
 [A 91208 Coming to Terms | at=31.0,66.2,1420; pre=90902; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=4.1]
@@ -67,12 +73,6 @@ Frightened Paladin has only one spawn point. If others are waiting for it, group
 [C 91209 Continue Your Training | at=60.2,52.7,1420; mob=Shari Stilwell; class=PALADIN; race=Scourge; xl=4.1]
 Shari Stilwell has only one spawn point. If others are waiting for it, group up to share it.
 [T 91209 Continue Your Training | at=60.2,52.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=4.1]
-[R Warrior - Tirisfal Glades | at=32.69,65.56,1420; class=WARRIOR; xl=4.1]
-Dannal Stern is right here: pick up your new Warrior spells.
-[R Warlock - Tirisfal Glades | at=30.91,66.34,1420; class=WARLOCK; xl=4.1]
-Maximillion is right here: pick up your new Warlock spells.
-[R Mage - Tirisfal Glades | at=30.93,66.06,1420; class=MAGE; xl=4.1]
-Isabella is right here: pick up your new Mage spells.
 [C 380 Night Web's Hollow | at=27.1,59.2,1420; mob=Young Night Web Spider / Night Web Spider; ml=4; xl=4.1]
 [T 380 Night Web's Hollow | at=32.1,66.0,1420; place=Tirisfal Glades; xl=4.1]
 [A 381 The Scarlet Crusade | at=32.1,66.0,1420; pre=380; place=Tirisfal Glades; xl=4.5]
@@ -119,8 +119,6 @@ Deathguard Kel has only one spawn point. If others are waiting for it, group up 
 Marion Call is right here: pick up your new Rogue spells.
 [R Priest - Tirisfal Glades | at=61.57,52.19,1420; class=PRIEST; xl=7.0]
 Dark Cleric Beryl is right here: pick up your new Priest spells.
-[R Paladin - Tirisfal Glades | at=60.22,52.66,1420; class=PALADIN; xl=7.0]
-Shari Stilwell is right here: pick up your new Paladin spells.
 [R Warrior - Tirisfal Glades | at=61.85,52.54,1420; class=WARRIOR; xl=7.0]
 Austil de Mon is right here: pick up your new Warrior spells.
 [R Warlock - Tirisfal Glades | at=61.59,52.4,1420; class=WARLOCK; xl=7.0]
@@ -139,8 +137,16 @@ Cain Firesong is right here: pick up your new Mage spells.
 [T 358 Graverobbers | at=61.3,50.8,1420; place=Tirisfal Glades; xl=7.7]
 [A 405 The Prodigal Lich | at=61.3,50.8,1420; pre=358; place=Tirisfal Glades; xl=8.0]
 [T 375 The Chill of Death | at=61.9,52.7,1420; place=Tirisfal Glades; xl=8.0]
-[R Paladin - Tirisfal Glades | at=60.22,52.66,1420; class=PALADIN; xl=8.3]
-Shari Stilwell is right here: pick up your new Paladin spells.
+[A 99142 Tomb Weed | at=57.4,48.9,1420; pre=5482; place=Tirisfal Glades; danger=9; xl=8.3]
+[C 426 The Mills Overrun | at=46.9,34.9,1420; mob=Rattlecage Soldier / Darkeye Bonecaster; ml=8; item=3162:5,3163:3; drop=31; xl=8.3]
+[A 361 A Letter Undelivered | at=46.9,33.4,1420; place=Tirisfal Glades; xl=8.3]
+Starts from A Letter to Yvette, which drops in this area.
+[C 354 Deaths in the Family | at=42.8,32.5,1420; mob=Gregor Agamand / Nissa Agamand; ml=10; xl=8.3]
+Gregor Agamand has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[C 367 A New Plague | at=40.0,43.7,1420; mob=Decrepit Darkhound; ml=6; item=2858:5; drop=26; xl=8.3]
+[C 427 At War With The Scarlet Crusade | at=32.1,47.4,1420; mob=Scarlet Warrior; ml=7; xl=8.3]
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=8.3]
+Hilda the Breaker is right here: pick up your new Paladin spells.
 [A 91285 Murlocs at the Gates | at=21.9,45.2,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=8.3]
 [C 91285 Murlocs at the Gates | at=16.5,57.2,1420; mob=Vile Fin Attacker / Vile Fin Seer; class=PALADIN; race=Scourge; xl=8.3]
 [T 91285 Murlocs at the Gates | at=21.9,45.2,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=8.3]
@@ -153,14 +159,6 @@ Danitha Morr has only one spawn point. If others are waiting for it, group up to
 [A 91316 Making Repairs | at=22.7,44.7,1420; pre=91294; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=8.3]
 [C 91316 Making Repairs | at=9.9,66.4,1420; item=246213:12; class=PALADIN; race=Scourge; xl=8.3]
 [T 91316 Making Repairs | at=22.7,44.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=8.3]
-[A 99142 Tomb Weed | at=57.4,48.9,1420; pre=5482; place=Tirisfal Glades; danger=9; xl=8.3]
-[C 426 The Mills Overrun | at=46.9,34.9,1420; mob=Rattlecage Soldier / Darkeye Bonecaster; ml=8; item=3162:5,3163:3; drop=31; xl=8.3]
-[A 361 A Letter Undelivered | at=46.9,33.4,1420; place=Tirisfal Glades; xl=8.3]
-Starts from A Letter to Yvette, which drops in this area.
-[C 354 Deaths in the Family | at=42.8,32.5,1420; mob=Gregor Agamand / Nissa Agamand; ml=10; xl=8.3]
-Gregor Agamand has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[C 367 A New Plague | at=40.0,43.7,1420; mob=Decrepit Darkhound; ml=6; item=2858:5; drop=26; xl=8.3]
-[C 427 At War With The Scarlet Crusade | at=32.1,47.4,1420; mob=Scarlet Warrior; ml=7; xl=8.3]
 [T 426 The Mills Overrun | at=58.2,51.5,1420; place=Tirisfal Glades; xl=8.3]
 [T 367 A New Plague | at=59.5,52.4,1420; place=Tirisfal Glades; xl=8.6]
 [T 427 At War With The Scarlet Crusade | at=60.6,51.8,1420; place=Tirisfal Glades; xl=8.8]
@@ -174,14 +172,6 @@ Gregor Agamand has only one spawn point. If others are waiting for it, group up 
 Marion Call is right here: pick up your new Rogue spells.
 [R Priest - Tirisfal Glades | at=61.57,52.19,1420; class=PRIEST; xl=9.5]
 Dark Cleric Beryl is right here: pick up your new Priest spells.
-[R Paladin - Tirisfal Glades | at=60.22,52.66,1420; class=PALADIN; xl=9.5]
-Shari Stilwell is right here: pick up your new Paladin spells.
-[A 91317 The Tarnished | at=22.1,44.7,1420; pre=91294; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=9.5]
-[C 91317 The Tarnished | at=14.7,63.2,1420; mob=Tarnished Drudge / Tarnished Zealot; class=PALADIN; race=Scourge; xl=9.5]
-Rudolph Gelhardt has only one spawn point. If others are waiting for it, group up to share it.
-[T 91317 The Tarnished | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=9.5]
-[A 95803 A Token of Good Faith | at=22.1,44.7,1420; pre=91317; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=9.5]
-[T 95803 A Token of Good Faith | at=58.0,91.8,1458; place=Undercity; class=PALADIN; race=Scourge; xl=9.5]
 [R Warrior - Tirisfal Glades | at=61.85,52.54,1420; class=WARRIOR; xl=9.5]
 Austil de Mon is right here: pick up your new Warrior spells.
 [R Warlock - Tirisfal Glades | at=61.59,52.4,1420; class=WARLOCK; xl=9.5]
@@ -267,9 +257,6 @@ Captain Vachon has only one spawn point. If others are waiting for it, group up 
 [T 371 At War With The Scarlet Crusade | at=60.6,51.8,1420; place=Tirisfal Glades; xl=10.6]
 [C 97558 Hides for the Forsaken | at=72.8,28.5,1420; mob=Vampiric Duskbat / Cursed Darkhound; ml=10; item=278242:8,278243:6,278244:3; xl=10.8]
 [T 97558 Hides for the Forsaken | at=65.4,60.1,1420; place=Tirisfal Glades; xl=10.8]
-[R Paladin - Tirisfal Glades | at=60.22,52.66,1420; class=PALADIN; xl=11.0]
-Shari Stilwell is right here: pick up your new Paladin spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Hunter - Stonard | at=47.26,53.43,1435; class=HUNTER; xl=11.0]
 Time to train: head to Ogromm in Stonard for your new Hunter spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
@@ -279,6 +266,15 @@ You have talent points from level 10 on: spend them (changing them later needs a
 [R Shaman - Stonard | at=48.19,57.94,1435; class=SHAMAN; xl=11.0]
 Time to train: head to Haromm in Stonard for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=11.0]
+Time to train: head to Hilda the Breaker in Tirisfal Glades for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[A 91317 The Tarnished | at=22.1,44.7,1420; pre=91294; place=Tirisfal Glades; class=PALADIN; xl=11.0]
+[C 91317 The Tarnished | at=13.9,63.6,1420; mob=Tarnished Drudge / Tarnished Zealot; class=PALADIN; xl=11.0]
+Rudolph Gelhardt has only one spawn point. If others are waiting for it, group up to share it.
+[T 91317 The Tarnished | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; xl=11.0]
+[A 95803 A Token of Good Faith | at=22.1,44.7,1420; pre=91317; place=Tirisfal Glades; class=PALADIN; xl=11.0]
+[T 95803 A Token of Good Faith | at=58.0,91.8,1458; place=Undercity; class=PALADIN; xl=11.0]
 [G 43.4,40.9 1421 Travel to Silverpine Forest | xl=11.0]
 [S The Sepulcher | at=43.18,41.28,1421; xl=11.0]
 Talk to Innkeeper Bates and make this inn your home.
@@ -311,21 +307,21 @@ Talk to Innkeeper Bates and make this inn your home.
 [A 3221 Speak with Renferrel | at=43.4,40.9,1421; pre=449; place=The Sepulcher; xl=12.2]
 [T 3221 Speak with Renferrel | at=42.8,40.9,1421; place=The Sepulcher; xl=12.2]
 [A 1359 Zinge's Delivery | at=42.8,40.9,1421; pre=3221; place=The Sepulcher; xl=12.2]
-[R Paladin - Undercity | at=47.53,14.99,1458; class=PALADIN; xl=12.2]
-Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
-[A 94427 A Lesson in Divinity | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
-[T 94427 A Lesson in Divinity | at=65.5,37.5,1458; place=Undercity; class=PALADIN; race=Scourge; xl=12.2]
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=12.2]
+Time to train: head to Hilda the Breaker in Tirisfal Glades for your new Paladin spells. The arrow takes you back to the route afterwards.
+[A 94427 A Lesson in Divinity | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; xl=12.2]
+[T 94427 A Lesson in Divinity | at=65.5,37.5,1458; place=Undercity; class=PALADIN; xl=12.2]
 [A 94434 A Lesson in Divinity | at=65.5,37.5,1458; pre=94427; place=Undercity; class=PALADIN; race=Scourge; xl=12.2]
 [C 94434 A Lesson in Divinity | at=76.4,85.8,1429; item=2589:10; class=PALADIN; race=Scourge; xl=12.2]
 [T 94434 A Lesson in Divinity | at=65.5,37.5,1458; place=Undercity; class=PALADIN; race=Scourge; xl=12.2]
 [A 94435 A Lesson in Divinity | at=65.5,37.5,1458; pre=94434; place=Undercity; class=PALADIN; race=Scourge; xl=12.2]
 [T 94435 A Lesson in Divinity | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
-[A 94436 A Lesson in Divinity | at=22.1,44.7,1420; pre=94435; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
-[T 94436 A Lesson in Divinity | at=21.9,44.5,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
+[A 94436 A Lesson in Divinity | at=22.1,44.7,1420; pre=94435; place=Tirisfal Glades; class=PALADIN; xl=12.2]
+[T 94436 A Lesson in Divinity | at=21.9,44.5,1420; place=Tirisfal Glades; class=PALADIN; xl=12.2]
 [A 94438 A Lesson in Divinity | at=21.9,44.5,1420; pre=94436; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
 [T 94438 A Lesson in Divinity | at=86.7,47.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
 [A 94440 A Lesson in Divinity | at=86.7,47.7,1420; pre=94438; place=Tirisfal Glades; class=PALADIN; xl=12.2]
-[C 94440 A Lesson in Divinity | at=14.6,63.0,1420; mob=Tarnished Zealot; class=PALADIN; xl=12.2]
+[C 94440 A Lesson in Divinity | at=14.7,63.0,1420; mob=Tarnished Zealot; class=PALADIN; xl=12.2]
 [T 94440 A Lesson in Divinity | at=21.9,44.5,1420; place=Tirisfal Glades; class=PALADIN; xl=12.2]
 [A 94441 A Lesson in Divinity | at=21.9,44.5,1420; pre=94440; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
 [T 94441 A Lesson in Divinity | at=22.1,44.7,1420; place=Tirisfal Glades; class=PALADIN; race=Scourge; xl=12.2]
@@ -352,6 +348,12 @@ Kaelystia Hatebringer is right here: pick up your new Mage spells.
 [G 60.6,51.8 1420 Travel to Tirisfal Glades | xl=13.1]
 [D Ragefire Chasm | quests=5725; lvl=15; at=52.6,49,1454; xl=13.1]
 Find a group for Ragefire Chasm. Quests you skip there are dropped automatically.
+[R Warlock - Orgrimmar | at=48.62,46.95,1454; class=WARLOCK; xl=13.1]
+Time to train: head to Mirket in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
+[A 1499 Vile Familiars | at=42.6,69,1411; pre=1470; place=Durotar; class=WARLOCK; xl=13.1]
+[T 1499 Vile Familiars | at=42.9,69.2,1411; place=Durotar; class=WARLOCK; xl=13.1]
+[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; place=Durotar; class=WARLOCK; xl=13.1]
+[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; place=Orgrimmar; class=WARLOCK; xl=13.1]
 [R Shaman - Orgrimmar | at=38.8,36.37,1454; class=SHAMAN; xl=13.1]
 Time to train: head to Kardris Dreamseeker in Orgrimmar for your new Shaman spells. The arrow takes you back to the route afterwards.
 [A 1516 Call of Earth | at=42.4,69.2,1411; ex=1519,92466; place=Durotar; class=SHAMAN; xl=13.1]
@@ -374,12 +376,6 @@ Minor Manifestation of Fire has only 2 spawn points. If others are waiting for i
 [T 1526 Call of Fire | at=39.0,58.2,1411; place=Durotar; class=SHAMAN; xl=13.1]
 [A 1527 Call of Fire | at=39.0,58.2,1411; pre=1526; place=Durotar; class=SHAMAN; xl=13.1]
 [T 1527 Call of Fire | at=56.0,19.9,1413; place=The Barrens; class=SHAMAN; xl=13.1]
-[R Warlock - Orgrimmar | at=48.62,46.95,1454; class=WARLOCK; xl=13.1]
-Time to train: head to Mirket in Orgrimmar for your new Warlock spells. The arrow takes you back to the route afterwards.
-[A 1499 Vile Familiars | at=42.6,69,1411; pre=1470; place=Durotar; class=WARLOCK; xl=13.1]
-[T 1499 Vile Familiars | at=42.9,69.2,1411; place=Durotar; class=WARLOCK; xl=13.1]
-[A 1506 Gan'rul's Summons | at=54.4,41.3,1411; opt; place=Durotar; class=WARLOCK; xl=13.1]
-[T 1506 Gan'rul's Summons | at=48.2,45.3,1454; opt; place=Orgrimmar; class=WARLOCK; xl=13.1]
 [G 84.1,17.4 1458 Travel to Undercity - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=13.1]
 [T 5725 The Power to Destroy... | at=56.2,92.2,1458; place=Undercity; xl=13.1]
 [G 51.5,30.34 1413 Travel to Crossroads, The Barrens - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=13.1]

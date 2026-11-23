@@ -30,8 +30,8 @@ Talk to Innkeeper Boorand Plainswind and make this inn your home.
 [A 368 A New Plague | at=59.5,52.4,1420; pre=367; opt; place=Tirisfal Glades; xl=12.5]
 [A 96898 Remnants of War | at=65.9,61.1,1420; pre=96895; opt; place=Tirisfal Glades; xl=12.5]
 [A 96897 The Cult of the Damned | at=65.9,61.1,1420; pre=96895; opt; place=Tirisfal Glades; xl=12.5]
-[C 96898 Remnants of War | at=68.0,64.0,1420; mob=Dark Enforcer; ml=12; item=275851:12; opt; xl=12.5]
-[C 96897 The Cult of the Damned | at=68.0,64.0,1420; mob=Dark Neophyte / Dark Enforcer; ml=12; opt; xl=12.5]
+[C 96898 Remnants of War | at=67.9,63.3,1420; mob=Dark Enforcer; ml=12; item=275851:12; opt; xl=12.5]
+[C 96897 The Cult of the Damned | at=68.2,64.2,1420; mob=Dark Neophyte / Dark Enforcer; ml=12; opt; xl=12.5]
 [T 96898 Remnants of War | at=65.9,61.1,1420; place=Tirisfal Glades; opt; xl=12.5]
 [T 96897 The Cult of the Damned | at=65.9,61.1,1420; place=Tirisfal Glades; opt; xl=12.7]
 [A 96899 Bandarion Keep | at=65.9,61.1,1420; pre=96897,96898; opt; place=Tirisfal Glades; xl=12.9]
@@ -40,16 +40,16 @@ Talk to Innkeeper Boorand Plainswind and make this inn your home.
 [A 96896 A Righteous Cause | at=22.0,44.7,1420; pre=96899; opt; place=Tirisfal Glades; race=Scourge; xl=12.9]
 [T 96896 A Righteous Cause | at=22.0,44.7,1420; place=Tirisfal Glades; opt; race=Scourge; xl=12.9]
 [A 99152 As Above, So Below | at=22.0,47.2,1420; pre=96896; opt; place=Tirisfal Glades; race=Scourge; xl=13.0]
-[A 99153 The One That Got Away | at=20.2,46.5,1420; pre=96896; opt; place=Tirisfal Glades; race=Scourge; xl=13.0]
-[C 99152 As Above, So Below | at=11.3,64.4,1420; mob=Shadowvale Lurcher; ml=12; item=286259:6; opt; race=Scourge; xl=13.0]
-[C 99153 The One That Got Away | at=9.7,69.4,1420; opt; race=Scourge; xl=13.0]
-[T 99153 The One That Got Away | at=20.2,46.5,1420; place=Tirisfal Glades; opt; race=Scourge; xl=13.0]
+[A 99153 The One That Got Away | at=20.2,46.5,1420; pre=96896; opt; place=Tirisfal Glades; xl=13.0]
+[C 99152 As Above, So Below | at=10.4,65.2,1420; mob=Shadowvale Lurcher; ml=12; item=286259:6; opt; race=Scourge; xl=13.0]
+[C 99153 The One That Got Away | at=9.7,69.4,1420; opt; xl=13.0]
+[T 99153 The One That Got Away | at=20.2,46.5,1420; place=Tirisfal Glades; opt; xl=13.0]
 [T 99152 As Above, So Below | at=22.0,47.2,1420; place=Tirisfal Glades; opt; race=Scourge; xl=13.1]
 [T 368 A New Plague | at=59.5,52.4,1420; place=Tirisfal Glades; opt; xl=13.3]
 [A 369 A New Plague | at=59.5,52.4,1420; pre=368; opt; place=Tirisfal Glades; xl=13.4]
 [A 99156 Rear Guard Patrol | at=65.5,60.2,1420; pre=356; opt; place=Tirisfal Glades; race=Orc,Scourge; xl=13.4]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[C 99156 Rear Guard Patrol | at=83.2,45.4,1420; mob=Riptear; ml=13; opt; race=Orc,Scourge; xl=13.4]
+[C 99156 Rear Guard Patrol | at=83.3,45.2,1420; mob=Riptear; ml=13; opt; race=Orc,Scourge; xl=13.4]
 [C 369 A New Plague | at=87.3,51.2,1420; mob=Vicious Night Web Spider; ml=10; item=2872:4; drop=40; opt; xl=13.4]
 [T 99156 Rear Guard Patrol | at=65.5,60.2,1420; place=Tirisfal Glades; opt; race=Orc,Scourge; xl=13.4]
 [T 369 A New Plague | at=59.5,52.4,1420; place=Tirisfal Glades; opt; xl=13.5]
@@ -100,14 +100,14 @@ Time to train: head to Turak Runetotem in Thunder Bluff for your new Druid spell
 [R Priest - Thunder Bluff | at=25.32,15.27,1456; class=PRIEST; xl=14.5]
 Miles Welsh is right here: pick up your new Priest spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=14.5]
-Alodan the Hopeful is right here: pick up your new Paladin spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Shaman - Thunder Bluff | at=22.82,21.11,1456; class=SHAMAN; xl=14.5]
 Siln Skychaser is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Mage - Thunder Bluff | at=22.76,14.53,1456; class=MAGE; xl=14.5]
 Archmage Shymm is right here: pick up your new Mage spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=14.5]
+Alodan the Hopeful is right here: pick up your new Paladin spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [P Thunder Bluff | at=47,49.83,1456; xl=14.5]
 [G 44.2,39.8 1421 Travel to Silverpine Forest - take the zeppelin (Orgrimmar <-> Undercity / Grom'gol) | xl=14.5]

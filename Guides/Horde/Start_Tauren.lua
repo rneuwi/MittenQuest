@@ -177,7 +177,7 @@ Great Bear Spirit has only one spawn point. If others are waiting for it, group 
 [C 6002 Body and Heart | at=76.5,27.2,1456; mob=Lunaclaw Spirit; class=DRUID; race=Tauren; xl=10.6]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 6002 Body and Heart | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.6]
-[R Shaman - Mulgore | at=33.6,22.4,1412; class=SHAMAN; xl=10.6]
+[R Shaman - Mulgore | at=33.61,22.4,1412; class=SHAMAN; xl=10.6]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1523 Call of Fire | at=25.2,20.5,1456; ex=1522,2983,2984; opt; place=Thunder Bluff; class=SHAMAN; xl=10.6]
@@ -205,9 +205,6 @@ Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow ta
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=11.0]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=11.0]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=11.0]
 Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
@@ -237,6 +234,9 @@ Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; ex=1882; opt; place=Thunder Bluff; class=MAGE; xl=11.0]
 [T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; place=Durotar; class=MAGE; xl=11.0]
+[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=11.0]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 37.8,59.6 1456 Travel to Thunder Bluff | xl=11.0]
 [S Thunder Bluff | at=45.81,64.71,1456; xl=11.0]
 Talk to Innkeeper Pala and make this inn your home.

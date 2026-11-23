@@ -57,8 +57,8 @@ Ilkrud Magthrull has only one spawn point. If others are waiting for it, group u
 [C 1009 Ruuzel | at=7.2,13.1,1440; mob=Ruuzel; ml=22; xl=25.2]
 Ruuzel has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 1009 Ruuzel | at=14.8,31.3,1440; place=Ashenvale; xl=25.2]
-[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=25.4]
-Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=25.4]
+Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [A 1701 Fire Hardened Mail | at=64.6,37.2,1453; pre=1702; opt; place=Stormwind City; class=WARRIOR; xl=25.4]
 Group quest (elite enemies) - optional; skipped if you don't take it.
 [C 1701 Fire Hardened Mail | at=55.3,63.7,1437; mob=Leech Stalker / Fledgling Chimaera; opt; class=WARRIOR; xl=25.4]

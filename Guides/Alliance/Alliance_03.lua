@@ -58,7 +58,7 @@ Starts from An Old History Book, which drops in this area.
 [T 81741 Duskwood Mission XII: Dream-Touched Dragonscale | at=45.6,51.2,1431; place=Duskwood; xl=28.1]
 [T 81742 Duskwood Mission XIII: Defeat Ylanthrius | at=45.6,51.2,1431; place=Duskwood; opt; xl=28.2]
 [T 81743 Duskwood Mission XIV: Defeat Vvarc'zul | at=45.6,51.2,1431; place=Duskwood; opt; xl=28.2]
-[A 96138 Merrick's Bow | at=43.1,68.1,1431; place=Duskwood; xl=28.3]
+[A 96138 Merrick's Bow | at=43.0,68.8,1431; place=Duskwood; xl=28.3]
 Starts from Merrick's Bow, which drops in this area.
 [T 57 The Night Watch | at=73.5,46.8,1431; place=Darkshire; xl=28.3]
 [A 58 The Night Watch | at=73.5,46.8,1431; pre=57; place=Darkshire; xl=28.4]
@@ -193,8 +193,8 @@ Tome of Mel'Thandris has only one spawn point. If others are waiting for it, gro
 [C 1045 Raene's Cleansing | at=54.8,77.7,1440; mob=Bloodtooth Guard / Ran Bloodtooth; ml=30; opt; xl=30.7]
 Ran Bloodtooth has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 1045 Raene's Cleansing | at=50.8,75.1,1440; place=Ashenvale; opt; xl=30.7]
-[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=30.9]
-Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=30.9]
+Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [A 1710 Sunscorched Shells | at=59.5,45.4,1457; pre=1782; place=Darnassus; class=WARRIOR; xl=30.9]
 [C 1710 Sunscorched Shells | at=11.4,36.8,1441; item=6849:20; class=WARRIOR; xl=30.9]
 [T 1710 Sunscorched Shells | at=59.5,45.4,1457; place=Darnassus; class=WARRIOR; xl=30.9]
@@ -204,7 +204,7 @@ Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spe
 [A 690 Malin's Request | at=50.5,87.5,1453; opt; place=Stormwind City; xl=30.9]
 [A 92489 Power Overwhelming | at=48.7,87.6,1453; place=Stormwind City; xl=30.9]
 [A 92456 A Green Sample | at=31.5,62.6,1453; place=Stormwind City; xl=30.9]
-[A 98219 The Shamed Lieutenant | at=48.4,50.2,1453; pre=98191; place=Stormwind City; xl=30.9]
+[A 98219 The Shamed Lieutenant | at=48.4,50.2,1453; pre=98191; opt; place=Stormwind City; xl=30.9]
 [A 1274 The Missing Diplomat | at=49.6,44.5,1453; place=Stormwind City; xl=30.9]
 [T 2928 Gyrodrillmatic Excavationators | at=62.6,34.1,1453; place=Stormwind City; xl=30.9]
 [T 337 An Old History Book | at=77.1,30.2,1453; place=Stormwind City; xl=30.9]

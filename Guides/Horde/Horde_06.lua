@@ -31,7 +31,7 @@ Burning Blade Seer has only one spawn point. If others are waiting for it, group
 [T 98823 Earthen Echo | at=33.4,22.6,1412; place=Mulgore; xl=32.7]
 [R Druid - Mulgore | at=33.42,22.13,1412; class=DRUID; xl=32.7]
 Hana Lighthoof is right here: pick up your new Druid spells.
-[R Shaman - Mulgore | at=33.6,22.4,1412; class=SHAMAN; xl=32.7]
+[R Shaman - Mulgore | at=33.61,22.4,1412; class=SHAMAN; xl=32.7]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 [G 45.7,50.7 1441 Travel to Thousand Needles | xl=32.7]
 [A 5361 Family Tree | at=45.7,50.7,1441; place=Freewind Post; xl=32.7]
@@ -55,7 +55,7 @@ Flame of Azel has only one spawn point. If others are waiting for it, group up t
 [R Rogue - Undercity | at=83.86,72.07,1458; class=ROGUE; xl=33.1]
 Time to train: head to Carolyn Ward in Undercity for your new Rogue spells. The arrow takes you back to the route afterwards.
 [A 96781 What's the Big Idea? | at=84.9,80.4,1416; pre=6681; place=Alterac Mountains; class=ROGUE; xl=33.1]
-[C 96781 What's the Big Idea? | at=62.4,45.7,1416; mob=Barton; class=ROGUE; xl=33.1]
+[C 96781 What's the Big Idea? | at=62.4,45.8,1416; mob=Barton; class=ROGUE; xl=33.1]
 [T 96781 What's the Big Idea? | at=84.9,80.4,1416; place=Alterac Mountains; class=ROGUE; xl=33.1]
 [A 96783 A Way In | at=84.9,80.4,1416; pre=6681; place=Alterac Mountains; class=ROGUE; xl=33.1]
 [T 96783 A Way In | at=32.3,26.6,1417; place=Arathi Highlands; class=ROGUE; xl=33.1]
@@ -69,8 +69,8 @@ Time to train: head to Carolyn Ward in Undercity for your new Rogue spells. The 
 [T 96786 The Syndicate Sting | at=84.9,80.4,1416; place=Alterac Mountains; class=ROGUE; xl=33.1]
 [R Priest - Undercity | at=49.26,17.12,1458; class=PRIEST; xl=33.1]
 Time to train: head to Aelthalyste in Undercity for your new Priest spells. The arrow takes you back to the route afterwards.
-[R Paladin - Undercity | at=47.53,14.99,1458; class=PALADIN; xl=33.1]
-Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=33.1]
+Time to train: head to Hilda the Breaker in Tirisfal Glades for your new Paladin spells. The arrow takes you back to the route afterwards.
 [F Hammerfall | xl=33.1]
 [A 677 Call to Arms | at=74.2,33.9,1417; place=Hammerfall; danger=34; xl=33.1]
 [T 635 Crystal in the Mountains | at=62.5,33.7,1417; place=Arathi Highlands; xl=33.1]
@@ -82,10 +82,10 @@ Time to train: head to Garen Largo in Undercity for your new Paladin spells. The
 [A 675 Raising Spirits | at=72.6,33.9,1417; pre=674; place=Hammerfall; xl=33.3]
 [T 675 Raising Spirits | at=74.7,36.3,1417; place=Hammerfall; xl=33.3]
 [C 677 Call to Arms | at=68.2,79.5,1417; mob=Witherbark Axe Thrower / Witherbark Headhunter; ml=35; danger=34; xl=33.3]
-[A 92707 The Giant in the Den | at=68.2,80.0,1417; opt; place=Arathi Highlands; danger=34; xl=33.3]
+[A 92707 The Giant in the Den | at=68.3,80.0,1417; opt; place=Arathi Highlands; danger=34; xl=33.3]
 Starts from Goliath's Wristguards, which drops in this area.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[C 92707 The Giant in the Den | at=68.2,80.0,1417; mob=Witherbark Goliath; ml=35; opt; danger=34; xl=33.3]
+[C 92707 The Giant in the Den | at=68.3,80.0,1417; mob=Witherbark Goliath; ml=35; opt; danger=34; xl=33.3]
 [T 677 Call to Arms | at=74.2,33.9,1417; place=Hammerfall; xl=33.3]
 [T 92707 The Giant in the Den | at=74.2,33.9,1417; place=Hammerfall; opt; xl=33.4]
 [G 27.8,77.1 1434 Travel to Stranglethorn Vale | xl=33.4]
@@ -268,6 +268,7 @@ Kragg is right here: pick up your new Hunter spells.
 [C 97328 Anything of Value | at=24.8,10.7,1434; item=277953:8; xl=35.6]
 [T 97329 Where's the Key? | at=23.5,12.8,1434; place=Stranglethorn Vale; xl=35.6]
 [A 97331 Zimmix's Great Escape | at=23.5,12.8,1434; pre=97329; place=Stranglethorn Vale; xl=35.7]
+[C 97331 Zimmix's Great Escape | at=26.9,11.4,1434; xl=35.7]
 [C 195 Raptor Mastery | at=33.0,23.9,1434; mob=Lashtail Raptor; ml=36; xl=35.7]
 [T 581 Hunt for Yenniku | at=32.2,27.7,1434; place=Grom'gol; danger=36; xl=35.7]
 [T 195 Raptor Mastery | at=35.7,10.8,1434; place=Stranglethorn Vale; xl=35.7]

@@ -70,11 +70,11 @@ Group quest (elite enemies) - optional; the guide skips it if you don't take it.
 [C 95885 The Offering of Blood | at=58.2,69.8,1421; mob=Tortured Soul; ml=20; opt; xl=25.3]
 Tortured Soul has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 95885 The Offering of Blood | at=58.1,69.8,1421; place=Silverpine Forest; opt; xl=25.3]
-[R Paladin - Undercity | at=47.53,14.99,1458; class=PALADIN; xl=25.3]
-Time to train: head to Garen Largo in Undercity for your new Paladin spells. The arrow takes you back to the route afterwards.
+[R Paladin - Tirisfal Glades | at=21.96,47.25,1420; class=PALADIN; xl=25.3]
+Time to train: head to Hilda the Breaker in Tirisfal Glades for your new Paladin spells. The arrow takes you back to the route afterwards.
 [A 95140 Old Fire-Eye | at=43.4,41.0,1421; pre=95126; opt; place=The Sepulcher; class=PALADIN; race=Scourge; xl=25.3]
 Group quest (elite enemies) - optional; skipped if you don't take it.
-[C 95140 Old Fire-Eye | at=49.4,85.6,1421; mob=Old Fire-Eye; opt; class=PALADIN; race=Scourge; xl=25.3]
+[C 95140 Old Fire-Eye | at=49.8,86.3,1421; mob=Old Fire-Eye; opt; class=PALADIN; race=Scourge; xl=25.3]
 [T 95140 Old Fire-Eye | at=43.4,41.0,1421; opt; place=The Sepulcher; class=PALADIN; race=Scourge; xl=25.3]
 [F Tarren Mill | xl=25.3]
 [A 501 Elixir of Pain | at=61.4,19.1,1424; place=Tarren Mill; xl=25.3]
@@ -186,7 +186,7 @@ Group quest (elite enemies) - optional; skipped if you don't take it.
 [T 1840 Orm Stonehoof and the Brutal Helm | at=39.0,56.0,1456; opt; place=Thunder Bluff; class=WARRIOR; xl=27.6]
 [A 1841 Velora Nitely and the Brutal Legguards | at=57.2,30.3,1413; pre=1848; opt; place=The Barrens; class=WARRIOR; xl=27.6]
 [T 1841 Velora Nitely and the Brutal Legguards | at=62.1,39.1,1458; opt; place=Undercity; class=WARRIOR; xl=27.6]
-[A 1842 Satyr Hooves | at=56.3,74.3,1411; pre=1839; place=Durotar; class=WARRIOR; xl=27.6]
+[A 1842 Satyr Hooves | at=56.3,74.3,1411; pre=1848; place=Durotar; class=WARRIOR; xl=27.6]
 [C 1842 Satyr Hooves | at=80.6,50.9,1440; mob=Bleakheart Hellcaller; class=WARRIOR; xl=27.6]
 [T 1842 Satyr Hooves | at=56.3,74.3,1411; place=Durotar; class=WARRIOR; xl=27.6]
 [A 1843 Brutal Gauntlets | at=56.3,74.3,1411; pre=1842; place=Durotar; class=WARRIOR; xl=27.6]
