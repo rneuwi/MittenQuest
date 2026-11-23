@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.8
 
 **Changes**
 - Quest data updated to QuestieDB e3c3bc4 (November 22), mostly corrected NPC positions and
