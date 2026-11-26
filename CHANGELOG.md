@@ -1,6 +1,6 @@
 # MittenQuest
 
-## Unreleased
+## 1.6.9
 
 **Changes**
 - Quest data updated to QuestieDB 498734b (November 25). Many NPCs now have far fewer, more
