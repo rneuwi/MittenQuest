@@ -32,8 +32,10 @@ measured factor for any band with enough data and its built-in estimate elsewher
 in an empty Lua environment, so it can't execute anything.
 
 Every step in the generated guides carries `xl=` (the simulated level when you reach it),
-which the addon compares with the player's real level for the pace display. Quests without an
-XP value in the data (mostly new Forever quests) get the median XP of quests within two levels.
+which the addon compares with the player's real level for the pace display. The fraction is
+capped below .95 so it never rounds up: `xl=41.0` always means level 41, which the dungeon audit
+relies on. Quests without an XP value in the data (mostly new Forever quests) get the median XP
+of quests within two levels.
 
 ## Dungeons are bonus XP
 
@@ -180,6 +182,11 @@ simulator is chaotic, so a fix elsewhere can swap which dungeon quests get dropp
 re-baseline (add the swapped-in quests, marked with the date and cause) when the number of
 dungeon quests done per faction goes up (quests in scope minus gaps; the scope itself grows
 when the generator learns to place more quests), and say so in the commit.
+
+Chain steps toward a dungeon quest are never dropped as stale (`tidy_log`), just as `make_room`
+never drops them: a dropped quest is banned for every later pass, and with it every dungeon quest
+its chain leads to (Blisters on The Land, picked up at 22 and carried while the route was
+elsewhere, cost Horrors in the Highland in Excavation Site: Wetlands).
 
 Quests whose giver, start item or turn-in is inside a dungeon (no outdoor position) are placed
 at the dungeon's entrance and handled during a run of it (`inside_run`): turn-ins inside, then

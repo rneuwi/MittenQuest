@@ -1474,8 +1474,10 @@ class Sim:
     def emit(self, line):
         # Second element: the level the simulated player has when reaching this step,
         # with the fraction of the current level (12.4 = level 12, 40% of the way to 13).
+        # Capped below .95 so it never rounds up: 41.0 always means level 41 (a run at 40 with
+        # 99% XP showed 41.0, and the dungeon audit took level 41 quests as available there).
         frac = self.xp / XP_TO_LEVEL[self.L - 1] if self.L < 60 else 0
-        self.steps.append((line, round(self.L + min(frac, 0.99), 1)))
+        self.steps.append((line, round(self.L + min(frac, 0.94), 1)))
 
     def at(self, loc):
         return f"at={loc[1]},{loc[2]},{loc[0]}"
@@ -1976,11 +1978,15 @@ class Sim:
         return True
 
     def tidy_log(self):
-        """Drop quests carried 6+ levels without progress (recorded so the next pass never takes them)."""
+        """Drop quests carried 6+ levels without progress (recorded so the next pass never takes them).
+        Chain steps toward a dungeon quest stay, as in make_room: Blisters on The Land, taken at
+        22 with level 25 mobs, was dropped at 28 while the route was elsewhere, which barred
+        Horrors in the Highland (Excavation Site: Wetlands) for every later pass."""
         if len(self.active) < LOG_LIMIT - 4:
             return
         stale = [(st['acceptL'], qid) for qid, st in self.active.items()
-                 if self.L - st['acceptL'] >= 6 and not QUESTS[qid].dungeon]
+                 if self.L - st['acceptL'] >= 6 and not QUESTS[qid].dungeon
+                 and qid not in DUNGEON_FEEDERS]
         for _, qid in sorted(stale)[:max(1, len(self.active) - (LOG_LIMIT - 6))]:
             del self.active[qid]
             self.dropped.add(qid)

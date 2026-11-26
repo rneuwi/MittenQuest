@@ -1,5 +1,21 @@
 # MittenQuest
 
+## Unreleased
+
+**Changes**
+- Quest data updated to QuestieDB 498734b (November 25). Many NPCs now have far fewer, more
+  accurate spawn points, so quest objectives point to where the mobs really are. The routes
+  shifted with it: Horde is about 133 hours from level 12 (same as before), Alliance about 110
+  hours from level 19 (up from 108, spent on more dungeon quests).
+- Every guide after the starting zones was rebuilt and renamed. Horde now has 12 of them
+  instead of 13. Guides you're partway through pick up where you are from your quest log.
+- More dungeon quests are on the route. Alliance: Uldaman Reagent Run, Agmond's Fate, In the
+  Name of the Light (Scarlet Monastery), Into The Temple of Atal'Hakkar and The Essence of
+  Eranikus. Horde: The Temple of Atal'Hakkar and The Essence of Eranikus.
+- Quests that lead to a dungeon quest are no longer dropped from the route for sitting in your
+  log too long. Alliance keeps Blisters on The Land, which opens Horrors in the Highland
+  (Excavation Site: Wetlands).
+
 ## 1.6.8
 
 **Changes**

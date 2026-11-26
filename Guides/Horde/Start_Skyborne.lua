@@ -5,21 +5,21 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Zephras Isle, Durotar (Skyborne)]==], [
 #faction Horde
 #race Skyborne
 #fallback
-#next Horde 12-16 The Barrens, Undercity, Tirisfal Glades
+#next Horde 12-17 The Barrens, Silverpine Forest, Undercity
 
 [A 92460 Coming of Age | at=42.8,23.4,2521; place=Zephras Isle; xl=1.0]
 [T 92460 Coming of Age | at=42.0,23.5,2521; place=Zephras Isle; xl=1.0]
 [A 92461 Harmony in Balance | at=42.0,23.5,2521; pre=92460; place=Zephras Isle; xl=1.2]
 [A 92462 Infestation Investigation | at=43.4,24.8,2521; pre=92460; place=Zephras Isle; xl=1.2]
 [C 92461 Harmony in Balance | at=44.9,25.5,2521; mob=Juvenile Vuldren; xl=1.2]
-[C 92462 Infestation Investigation | at=46.2,26.9,2521; mob=Pesky Cirrusfly; ml=1; xl=1.2]
+[C 92462 Infestation Investigation | at=45.5,26.9,2521; mob=Pesky Cirrusfly; ml=1; xl=1.2]
 [T 92462 Infestation Investigation | at=43.4,24.8,2521; place=Zephras Isle; xl=1.2]
 [A 92474 Falling With Style | at=43.7,24.1,2521; place=Zephras Isle; race=Skyborne; xl=2.1]
 [T 92461 Harmony in Balance | at=42.0,23.5,2521; place=Zephras Isle; xl=2.1]
 [T 92474 Falling With Style | at=42.0,23.5,2521; place=Zephras Isle; race=Skyborne; xl=2.3]
 [A 92464 Elemental Unrest | at=42.0,23.5,2521; place=Zephras Isle; xl=2.5]
-[R Hunter - Zephras Isle | at=42.49,23.62,2521; class=HUNTER; xl=2.5]
-Ryff is right here: pick up your new Hunter spells.
+[R Hunter - Zephras Isle | at=42.49,23.79,2521; class=HUNTER; xl=2.5]
+Tai'ree Farsight is right here: pick up your new Hunter spells.
 [A 92482 The Way of the Hunter | at=42.0,23.5,2521; pre=92461; place=Zephras Isle; class=HUNTER; xl=2.5]
 [T 92482 The Way of the Hunter | at=42.5,23.8,2521; place=Zephras Isle; class=HUNTER; xl=2.5]
 [R Rogue - Zephras Isle | at=43.74,24.36,2521; class=ROGUE; xl=2.5]
@@ -30,235 +30,232 @@ Akeri Duskblade is right here: pick up your new Rogue spells.
 Blademaster Ren is right here: pick up your new Warrior spells.
 [A 92532 The Warrior's Path | at=42.0,23.5,2521; pre=92461; place=Zephras Isle; class=WARRIOR; xl=2.5]
 [T 92532 The Warrior's Path | at=43.6,24.1,2521; place=Zephras Isle; class=WARRIOR; xl=2.5]
-[R Druid - Zephras Isle | at=41.86,23.41,2521; class=DRUID; xl=2.5]
+[R Druid - Zephras Isle | at=41.66,23.33,2521; class=DRUID; xl=2.5]
 Xyton Silverwind is right here: pick up your new Druid spells.
 [A 92485 A Student of Nature | at=42.0,23.5,2521; pre=92461; place=Zephras Isle; class=DRUID; xl=2.5]
-[T 92485 A Student of Nature | at=41.9,23.4,2521; place=Zephras Isle; class=DRUID; xl=2.5]
-[R Shaman - Zephras Isle | at=42.76,23.66,2521; class=SHAMAN; xl=2.5]
-Aetheen of the Gales is right here: pick up your new Shaman spells.
+[T 92485 A Student of Nature | at=41.7,23.3,2521; place=Zephras Isle; class=DRUID; xl=2.5]
+[R Shaman - Zephras Isle | at=42.79,23.58,2521; class=SHAMAN; xl=2.5]
+Windshaper Boro is right here: pick up your new Shaman spells.
 [A 92484 Embracing the Elements | at=42.0,23.5,2521; pre=92461; place=Zephras Isle; class=SHAMAN; xl=2.5]
 [T 92484 Embracing the Elements | at=42.8,23.6,2521; place=Zephras Isle; class=SHAMAN; xl=2.5]
 [T 92464 Elemental Unrest | at=47.2,22.0,2521; place=Zephras Isle; xl=2.5]
 [A 92465 Agitators | at=47.2,22.0,2521; place=Zephras Isle; xl=2.6]
-[C 92465 Agitators | at=46.8,20.1,2521; mob=Al'Aketh Convert / Roiling Winds; ml=3; xl=2.6]
+[C 92465 Agitators | at=47.3,19.9,2521; mob=Al'Aketh Convert / Roiling Winds; ml=3; xl=2.6]
 [T 92465 Agitators | at=47.2,22.0,2521; place=Zephras Isle; xl=2.6]
 [A 92469 Return to Rorian | at=47.2,22.0,2521; pre=92465; place=Zephras Isle; xl=3.1]
-[R Shaman - Zephras Isle | at=42.76,23.66,2521; class=SHAMAN; xl=3.1]
-Aetheen of the Gales is right here: pick up your new Shaman spells.
+[R Shaman - Zephras Isle | at=42.79,23.58,2521; class=SHAMAN; xl=3.1]
+Windshaper Boro is right here: pick up your new Shaman spells.
 [A 92466 Call of Earth | at=42.8,23.6,2521; ex=1516,1519; place=Zephras Isle; class=SHAMAN; xl=3.1]
-[C 92466 Call of Earth | at=37.2,32.5,2521; mob=Al'Aketh Neophyte; class=SHAMAN; xl=3.1]
+[C 92466 Call of Earth | at=36.8,33.1,2521; mob=Al'Aketh Brute; class=SHAMAN; xl=3.1]
 [T 92466 Call of Earth | at=42.8,23.6,2521; place=Zephras Isle; class=SHAMAN; xl=3.1]
-[A 92467 Call of Earth | at=42.8,23.6,2521; pre=92466; place=Zephras Isle; class=SHAMAN; xl=3.1]
+[A 92467 Call of Earth | at=42.8,23.6,2521; pre=92466; ex=1517,1520,94374; place=Zephras Isle; class=SHAMAN; xl=3.1]
 [T 92467 Call of Earth | at=49.7,23.8,2521; place=Zephras Isle; class=SHAMAN; xl=3.1]
-[A 92468 Call of Earth | at=49.7,23.8,2521; pre=92467; place=Zephras Isle; class=SHAMAN; xl=3.1]
+[A 92468 Call of Earth | at=49.7,23.8,2521; pre=92467; ex=1518,1521,94375; place=Zephras Isle; class=SHAMAN; xl=3.1]
 [T 92468 Call of Earth | at=42.8,23.6,2521; place=Zephras Isle; class=SHAMAN; xl=3.1]
 [T 92469 Return to Rorian | at=42.0,23.5,2521; place=Zephras Isle; xl=3.1]
 [A 92544 Al'Aketh Thugs | at=38.3,30.2,2521; place=Zephras Isle; xl=3.2]
-[C 92544 Al'Aketh Thugs | at=37.6,32.7,2521; mob=Al'Aketh Brute / Al'Aketh Neophyte; ml=4; xl=3.2]
+[C 92544 Al'Aketh Thugs | at=36.8,33.1,2521; mob=Al'Aketh Brute / Al'Aketh Neophyte; ml=4; xl=3.2]
 Malduko Cloudcrush has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 92544 Al'Aketh Thugs | at=38.3,30.2,2521; place=Zephras Isle; xl=3.2]
-[R Hunter - Zephras Isle | at=42.49,23.62,2521; class=HUNTER; xl=4.1]
-Ryff is right here: pick up your new Hunter spells.
+[R Hunter - Zephras Isle | at=42.49,23.79,2521; class=HUNTER; xl=4.1]
+Tai'ree Farsight is right here: pick up your new Hunter spells.
 [R Rogue - Zephras Isle | at=43.74,24.36,2521; class=ROGUE; xl=4.1]
 Akeri Duskblade is right here: pick up your new Rogue spells.
 [R Warrior - Zephras Isle | at=43.65,24.11,2521; class=WARRIOR; xl=4.1]
 Blademaster Ren is right here: pick up your new Warrior spells.
-[R Druid - Zephras Isle | at=41.86,23.41,2521; class=DRUID; xl=4.1]
+[R Druid - Zephras Isle | at=41.66,23.33,2521; class=DRUID; xl=4.1]
 Xyton Silverwind is right here: pick up your new Druid spells.
 [A 92471 Aetheen of the Gales | at=42.0,23.5,2521; place=Zephras Isle; xl=4.1]
 [T 92471 Aetheen of the Gales | at=42.8,23.7,2521; place=Zephras Isle; xl=4.1]
 [A 92470 Foul Matriarch | at=42.8,23.7,2521; pre=92471; place=Zephras Isle; xl=4.1]
 [A 92473 Aggressive Encroachment | at=42.4,25.2,2521; pre=92471; place=Zephras Isle; xl=4.1]
-[C 92473 Aggressive Encroachment | at=39.8,27.6,2521; mob=Scrawny Ursera; ml=4; item=251918:6; xl=4.1]
-[C 92470 Foul Matriarch | at=37.5,26.1,2521; mob=Ursera Scavenger / Urs'anah; ml=5; xl=4.1]
-Urs'anah has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[C 92473 Aggressive Encroachment | at=39.9,27.8,2521; mob=Scrawny Ursera; ml=4; item=251918:6; xl=4.1]
 [T 92473 Aggressive Encroachment | at=42.4,25.2,2521; place=Zephras Isle; xl=4.1]
+[C 92470 Foul Matriarch | at=37.3,25.7,2521; mob=Ursera Scavenger / Urs'anah; ml=5; xl=4.5]
+Urs'anah has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
 [T 92470 Foul Matriarch | at=42.8,23.7,2521; place=Zephras Isle; xl=4.5]
-[A 92472 The Next Step | at=42.8,23.7,2521; pre=92470; place=Zephras Isle; xl=5.1]
-[R Shaman - Zephras Isle | at=42.76,23.66,2521; class=SHAMAN; xl=5.1]
-Aetheen of the Gales is right here: pick up your new Shaman spells.
-[T 92472 The Next Step | at=45.7,45.5,2521; place=Zephras Isle; xl=5.1]
-[A 92514 Welcome to Shen'dar Village | at=45.7,45.5,2521; place=Zephras Isle; xl=5.3]
-[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=5.3]
-Shenaan Spellwind is right here: pick up your new Mage spells.
-[C 92514 Welcome to Shen'dar Village | at=43.5,44.8,2521; mob=Illaya Amberwind / Coriella Calmbreeze; xl=5.3]
-Coriella Calmbreeze has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 92514 Welcome to Shen'dar Village | at=45.7,45.5,2521; place=Zephras Isle; xl=5.3]
-[A 92516 Hippogryph Harassment | at=44.5,45.0,2521; pre=92514; place=Zephras Isle; xl=5.4]
-[A 93319 Pilfered Windstones | at=44.5,45.0,2521; pre=92514; place=Zephras Isle; xl=5.4]
-[A 92515 The Problem With Prideclaws | at=44.7,44.5,2521; pre=92514; place=Zephras Isle; xl=5.4]
-[A 93951 A Little Beauty | at=44.9,44.3,2521; pre=92514; place=Zephras Isle; xl=5.4]
-[A 92553 Restocking the Larders | at=43.9,43.8,2521; pre=92514; place=Zephras Isle; xl=5.4]
-[C 92553 Restocking the Larders | at=44.7,40.1,2521; mob=Galestrider / Foreststrider; item=6889:3,5469:8; drop=36; xl=5.4]
-[C 92515 The Problem With Prideclaws | at=43.2,39.7,2521; mob=Prideclaw; ml=6; item=252670:10; xl=5.4]
-[T 92553 Restocking the Larders | at=43.9,43.8,2521; place=Zephras Isle; xl=5.4]
-[T 92515 The Problem With Prideclaws | at=44.7,44.5,2521; place=Zephras Isle; xl=5.7]
-[R Hunter - Zephras Isle | at=45.26,44.24,2521; class=HUNTER; xl=6.1]
-Elayaa Easewind is right here: pick up your new Hunter spells.
-[R Warrior - Zephras Isle | at=44.77,45.05,2521; class=WARRIOR; xl=6.1]
-Belandiel Farflight is right here: pick up your new Warrior spells.
-[R Druid - Zephras Isle | at=45.16,44.22,2521; class=DRUID; xl=6.1]
-Naeluna Swiftmend is right here: pick up your new Druid spells.
-[C 93319 Pilfered Windstones | at=48.8,37.3,2521; mob=Highlands Bandit; ml=7; item=257945:10; xl=6.1]
-[T 93319 Pilfered Windstones | at=44.5,45.0,2521; place=Zephras Isle; xl=6.1]
-[C 92516 Hippogryph Harassment | at=37.7,53.1,2521; mob=Hippogryph Youth / Hippogryph Protector; ml=7; xl=6.4]
-Hippogryph Matriarch has only 2 spawn points. If others are waiting for it, group up to share it, or skip this step and come back.
-[C 93951 A Little Beauty | at=36.8,53.3,2521; item=263493:8; xl=6.4]
-[T 92516 Hippogryph Harassment | at=44.5,45.0,2521; place=Zephras Isle; xl=6.4]
-[T 93951 A Little Beauty | at=44.9,44.3,2521; place=Zephras Isle; xl=6.7]
-[A 92517 The Criminal Element | at=45.7,45.5,2521; pre=92514; place=Zephras Isle; xl=7.0]
-[R Shaman - Zephras Isle | at=43.51,44.77,2521; class=SHAMAN; xl=7.0]
-Illaya Amberwind is right here: pick up your new Shaman spells.
-[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=7.0]
-Shenaan Spellwind is right here: pick up your new Mage spells.
-[C 92517 The Criminal Element | at=48.8,37.3,2521; mob=Highlands Bandit / "Badwind" Bennic; ml=7; xl=7.0]
-"Badwind" Bennic has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 92517 The Criminal Element | at=45.7,45.5,2521; place=Zephras Isle; xl=7.0]
-[A 93036 Infiltrating the Cult | at=45.7,45.5,2521; pre=92517; place=Zephras Isle; xl=7.2]
-[T 93036 Infiltrating the Cult | at=44.9,45.5,2521; place=Zephras Isle; xl=7.2]
-[A 92529 Falaath Village | at=44.9,45.5,2521; pre=93036; place=Zephras Isle; xl=7.2]
-[T 92529 Falaath Village | at=46.9,56.2,2521; place=Zephras Isle; xl=7.2]
-[A 92528 Among the Faithful | at=46.9,56.2,2521; pre=92529; place=Zephras Isle; xl=7.4]
-[C 92528 Among the Faithful | at=48.8,53.9,2521; mob=Wardrobe; xl=7.4]
-Wardrobe has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 92528 Among the Faithful | at=45.7,45.5,2521; place=Zephras Isle; xl=7.4]
-[A 92550 Havoc in the Highlands | at=45.7,45.5,2521; pre=92528; place=Zephras Isle; xl=7.6]
-[A 92551 Stolen Supplies | at=45.2,45.2,2521; pre=92528; place=Zephras Isle; danger=8; race=Skyborne; xl=7.6]
-[C 92550 Havoc in the Highlands | at=48.9,54.0,2521; mob=Al'Aketh Stormcaller / Living Lightning; ml=8; xl=7.6]
-Living Lightning has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 92550 Havoc in the Highlands | at=45.7,45.5,2521; place=Zephras Isle; xl=7.6]
-[A 98512 Al'Aketh Assassins | at=56.8,61.1,2521; place=Zephras Isle; xl=7.9]
-[R Rogue - Zephras Isle | at=59.9,72.48,2521; class=ROGUE; xl=7.9]
+[R Shaman - Zephras Isle | at=42.79,23.58,2521; class=SHAMAN; xl=5.1]
+Windshaper Boro is right here: pick up your new Shaman spells.
+[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=5.1]
+Time to train: head to Shenaan Spellwind in Zephras Isle for your new Mage spells. The arrow takes you back to the route afterwards.
+[L 6 | xl=5.1]
+Grind mobs around your level here; more quests open at the next level.
+[L 7 | xl=6.0]
+Grind mobs around your level here; more quests open at the next level.
+[A 98512 Al'Aketh Assassins | at=56.8,61.1,2521; place=Zephras Isle; xl=7.0]
+[R Hunter - Zephras Isle | at=59.56,72.63,2521; class=HUNTER; xl=7.0]
+Quel'ana Quickgale is right here: pick up your new Hunter spells.
+[R Rogue - Zephras Isle | at=59.9,72.48,2521; class=ROGUE; xl=7.0]
 Eltheen Nightbreeze is right here: pick up your new Rogue spells.
-[C 92551 Stolen Supplies | at=66.0,67.6,2521; mob=Al'Aketh Healer; ml=10; danger=8; race=Skyborne; xl=7.9]
-[A 92679 Blood Tithe | at=62.1,73.3,2521; place=Zephras Isle; danger=8; xl=7.9]
-[A 93317 Crab Season | at=60.6,72.7,2521; place=Zephras Isle; danger=8; xl=7.9]
-[C 92679 Blood Tithe | at=46.7,82.0,2521; mob=Aamelia Windfield / Alvarion Windfield; danger=8; xl=7.9]
-Alvarion Windfield has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 92679 Blood Tithe | at=46.7,82.0,2521; place=Zephras Isle; danger=8; xl=7.9]
-[A 92682 Make Yourself Useful | at=46.7,82.0,2521; pre=92679; place=Zephras Isle; xl=8.0]
-Also pick up the Ripe Stormapple lying next to the quest giver: the quest needs it.
-[A 92683 Flutterfly Dust | at=46.7,82.0,2521; pre=92679; place=Zephras Isle; xl=8.0]
-[A 92684 Ornery Ornery Galestriders | at=46.7,82.0,2521; pre=92679; place=Zephras Isle; xl=8.0]
-[C 92682 Make Yourself Useful | at=47.9,81.1,2521; mob=Hungry Bandit; ml=9; item=253591:10; xl=8.0]
-[T 92682 Make Yourself Useful | at=46.7,82.0,2521; place=Zephras Isle; xl=8.0]
-[A 92698 What Is My Purpose? | at=48.9,78.2,2521; pre=92679; place=Zephras Isle; xl=8.3]
-[C 92683 Flutterfly Dust | at=50.5,79.6,2521; item=253595:5; xl=8.3]
-[R Hunter - Zephras Isle | at=59.74,72.76,2521; class=HUNTER; xl=8.3]
-Quel'dora Quickgale is right here: pick up your new Hunter spells.
+[L 8 | xl=7.0]
+Grind mobs around your level here; more quests open at the next level.
+[C 98512 Al'Aketh Assassins | at=55.5,60.2,2521; mob=Al'Aketh Assassin; ml=10; xl=8.0]
+[T 98512 Al'Aketh Assassins | at=56.8,61.1,2521; place=Zephras Isle; xl=8.0]
+[A 93317 Crab Season | at=60.6,72.7,2521; place=Zephras Isle; danger=9; xl=8.3]
+[A 92679 Blood Tithe | at=62.1,73.3,2521; place=Zephras Isle; danger=9; xl=8.3]
 [R Warrior - Zephras Isle | at=59.89,72.87,2521; class=WARRIOR; xl=8.3]
 Seena Skybreaker is right here: pick up your new Warrior spells.
-[C 92684 Ornery Ornery Galestriders | at=50.5,79.7,2521; mob=Ornery Galestrider; ml=9; item=253597:7; xl=8.3]
-[T 92683 Flutterfly Dust | at=46.7,82.0,2521; place=Zephras Isle; xl=8.3]
-[T 92684 Ornery Ornery Galestriders | at=46.7,82.0,2521; place=Zephras Isle; xl=8.5]
-[T 92698 What Is My Purpose? | at=46.7,82.0,2521; place=Zephras Isle; xl=8.8]
-[A 92685 The Hills Have Eyes | at=46.7,82.0,2521; pre=92682,92683,92684; place=Zephras Isle; xl=8.8]
-[C 92685 The Hills Have Eyes | at=49.4,75.2,2521; mob=Bandit Highwayman; ml=9; xl=8.8]
-[T 92685 The Hills Have Eyes | at=46.7,82.0,2521; place=Zephras Isle; xl=8.8]
-[A 94484 Unnerving Silence | at=64.0,75.1,2521; ex=94493; place=Zephras Isle; danger=10; xl=9.1]
-[R Rogue - Zephras Isle | at=59.9,72.48,2521; class=ROGUE; xl=9.1]
+[R Druid - Zephras Isle | at=63.99,75.08,2521; class=DRUID; xl=8.3]
+Lotheluum Starbreeze is right here: pick up your new Druid spells.
+[R Shaman - Zephras Isle | at=58.31,78.51,2521; class=SHAMAN; xl=8.3]
+Sessaria Skystride is right here: pick up your new Shaman spells.
+[R Mage - Zephras Isle | at=65.91,80.57,2521; class=MAGE; xl=8.3]
+Anathamaas Aetherwind is right here: pick up your new Mage spells.
+[C 92679 Blood Tithe | at=46.7,82.0,2521; mob=Aamelia Windfield / Alvarion Windfield; xl=8.3]
+Alvarion Windfield has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[T 92679 Blood Tithe | at=46.7,82.0,2521; place=Zephras Isle; xl=8.3]
+[A 92682 Make Yourself Useful | at=46.7,82.0,2521; pre=92679; place=Zephras Isle; xl=8.5]
+Also pick up the Ripe Stormapple lying next to the quest giver: the quest needs it.
+[A 92683 Flutterfly Dust | at=46.7,82.0,2521; pre=92679; place=Zephras Isle; xl=8.5]
+[C 92682 Make Yourself Useful | at=47.9,81.0,2521; mob=Hungry Bandit; ml=9; item=253591:10; xl=8.5]
+[T 92682 Make Yourself Useful | at=46.7,82.0,2521; place=Zephras Isle; xl=8.5]
+[A 92698 What Is My Purpose? | at=48.9,78.2,2521; pre=92679; place=Zephras Isle; xl=8.8]
+[C 92683 Flutterfly Dust | at=50.5,79.6,2521; item=253595:5; xl=8.8]
+[T 92683 Flutterfly Dust | at=46.7,82.0,2521; place=Zephras Isle; xl=8.8]
+[T 92698 What Is My Purpose? | at=46.7,82.0,2521; place=Zephras Isle; xl=8.9]
+[A 92684 Ornery Ornery Galestriders | at=46.7,82.0,2521; pre=92679; place=Zephras Isle; danger=10; xl=9.0]
+[C 92684 Ornery Ornery Galestriders | at=57.7,70.3,2521; mob=Ornery Galestrider; ml=9; item=253597:7; danger=10; xl=9.0]
+[R Hunter - Zephras Isle | at=59.56,72.63,2521; class=HUNTER; xl=9.0]
+Quel'ana Quickgale is right here: pick up your new Hunter spells.
+[R Rogue - Zephras Isle | at=59.9,72.48,2521; class=ROGUE; xl=9.0]
 Eltheen Nightbreeze is right here: pick up your new Rogue spells.
-[R Druid - Zephras Isle | at=63.99,75.08,2521; class=DRUID; xl=9.1]
-Lotheluum Starbreeze is right here: pick up your new Druid spells.
-[R Shaman - Zephras Isle | at=58.31,78.51,2521; class=SHAMAN; xl=9.1]
-Sessaria Skystride is right here: pick up your new Shaman spells.
-[C 98512 Al'Aketh Assassins | at=55.6,60.5,2521; mob=Al'Aketh Assassin; ml=10; xl=9.1]
-[T 98512 Al'Aketh Assassins | at=56.8,61.1,2521; place=Zephras Isle; xl=9.1]
-[C 93317 Crab Season | at=51.1,46.8,2521; mob=Windsong Crawler; xl=9.4]
-[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=9.4]
-Shenaan Spellwind is right here: pick up your new Mage spells.
-[T 92551 Stolen Supplies | at=45.2,45.2,2521; place=Zephras Isle; race=Skyborne; xl=9.4]
-[A 93159 The Strange Hermit | at=54.0,38.9,2521; place=Zephras Isle; xl=9.5]
-[T 94484 Unnerving Silence | at=61.7,39.2,2521; place=Zephras Isle; danger=10; xl=9.5]
-[A 94485 Tears of the Lady | at=61.7,39.2,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.6]
-[A 94486 Feathers for Binding | at=61.7,39.2,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.6]
-[A 94487 Unwanted and Unworthy | at=61.7,39.2,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.6]
-[A 93165 Mercy Falls on Deaf Ears | at=63.8,35.9,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.6]
-[C 94487 Unwanted and Unworthy | at=63.4,37.5,2521; mob=Al'Aketh Stormchaser; ml=11; item=265141:10; danger=10; xl=9.6]
-[T 94487 Unwanted and Unworthy | at=61.7,39.2,2521; place=Zephras Isle; danger=10; xl=9.6]
+[A 94484 Unnerving Silence | at=64.0,75.1,2521; ex=94493; place=Zephras Isle; danger=10; xl=9.0]
+[T 92684 Ornery Ornery Galestriders | at=46.7,82.0,2521; place=Zephras Isle; xl=9.0]
+[A 92685 The Hills Have Eyes | at=46.7,82.0,2521; pre=92682,92683,92684; place=Zephras Isle; xl=9.2]
+[C 92685 The Hills Have Eyes | at=49.0,75.2,2521; mob=Bandit Highwayman; ml=9; xl=9.2]
+[T 92685 The Hills Have Eyes | at=46.7,82.0,2521; place=Zephras Isle; xl=9.2]
+[C 93317 Crab Season | at=51.7,57.6,2521; mob=Windsong Crawler; xl=9.5]
+[T 93317 Crab Season | at=60.6,72.7,2521; place=Zephras Isle; xl=9.5]
+[T 94484 Unnerving Silence | at=61.8,39.1,2521; place=Zephras Isle; danger=10; xl=9.6]
+[A 94485 Tears of the Lady | at=61.8,39.1,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.7]
+[A 94486 Feathers for Binding | at=61.8,39.1,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.7]
+[A 94487 Unwanted and Unworthy | at=61.8,39.1,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.7]
+[A 93165 Mercy Falls on Deaf Ears | at=63.8,36.0,2521; pre=94484; place=Zephras Isle; danger=10; xl=9.7]
+[C 94487 Unwanted and Unworthy | at=63.3,37.2,2521; mob=Al'Aketh Stormchaser; ml=11; item=265141:10; danger=10; xl=9.7]
+[T 94487 Unwanted and Unworthy | at=61.8,39.1,2521; place=Zephras Isle; danger=10; xl=9.7]
 [C 94485 Tears of the Lady | at=60.9,38.8,2521; danger=10; xl=9.9]
-[T 94485 Tears of the Lady | at=61.7,39.2,2521; place=Zephras Isle; danger=10; xl=9.9]
-[C 94486 Feathers for Binding | at=58.1,39.0,2521; mob=Shadowgale Shriekling; item=265140:20; danger=10; xl=9.9]
-[T 94486 Feathers for Binding | at=61.7,39.2,2521; place=Zephras Isle; danger=10; xl=9.9]
-[A 94488 The Ties That Bind | at=61.7,39.2,2521; pre=94485,94486,94487; place=Zephras Isle; xl=10.2]
-[A 94489 The Wounds of Betrayal | at=61.7,39.2,2521; pre=94485,94486,94487; place=Zephras Isle; xl=10.2]
-[C 94488 The Ties That Bind | at=65.5,36.3,2521; mob=Commander Haalien; xl=10.2]
+[T 94485 Tears of the Lady | at=61.8,39.1,2521; place=Zephras Isle; danger=10; xl=9.9]
+[C 94486 Feathers for Binding | at=58.0,39.1,2521; mob=Shadowgale Shriekling; item=265140:20; xl=10.0]
+[T 94486 Feathers for Binding | at=61.8,39.1,2521; place=Zephras Isle; xl=10.0]
+[A 94488 The Ties That Bind | at=61.8,39.1,2521; pre=94485,94486,94487; place=Zephras Isle; xl=10.3]
+[A 94489 The Wounds of Betrayal | at=61.8,39.1,2521; pre=94485,94486,94487; place=Zephras Isle; xl=10.3]
+[C 94488 The Ties That Bind | at=65.5,36.3,2521; mob=Commander Haalien; xl=10.3]
 Commander Haalien has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[A 94490 Ripped Missive | at=65.5,36.3,2521; pre=94485,94486,94487; place=Zephras Isle; xl=10.2]
+[A 94490 Ripped Missive | at=65.5,36.3,2521; pre=94485,94486,94487; place=Zephras Isle; xl=10.3]
 Starts from Ripped Missive, which drops in this area.
-[T 94488 The Ties That Bind | at=61.7,39.2,2521; place=Zephras Isle; xl=10.2]
-[T 94490 Ripped Missive | at=61.7,39.2,2521; place=Zephras Isle; xl=10.4]
-[A 94491 The Fate of the Den | at=61.7,39.2,2521; pre=94490; place=Zephras Isle; xl=10.7]
-[T 93317 Crab Season | at=60.6,72.7,2521; place=Zephras Isle; xl=10.7]
-[R Hunter - Zephras Isle | at=59.74,72.76,2521; class=HUNTER; xl=10.8]
-Quel'dora Quickgale is right here: pick up your new Hunter spells.
+[T 94488 The Ties That Bind | at=61.8,39.1,2521; place=Zephras Isle; xl=10.3]
+[T 94490 Ripped Missive | at=61.8,39.1,2521; place=Zephras Isle; xl=10.5]
+[A 94491 The Fate of the Den | at=61.8,39.1,2521; pre=94490; place=Zephras Isle; xl=10.7]
+[A 93159 The Strange Hermit | at=54.0,38.9,2521; place=Zephras Isle; xl=10.7]
+[R Hunter - Zephras Isle | at=45.26,44.24,2521; class=HUNTER; xl=10.7]
+Elayaa Easewind is right here: pick up your new Hunter spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 94007 Taming the Beast | at=45.3,44.2,2521; place=Zephras Isle; class=HUNTER; race=Skyborne; xl=10.8]
-[T 94007 Taming the Beast | at=59.6,72.6,2521; place=Zephras Isle; class=HUNTER; race=Skyborne; xl=10.8]
-[R Warrior - Zephras Isle | at=59.89,72.87,2521; class=WARRIOR; xl=10.8]
-Seena Skybreaker is right here: pick up your new Warrior spells.
+[A 94007 Taming the Beast | at=45.3,44.2,2521; place=Zephras Isle; class=HUNTER; race=Skyborne; xl=10.7]
+[T 94007 Taming the Beast | at=59.6,72.6,2521; place=Zephras Isle; class=HUNTER; race=Skyborne; xl=10.7]
+[R Warrior - Zephras Isle | at=44.95,45.1,2521; class=WARRIOR; xl=10.7]
+Corsan Earthrazer is right here: pick up your new Warrior spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 94003 The Skybreaker Bulwark | at=59.9,72.9,2521; place=Zephras Isle; class=WARRIOR; race=Skyborne; xl=10.8]
-[C 94003 The Skybreaker Bulwark | at=56.6,50.4,2521; mob=Zaal Stormshield; class=WARRIOR; race=Skyborne; xl=10.8]
+[A 94003 The Skybreaker Bulwark | at=59.9,72.9,2521; place=Zephras Isle; class=WARRIOR; race=Skyborne; xl=10.7]
+[C 94003 The Skybreaker Bulwark | at=56.6,50.4,2521; mob=Zaal Stormshield; class=WARRIOR; race=Skyborne; xl=10.7]
 Zaal Stormshield has only one spawn point. If others are waiting for it, group up to share it.
-[T 94003 The Skybreaker Bulwark | at=59.9,72.9,2521; place=Zephras Isle; class=WARRIOR; race=Skyborne; xl=10.8]
-[R Druid - Zephras Isle | at=63.99,75.08,2521; class=DRUID; xl=10.8]
-Lotheluum Starbreeze is right here: pick up your new Druid spells.
+[T 94003 The Skybreaker Bulwark | at=59.9,72.9,2521; place=Zephras Isle; class=WARRIOR; race=Skyborne; xl=10.7]
+[R Druid - Zephras Isle | at=45.16,44.22,2521; class=DRUID; xl=10.7]
+Naeluna Swiftmend is right here: pick up your new Druid spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 94006 The Great Ursera Spirit | at=64.0,75.1,2521; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.8]
-[T 94006 The Great Ursera Spirit | at=69.8,61.7,2521; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.8]
-[A 94638 Strength and Mercy | at=69.8,61.7,2521; pre=94006; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.8]
-[C 94638 Strength and Mercy | at=54.1,65.7,2521; mob=Ur'endra; class=DRUID; race=Skyborne; xl=10.8]
-[T 94638 Strength and Mercy | at=69.8,61.7,2521; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.8]
-[R Shaman - Zephras Isle | at=58.31,78.51,2521; class=SHAMAN; xl=10.8]
+[A 94006 The Great Ursera Spirit | at=64.0,75.1,2521; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.7]
+[T 94006 The Great Ursera Spirit | at=69.8,61.7,2521; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.7]
+[A 94638 Strength and Mercy | at=69.8,61.7,2521; pre=94006; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.7]
+[C 94638 Strength and Mercy | at=54.0,64.6,2521; mob=Ur'endra; class=DRUID; race=Skyborne; xl=10.7]
+[T 94638 Strength and Mercy | at=69.8,61.7,2521; place=Zephras Isle; class=DRUID; race=Skyborne; xl=10.7]
+[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=10.7]
+Shenaan Spellwind is right here: pick up your new Mage spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[T 94491 The Fate of the Den | at=64.0,75.1,2521; place=Zephras Isle; xl=10.7]
+[R Shaman - Zephras Isle | at=58.31,78.51,2521; class=SHAMAN; xl=10.9]
 Sessaria Skystride is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 97243 Call of Fire | at=58.3,78.5,2521; ex=1524; place=Zephras Isle; class=SHAMAN; race=Skyborne; xl=10.8]
-[T 97243 Call of Fire | at=51.2,86.2,2521; place=Zephras Isle; class=SHAMAN; race=Skyborne; xl=10.8]
-[A 97244 Call of Fire | at=51.2,86.2,2521; pre=97243; place=Zephras Isle; class=SHAMAN; xl=10.8]
-[C 97244 Call of Fire | at=64.4,63.7,2521; mob=Skypriest Faladiel; class=SHAMAN; xl=10.8]
+[A 97243 Call of Fire | at=58.3,78.5,2521; ex=1524; place=Zephras Isle; class=SHAMAN; race=Skyborne; xl=10.9]
+[T 97243 Call of Fire | at=51.2,86.2,2521; place=Zephras Isle; class=SHAMAN; race=Skyborne; xl=10.9]
+[A 97244 Call of Fire | at=51.2,86.2,2521; pre=97243; place=Zephras Isle; class=SHAMAN; xl=10.9]
+[C 97244 Call of Fire | at=64.4,63.7,2521; mob=Skypriest Faladiel; class=SHAMAN; xl=10.9]
 Skypriest Faladiel has only one spawn point. If others are waiting for it, group up to share it.
-[T 97244 Call of Fire | at=51.2,86.2,2521; place=Zephras Isle; class=SHAMAN; xl=10.8]
-[A 97245 Call of Fire | at=51.2,86.2,2521; pre=97244; place=Zephras Isle; class=SHAMAN; xl=10.8]
-[C 97245 Call of Fire | at=42.4,68.8,2521; mob=Kuramaa; class=SHAMAN; xl=10.8]
+[T 97244 Call of Fire | at=51.2,86.2,2521; place=Zephras Isle; class=SHAMAN; xl=10.9]
+[A 97245 Call of Fire | at=51.2,86.2,2521; pre=97244; place=Zephras Isle; class=SHAMAN; xl=10.9]
+[C 97245 Call of Fire | at=42.4,68.8,2521; mob=Kuramaa; class=SHAMAN; xl=10.9]
 Kuramaa has only one spawn point. If others are waiting for it, group up to share it.
-[T 97245 Call of Fire | at=51.2,86.2,2521; place=Zephras Isle; class=SHAMAN; xl=10.8]
-[A 97257 Call of Fire | at=51.2,86.2,2521; pre=97245; place=Zephras Isle; class=SHAMAN; xl=10.8]
-[C 97257 Call of Fire | at=51.2,85.9,2521; mob=Brazier of Offering / Brazier of Eternal Flame; class=SHAMAN; xl=10.8]
+[T 97245 Call of Fire | at=51.2,86.2,2521; place=Zephras Isle; class=SHAMAN; xl=10.9]
+[A 97257 Call of Fire | at=51.2,86.2,2521; pre=97245; place=Zephras Isle; class=SHAMAN; xl=10.9]
+[C 97257 Call of Fire | at=51.2,85.9,2521; mob=Brazier of Offering / Brazier of Eternal Flame; class=SHAMAN; xl=10.9]
 Brazier of Eternal Flame has only one spawn point. If others are waiting for it, group up to share it.
-[T 97257 Call of Fire | at=58.3,78.5,2521; place=Zephras Isle; class=SHAMAN; xl=10.8]
-[T 94491 The Fate of the Den | at=64.0,75.1,2521; place=Zephras Isle; xl=10.8]
+[T 97257 Call of Fire | at=58.3,78.5,2521; place=Zephras Isle; class=SHAMAN; xl=10.9]
 [L 11 | xl=10.9]
 Grind mobs around your level here; more quests open at the next level.
-[C 94489 The Wounds of Betrayal | at=64.5,34.7,2521; mob=Jorel Windsinger; xl=11.0]
+[A 92514 Welcome to Shen'dar Village | at=45.7,45.5,2521; place=Zephras Isle; danger=12; xl=11.0]
+[R Rogue - Zephras Isle | at=43.15,43.26,2521; class=ROGUE; xl=11.0]
+Miriaan Mistblade is right here: pick up your new Rogue spells.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[C 92514 Welcome to Shen'dar Village | at=43.5,44.8,2521; mob=Illaya Amberwind / Coriella Calmbreeze; xl=11.0]
+Coriella Calmbreeze has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[T 92514 Welcome to Shen'dar Village | at=45.7,45.5,2521; place=Zephras Isle; danger=12; xl=11.0]
+[A 92517 The Criminal Element | at=45.7,45.5,2521; pre=92514; place=Zephras Isle; danger=12; xl=11.0]
+[A 92516 Hippogryph Harassment | at=44.5,45.0,2521; pre=92514; place=Zephras Isle; xl=11.0]
+[A 93319 Pilfered Windstones | at=44.5,45.0,2521; pre=92514; place=Zephras Isle; xl=11.0]
+[A 92515 The Problem With Prideclaws | at=44.7,44.5,2521; pre=92514; place=Zephras Isle; xl=11.0]
+[A 92553 Restocking the Larders | at=43.9,43.8,2521; pre=92514; place=Zephras Isle; xl=11.0]
+[C 92553 Restocking the Larders | at=43.1,40.6,2521; mob=Galestrider / Foreststrider; item=6889:3,5469:8; drop=36; xl=11.0]
+[C 92515 The Problem With Prideclaws | at=43.1,39.8,2521; mob=Prideclaw; ml=6; item=252670:10; xl=11.0]
+[T 92553 Restocking the Larders | at=43.9,43.8,2521; place=Zephras Isle; xl=11.0]
+[T 92515 The Problem With Prideclaws | at=44.7,44.5,2521; place=Zephras Isle; xl=11.1]
+[C 92517 The Criminal Element | at=48.8,37.3,2521; mob=Highlands Bandit / "Badwind" Bennic; ml=7; xl=11.2]
+"Badwind" Bennic has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[C 93319 Pilfered Windstones | at=48.8,37.3,2521; mob=Highlands Bandit; ml=7; item=257945:10; xl=11.2]
+[T 92517 The Criminal Element | at=45.7,45.5,2521; place=Zephras Isle; danger=12; xl=11.2]
+[A 93036 Infiltrating the Cult | at=45.7,45.5,2521; pre=92517; place=Zephras Isle; danger=12; xl=11.4]
+[T 93036 Infiltrating the Cult | at=44.9,45.5,2521; place=Zephras Isle; xl=11.4]
+[A 92529 Falaath Village | at=44.9,45.5,2521; pre=93036; place=Zephras Isle; xl=11.4]
+[T 93319 Pilfered Windstones | at=44.5,45.0,2521; place=Zephras Isle; xl=11.4]
+[T 92529 Falaath Village | at=46.9,56.2,2521; place=Zephras Isle; xl=11.5]
+[A 92528 Among the Faithful | at=46.9,56.2,2521; pre=92529; place=Zephras Isle; danger=12; xl=11.6]
+[C 92528 Among the Faithful | at=48.8,53.9,2521; mob=Wardrobe; xl=11.6]
+Wardrobe has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[T 92528 Among the Faithful | at=45.7,45.5,2521; place=Zephras Isle; danger=12; xl=11.6]
+[A 92550 Havoc in the Highlands | at=45.7,45.5,2521; pre=92528; place=Zephras Isle; danger=12; xl=11.6]
+[A 92551 Stolen Supplies | at=45.2,45.2,2521; pre=92528; place=Zephras Isle; race=Skyborne; xl=11.6]
+[C 92550 Havoc in the Highlands | at=48.9,54.0,2521; mob=Al'Aketh Stormcaller / Living Lightning; ml=8; xl=11.6]
+Living Lightning has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
+[T 92550 Havoc in the Highlands | at=45.7,45.5,2521; place=Zephras Isle; danger=12; xl=11.6]
+[C 92516 Hippogryph Harassment | at=36.9,53.2,2521; mob=Hippogryph Youth / Hippogryph Protector; ml=7; xl=11.8]
+Hippogryph Matriarch has only 2 spawn points. If others are waiting for it, group up to share it, or skip this step and come back.
+[T 92516 Hippogryph Harassment | at=44.5,45.0,2521; place=Zephras Isle; xl=11.8]
+[A 92472 The Next Step | at=42.8,23.7,2521; pre=92470; place=Zephras Isle; danger=12; xl=11.9]
+[T 92472 The Next Step | at=45.7,45.5,2521; place=Zephras Isle; danger=12; xl=11.9]
+[C 94489 The Wounds of Betrayal | at=64.5,34.7,2521; mob=Jorel Windsinger; xl=11.9]
 Jorel Windsinger has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[T 94489 The Wounds of Betrayal | at=61.7,39.2,2521; place=Zephras Isle; xl=11.0]
-[L 12 | xl=11.2]
-Grind mobs around your level here; more quests open at the next level.
-[C 93159 The Strange Hermit | at=54.0,38.9,2521; mob=Strange Hermit; xl=12.0]
+[T 94489 The Wounds of Betrayal | at=61.8,39.1,2521; place=Zephras Isle; xl=11.9]
+[C 93159 The Strange Hermit | at=54.0,38.9,2521; mob=Strange Hermit; xl=12.2]
 Strange Hermit has only one spawn point. If others are waiting for it, group up to share it, or skip this step and come back.
-[R Hunter - Zephras Isle | at=45.26,44.24,2521; class=HUNTER; xl=12.0]
+[R Hunter - Zephras Isle | at=45.26,44.24,2521; class=HUNTER; xl=12.2]
 Elayaa Easewind is right here: pick up your new Hunter spells.
-[R Warrior - Zephras Isle | at=44.77,45.05,2521; class=WARRIOR; xl=12.0]
-Belandiel Farflight is right here: pick up your new Warrior spells.
-[R Druid - Zephras Isle | at=45.16,44.22,2521; class=DRUID; xl=12.0]
+[R Warrior - Zephras Isle | at=44.95,45.1,2521; class=WARRIOR; xl=12.2]
+Corsan Earthrazer is right here: pick up your new Warrior spells.
+[R Druid - Zephras Isle | at=45.16,44.22,2521; class=DRUID; xl=12.2]
 Naeluna Swiftmend is right here: pick up your new Druid spells.
-[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=12.0]
+[R Mage - Zephras Isle | at=45.1,45.87,2521; class=MAGE; xl=12.2]
 Shenaan Spellwind is right here: pick up your new Mage spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[T 93159 The Strange Hermit | at=54.0,38.9,2521; place=Zephras Isle; xl=12.0]
-[A 93160 The Forest's Bounty | at=54.0,38.9,2521; pre=93159; place=Zephras Isle; xl=12.0]
-[A 93172 Free the Hollows | at=54.0,38.9,2521; pre=93159; place=Zephras Isle; xl=12.0]
-[C 93160 The Forest's Bounty | at=58.9,38.7,2521; xl=12.0]
-[T 93160 The Forest's Bounty | at=54.0,38.9,2521; place=Zephras Isle; xl=12.0]
-[C 93172 Free the Hollows | at=58.4,32.5,2521; mob=Wind Hollow; ml=11; xl=12.2]
-[T 93172 Free the Hollows | at=54.0,38.9,2521; place=Zephras Isle; xl=12.2]
-[C 93165 Mercy Falls on Deaf Ears | at=63.6,64.0,2521; mob=Al'Aketh Preacher; ml=9; xl=12.3]
-[R Rogue - Zephras Isle | at=59.9,72.48,2521; class=ROGUE; xl=12.3]
-Eltheen Nightbreeze is right here: pick up your new Rogue spells.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[T 93165 Mercy Falls on Deaf Ears | at=63.8,35.9,2521; place=Zephras Isle; xl=12.3]
-[L 13 | xl=12.5]
+[T 93159 The Strange Hermit | at=54.0,38.9,2521; place=Zephras Isle; xl=12.2]
+[A 93160 The Forest's Bounty | at=54.0,38.9,2521; pre=93159; place=Zephras Isle; xl=12.2]
+[A 93172 Free the Hollows | at=54.0,38.9,2521; pre=93159; place=Zephras Isle; xl=12.2]
+[C 93160 The Forest's Bounty | at=58.9,38.7,2521; xl=12.2]
+[T 93160 The Forest's Bounty | at=54.0,38.9,2521; place=Zephras Isle; xl=12.2]
+[C 93172 Free the Hollows | at=58.0,32.2,2521; mob=Wind Hollow; ml=11; xl=12.3]
+[T 93172 Free the Hollows | at=54.0,38.9,2521; place=Zephras Isle; xl=12.3]
+[C 93165 Mercy Falls on Deaf Ears | at=63.2,64.2,2521; mob=Al'Aketh Pillager; ml=9; xl=12.5]
+[C 92551 Stolen Supplies | at=65.7,66.9,2521; mob=Al'Aketh Healer; ml=10; race=Skyborne; xl=12.5]
+[T 92551 Stolen Supplies | at=45.2,45.2,2521; place=Zephras Isle; race=Skyborne; xl=12.5]
+[R Shaman - Zephras Isle | at=43.45,44.87,2521; class=SHAMAN; xl=12.6]
+Aarnor Galestrike is right here: pick up your new Shaman spells.
+[T 93165 Mercy Falls on Deaf Ears | at=63.8,36.0,2521; place=Zephras Isle; xl=12.6]
+[L 13 | xl=12.8]
 Grind mobs around your level here; more quests open at the next level.
 [G 51.5,30.34 1413 Travel to Crossroads, The Barrens - take the portal from Zephras Isle to Orgrimmar | xl=13.0]
 ]==])

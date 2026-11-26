@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Horde 1-13 Mulgore (Tauren)]==], [==[
 #levels 1-13
 #faction Horde
 #race Tauren
-#next Horde 12-16 The Barrens, Undercity, Tirisfal Glades
+#next Horde 12-17 The Barrens, Silverpine Forest, Undercity
 
 [S Mulgore | at=45.93,64.16,1412; xl=1.0]
 Talk to Innkeeper Kauth and make this inn your home.
@@ -61,10 +61,8 @@ Meela Dawnstrider is right here: pick up your new Shaman spells.
 [A 1519 Call of Earth | at=44.4,76.8,1412; ex=1516,92466; place=Mulgore; class=SHAMAN; xl=5.4]
 [C 1519 Call of Earth | at=61.0,78.2,1412; mob=Bristleback Shaman; item=6634:2; drop=13; class=SHAMAN; xl=5.4]
 [T 1519 Call of Earth | at=44.4,76.8,1412; place=Mulgore; class=SHAMAN; xl=5.4]
-[A 1520 Call of Earth | at=44.4,76.8,1412; pre=1519; place=Mulgore; class=SHAMAN; xl=5.4]
+[A 1520 Call of Earth | at=44.4,76.8,1412; pre=1519; ex=1517,92467,94374; place=Mulgore; class=SHAMAN; xl=5.4]
 [T 1520 Call of Earth | at=52.0,80.4,1412; place=Mulgore; class=SHAMAN; xl=5.4]
-[A 1521 Call of Earth | at=52.0,80.4,1412; pre=1520; place=Mulgore; class=SHAMAN; xl=5.4]
-[T 1521 Call of Earth | at=44.4,76.8,1412; place=Mulgore; class=SHAMAN; xl=5.4]
 [T 1656 A Task Unfinished | at=45.9,64.2,1412; place=Mulgore; xl=5.4]
 [A 99079 Longwalker Malah | at=46.7,63.8,1412; place=Mulgore; xl=5.5]
 [T 763 Rites of the Earthmother | at=46.7,63.4,1412; place=Mulgore; xl=5.5]
@@ -92,7 +90,7 @@ Also pick up the Ambercorn lying next to the quest giver: the quest needs it.
 [C 748 Poison Water | at=40.0,69.5,1412; mob=Prairie Wolf / Adult Plainstrider; ml=6; item=4758:6,4759:4; drop=25; race=Tauren; xl=6.5]
 [C 766 Mazzranache | at=40.0,69.5,1412; mob=Prairie Wolf / Flatland Cougar; ml=8; xl=6.5]
 [C 761 Swoop Hunting | at=38.7,68.6,1412; mob=Wiry Swoop; ml=7; item=4769:8; drop=82; xl=6.5]
-[A 98430 The Longwalkers | at=33.1,66.0,1412; place=Mulgore; xl=6.5]
+[A 98430 The Longwalkers | at=33.1,65.9,1412; place=Mulgore; xl=6.5]
 [C 745 Sharing the Land | at=34.1,64.2,1412; mob=Palemane Tanner / Palemane Skinner; ml=8; xl=6.5]
 [C 98430 The Longwalkers | at=37.2,64.6,1412; xl=6.5]
 [T 745 Sharing the Land | at=46.7,63.4,1412; place=Mulgore; xl=6.5]
@@ -105,8 +103,8 @@ Also pick up the Ambercorn lying next to the quest giver: the quest needs it.
 Yaw Sharpmane is right here: pick up your new Hunter spells.
 [C 754 Winterhoof Cleansing | at=51.8,68.4,1412; race=Tauren; xl=7.7]
 [T 754 Winterhoof Cleansing | at=47.5,63.6,1412; place=Mulgore; race=Tauren; xl=7.7]
-[A 756 Thunderhorn Totem | at=47.5,63.6,1412; pre=754; place=Mulgore; race=Tauren; xl=8.0]
-[T 749 The Ravaged Caravan | at=51.9,53.4,1412; place=Mulgore; xl=8.0]
+[A 756 Thunderhorn Totem | at=47.5,63.6,1412; pre=754; place=Mulgore; race=Tauren; xl=7.9]
+[T 749 The Ravaged Caravan | at=51.9,53.4,1412; place=Mulgore; xl=7.9]
 [A 751 The Ravaged Caravan | at=51.9,53.4,1412; pre=749; place=Mulgore; xl=8.2]
 [C 756 Thunderhorn Totem | at=50.3,46.6,1412; mob=Prairie Stalker / Flatland Cougar; ml=8; item=4801:6,4802:6; drop=22; race=Tauren; xl=8.2]
 [A 98424 Fizsprocket's Notes | at=61.2,49.3,1412; place=Mulgore; danger=9; xl=8.2]
@@ -127,13 +125,13 @@ Yaw Sharpmane is right here: pick up your new Hunter spells.
 [T 751 The Ravaged Caravan | at=54.8,64.3,1412; place=Mulgore; xl=9.1]
 [T 98424 Fizsprocket's Notes | at=54.8,64.3,1412; place=Mulgore; xl=9.2]
 [A 764 The Venture Co. | at=54.8,64.3,1412; pre=751; place=Mulgore; xl=9.5]
-[C 99080 Drive Them Out | at=61.6,61.5,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.5]
+[C 99080 Drive Them Out | at=61.0,61.3,1412; mob=Galak Centaur / Galak Outrunner; ml=11; xl=9.5]
 [C 743 Dangers of the Windfury | at=61.2,72.4,1412; mob=Windfury Harpy; ml=8; item=4751:8; drop=52; xl=9.5]
 [T 743 Dangers of the Windfury | at=46.5,64.9,1412; place=Mulgore; xl=9.5]
 [T 99080 Drive Them Out | at=46.7,63.4,1412; place=Mulgore; xl=9.7]
-[A 99082 The High Chieftain | at=46.7,63.4,1412; pre=99080; place=Mulgore; xl=10.0]
-[C 758 Thunderhorn Cleansing | at=44.2,51.1,1412; race=Tauren; xl=10.0]
-[T 758 Thunderhorn Cleansing | at=47.5,63.6,1412; place=Mulgore; race=Tauren; xl=10.0]
+[A 99082 The High Chieftain | at=46.7,63.4,1412; pre=99080; place=Mulgore; xl=9.9]
+[C 758 Thunderhorn Cleansing | at=44.2,51.1,1412; race=Tauren; xl=9.9]
+[T 758 Thunderhorn Cleansing | at=47.5,63.6,1412; place=Mulgore; race=Tauren; xl=9.9]
 [A 759 Wildmane Totem | at=47.5,63.6,1412; pre=758; place=Mulgore; race=Tauren; xl=10.2]
 [A 861 The Hunter's Way | at=46.0,63.4,1412; ex=844; place=Mulgore; xl=10.2]
 [R Hunter - Mulgore | at=46.93,59.65,1412; class=HUNTER; xl=10.2]
@@ -177,16 +175,14 @@ Great Bear Spirit has only one spawn point. If others are waiting for it, group 
 [C 6002 Body and Heart | at=76.5,27.2,1456; mob=Lunaclaw Spirit; class=DRUID; race=Tauren; xl=10.6]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
 [T 6002 Body and Heart | at=76.5,27.2,1456; place=Thunder Bluff; class=DRUID; race=Tauren; xl=10.6]
-[R Shaman - Mulgore | at=33.61,22.4,1412; class=SHAMAN; xl=10.6]
+[R Shaman - Mulgore | at=33.6,22.4,1412; class=SHAMAN; xl=10.6]
 Palah Thunderhoof is right here: pick up your new Shaman spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1523 Call of Fire | at=25.2,20.5,1456; ex=1522,2983,2984; opt; place=Thunder Bluff; class=SHAMAN; xl=10.6]
 [T 1523 Call of Fire | at=56.0,19.9,1413; opt; place=The Barrens; class=SHAMAN; xl=10.6]
 [A 1524 Call of Fire | at=56.0,19.9,1413; ex=97243; place=The Barrens; class=SHAMAN; xl=10.6]
 [T 1524 Call of Fire | at=38.5,59.0,1411; place=Durotar; class=SHAMAN; xl=10.6]
-[A 1517 Call of Earth | at=42.4,69.2,1411; pre=1519; place=Durotar; class=SHAMAN; xl=10.6]
-[T 1517 Call of Earth | at=44.0,76.2,1411; place=Durotar; class=SHAMAN; xl=10.6]
-[A 1518 Call of Earth | at=44.0,76.2,1411; pre=1517; place=Durotar; class=SHAMAN; xl=10.6]
+[A 1518 Call of Earth | at=44.0,76.2,1411; pre=1520; ex=1521,92468,94375; place=Durotar; class=SHAMAN; xl=10.6]
 [T 1518 Call of Earth | at=42.4,69.2,1411; place=Durotar; class=SHAMAN; xl=10.6]
 [A 1525 Call of Fire | at=38.5,59.0,1411; pre=1524; place=Durotar; class=SHAMAN; xl=10.6]
 [C 1525 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=10.6]
@@ -205,6 +201,9 @@ Time to train: head to Gest in Orgrimmar for your new Rogue spells. The arrow ta
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Priest - Orgrimmar | at=36.01,87.73,1454; class=PRIEST; xl=11.0]
 Time to train: head to X'yera in Orgrimmar for your new Priest spells. The arrow takes you back to the route afterwards.
+You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
+[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=11.0]
+Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [R Warrior - Thunder Bluff | at=57.24,87.37,1456; class=WARRIOR; xl=11.0]
 Time to train: head to Torm Ragetotem in Thunder Bluff for your new Warrior spells. The arrow takes you back to the route afterwards.
@@ -234,9 +233,6 @@ Time to train: head to Archmage Shymm in Thunder Bluff for your new Mage spells.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [A 1883 Speak with Un'thuwa | at=25.2,21.0,1456; ex=1882; opt; place=Thunder Bluff; class=MAGE; xl=11.0]
 [T 1883 Speak with Un'thuwa | at=56.3,75.1,1411; opt; place=Durotar; class=MAGE; xl=11.0]
-[R Paladin - Thunder Bluff | at=25.36,14.64,1456; class=PALADIN; xl=11.0]
-Time to train: head to Alodan the Hopeful in Thunder Bluff for your new Paladin spells. The arrow takes you back to the route afterwards.
-You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
 [G 37.8,59.6 1456 Travel to Thunder Bluff | xl=11.0]
 [S Thunder Bluff | at=45.81,64.71,1456; xl=11.0]
 Talk to Innkeeper Pala and make this inn your home.

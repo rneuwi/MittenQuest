@@ -4,7 +4,7 @@ MittenQuest:RegisterGuide([==[Alliance 1-20 Teldrassil, Darkshore, Ashenvale, St
 #levels 1-20
 #faction Alliance
 #race NightElf
-#next Alliance 19-23 Wetlands, Redridge Mountains, Duskwood
+#next Alliance 19-23 Wetlands, Redridge Mountains, Loch Modan
 
 [A 458 The Woodland Protector | at=59.9,42.5,1438; place=Teldrassil; xl=1.0]
 [A 456 The Balance of Nature | at=58.7,44.3,1438; place=Teldrassil; xl=1.0]
@@ -115,7 +115,7 @@ Rageclaw has only one spawn point. If others are waiting for it, group up to sha
 [T 2561 Druid of the Claw | at=44.9,61.6,1438; place=Teldrassil; xl=8.1]
 [T 487 The Road to Darnassus | at=52.9,57.2,1438; place=Teldrassil; xl=8.4]
 [T 932 Twisted Hatred | at=55.6,57.0,1438; place=Teldrassil; xl=8.7]
-[T 483 The Relics of Wakening | at=56.0,57.3,1438; place=Teldrassil; xl=9.0]
+[T 483 The Relics of Wakening | at=56.0,57.3,1438; place=Teldrassil; xl=8.9]
 [R Druid - Teldrassil | at=55.95,61.56,1438; class=DRUID; xl=9.2]
 Kal is right here: pick up your new Druid spells.
 [C 2459 Ferocitas the Dream Eater | at=68.6,52.9,1438; mob=Gnarlpine Mystic; ml=7; xl=9.2]
@@ -171,7 +171,7 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [T 931 The Shimmering Frond | at=60.9,68.5,1438; place=Teldrassil; xl=10.7]
 [A 2399 The Sprouted Fronds | at=60.8,68.6,1438; pre=931; place=Teldrassil; xl=10.9]
 [T 2399 The Sprouted Fronds | at=60.8,68.6,1438; place=Teldrassil; xl=10.9]
-[C 99050 The Great Tree Provides | at=57.1,69.1,1438; mob=Lasher Sproutling; item=286017:6; race=NightElf,Skyborne; xl=10.9]
+[C 99050 The Great Tree Provides | at=57.1,69.0,1438; mob=Lasher Sproutling; item=286017:6; race=NightElf,Skyborne; xl=10.9]
 [T 99050 The Great Tree Provides | at=55.3,56.8,1438; place=Teldrassil; race=NightElf,Skyborne; xl=10.9]
 [A 99073 Easing Suffering | at=55.3,56.8,1438; pre=99050; place=Teldrassil; race=NightElf,Skyborne; xl=11.1]
 [C 929 Crown of the Earth | at=63.4,58.1,1438; xl=11.1]
@@ -191,90 +191,90 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [T 938 Mist | at=38.3,34.4,1438; place=Teldrassil; xl=11.6]
 [C 7383 Crown of the Earth | at=38.4,34.1,1438; xl=11.8]
 [T 7383 Crown of the Earth | at=56.1,61.7,1438; place=Teldrassil; xl=11.8]
-[A 935 Crown of the Earth | at=56.1,61.7,1438; pre=7383; place=Teldrassil; xl=12.0]
-[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=12.0]
+[A 935 Crown of the Earth | at=56.1,61.7,1438; pre=7383; place=Teldrassil; xl=11.9]
+[R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=11.9]
 Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=12.0]
+[R Priest - Darnassus | at=39.52,81.2,1457; class=PRIEST; xl=11.9]
 Time to train: head to Priestess Alathea in Darnassus for your new Priest spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 5629 Returning Home | at=55.6,56.8,1438; ex=5627,5628,5630,5631,5632,5633; place=Teldrassil; class=PRIEST; race=NightElf; xl=12.0]
-[T 5629 Returning Home | at=39.5,81.2,1457; place=Darnassus; class=PRIEST; race=NightElf; xl=12.0]
-[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=12.0]
+[A 5629 Returning Home | at=55.6,56.8,1438; ex=5627,5628,5630,5631,5632,5633; place=Teldrassil; class=PRIEST; race=NightElf; xl=11.9]
+[T 5629 Returning Home | at=39.5,81.2,1457; place=Darnassus; class=PRIEST; race=NightElf; xl=11.9]
+[R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=11.9]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1598 The Stolen Tome | at=49.9,42.6,1429; ex=1599; place=Elwynn Forest; class=WARLOCK; xl=12.0]
-[C 1598 The Stolen Tome | at=56.7,44.0,1429; class=WARLOCK; xl=12.0]
-[T 1598 The Stolen Tome | at=49.9,42.6,1429; place=Elwynn Forest; class=WARLOCK; xl=12.0]
-[A 1685 Gakin's Summons | at=44.5,66.3,1429; opt; place=Elwynn Forest; class=WARLOCK; xl=12.0]
-[T 1685 Gakin's Summons | at=39.2,85.2,1453; opt; place=Stormwind City; class=WARLOCK; xl=12.0]
-[A 1688 Surena Caledon | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=12.0]
-[C 1688 Surena Caledon | at=71.0,80.8,1429; mob=Surena Caledon; class=WARLOCK; xl=12.0]
+[A 1598 The Stolen Tome | at=49.9,42.6,1429; ex=1599; place=Elwynn Forest; class=WARLOCK; xl=11.9]
+[C 1598 The Stolen Tome | at=56.7,44.0,1429; class=WARLOCK; xl=11.9]
+[T 1598 The Stolen Tome | at=49.9,42.6,1429; place=Elwynn Forest; class=WARLOCK; xl=11.9]
+[A 1685 Gakin's Summons | at=44.5,66.3,1429; opt; place=Elwynn Forest; class=WARLOCK; xl=11.9]
+[T 1685 Gakin's Summons | at=39.2,85.2,1453; opt; place=Stormwind City; class=WARLOCK; xl=11.9]
+[A 1688 Surena Caledon | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=11.9]
+[C 1688 Surena Caledon | at=71.0,80.8,1429; mob=Surena Caledon; class=WARLOCK; xl=11.9]
 Surena Caledon has only one spawn point. If others are waiting for it, group up to share it.
-[T 1688 Surena Caledon | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=12.0]
-[A 1689 The Binding | at=39.2,85.2,1453; pre=1688; place=Stormwind City; class=WARLOCK; xl=12.0]
-[C 1689 The Binding | at=39.2,85.2,1453; mob=Summoned Voidwalker; class=WARLOCK; xl=12.0]
+[T 1688 Surena Caledon | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=11.9]
+[A 1689 The Binding | at=39.2,85.2,1453; pre=1688; place=Stormwind City; class=WARLOCK; xl=11.9]
+[C 1689 The Binding | at=39.2,85.2,1453; mob=Summoned Voidwalker; class=WARLOCK; xl=11.9]
 Done near the quest giver: follow the quest text (summon, use the item or talk to the NPC).
-[T 1689 The Binding | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=12.0]
-[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=12.0]
-Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[T 1689 The Binding | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=11.9]
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=11.9]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 1683 Vorlus Vilehoof | at=57.3,34.6,1457; ex=1639,1678; place=Darnassus; class=WARRIOR; xl=12.0]
-[C 1683 Vorlus Vilehoof | at=47.2,63.6,1438; mob=Vorlus Vilehoof; class=WARRIOR; xl=12.0]
+[A 1683 Vorlus Vilehoof | at=57.3,34.6,1457; ex=1639,1678; place=Darnassus; class=WARRIOR; xl=11.9]
+[C 1683 Vorlus Vilehoof | at=47.2,63.6,1438; mob=Vorlus Vilehoof; class=WARRIOR; xl=11.9]
 Vorlus Vilehoof has only one spawn point. If others are waiting for it, group up to share it.
-[T 1683 Vorlus Vilehoof | at=57.3,34.6,1457; place=Darnassus; class=WARRIOR; xl=12.0]
-[A 1686 The Shade of Elura | at=57.3,34.6,1457; pre=1683; place=Darnassus; class=WARRIOR; xl=12.0]
-[C 1686 The Shade of Elura | at=32.2,44.4,1439; mob=Shade of Elura; item=6808:8; drop=69; class=WARRIOR; xl=12.0]
+[T 1683 Vorlus Vilehoof | at=57.3,34.6,1457; place=Darnassus; class=WARRIOR; xl=11.9]
+[A 1686 The Shade of Elura | at=57.3,34.6,1457; pre=1683; place=Darnassus; class=WARRIOR; xl=11.9]
+[C 1686 The Shade of Elura | at=32.2,44.4,1439; mob=Shade of Elura; item=6808:8; drop=69; class=WARRIOR; xl=11.9]
 Shade of Elura has only one spawn point. If others are waiting for it, group up to share it.
-[T 1686 The Shade of Elura | at=57.3,34.6,1457; place=Darnassus; class=WARRIOR; xl=12.0]
-[A 1692 Smith Mathiel | at=57.3,34.6,1457; pre=1686; place=Darnassus; class=WARRIOR; xl=12.0]
-[T 1692 Smith Mathiel | at=59.5,45.4,1457; place=Darnassus; class=WARRIOR; xl=12.0]
-[A 1693 Weapons of Elunite | at=59.5,45.4,1457; pre=1692; place=Darnassus; class=WARRIOR; xl=12.0]
-[T 1693 Weapons of Elunite | at=59.5,45.4,1457; place=Darnassus; class=WARRIOR; xl=12.0]
-[R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=12.0]
+[T 1686 The Shade of Elura | at=57.3,34.6,1457; place=Darnassus; class=WARRIOR; xl=11.9]
+[A 1692 Smith Mathiel | at=57.3,34.6,1457; pre=1686; place=Darnassus; class=WARRIOR; xl=11.9]
+[T 1692 Smith Mathiel | at=59.5,45.4,1457; place=Darnassus; class=WARRIOR; xl=11.9]
+[A 1693 Weapons of Elunite | at=59.5,45.4,1457; pre=1692; place=Darnassus; class=WARRIOR; xl=11.9]
+[T 1693 Weapons of Elunite | at=59.5,45.4,1457; place=Darnassus; class=WARRIOR; xl=11.9]
+[R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=11.9]
 Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=12.0]
+[R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=11.9]
 Time to train: head to Jeen'ra Nightrunner in Darnassus for your new Hunter spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 6063 Taming the Beast | at=56.7,59.5,1438; ex=94013; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[C 6063 Taming the Beast | at=60.8,57.1,1438; mob=Webwood Lurker; class=HUNTER; race=NightElf; xl=12.0]
-[T 6063 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[A 6071 The Hunter's Path | at=40.4,8.6,1457; ex=6072,6073,6721,6722; opt; place=Darnassus; class=HUNTER; race=NightElf; xl=12.0]
-[T 6071 The Hunter's Path | at=56.7,59.5,1438; opt; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[A 6101 Taming the Beast | at=56.7,59.5,1438; pre=6063; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[C 6101 Taming the Beast | at=40.8,57.0,1438; mob=Nightsaber Stalker; class=HUNTER; race=NightElf; xl=12.0]
-[T 6101 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[A 6102 Taming the Beast | at=56.7,59.5,1438; pre=6101; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[C 6102 Taming the Beast | at=39.5,53.0,1438; mob=Strigid Screecher; class=HUNTER; race=NightElf; xl=12.0]
-[T 6102 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[A 6103 Training the Beast | at=56.7,59.5,1438; pre=6102; place=Teldrassil; class=HUNTER; race=NightElf; xl=12.0]
-[T 6103 Training the Beast | at=40.4,8.6,1457; place=Darnassus; class=HUNTER; race=NightElf; xl=12.0]
-[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=12.0]
+[A 6063 Taming the Beast | at=56.7,59.5,1438; ex=94013; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[C 6063 Taming the Beast | at=60.8,57.1,1438; mob=Webwood Lurker; class=HUNTER; race=NightElf; xl=11.9]
+[T 6063 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[A 6071 The Hunter's Path | at=40.4,8.6,1457; ex=6072,6073,6721,6722; opt; place=Darnassus; class=HUNTER; race=NightElf; xl=11.9]
+[T 6071 The Hunter's Path | at=56.7,59.5,1438; opt; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[A 6101 Taming the Beast | at=56.7,59.5,1438; pre=6063; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[C 6101 Taming the Beast | at=40.8,57.0,1438; mob=Nightsaber Stalker; class=HUNTER; race=NightElf; xl=11.9]
+[T 6101 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[A 6102 Taming the Beast | at=56.7,59.5,1438; pre=6101; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[C 6102 Taming the Beast | at=39.5,53.0,1438; mob=Strigid Screecher; class=HUNTER; race=NightElf; xl=11.9]
+[T 6102 Taming the Beast | at=56.7,59.5,1438; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[A 6103 Training the Beast | at=56.7,59.5,1438; pre=6102; place=Teldrassil; class=HUNTER; race=NightElf; xl=11.9]
+[T 6103 Training the Beast | at=40.4,8.6,1457; place=Darnassus; class=HUNTER; race=NightElf; xl=11.9]
+[R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=11.9]
 Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 2241 The Apple Falls | at=56.4,60.1,1438; place=Teldrassil; class=ROGUE; xl=12.0]
-[T 2241 The Apple Falls | at=37.0,21.9,1457; place=Darnassus; class=ROGUE; xl=12.0]
-[A 2242 Destiny Calls | at=37.0,21.9,1457; pre=2241; place=Darnassus; class=ROGUE; xl=12.0]
-[C 2242 Destiny Calls | at=37.1,22.8,1438; mob=Sethir the Ancient; class=ROGUE; xl=12.0]
+[A 2241 The Apple Falls | at=56.4,60.1,1438; place=Teldrassil; class=ROGUE; xl=11.9]
+[T 2241 The Apple Falls | at=37.0,21.9,1457; place=Darnassus; class=ROGUE; xl=11.9]
+[A 2242 Destiny Calls | at=37.0,21.9,1457; pre=2241; place=Darnassus; class=ROGUE; xl=11.9]
+[C 2242 Destiny Calls | at=37.1,22.8,1438; mob=Sethir the Ancient; class=ROGUE; xl=11.9]
 Sethir the Ancient has only one spawn point. If others are waiting for it, group up to share it.
-[T 2242 Destiny Calls | at=37.0,21.9,1457; place=Darnassus; class=ROGUE; xl=12.0]
-[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=12.0]
+[T 2242 Destiny Calls | at=37.0,21.9,1457; place=Darnassus; class=ROGUE; xl=11.9]
+[R Shaman - Ironforge | at=47.1,13.79,1455; class=SHAMAN; xl=11.9]
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 You have talent points from level 10 on: spend them (changing them later needs a trainer in a major city).
-[A 94465 Call of Fire | at=87.9,44.8,1426; place=Dun Morogh; class=SHAMAN; xl=12.0]
-[T 94465 Call of Fire | at=32.2,66.0,1432; place=Loch Modan; class=SHAMAN; xl=12.0]
-[A 94466 Call of Fire | at=32.2,66.0,1432; pre=94465; place=Loch Modan; class=SHAMAN; xl=12.0]
-[C 94466 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=12.0]
-[T 94466 Call of Fire | at=32.2,66.0,1432; place=Loch Modan; class=SHAMAN; xl=12.0]
-[A 94467 Call of Fire | at=32.2,66.0,1432; pre=94466; place=Loch Modan; class=SHAMAN; xl=12.0]
-[C 94467 Call of Fire | at=38.7,58.3,1411; mob=Minor Manifestation of Fire; class=SHAMAN; xl=12.0]
+[A 94465 Call of Fire | at=87.9,44.8,1426; place=Dun Morogh; class=SHAMAN; xl=11.9]
+[T 94465 Call of Fire | at=32.2,66.0,1432; place=Loch Modan; class=SHAMAN; xl=11.9]
+[A 94466 Call of Fire | at=32.2,66.0,1432; pre=94465; place=Loch Modan; class=SHAMAN; xl=11.9]
+[C 94466 Call of Fire | at=57.3,24.6,1413; mob=Razormane Geomancer / Burning Blade Cultist; item=5026:1,6652:1; drop=1; class=SHAMAN; xl=11.9]
+[T 94466 Call of Fire | at=32.2,66.0,1432; place=Loch Modan; class=SHAMAN; xl=11.9]
+[A 94467 Call of Fire | at=32.2,66.0,1432; pre=94466; place=Loch Modan; class=SHAMAN; xl=11.9]
+[C 94467 Call of Fire | at=38.7,58.3,1411; mob=Minor Manifestation of Fire; class=SHAMAN; xl=11.9]
 Minor Manifestation of Fire has only 2 spawn points. If others are waiting for it, group up to share it.
-[T 94467 Call of Fire | at=31.8,64.5,1432; place=Loch Modan; class=SHAMAN; xl=12.0]
-[G 37.0,44.1 1439 Travel to Darkshore | xl=12.0]
-[A 983 Buzzbox 827 | at=37.0,44.1,1439; place=Auberdine; xl=12.0]
-[A 98025 WANTED: Jai'vhanel | at=37.2,44.2,1439; place=Auberdine; xl=12.0]
-[T 6342 Flight to Auberdine | at=36.8,44.3,1439; place=Auberdine; race=NightElf; xl=12.0]
+[T 94467 Call of Fire | at=31.8,64.5,1432; place=Loch Modan; class=SHAMAN; xl=11.9]
+[G 37.0,44.1 1439 Travel to Darkshore | xl=11.9]
+[A 983 Buzzbox 827 | at=37.0,44.1,1439; place=Auberdine; xl=11.9]
+[A 98025 WANTED: Jai'vhanel | at=37.2,44.2,1439; place=Auberdine; xl=11.9]
+[T 6342 Flight to Auberdine | at=36.8,44.3,1439; place=Auberdine; race=NightElf; xl=11.9]
 [A 6343 Return to Nessa | at=36.8,44.3,1439; pre=6342; place=Auberdine; race=NightElf; xl=12.1]
 [A 3524 Washed Ashore | at=36.6,45.6,1439; place=Auberdine; xl=12.1]
 [A 2118 Plagued Lands | at=38.8,43.4,1439; place=Auberdine; danger=13; xl=12.1]
@@ -305,7 +305,7 @@ Minor Manifestation of Fire has only 2 spawn points. If others are waiting for i
 [C 4681 Washed Ashore | at=31.8,46.3,1439; xl=13.3]
 [T 4681 Washed Ashore | at=36.6,45.6,1439; place=Auberdine; xl=13.3]
 [C 958 Tools of the Highborne | at=42.0,58.4,1439; mob=Cursed Highborne; ml=11; item=5360:7; drop=41; xl=13.4]
-[C 98025 WANTED: Jai'vhanel | at=45.1,58.0,1439; mob=Jai'vhanel; ml=12; xl=13.4]
+[C 98025 WANTED: Jai'vhanel | at=44.2,58.2,1439; mob=Jai'vhanel; ml=12; xl=13.4]
 [A 4722 Beached Sea Turtle | at=37.1,62.2,1439; pre=4681; place=Darkshore; xl=13.4]
 [C 1002 Buzzbox 323 | at=41,67.4,1439; mob=Moonstalker; ml=15; item=5413:6; drop=28; xl=13.4]
 [A 4728 Beached Sea Creature | at=36.0,70.9,1439; pre=4681; place=Darkshore; danger=14; xl=13.4]
@@ -313,8 +313,8 @@ Minor Manifestation of Fire has only 2 spawn points. If others are waiting for i
 [T 4728 Beached Sea Creature | at=36.6,45.6,1439; place=Auberdine; xl=13.5]
 [T 98025 WANTED: Jai'vhanel | at=37.7,43.4,1439; place=Auberdine; xl=13.6]
 [T 958 Tools of the Highborne | at=37.4,40.1,1439; place=Darkshore; xl=13.8]
-[A 4723 Beached Sea Creature | at=41.9,31.5,1439; pre=4681; place=Darkshore; xl=14.0]
-[T 1002 Buzzbox 323 | at=51.3,24.6,1439; place=Darkshore; xl=14.0]
+[A 4723 Beached Sea Creature | at=41.9,31.5,1439; pre=4681; place=Darkshore; xl=13.9]
+[T 1002 Buzzbox 323 | at=51.3,24.6,1439; place=Darkshore; xl=13.9]
 [A 4727 Beached Sea Turtle | at=53.1,18.1,1439; pre=4681; place=Darkshore; xl=14.1]
 [A 4725 Beached Sea Turtle | at=44.2,20.6,1439; pre=4681; place=Darkshore; xl=14.1]
 [T 4723 Beached Sea Creature | at=36.6,45.6,1439; place=Auberdine; xl=14.1]
@@ -331,7 +331,7 @@ Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spe
 [C 6122 The Principal Source | at=54.9,33.3,1439; class=DRUID; race=NightElf,Skyborne; xl=14.4]
 [T 6122 The Principal Source | at=37.7,40.7,1439; place=Darkshore; class=DRUID; race=NightElf,Skyborne; xl=14.4]
 [A 6123 Gathering the Cure | at=37.7,40.7,1439; pre=6122; place=Darkshore; class=DRUID; race=NightElf,Skyborne; xl=14.4]
-[C 6123 Gathering the Cure | at=57.1,69.1,1438; mob=Lasher Sproutling; item=2449:5,15851:12; class=DRUID; race=NightElf,Skyborne; xl=14.4]
+[C 6123 Gathering the Cure | at=57.1,69.0,1438; mob=Lasher Sproutling; item=2449:5,15851:12; class=DRUID; race=NightElf,Skyborne; xl=14.4]
 [T 6123 Gathering the Cure | at=37.7,40.7,1439; place=Darkshore; class=DRUID; race=NightElf,Skyborne; xl=14.4]
 [A 6124 Curing the Sick | at=37.7,40.7,1439; pre=6123; place=Darkshore; class=DRUID; race=NightElf,Skyborne; xl=14.4]
 [C 6124 Curing the Sick | at=46,41.4,1439; mob=Sickly Deer; class=DRUID; race=NightElf,Skyborne; xl=14.4]
@@ -354,21 +354,21 @@ Priestess Alathea is right here: pick up your new Priest spells.
 [G 55.6,57.0 1438 Travel to Teldrassil | xl=14.7]
 [A 98403 Twisted Hatred | at=55.6,57.0,1438; pre=932; opt; place=Teldrassil; xl=14.7]
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[C 98403 Twisted Hatred | at=49.7,44.7,1438; mob=Befouled Webwood / Xethorr the Wicked; ml=12; opt; xl=14.7]
+[C 98403 Twisted Hatred | at=49.7,44.6,1438; mob=Befouled Webwood / Xethorr the Wicked; ml=12; opt; xl=14.7]
 [T 98403 Twisted Hatred | at=55.6,57.0,1438; place=Teldrassil; opt; xl=14.7]
 [T 6343 Return to Nessa | at=56.3,92.4,1438; place=Rut'theran Village; race=NightElf; xl=14.8]
-[A 927 The Moss-twined Heart | at=42.8,28.4,1438; opt; place=Teldrassil; xl=15.0]
+[A 927 The Moss-twined Heart | at=42.8,28.4,1438; opt; place=Teldrassil; xl=14.9]
 Starts from Moss-twined Heart, which drops in this area.
 Group quest (elite enemies) - optional; the guide skips it if you don't take it.
-[T 927 The Moss-twined Heart | at=60.9,68.5,1438; place=Teldrassil; opt; xl=15.0]
+[T 927 The Moss-twined Heart | at=60.9,68.5,1438; place=Teldrassil; opt; xl=14.9]
 [A 941 Planting the Heart | at=60.9,68.5,1438; pre=927; place=Teldrassil; xl=15.0]
 [T 941 Planting the Heart | at=60.8,68.6,1438; place=Teldrassil; xl=15.0]
 [R Mage - Ironforge | at=27.16,8.57,1455; class=MAGE; xl=15.1]
 Time to train: head to Dink in Ironforge for your new Mage spells. The arrow takes you back to the route afterwards.
 [R Warlock - Stormwind City | at=39.24,84.96,1453; class=WARLOCK; xl=15.1]
 Time to train: head to Demisette Cloyce in Stormwind City for your new Warlock spells. The arrow takes you back to the route afterwards.
-[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=15.1]
-Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=15.1]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Paladin - Theramore | at=67.4,47.41,1445; class=PALADIN; xl=15.1]
 Time to train: head to Brother Karman in Theramore for your new Paladin spells. The arrow takes you back to the route afterwards.
 [R Hunter - Darnassus | at=39.72,5.39,1457; class=HUNTER; xl=15.1]
@@ -457,8 +457,8 @@ Den Mother has only one spawn point. If others are waiting for it, group up to s
 [T 2139 Tharnariun's Hope | at=38.8,43.4,1439; place=Auberdine; xl=17.6]
 [T 729 The Absent Minded Prospector | at=35.7,83.7,1439; place=Darkshore; danger=18; xl=17.7]
 [A 731 The Absent Minded Prospector | at=35.7,83.7,1439; pre=729; place=Darkshore; danger=18; xl=17.9]
-[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=17.9]
-Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=17.9]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Rogue - Darnassus | at=36.99,21.91,1457; class=ROGUE; xl=17.9]
 Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow takes you back to the route afterwards.
 [A 2282 Alther's Mill | at=23.0,52.0,1433; pre=2281; place=Redridge Mountains; class=ROGUE; xl=17.9]
@@ -469,7 +469,7 @@ Time to train: head to Syurna in Darnassus for your new Rogue spells. The arrow 
 [A 1070 On Guard in Stonetalon | at=34.9,49.8,1440; opt; place=Astranaar; xl=17.9]
 [P Astranaar | at=34.41,47.99,1440; xl=17.9]
 [T 967 The Tower of Althalaxx | at=26.2,38.7,1440; place=Ashenvale; xl=17.9]
-[T 5713 One Shot.  One Kill. | at=26.6,36.7,1440; place=Ashenvale; xl=18.0]
+[T 5713 One Shot.  One Kill. | at=26.6,36.7,1440; place=Ashenvale; xl=17.9]
 [T 945 Therylune's Escape | at=22.6,51.9,1440; place=Ashenvale; xl=18.1]
 [R Hunter - Ashenvale | at=18.01,59.83,1440; class=HUNTER; xl=18.2]
 Alenndaar Lapidaar is right here: pick up your new Hunter spells.
@@ -498,7 +498,7 @@ Time to train: head to Brother Karman in Theramore for your new Paladin spells. 
 Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spells. The arrow takes you back to the route afterwards.
 [F Auberdine | xl=19.0]
 [A 1275 Researching the Corruption | at=38.3,43.0,1439; place=Auberdine; xl=19.0]
-[C 87760 Holy Diver | at=49.4,12.9,1439; mob=Stormscale Beastmistress; ml=20; xl=19.0]
+[C 87760 Holy Diver | at=49.2,13.4,1439; mob=Stormscale Beastmistress; ml=20; xl=19.0]
 [T 87760 Holy Diver | at=36.6,45.6,1439; place=Auberdine; xl=19.0]
 [A 944 The Master's Glaive | at=43.5,76.3,1439; pre=948; place=Darkshore; xl=19.1]
 [C 731 The Absent Minded Prospector | at=35.7,84.0,1439; xl=19.1]
@@ -513,7 +513,7 @@ Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spel
 [C 986 A Lost Master | at=39.4,91.8,1439; mob=Moonstalker Matriarch; ml=20; item=5386:5; drop=34; xl=19.3]
 [T 950 Return to Onu | at=43.5,76.3,1439; place=Darkshore; xl=19.3]
 [A 951 Mathystra Relics | at=43.5,76.3,1439; pre=950; place=Darkshore; xl=19.4]
-[A 98013 Swelling Forces | at=43.6,76.4,1439; pre=950; place=Darkshore; xl=19.4]
+[A 98013 Swelling Forces | at=43.8,76.5,1439; pre=950; place=Darkshore; xl=19.4]
 [T 986 A Lost Master | at=39.4,43.5,1439; place=Auberdine; xl=19.4]
 [A 993 A Lost Master | at=39.4,43.5,1439; pre=986; place=Auberdine; xl=19.6]
 [T 731 The Absent Minded Prospector | at=37.4,41.8,1439; place=Auberdine; xl=19.6]
@@ -521,7 +521,7 @@ Time to train: head to Eldrun Stormbreaker in Ironforge for your new Shaman spel
 [C 98013 Swelling Forces | at=58.9,20.9,1439; mob=Stormscale Myrmidon / Stormscale Sorceress; ml=21; xl=19.9]
 [C 951 Mathystra Relics | at=60.3,21.7,1439; item=5273:6; xl=19.9]
 [T 951 Mathystra Relics | at=43.5,76.3,1439; place=Darkshore; xl=19.9]
-[T 98013 Swelling Forces | at=43.6,76.4,1439; place=Darkshore; xl=20.0]
+[T 98013 Swelling Forces | at=43.8,76.5,1439; place=Darkshore; xl=20.0]
 [T 993 A Lost Master | at=45.0,85.3,1439; place=Darkshore; xl=20.2]
 [A 4740 WANTED: Murkdeep! | at=37.2,44.2,1439; place=Auberdine; xl=20.3]
 [C 4740 WANTED: Murkdeep! | at=36.4,76.5,1439; mob=Murkdeep; ml=19; xl=20.3]
@@ -558,10 +558,10 @@ Done near the quest giver: follow the quest text (summon, use the item or talk t
 [C 65602 What Is Love? | at=26.6,22.0,1440; class=WARLOCK; xl=20.8]
 [T 65602 What Is Love? | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=20.8]
 [A 65603 The Binding | at=39.2,85.2,1453; pre=65602; place=Stormwind City; class=WARLOCK; xl=20.8]
-[C 65603 The Binding | at=84.1,22.7,1458; mob=Summoned Incubus; class=WARLOCK; xl=20.8]
+[C 65603 The Binding | at=84.3,23.2,1458; mob=Summoned Incubus; class=WARLOCK; xl=20.8]
 [T 65603 The Binding | at=39.2,85.2,1453; place=Stormwind City; class=WARLOCK; xl=20.8]
-[R Warrior - Darnassus | at=58.54,34.31,1457; class=WARRIOR; xl=20.8]
-Time to train: head to Pherry Leftee in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
+[R Warrior - Darnassus | at=58.94,35.35,1457; class=WARRIOR; xl=20.8]
+Time to train: head to Darnath Bladesinger in Darnassus for your new Warrior spells. The arrow takes you back to the route afterwards.
 [R Druid - Darnassus | at=35.37,8.4,1457; class=DRUID; xl=20.8]
 Time to train: head to Mathrengyl Bearwalker in Darnassus for your new Druid spells. The arrow takes you back to the route afterwards.
 [A 98393 The Great Cat Spirit | at=35.4,8.4,1457; ex=98340; place=Darnassus; class=DRUID; race=NightElf,Skyborne; xl=20.8]

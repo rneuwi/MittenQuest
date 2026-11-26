@@ -9,25 +9,18 @@
   "dungeon_backlog": {
     "Horde": {
       "1160": "Scarlet Monastery: quest 1160 Test of Lore (level 36) is never done (prerequisite not on the route: 1159)",
-      "1445": "The Temple of Atal'Hakkar: quest 1445 The Temple of Atal'Hakkar (level 50) is never done (prerequisite not on the route: 1444)",
       "2936": "Zul'Farrak: quest 2936 The Spider God (level 45) is never done (prerequisite not on the route: 2935)",
-      "3373": "The Temple of Atal'Hakkar: quest 3373 The Essence of Eranikus (level 55) is never done [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "3446": "The Temple of Atal'Hakkar: quest 3446 Into the Depths (level 51) is never done (prerequisite not on the route: 3444; area danger 45) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "3447": "The Temple of Atal'Hakkar: quest 3447 Secret of the Circle (level 51) is never done (prerequisite not on the route: 3444; area danger 45) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]"
     },
     "Alliance": {
-      "17": "Uldaman: quest 17 Uldaman Reagent Run (level 42) is never done (prerequisite not on the route: 2500; area danger 15) [added 2026-11-12: the QuestieDB 3f10ca0..90ab55b update (quest relation traces) and the generator changes (pickups and turn-ins inside a dungeon judged by the run, not the entrance's territory; Southshore townsfolk no longer count as level 40 mobs) widened the scope and reshuffled the route; dungeon quests done went from 93 to 95]",
-      "704": "Uldaman: quest 704 Agmond's Fate (level 38) is never done (prerequisite not on the route: 739)",
-      "1053": "Scarlet Monastery: quest 1053 In the Name of the Light (level 40) is never done (prerequisite not on the route: 1052)",
       "1139": "Uldaman: quest 1139 The Lost Tablets of Will (level 45) is never done (prerequisite not on the route: 762)",
       "1142": "Razorfen Kraul: quest 1142 Mortality Wanes (level 30) is never done [added 2026-11-12: the QuestieDB 3f10ca0..90ab55b update (quest relation traces) and the generator changes (pickups and turn-ins inside a dungeon judged by the run, not the entrance's territory; Southshore townsfolk no longer count as level 40 mobs) widened the scope and reshuffled the route; dungeon quests done went from 93 to 95]",
       "1144": "Razorfen Kraul: quest 1144 Willix the Importer (level 30) is never done [added 2026-11-12: the QuestieDB 3f10ca0..90ab55b update (quest relation traces) and the generator changes (pickups and turn-ins inside a dungeon judged by the run, not the entrance's territory; Southshore townsfolk no longer count as level 40 mobs) widened the scope and reshuffled the route; dungeon quests done went from 93 to 95]",
-      "1475": "The Temple of Atal'Hakkar: quest 1475 Into The Temple of Atal'Hakkar (level 50) is never done (prerequisite not on the route: 1469)",
       "2200": "Uldaman: quest 2200 Back to Uldaman (level 42) is never done (prerequisite not on the route: 2199) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "2201": "Uldaman: quest 2201 Find the Gems (level 43) is never done (prerequisite not on the route: 2200) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "2204": "Uldaman: quest 2204 Restoring the Necklace (level 44) is never done (prerequisite not on the route: 2201) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "2361": "Uldaman: quest 2361 Restoring the Necklace (level 44) is never done (prerequisite not on the route: 2204)",
-      "3373": "The Temple of Atal'Hakkar: quest 3373 The Essence of Eranikus (level 55) is never done [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "3446": "The Temple of Atal'Hakkar: quest 3446 Into the Depths (level 51) is never done (prerequisite not on the route: 3444; area danger 45) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "3447": "The Temple of Atal'Hakkar: quest 3447 Secret of the Circle (level 51) is never done (prerequisite not on the route: 3444; area danger 45) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
       "4241": "Blackrock Depths: quest 4241 Marshal Windsor (level 54) is never done (prerequisite not on the route: 4224) [added 2026-11-05: in-dungeon pick-ups/turn-ins widened the scope]",
